@@ -8,7 +8,7 @@ L'auteur aujourd'hui décédé l'avait diffusé en *open-source* à l'adresse:
 
   - http://moire4.u-strasbg.fr/apache2-default/bouquins/proba/tabmat1.htm
 
-Ce lien ne fonctionne plus aujourd'hui. 
+**Ce lien ne fonctionne plus aujourd'hui.** 
 Il peut toutefois être utilisé sur la [Wayback Machine](http://archive.org/web/)
 qui archive une partie des contenus d'Internet pour accéder aux documents:
 
