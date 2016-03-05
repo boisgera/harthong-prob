@@ -31,7 +31,8 @@ diffusion de ce document:
 
 
 A ma connaissance, cet ouvrage, 
-qui fut édité par "Diderot Editeur Arts Sciences" (ISBN: 2841340708),
+qui fut édité en 1996 par "Diderot Editeur Arts Sciences" (ISBN: 2841340708),
 n'est plus disponible à la vente. 
+Sa notice bibliographique peut être trouvée [sur le site de la BNF](http://catalogue.bnf.fr/ark:/12148/cb367007172).
 
 
