@@ -1,0 +1,1422 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+\vsize=219.4mm
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Les fondements de la statistique}
+
+\font\narrowtit=cmb17
+
+\def\hfq{\hfill\quad} 
+\def\cc#1{\hfill\quad #1\quad\hfill} 
+\def\tv{\vrule height 36pt depth 7pt width0.4pt} 
+\def\aub{\hskip1pt} 
+\def\sqnab{\hbox{\eightpoint$\raise1.1pt\hbox{$\surd$} 
+\overline{n\alpha\beta}$}} 
+\newdimen\blocksize \blocksize=\vsize \advance\blocksize by -8pt 
+
+\pageno=262 
+
+\null\vskip10mm plus3mm minus3mm 
+
+\centerline{\narrowtit X.\hskip5pt LES FONDEMENTS DE LA STATISTIQUE.} 
+
+\vskip10mm 
+{\bf X.\aub 1. Le principe des tests statistiques.}
+\medskip 
+ 
+Nous avions vu que si on jette par exemple mille fois une pi\`ece de
+monnaie, le nombre $N$ de pile est une variable al\'eatoire pouvant
+prendre toutes les valeurs entre z\'ero et mille; la plus probable est
+$500$ et la probabilit\'e d'avoir $500 + j$ pile est environ
+$${1\over \sdown{14}\sqrt{500\,\pi}}\;\exp\bigg\{-{j^2 \over 1000}\bigg\}$$
+en supposant que pile ou face a \`a chaque fois exactement une chance sur
+deux de sortir. On peut constater ceci: pour $j=10$,  $\exp\{-{j^2 / 
+1000}\} = e^{-0.1} \simeq 0.99$, c'est-\`a-dire que la probabilit\'e
+d'obtenir 510 (ou 505, ou 507) est pratiquement la m\^eme que celle
+d'obtenir 500. Par contre pour $j=100$, $\exp\{-{j^2 / 1000}\} = e^{-10}
+\simeq 0.000045$,  c'est-\`a-dire que la probabilit\'e d'obtenir 600 est
+$22000$ fois plus petite que celle d'obtenir 500. Si on fait l'exp\'erience
+avec une pi\`ece correctement \'equilibr\'ee, il n'y a pratiquement pas
+plus de chances d'obtenir {\it exactement} 500 pile plut\^ot que 501 ou
+499; la probabilit\'e d'obtenir 500 (ou 501 ou 499) est \`a peu pr\`es
+${1/\sqrt{500 \pi}} \simeq 1/40$), et il y a \`a peine moins de 
+chances d'obtenir 507, 485, ou 511. Par contre il est extr\^emement
+peu probable d'obtenir 600 (une chance sur 873000); la probabilit\'e 
+d'obtenir pile 600 fois {\it ou plus} est la somme des probabilit\'es 
+d'obtenir $k$ pile, de $k=600$ \`a $k=1000$, et est environ $1 / 250000$. 
+\medskip 
+Par cons\'equent, si apr\`es avoir fait cette exp\'erience on obtient 600
+pile, on est fond\'e \`a en d\'eduire que la pi\`ece est mal \'equilibr\'ee
+et que pile avait plus de chances de sortir que face (que par exemple la 
+probabilit\'e d'avoir pile n'est pas $0.5$, mais plut\^ot $0.6$). Par contre
+si on obtient 511 pile, on n'est absolument pas fond\'e \`a en d\'eduire
+que la pi\`ece est mal \'equilibr\'ee (que par exemple la probabilit\'e 
+d'avoir pile serait $0.511$ plut\^ot que $0.500$), car avec une pi\`ece
+parfaitement \'equilibr\'ee on avait \`a peu pr\`es autant de chances de
+faire $511$ que $500$. 
+\medskip 
+Un des probl\`emes de la statistique est de pouvoir d\'eterminer ainsi, 
+par des tests {\it quantitatifs}, si on est fond\'e ou non \`a consid\'erer
+un \'ecart par rapport \`a la valeur attendue d'un param\`etre comme une 
+fluctuation normale due au hasard, ou si au contraire cet \'ecart est 
+extr\^emement peu probable, ce qui conduit alors \`a penser que la valeur 
+attendue avait \'et\'e incorrectement d\'etermin\'ee. Dans l'analyse 
+ci-dessus du jeu de pile ou face, on a pu calculer la probabilit\'e pour qu'un 
+\'ecart donn\'e soit d\^u \`a une fluctuation al\'eatoire, {\it parce qu}'on 
+connaissait la loi de probabilit\'e (bin\^omiale) de ces fluctuations. 
+\medskip
+Le jeu de pile ou face est ici un exemple scolaire, c'est-\`a-dire un exemple
+choisi pour son extr\^eme simplicit\'e, qui permet de tout calculer et de 
+montrer ainsi comment la th\'eorie fonctionne. Dans la pratique (du moins 
+celle o\`u justement la statistique est le plus n\'ecessaire), les situations 
+ne sont pas aussi nettes. 
+\medskip
+Si par exemple on teste un nouveau m\'edicament 
+contre l'hypertension, on compare la diminution de tension \`a celle qui est 
+attendue en l'absence de m\'edicament. Il est tr\`es rare que les effets d'un 
+m\'edicament soient clairs au point d'amener une am\'elioration qui 
+n'aurait qu'une chance sur un million de se produire par hasard en l'absence 
+de m\'edicament (mais on peut consid\'erer que les {\it v\'eritables} 
+m\'edicaments sont pr\'ecis\'ement ceux-l\`a). Le plus souvent on admet 
+que le m\'edicament a un effet si l'am\'elioration constat\'ee n'avait qu'une 
+chance sur vingt ou sur cent de se produire par hasard. Les tests de 
+nouveaux m\'edicaments sont g\'en\'eralement effectu\'es selon le 
+principe suivant: on administre le m\'edicament \`a un groupe de malades 
+(disons de cent personnes pour fixer les id\'ees) pendant une dur\'ee 
+d\'etermin\'ee. Il n'y a aucun moyen de conna{\^\i}tre a priori la 
+probabilit\'e des am\'eliorations spontan\'ees de l'\'etat des malades; c'est 
+pourquoi on choisit un autre groupe de cent personnes ayant la m\^eme 
+maladie (en l'occurrence de l'hypertension), et qui ne recevront pas le 
+m\'edicament (ce second groupe est appel\'e le groupe t\'emoin). Dans le 
+groupe t\'emoin on peut \'egalement observer des am\'eliorations de 
+l'\'etat des malades, qui sont soit spontan\'ees, soit dues aux soins 
+normaux (par exemple r\'egime sans sel). La diff\'erence entre la valeur 
+moyenne de la tension dans le groupe t\'emoin et le groupe trait\'e est
+alors consid\'er\'ee comme une estimation de l'esp\'erance math\'ematique 
+de la baisse de tension induite par le m\'edicament que l'on veut tester. 
+\medskip
+Afin d'\'eliminer tout effet subjectif, au lieu de simplement s'abstenir 
+d'administrer un m\'edicament aux personnes du groupe t\'emoin, on leur 
+distribue un placebo sous une forme exactement identique au m\'edicament 
+(par exemple le m\'edicament est pr\'epar\'e sous forme de comprim\'e
+contenant la substance active et un excipient; le placebo est alors un 
+comprim\'e d'apparence exactement identique, fabriqu\'e avec le m\^eme 
+excipient,  mais sans la substance active), et en veillant \`a ce que les 
+malades ignorent si le comprim\'e qu'ils re\c{c}oivent est actif ou inactif. 
+On dit alors que l'exp\'erience a lieu en (simple) aveugle. Afin d'\'eviter 
+\'egalement un effet subjectif par l'interm\'ediaire du personnel soignant, 
+on distribue les bo{\^\i}tes de comprim\'es de fa\c{c}on indiff\'erenci\'ee, 
+le placebo ne se distinguant du m\'edicament que par un code que les 
+exp\'erimentateurs sont seuls \`a conna{\^\i}tre. On dit alors que 
+l'exp\'erience a lieu en double aveugle.  Tel est du moins le {\it principe} 
+de l'exp\'erimentation, car la pratique peut s'en \'ecarter. Ainsi, une 
+enqu\^ete de l'\'epid\'emiologiste Kenneth Schulz r\'ev\`ele que sur 
+quatre cents m\'edecins, la moiti\'e d\'eclare conna{\^\i}tre des 
+coll\`egues qui n'ont pas respect\'e le protocole et obtenu illicitement 
+les codes qui devaient \^etre tenus secrets ({\sl New Scientist}, 
+vol {\bf 2008}, {\oldstyle 1996}, page 10).
+\medskip
+Si on constate davantage d'am\'eliorations dans le groupe trait\'e que dans
+le groupe t\'emoin, on ne peut pas en d\'eduire que le m\'edicament est 
+efficace, car la diff\'erence entre les deux groupes peut \^etre due au seul 
+hasard: soit que par hasard il y a eu moins d'am\'eliorations spontan\'ees 
+que la moyenne dans le groupe t\'emoin, soit que par hasard il y en ait eu 
+plus que la moyenne dans le groupe test\'e, le m\'edicament lui-m\^eme 
+\'etant totalement inefficace. Toutefois, si on peut montrer que la 
+probabilit\'e pour que la diff\'erence constat\'ee entre les deux groupes 
+soit due au hasard est tr\`es faible (par exemple 0.01), on peut tenir le 
+raisonnement suivant: il n'y avait qu'une chance sur cent pour que les 
+r\'esultats constat\'es se produisent par hasard; il n'y a donc ``qu'une 
+chance sur cent'' de se tromper en attribuant la diff\'erence \`a une cause; 
+or on a veill\'e, en rendant toutes les conditions identiques pour les deux 
+groupes, \`a ce que la seule cause possible soit le m\'edicament. On tient 
+alors un raisonnement analogue \`a celui qui avait \'et\'e tenu pour le jeu
+de pile ou face. Mais tout le probl\`eme est justement de savoir {\it 
+comment on calcule} cette probabilit\'e: dans le jeu de pile ou face, on 
+connaissait la loi de probabilit\'e; dans le cas de l'action d'un 
+m\'edicament sur un groupe de personnes, on ne sait rien a priori. 
+G\'en\'eralement, on postule que la loi de probabilit\'e inconnue a une 
+densit\'e gaussienne, car on admet que, l'action du m\'edicament \'etant 
+par nature complexe, des causes innombrables et ind\'ependantes les
+unes des autres se superposent, de sorte que d'apr\`es la propri\'et\'e 
+\'etablie au chapitre {\bf VII},  la loi de probabilit\'e des fluctuations 
+devrait avoir une densit\'e gaussienne, bien qu'on ignore tout de leur 
+cause. Dans certains cas rares, o\`u on devine mieux les causes, on peut 
+toutefois \^etre conduit \`a postuler des lois non gaussiennes.  La r\`egle 
+g\'en\'erale \'etablie au chapitre {\bf VII} est qu'on obtient des lois 
+gaussiennes quand un grand nombre de perturbations al\'eatoires {\it 
+ind\'ependantes} se superposent; mais on peut obtenir des lois non 
+gaussiennes, si les diff\'erentes perturbations qui agissent 
+s'influencent mutuellement: un exemple de cela est fourni par 
+les processus en cascade (chapitre {\bf VIII}), o\`u la variable
+al\'eatoire $Z_n$ n'est pas la somme de variables ind\'ependantes. 
+\medskip
+Une fois admis que la densit\'e de la loi de probabilit\'e est gaussienne, 
+il suffit de conna{\^\i}tre la moyenne et l'\'ecart-type pour la 
+d\'eterminer enti\`erement (et conna{\^\i}tre la densit\'e de la loi suffit 
+pour calculer approximativement les probabilit\'es). Ces deux 
+param\`etres peuvent \^etre devin\'es \`a partir des r\'esultats 
+observ\'es, et on peut alors estimer quantitativement la probabilit\'e 
+pour que les valeurs devin\'ees soient fausses, selon un raisonnement du 
+m\^eme type que celui qui a \'et\'e tenu plus haut, \`a propos du jeu de 
+pile ou face, pour estimer \`a partir des r\'esultats observ\'es la 
+probabilit\'e que la pi\`ece soit pip\'ee. 
+\medskip 
+Bien entendu ce type de raisonnement statistique n'est pas 
+rigoureux: dans le cas de la pi\`ece de monnaie, il \'etait rigoureux; mais
+pour des m\'ecanismes complexes dont une grande part reste inconnue, 
+on fait des hypoth\`eses qui sont peut-\^etre tout \`a fait gratuites. 
+Rien ne garantit que les probabilit\'es d'am\'elioration spontan\'ee de 
+l'\'etat d'un malade soient r\'eellement \'evaluables;  par exemple, que 
+faut-il penser si au lieu de prendre un seul groupe t\'emoin, on en prend 
+beaucoup et qu'on constate une tr\`es forte variabilit\'e dans la 
+proportion de gu\'erisons spontan\'ees?  En outre, comme on va le voir, 
+la question de savoir de quoi au juste on mesure ainsi la probabilit\'e 
+n'est elle-m\^eme pas tr\`es clairement pos\'ee. 
+\medskip
+Il se trouve que les r\'eponses \`a ces questions 
+ne sont pas simples si on veut les traiter honn\^etement. 
+Le fond de l'affaire est de savoir o\`u intervient le hasard. Nous
+disions en effet ``si on peut montrer que la probabilit\'e pour que la 
+diff\'erence constat\'ee entre les deux groupes {\it soit due au hasard} 
+est tr\`es faible, alors $\ldots$''. Mais comment intervient le hasard 
+dans cette affaire? Dans les premiers chapitres nous avions d\'ej\`a
+montr\'e que le hasard n'agit pas toujours de la m\^eme fa\c{c}on 
+(par exemple pour des boules ou pour des particules de Bose). Pour 
+pouvoir dire qu'un probl\`eme de probabilit\'e ou de statistique est 
+trait\'e scientifiquement, il ne suffit pas d'appliquer des formules 
+math\'ematiques, il faut aussi que les conclusions qu'on en tire soient 
+{\it r\' eellement logiques}, et pour cela il faut savoir comment le 
+hasard a agi. Le probl\`eme des tests statistiques de m\'edicaments est 
+brouill\'e par la complexit\'e des processus biologiques; c'est pourquoi, 
+avant de l'aborder, nous avons \'etudi\'e un exemple tr\`es simple, celui 
+du jeu de pile ou face. Un autre exemple simple qui joue un r\^ole 
+essentiel par rapport aux principes de la statistique est le {\it sondage 
+par \'echantillons}, que nous allons \'etudier maintenant. La th\'eorie 
+math\'ematique du sondage par \'echantillon sera trait\'ee dans la 
+section suivante ({\bf X.2.}), tout comme la th\'eorie du jeu de pile 
+ou face a \'et\'e trait\'ee (sous la forme de la marche al\'eatoire) au 
+chapitre {\bf III}. Toutefois, on peut discuter de son sens avant 
+d'aborder la th\'eorie math\'ematique.  Nous reprendrons ensuite la 
+discussion sur les tests de m\'edicaments, \`a la lumi\`ere des ces deux 
+exemples simples. 
+\medskip
+Le sondage par \'echantillons est un proc\'ed\'e tr\`es connu du grand
+public, puisque les media en font un usage fr\'equent. Pour conna{\^\i}tre
+par exemple les intentions de vote des \'electeurs fran\c{c}ais (dont le 
+nombre est de trente millions environ), on m\`ene une enqu\^ete aupr\`es
+d'un \'echantillon de mille \`a deux mille d'entre eux, choisis selon des
+crit\`eres que nous \'etudierons \`a la section suivante. On part du
+principe (qui sera justifi\'e th\'eoriquement \`a la section {\bf X.2.}) que 
+les intentions de vote pour les diff\'erents partis se distribuent dans 
+l'\'echantillon selon des proportions proches des proportions exactes, 
+celles de la population totale. Or il se trouve que le hasard n'intervient
+pas du tout de la m\^eme fa\c{c}on dans le sondage que dans le jeu de pile 
+ou face. 
+\medskip 
+Dans le jeu de pile ou face, le hasard intervient dans le mouvement de la 
+pi\`ece de monnaie, car ce mouvement est chaotique, tout comme celui
+de la bille de billard ou de roulette analys\'e au chapitre {\bf I}: en 
+principe la position et les vitesses (de translation et de rotation) 
+initiales d\'eterminent le c\^ot\'e sur lequel la pi\`ece tombera, mais un 
+changement absolument infime dans ces donn\'ees initiales suffit \`a 
+changer ce r\'esultat. D'un lancer \`a l'autre, ces param\`etres initiaux 
+sont variables.  Dans le sondage, le hasard intervient dans le choix de
+l'\'echantillon. 
+\medskip 
+Il n'est pas n\'ecessaire de conna{\^\i}tre exactement les param\`etres
+initiaux du mouvement ni de calculer le mouvement exact, pour 
+pouvoir dire que, si la pi\`ece est parfaitement sym\'etrique, elle ne 
+peut tomber plus souvent sur pile que sur face car cela contredirait les 
+sym\'etries spatiales auxquelles le mouvement, tout chaotique qu'il 
+soit, est soumis; c'est pourquoi on admet a priori que les deux c\^ot\'es 
+sont \'equiprobables. 
+\medskip 
+Par contre si par exemple la pi\`ece a une forme sym\'etrique, 
+mais est plus lourde du c\^ot\'e pile (le centre de gravit\'e 
+est alors plus pr\`es du c\^ot\'e pile que du c\^ot\'e face), ou bien si le 
+m\'etal est homog\`ene, mais que la tranche est l\'eg\`erement 
+biseaut\'ee (de telle sorte que le c\^ot\'e face ait un diam\`etre 
+l\'eg\`erement plus grand que le c\^ot\'e pile), il se produira le 
+ph\'enom\`ene suivant: lorsque la pi\`ece sera encore sur la tranche et 
+roulera sur la table, le centre de gravit\'e ne sera pas \`a la verticale de 
+l'aire de sustentation et la pesanteur fera pencher la pi\`ece du c\^ot\'e 
+o\`u se trouve le centre de gravit\'e, favorisant ainsi le c\^ot\'e face. 
+Ces consid\'erations sur le mouvement montrent donc que le hasard agit 
+{\it \`a travers le mouvement de la pi\`ece}. Si la pi\`ece est bien 
+\'equilibr\'ee, il y a une raison {\it a priori} pour que la probabilit\'e 
+d'avoir face soit \'egale \`a ${1 \over 2}$, m\^eme si on ne lance la 
+pi\`ece qu'une seule fois. Cette probabilit\'e est d\'etermin\'ee par les 
+lois de la Physique avant m\^eme qu'on ait proc\'ed\'e au premier lancer. 
+Ce sera vrai aussi si la pi\`ece n'est pas \'equilibr\'ee et que le c\^ot\'e 
+face est plus probable: il y aura une probabilit\'e inconnue $x > {1 \over 
+2}$ d'avoir face et une probabilit\'e $1- x < {1 \over 2}$ d'avoir pile, 
+mais bien qu'inconnue (et impossible ou du moins tr\`es difficile \`a 
+calculer \`a partir des \'equations du mouvement et de la forme de la 
+pi\`ece) cette probabilit\'e $x$ sera n\'eanmoins d\'etermin\'ee a 
+priori par les lois de la Physique. 
+\medskip
+Dans le sondage les choses sont tr\`es diff\'erentes. Il y a (\`a un 
+moment donn\'e de la campagne \'electorale) une proportion $x_1$ 
+d'\'electeurs qui se prononceraient pour le parti du Progr\`es si on leur 
+posait la question, une proportion $x_2$ qui se prononceraient pour le 
+parti de la D\'emocratie, une proportion $x_3$ qui se prononceraient 
+pour le parti de la Libert\'e, etc. Cela veut dire que si on posait la 
+question \`a chacun des $N$ \'electeurs, il y en aurait $p_1$ qui se 
+prononceraient pour le parti du Progr\`es, $p_2$ qui se prononceraient 
+pour le parti de la D\'emocratie, $p_3$ qui se prononceraient pour le 
+parti de la Libert\'e, et les nombres $x_1,\; x_2,\; x_3$ sont 
+simplement les rapports $p_1 / N \, , \; p_2 / N \, , \; p_3 / N \,$. 
+\medskip
+Ces rapports {\it ne sont pas} la probabilit\'e a priori pour 
+qu'un \'electeur particulier vote pour tel ou tel parti. On peut d'ailleurs 
+se demander ici ce que seraient de telles probabilit\'es a priori; si on 
+croit au r\'eductionnisme m\'ecaniste absolu, par exemple, on dira que
+la r\'eponse de l'\'electeur Jean Dupond \`a la question du sondeur est 
+d\'etermin\'ee par les lois de la Physique, \'etant donn\'e que tous les 
+m\'ecanismes neuronaux actionn\'es dans le cerveau de Jean Dupond, et 
+aboutissant \`a l'\'etat dans lequel Jean Dupond \'eprouve la sensation 
+que le parti du Progr\`es est le meilleur, sont des mouvements d'atomes 
+et de mol\'ecules qui ob\'eissent aux lois de la Physique. De m\^eme 
+que pour la pi\`ece de monnaie, la roulette, ou l'agitation thermique, on 
+peut alors consid\'erer ces mouvements mol\'eculaires de 
+neurotransmetteurs comme chaotiques, qu'ils cr\'eent donc du hasard
+et d\'eterminent une probabilit\'e a priori. 
+\medskip 
+Il importe peu qu'on croie au d\'eterminisme m\'ecaniste absolu
+ou qu'on n'y croie pas; le probl\`eme d\'ebattu ici est que, s'il y a un
+sens \`a parler de probabilit\'e a priori, ce sera la probabilit\'e, 
+d\'etermin\'ee par des causes particuli\`eres internes \`a Jean Dupond, 
+pour que celui-ci d\'eclare au sondeur son intention de voter pour le 
+parti du Progr\`es. Il n'y a alors aucune raison pour que la probabilit\'e a 
+priori de Pierre Martin, ou de Paul Duval soit la m\^eme; il n'y a aucune 
+raison non plus pour qu'elle soit \'egale \`a $x_1$, ni m\^eme pour que
+la moyenne de ces probabilit\'es a priori sur l'ensemble des \'electeurs 
+soit \'egale \`a $x_1$. Au lieu de prendre l'exemple des intentions de 
+vote, pour lequel le raisonnement m\'ecaniste est confus et tr\`es 
+discutable, on pourrait prendre celui de la mucoviscidose (voir sections 
+{\bf III. 6} et {\bf IV. 4}). Si on prend au hasard un couple mari\'e 
+dans la population fran\c{c}aise, il y a une chance sur deux mille qu'il
+procr\'ee un enfant ayant cette maladie; mais la probabilit\'e pour 
+un couple donn\'e est soit $0$, soit $0.25$ (ce pourrait m\^eme \^etre 1 
+si les parents \'etaient tous deux atteints, c'est-\`a-dire tous deux
+homozygotes, mais ce cas ne se produit jamais). En prenant un couple
+au hasard dans la population, on fait intervenir le hasard dans le choix
+de ce couple; en consid\'erant un couple particulier donn\'e, le hasard
+intervient au moment de la f\'econdation, dans la combinaison chromosomique. 
+Le hasard ne joue pas du tout le m\^eme r\^ole dans les deux cas.
+\medskip 
+Dans le jeu de pile ou face, la notion de probabilit\'e a priori a un sens 
+simple et clair (elle se comprend d'apr\`es la Physique et le chaos, 
+comme cela a \'et\'e expliqu\'e au chapitre {\bf I}), et cette 
+probabilit\'e a priori est celle que nous retenons pour traiter le
+probl\`eme par le Calcul des probabilit\'es. C'est ce que nous avions
+fait pour les probl\`emes de boules qu'on jette dans des bo{\^\i}tes, de 
+particules de Bose qu'on place dans des \'etats quantiques, la bille de 
+roulette, etc. Dans le cas des sondages sur les intentions de vote, 
+il y a aussi des probabilit\'es a priori, mais qui n'ont rien 
+\`a voir avec la probabilit\'e a priori pour que tel ou tel \'electeur 
+particulier donne telle ou telle r\'eponse: ce sont les probabilit\'es pour 
+que, un \'electeur \'etant choisi au hasard, ce soit un partisan de l'un ou 
+l'autre des candidats.  Quant \`a la probabilit\'e a priori pour qu'un 
+individu particulier vote comme ceci ou comme cela, on ne voit gu\`ere 
+comment lui donner un sens concret. La {\it signification} de la 
+probabilit\'e est donn\'ee par la connaissance du niveau o\`u 
+intervient le hasard.
+\medskip
+Il en va de m\^eme pour l'action d'un m\'edicament.
+Un m\'edicament agit par voie chimique: il y a donc 
+r\'eellement un m\'ecanisme mol\'eculaire par lequel le m\'edicament 
+fait baisser la tension art\'erielle (point n'est besoin de se r\'eclamer 
+du d\'eterminisme m\'ecaniste absolu pour cela). L'effet du 
+m\'edicament sur l'organisme est donc causal, tout comme le 
+mouvement de la pi\`ece de monnaie qui induisait la probabilit\'e a 
+priori $x$ d'avoir face. Il n'est pas d\'epourvu de sens de parler de la 
+probabilit\'e a priori pour que le m\'edicament, administr\'e \`a Jean 
+Dupond, induise dans les cinq heures qui suivent une baisse de tension 
+nettement sup\'erieure aux fluctuations {\it spontan\'ees} de la tension. 
+La calculer ou m\^eme la mesurer empiriquement est une autre histoire, 
+mais il est \'egalement rationnel d'admettre que les fluctuations 
+spontan\'ees de la tension \hbox{suivent} une loi de probabilit\'e 
+approximativement gaussienne. On peut tenir pour fantaisiste 
+l'explication m\'ecaniste des intentions de vote, mais le m\'ecanisme 
+mol\'eculaire de l'action d'un m\'edicament est un fait soigneusement 
+\'etabli. 
+\medskip 
+Les deux notions de probabilit\'e se distinguent par le lieu o\`u
+intervient le hasard: 
+\smallskip 
+--- lorsqu'une personne est choisie au hasard dans un groupe et 
+qu'on demande la probabilit\'e pour que le m\'edicament ait agi (ou pour
+que la personne choisie pr\'ef\`ere le candidat du Progr\`es), le hasard 
+intervient dans le choix, par le sondeur, de cette personne; 
+\smallskip 
+--- lorsqu'il n'y a pas de groupe, mais une seule personne pr\'esente, 
+et qu'on demande la probabilit\'e pour que, si on administre le
+m\'edicament {\it \`a cette personne}, celui-ci agisse sur elle, le 
+hasard intervient dans le chaos mol\'eculaire du m\'etabolisme. 
+\medskip 
+Appelons la premi\`ere {\it probabilit\'e statistique} et la seconde
+{\it probabilit\'e biochimique}.  Il n'y a \'evidemment aucune raison pour 
+que ces probabilit\'es co{\"\i}ncident. 
+\medskip
+L'effet biochimique du m\'edicament sur l'organisme est diff\'erent
+chez chaque personne: le m\'edicament peut provoquer avec certitude
+une chute de tension chez Jean Dupond, mais rien du tout (si ce n'est
+des effets secondaires) chez Pierre Martin. Cette diff\'erence est due 
+\`a une cause, par exemple des m\'etabolismes diff\'erents: il se peut
+que l'hypertension de Jean Dupond soit due \`a une mauvaise 
+\'elimination du sel (insuffisance r\'enale), tandis que celle de 
+Pierre Martin serait due \`a une 
+autre cause (par exemple des \'etats de stress peuvent induire la 
+production d'hormones provoquant une vasoconstriction, c'est-\`a-dire 
+un resserrement des art\`eres); si le m\'edicament acc\'el\`ere 
+l'\'elimination du sel, il agit sur l'hypertension de Jean Dupond, mais pas 
+sur celle de Pierre Martin. Dans les deux cas la probabilit\'e biochimique 
+a priori est diff\'erente: celle de Jean Dupond est proche de $1$, celle
+de Pierre Martin proche de $0$. Le m\'ecanisme biochimique
+d\'etermine une probabilit\'e a priori pour que le m\'edicament 
+entra{\^\i}ne une chute de tension, tout comme le mouvement chaotique 
+de la pi\`ece de monnaie d\'eterminait une probabilit\'e a priori d'avoir 
+pile ou face. 
+\medskip 
+Le test clinique du m\'edicament par contre consiste \`a faire un
+sondage, en pr\'elevant sur l'ensemble de la population des personnes 
+hypertendues un groupe de cinquante, cinq cents, ou cinq mille 
+personnes, et \`a noter combien r\'eagissent positivement au traitement. 
+Si le m\'edicament agit sur $80\%$ des personnes du groupe, on pourra 
+dire qu'environ $80\%$ de la po\-pu\-la\-tion g\'en\'erale des personnes 
+hypertendues r\'epond au traitement. Mais cela ne signifie pas que 
+chaque personne a une probabilit\'e biochimique $0.8$ d'\^etre gu\'erie, 
+cela signifierait plut\^ot que $80\%$ des personnes hypertendues 
+\'elimine mal le sel, l'hypertension ayant alors chez les $20\%$ restants 
+une cause diff\'erente. La signification de cette probabilit\'e statistique 
+est tr\`es prosa{\"\i}que: si vous allez consulter pour hypertension, alors, 
+pour le m\'edecin qui prescrira le m\'edicament en ne connaissant que le 
+sympt\^ome (l'hypertension), mais non la cause (mauvaise \'elimination 
+du sel), il y aura $80\%$ de chances qu'il s'applique \`a vous; par contre 
+pour vous, si votre hypertension a une autre cause, il y aura $0\%$ de 
+chances qu'il agisse. 
+\medskip 
+Si on veut {\it mesurer} la probabilit\'e biochimique, on peut 
+proc\'eder comme suit (de tels tests de m\'edicament sont r\'eellement 
+pratiqu\'es en clinique): une s\'equence comportant des placebos et des 
+substances actives (sous une pr\'esentation identique) est prescrite; la 
+succession des m\'edicaments ($M$) et placebos ($P$) n'est connue que
+de l'exp\'erimentateur; on choisit d\'elib\'er\'ement des s\'equences 
+tr\`es irr\'eguli\`eres, de type al\'eatoire (randomis\'ees), par exemple 
+$PPMP MMPM PPPM PMPP MPMM PPMP$. 
+\medskip 
+Le test se pr\'esente sous la forme de comprim\'es identiques, mais 
+num\'erot\'es afin que l'ordre puisse \^etre respect\'e; la personne 
+test\'ee doit prendre un comprim\'e chaque jour \`a la m\^eme heure. On 
+se rapproche ainsi de l'id\'eal d'une exp\'erience reproductible, quoique 
+la variabilit\'e inh\'erente \`a tout organisme vivant ne peut \^etre 
+\'elimin\'ee. Un tel test effectu\'e sur une seule et m\^eme personne 
+mesure alors (m\^eme si dans le principe la pr\'ecision est tr\`es 
+m\'ediocre) la probabilit\'e a priori pour une personne donn\'ee. Si par 
+exemple ce test est effectu\'e sur Jean Dupond, qui \'elimine mal le
+sel, on s'attend en th\'eorie \`a ce qu'un m\'edicament favorisant 
+l'\'elimination du sel agisse efficacement, tandis qu'un m\'edicament 
+qui s'attaque aux causes hormonales reste sans action.  Pour Pierre
+Martin, dont l'hypertension a des causes hormonales, ce devrait \^etre 
+l'inverse. 
+\medskip 
+{\eightpoint  En r\'ealit\'e, ces exp\'eriences montrent, lorsqu'elles 
+sont effectu\'ees, que l'action des m\'edicaments hypotenseurs n'est 
+jamais aussi nettement sp\'ecifique. La raison \`a cela est ce qu'on 
+appelle la {\it multifactorialit\'e} (ici, de l'hypertension). Il faut 
+comprendre que l'organisme vivant est un tout ins\'eparable, dans lequel 
+la s\'eparation rigoureuse des diff\'erentes causes, qui est le principe 
+des sciences exp\'erimentales, est impossible. Par exemple, on peut 
+avoir diagnostiqu\'e une mauvaise \'elimination du sel chez Jean Dupond; 
+mais cela suffit-il \`a affirmer qu'elle est la cause (ou la cause unique) 
+de l'hypertension? Celle-ci pourrait \^etre due \`a la conjuguaison de 
+deux, trois facteurs, ou plus, l'un connu (la mauvaise \'elimination du 
+sel) et les autres inconnus; en outre la mauvaise \'elimination du sel, 
+ou bien l'hypertension qui en r\'esulte, peut cr\'eer un \'etat de stress 
+qui a son tour agira comme seconde cause. 
+\medskip 
+C'est ici qu'on rencontre les limites de la m\'ethode statistique: pour
+que des tests statistiques puissent apporter une v\'eritable information, 
+il faut pouvoir s\'eparer les diff\'erentes causes qui agissent (lorsque 
+cette s\'eparation est possible, les techniques statistiques qui 
+permettent de les s\'eparer constituent la {\it r\'egression} (voir 
+chapitre {\bf XII}); mais pour que celle-ci puisse avoir une signification 
+rigoureuse, il faut que les causes soient toutes connues, et que leurs 
+effets puissent \^etre s\'epar\'es par un choix convenable des protocoles 
+exp\'erimentaux). Une simple corr\'elation statistique, sans isoler une 
+cause, n'a pas de signification utilisable en pratique: par exemple, on 
+peut avoir \'etabli qu'il y a trois fois plus de cancer de l'oesophage
+dans la ville $X$ que dans la ville $Y$; mais cela ne dit rien sur les
+causes, et en particulier on ne peut pas en d\'eduire que ces causes 
+agiraient sur une personne quittant $Y$ pour venir s'installer \`a 
+$X$ (par exemple si la cause \'etait l'alcoolisme end\'emique des 
+habitants de $X$, elle ne pourrait agir sur un r\'esident qui ne s'adonne 
+pas \`a ce vice). \par } %%% %% end of \endpoint %%% %% 
+\medskip
+La notion de probabilit\'e biochimique est donc, comme on voit, peu 
+op\'eratoire.  Elle le deviendrait cependant s'il \'etait possible de
+d\'ecouvrir dans le m\'etabolisme des invariances conduisant \`a des
+\'epreuves \'equiprobables comme c'est le cas en g\'en\'etique. L\`a
+ce n'est pas le cas, et c'est pourquoi cette notion de probabilit\'e
+biochimique n'est pas utilis\'ee; elle est simplement pass\'ee sous
+silence ou ignor\'ee. Mais justement \`a cause de cette omission, 
+l'id\'ee qu'il y aurait une diff\'erence essentielle entre la
+probabilit\'e statistique et la probabilit\'e biochimique n'est jamais
+express\'ement discut\'ee, ce qui conduit \`a la confusion courante 
+sur la signification d'un r\'esultat statistique. C'est pour emp\^echer 
+cette confusion que nous avons introduit ici la notion techniquement 
+inop\'erante de probabilit\'e biochimique. Elle permet de se rendre compte 
+que la simple mesure statistique de probabilit\'es empiriques ne suffit 
+pas pour comprendre un ph\'enom\`ene, {\bf il faut aussi savoir o\`u 
+intervient le hasard}. Par exemple, une enqu\^ete peut \'etablir que un 
+Fran\c{c}ais sur deux mille est frapp\'e par la mucoviscidose; mais la 
+{\it compr\'ehension} du ph\'enom\`ene r\'esulte de la d\'ecouverte du 
+niveau o\`u est intervenu le hasard (la combinaison des chromosomes). 
+Le simple r\'esultat de l'enqu\^ete n'apporte aucune compr\'ehension. 
+Il en est de m\^eme pour comprendre l'action d'un m\'edicament: on la 
+comprendrait si on d\'ecouvrait o\`u intervient le hasard dont le test 
+n'a montr\'e que l'effet statistique.
+\medskip
+
+\midinsert 
+\vbox to \blocksize{ 
+\null\vskip3mm 
+\centerline{ 
+\vbox{\offinterlineskip 
+\def\trhor{\noalign{\hrule }} 
+\halign{\tv#&#\hfq &\tv#&#\hfq &\tv#&\hfq#&#\tv\cr 
+\trhor
+&\omit\cc {\eightpoint 
+\vbox{\hbox to 36mm{\hfil streptokinase \hfil}\hbox to 
+36mm{\hfil $+$ \hfil}\hbox to 36mm{\hfil aspirine et h\'eparine \hfil}}} 
+&&\omit\cc {\eightpoint \vbox{\hbox to 36mm{\hfil tPA \hfil}\hbox to 
+36mm{\hfil $+$ \hfil}\hbox to 36mm{\hfil aspirine et h\'eparine \hfil}}} 
+&&\omit\cc {\eightpoint \vbox{\hbox to 36mm{\hfil APSAC \hfil}\hbox 
+to 36mm{\hfil $+$ \hfil}\hbox to 36mm{\hfil aspirine et 
+h\'eparine\hfil}}}& \cr
+\trhor 
+&\omit\cc {\eightpoint \vbox{\hbox to 36mm{\hfil streptokinase 
+\hfil}\hbox to 36mm{\hfil $+$ \hfil}\hbox to 36mm{\hfil aspirine seule 
+\hfil}}} &&\omit\cc {\eightpoint \vbox{ \hbox to 36mm{\hfil tPA 
+\hfil}\hbox to 36mm{\hfil $+$ \hfil}\hbox to 36mm {\hfil aspirine 
+seule \hfil}}} &&\omit\cc {\eightpoint \vbox{\hbox to 36mm{\hfil 
+APSAC \hfil}\hbox to 36mm{\hfil $+$ \hfil}\hbox to 36mm{\hfil 
+aspirine seule \hfil}}}& \cr 
+\trhor }}  }  
+\vskip12pt
+\vbox{\baselineskip=10pt 
+\centerline{\bf une enqu\^ete m\'edicale \`a grande \'echelle.}
+\vskip6pt 
+{\eightpoint Le tableau ci-dessus est extrait d'un article publi\'e dans 
+{\it The Lancet} (\'edition fran\c{c}aise) de Septembre {\oldstyle 1992}, 
+pages 7 -- 25 . Il s'agit d'une \'etude de la survie apr\`es infarctus du 
+myocarde, portant sur $41\, 299$ patients, r\'epartis dans 914 
+h\^opitaux situ\'es dans 20 pays. L'ensemble des $41\, 299$ patients a 
+\'et\'e r\'euni sur une base volontaire, mais ensuite leur r\'epartition 
+entre les six groupes indiqu\'es dans le tableau a \'et\'e effectu\'ee par 
+randomisation. Cela signifie que les coordonn\'ees des $41\, 299$ 
+malades ont \'et\'e enregistr\'ees s\'equentiellement dans un fichier, 
+puis que les six groupes ont \'et\'e choisis par une fonction random 
+op\'erant sur le fichier. Le but de l'\'etude \'etait d'\'etudier l'effet de 
+l'h\'eparine (un m\'edicament fibrinolytique) sur le nombre de 
+r\'ecidives d'infarctus;  ce m\'edicament n'\'etant pas destin\'e \`a 
+\^etre administr\'e seul,  mais toujours accompagn\'e d'aspirine et d'une 
+troisi\`eme substance qui peut \^etre selon les cas, la streptokinase, 
+l'APSAC, ou le tPA, on voit que tout repose sur la comparaison d'un 
+groupe trait\'e \`a l'h\'eparine (en haut) et d'un groupe t\'emoin (en bas); 
+afin que la comparaison entre un groupe trait\'e et le groupe t\'emoin 
+correspondant soit significative, il \'etait essentiel que ces deux 
+groupes ne diff\`erent que par l'administration d'h\'eparine: c'est 
+pourquoi les deux autres substances actives sont administr\'ees \`a 
+l'identique dans les deux groupes. La randomisation a pour but de 
+garantir l'ind\'ependance stochastique entre le choix de l'\'echantillon 
+et les caract\'eristiques des soins particuli\`eres \`a chaque h\^opital; 
+en effet, si par exemple dans le groupe trait\'e avec APSAC les 
+h\^opitaux europ\'eens \'etaient favoris\'es, tandis que dans le groupe 
+trait\'e avec tPA les h\^opitaux am\'ericains \'etaient favoris\'es, on ne 
+pourrait plus \'ecarter l'influence de facteurs inconnus caract\'erisant 
+les soins hospitaliers de part et d'autre de l'Atlantique et cela 
+fausserait l'\'etude. 
+\smallskip 
+Toutefois une telle \'etude a forc\'ement les limites suivantes: 
+\vskip2pt 
+a) les 914 h\^opitaux n'ont pas \'et\'e choisis par randomisation; s'ils 
+l'avaient \'et\'e, d'ailleurs, l'int\'er\^et m\'edical de l'enqu\^ete n'en
+aurait pas \'et\'e augment\'e; 
+\vskip2pt 
+b) si on consid\`ere les proportions de r\'ecidive d'infarctus (ou 
+d'h\'emorragie c\'er\'ebrale cons\'ecutive au traitement) dans les 
+groupes trait\'es comme la mesure par sondage d'une probabilit\'e, il 
+s'agit de la probabilit\'e pour qu'une personne venant de subir une crise, 
+prise au hasard dans la population des 20 pays de l'enqu\^ete, et 
+soign\'ee dans l'un des 914 h\^opitaux, soit victime d'une r\'ecidive (ou 
+d'une h\'emorragie c\'er\'ebrale cons\'ecutive au traitement). La 
+probabilit\'e du m\^eme \'ev\'enement dans un h\^opital mis\'erable 
+d'une r\'egion desh\'erit\'ee du tiers-monde peut \^etre tr\`es 
+diff\'erente. Autrement dit, il s'agit de la probabilit\'e {\it statistique} 
+pour une personne prise au hasard dans la population de l'enqu\^ete, et 
+non de la probabilit\'e {\it biochimique} a priori d'action du
+m\'edicament (r\'esultant des m\'ecanismes mol\'eculaires, au 
+demeurant inconnus) pour une personne particuli\`ere et bien 
+d\'etermin\'ee. Une telle \'etude ne peut donc fournir aucune 
+information sur les m\'ecanismes d'action de l'h\'eparine. Son ambition 
+est surtout de d\'ecider si statistiquement le nouveau m\'edicament 
+vaut la peine d'\^etre commercialis\'e; c'est pourquoi l'enqu\^ete est 
+restreinte aux hopitaux des r\'egions solvables. \par }    } \vfill  }
+\endinsert 
+ 
+Bien entendu, pour que le sondage soit correct, il faut que
+l'\'echantillon soit choisi selon un protocole {\it stochastiquement 
+ind\'ependant} de la variable qu'on cherche \`a mesurer (l'effet 
+statistique du m\'edicament dans la population ou le nombre
+d'\'electeurs de tel ou tel parti). Un tel protocole est appel\'e une {\it 
+randomisation}. 
+\medskip 
+Il n'existe en g\'en\'eral pas de crit\`ere th\'eorique de randomisation, 
+c'est-\`a-dire qu'il n'existe pas, pour choisir $n$ personnes sur une 
+population totale de $N$, de crit\`ere dont on puisse d\'emontrer 
+th\'eoriquement a priori qu'il est stochastiquement ind\'ependant du 
+param\`etre \`a mesurer; ces crit\`eres sont soit bas\'es sur des 
+{\og \'evidences\fg}, soit \'etablis empiriquement par essais et erreurs. 
+Ainsi on peut adopter le protocole suivant: la population totale de $N$ 
+personnes est enregistr\'ee dans un fichier s\'equentiel, et une fonction 
+random choisit $n$ fois un nombre compris entre 1 et $N$; on prend alors 
+l'\'echantillon form\'e par les $n$ personnes dont les num\'eros d'ordre 
+dans le fichier sont les nombres fournis par la fonction random; dans ce 
+cas, on tient pour {\og \'evident\fg} qu'un tel protocole est stochastiquement 
+ind\'ependant de la variable \'etudi\'ee (la fonction random {\og ignore\fg}
+la couleur des yeux des personnes). C'est ce type de protocole qui est 
+utilis\'e pour des enqu\^etes m\'edicales \`a grande \'echelle (voir 
+encadr\'e ci-contre). 
+\medskip 
+Toutefois pour un sondage sur une population de 
+$30\, 000\, 000$ de personnes, la gestion d'un fichier qui les contient 
+toutes avec leurs noms et adresses pose des probl\`emes techniques 
+consid\'erables (co\^ut \'enorme pour la cr\'eation et l'entretien du 
+fichier, quantit\'e de m\'emoire et temps d'acc\`es), et c'est pourquoi
+des m\'ethodes plus souples sont employ\'ees par les instituts de 
+sondage, mais bien s\^ur ces m\'ethodes doivent \^etre valid\'ees 
+empiriquement, c'est-\`a-dire que leur ind\'ependance stochastique
+(par rapport aux intentions de vote par exemple) doit \^etre v\'erifi\'ee 
+et maintenue par des corrections constantes (consulter des ouvrages 
+sp\'ecialis\'es pour en savoir plus). 
+\medskip
+Ce qui vient d'\^etre dit laisse de c\^ot\'e le r\^ole jou\'e par le groupe 
+t\'emoin. Celui-ci sert, comme son nom l'indique, \`a \'ecarter les
+effets de clinique; en effet les patients du groupe trait\'e ne subissent
+pas seulement les effets du m\'edicament test\'e, mais aussi ceux des 
+soins g\'en\'eraux cons\'ecutifs \`a l'hospitalisation, ne serait-ce que
+le r\'egime alimentaire. Si on veut utiliser le sondage pour conna{\^\i}tre 
+les effets sur une population {\it non} hospitalis\'ee, il faut pouvoir 
+soustraire les effets d\^us \`a l'hospitalisation: la constatation que
+dans le groupe t\'emoin il y a dix am\'eliorations (alors que 
+l'\'ecart-type n'est que $3,46$) indique une assez forte probabilit\'e 
+pour qu'un tel effet de clinique se soit produit, et il faudrait donc 
+corriger en baisse la proportion de $3/5$. Pour effectuer de telles 
+soustractions, il existe des m\'ethodes statistiques 
+math\'ematiquement fond\'ees, d\'ej\`a \'evoqu\'ees plus haut, 
+appel\'ees {\it r\'egression} (voir chapitre {\bf XII}). 
+ 
+\vskip8mm plus4mm minus3mm 
+ 
+{\bf X.\aub 2. La th\'eorie des \'echantillons de Bernoulli.}
+\medskip 
+Dans l'exemple du test de m\'edicament, il a fallu distinguer entre les 
+pro\-ba\-bi\-lit\'es biochimiques d'une action du m\'edicament sur le 
+m\'etabolisme de chaque personne particuli\`ere, et les probabilit\'es 
+statistiques li\'ees au choix d'un \'echantillon de population. Les deux
+sortes de probabilit\'es proviennent de ph\'enom\`enes al\'eatoires, mais
+les premi\`eres proviennent des \'echanges al\'eatoires de mol\'ecules
+dans le m\'etabolisme, tandis que les secondes pro\-vien\-nent du choix 
+al\'eatoire d'un groupe de population. 
+\medskip 
+Pour que les choses soient plus claires on peut prendre un exemple o\`u
+le hasard n'intervient que dans le choix de l'\'echantillon statistique et 
+n'interf\`ere pas du tout avec les m\'ecanismes biologiques. Supposons
+qu'on veuille d\'eterminer la proportion de Fran\c{c}ais qui ont les yeux 
+bleus. Ce caract\`ere ne varie pratiquement pas au cours du temps (il
+faut plusieurs g\'en\'erations pour que se produise une variation 
+notable), de sorte que les m\'ecanismes biologiques sous-jacents 
+peuvent \^etre compl\`etement n\'eglig\'es. Faire un recensement de 
+toute la population pour conna{\^\i}tre le nombre de personnes dont les 
+yeux sont bleus permettrait certes de conna{\^\i}tre ce nombre \`a 
+l'unit\'e pr\`es, mais aurait un co\^ut disproportionn\'e par rapport au 
+b\'en\'efice attendu de l'information: il est en effet bien rare qu'une 
+telle pr\'ecision soit utile. La m\'ethode qu'on utilise alors pour 
+d\'eterminer cette proportion est celle du sondage: on choisit {\it au 
+hasard} un \'echantillon de mille ou deux mille personnes dans 
+l'ensemble de la population, et on compte la proportion de personnes aux 
+yeux bleus dans cet \'echantillon: on admet commun\'ement que plus 
+l'\'echantillon est grand, plus cette proportion sera proche de la 
+proportion exacte, ce qui est \`a nouveau l'expression de la {\it loi des 
+grands nombres}. Il s'agit l\`a d'une \'evidence commune tant qu'on se 
+contente d'appr\'eciations qualitatives. Mais dans cette section nous allons 
+soumettre cette \'evidence \`a l'analyse {\it quantitative}. Au lieu de se
+contenter de dire ``{\sl plus l'\'echantillon est grand, plus cette proportion 
+sera proche de la proportion exacte}'', on peut \'etablir une relation 
+math\'ematique entre la taille de l'\'echantillon et la pr\'ecision du 
+sondage. Cette th\'eorie math\'ematique du sondage a \'et\'e cr\'e\'ee par 
+Jakob (Jacques) Bernoulli et publi\'ee dans un livre posthume en {\oldstyle
+1713}, huit ans apr\`es sa mort: l'{\it Ars conjectandi}, c'est-\`a-dire
+``l'art de conjecturer''). Le terme m\^eme de ``loi des grands 
+nombres'' n'appara{\^\i}tra que bien plus tard. Voici comment Jacques 
+Bernoulli lui-m\^eme pose le probl\`eme: 
+\smallskip 
+{\cit Je suppose que dans une urne, \`a ton insu [le tutoiement
+du lecteur est un style d'exposition latin] soient plac\'ees trois mille 
+pierres blanches et deux mille pierres noires; je suppose que pour 
+conna{\^\i}tre leurs nombres par exp\'erience, tu tires une pierre
+apr\`es l'autre (en repla\c{c}ant cependant \`a chaque fois la pierre
+que tu as tir\'ee avant de choisir la suivante, pour que le nombre des 
+pierres ne diminue pas dans l'urne); tu observes combien de fois sort 
+une pierre blanche et combien de fois une noire. On demande si tu peux 
+le faire tant de fois qu'il devienne dix fois, cent fois, mille fois, etc. 
+plus probable (c'est-\`a-dire qu'il devienne moralement certain) que
+le nombre de fois o\`u tu choisis une pierre blanche et le nombre de 
+fois o\`u tu choisis une pierre noire soient dans ce m\^eme rapport 
+sesquialt\`ere [$1,5$ fois] o\`u se complaisent \`a \^etre entre eux les 
+nombres de pierres ou de cas, plut\^ot que dans tout autre rapport 
+diff\'erent de celui-ci. (\dots ) 
+\smallskip 
+Mais pour que cela ne soit pas compris autrement qu'il ne convient, il 
+faut bien noter ce qui suit; je voudrais que le rapport entre les
+nombres que nous entreprenons de d\'eterminer exp\'erimentalement, 
+ne f\^ut pas pris de fa\c{c}on nette et sans partage (car ainsi c'est tout 
+le contraire qui arriverait et il deviendrait d'autant moins probable de 
+d\'ecouvrir le vrai rapport qu'on ferait de plus nombreuses 
+observations), mais je voudrais que le rapport f\^ut admis avec une 
+certaine latitude, c'est-\`a-dire compris entre une paire de limites, 
+pouvant \^etre prises aussi rapproch\'ees qu'on voudra. Assur\'ement, 
+si dans l'exemple des pierres propos\'e plus haut nous prenons les deux 
+rapports ${301\over 200}$ et ${299\over 200}$, ou ${3001\over 
+2000}$ et ${2999\over 2000}$, etc. dont le sesquialt\`ere est tr\`es 
+pr\`es et du plus grand et du plus petit, on montrera que l'on peut 
+arriver \`a ce que le rapport trouv\'e gr\^ace \`a des exp\'eriences 
+recommenc\'ees de nombreuses fois tombe entre ces limites du 
+rapport sesquialt\`ere plus probablement, de toute probabilit\'e 
+donn\'ee, qu'en dehors. 
+\smallskip 
+\line{\hfill (Trad. Norbert Meusnier, document IREM de 
+Besan\c{c}on, 1989)} \par }
+\medskip 
+La {\it n\'ecessit\'e logique} de la loi des grands nombres signifie que 
+celle-ci peut \^etre {\it d\'emontr\'ee}, et non simplement connue
+comme une loi de la nature dont Dieu seul conna{\^\i}t la justification. 
+Il ne faut cependant pas oublier que d\'emontrer consiste \`a d\'eduire 
+une v\'erit\'e \`a partir d'une autre, et qu'on ne d\'emontre rien \`a 
+partir de rien. Jacques Bernoulli en est parfaitement conscient: 
+\smallskip 
+{\cit On en est ainsi venu \`a ce point que pour former selon
+les r\`egles des conjectures sur n'importe quelle chose il est
+seulement requis d'une part que les nombres de cas soient 
+soigneusement d\'etermin\'es, et d'autre part que soit d\'efini
+combien les uns peuvent arriver plus facilement que les autres. (\dots ) 
+Mais cela peut se voir \`a peine dans quelques tr\`es rares cas et ne se 
+produit presque pas en dehors des jeux de hasard (\dots ) Ainsi les cas 
+``d'\'egale facilit\'e'' sont-ils connus pour les d\'es, pour une urne 
+contenant des bulletins noirs et blancs, mais que dire du nombre des 
+maladies qui peuvent engendrer la mort, des changements qui peuvent 
+affecter le climat, (\dots ) Mais \`a la v\'erit\'e ici s'offre \`a nous un 
+autre chemin pour obtenir ce que nous cherchons. Ce qu'il n'est pas 
+donn\'e d'obtenir a priori l'est du moins a posteriori, c'est-\`a-dire 
+qu'il sera possible de l'extraire en observant l'issue de nombreux 
+exemples semblables; car on doit pr\'esumer que, par la suite, chaque 
+fait peut arriver et ne pas arriver dans le m\^eme nombre de cas qu'il 
+avait \'et\'e constat\'e auparavant, dans un \'etat de choses 
+semblables, qu'il arrivait ou n'arrivait pas. \par } 
+\medskip 
+Autrement dit, on d\'emontre la loi des grands nombres par la logique, 
+{\it \`a partir de l'hypoth\`ese d'une invariance}. Lorsque les s\'eries 
+d'\'ev\'enements ne se reproduisent pas \`a l'identique, il n'est plus 
+question de d\'emontrer quoi que ce soit;  en revanche,  on peut mesurer
+par la statistique.  
+\medskip
+C'est \`a l'expos\'e de cette ``th\'eorie des \'echantillons'' que cette 
+section est consacr\'ee; tr\`es pr\'ecis\'ement, il s'agit d'\'etablir la
+relation math\'ematique entre la taille de l'\'echantillon et la 
+pr\'ecision ou la certitude du r\'esultat. 
+
+\bigskip 
+
+Soit donc $N$ le nombre d'individus dans la population totale, et $n$ la 
+taille de l'\'echantillon. On appellera $p$ le nombre d'individus ayant les 
+yeux bleus dans la population totale. Dans cet exemple le hasard 
+n'intervient pas au niveau des m\'ecanismes mol\'eculaires, mais dans
+le choix (fait par l'exp\'erimentateur) de l'\'echantillon; on consid\`ere 
+donc que par principe aucun \'echantillon n'a \'et\'e privil\'egi\'e. 
+L'espace $\Omega$ est alors l'ensemble de tous les \'echantillons 
+possibles de taille $n$: son cardinal est $\#\Omega = {N \choose n}$ 
+(voir chapitre {\bf II},  section {\bf 3}) 
+\medskip 
+Pour un entier $k$ compris entre $0$ et $n$, le nombre d'\'echantillons 
+contenant exactement $k$ personnes aux yeux bleus est ${p \choose k} 
+\cdot {N-p \choose n-k}$: en effet on peut consid\'erer qu'un tel
+\'echantillon s'obtient en prenant d'abord un \'echantillon de $k$
+personnes parmi les $p$ qui ont les yeux bleus (ce qui fait ${p \choose 
+k}$ possibilit\'es d'apr\`es {\bf II.3.}), puis en prenant $n-k$ personnes 
+parmi les $N-p$ qui n'ont pas les yeux bleus (ce qui fait ${N-p \choose 
+n-k}$ possibilit\'es pour {\it chacun} des choix pr\'ec\'edents). Par 
+cons\'equent la probabilit\'e d'obtenir un \'echantillon contenant 
+exactement $k$ personnes aux yeux bleus est
+$$p_k\; = \; {\vrule height0pt depth7.5pt width0pt {p \choose k} \cdot {N-p 
+\choose n-k} \over \vrule height15pt depth0pt width0pt {N \choose n} }\; 
+= \; {\vrule height0pt depth16pt width0pt {\displaystyle {p! \over k! \, 
+(p-k)!} \cdot {(N-p)! \over (n-k)! \, (N-p-n+k)!}} \over \vrule height21.6pt 
+depth0pt width0pt{\displaystyle {N! \over n! \, (N-n)!}} } \eqno (X.1.)$$
+En ne faisant rien d'autre que regrouper les factorielles dans un autre
+ordre, on voit que cela est aussi \'egal \`a
+$$p_k\; = \; {\vrule height0pt depth16pt width0pt {\displaystyle {n! \over k! 
+\, (n-k)!} \cdot {(N-n)! \over (p-k)! \, (N-p-n+k)!}} \over
+\vrule height21.6pt depth0pt 
+width0pt{\displaystyle {N! \over p! \, (N-p)!}} }\; 
+= \; {\vrule height0pt depth7.5pt width0pt {n \choose k} \cdot {N-n \choose 
+p-k} \over \vrule height15pt depth0pt width0pt {N \choose p} } $$
+C'est la loi {\it hyperg\'eom\'etrique} (cf. {\bf IX.5}). 
+Mais si $n$ est beaucoup plus petit que $N$, on peut faire pour ces 
+factorielles les approximations suivantes: 
+$$\eqalignno{ 
+(N-n)! \quad\quad &=\quad {N! \over N(N-1)(N-2)\cdots (N-n+1)}
+\quad\simeq\quad {N! \over N^n} \cr 
+\noalign{\medskip} 
+(p-k)! \quad\quad &=\quad {p! \over p(p-1)(p-2) \cdots (p-k+1)} 
+\quad\simeq\quad {p! \over p^k} \cr 
+\noalign{\medskip} 
+(N-p-n+k)! \quad &=\quad {(N-p)! \over (N-p)(N-p-1) \cdots (N-p-n+k+1)}\cr 
+\noalign{\smallskip} 
+&\simeq\quad {(N-p)! \over (N-p)^{n-k}} \cr }$$
+(ces approximations supposent \'evidemment que $n \ll N$, $k \ll p$, et 
+$n-k \ll N-p$). Par cons\'equent, si on pose $\alpha = p/N$ et $\beta = 
+(N-p)/N = 1 - \alpha$, on aura: 
+$$p_k\; = \; {n \choose k} \cdot { \vrule height0pt depth7.5pt width0pt 
+{N-n \choose p-k} \over 
+\vrule height0pt height15pt width0pt {N \choose p} }\;  
+\simeq \; {n \choose k} \, \alpha^{k} \, \beta^{n-k} \eqno (X.2.)$$ 
+Cette loi de probabilit\'e {\it asymptotique} (valable pour $N$ grand)
+est appel\'ee {\it loi de Bernoulli}. Si on choisit au hasard une personne
+parmi les $N$ de la population totale, $\alpha$ est la probabilit\'e 
+(exacte) pour que cette personne ait les yeux bleus (et $\beta$ la 
+probabilit\'e pour qu'elle ne les ait pas bleus): cela est \'evident a 
+priori, puisque dans la population totale il y a exactement $p$ personnes 
+aux yeux bleus sur $N$ en tout. La loi de Bernoulli dit alors que si on 
+choisit au hasard un \'echantillon de plusieurs ($n$) personnes, la 
+probabilit\'e d'en avoir $k$ aux yeux bleus dans l'\'echantillon sera 
+environ ${n \choose k} \, \alpha^{k} \, \beta^{n-k}$. 
+\medskip 
+L'id\'ee (conforme au sens commun) que dans un \'echantillon de $1000$
+ou $2000$ personnes on doit retrouver \`a peu pr\`es la m\^eme 
+proportion de personnes aux yeux bleus que dans la population totale, 
+doit alors se traduire par le fait que la probabilit\'e que $k \simeq 
+n\alpha$ doit \^etre proche de 1, tandis que la probabilit\'e pour que $k$ 
+soit nettement diff\'erent de $n\alpha$ doit \^etre faible. Il n'est en 
+effet pas exclu que l'on puisse tomber sur un \'echantillon sans aucune 
+personne aux yeux bleus, de m\^eme qu'en jouant \`a pile ou face mille 
+fois il n'est pas absolument exclu de n'obtenir aucune fois face; cela
+est simplement tr\`es peu probable.  Nous allons donc \'etudier de plus 
+pr\`es cette loi de Bernoulli. 
+ 
+\bigskip 
+ 
+Commen\c{c}ons par chercher le maximum de $p_k$. Il est clair que
+lorsque $p_k$ est maximum, on doit avoir \`a la fois $p_{k+1} \leq p_k$ 
+et $p_{k-1} \leq p_k$. On trouvera donc les maxima de $p_k$ en 
+cherchant les valeurs de $k$ pour lesquelles ces deux in\'egalit\'es sont 
+v\'erifi\'ees \`a la fois. Or 
+$$\eqalign{ 
+{n \choose k+1}\; &= \; {n \choose k} \cdot {n-k \over k+1} \cr 
+\noalign{\medskip } 
+{n \choose k-1}\; &= \; {n \choose k} \cdot {k \over n-k+1} \cr }$$ 
+d'o\`u on d\'eduit 
+$$\eqalign{ 
+p_{k+1}\; &= \; p_{k} \cdot {n-k \over k+1} \cdot {\alpha \over \beta} \cr 
+\noalign{\medskip } 
+p_{k-1}\; &= \; p_{k}\cdot {k \over n-k+1}\cdot {\beta \over \alpha}\cr }$$ 
+Les deux in\'egalit\'es caract\'erisant le maximum seront donc 
+$$\eqalign{ 
+{n-k \over k+1} \cdot {\alpha \over \beta}\;  &\leq \; 1 \qquad 
+\Longleftrightarrow \qquad k \; \geq \; n\alpha - \beta \cr 
+{k \over n-k+1} \cdot {\beta \over \alpha}\; &\leq \; 1 \qquad 
+\Longleftrightarrow \qquad k \leq n\alpha + \alpha\cr }$$ 
+On voit que $k$ doit \^etre compris entre $n\alpha - \beta$ et $n\alpha 
++ \alpha$.  Mais la diff\'erence entre ces deux nombres est $n\alpha + 
+\alpha - n\alpha + \beta = \alpha + \beta = 1$, or entre deux nombres 
+r\'eels qui diff\`erent de $1$ il y a exactement un entier (\`a la rigueur 
+deux dans le cas exceptionnel o\`u $n\alpha + \alpha$ est lui-m\^eme 
+entier); soit $k_0$ cet entier (il est donc tr\`es proche de $n\alpha$). 
+Ainsi $p_k$ est maximum pour $k = k_0 \simeq n\alpha$.  Cela confirme le
+sens commun,  qui voulait que dans un \'echantillon pris au hasard on
+retrouve \`a peu pr\`es la m\^eme proportion de personnes aux yeux bleus
+que dans l'ensemble de la population.  Ici nous voyons par le calcul que
+la probabilit\'e de trouver la m\^eme proportion est la probabilit\'e 
+maximum.  Reste \`a voir comment elle d\'ecro{\^\i}t autour du maximum. 
+\bigskip 
+Pour cela on va faire comme d\'ej\`a \`a plusieurs reprises dans ce 
+cours: posons $k = k_0 + j$; $j$ sera ainsi l'\'ecart (positif ou n\'egatif) 
+de $k$ par rapport \`a $k_0$. On peut \'ecrire pour $j > 0$: 
+$$\eqalign{ 
+{n \choose k_0 + j}\; &=\; {n\choose k_0}\cdot {(n-k_0)^j\over \sdown{12}
+k_0^j} \cdot {\bigl( 1-{1\over n-k_0}\bigr) \bigl( 1-{2\over n-k_0}\bigr) 
+\cdots \bigl( 1-{j-1\vrule depth2.5pt width0pt \over n-k_0}\bigr) 
+\vrule depth6.5pt width0pt \over \sdown{12} \bigl( 
+1+{1\over k_0}\bigr) \bigl( 1+{2\over k_0}\bigr) \cdots \bigl( 1+{j 
+\vrule depth2.5pt width0pt\over k_0}\bigr)} \cr 
+\noalign{\vskip8pt plus8pt minus5pt}\;  
+&\simeq \; {n \choose k_0} \cdot {\beta^j \over \alpha^j} \cdot { \exp\{ - 
+j^2 / 2\, (n-k_0) \} \over \exp\{ j^2 / 2\ k_0 \} } \cr }$$ 
+et de la m\^eme fa\c{c}on 
+$$\eqalign{ 
+{n \choose k_0 - j}\; &= \; {n \choose k_0} \cdot {k_0^j \over \sdown{12}
+(n-k_0)^j}\cdot {\bigl( 1-{1\over k_0}\bigr) \bigl( 1-{2\over k_0}\bigr)
+\cdots \bigl( 1-{j-1\vrule depth2.5pt width0pt\over k_0}\bigr) \vrule 
+depth6.5pt width0pt \over \vrule height12pt width0pt \bigl( 1+{1\over 
+n-k_0}\bigr) \bigl( 1+{2\over n-k_0}\bigr) \cdots \bigl( 1+{j\vrule 
+depth2.5pt width0pt\over n-k_0}\bigr)} \cr 
+\noalign{\medskip} 
+&\simeq \; {n \choose k_0} \cdot {\up{\alpha^j} \over \beta^j} \cdot { \exp\{ - 
+j^2 / 2\, (n-k_0) \} \over \exp\{ j^2 / 2\ k_0 \} } \cr }$$ 
+Il est facile de voir que
+$${ \exp\{ - j^2/ 2\, k_0 \} \over \exp\{ j^2 / 2\, (n-k_0) \} }\; = \; 
+\exp\Bigl\{ -{j^2 \over 2}\, \Bigl[ {1\over k_0} + {1 \over n-k_0} \Bigr] 
+\Bigr\}\; \simeq \; \exp \Bigl\{ -{j^2 \over 2n\alpha\beta }\Bigr\}$$ 
+ce qui montre que,  aussi bien pour $j>0$ que pour $j<0$ on aura 
+$$p_{k_0 + j}\; \simeq \; p_{k_0} \cdot \exp \Bigl\{ -{j^2 \over 
+2n\alpha\beta } \Bigr\} \eqno (X.3.)$$ 
+ 
+On constate une fois de plus que la probabilit\'e diminue autour du 
+maximum selon une loi gaussienne. Le calcul d\'etaill\'e que nous 
+venons d'effectuer montre surtout que l'\'ecart-type de la
+gaussienne est \sqnab . En regardant une table de la loi normale, 
+on voit que la probabilit\'e pour que $j$ soit sup\'erieur \`a trois
+fois l'\'ecart-type est \'egale \`a $0.0026$. Donc la probabilit\'e
+pour que $j$ soit sup\'erieur \`a $3\,\sqnab$ est $0.0026$. 
+Par exemple si $\alpha = 1/3$, $\beta = 2/3$, et $n = 1800$, 
+on a $k_0 = 600$ et la probabilit\'e pour que $|j| > 60$ est $0.0026$. 
+Autrement dit,  la probabilit\'e pour que la proportion de personnes aux 
+yeux bleus {\it dans l'\'echantillon} soit sup\'erieure \`a ${660 \over 
+1800} = 36.7\%$ ou inf\'erieure \`a ${540 \over 1800} = 30.0\%$,  est
+$0.0026$.  Cela signifie qu'on a seulement une chance sur 385 ($0.0026 
+\simeq {1 \over 385}$) de se tromper en affirmant qu'\`a trois points de 
+pourcentage pr\`es,  la proportion de personnes aux yeux bleus dans 
+l'\'echantillon est la m\^eme que dans la population totale. On peut alors 
+inverser le raisonnement:  si $\alpha$ est inconnu et qu'on trouve $31\%$ 
+dans un \'echantillon pris au hasard,  on pourra dire qu'il n'y avait que une 
+chance sur 385 pour que la proportion dans l'\'echantillon s'\'ecarte de 
+la proportion r\'eelle $\alpha$ de plus de trois points de pourcentage, 
+et que donc $\alpha$ est,  avec probabilit\'e $1-{1\over 385}$,  compris 
+entre $28\%$ et $34\%$. 
+\medskip 
+L'{\it inversion du raisonnement} est une \'evidence empirique en ce
+sens que la vie de tous les jours se fonde sur elle: cette \'evidence 
+empirique est \`a l'origine de ce qu'on nomme l'{\it habitude}. 
+Pourtant ce n'est pas une \'evidence logique, cela ne se voit pas 
+{\it imm\'ediatement} \`a partir des principes. En outre l'\'evidence 
+empirique n'est pas quantitative. C'est pourquoi nous allons soumettre 
+cette {\it inversion du raisonnement} \`a l'analyse. 
+\medskip 
+Le probl\`eme du sondage se posait ainsi: un ensemble de $N$
+\'el\'ements \'etait donn\'e, et on y choisissait au hasard une partie
+de $n$ \'el\'ements; l'espace des \'epreuves \'etait donc l'ensemble de 
+ces parties, dont le cardinal \'etait ${N \choose n}$. Dans le probl\`eme 
+inverse, on ne peut plus dire que l'ensemble de $N$ \'el\'ements est 
+donn\'e puisqu'on veut consid\'erer toutes les possibilit\'es pour les 
+nombres $p$ et $q$; ces possibilit\'es sont au nombre de $N+1$: 
+$$\cases{p=0 \cr q=N \cr}\qquad \cases{p=1 \cr q=N-1 \cr} \qquad 
+\cases{p=2 \cr q=N-2 \cr}\qquad\ldots\qquad\cases{p=N \cr q=0\cr}$$ 
+Il s'agit donc de trouver la loi de probabilit\'e de $p$, sachant que le 
+r\'esultat du sondage est $k$ (au lieu de trouver la loi de $k$ pour un 
+$p$ donn\'e). Comme toujours depuis le d\'ebut, il faut chercher ce qui
+est \'equiprobable. Il est clair que si $k=k_0$ est donn\'e, les 
+diff\'erentes possibilit\'es pour $p$ ne sont pas \'equiprobables (il
+sera plus probable de trouver un $p$ tel que $p/N \simeq k_0/n$ qu'un
+$p$ tel que $p/N$ soit tr\`es diff\'erent de $k_0/n$, c'est justement
+ce que nous dit l'\'evidence empirique). Il faut donc imaginer 
+l'exp\'erience de pens\'ee suivante: on pr\'epare $N+1$ ensembles, 
+correspondant \`a toutes les valeurs possibles de $p$ et $q$. Puis on 
+effectue un tr\`es grand nombre de sondages dans ces $N+1$ ensembles 
+sans en favoriser aucun; ces sondages donneront toutes les valeurs 
+possibles pour $k$, mais on ne retiendra que le sous-\'echantillon de 
+ceux qui donnent la valeur $k_0$. Puis on comptera {\it dans ce 
+sous-\'echantillon} la r\'epartition des $p$. En termes d'espace des 
+\'epreuves, cela signifie qu'on prend pour $\Omega$ la r\'eunion de 
+$N+1$ r\'epliques de l'ensemble des parties \`a $n$ \'el\'ements de la 
+population \`a $N$ \'el\'ements,  dont le cardinal sera ${\scriptstyle 
+(N+1) \times } {N \choose n}$. Ces r\'epliques sont les $\Omega_{p}$, 
+tous de m\^eme cardinal ${N \choose n}$: chacun est l'ensemble des 
+parties \`a $n$ \'el\'ements de la population \`a $N$ \'el\'ements, et
+ne se distingue des autres r\'epliques que par la r\'epartition en $p$
+et $q$. Les \'epreuves de l'espace $\Omega$ sont alors \'equiprobables. 
+Quant \`a l'espace des \'epreuves de notre probl\`eme inverse, ce sera
+le sous-espace $\Omega_{k_0}$ des \'epreuves $\omega\in\Omega$ 
+pour lesquelles le sondage aura donn\'e $k=k_0$. 
+\medskip 
+Il s'agit donc d'un probl\`eme de probabilit\'es conditionnelles: on se 
+restreint \`a un sous-ensemble de l'espace $\Omega$ (voir fin de la 
+section {\bf IV.3}). En reprenant la notation introduite par $IV.1$, cela 
+s'\'ecrit 
+$${\cal P}\, (p=p_0 \mid k=k_0)\quad = \quad {{\cal P}\, (p=p_0\;\;
+\hbox{et}\;\; k=k_0) \over {\cal P}\, (k=k_0) } \eqno (X.4.)$$ 
+Le num\'erateur peut \'egalement s'\'ecrire
+$${\cal P}\, (p=p_0 \;\;\hbox{et}\;\; k=k_0)\quad = \quad {\cal P}\, 
+(k=k_0 \mid p=p_0) \times {\cal P}\, (p=p_0) \eqno (X.5.)$$ 
+Conform\'ement \`a ce qui a \'et\'e dit \`a la fin de la section {\bf IV.3}
+sur la nature des probabilit\'es conditionnelles, les probabilit\'es 
+absolues ${\cal P}\, (p=p_0\; {\rm et}\; k=k_0)$, ${\cal P}\, (p=p_0)$, 
+et ${\cal P}\, (k=k_0)$, concernent l'espace des \'epreuves $\Omega$ 
+introduit ci-dessus, tandis que les probabilit\'es conditionnelles 
+${\cal P}\, (p=p_0 \mid k=k_0)$ et ${\cal P}\, (k=k_0 \mid p=p_0)$
+sont les probabilit\'es sur un sous-espace de $\Omega$, 
+respectivement $\Omega_{k_0}$ (l'ensemble des \'epreuves de 
+$\Omega$ o\`u le r\'esultat du sondage est $k_0$) et $\Omega_{p_0}$ 
+d\'ej\`a introduit (l'ensemble des \'epreuves de $\Omega$ o\`u 
+$p=p_0$). 
+\medskip 
+Il est facile de voir que ${\cal P}\, (p=p_0) = 1/(N+1)$: en effet, 
+$\Omega$ est la r\'eunion des $\Omega_{p_0}$, qui ont tous le m\^eme 
+cardinal ${N \choose n}$. Par contre il n'y a aucune \'evidence a priori
+pour la valeur de ${\cal P}\, (k=k_0)$; mais on peut calculer: l'espace
+$\Omega$ \'etant la r\'eunion des $\Omega_{p_0}$, ces derniers
+forment donc une {\it famille exhaustive d'\'ev\'enements}, de sorte
+que 
+$$\eqalign{ 
+{\cal P}\, (k=k_0) \quad &= \quad \sum_{p_0=0}^N
+{\cal P}\, (k=k_0 \mid p=p_0) \times {\cal P}\, (p=p_0)\cr 
+&= \quad {1\over \hbox{\eightpoint $N$} + 1}
+\sum_{p_0=0}^N {\cal P}\, (k=k_0 \mid p=p_0) \cr } \eqno (X.6.)$$ 
+\medskip 
+{\eightpoint {\bf Remarque.} Les relations $X.4$, $X.5$ et $X.6$ qui 
+nous ont permis de calculer ${\cal P}\, (p=p_0 \mid k=k_0)$ \`a 
+partir des ${\cal P}\, (k=k_0 \mid p)$ sont connues dans la
+litt\'erature sous le nom de relation de Bayes. Si les
+$A_i$ sont une famille exhaustive d'\'ev\'enements, on a en effet: 
+$${\cal P}\, (A_{i_0} \mid B) = {{\cal P}\, (B \mid A_{i_0}) \cdot 
+{\cal P}\, (A_{i_0})\strup{5.5} \over \sdown{10}\sum_i {\cal P}\, (B 
+\mid A_i) \cdot {\cal P}\, (A_i) }$$ 
+En g\'en\'eral, cette relation de Bayes sert, comme c'est le cas ici, \`a 
+inverser le conditionnement. Mais elle n'est qu'une combinaison 
+imm\'ediate des relations $IV.2$ et $IV.4$; c'est pourquoi dans les 
+trait\'es modernes on perd peu \`a peu l'habitude d'en faire un
+th\'eor\`eme s\'epar\'e. \par }
+\medskip 
+En reprenant l'ensemble de ces d\'ecompositions, on va arriver au
+r\'esultat cherch\'e; en effet: 
+\smallskip 
+--- ${\cal P}\, (k=k_0 \mid  p=p_0)$ est d\'ej\`a connu puisque c'est la 
+loi du probl\`eme direct donn\'ee par $X.1$:
+$${\cal P}\, (k=k_0 \mid  p=p_0)\; = \; {p_0 \choose k_0}\cdot
+{N-p_0 \choose n-k_0} \Bigg/ {N \choose n}$$
+\smallskip 
+--- alors d'apr\`es $X.6$ :
+$${\cal P}\, (k=k_0) = {1\over \hbox{\eightpoint $N$}+1}\sum_{p_0=0}^N 
+{p_0 \choose k_0}\cdot {N-p_0 \choose n-k_0} \Bigg/ {N \choose n}$$   
+\smallskip 
+--- de sorte que $X.4$ se traduit par
+\vskip0pt plus6pt minus6pt
+$$\hskip1pt {\cal P}\, (p=p_0 \mid k=k_0)\quad = \quad {{\displaystyle
+{1\over \hbox{\eightpoint $N$} + 1}\; {{p_0 \choose k_0}{N-p_0 \choose n-k_0}
+\strup{7.5} \over \sdown{15} {N \choose n}}} \strup{21.6} \over \;
+\sdown{26.5} {{\displaystyle {1\over \hbox{\eightpoint $N$} + 1}
+\sum_{p_0=0}^N {{p_0 \choose k_0}{N-p_0 \choose n-k_0} \strup{7.5}\over
+\sdown{15} {N\choose n}}}\;}} \quad = \quad {{\displaystyle {p_0 \choose
+k_0}{N-p_0\choose
+n-k_0}}\strup{19} \over\sdown{26.5}{\displaystyle  
+\sum_{p=0}^N {p \choose k}{N-p \choose n-k_0}} }\eqno (X.7.)$$ 
+La loi de probabilit\'e de $p$ est donc $C^{\rm te} \cdot {p\choose k_0} 
+\cdot {N-p \choose n-k_0}$.  
+Comme toujours cette probabilit\'e {\og exacte\fg} est sans int\'er\^et et
+il nous faut chercher sa densit\'e asymptotique (cf. chapitre {\bf IX}). 
+Pour cela on peut suivre la m\'ethode habituelle,  qui a d\'ej\`a fait ses
+preuves pour $II.7$, $II.8$, $II.10$, et encore ci-dessus pour $X.3$: 
+d'abord chercher la probabilit\'e maximum; le maximum se produit pour $p = 
+p_{\rm max}  \simeq N k_0/n$  (tr\`es exactement $p_{\rm max}$ est la 
+partie enti\`ere de $[\hbox{\eightpoint $N$}+1]\, k_0/n$).  Puis chercher la 
+variation autour de $p_{\rm max}$. Cela conduirait \`a   
+$${p\choose k_0} \cdot {N-p \choose n-k_0} \quad \simeq \quad {\rm max}\times
+\exp \bigg\{\!\! - n\; {x^2 \over 2 \alpha (1-\alpha )} \bigg\}$$  
+avec $\alpha = k_0/n$ et $x = (p - p_{\rm max})/N$.  
+On reconna{\^\i}t la m\^eme densit\'e macroscopique que dans $X.3$. 
+(la variable macroscopique qui dans $X.3$ correspond \`a $x =  
+(p - p_{\rm max})/N$, est \'evidemment $y=j/n=(k-k_{\rm max})/n$) 
+\medskip 
+Dans le cas pr\'esent on peut cependant, \`a partir des lois exactes,  
+retrouver cela plus simplement. En effet, le d\'enominateur de $X.7$
+peut \^etre calcul\'e tr\`es facilement; il suffit de consid\'erer les 
+deux s\'eries enti\`eres  
+$$\sum_{p=k}^\infty {p \choose k} z^p \; = \; {z^k \over \sdown{12}  
+(1-z)^{k+1}} \qquad \hbox{et} \qquad \sum_{p=n-k}^\infty {p \choose  
+n-k} z^p \; = \; {z^{n-k} \over \sdown{12} (1-z)^{n-k+1}}$$ 
+Pour la commodit\'e de l'\'ecriture convient (comme d\'ej\`a dans $X.7$)
+que les coefficients bin\^omiaux ${p\choose k}$ sont nuls pour $p < k$; 
+en faisant le produit de ces deux s\'eries on obtient  
+$$\sum_{p=0}^\infty {p \choose k} z^p\, \times 
+\sum_{p=0}^\infty {p  \choose n-k} z^p\; \quad = \quad\; \sum_{N=0}^\infty 
+A_N\, z^N \quad = \quad {z^{n} \over\sdown{12}  (1-z)^{n+2}}$$  
+avec $\displaystyle A_N = \sum_{p=0}^N {p \choose k}{N-p 
+\choose n-k}$. Or on a aussi 
+$${z^{n} \over \sdown{12} (1-z)^{n+2}} \quad = \quad {1\over \ldown{z}} 
+\sum_{N=n+1}^\infty {N \choose n+1} z^{N}\;\quad = \quad\; \sum_{N=n}^\infty
+{N + 1 \choose n+1} z^{N}$$ 
+Par cons\'equent, en identifiant les coefficients,  
+$$A_N \;\; = \;\;\; \sum_{p=0}^N {p \choose k}{N-p \choose n-k}
+\;\; = \;\; {N + 1 \choose n+1}$$ 
+Ainsi $X.7$ devient 
+$${\cal P}\, (p=p_0 \mid k=k_0)\;\; = \;\; {{\displaystyle {p_0 \choose  
+k_0} {N-p_0\choose n-k_0}}\strup{16}\over\sdown{21.6}{\displaystyle  
+{N+1 \choose n+1}} } \;\; = \;\; {n+1 \over N+1} \cdot {{\displaystyle
+{p_0 \choose k_0} {N-p_0 \choose n-k_0}} \strup{16} \over \sdown{21.6} 
+{\displaystyle  {N \choose n}} }$$ 
+On reconna{\^\i}t ci-dessus l'expression $X.1$ de la probabilit\'e 
+${\cal P}\, (k=k_0 \mid  p=p_0)$, de sorte que finalement 
+$$(N+1) \cdot {\cal P}\, (p=p_0 \mid k=k_0)\;\; = \;\; 
+(n+1) \cdot {\cal P}\, (k=k_0 \mid  p=p_0) \eqno (X.8.)$$ 
+Cette relation montre qu'\`a un coefficient de normalisation pr\`es 
+(ce qui est logique,  puisque $p$ peut prendre $N+1$ valeurs,  alors
+que $k$ en prend $n+1$),  les lois ${\cal P}\, (k=k_0 \mid  p=p_0)$ 
+et ${\cal P}\, (p=p_0 \mid  k=k_0)$ sont identiques. 
+\medskip 
+En conclusion,  ces deux interpr\'etations du sondage
+sont \'equivalentes: 
+\smallskip 
+--- si dans la population \'etudi\'ee, on sait qu'il y a $1/3$ de
+personnes aux yeux bleus, la probabilit\'e pour qu'un sondage effectu\'e
+sur $1800$ personnes prises au hasard en donne une proportion inf\'erieure
+\`a $30.0\%$ ou sup\'erieure \`a $36.7\%$, est $0.0026$;  
+\smallskip 
+--- si on ne sait rien sur la population,  mais que dans un sondage
+effectu\'e sur $1800$ personnes prises au hasard il y en ait $1/3$, 
+soit $600$,  qui ont les yeux bleus,  la probabilit\'e pour que dans
+la population totale la  proportion soit inf\'erieure \`a $30.0\%$ ou 
+sup\'erieure \`a $36.7\%$,  est $0.0026$. 
+\medskip 
+Ces deux interpr\'etations sont, d'apr\`es $X.8$, exactement  
+\'equivalentes, \`a condition \'evidemment qu'on donne au terme 
+``probabilit\'e'' le sens qui a pr\'esid\'e \`a nos calculs:  
+\smallskip 
+--- dans la premi\`ere interpr\'etation, que les \'echantillons de  
+$1800$ personnes sont tous \'equiprobables; 
+\smallskip 
+--- dans la deuxi\`eme interpr\'etation, que les \'echantillons pris sur  
+les $N+1$ populations virtuelles de l'exp\'erience de pens\'ee  
+envisag\'ee plus haut soient \'equiprobables. 
+
+\bigskip 
+
+C'est ainsi qu'est fond\'ee la m\'ethode du sondage. La pr\'ecision d'un
+sondage est donc mesur\'ee par {\it deux} param\`etres: 
+\smallskip 
+a) le {\it seuil} de certitude (qui est ici $0.0026$) est ce qu'on accepte 
+comme probabilit\'e de se tromper; 
+\smallskip 
+b) la {\it marge d'erreur} ou {\it fourchette} ou encore {\it 
+intervalle de confiance} (qui est ici $\pm 3.33\%$)
+est la diff\'erence maximum qu'on accepte entre la valeur r\'eelle de 
+$\alpha$ et la valeur d'\'echantillon. 
+\medskip 
+Lorsque la taille de l'\'echantillon est fix\'ee,  on ne peut bien s\^ur
+r\'eduire la marge d'erreur qu'en augmentant les chances de se tromper; 
+ou inversement on ne peut r\'eduire les chances de se tromper qu'en 
+\'elargissant la fourchette.  Si on veut \`a la fois resserrer l'intervalle 
+de confiance et les chances de se tromper,  il faut augmenter la taille de 
+l'\'echantillon.  Math\'ematiquement cela se traduit de la fa\c{c}on 
+suivante:  introduisons la fonction
+$${\cal N}(x)\;\; = \;\; {1 \over \sqrt{2\pi}} \int_{-\infty}^x
+\exp\biggl\{ -{t^2 \over 2}\biggr\} \, dt$$ 
+cette fonction est parfois d\'esign\'ee aussi par ${\bf erf} \, (x)$ ({\bf 
+er}ror {\bf f}unction). On a la relation suivante entre le seuil de
+certitude $\rho$ et la fourchette $\pm\varepsilon$: 
+$$\rho \;\; \simeq \;\; 2\; {\cal N}\Biggl( -\;\sqrt{n \over 
+\alpha\beta}\,\varepsilon\Biggr) \eqno (X.9.)$$
+En effet, le seuil de certitude est la probabilit\'e pour que $\bigl| {k 
+\over\textdown{n}} - \alpha\bigr| > \varepsilon$;  or $\alpha
+\simeq {k_0\vrule height0pt depth2pt width0pt \over 
+\textdown{n}}$, donc $$\Bigl| {k \over n} - \alpha\Bigr| > 
+\varepsilon \qquad \Longleftrightarrow\qquad |j| > n\varepsilon \qquad 
+\Longleftrightarrow\qquad {|j| \over \sqrt{\vrule height7.5pt depth0pt 
+width0pt n\alpha\beta}} > \sqrt{n\over\alpha\beta}\;\varepsilon$$ 
+
+Si alors on assimile la loi discr\`ete \`a la densit\'e gaussienne, on aura 
+d'apr\`es $(VII.6.)$ 
+$$\eqalign{ 
+{\cal P}\Biggl\{ {|j| \over \sqrt{\vrule height7.5pt depth0pt width0pt 
+n\alpha\beta}} > \sqrt{n\over\alpha\beta}\;\varepsilon \Biggr\}\;\; &= \;\;
+{\cal P}\Biggl\{ |x| > \sqrt{n\over\alpha\beta}\;\varepsilon \Biggr\}\;\; 
+= \;\; 2\; {\cal P}\Biggl\{ x < -\;\sqrt{n\over\alpha\beta}\;\varepsilon 
+\Biggr\} \cr 
+&\simeq \;\; 2\, {\cal N}\Biggl( -\;\sqrt{n \over 
+\alpha\beta}\;\varepsilon\Biggr) \cr }$$
+
+La relation $X.9.$ relie entre eux le seuil $\rho$, la fourchette 
+$\varepsilon$,  et la taille de l'\'echantillon $n$.  Comme nous l'avons
+vu plus haut,  si $\rho = 0.0026$ et $n = 1800$,  on aura $\varepsilon =
+0.033$. Si on abaisse le seuil de certitude \`a $\rho = 0.072$ (soit une 
+chance sur quatorze de se tromper), la fourchette se r\'eduit \`a $\pm 
+2\%$;  par contre si on veut augmenter la certitude \`a $\rho = 0.0001$ 
+(une chance sur dix mille) la fourchette se rel\^ache \`a $\pm 4.2\%$. 
+Si on veut avoir une fourchette de $\pm 1\%$ avec le seuil de certitude 
+de $0.26\%$, il faut augmenter la taille de l'\'echantillon: on voit 
+d'apr\`es $X.9$ que $\rho$ ne d\'epend en r\'ealit\'e que de $\sqrt{n}\, 
+\varepsilon$; si $\varepsilon$ passe de $3.33\%$ \`a $1\%$, $\rho$ 
+restera inchang\'e si $\sqrt{n}$ est conjointement multipli\'e par 
+$3.33$, ce qui signifie que l'\'echantillon devra \^etre 11 fois plus 
+nombreux ($1800 \times 11 = 19800$): pour un seuil de certitude 
+fix\'e, l'intervalle de confiance est inversement proportionnel \`a 
+la {\it racine carr\'ee} de la taille de l'\'echantillon. 
+\medskip 
+La relation $X.9$ exprime la limite th\'eorique de la mesure par 
+\'echan\-til\-lon. Il n'existe aucun moyen (par exemple un traitement 
+math\'e\-ma\-ti\-que sophistiqu\'e) permettant d'augmenter la
+certitude ou de resserrer la four\-chette sans augmenter conjointement 
+la taille de l'\'echantillon. Par contre on s'expose facilement \`a des 
+causes d'erreur additionnelles. En effet, la formule $X.9$ a \'et\'e 
+obtenue en supposant que l'\'echantillon est choisi {\it au hasard} parmi 
+${N \choose n}$ \'echantillons \'equiprobables. Cela suppose qu'on n'a
+pas favoris\'e certains \'echantillons par rapport aux autres.  Or,  si par 
+exemple les exp\'erimentateurs choisissent leur \'echantillon dans une 
+r\'egion particuli\`ere o\`u {\it \`a leur insu} les yeux bleus sont plus 
+rares, ils favorisent sans le savoir les \'echantillons o\`u $k$ est 
+inf\'erieur \`a la moyenne; il n'y alors plus \'equiprobabilit\'e et la 
+formule $X.9$ n'est plus valide.  La qualit\'e ou la difficult\'e des 
+sondages ne provient donc pas du traitement math\'ematique des r\'esultats, 
+mais du protocole d'exp\'erience: celui-ci doit d\'eterminer un proc\'ed\'e
+de choix de l'\'echantillon qui soit stochastiquement ind\'ependant de la 
+couleur des yeux. Si par exemple on poss\`ede un fichier o\`u toute la 
+population est enregistr\'ee avec un num\'ero d'ordre, on peut choisir 
+l'\'echantillon avec une fonction {\it random} qui parcourt le fichier au 
+hasard: par ce proc\'ed\'e l'\'equiprobabilit\'e est garantie. Mais pour des 
+populations consid\'erables (par exemple l'\'electorat fran\c{c}ais) cette 
+m\'ethode n'est pas pratique et on a recours \`a des proc\'ed\'es de 
+s\'election souvent sophistiqu\'es,  mais plus \'economiques. 
+\medskip
+Dans de tels proc\'ed\'es l'ind\'ependance stochastique est essentielle. 
+Supposons par exemple que l'\'echantillon soit choisi selon un proc\'ed\'e 
+d\'etermin\'e (et d\'eterministe: n'oublions pas que les fonctions {\it
+random} sont elles aussi toujours des algorithmes d\'eterministes). On 
+peut toujours ramener logiquement un tel proc\'ed\'e \`a un classement
+des \'echantillons dans un certain ordre croissant ou d\'ecroissant; par 
+exemple on organise un concours dans la population et les $n$ premiers
+au classement constituent l'\'echantillon. Cela revient \`a consid\'erer 
+une variable al\'eatoire $X$: dans notre exemple, pour un \'echantillon 
+(c'est-\`a-dire une \'epreuve) $\omega$, $X(\omega )$ pourrait \^etre la 
+moyenne des notes obtenues au concours par les $n$ personnes de 
+l'\'echantillon; l'\'echantillon form\'e par les $n$ premiers au
+classement est alors celui qui a la meilleure moyenne, pour lequel $X$ 
+est maximum.  Le contenu du concours ou les crit\`eres d'\'evaluation
+importent peu,  il suffit qu'ils soient stochastiquement ind\'ependants
+de la couleur des yeux:  le classement peut \^etre effectu\'e par une
+fonction {\it random}.  On consid\'erera aussi une autre variable
+al\'eatoire $Y$:  $Y(\omega )$ sera le nombre de personnes aux yeux
+bleus dans l'\'echantillon $\omega$. 
+\medskip 
+Si par exemple les \'echantillons sont pr\'elev\'es dans la population
+fran\c{c}aise, et que la note donn\'ee \`a chaque personne au concours
+est le code postal de son domicile, il n'y aura pas d'ind\'ependance 
+stochastique entre $X$ et $Y$. Ainsi les \'echantillons pr\'elev\'es 
+enti\`erement dans les d\'epartements d'outremer donneront \`a $X$
+des valeurs \'elev\'ees ($\sim 97000$), tandis que les \'echantillons 
+enti\`erement pr\'elev\'es dans l'Ain donneront \`a $X$ les valeurs les 
+plus faibles ($\sim 1000$). L'ind\'ependance stochastique implique que 
+les probabilit\'es conditionnelles ${\cal P}\, \bigl( X(\omega ) \leq 1900 
+\mid Y(\omega ) = k\bigr)$ ou ${\cal P}\, \bigl( X(\omega ) \geq 97400 
+\mid Y(\omega ) = k\bigr)$ sont ind\'ependantes de $k$. Cela 
+signifierait (si on prend par exemple $k=18$) que la probabilit\'e de 
+pr\'elever des \'echantillons de 1800 personnes dont seulement 18 ont 
+les yeux bleus est la m\^eme \`a l'{\^\i}le de la R\'eunion que dans le 
+d\'epartement de l'Ain. L'in\'egale r\'epartition g\'eographique des yeux 
+bleus a ainsi pour cons\'equence que la variable al\'eatoire $X$, qui 
+refl\`ete l'origine g\'eographique de l'\'echantillon, n'est pas 
+stochastiquement ind\'ependante de $Y$. Le sondage ne sera donc correct 
+que si le proc\'ed\'e de s\'election de l'\'echantillon garantit cette 
+ind\'ependance stochastique, et c'est pourquoi les proc\'ed\'es de 
+s\'election sont l'objet du plus grand soin. 
+ 
+\vskip8mm plus4mm minus4mm 
+ 
+{\bf X.\aub 3. Conclusion.} 
+\medskip 
+Dans ce chapitre nous avons montr\'e que dans toute situation o\`u 
+inter\-viennent des probabilit\'es,  il ne suffisait pas de les calculer ou
+de les mesurer,  mais il fallait \'egalement savoir sur quoi portent les 
+choix du hasard.  Selon les cas,  la m\'ethode du sondage peut permettre 
+de mesurer une probabilit\'e a priori qu'on ne peut pas calculer par la 
+th\'eorie (dans ce cas on fabriquait une population en reproduisant un 
+processus), ou bien de mesurer approximativement des donn\'ees 
+statistiques non al\'eatoires sur une population d\'ej\`a existante, 
+et il importe de ne pas confondre ces deux situations tr\`es
+diff\'erentes. La premi\`ere concerne les exp\'eriences reproductibles, 
+mais donnant un r\'esultat al\'eatoire:  nous avions \'evoqu\'e \`a titre 
+d'exemple le lancer d'une pi\`ece de monnaie;  mais n'importe quelle 
+exp\'erience de M\'ecanique quantique tombe dans cette rubrique. 
+Il s'agit d'exp\'eriences reproductibles dont le r\'esultat est 
+al\'eatoirement variable.  Ce qui reste invariable dans ces exp\'eriences, 
+n'est pas la valeur num\'erique du r\'esultat,  mais sa loi de probabilit\'e: 
+lorsqu'on relance une pi\`ece de monnaie,  elle ne retombe pas 
+forc\'ement du m\^eme c\^ot\'e,  mais la probabilit\'e de chaque c\^ot\'e 
+reste la m\^eme \`a chaque lancer; de m\^eme dans une exp\'erience de 
+Stern et Gerlach, l'atome a toujours une chance sur deux d'\^etre 
+dans un \'etat de spin, et si on recommence l'exp\'erience,  la d\'eviation 
+de l'atome varie al\'eatoirement, mais la loi de probabilit\'e reste la 
+m\^eme. La {\it reproductibilit\'e} de l'exp\'erience consiste en ce que
+\smallskip
+a) la loi de probabilit\'e du 
+r\'esultat reste la m\^eme; 
+\smallskip 
+b) les exp\'eriences reproduites ne s'influencent pas mutuellement 
+(in\-d\'e\-pen\-dance sto\-chas\-tique). 
+\medskip 
+Dans le cas du sondage sur une population on ne reproduit pas une 
+exp\'erience; le sondage est lui-m\^eme une exp\'erience,  et on ne la
+fait qu'une fois (sauf exception).  On se fonde sur la relation $(X.4.)$ 
+pour tirer d'une observation faite sur l'\'echantillon,  une conclusion 
+statistique sur la popu\-lation.  Nous avions insist\'e sur le fait que si un 
+sondage permet d'\'etablir qu'un m\'edicament sera efficace pour quatre 
+personnes sur cinq dans la popu\-lation, cela ne signifie pas que chaque 
+personne a quatre chances sur cinq pour que le m\'edicament agisse sur 
+elle.  La diff\'erence entre ces deux conclusions provient d'une 
+diff\'erence dans l'intervention du hasard: lorsqu'on dit que le 
+m\'edicament sera efficace pour quatre personnes sur cinq, on 
+sous-entend que le hasard intervient dans le choix d'une personne
+parmi une population; lorsqu'on dit que pour une personne donn\'ee, le 
+m\'edicament a une probabilit\'e $3/5$ d'\^etre efficace, on
+sous-entend que le hasard intervient dans le m\'etabolisme de la 
+personne. 
+\medskip 
+Il se trouve cependant que ces deux modes d'action du hasard, quoique 
+compl\`etement diff\'erents,  se confondent objectivement lorsqu'on
+a affaire a des ph\'enom\`enes reproductibles;  dans le cas du
+m\'edicament,  ils ne se confondaient pas objectivement,  car passer 
+d'une personne \`a une autre n'est pas la reproduction d'une exp\'erience. 
+\medskip 
+Reprenons l'exemple de la pi\`ece de monnaie (on aurait tout aussi bien
+pu prendre une quelconque exp\'erience de M\'ecanique quantique).  Si on
+la lance trente millions de fois,  on disposera d'une population de 
+r\'esultats,  par exemple $15\, 003\, 147$ face et $14\, 996\, 853$
+pile.  Si au lieu de relever tous les trente millions de r\'esultats,  on n'en 
+rel\`eve que $1\, 800$,  on aura une estimation moins pr\'ecise de la loi
+de probabilit\'e (${1 \over 2}$, ${1 \over 2}$).  La pr\'ecision est,  comme 
+on  l'a vu au \S 2, de l'ordre de l'\'ecart-type \sqnab , donc 
+de $\pm 42$ sur les $1\, 800$. L'incertitude moyenne sur la {\it mesure} 
+de la probabilit\'e est donc $42 / 1800 \simeq  0.023$.  Avec la 
+population compl\`ete de $30\, 000\, 000$ de r\'esultats, $15\, 003\, 
+147$ face et $14\, 996\, 853$ pile,  on estimerait les probabilit\'es \`a 
+$0,500\, 1049$ pour face et $0.499\, 8951$ pour pile, soit une erreur de 
+$0.000\, 1049$ par rapport \`a la valeur th\'eorique $0.5$.  Cette erreur 
+peut tout aussi bien provenir des fluctuations al\'eatoires que des 
+imperfections de la pi\`ece utilis\'ee pour l'exp\'erience. 
+L'incertitude a priori sur la mesure (\'ecart-type des fluctuations) est 
+$5\, 477 / 30\, 000\, 000 \simeq 0.000\, 182$, et l'erreur est bien de 
+cet ordre, de sorte qu'avec le r\'esultat effectivement obtenu on n'est 
+pas fond\'e \`a penser que la pi\`ece est mal \'equilibr\'ee. 
+\medskip 
+Faisons semblant de croire que la pi\`ece est parfaite. Alors on peut ne
+pas faire r\'eellement l'exp\'erience et se contenter d'une exp\'erience
+de pens\'ee,  dont le r\'esultat est pr\'evisible:  si on la lancait dix 
+milliards de fois,  l'\'ecart quadratique moyen des fluctuations serait de 
+l'ordre de $70\, 000$ sur dix milliards,  soit $0.000\, 007$ (faire cette 
+exp\'erience r\'eellement demanderait un travail consid\'erable).  Le 
+grand avantage d'une exp\'erience de pens\'ee est de ne pas \^etre pas 
+limit\'ee par des contingences mat\'erielles;  on peut donc supposer que 
+la pi\`ece est lanc\'ee un nombre $N$ aussi grand qu'on veut de fois. 
+Ainsi,  au lieu d'avoir une population d\'etermin\'ee (par exemple les 
+\'electeurs fran\c{c}ais) dont le nombre $N$ ne peut pas \^etre 
+augment\'e \`a volont\'e,  on dispose d'une population potentiellement 
+infinie, c'est-\`a-dire qu'on peut faire tendre $N$ vers l'infini. Lorsque 
+$N$ tend vers l'infini, non seulement le nombre de pile ou de face reste 
+proche de $N/2$, mais en outre l'incertitude li\'ee aux fluctuations 
+tend vers z\'ero, ce qui permet de ``mesurer'' (en quelque sorte) la 
+probabilit\'e avec une pr\'ecision arbitrairement grande. 
+ \medskip 
+Dans ces conditions,  la proportion de pile ou de face dans la population 
+infinie de r\'esultats est {\it \'egale} \`a la probabilit\'e a priori. On a
+d\'emontr\'e math\'ematiquement (cela r\'esulte du chapitre {\bf III})
+que si la probabilit\'e a priori d'obtenir face est $0.5$, alors, sur une 
+population potentiellement infinie de lancers, il y aurait une proportion 
+de pile ou de face exactement \'egale \`a $0.5$: la probabilit\'e pour que 
+cette proportion s'en \'ecarte, m\^eme d'une quantit\'e infinit\'esimale, 
+serait nulle.  Il en serait de m\^eme si la probabilit\'e a priori n'\'etait
+pas $0.5$,  mais un nombre quelconque $x$.  La v\'erit\'e math\'ematique 
+de cette affirmation r\'esulte,  comme cela a d\'ej\`a \'et\'e dit,  de deux 
+conditions: 
+\smallskip 
+a) que les lancers soient reproductibles \`a l'identique; 
+\smallskip 
+b) qu'ils soient stochastiquement ind\'ependants. 
+\medskip 
+\`A cause de cela il n'y a 
+pas de diff\'erence entre la probabilit\'e a priori d\^ue \`a un choix 
+al\'eatoire dans les param\`etres rapidement fluctuants du mouvement 
+de la pi\`ece de monnaie, et la probabilit\'e a posteriori qui se
+r\'ev\`ele dans la population de $N$ r\'esultats lorsque $N$ cro{\^\i}t 
+ind\'efiniment.  Pour dire les choses autrement:  si on effectue
+l'exp\'erience consistant \`a lancer la pi\`ece $1\, 800$ fois,  on
+peut indiff\'eremment consid\'erer que
+\smallskip 
+a) on a r\'ep\'et\'e $1\, 800$ fois un lancer (\`a chaque fois de
+mani\`ere identique et stochastiquement ind\'ependante des lancers 
+pr\'ec\'edents) avec une probabilit\'e $0.5$ {\it a priori},  c'est-\`a-dire 
+une probabilit\'e d\'ecid\'ee {\it avant} la manifestation du r\'esultat, 
+provenant de choix faits par le hasard pur sur les {\it causes} 
+m\'ecaniques du r\'esultat; 
+\smallskip 
+\noindent ou bien que 
+\smallskip 
+b) on a pr\'elev\'e {\it au hasard} un \'echantillon de $1\, 800$
+r\'esultats dans une population potentiellement infinie,  de sorte que 
+le choix du hasard n'a pas port\'e $1\, 800$ fois sur les causes du 
+mouvement d'une pi\`ece de monnaie, mais une seule fois sur le choix 
+d'un \'echantillon de $1\, 800$ mouvements, parmi tous les mouvements 
+possibles. 
+\medskip 
+Si on pr\'esuppose l'existence d'une ``population'' form\'ee d'un nombre
+\'enorme de r\'esultats possibles (mais comportant bien s\^ur une
+moiti\'e de pile et une moiti\'e de face) et qu'on pr\'el\`eve au hasard un 
+\'echantillon de $1\, 800$ r\'esultats dans cette population, on
+obtiendra en appliquant la th\'eorie des \'echantillons d\'evelopp\'ee 
+ci-dessus exactement les m\^emes lois de probabilit\'e qu'en appliquant 
+la th\'eorie de la marche al\'eatoire \`a la r\'ep\'etition de $1\, 800$ 
+lancers. Aucune exp\'erience, m\^eme de pens\'ee, ne pourrait mettre en 
+\'evidence une diff\'erence entre les deux situations,  et par 
+cons\'equent permettre de trancher en faveur de l'une des deux 
+interpr\'etations.  Il en est ainsi parce que les deux interpr\'etations 
+sont math\'ematiquement \'equivalentes:  on a {\it d\'emontr\'e},  par la 
+logique et non par l'exp\'erience,  que l'une entra{\^\i}ne l'autre,  de
+sorte que le choix pour l'une plut\^ot que pour l'autre n'est qu'un choix de 
+forme:  l'interpr\'etation b) peut donner le sentiment que les r\'esultats 
+sont pr\'elev\'es dans l'ensemble,  suppos\'e d\'ej\`a inscrit dans le 
+Grand Livre,  des r\'esultats possibles,  tandis que l'interpr\'etation a)
+laisse croire que le hasard fait son choix {\it avant} que la pi\`ece ne 
+s'immobilise.  Mais ces diff\'erences ne sont que des illusions dues \`a 
+des mani\`eres diff\'erentes de dire la m\^eme chose. 
+\medskip 
+Par contre la diff\'erence que nous avions signal\'ee auparavant,  entre  
+le choix au hasard d'un \'echantillon sur une population existante, 
+et l'action du hasard dans les m\'ecanismes mol\'eculaires du 
+m\'etabolisme,  est une diff\'erence r\'eelle et non une illusion. 
+On peut imaginer une exp\'erience concr\`ete qui distingue les deux
+sortes d'actions du hasard:  il suffit de mesurer sur une seule personne 
+l'\'ecart-type des fluctuations de tension art\'erielle dues au second 
+hasard (celui qui agit dans les m\'ecanismes mol\'eculaires du 
+m\'etabolisme), et de constater qu'il n'est pas le m\^eme que celui des 
+fluctuations de la tension d'une personne \`a l'autre. M\^eme sans songer 
+\`a cette exp\'erience, il appara{\^\i}t tout de suite \`a l'entendement 
+qu'il n'y a aucun lien de cause \`a effet entre ce qui se passe dans le 
+m\'etabolisme d'une personne particuli\`ere, et les diff\'erences de 
+constitution que d'autres personnes d'une population peuvent avoir entre 
+elles; par exemple, que Pierre Martin soit ob\`ese n'a aucune 
+influence sur le fait que Jean Dupond \'elimine mal le sel, surtout s'ils 
+ne se sont jamais rencontr\'es et ne se connaissent pas. C'est que dans 
+ce cas la population qu'on sonde n'est pas constitu\'ee de clones de Jean 
+Dupond.  La population de pile et de face imagin\'ee ci-dessus a \'et\'e 
+fabriqu\'ee artificiellement par reproduction \`a l'infini d'un m\^eme 
+processus et il est donc logique qu'elle ne contienne pas plus 
+d'information qu'il n'y en avait au d\'epart dans le processus, tandis que 
+la population humaine existe ind\'ependamment du m\'etabolisme de 
+chacun de ses membres, et apporte une information qui ne peut pas 
+\^etre extrapol\'ee \`a partir de ce qu'on sait d'un individu particulier. 
+ 
+ 
+ 
+ 
+ 
+\bye 
+ 

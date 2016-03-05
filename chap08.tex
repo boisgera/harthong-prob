@@ -1,0 +1,1975 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+
+
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Processus en cascade}
+
+\pageno=177
+
+\def\hfq{\hfill\quad}
+\def\cc#1{\hfill#1\quad\hfill}
+\def\tv{\vrule height 30pt depth 6pt width0.4pt}
+\def\punkt{\vrule height0.4pt depth0pt width0.4pt}
+\def\L{{\bb L}} 
+
+\def\ara{\hskip-1.5pt}
+\def\asa{\hskip-2pt}
+\def\ata{\hskip-2.5pt}
+\def\aua{\hskip-1pt}
+\def\arb{\hskip1.5pt}
+\def\asb{\hskip2pt}
+\def\atb{\hskip2.5pt}
+\def\aub{\hskip1pt}
+\def\xsp{\hskip3pt plus3pt minus2pt} 
+
+\null\vskip 10mm plus1mm minus1mm
+
+\centerline {\tit VIII. LES PROCESSUS EN CASCADE.} 
+\medskip 
+\centerline {\tit (Une application des fonctions g\'en\'eratrices.)} 
+
+\vskip10mm plus1mm minus1mm
+
+{\narrower\eightpoint\sl Ce chapitre est plus technique que les autres 
+et convient plut\^ot aux math\'e\-ma\-ti\-ciens (et \`a condition qu'ils ne
+soient pas trop press\'es). On pourra le
+consid\'erer comme une suite deprobl\`emes corrig\'es. C'est 
+en quelque sorte un chapitre de travaux dirig\'es. Une lecture purement
+passive est d\'econseill\'ee: le lecteur n'entirera vraiment profit que s'il  se munit d'un crayon et d'un papier, et 
+effectue lui-m\^eme les
+calculs pr\'esent\'es ici. 
+\medskip 
+Ce chapitre peut \^etre omis en premi\`ere lecture, mais on conseille
+cependant les probl\`emes {\bf 1} et {\bf 2} du d\'ebut, qui sont
+\'el\'ementaires,  et beaucoup plus faciles que ce qui suit. \par}
+
+\vskip7mm plus1mm minus1mm
+
+{\bf Probl\`eme 1.}  Deux joueurs ${\cal A}$ et ${\cal B}$ jouent au jeu 
+de {\it pile ou face} de la mani\`ere suivante:  ${\cal A}$ donne $1$ euro
+\`a ${\cal B}$ chaque fois que {\it face} sort et ${\cal  B}$ donne $1$
+euro \`a ${\cal A}$ chaque fois que {\it pile} sort.  La pi\`ece est 
+lanc\'ee $n$ fois de suite.
+Trouver la loi de probabilit\'e du gain de ${\cal A}$.
+\medskip
+Ce probl\`eme a d\'ej\`a \'et\'e trait\'e sous forme d\'eguis\'ee au 
+chapitre {\bf  III} (marches al\'eatoires), d\'ebut du {\bf \S 2}. Le gain
+peut prendre les valeurs $-n,\, -n + 2,\, -n + 4,\, -n + 6,\; \ldots \;
+n - 2,\,
+n$, et les probabilit\'es correspondantes sont 
+$${\cal P}\, (\hbox{gain} = -n + 2k) = 2^{-n}\; {n\choose k} \simeq
+{1\over\sdown{15}\sqrt{\sdown{9} \pi n}}\;
+\e^{-{(2k-n)^2\strup{2.5}\over\sdown{5} 2n}}$$ 
+Nous allons le retrouver en utilisant les fonctions g\'en\'eratrices.
+\medskip
+L'id\'ee est simple: nous avons vu que la fonction g\'en\'eratrice de la 
+somme de plusieurs variables al\'eatoires ind\'ependantes est le produit
+des fonctions g\'en\'eratrices. Nous allons donc d\'ecomposer le gain en 
+une somme de variables al\'eatoires ind\'ependantes.
+\medskip
+Il est \'evident par d\'efinition m\^eme que le gain global sur les $n$ 
+lancers est la somme alg\'ebrique des gains obtenus pour chacun des $n$
+lancers.  Or pour chaque lancer ce gain est \'egal (en euros) \`a $+1$
+ou
+$-1$,  selon que {\it face} ou {\it pile} est sorti.  Le gain au$j^{\rm e}$
+lancer est donc une variable al\'eatoire $X_j$ dont la loi est
+$$X_j = \cases{ +1\quad \bigl( {1\over 2} \bigr) \cr
+                             \noalign{\medskip}
+                         -1\quad \bigl( {1\over 2} \bigr) \cr }$$
+Le gain global est alors la somme $S = X_1 + X_2 +  \cdots  + X_n$.
+L'ind\'ependance stochastique des variables al\'eatoires $X_j$ est le 
+reflet de l'ind\'ependance causale entre les lancers: dire que $X_j$ est
+ind\'ependante de $X_k$ signifie que les probabilit\'es de gagner ou 
+perdre $1$ euro au $k^{\rm e}$ lancer ne d\'ependent pas du r\'esultat
+obtenu au $j^{\rm e}$ lancer.
+\medskip
+{\eightpoint {\bf Remarque.} L'ind\'ependance stochastique entre les 
+$X_j$ est d\'eduite directement des circonstances physiques du
+probl\`eme; mais bien entendu, ces circonstances se refl\`etent aussi 
+dans la structure de l'espace des \'epreuves $\Omega$, qui, comme cela
+a \'et\'e expliqu\'e au chapitre {\bf IV}, doit \^etre un produit. $\Omega$
+est ici l'ensemble des mots de $n$ lettres qu'on peut \'ecrire avec
+l'alphabet  $\{ P, F \}$, et s'identifie au produit cart\'esien $\{ P, F \}
+\times   \{ P, F\} \times \cdots  \times \{ P, F \}$ ($n$ fois). En tant
+qu'{\it application} de $\Omega$ dans \R\ (ce qui est, rappelons-le, la
+d\'efinition math\'ematique d'une variable al\'eatoire), $X_j$ est
+l'application qui, \`a une \'epreuve $\omega$ qui est un mot de $n$ 
+lettres, fait correspondre $+1$ si la $j^{\rm e}$ lettre de $\omega$
+est $F$, et $-1$ si la $j^{\rm e}$ lettre de $\omega$ est $P$. Lorsque
+l'espace $\Omega$ est consid\'er\'e comme le produit cart\'esien de $n$
+fois $\{ P, F \}$, $X_j$ ne d\'epend donc que de la $j^{\rm e}$
+coordonn\'ee, ce qui est exactement l'expression math\'ematique de
+l'ind\'ependance stochastique.}
+\medskip
+La fonction g\'en\'eratrice commune des $X_j$ est donc
+$$G_X (z) = {1\over 2} \Bigl( z + {1\over\ldown{z}} \Bigr)$$
+et puisque les $X_j$ sont ind\'ependantes, leur somme $S$ a pour
+fonction g\'en\'eratrice
+$$G_S (z) = \Bigl[ {1\over 2} \Bigl( z + {1\over\ldown{z}} 
+\Bigr) \Bigr]^n = \sum_{k=0}^{k=n}\; {n \choose k}\, z^{n-2k}$$
+On constate dans le d\'eveloppement en puissances de $z$ que les
+exposants sont $n-2k$, qui sont les valeurs prises par $S$; quant aux
+coefficients correspondants, ils co{\"\i}ncident bien avec le r\'esultat
+d\'ej\`a connu.
+\medskip
+Nous voyons ici sur un exemple tr\`es simple comment fonctionne la 
+{\it m\'ethode des fonctions g\'en\'eratrices}:  on commence par 
+calculer la fonction g\'en\'eratrice,  qui est un polyn\^ome ou \`a la
+limite une fonction analytique de la variable complexe $z$.  Puis un
+d\'eveloppement en puissances de $z$ met en \'evidence les exposants
+de $z$ qui sont les valeurs de la variable,  ainsi que les coefficients 
+qui sont les probabilit\'es correspondantes.
+\bigskip
+{\bf Probl\`eme 2.}  Les deux joueurs ${\cal A}$ et ${\cal B}$ jouent
+maintenant au jeu de {\it pile ou face} d'une mani\`ere diff\'erente: 
+comme d'habitude ${\cal A}$ donne $1$ euro \`a ${\cal B}$ chaque fois
+que {\it face} sort et ${\cal  B}$ donne $1$ euro \`a ${\cal A}$ chaque
+fois que {\it pile} sort;  mais au  lieu de  s'arr\^eter apr\`es un nombre 
+$n$ de lancers convenu \`a l'avance,  les joueurs lancent en outre un d\'e 
+en m\^eme temps que leur pi\`ece, et d\'ecident d'arr\^eter le jeu d\`es
+que le d\'e donne six. 
+\smallskip
+Trouver la loi de probabilit\'e du gain.
+\medskip
+Lorsque nous avons r\'esolu le probl\`eme pr\'ec\'edent  (loi de 
+probabilit\'e du gain pour un nombre fix\'e $n$ de lancers), nous devions
+trouver la loi de  probabilit\'e d'une somme $S = X_1 + X_2 + \cdots +
+X_n$ de variables al\'eatoires ind\'ependantes. Cette fois nous avons
+encore affaire \`a une somme de variables al\'eatoires ind\'ependantes,
+mais le nombre de termes  de la somme est lui-m\^eme al\'eatoire.
+\smallskip
+On peut donc reformuler le probl\`eme sous la forme abstraite que voici:
+soient $X_1\, , \; X_2\, , \; X_3 \ldots$ des variables al\'eatoires
+ind\'ependantes, {\it toutes de m\^eme loi}, et $Y$ une variable 
+al\'eatoire prenant les valeurs $1\, , \; 2\, , \; 3 \ldots$, et {\it
+ind\'ependante} des  $X_1\, , \; X_2\, , \; X_3 \ldots$ 
+Trouver la loi de la variable 
+$$S = X_1 + X_2 + \cdots + X_Y$$
+\medskip
+{\bf Solution.} D'apr\`es la formule des probabilit\'es conditionnelles
+$(IV.4.)$ on peut d\'ecom\-poser ${\cal P}\, (S = k)$ ainsi:
+$${\cal P}\, (S = k) = \sum_{n} {\cal P}\, (S = k \mid Y = n) {\cal P}\, 
+(Y = n) \eqno (VIII. 1.)$$
+Or l'\'ev\'enement $A = \{ X_1 + X_2 + \cdots + X_Y = k \;\hbox{et}\; Y = 
+n  \}$  est \'egal  \`a l'\'ev\'enement $\{ X_1 + X_2 + \cdots + X_n = k
+\;\hbox{et}\;  Y = n \}$.  En effet toute \'epreuve $\omega$ appartenant
+\`a $A$ est une \'epreuve  pour laquelle $Y(\omega ) = n$, donc 
+$S(\omega ) = X_1(\omega ) + X_2(\omega )  + \cdots + X_{Y(\omega )}
+(\omega ) = S(\omega ) = X_1(\omega ) +  X_2(\omega ) + \cdots + X_n
+(\omega )$.  Ces deux \'ev\'enements \'etant \'egaux, leurs probabilit\'es
+sont \'egales. En  outre, $Y$ \'etant stochastiquement ind\'ependante des
+$X_j$, on peut dire aussi que 
+$${\cal P}\, (X_1 + \cdots + X_n = k \;\hbox{et}\; Y =  n)  = {\cal
+P}\, (X_1 + \cdots + X_n = k) \times {\cal P}\, (Y = n)$$ 
+Mais {\bf on ne peut pas} dire que
+$${\cal P}\, (X_1 + \cdots + X_Y = k \;\hbox{et}\; Y = n) =
+{\cal P}\, (X_1 + \cdots + X_Y = k) \times {\cal P}\, (Y = n)$$
+car dans le premier cas les variables al\'eatoires $X_1 + X_2 + \cdots +
+X_n$ et $Y$ sont ind\'ependantes, tandis que dans le second, les 
+variables  al\'eatoires $X_1 + X_2 + \cdots + X_Y$ et $Y$ ne sont pas 
+ind\'ependantes. 
+\medskip
+{\eightpoint {\bf Remarque.} Pour bien comprendre cela, il faut
+se repr\'esenter (comme toujours en cas d'ind\'ependance stochastique; 
+voir \S {\bf V\ara .\aub 3.}) l'espace $\Omega$ comme un tableau ou une
+matrice form\'e  de lignes et de colonnes, de sorte que $X_1(\omega ) +
+X_2(\omega ) + \cdots + X_n(\omega )$ ne d\'epend que de la ligne o\`u
+se trouve $\omega$ et $Y(\omega )$ que de la colonne o\`u se trouve
+$\omega$. Les \'ev\'enements $B = \{ X_1 + X_2 + \cdots + X_n = k \}$ et
+$C = \{ Y = n \}$ sont respectivement des ensembles de lignes
+compl\`etes et des ensembles de colonnes compl\`etes; leur intersection
+est donc un rectangle (une sous-matrice) du tableau, et le cardinal de ce
+rectangle est bien le produit du nombre de lignes par le nombre de
+colonnes. Mais l'\'ev\'enement $E = \{ X_1 + X_2 + \cdots + X_Y   = k \}$
+n'est pas une sous-matrice car $ \{ X_1(\omega ) + X_2(\omega ) + \cdots
++ X_{Y(\omega )} (\omega ) = k \}$ d\'epend {\it \`a la fois} de la ligne et
+de la colonne o\`u se trouve l'\'el\'ement $\omega$, de sorte que
+l'\'ev\'enement $E$ n'est pas  form\'e de lignes compl\`etes; son
+intersection avec $C$ n'est donc pas l'intersection d'un ensemble de
+lignes  compl\`etes avec un ensemble de colonnes compl\`etes, mais
+est pourtant un rectangle, car les morceaux de lignes qui manquent sont 
+tous \`a l'ext\'erieur de l'ensemble $C$.} 
+\medskip 
+On peut donc \'ecrire 
+$$\eqalign{ 
+{\cal P}\, (S = k &\mid Y = n) = {{\cal P}\, (S = k \;\hbox{et}\; Y = n) 
+\over  {\cal P}\, (Y = n)} \cr
+&= {{\cal P}\, (X_1 + X_2 + \cdots + X_n = k \;\hbox{et}\; Y = n) \over 
+{\cal P}\, (Y = n)} \cr
+&= {{\cal P}\, (X_1 + X_2 + \cdots + X_n = k) \times {\cal P}\, (Y = n)
+\over   {\cal P}\, (Y = n)} \cr
+&= {\cal P}\, (X_1 + X_2 + \cdots + X_n = k) \cr } \eqno (VIII. 2.)$$
+Ainsi la probabilit\'e conditionnelle ${\cal P}\, (S = k \mid Y = n)$ est
+\'egale \`a la probabilit\'e ${\cal P}\, (X_1 + X_2 + \cdots + X_n = k)$.
+En combinant $(VIII.1)$ et $(VIII.2)$, il vient
+$${\cal P}\, (S = k) = \sum_n {\cal P}\, (X_1 + X_2 + \cdots + X_n = k)
+\times {\cal P}\, (Y = n) \eqno (VIII. 3.)$$
+\medskip
+Appelons comme dans le probl\`eme pr\'ec\'edent $G_X(z)$ la fonction
+g\'en\'e\-ra\-trice commune des $X_j$ et $G_Y(z)$ celle de $Y$. Par 
+d\'efinition: 
+$$G_S(z) = \sum_{k} {\cal P}\, (S = k) \; z^k$$
+En rempla\c{c}ant ${\cal P}\, (S = k)$ par l'expression $(VIII.3)$:
+$$G_S(z) = \sum_{k} \sum_n {\cal P}\, (X_1 + X_2 + \cdots + X_n = k)
+\times {\cal P}\, (Y = n) \; z^k$$
+Puis en inversant l'ordre de sommation entre $k$ et $n$:
+$$G_S(z) = \sum_{n} \Bigl[ \sum_k {\cal P}\, (X_1 + X_2 + \cdots + X_n =
+k)\; z^k \Bigr] \times {\cal P}\, (Y = n)$$
+Mais l'expression entre crochets n'est autre que $G_X(z)^n$, de sorte que
+finalement
+$$G_S(z) = \sum_{n} \bigl[ G_X(z) \bigr]^n  {\cal P}\, (Y = n)
+= G_Y\bigl( G_X(z) \bigr)$$
+ou encore
+$$G_S = G_Y \circ G_X \eqno (VIII. 4.)$$
+\medskip
+Pour appliquer cette relation \`a notre probl\`eme, il nous faut
+encore conna{\^\i}tre la fonction $G_Y$,  c'est-\`a-dire la loi de $Y$; 
+mais c'est imm\'ediat,  puisqu'il s'agit d'un simple lancer de d\'e: 
+l'\'ev\'enement $\{ Y = n \}$ est identique \`a l'\'ev\'enement ``le d\'e 
+donne $6$ la $n^{\rm e}$ fois,  et $1$, $2$, $3$, $4$, ou $5$ les $n-1$
+fois
+ pr\'ec\'edentes.  Pour calculer la probabilit\'e de cet \'ev\'enement, 
+l'espace $\Omega_n$ correspondant \`a $n$ lancers successifs du d\'e
+suffit:  il est form\'e des mots de $n$ lettres \'ecrits avec l'alphabet
+$\{
+1,2,3,4,5,6 \}$,  donc $\#\Omega = 6^n$.  Les \'el\'ements de$\{ Y = n \}$
+sont,  parmi ces mots,  ceux dont la derni\`ere lettreest $6$ et dont les
+$n-1$ premi\`eres sont prises dans l'alphabet$\{ 1,2,3,4,5 \}$,  donc
+$\#\{ Y = n \} = 5^{n-1}$.  Ainsi
+$${\cal P}\, (Y = n) = {5^{n-1} \over 6^n}$$
+et 
+$$G_Y(z) = \sum_{n \geq 1} {5^{n-1} \over 6^n}\; z^n$$
+
+Si on calcule cette somme de $n = 1$ \`a $n=N$, on obtient 
+$$\sum_{n \geq 1}^{n = N} {5^{n-1} \over 6^n}\; z^n =
+{z \over 6 - 5z} \cdot \Bigl[ 1 - \Bigl( {5z \over 6}^N\Bigr) \Bigr]$$
+Pour pouvoir faire tendre $N$ vers l'infini, il faudrait avoir construit un
+espace $\Omega$ lui-m\^eme infini. Mais il est bien clair que si $n$ est
+grand, la probabilit\'e pour que le d\'e ne donne jamais $6$ avant la 
+$n^{\rm e}$ fois est infinit\'esimale: par exemple pour $n=1000$ cette
+probabilit\'e serait $5^{999} / 6^{1000} \simeq 1.318 \cdot 10^{-80}$.
+Pour qu'il y ait un sens \`a distinguer cela de z\'ero, il faudrait que
+l'\'equiprobabilit\'e des six faces du d\'e soit v\'erifi\'ee \`a $10^{-80}$
+pr\`es. Comme il ne peut en \^etre  ainsi, il est absurde de pr\'etendre
+pousser la sommation aussi loin. On va donc consid\'erer que la
+probabilit\'e pour que $Y$ soit sup\'erieur \`a $1000$ est nulle, et que 
+$$G_Y(z) \simeq {z \over 6 - 5z}$$
+Par ailleurs $G_X(z)$, la fonction g\'en\'eratrice des $X_j$, est \'egale
+\`a ${1\over 2}\bigl( z + {1\over\textdown z}\bigr)$, donc 
+d'apr\`es $(VIII.4)$:
+$$G_S(z) \simeq  {{1\over 2}\bigl( z + {1\over\textdown z}\bigr) 
+\strup{7}\over\sdown{13} 6 - {5\over 2}\bigl( z + {1\over
+\textdown z}\bigr)} = {z^2 + 1 \over -5z^2 + 12z - 5} 
+\eqno (VIII.5.)$$ 
+Si \`a partir de ce r\'esultat on veut retrouver les probabilit\'es
+${\cal P}\, (S = k)$, il faut d\'evelopper cette expression en s\'erie
+enti\`ere.  Les valeurs de $S$ sont n\'ecessairement enti\`eres, mais
+peuvent \^etre aussi bien positives que n\'egatives; il faut donc
+rechercher un d\'eveloppement de Laurent (voir cours de math\'ematique).
+Pour cela on commence par d\'ecomposer l'expression obtenue en
+\'el\'ements  simples. Les racines du d\'enominateur $-5z^2 + 12z - 5$
+sont $$ z_1 = {6 - \sqrt{11} \over 5}\quad ; \qquad 
+z_2 = {6 + \sqrt{11} \over 5}\quad ; $$
+On remarquera que les deux sont r\'eelles positives, et qu'en outre 
+$z_1 < 1$ et $z_2 > 1$.
+$$\openup 2\jot\eqalignno{
+{z^2 + 1 \over -5z^2 + 12z - 5} &= -{1 \over 5} + {\strup{6} {12\over 5}\,
+z \over -5z^2 + 12z - 5} \cr
+&= -{1 \over 5} + {A \over \sdown{17} {\displaystyle 1 - {z_1 \over
+\ldown {z} }  } }\; {z_1 \over z} + {B \over \sdown{17} {\displaystyle 1 -
+{z \over  \ldown {z_2}} }  } \cr }$$ 
+On obtient sans difficult\'e les nombres $A$ et $B$: 
+$$A = B = {6 \over \sdown{14}5\sqrt{\sdown{9.6}11}}$$
+Le d\'eveloppement de Laurent de la fonction $(z^2 + 1) / (-5z^2 + 12z -
+5)$ r\'esulte alors des s\'eries g\'eom\'etriques de 
+$${1 \over \sdown{17} {\displaystyle 1 - {z_1 \over \ldown {z}} }  }
+\; {z_1 \over z}\; 
+= \;\sum_{k \geq 1}\; \bigg( {z_1 \over \ldown {z}}\bigg)^k$$
+et
+$${1 \over \sdown{17} {\displaystyle 1 - {z \over \ldown {z_2}} }  }\; 
+= \;\sum_{k \geq 0}\; \bigg( {z \over \ldown {z_2}}\bigg)^k$$
+c'est-\`a-dire
+$$G_S(z) = {1 \over 5}\; \Bigg( {6 \over \sdown{14}\sqrt{\sdown{9.6}11}} - 1 
+\Bigg) +\sum_{k \geq 1} {6 \over \sdown{14}5\sqrt{11}} \Bigg( {6 - 
+\sqrt{\sdown{9.6}11}  \over 5} \Bigg)^k\; \bigg( z^k + {1 \over z^k}
+\bigg)$$ 
+On en d\'eduit que
+$${\cal P}\, (S = 0) = {1 \over 5}\; \Bigg( {6 \over \sdown{14}
+\sqrt{\sdown{9.6}11}} - 1 \Bigg)$$
+et pour $k = 1,\, 2,\, 3, \ldots$:
+$${\cal P}\, (S = \pm k) = {6 \over 5\sdown{14}\sqrt{\sdown{9.6}11}}\;
+\Bigg( {6 - \sqrt{\sdown{9.6}11}  \over 5} \Bigg)^k$$
+\bigskip
+Le calcul num\'erique donne les valeurs suivantes:
+\bigskip
+$$\matrix{
+&k\qquad &0 &1 &2 &3  \cr
+\noalign{\medskip}
+&{\cal P}\, (S = \pm k)\quad &0.1618 &0.1942 &0.1042 &0.0559\cr
+\noalign{\vskip16pt}
+&k\qquad &4 &5 &6 &7 \cr
+\noalign{\medskip}
+&{\cal P}\, (S = \pm k)\quad &0.0300 &0.01161 &0.0086 &0.0046\cr }$$
+\bigskip
+Plus g\'en\'eralement, si au lieu d'un d\'e on avait employ\'e un 
+proc\'ed\'e quelconque donnant $q$ r\'esultats possibles au lieu de $6$,
+de sorte que la loi de $Y$ e\^ut \'et\'e ${\cal P}\, (Y = n) = {1\over
+\textdown{q}} \bigl( 1-{1\over\textdown{q}}\bigr)^{n-1}$ au 
+lieu de  ${\cal P}\, (Y = n) = {1\over 6} \bigl( {5\over 6}\bigr)^{n-1}$,
+alors on aurait obtenu pour la loi de $S$: 
+\bigskip
+--- si $k \neq 0$:
+$${\cal P}\, (S = \pm k) = {q \over \sdown{14} (q-1)\sqrt{\sdown{9.6}2q-1}} 
+\Bigg( {q -  \sqrt{\sdown{9.6}2q-1}  \over q-1} \Bigg)^k$$ 
+\medskip
+--- et si $k = 0$:
+$${\cal P}\, (S = 0) = {1 \over (q-1)}\;\Bigg(
+{q\over \sdown{14} \sqrt{\sdown{9.6}2q-1}} - 1\Bigg)$$ 
+
+On constate que la r\'epartition des probabilit\'es
+entre les diff\'erentes valeurs de la variable $S$ est tr\`es diff\'erente
+de ce  qu'on obtenait pour  la somme $\Sigma = X_1 + X_2 + \cdots +
+X_n$ d'un nombre {\it fix\'e} de variables al\'eatoires ind\'ependantes:
+pour $n$ grand, $\Sigma$  avait une r\'epartition en  $e^{-x^2}$, ce qui
+n'est plus du tout le cas pour $S$. Bien entendu, cela se comprend
+ais\'ement: la loi en $e^{-x^2}$ provient  de ce que $\Sigma$ est la 
+somme d'un {\it grand} nombre de $X_j$; par contre $S$ peut
+al\'eatoirement \^etre la somme d'un grand nombre ou  d'un petit nombre 
+de $X_j$. Si $q$ est petit (par exemple $q=6$ comme dans le cas du 
+d\'e), il est de toute fa\c{c}on peu probable que $Y$ puisse prendre de
+grandes valeurs; mais m\^eme si $q$ est tr\`es grand, il y a une
+probabilit\'e non n\'egligeable pour que la somme $S$ soit la somme d'un
+nombre trop petit de $X_j$, en tous cas trop petit pour donner une loi de
+la forme $e^{-x^2}$. 
+\bigskip
+{\bf Probl\`eme 3: r\'eaction en cha{\^\i}ne.} Dans la fission nucl\'eaire, 
+un neutron casse un noyau d'$U^{235}$ en lib\'erant deux ou trois
+nouveaux neutrons, qui \`a leur tour reproduiront chacun l'exploit du
+premier. 
+\smallskip
+La loi de probabilit\'e du nombre de neutrons issu d'une fission \'etant
+donn\'ee, trouver la probabilit\'e pour que la r\'eaction ne s'\'eteigne 
+pas. 
+\medskip
+Dans un tel processus interviennent aussi les produits de fission,
+qui sont les d\'ebris hautement radioactifs des noyaux d'$U^{235}$; 
+mais leur existence,  bien que mena\c{c}ant l'avenir de l'humanit\'e, ne
+joue qu'un r\^ole n\'egligeable dans le maintien ou l'extinction de la
+r\'eaction en cha{\^\i}ne.  D'autre part,  on peut appliquer aux diff\'erents
+neutrons  une statistique tout \`a fait classique,  car les \'ev\'enements 
+dont ils sont issus (la fission d'un noyau) sont d\'epourvus de 
+coh\'erence collective,  de sorte qu'il n'y a pas interf\'erence
+des amplitudes quantiques,  mais superposition incoh\'erente. 
+\medskip
+Dans un tel processus chaque neutron (particule-m\`ere) donne apr\`es 
+une fission un nombre {\it al\'eatoire} de nouveaux neutrons
+(particules-filles). Bien que ce soit purement th\'eorique, on 
+admettra que tout le processus a \'et\'e initi\'e par un seul premier 
+neutron: cela revient \`a ne consid\'erer que la descendance d'un seul
+neutron. 
+\smallskip
+{\eightpoint {\bf Remarque pour les physiciens:} 
+Pour chaque neutron de la r\'eaction en cha{\^\i}ne, le nombre 
+de g\'en\'erations depuis le tout premier neutron est parfaitement 
+d\'etermin\'e: en effet, d'apr\`es la relation d'incertitude
+phase -- nombre $\Delta\varphi\times\Delta N \sim \hbar$, le nombre
+$N$ de particules serait ind\'etermin\'e si par exemple les particules
+\'etaient en phase, comme les photons d'un laser; or les neutrons de
+fission sont en g\'en\'eral incoh\'erents, c'est-\`a-dire que l'incertitude
+sur la phase est infinie, donc l'incertitude sur le nombre est nulle
+(il s'agit de l'incertitude de Heisenberg, non de l'incertitude subjective
+provenant de la difficult\'e pratique de mesurer ce nombre).
+C'est pour cette raison qu'on peut appliquer une statistique
+classique. Il y a donc un sens \`a parler de l'ensemble des neutrons de 
+la $n^{\rm e}$ g\'en\'eration. } 
+\medskip
+Par cons\'equent on peut introduire les variables al\'eatoires 
+$$Z_n = \hbox{nombre de neutrons de la $n^{\rm e}$ g\'en\'eration}$$
+Par ailleurs, il semble absurde que la fission d'un noyau puisse \^etre
+influenc\'ee par les r\'esultats des autres fissions\ftn{1}{Cela ``semble
+absurde'', mais la M\'ecanique quantique nous a montr\'e que de telles
+absurdit\'es peuvent exister et ne sont donc pas absurdes. C'est pourquoi
+il faut consid\'erer le postulat d'ind\'ependance que nous faisons ici 
+comme une simple hypoth\`ese susceptible d'\^etre r\'efut\'ee par
+l'exp\'erience, ou m\^eme dans certains cas par la th\'eorie elle-m\^eme. 
+La question est de savoir si les diff\'erentes fissions nucl\'eaires d'une
+m\^eme r\'eaction en cha{\^\i}ne sont {\it s\'eparables}, au sens de la
+s\'eparabilit\'e quantique.}; cela implique que la loi de probabilit\'e du
+nombre de neutrons issus de chaque fission est toujours la m\^eme, \`a
+savoir la loi de $Z_1$, et que ce nombre est stochastiquement
+ind\'ependant pour chaque fission. 
+\medskip
+Consid\'erons alors l'ensemble des neutrons de fission de la $n^{\rm e}$
+g\'en\'eration, et num\'erotons les par la pens\'ee de $j=1$ \`a $j=Z_n$. 
+Le $j^{\rm e}$ de ces neutrons donne un nombre al\'eatoire $X_j^{(n)}$ 
+de particules-filles, et d'apr\`es les hypoth\`eses ci-dessus les
+variables al\'eatoires $X_j^{(n)}$ sont stochastiquement 
+ind\'ependantes entre elles et ont toutes la m\^eme loi que $Z_1$.
+\medskip
+On en d\'eduit que le nombre de neutrons de la $(n+1)^{\rm e}$ 
+g\'en\'eration est 
+$$Z_{n+1} = \sum_{j=1}^{j=Z_n}\; X_j^{(n)}$$
+Autrement dit, le nombre de neutrons d'une g\'en\'eration est la 
+somme d'un nombre lui-m\^eme al\'eatoire de variables al\'eatoires 
+ind\'ependantes et de m\^eme loi, c'est-\`a-dire que nous sommes
+ramen\'es au probl\`eme $N^\circ 2$. En appliquant simplement ce que
+nous avons trouv\'e alors,  on voit que, si on appelle $G_n(z)$ la 
+fonction g\'en\'eratrice de $Z_n$: 
+$$G_{n+1}(z) = G_n\bigl( G_1(z) \bigr)\quad ;$$
+cela montre par r\'ecurrence que $G_n$ est simplement la $n^{\rm
+e}$ it\'er\'ee de $G_1$:
+$$G_n = G_1 \circ G_1 \circ G_1 \circ \cdots \circ G_1 \qquad
+(n\;\hbox{fois}) \eqno (VIII.6.)$$
+\bigskip
+{\bf \'Etude d'un cas particulier}
+\medskip
+Il est parfois possible de calculer explicitement $G_n(z)$. Nous allons
+traiter un tel cas en d\'etail, puis nous ferons une \'etude qualitative 
+pour le cas g\'en\'eral en nous inspirant de ce cas particulier.
+\medskip
+Supposons que la loi de $Z_1$ soit la suivante:
+$${\cal P}\, (Z_1 = k) = \beta \alpha^k$$
+o\`u $\alpha$ et $\beta = 1 - \alpha$ sont donn\'es (cette loi, dite {\it 
+loi g\'eom\'etrique}, est celle de $Y$ dans le probl\`eme $N^\circ 2$ 
+lorsque $\alpha = {5 \over 6}$ et $\beta = {1 \over 6}$). Cette loi est 
+peu r\'ealiste en tant que mod\`ele de r\'eaction en cha{\^\i}ne de fission 
+nucl\'eaire, mais cela importe peu pour le moment. Cette loi peu r\'ealiste
+permet de calculer {\it explicitement} la fonction $G_n$,  et nous
+verrons le cas g\'en\'eral ensuite.
+\medskip
+Il est toujours sous-entendu que les probabilit\'es ${\cal P}\, (Z_1 = k)
+=  \beta \alpha^k$ sont par nature approximatives et n'ont gu\`ere de
+signification pour des grandes valeurs de $k$; donc la fonction
+g\'en\'eratrice est aussi approximative. D'un point de vue pratique il est
+en g\'en\'eral bien rare que l'on ait \`a consid\'erer des probabilit\'es 
+${\cal P}\, (Z_1 = k)$ au-del\`a de $k = 4$, car elle sont alors plus 
+petites que l'incertitude sur leurs valeurs. Mais dans le cas pr\'esent 
+o\`u nous supposons une loi g\'eom\'etrique $\beta \alpha^k$, si on
+effectue  formellement la somme de la s\'erie $\sum_k {\cal P}\, (Z_1 =
+k)\; z^k$ jusqu'\`a l'infini, on obtient une fonction simple (somme d'une
+s\'erie g\'eom\'etrique); si par contre, sous le pr\'etexte que $\beta
+\alpha^k$  devient n\'egligeable au-del\`a de, disons, $k=10$, on
+n'effectuait la somme de la  s\'erie que jusqu'\`a $k = 10$, on obtiendrait
+un polyn\^ome de degr\'e $10$ beaucoup moins maniable que la fonction
+simple (homographique), et qui ne serait a priori ni plus exact, ni moins
+exact que la
+fonction simple. C'est pourquoi il est avantageux de sommerjusqu'\`a
+l'infini, non parce que la somme infinie est plus exacte, maisparce
+qu'elle est plus commode. La fonction est alors 
+$$\sum_{k=0}^{\infty}\; \beta \alpha^k\; z^k\; = \; {\beta \over 1 -
+\alpha z}\; = \; G_1(z)$$ 
+Cette fonction homographique a en outre l'avantage d'\^etre facile a
+it\'erer: la composition de deux ou plusieurs fonctions homographiques
+est \'egalement une fonction homographique (c'est la raison pour 
+laquelle nous avons choisi la loi g\'eom\'etrique).
+\medskip
+Un calcul sans surprise donne pour les premi\`eres it\'er\'ees les 
+r\'esultats suivants:
+$$\eqalignno{
+G_2(z)\; &= \;\beta\; {1 - \alpha z \over (1 - \alpha\beta ) - 
+\alpha z } \cr
+G_3(z)\; &= \;\beta\; {(1 - \alpha\beta) - \alpha z \over (1 - 
+2\alpha\beta) - (1 - \alpha\beta)\,\alpha\, z } \cr
+G_4(z)\; &= \;\beta\; {(1 - 2\alpha\beta) - (1 - \alpha\beta)
+\,\alpha\, z \over  (1 - 3\alpha\beta + \alpha^2\beta^2) - (1 -
+2\alpha\beta)\,\alpha\, z } \cr } $$
+Sur ces expressions, on observe des r\'egularit\'es. 
+Par exemple, le num\'e\-ra\-teur de chacune est \'egal au d\'enominateur
+de lapr\'ec\'edente.  En observant encore mieux,  on voit aussi que, \`a
+l'int\'erieur des num\'erateurs ou des d\'eno\-mi\-na\-teurs,  le premier
+terme
+est toujours en avance d'un rang sur le coefficient de $\alpha z$. On
+devine donc une r\'ecurrence sous la forme
+$$G_n(z)\; = \;\beta\; {\strup 7 a_{n+1} - \alpha\, a_{n}\, z 
+\over a_{n+2} - \alpha\, a_{n+1}\, z } $$
+o\`u $a_n$ est une certaine suite num\'erique. En identifiant les
+coefficients dans la relation de r\'ecurrence $G_{n+1} = G_n \circ G_1$,
+on constatera que cette suite est elle-m\^eme d\'efinie par la relation 
+de r\'ecurrence
+$$\displaylines{
+a_{n+1} = a_{n} - \alpha\beta\, a_{n-1} \hskip12mm (n \geq 2)\cr
+a_1 = 0 \; ; \quad a_2 = 1 \hskip12mm (n = 0\;\; \hbox{et}\;\; 1)\cr }$$
+Mais on peut encore simplifier davantage: dans une fonction
+homographique $(a + bz)\; /\; (c  + dz)$, les quatre coefficients 
+$a,b,c,d$ ne sont pas univoques; on peut simplifier 
+l'expression ci-dessus  de $G_n(z)$ en divisant le num\'erateur et le
+d\'enominateur par  $a_{n+1}$, ce qui donne
+$$G_n(z)\; = \;\beta\; {\kern5pt\strup{12} {\displaystyle 1 -
+\alpha\, {a_{n}\over\ldown{a_{n+1}}}\, z }\kern5pt\over\sdown{19}
+{\displaystyle {a_{n+2}\over\ldown{a_{n+1}}} -  \alpha\, z } }$$ 
+Si alors on introduit la nouvelle suite num\'erique $b_n = a_{n} /
+a_{n+1}$ ($n \geq 1$), cela s'\'ecrit 
+$$G_n(z)\; = \;\beta\; {1 - \alpha\, b_n\, z \over \sdown{19}
+{\displaystyle {1\over b_{n+1}} - \alpha\, z } }\; = \;\beta\, b_{n+1}\; 
+{1 - \alpha\, b_n\, z  \over 1 - \alpha\, b_{n+1}\, z } \eqno (VIII.7.)$$
+et la nouvelle suite num\'erique $b_n$ est caract\'eris\'ee par la 
+r\'ecurrence 
+$$ b_{n+1}\; = \; {1 \over 1 - \alpha\beta\, b_n} \qquad (b_1 = 0) 
+\eqno (VIII.8.)$$
+qu'on d\'eduit de la relation de r\'ecurrence des $a_n$ en divisant ses
+deux membres par $a_n$.
+\medskip
+Une petite \'etude rapide de la suite $b_n$ sera utile. On peut montrer
+qu'elle est croissante, que si $\alpha > {1\over 2}$ elle tend vers
+$1/\alpha$, et si $\alpha < {1\over 2}$ elle tend vers $1/\beta$. En
+effet, on v\'erifie par r\'ecurrence que l'on a toujours
+$$1 < b_n < {1\over\ldown{\alpha }} \quad \hbox{et} \quad 
+1 < b_n < {1\over\ldown{\beta }}$$
+Rappelons que $\beta = 1 - \alpha$.  Par ailleurs on peut \'ecrire
+$$\openup 2\jot\eqalignno{
+b_{n+1} - b_n &= {1\over 1 - \alpha\beta\, b_n} - b_n = 
+{1 - b_n +\alpha\beta\, b_n^2\over 1 - \alpha\beta\, b_n} \cr
+&= {(1-\alpha b_n)(1-\beta b_n)\over 1 - \alpha\beta\, b_n}
+= b_{n+1}(1-\alpha b_n)(1-\beta b_n) \cr }$$
+o\`u on voit que le second membre est,  d'apr\`es ce qui pr\'ec\`ede, 
+toujours positif.  Cette derni\`ere \'egalit\'e montre aussi que la
+limite ne peut \^etre que $1\over\textdown\alpha$ ou $1\over\beta$; 
+du fait que la suite est croissante et d\'emarre \`a $b_0=0$ et $b_1=1$, 
+la limite est n\'ecessairement le plus petit de ces deux nombres.
+\medskip
+Pour obtenir la loi de $Z_n$ il faut maintenant d\'evelopper la fonction 
+g\'en\'eratrice $G_n(z)$ en puissances de $z$:
+$$\eqalignno{
+G_n(z)\; &= \;\beta\, b_{n+1}\; {1 - \alpha\, b_n\, z  \over 1 -
+\alpha\, b_{n+1}\, z } \cr
+&= \;\beta\, b_{n+1}\; \bigl( 1 - \alpha\, b_n\, z \bigr)\;
+\sum_{k=0}^\infty \; (\alpha\, b_{n+1}\, z)^k \cr
+&= \;\beta\, b_{n+1}\;\biggl\{  1 + \sum_{k=1}^\infty \; (\alpha\, 
+b_{n+1}\, z)^k - \sum_{k=0}^\infty \; \alpha\, b_n\,(\alpha\, 
+b_{n+1})^k\, z^{k+1}\;\biggr\} \cr
+&= \;\beta\, b_{n+1}\; + \beta\;\bigl[ b_{n+1} -
+b_n \bigr]\;\sum_{k=1}^\infty \;  (\alpha\,  b_{n+1}\, z)^k  \cr}$$
+On en d\'eduit la loi de probabilit\'e de $Z_n$:
+$$\eqalignno{
+\hbox{pour $k=0$:}\qquad {\cal P}\, (Z_n = 0)\; &= \;\beta\, b_{n+1} \cr
+\hbox{pour $k\geq 1$:}\!\qquad {\cal P}\, (Z_n = k)\; &= \;\beta\;\bigl[
+b_{n+1} - b_n \bigr]\; (\alpha\,  b_{n+1})^k \cr
+&= \;\beta\, b_{n+1}\, (1 - \alpha b_n)\, (1 - \beta b_n)\; (\alpha\, 
+b_{n+1})^k  \cr }$$
+Les valeurs de ${\cal P}\, (Z_n = k)$ pour {\it chaque} $k$ sont peu
+parlantes et on voit mieux ce qui se passe avec ${\cal P}\, (Z_n \geq
+k)$; or ceci s'obtient ais\'ement:
+$$\eqalignno{
+{\cal P}\, (Z_n \geq k)\;  &= \;\sum_{\ell\geq k}^\infty\; {\cal P}\, 
+(Z_n = k)\cr
+&= \;\beta\, b_{n+1}\, (1 - \alpha b_n)\, (1 - \beta b_n)\; { (\alpha\, 
+b_{n+1})^k \over 1 - \alpha b_{n+1} } \cr
+&= \; (1 - \beta b_n)\; (\alpha\, b_{n+1})^k \cr }$$
+On voit que cette valeur d\'ecro{\^\i}t exponentiellement avec  $k$. 
+Lorsque $n$ est grand, cette d\'ecroissance est tr\`es lente si $\alpha >
+{1\over 2}$, car alors $\alpha\, b_{n+1} \simeq 1$; elle est par contre
+rapide si $\alpha$ est nettement inf\'erieur \`a ${1\over 2}$, car alors 
+$\alpha\, b_{n+1} \simeq {\alpha\over\beta}$, ce qui est nettement 
+inf\'erieur \`a $1$. Dans ce second cas, cependant, on voit que 
+${\cal P}\, (Z_n = 0)\; = \;\beta\, b_{n+1} \simeq 1$, ce qui signifie que
+la probabilit\'e pour que la r\'eaction en cha{\^\i}ne se soit \'eteinte est
+pratiquement \'egale \`a $1$ (la limite de cette probabilit\'e quand $n$
+tend vers l'infini est $1$). Dans le premier cas, o\`u $\alpha > {1\over
+2}$, on voit que la probabilit\'e pour que la r\'eaction en cha{\^\i}ne soit
+\'eteinte \`a la $n^{\rm e}$ g\'en\'eration tend vers
+$\beta\strup{1.7}\over\textdown\alpha$ (qui est strictement 
+inf\'erieur  \`a $1$) lorsque $n$ tend vers l'infini, mais les probabilit\'es
+pour qu'il y ait $1,\, 2,\, 3,\,  \ldots ,\, k$ neutrons d\'ecroissent tr\`es
+lentement  avec $k$ (elles sont pratiquement \'equiprobables tant que $k
+\ll \bigl[ {\alpha\over\beta}\bigr]^n$).
+\bigskip
+Sur cet exemple le calcul d\'etaill\'e nous a permis d'obtenir 
+explicitement, sous forme analytique, la loi de $Z_n$. Les propri\'et\'es
+int\'eressantes sont toutefois surtout les suivantes:
+\smallskip
+--- quand $n$ tend vers l'infini, la limite de ${\cal P}\, (Z_n = 0)$ est
+$\alpha\over\beta$ si $\alpha > {1\over 2}$ et  $1$ si $\alpha \leq
+{1\over 2}$; cela signifie que si $\alpha \leq {1\over 2}$ la r\'eaction
+finira {\it certainement} par s'\'eteindre, et que si $\alpha > {1\over
+2}$ il y a toujours une probabilit\'e non nulle pour qu'elle finisse par
+s'\'eteindre.
+\smallskip
+--- dans le cas o\`u la probabilit\'e d'extinction ne tend pas vers $1$, 
+peu importe le d\'etail de la loi, mais on constate que celle-ci est
+exponentielle (g\'eom\'etrique) et tr\`es \'etal\'ee.
+\medskip
+En g\'en\'eral, lorsque $G_1(z)$ est quelconque, il est impossible
+d'effectuer des calculs analytiques explicites. Mais nous allons voir que
+les renseignements {\it int\'eressants} peuvent \^etre d\'eduits quand
+m\^eme: ce sera le sujet de la section suivante (``\'Etude du cas 
+g\'en\'eral''). Nous y \'etablirons que {\it quelle que soit la loi de} $Z_1$,
+il n'y a que deux possibilit\'es: si ${\bf E}(Z_1) \leq 1$ la probabilit\'e
+pour que  $Z_n = 0$ tend vers $1$ et si ${\bf E}(Z_1) > 1$ il y a une
+probabilit\'e non nulle  que la r\'eaction se poursuive \'eternellement. En
+outre, s'il est impossible de calculer explicitement la loi exacte et
+compl\`ete de $Z_n$, on peut du moins calculer explicitement ${\bf
+E}(Z_n)$ et ${\bf Var}(Z_n)$. Nous verrons qu'on peut m\^eme calculer
+algorithmiquement sa densit\'e. Autrement dit, quoique le calcul
+d\'etaill\'e soit impossible, tout ce qu'on pouvait d\'eduire
+d'int\'eressant \`a partir du calcul d\'etaill\'e peut aussi \^etre obtenu
+par une autre voie. 
+\bigskip
+La fonction g\'en\'eratrice $G(z)$ d'une loi de probabilit\'e n'est pas 
+une fonction arbitraire; lorsqu'on la d\'eveloppe selon les puissances de
+$z$, les coefficients sont des probabilit\'es, donc ils ne sont jamais 
+n\'egatifs, et en outre leur somme est \'egale \`a 1.  Cela a pour
+cons\'equence que si   $0 < x \leq 1$, $G(x)$ et ses d\'eriv\'ees
+successives au point $z = x$ sont  toutes positives. Cela se voit tr\`es
+facilement. Soit $G^{(j)}(x)$ la $j^{\rm e}$ d\'eriv\'ee de $G(z)$ au point
+$z = x$; on a 
+$$G^{(j)}(x) = \sum_{k\geq j} k(k-1)(k-2) \cdots (k-j+1)\, p_k\, x^{k-j}$$ 
+dans cette somme tous les termes sont positifs donc la somme
+est positive; en outre dans le cas o\`u pour simplifier on souhaite
+sommer jusqu'\`a l'infini il n'y a pas de probl\`eme de convergence
+puisque nous avons suppos\'e $x \leq 1$. Or une fonction $G(x)$ dont
+toutes les  d\'eriv\'ees sont positives est n\'ecessairement croissante
+et convexe; donc une droite ne peut pas couper son graphe en plus de
+deux points. L'\'equation $G(x) = x$ a au plus deux racines. Mais $x = 1$
+est une racine \'evidente. On peut comprendre ais\'ement que si $G'(1) >
+1$ il existe une deuxi\`eme racine $x_0$ telle que $0 < x_0 < 1$. Par
+contre si $G'(1) < 1$, il ne peut pas exister entre $0$ et $1$ d'autre
+racine que $1$. La convexit\'e de $G(x)$ a en outre la cons\'equence que
+si $0 < x < 1$, la suite des it\'er\'ees $G^n(x)$ tend vers la racine $x_0$
+si $G'(x) > 1$ et vers la racine $1$ si $G'(x) \leq 1$. Voir la figure 18.
+
+\midinsert
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig18.eps} }
+\centerline{\eightpoint figure 18.}
+\endinsert
+
+\medskip
+Dans l'exemple que nous avons trait\'e en d\'etail, ces ph\'enom\`enes 
+se produisaient. La fonction $G(z)$ \'etait $\beta / (1 - \alpha z)$ et sa
+d\'eriv\'ee \'etait donc $G'(z) = \alpha\beta / (1 - \alpha z)^2$, d'o\`u
+$G'(1) = \alpha /\beta$. La condition qui \'etait n\'ecessaire pour que la
+probabilit\'e d'extinction ne tende pas vers $1$ \'etait que $\alpha >
+{1\over 2}$, ou, ce qui est \'equivalent, que $\alpha > \beta$,
+c'est-\`a-dire $G'(1) > 1$. Dans ce cas, le calcul nous avait montr\'e que 
+la suite $b_n$ tendait vers $1\over\textdown\alpha$, et par
+cons\'equent $G_n(z) = \beta\, b_{n+1}\, (1 - b_n\alpha z)\; /\; (1 -
+b_{n+1}\alpha z)$ (cf. $VIII.7$) devait avoir pour limite $\beta / 
+\alpha$ lorsque $n$ tend vers l'infini; or la racine $x_0$ de l'\'equation
+$G(x) = x$ est dans  ce cas pr\'ecis\'ement \'egale \`a cette valeur.
+\bigskip
+Il est possible de trouver, \`a partir de la r\'ecurrence $(VIII.8)$, une 
+expression analytique explicite de la suite $b_n$ en fonction de $n$. 
+Pour cela, introduisons $x_n = 1-\alpha b_n$; puisque $b_n$ tend vers 
+ $1 / \alpha$, il est clair que $x_n$ tend vers 0. En outre, puisque $b_n$
+tend vers  $1 / \alpha$ {\it en croissant}, les $x_n$ sont toujours
+positifs. On d\'eduit imm\'ediatement la r\'ecurrence des $x_n$ de celle
+des $b_n$: 
+$$x_{n+1} = {\beta x_n \over \alpha + \beta x_n}$$
+On voit que lorsque $x_n$ est petit (donc pour $n$ assez grand), le terme 
+$\beta x_n$ au d\'enominateur est n\'egligeable devant $\alpha$, de 
+sorte que $x_{n+1} \simeq {\beta\strup{1.7}\over\textdown
+\alpha}x_n$. Cela montre que  la d\'ecroissance de la suite $x_n$ est de
+type exponentiel, de raison ${\beta\strup{1.7}\over\textdown
+\alpha}$; c'est-\`a-dire qu'on s'attend \`a ce que  pour $n$ grand, $x_n
+\sim \big( {\beta\strup{1.7}\over\textdown\alpha} \big)^n$. 
+Posons alors  
+$$y_n =  \bigg( {\alpha\over\beta} \bigg)^n\, x_n$$
+La r\'ecurrence entre les $y_n$ est maintenant
+$$y_{n+1} = {\strup{7} \alpha\, y_n \over \quad\sdown{19}{\displaystyle 
+\alpha + \bigg(  {\beta \over \ldown \alpha} \bigg)^{n+1}\alpha
+y_n}\quad } = {\strup{7} 1 \over \quad \sdown{19} {\displaystyle
+{1\over\ldown{y_n}}  +  \bigg( {\beta\over \ldown\alpha} \bigg)^{n+1}}
+\quad }$$   
+ou encore, en consid\'erant la suite des inverses $u_n = {1
+\over\textdown{y_n}}$:   
+$$u_{n+1} = u_n + \bigg( {\beta\over\ldown\alpha} \bigg)^{n+1}$$  
+Pour amorcer la r\'ecurrence, il faut conna{\^\i}tre $u_1$, ce qui 
+s'obtient imm\'e\-dia\-te\-ment: $b_1=0$, donc $x_1=1$, $y_1=
+{\alpha\over\beta}$, et $u_1 = {\beta\strup{1.7}\over\textdown
+\alpha}$.  Par cons\'equent $u_n$ peut s'exprimer directement en 
+fonction de $n$:   
+$$u_n = \sum_{j=1}^{j=n} \bigg(
+{\beta\over\ldown\alpha} \bigg)^{j} =  
+{\beta\strup{1.7}\over\ldown\alpha}\; {\strup{7} 1 -  \bigl(
+{\beta\strup{1.7}\over\textdown\alpha} \bigr)^{n}  \over  
+\sdown{15} 1 - {\beta\strup{1.7}\over\textdown\alpha}}$$ 
+En revenant en arri\`ere, on obtient alors pour $x_n$ et $b_n$: 
+$$x_n ={\textstyle \bigl( {\beta\strup{1.7}\over\textdown\alpha} 
+\bigr)^{n-1}} {\strup{7} 1 - {\beta\strup{1.7}\over\textdown\alpha} 
+\over \sdown{15} 1 - \bigl( {\beta\strup{1.7}\over\textdown
+\alpha} \bigr)^{n} } \qquad b_n = {1\over\ldown
+\alpha}\; {\strup{7}  1 - \bigl({\beta\strup{1.7}\over\textdown
+\alpha} \bigr)^{n-1} \over \quad\sdown{15}  1 -  \bigl( {\beta\strup{1.7}
+\over\textdown\alpha} \bigr)^{n}\quad }$$    
+Revenons \`a l'expression $(VIII.7)$ de $G_n(z)$ qui avait \'et\'e obtenue
+plus haut \`a l'aide des $b_n$.   
+$$\openup 3\jot\eqalign{
+G_n(z)\; &= \;\beta\; {1 - \alpha\, b_n\, z \over \sdown{19}
+{\displaystyle {1\over b_{n+1}} - \alpha\, z } }\; \cr
+&= \; \beta\; {1 - \alpha\, b_n\, z \over \sdown{12}  1 - \alpha\beta
+b_n - \alpha\, z }  \cr
+&= \; 1 + {(\beta - \alpha - \beta x_n) w \over \alpha w + \beta x_n}\cr
+} \eqno (VIII.9.)$$
+o\`u l'on a introduit $w = 1 - z$. Lorsque $x_n$ tend vers z\'ero
+(c'est-\`a-dire lorsque $n$ tend vers l'infini), la limite de cette 
+derni\`ere expression n'est pas une bonne fonction analytique de
+$w$; en effet, si $w=0$, cela tend vers 1, mais d\`es que $w\neq 0$, 
+cela tend vers  $\beta\strup{1.7}\over\textdown\alpha$. Bien 
+entendu, tant  que $n$ n'est pas infini, il y a continuit\'e: lorsque $w$
+s'\'ecarte  de z\'ero (c'est-\`a-dire  lorsque $z$ s'\'ecarte de $1$),
+l'expression ci-dessus passe continuement de la valeur 1 \`a la valeur
+$\beta\strup{1.7}\over\textdown\alpha$. Mais plus $n$ est grand, 
+plus  ce passage est rapide. Il se produit le ph\'enom\`ene  suivant: pour 
+$w=0$, $G(1-w)=1$, et lorsque $|w| \gg \bigl( {\beta\strup{1.7} \over
+\textdown\alpha } \bigr)^{n}$, $G(1-w) \simeq {\beta\strup{1.7} 
+\over \textdown\alpha }$. Le saut brusque de $1$ \`a ${\beta
+\strup{1.7} \over \textdown\alpha }$ se produit sur une plage de
+valeurs pour $|w|$ qui est de l'ordre de $\bigl( {\beta\strup{1.7} \over
+\textdown\alpha }  \bigr)^{n}$, ce qui,  lorsque $n$ est grand, est 
+une tr\`es courte distance. 
+\medskip
+Le ph\'enom\`ene qui se produit l\`a est analogue \`a celui du chapitre 
+{\bf VII}. Nous avions vu \`a cette occasion que si $X_1,\, X_2, \ldots 
+X_n$ \'etaient des variables al\'eatoires stochastiquement
+ind\'ependantes, alors la  loi de  $(X_1 + X_2 + \cdots + X_n) / \sqrt{n}$
+avait une fonction caract\'eristique $\Phi_n(t)$ proche de $e^{-at^2}$;
+mais il a fallu pour  cela diviser la somme $(X_1 + X_2 + \cdots + X_n)$
+par $\sqrt{n}$; la fonction caract\'eristique de la somme {\it non
+divis\'ee} par $\sqrt{n}$  est $e^{-ant^2}$ et non $e^{-at^2}$. Lorsque $n$
+tend vers l'infini, il arrive donc \'egalement que la fonction
+caract\'eristique de la somme non divis\'ee tende vers $1$ lorsque
+$t=0$,  et vers z\'ero lorsque $t\neq 0$: c'est le m\^eme type de
+discontinuit\'e. Lorsque $n$ n'est pas infini, mais grand, le passage de
+$1$ \`a $0$ est continu, mais rapide, comme le montre la  fonction
+$e^{-ant^2}$: le passage se fait sur une \'etroite plage de  valeurs, de
+l'ordre de $1 / \sqrt{n}$. On faisait donc appara{\^\i}tre la forme
+gaussienne $e^{-at^2}$ de ce passage de $1$ \`a $0$ en effectuant  un
+changement d'\'echelle: on ``agrandissait'' dans un rapport $\sqrt{n}$
+l'intervalle autour de $t=0$ o\`u ce changement se produit. \medskip Le
+ph\'enom\`ene que nous \'etudions maintenant \'etant analogue, il est
+judicieux d'effectuer \'egalement un changement d'\'echelle, cette fois 
+de rapport $\bigl( {\alpha\over\beta} \bigr)^n$. Ainsi, pour agrandir le
+voisinage de $w=0$ dans ce rapport, nous poserons $\zeta = \bigl(
+{\alpha\over\beta} \bigr)^n\, w$. En fonction  de cette nouvelle variable,
+l'expression $(VIII.9)$ de $G_n(z)$ devient  
+$$G_n(z) = 1 + {(\beta - \alpha - \beta x_n) \strup{8.5}\bigl( 
+{\beta\strup{1.7}\over\textdown\alpha} \bigr)^{n} \zeta \over
+\sdown{15} \alpha \bigl( {\beta\strup{2}\over\textdown\alpha}
+\bigr)^{n} \zeta + \beta  x_n}$$  
+Or le rapport $\bigl( {\beta\strup{1.7}\over\textdown\alpha} 
+\bigr)^{n}$  se factorise aussi bien au num\'erateur qu'au
+d\'eno\-mi\-na\-teur, de  sorte  qu'apr\`es simplification il reste: 
+$$G_n(z) = 1 + {(\beta - \alpha - \beta x_n)\;
+\strup{7}
+ \zeta \over \quad \sdown{23}{\displaystyle \alpha\zeta + \beta\;
+{\strup{6} 1 - {\beta\strup{2}\over\textdown\alpha} \over 
+\sdown{15}  1 - \bigl( {\beta\strup{2}\over\textdown\alpha}
+\bigr)^{n+1} }} \quad }$$ 
+Cette expression est enti\`erement explicite: $G_n(z)$ y est exprim\'e
+analytiquement en fonction de $\alpha$, $\zeta$, et $n$, sans recourir 
+\`a aucun interm\'ediaire qui ne serait connu que par une relation de
+r\'ecurrence. En y faisant tendre $n$ vers l'infini, tout en laissant
+$\alpha$ et $\zeta$ fix\'es, on voit que cela tend vers une limite, qui 
+est  \'egale \`a $1 + Q(\zeta )$, o\`u $Q(\zeta )$ est la fonction:
+$$Q(\zeta ) = {(\alpha - \beta )\; \zeta \over \beta - \alpha\,\zeta }
+ \eqno (VIII.10.)$$
+Mais il faut bien comprendre qu'il s'agit l\`a de la limite {\it lorsque
+$\zeta$ reste fix\'e}. Car $z = 1 - \bigl( {\beta\strup{1.7}\over
+\textdown\alpha}  \bigr)^{n}\,\zeta$, de sorte que $z$ varie avec 
+$n$ et n'est pas fix\'e: si $\zeta$ est fix\'e, $z$ tend vers $1$ lorsque 
+$n$ tend vers l'infini, et  n'est donc pas lui-m\^eme fix\'e. Inversement,
+si on fait tendre $n$ vers l'infini {\it en maintenant $z$, et non} $\zeta$
+fix\'e, la limite sera  toute diff\'erente: ce sera, comme nous l'avons vu,
+$1$ si $z=1$ et ${\beta\strup{1.7}\over\textdown\alpha }$ si $z
+\neq 1$. En termes de valeurs approch\'ees, cela signifie simplement que
+pour  $n$ grand, $G(z)$ est une fonction \'egale  \`a
+${\beta\strup{1.7}\over\textdown\alpha }$ partout except\'e dans  
+un petit voisinage (de diam\`etre environ $\bigl[
+{\beta \strup{1.7}\over\textdown\alpha }  \bigr]^n$) autour de
+$z=1$, tandis qu'\`a l'int\'erieur de ce voisinage, {\it si  on agrandit
+celui-ci}  dans le rapport $\bigl( {\beta\strup{1.7}\over\textdown 
+\alpha } \bigr)^n$, la fonction $G(z)$ est approximativement \'egale \`a
+$1 + Q(\zeta )$. Ce que nous avons donc effectu\'e par le passage de la
+variable $z$ \`a la variable $\zeta$ est {\it un changement d'\'echelle}.
+Pour $n$ grand, la fonction caract\'eristique de $Z_n$ est $\Phi_n(t)
+\simeq 1 + Q\big(\bigl[ {\beta\strup{1.7}
+\over\textdown\alpha }  \bigr]^{-n}\, (1 - \e^{it}) \big)$, qui est 
+presque partout proche de $\beta / \alpha$ (la probabilit\'e pour que $Z_n
+= 0$), et ne diff\`ere sensiblement de $\beta / \alpha$ que  dans un
+intervalle minuscule, dont la largeur est de l'ordre de $\bigl[ {\beta
+\strup{1.7}\over\textdown\alpha }  \bigr]^n$, autour de $t=0$. Mais
+toute l'information sur la densit\'e de probabilit\'e des valeurs de $Z_n$
+autres que z\'ero est pr\'ecis\'ement concentr\'ee dans les variations de 
+$\Phi_n(t)$ \`a l'int\'erieur de ce petit intervalle, et le changement
+d'\'echelle permet de mieux les voir.
+
+\bigskip
+
+{\bf \'Etude du cas g\'en\'eral.}
+\medskip
+
+Tout ce que nous venons de voir sur l'exemple, a une valeur 
+g\'en\'erale; sauf, \'evidemment, qu'en g\'en\'eral on ne peut pas
+effectuer  analytiquement tous les calculs, et qu'on doit alors se
+contenter de calculs num\'eriques (mais nous allons voir qu'on peut
+disposer pour cela d'algorithmes simples et efficaces).
+\medskip
+Pour commencer, nous allons \'etablir que la fonction $Q(\zeta )$ existe 
+en g\'en\'eral, et non seulement dans le cas particulier de l'exemple; nous 
+verrons \'egalement un algorithme simple pour la calculer. Tout cela
+r\'esulte, comme nous allons voir, du fait qu'une fonction g\'en\'eratrice
+n'est pas une fonction analytique quelconque, mais poss\`ede des
+propri\'et\'es tr\`es particuli\`eres, notamment le fait --- signal\'e plus 
+haut --- que pour $x$ r\'eel et compris entre $0$ et $1$, toutes les
+d\'eriv\'ees de $G(z)$ en $z=x$ sont positives.
+\medskip
+La premi\`ere cons\'equence de cette propri\'et\'e est (comme nous 
+l'avons d\'ej\`a vu) l'existence d'une solution $x=r$ unique de l'\'equation
+$G(x) = x$ pour $0 < x < 1$ lorsque $G'(1) > 1$. Il faut noter que $G'(1)$ 
+est l'esp\'erance math\'ematique de la variable al\'eatoire $Z_1$: la
+condition $G'(1) > 1$ signifie donc que chaque particule-m\`ere engendre
+{\it en moyenne} plus qu'une particule-fille (la moyenne n'est
+\'evidemment pas forc\'ement un nombre entier).
+\medskip
+La raison de l'existence de cette solution $r$ est que la fonction $G(x)$
+est croissante et convexe sur l'intervalle $[0,1]$. Un raisonnement
+\'el\'ementaire, qui saute aux yeux en voyant la figure 18, 
+montre qu'il  doit en \^etre ainsi si $G'(1) > 1$. On peut signaler les cas
+d\'eg\'en\'er\'es: si  $G(0) = 0$, $r$ devient simplement $0$; si $G(z) = 
+z$, il y a une infinit\'e de solutions, mais ce cas est exclu puisque nous
+supposons $G'(1) > 1$. 
+\medskip
+Le raisonnement simple qui se d\'eduit de la figure 18 est 
+valable pour  la fonction $G(x)$ de la variable r\'eelle $x$; son \'evidence
+g\'eom\'etrique ne permet pas de s'assurer qu'il n'existerait pas de
+solution complexe de l'\'equation $G(z) = z$. Mais cela peut \^etre
+d\'emontr\'e autrement, toujours en utilisant les propri\'et\'es
+particuli\`eres des fonctions g\'en\'eratrices. En effet, la s\'erie $\sum
+p_k z^k$ qui d\'efinit $G(z)$ converge pour $|z| < 1$, donc on peut \'ecrire
+pour n'importe quel nombre complexe $z$ de module $< 1$:
+$$G(z) - r = \sum_{k=0}^{\infty } p_k (z^k - r^k) = (z-r) \sum_{k=0}^{
+\infty } p_k \Biggl[ \sum_{j=0}^{k-1} z^{k-1-j}r^j \Biggr]$$ 
+on a simplement utilis\'e l'identit\'e $z^k - r^k = (z-r)\sum
+z^{k-1-j}r^j$. Passant aux modules, cela donne l'in\'egalit\'e
+$$\openup 3\jot\eqalignno{ |G(z) - r| &\leq |z-r|
+\sum_{k=0}^{\infty } p_k \Biggl[\sum_{j=0}^{k-1} |z|^{k-1-j}r^j\Biggr]\cr
+&= |z-r|\sum_{k=0}^{\infty } p_k  \Biggl[ \sum_{j=0}^{k-1} {|z|^k - r^k 
+\over |z|-r}\Biggr] \cr
+&= |z-r| {G(|z|) - G(r) \over |z| - r} \cr }$$ 
+Or si $|z| < 1$, $\big( G(|z|) - G(r) \big) / \big( |z| - r \big) = \rho$ est
+\'egalement $< 1$ \`a cause de la convexit\'e de $G(x)$ ($|z|$ et $r$ sont
+r\'eels).
+\medskip
+On obtient alors ceci: si $|z| < 1$, $|G(z) - r| \leq \rho |z-r|$ avec $\rho <
+1$.  Il est donc impossible que $G(z) = z$,  sauf si $z=r$ [sinon on aurait
+$|z-r| \leq \rho |z-r|$].  Donc $z=r$ est la
+seule racine de l'\'equation$G(z) = z$ \`a l'int\'erieur du disque $|z| \leq 1$.  Cela signifie que s'il
+existe d'autres racines,  celles-ci sont soit sur le cercle $|z| = 1$,  soit
+\`a l'ext\'erieur de ce cercle.
+\medskip
+La fonction g\'en\'eratrice $G_n$ de $Z_n$ \'etant la $n^{\rm e}$ 
+it\'er\'ee de $G$, on peut aussi d\'eduire de cette in\'egalit\'e que pour
+$|z| < 1$ $$|G_n(z) - r| \leq \rho^n |z-r|$$
+qui montre que si $|z| < 1$, $G_n(z)$ tend vers $r$ quand $n$ tend vers
+l'infini, d'autant plus rapidement que $\rho$ est plus petit. Il en va de
+m\^eme si $|z| = 1$ et $|G(z)| < 1$, car alors on peut \'ecrire
+$$|G_n(z) - r| \leq \rho^{n-1} |G(z)-r|$$
+Encore plus g\'en\'eralement: il suffit que l'une quelconque des 
+it\'er\'ees $G_j(z)$ soit de module inf\'erieur \`a $1$.
+Si $|z| \leq 1$, le seul cas o\`u $G_n(z)$ ne tend pas vers $r$ est celui 
+o\`u $|z| = 1$ et o\`u pour {\it toutes} les it\'er\'ees $G_j$, $|G_j(z)| = 1$.
+\medskip
+Dans l'exemple particulier trait\'e pr\'ec\'edemment,  le nombre $z=1$ 
+\'etait le seul,  parmi les nombres de module $1$,  pour lequel $G(z)$
+est
+lui aussi de module $1$;  donc pour tous les $z$ tels que $|z| \leq 1$,
+except\'e $z=1$,  $G_n(z)$ tendait vers $r= {\beta\strup{1.7} \over 
+\textdown\alpha }$,  de sorte que la limite de $G_n(z)$ pour $n$ tendant
+vers l'infini \'etait une fonction discontinue.  Mais en effectuant
+unehomoth\'etie de centre $z=1$ et de rapport $a^n$,  c'est-\`a-dire un
+changement d'\'echelle,  avec $a=G'(1)={\bf E}(Z_1)$ (dans le cas particulier
+$a$
+\'etait \'egal \`a $\alpha / \beta$),  on avait fait appara{\^\i}tre la 
+fonction limite $Q(\zeta )$,  qui est non seulement continue, mais
+analytique.  Si on veut construire une telle fonction limite dans le cas
+g\'en\'eral o\`u $G(z)$ est une fonction g\'en\'eratrice quelconque,  il 
+faut,  pour que l'homoth\'etie de centre $z=1$ puisse \^etre introduite,
+que l'on d\'eveloppe les fonctions $G_n$ en s\'erie enti\`ere au voisinage
+de $z=1$ et non au voisinage de $z=0$;  c'est d'ailleurs ce que nous avions
+fait dans le cas particulier pour mettre en \'evidence la fonction $Q(\zeta)$. 
+\medskip
+Posons donc $w = z - 1$ et $F(w) = G(1+w) - 1$. Il est clair que $F(0) = 
+0$ et que la $n^{\rm e}$ it\'er\'ee de $F$ est $F_n(w) = G_n(1+w) - 1$: 
+en  effet, si on suppose que c'est vrai pour $n$, on aura
+$$\eqalignno{
+F_{n+1}(w) &= F\big( F_n(w) \big) = G\big(1 + F_n(w) \big) - 1 \cr
+&= G\big( G_n(1+w) \big) - 1 = G_{n+1}(1+w) - 1 \cr }$$
+La fonction $Q(\zeta )$ doit alors \^etre la limite des fonctions
+$Q_n(\zeta )$ d\'efinies par:
+$$Q_n(\zeta ) = F_n(a^{-n}\zeta )$$
+Le probl\`eme est de montrer que cette limite existe (c'est-\`a-dire
+que la suite $Q_n(\zeta )$ n'est pas divergente), qu'elle est une
+fonction continue et analytique de la variable complexe $\zeta$, et
+\'eventuellement de pouvoir calculer sa s\'erie enti\`ere. Si ce travail 
+est effectu\'e, alors on pourra dire que pour $n$ grand, $G_n(z)$ est
+approximativement \'egale \`a $1 + Q(a^n w)$; ou encore, que la fonction
+caract\'eristique de $Z_n$ est donn\'ee approximativement par
+$$\Phi_n(t) \simeq 1 + Q\big( a^n (\e^{it}-1) \big)$$
+Si au lieu de consid\'erer la fonction caract\'eristique de $Z_n$, on
+consid\`ere plut\^ot celle de $Z_n / a^n$, qui n'est autre que
+$\Phi_n(t/a^n)$, on obtient alors l'expression particuli\`erement simple:
+$$\Phi_n(t/a^n) \simeq 1 + Q(it)$$
+car lorsque $n$ tend vers l'infini, $a^n(\e^{i(t/a^n)}-1)$ tend vers $it$.
+\medskip
+Cette approximation de la fonction caract\'eristique est d'autant plus
+correcte que $n$ est plus grand et que $\zeta$, ou $t$, est plus petit;
+en particulier, elle n'est plus valable si $\zeta$, ou $t$, est tr\`es grand.
+Comme nous l'avons d\'ej\`a constat\'e au chapitre {\bf VII}, cela 
+signifie que l'approximation ci-dessus est un filtre passe-bas qui
+\'elimine le {\it bruit discret} de la loi de $Z_n$ mais qui conserve 
+toute l'information sur la {\it densit\'e} de cette loi. L'\'etude
+d\'etaill\'ee du cas particulier avait montr\'e que la loi de $Z_n$
+\'etait faite
+d'une probabilit\'e appr\'eciable pour que $Z_n=0$, et d'un nuage tr\`es \'etendu de valeurs non nulles,  ayant chacune une
+probabilit\'e
+infinit\'esimale;  or l'information  utile est constitu\'ee de:
+\smallskip
+--- la probabilit\'e de $Z_n = 0$;
+
+--- la densit\'e de probabilit\'e des autres valeurs.
+\smallskip
+Le {\it d\'etail} de la loi discr\`ete, \`a savoir les probabilit\'es exactes 
+des valeurs non nulles de $Z_n$, n'est pas une information utile. Par
+cons\'equent, la fonction $Q(\zeta )$ contient exactement l'information
+utile et est d\'ebarrass\'ee de l'information inutile. L'approximation
+ci-dessus est donc meilleure que la fonction caract\'eristique exacte
+$\Phi_n (t/a^n)$. On ne devrait pas dire que $1 + Q(it)$ est une
+approximation de $\Phi_n (t/a^n)$, mais que $\Phi_n (t/a^n)$ est une
+complication de $1 + Q(it)$.
+\medskip
+Pour \'etudier la fonction $Q(\zeta )$ et montrer qu'elle est analytique, 
+il serait commode d'avoir une relation de r\'ecurrence sur les $Q_n 
+(\zeta )$. Or, cela est facile \`a obtenir, car on a la r\'ecurrence sur les
+$F_n(w)$: $$F_{n+1}(w) = F\big( F_n(w) \big)$$
+en prenant $\zeta = a^n w$ cela donne
+$$F_{n+1}(a^{-n}\zeta ) = F\big( F_n(a^{-n}\zeta ) \big)$$
+qui est \'equivalent \`a
+$$Q_{n+1}(a\zeta ) = F \big( Q_n(\zeta ) \big)$$
+Cette relation est pr\'ecieuse: c'est une relation de r\'ecurrence qui permet
+de calculer effectivement la suite des $Q_n(\zeta )$, \`a partir de
+$Q_0(\zeta ) = \zeta$.
+Si on fait tendre $n$ vers l'infini dans les deux membres de la 
+relation, on obtient
+$$Q(a\zeta ) = F \big( Q(\zeta ) \big) \eqno (VIII.11.)$$
+puisque si les deux membres sont \'egaux pour tout $n$, leurs limites 
+sont \'egales aussi (notez bien que si la limite de $F \big( Q_n(\zeta )
+\big)$  est $F \big( Q(\zeta )\big)$, c'est parce que la fonction $F(w)$ 
+est continue).  Toutefois cette d\'eduction est incorrecte s'il n'y a pas 
+de limite, ou si la fonction $F(w)$ a des discontinuit\'es. Or la fonction
+$G(z)$ est certes analytique au moins dans le disque $|z| < 1$, mais peut
+avoir des p\^oles ou des singularit\'es logarithmiques ou essentielles en
+dehors de ce disque; la continuit\'e de $F(w)$ n'est assur\'ee que dans le
+domaine o\`u elle est analytique: il faut donc que $\zeta$ soit tel que 
+{\it tous} les $Q_n(\zeta )$ soient dans ce domaine d'analyticit\'e. Ces
+remarques montrent d\'ej\`a que le probl\`eme de l'existence d'une limite
+doit  \^etre trait\'e s\'erieusement. Nous nous occuperons de cela un peu
+plus loin, voyons d\'ej\`a ce que le r\'esultat permet de faire. 
+\medskip
+Pour obtenir la s\'erie enti\`ere  de  $Q(\zeta )$, il suffit de la 
+substituer \`a $w$ dans la s\'erie connue  de $F(w)$, puis d'identifier 
+les coefficients. Soit donc  
+$$F(w) = \sum_{n=0}^{\infty } a_n w^n$$
+la s\'erie connue; ses coefficients $a_n$ se d\'eduisent des coefficients
+$p_n$ de $G(z)$ par la relation
+$$\eqalignno{ a_0 &= 0 \cr   a_1 &= a = {\bf E}(Z_1) \cr
+a_n &= \sum_{k=n}^{\infty } {k\choose n} p_k \qquad \hbox{si}\quad 
+n\geq 2 \cr }$$
+On voit qu'ils sont tous positifs. Soit d'autre part la s\'erie inconnue:
+$$Q(\zeta ) = \sum_{j=0}^{\infty } c_j \zeta^j \eqno (VIII.12.)$$
+En substituant la s\'erie $(VIII.12)$ dans l'\'egalit\'e
+$(VIII.11)$:
+$$\sum_{k=1}^{\infty } c_k a^k \zeta^k = \sum_{n=1}^{\infty } a_n 
+\Biggl[ \sum_{j=1}^{\infty } c_j \zeta^j \Biggr]^n$$
+On ne peut d\'evelopper les puissances $n$-i\`emes des s\'eries 
+compl\`etes lorsque $n$ est trop grand, mais on peut d\'evelopper aux
+ordres les plus bas; ainsi, si on ne retient que les termes de degr\'e au
+plus cinq, on obtient: 
+$$\eqalignno{
+\Biggl[ \sum_{j=1}^{\infty } c_j \zeta^j \Biggr]^2 &= c_1^2 \zeta^2 +
+2c_1c_2\zeta^3 + (c_2^2 + 2c_1c_3)\zeta^4 + (2c_1c_4 + 2c_2c_3)
+\zeta^5 + \ldots \cr
+\Biggl[ \sum_{j=1}^{\infty } c_j \zeta^j \Biggr]^3 &= c_1^3 \zeta^3 +
+3c_1^2c_2\zeta^4 + (3c_1^2c_3 + 3c_1c_2^2)\zeta^5 + \ldots \cr
+\Biggl[ \sum_{j=1}^{\infty } c_j \zeta^j \Biggr]^4 &= c_1^4 \zeta^4 +
+4c_1^3c_2\zeta^5 + \ldots \cr
+\Biggl[ \sum_{j=1}^{\infty } c_j \zeta^j \Biggr]^5 &= c_1^5 \zeta^5 +
+ \ldots \cr }$$
+En identifiant ensuite les coefficients des deux s\'eries, celle de
+$Q(a\zeta )$ et celle de $F\big( Q(\zeta ) \big)$, on obtient:
+$$\eqalignno{
+ac_1 &= a_1c_1 \cr
+a^2c_2 &= a_1c_2 + a_2c_1^2 \cr
+a^3c_3 &= a_1c_3 + 2a_2c_1c_2 + a_3c_1^3 \cr
+a^4c_4 &= a_1c_4 + a_2(c_2^2+2c_1c_3) + 3a_3c_1^2c_2 + a_4c_1^4 \cr
+a^5c_5 &= a_1c_5 + a_2(2c_1c_4+2c_2c_3) + a_3(3c_1^2c_3+3c_1
+c_2^2) \cr
+&\hskip42mm + a_4(c_1^3c_2+3c_1^2c_2) + a_5c_1^5 \cr }$$
+La premi\`ere \'equation est ind\'etermin\'ee, on prendra donc $c_1 = 1$. 
+La deuxi\`eme donne $c_2 = a_2 / (a^2-a)$. On voit qu'il s'agit d'un
+syst\`eme  de cinq \'equations lin\'eaires \`a cinq inconnues, et ce
+syst\`eme est triangulaire donc de r\'esolution ais\'ee:
+$$\eqalign{
+c_1 &= 1 \cr
+c_2 &= a_2 / (a^2-a) \cr
+c_3 &= \big[ 2a_2c_1c_2 + a_3c_1^3 \big] / (a^3-a) \cr
+c_4 &= \big[ a_2(c_2^2+2c_1c_3) + 3a_3c_1^2c_2 + a_4c_1^4 \big] /
+(a^4-a) \cr
+c_5 &= \big[ a_2(2c_1c_4+2c_2c_3) + a_3(3c_1^2c_3+3c_1c_2^2) \cr
+&\hskip23mm + a_4(c_1^3c_2+3c_1^2c_2) + a_5c_1^5\big] / (a^5-a) \cr
+} \eqno (VIII.13.)$$ 
+c'est-\`a-dire que chaque $c_j$ se calcule ais\'ement \`a partir des
+coefficients $c_1,\, c_2,\, c_3,\, \ldots c_{j-1}$ pr\'ec\'edemment 
+calcul\'es.
+\medskip
+On peut ainsi obtenir un d\'eveloppement limit\'e de $Q(\zeta )$ \`a
+n'importe quel ordre, et par cons\'equent aussi pour la fonction
+caract\'eristique approch\'ee $1 + Q(it)$. Cela permet d\'ej\`a de 
+calculer  $1 + Q(it)$ pour des valeurs assez petites de $t$.
+\medskip
+On voit que tout cela m\`ene \`a des algorithmes pour un calcul effectif
+de la fonction caract\'eristique approch\'ee. Comme au chapitre {\bf VII},
+on pourra alors d\'eduire (par des op\'erations de filtrage et de
+transformations de Fourier) des informations sur la densit\'e de la
+variable al\'eatoire $Z_n$ pour $n$ grand.
+\medskip
+Toutefois ces possibilit\'es de calcul effectif pr\'esupposent que 
+la suite $Q_n(\zeta )$ converge vers une limite. Nous allons maintenant
+nous occuper de v\'erifier que c'est bien le cas, en pr\'ecisant le domaine
+auquel doit appartenir $\zeta$ pour qu'il en soit ainsi. La m\'ethode
+est classique: il revient au m\^eme de dire que la suite $Q_n(\zeta )$
+a une limite, ou que la s\'erie $\sum \big[ Q_{n+1}(\zeta )
+- Q_n(\zeta ) \big]$ est convergente. Et pour montrer que la s\'erie 
+est convergente, nous la majorerons par une s\'erie g\'eom\'etrique.
+\medskip
+Il s'agit donc d'\'etudier la diff\'erence $Q_{n+1}(\zeta ) - Q_n(\zeta )$.
+Pour  cela, il faut d'abord en savoir plus sur $F_n(w)$.
+\medskip
+Un d\'eveloppement limit\'e de $F(w)$ \`a l'ordre 2 est de la forme
+$F(w) \simeq aw + a_2w^2$; si on it\`ere cela en ne retenant que les
+termes en $w$ et $w^2$, on trouve:
+$$\eqalignno{
+F(w) &\simeq  aw + a_2w^2 \cr
+F_2(w) &\simeq  a^2w + a_2(a+a^2)w^2 \cr
+F_3(w) &\simeq  a^3w + a_2(a^2+a^3+a^4)w^2 \cr
+F_4(w) &\simeq  a^4w + a_2(a^3+a^4+a^5+a^6)w^2 \cr 
+&\ldots \cr }$$
+donc on devine la r\'ecurrence
+$$\eqalignno{
+F_n(w) &\simeq  a^n w + a_2 (a^{n-1} + a^n + a^{n+1} + \cdots
++ a^{2n-2}) w^2  \cr 
+&=  a^n w + a_2\, a^{n-1}\; {a^n - 1 \over a - 1}\; w^2 \cr } $$
+qui se confirme ais\'ement. Puisque $Q_n(\zeta ) = F_n(\zeta / a^n)$,
+on en d\'eduit que le d\'eveloppement \`a l'ordre 2 de la fonction 
+$Q_n(\zeta )$ est
+$$Q_n(\zeta ) \simeq \zeta + {a_2 \over a-1}\cdot \Biggl[ {1\over a} -
+{1\over a^{n+1}} \Biggl]\, \zeta^2$$
+et par cons\'equent
+$$Q_n(\zeta ) - Q_{n-1}(\zeta ) \simeq {a_2 \over a-1}\cdot \Biggl[ 
+{1\over a^n} - {1\over a^{n+1}} \Biggl]\, \zeta^2 $$
+Donc il semble raisonnable de conjecturer que l'on doit avoir une 
+in\'egalit\'e du type
+$$|Q_n(\zeta ) - Q_{n-1}(\zeta )| \leq K(|\zeta |) \Biggl[ {1\over a^n} -
+{1\over a^{n+1}} \Biggl] \eqno (VIII.14.)$$
+o\`u $K(x)$ est une certaine fonction positive de $x$, \'equivalente \`a
+$x^2a_2/(a-1)$ lorsque $x$ tend vers z\'ero, mais ind\'ependante de $n$.
+Si on arrivait \`a montrer cette conjecture, on en d\'eduirait
+imm\'ediatement que la suite $Q_n(\zeta )$ converge pour tout $\zeta$.
+\medskip
+Or nous allons voir que tout d\'epend de la courbe $y = G(x)$ telle qu'elle
+est repr\'esent\'ee sur la figure 18.  Nous avons d\'ej\`a utilis\'e 
+plus haut la propri\'et\'e que la fonction g\'en\'eratrice est non
+seulement un polyn\^ome ou une fonction analytique,  mais que les
+coefficients de son d\'eveloppement de Taylor sont tous positifs. 
+Cela
+avait pour cons\'equence que pour $z$ complexe on pouvait toujours
+\'ecrire $|G(z)| \leq G(|z|)$.  Pour $x$ r\'eel (donc en ce qui concerne
+les
+propri\'et\'es g\'eom\'etriques visibles sur la figure),  la courbeest
+convexe,  c'est-\`a-dire qu'elle est toujours {\it au-dessus} de sa
+tangente.  Par exemple au point $x = 1$,  la tangente \`a la courbe est
+la
+droite d'\'equation $y-1 = a (x-1)$.  La convexit\'e entra{\^\i}ne que$G(1 +
+t) - 1 - at \geq 0$ pour tout $t$ r\'eel.  En outre, la courbes'\'ecarte
+plus ou moins lentement de sa tangente selon que la courburede la
+courbe est plus ou moins prononc\'ee. 
+\medskip
+Le cas particulier que nous avons trait\'e pr\'ec\'edemment en d\'etail 
+avait  le privil\`ege que la fonction g\'en\'eratrice y \'etait une 
+fonction  homographique; les fonctions homographiques sont 
+particuli\`erement faciles \`a it\'erer: en it\'erant un nombre 
+quelconque  de fois une fonction homographique, on a toujours une 
+fonction homographique; alors qu'en it\'erant un polyn\^ome, m\^eme 
+aussi simple que $x^2 + x$, on obtient  des polyn\^omes de plus en plus 
+en plus complexes, car le degr\'e double \`a chaque it\'eration. 
+\medskip
+Pour montrer la convergence de la suite des fonctions $Q_n(\zeta )$,
+nous allons montrer que la {\it s\'erie} de terme g\'en\'eral 
+$Q_{n+1}(\zeta ) - Q_n(\zeta )$ est convergente (du moins pour $\zeta$
+assez petit), en la majorant par une s\'erie g\'eom\'etrique. Si la suite
+des fonctions $Q_n(\zeta )$ converge dans un disque $|\zeta | < \rho$,
+aussi petit soit-il, le principe du prolongement analytique fera le reste.
+En effet, il nous faut simplement l\'egitimer les calculs effectu\'es plus
+haut en vue d'obtenir le d\'ebut de la s\'erie enti\`ere de $Q(\zeta )$, et
+pour cela un disque, m\^eme petit, suffit. Mais pour majorer 
+$Q_{n+1}(\zeta ) - Q_n(\zeta )$, il nous faut des encadrements {\it
+it\'erables}. Nous avons d\'ej\`a  la minoration $F(t) \geq at$ (pour $t$
+r\'eel), due \`a la convexit\'e, qui  par it\'eration donne $F_n(t) \geq a^n
+t$, si on appelle $F_n = F \circ F \circ F \cdots \circ F$ la $n^{\rm e}$
+it\'er\'ee  de  $F$. Pour avoir une majoration il est indiqu\'e d'utiliser 
+une fonction homographique plut\^ot qu'un polyn\^ome: on peut choisir un
+coefficient $\alpha$ tel que
+$$F(t) \leq {a \, t \over 1 - \alpha t}$$
+de telle sorte que par it\'eration on obtienne des in\'egalit\'es de
+la forme
+$$F_n(t) \leq {\beta_n\, t \over 1 - \alpha_n t}$$
+En {\it effectuant} les it\'erations on constate que $\beta_n$ doit \^etre
+\'egal \`a $a^n$, et pour les $\alpha_n$ on trouve des expressions
+compliqu\'ees, mais qui peuvent \^etre major\'ees par $\alpha\, a^n /
+(a-1)$, de sorte que tout peut \^etre r\'esum\'e par
+$$F_n(t) \leq {a^n\, t \over \sdown{19}{\displaystyle 1 - {\alpha\, a^n\, 
+t \over a - 1}}} \eqno (VIII.15.)$$ 
+L'encadrement de $F_n(t)$ ainsi obtenu (voir figure
+19)  permettra de montrer que la suite $Q_n(\zeta ) = F_n(\zeta
+/a^n)$ converge, ce qui l\'egitimera les calculs heuristiques que nous
+avons effectu\'es plus haut pour obtenir des d\'eveloppements limit\'es
+et  autres algorithmes pour le calcul de  $Q(\zeta )$
+
+\midinsert
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig19.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 19.}
+\vskip5mm
+\endinsert
+
+Il est bien clair que la fonction $F(w) = G(1 + w) - 1$ de la variable 
+complexe $w$ a, tout comme $G(z)$ elle-m\^eme, tous ses coefficients
+de Taylor positifs; de m\^eme la fonction $F(w) - aw$. De sorte que 
+$$\eqalign{
+| F(w) | & \leq F( |w| ) \cr
+| F(w) - a\, w | & \leq F( |w| ) - a |w| \cr
+| F(w') - F(w)| &\leq |w' - w|\, F'(t_0) \quad \hbox{ si $|w'| \leq t_0$ et
+$|w| \leq t_0$} \cr } \eqno (VIII.16.)$$
+La troisi\`eme de ces in\'egalit\'es devient aussi compr\'ehensible que 
+les deux premi\`eres d\`es lors qu'on applique l'in\'egalit\'e des
+accroissements  finis \`a la fonction $t \longmapsto F\bigl( w +
+t(w'-w)\bigr)$ et qu'on tient compte du fait que les coefficients de
+Taylor de la fonction d\'eriv\'ee $F'(w)$ sont tous positifs.
+\medskip 
+En ce qui concerne les it\'er\'ees, on aura aussi les in\'egalit\'es
+$$\eqalign{
+| F_n(w) | & \;\leq\; F_n( |w| ) \cr
+\Bigl| F_{n+1}\Bigl( {\up{w}\over\ldown{a^{n+1}}}\Bigr) - F_{n}\Bigl( 
+{\up{w}\over\ldown{a^{n}}}\Bigr) \Bigr|\; & \leq\; \Bigl| F_{n}\Bigl( 
+{\up{w}\over \ldown{a^{n+1}}}\Bigr) - F_{n-1}\Bigl( 
+{\up{w}\over\ldown{a^{n}}}\Bigr) \Bigr|
+ \times F'(t_0) \cr }$$  
+On obtient en effet la seconde de ces in\'egalit\'es en rempla\c{c}ant
+dans la
+troisi\`eme des in\'egalit\'es $(VIII.16)$ $w'$ par 
+$F_{n}\bigl( w / a^{n+1}\bigr)$ et $w$ par 
+$F_{n-1}\bigl( w / a^{n}\bigr)$;  il suffit que $t_0$ soit
+plus grand que les modules de ces deux nombres.
+\medskip
+On peut alors r\'ep\'eter le processus et faire une r\'ecurrence 
+descendante,  qui donnera
+$$\Bigl| F_{n+1}\Bigl( {\up{w}\over\ldown{a^{n+1}}}\Bigr) - F_{n}\Bigl( 
+{\up{w}\over\ldown{a^{n}}}\Bigr) \Bigr| \;\leq\; \Bigl| F\Bigl( {\up{w}\over
+\ldown{a^{n+1}}}\Bigr) - {\up{w}\over\ldown{a^{n}}} \Bigr|
+\times F'(t_0)^n$$
+Cela est valide pourvu que les modules des nombres complexes
+$F_{j+1}(w / a^j)$ soient tous, pour $j$ variant de $0$ \`a $n-1$,
+inf\'erieurs \`a $t_0$: c'est en effet la condition pour que l'in\'egalit\'e
+puisse \^etre utilis\'ee pour les indices compris entre $1$ et $n$.
+\medskip
+Or nous avons vu $(VIII.15)$ que 
+$$F_j(t) \;\leq\; {a^j\, t \over \sdown{19}{\displaystyle 1 - {\alpha\, a^j\, 
+t \over a - 1}}}$$ 
+par cons\'equent, pour que $|F_{j+1}(w / a^n)|$ soit inf\'erieur \`a
+$t_0$ pour tous les $j$ entre $0$ et $n-1$, il suffit de prendre 
+$$t_0 = {|w| \over \sdown{19}{\displaystyle a - {\alpha\, |w| \over 
+a-1}}}$$
+En effet, pour $0 \leq j \leq n-1$ on a $n-j \geq 1$, donc 
+$${|w|\over\sdown{19}{\displaystyle a - {\alpha\, |w| \over a-1}}} \;\geq\; 
+{|w| \over \sdown{19}{\displaystyle a^{n-j} - {\alpha\, |w| \over a-1}}} 
+\;\geq\; F_{j+1}\Bigl( {\up{w} \over \ldown{a^n}}\Bigr)$$
+Cela revient \`a dire que, si $t_0$ est fix\'e par ailleurs (et nous 
+verrons plus loin qu'il faudra le choisir), l'in\'egalit\'e ci-dessus sera
+v\'erifi\'ee pour tous les $w$ tels que
+$$|w| \; < \; {a\, t_0 \over \sdown{19}{\displaystyle 1 + {\alpha\,  t_0 
+\over  a-1}}} \; =\; \rho$$
+Nous avons ainsi \'etabli l'in\'egalit\'e
+$$| Q_{n+1}(\zeta ) - Q_{n}(\zeta ) | \;\leq\; \Bigl|  F\Bigl( {\up{\zeta } 
+\over \ldown{a^{n+1}}}\Bigr) - {\up{\zeta }\over\ldown{a^{n}}} \Bigr|
+\times F'(t_0)^n \eqno (VIII.17.)$$ 
+Mais par ailleurs, puisque la fonction $F(w) - a w$ poss\`ede la 
+propri\'et\'e que tous ses coefficients de Taylor sont positifs, on a 
+aussi
+$$\Bigl| F\Bigl( {\up{\zeta }\over \ldown{a^{n+1}}}\Bigr) -
+{\up{\zeta }\over\ldown{a^{n}}} \Bigr| \leq F\Bigl( {\up{|\zeta |}\over
+\ldown{a^{n+1}}}\Bigr) - {\up{|\zeta |}\over\ldown{a^{n}}} \leq {a^{-n}\, 
+|\zeta | \over \sdown{19}{\displaystyle 1 - {\alpha\, a^{-n}\, |\zeta | 
+\over a - 1}}} - a^{-n}\, |\zeta | \eqno (VIII.18.)$$
+D'autre part pour tout $t$ on a l'identit\'e
+$${t \over \sdown{19}{\displaystyle 1 - {\alpha\, t \over a - 1}}} - t
+\;
+= \; {\alpha t^2 \over a - 1 - \alpha t}$$
+donc en prenant $t = a^{-n}\, |\zeta |$,  on peut d\'eduire de $(VIII.17)$
+et $(VIII.18)$ que pour tout $\zeta$ tel que $|\zeta | < \rho$ et pour tout
+entier $n$:
+$$| Q_{n+1}(\zeta ) - Q_{n}(\zeta ) | \;\leq\; {\alpha |\zeta |^2\,
+a^{-2n}\,
+F'(t_0)^n \over a - 1 - \alpha |\zeta |\, a^{-n}}$$
+Puisque $a > 1$ il est clair que,  quelle que soit la valeur de $\rho$,
+le d\'enominateur de l'avant-derni\`ere expression ci-dessus deviendra
+sup\'erieur \`a $(a-1) / 2$ \`a partir d'un certain rang $n_0$ (d\`es que
+$a^{-n}$ sera devenu inf\'erieur \`a $(a-1) / 2\alpha\rho$). Donc pour
+$n \geq n_0$ on
+aura 
+$$| Q_{n+1}(\zeta ) - Q_{n}(\zeta ) | \;\leq\; {2\,\alpha\rho^2\over a-1} 
+\times \Bigl[ {F'(t_0)\over a^2} \Big]^n \eqno (VIII.19.)$$
+Il sufit donc de prendre $t_0$ tel que $F'(t_0) < a^2$ pour que
+la suite $Q_n$ converge \`a l'int\'erieur du
+disque $|\zeta | < \rho$. La limite $Q = \lim Q_n$ sera donc au moins
+d\'efinie et analytique dans ce disque; mais bien entendu, il se peut 
+qu'elle se prolonge analytiquement au-del\`a. En tous cas, au moins \`a
+l'int\'erieur de ce disque, elle sera la somme d'une s\'erie enti\`ere
+convergente. Cela l\'egitime les calculs que nous avons faits plus haut,
+pour obtenir les premiers coefficients de cette s\'erie enti\`ere.
+\bigskip
+Tout au long de ces cha{\^\i}nes logiques, nous avons utilis\'e, pour les
+fonctions $G(z)$, $G'(z)$, $F(w)$, $F'(w)$, etc., la propri\'et\'e typique 
+des fonctions {\it absolument monotones}, \`a savoir que, leurs
+coefficients de Taylor \'etant tous positifs, on a $|G(z)| \leq G(|z|)$,
+$|G'(z)| \leq  G'(|z|)$, $|F(w)| \leq F(|z|)$, $|F'(w)| \leq F'(|z|)$, etc.
+\medskip
+Ainsi, nous venons d'\'etablir que la fonction $Q(\zeta )$ \'etait 
+analytique au moins dans le disque $|\zeta | < \rho$ avec
+$$\rho \; = \; {a\, t_0 \over \sdown{19}{\displaystyle 1 + {\alpha\, 
+t_0 \over a-1}}}$$
+o\`u $t_0$ est tel que $F'(t_0) < a^2$.  On peut m\^eme prendre $t_0$
+tel que $F'(t_0) = a^2$;  cela ne changerait rien,  puisque si
+$F'(t_0) = a^2$,  alors pour tout nombre
+$t_1 < t_0$,  on aura$|F'(t_1)| < a^2$,  et $\rho$ est une fonction strictement croissante de $t_0$.
+Mais on voit que ce disque de convergence est limit\'e:  par exemple la
+pr\'esence d'un point singulier de la fonction $G(z)$ \`a proximit\'e
+du disque $|z| < 1$ aura pour effet de rendre ce disque tr\`es petit.
+\medskip
+Or, la fonction caract\'eristique asymptotique $\Phi (t)$ que nous 
+cherchons \`a d\'eterminer (qui est, rappelons-le, la limite des fonctions
+caract\'eristiques $\Phi_n (a^{-n}t)$ des variables al\'eatoires $Z_n /
+a^n$) est \'egale \`a $1 + Q(it)$; on a 
+$$\Phi_n (a^{-n}t) \; = \; G_n \bigl( \e^{ia^{-n}t} \bigr)$$
+et pour tout $t$ r\'eel, $\e^{ia^{-n}t}$ est de module 1, donc $G' \bigl(
+e^{ia^{-n}t} \bigr)$ est inf\'erieur ou \'egal \`a $G'(1) = a$ en module, ce
+qui est \'evidemment plus int\'eressant que de pouvoir dire seulement 
+que $|G'|$  est inf\'erieur \`a $a^2$. Cela a, comme nous allons le voir
+maintenant,  une cons\'equence pratique: les fonctions caract\'eristiques
+$\Phi_n (a^{-n}t)$, {\it du fait qu'elles ne prennent en compte que les 
+valeurs complexes de module 1} pour la variable $z$ dont d\'epend $G(z)$,
+convergent (lorsque  $n$ tend vers l'infini) pour tout $t$ r\'eel, et  non pas
+seulement dans un disque. Ou encore: la s\'erie de Taylor de la fonction
+$Q(\zeta )$ ne converge, du moins en g\'en\'eral, que dans un disque de
+rayon limit\'e, mais  elle se prolonge analytiquement jusqu'\`a l'infini
+dans un voisinage  de l'axe imaginaire $\zeta = it$; en effet la relation
+entre $t$ et $\zeta$ est $\zeta = a^n\, (e^{ia^{-n}t} - 1)$.  Une troisi\`eme
+fa\c{c}on de dire cela:  la fonction $Q(\zeta )$ peut avoir des points
+singuliers qui limitent la taille de son disque de convergence,  mais ces
+points sont toujours en dehors de l'axe $\zeta = it$,  de sorte que la
+relation  
+$$\lim_{n \rightarrow \infty } \Phi_n (a^{-n}t) \; = \; 1 + Q(it)$$ 
+est vraie pour tout $t$  r\'eel. 
+Il ne reste plus qu'\`a le d\'emontrer. \medskip
+Pour calculer les coefficients de Taylor de la fonction $Q( \zeta )$, il
+avait \'et\'e beaucoup plus commode de partir de la fonction $F(w) = G(1
++ w) - 1$,  car celle-ci (du fait que la s\'erie de $F$ n'a pas de terme
+constant) permettait d'obtenir pour les coefficients successifs un
+syst\`eme triangulaire permettant une r\'ecurrence.
+\medskip
+Par contre, pour mettre en \'evidence que $Q$ est analytique dans un
+domaine allong\'e contenant l'axe des $\zeta$ imaginaires,
+il est pr\'ef\'erable d'employer la fonction $G(z)$.  Nous allons 
+donc montrer, tout comme nous l'avions fait pour la suite de fonctions 
+$Q_n$, que la s\'erie des $|\Phi_{n+1} (a^{-(n+1)}t) - \Phi_n (a^{-n}t)|$
+converge {\it pour tout $\, t$ r\'eel}, en la majorant \`a nouveau par une
+s\'erie g\'eom\'etrique. 
+\medskip
+Partons donc de l'in\'egalit\'e g\'en\'erale
+$$|G(x) - G(y)| \;\leq\; |x - y|\; G'(r)$$
+qui a lieu pour n'importe quels nombres complexes $x$ et $y$ dont le
+module est inf\'erieur ou \'egal \`a $r$ (inutile de la red\'emontrer). Donc
+$$\openup 3\jot \eqalignno{
+\big|\, \Phi_{n+1} (a^{-(n+1)}t) - \Phi_n (a^{-n}t)\, \big|\; 
+&= \;\bigg|\; G_{n+1}\Big( \e^{ia^{-(n+1)}t}\,\Big) - 
+G_n\Big( \e^{ia^{-n}t}\, \Big)\, \bigg| \cr
+&= \;\Bigg|\; G\bigg( G_{n}\Big( \e^{ia^{-(n+1)}t}\,\Big)\bigg) 
+- G\bigg( G_{n-1}\Big( \e^{Ba^{-n}t}\,\Big)\bigg)\, \Bigg| \cr
+&\leq \; \bigg|\; G_{n}\Big( \e^{ia^{-(n+1)}t}\,\Big) 
+- G_{n-1}\Big( \e^{ia^{-n}t}\,\Big)\, \bigg| \times G'(1) \cr } $$
+car les nombres complexes $x = G_{n}\Big( \e^{ia^{-(n+1)}t}\,\Big)$ et $y =
+G_{n-1}\Big( \e^{ia^{-n}t}\,\Big)$ sont tous deux de module $\leq 1$.
+On peut r\'ep\'eter le proc\'ed\'e (par r\'ecurrence descendante), car les 
+nombres $G_{n-j}\Big( e^{ia^{-n}t}\,\Big)$ sont tous de module $\leq 1$.
+On obtient ainsi
+$$|\Phi_{n+1} (a^{-(n+1)}t) - \Phi_n (a^{-n}t)| \leq \bigg|\; G\Big( 
+\e^{ia^{-(n+1)}t}\, \Big)  - \e^{ia^{-n}t}\; \bigg| \times a^n$$
+Tout comme nous l'avions fait avec la fonction $F(w)$, il s'agit
+maintenant de majorer l'expression $\bigl| G\big( e^{i(\theta / a)}
+\big)  - e^{i\theta }\bigr|$ (on prendra ensuite $\theta = a^{-n} t $).
+Cela est ais\'e, si on utilise le d\'eveloppement limit\'e de 
+l'exponentielle d\'ej\`a employ\'e au chapitre {\bf VII}: $e^{i\alpha } = 1 
++ i\alpha +  R(\alpha )$, avec $|R(\alpha )| \leq \alpha^2 / 2$.
+$$\openup 3\jot \eqalignno{
+\bigg|\; G\Big( \e^{i(\theta / a)}\, \Big)  &- \e^{i\theta }\, \bigg|\; 
+= \;\Bigg|\; \sum_{k\geq 0} p_k \bigg[ 1 + ik{\up{\theta}\over\down{a}} +
+R\Big( k\, {\up{\theta}\over\down{a}} \Big) \bigg] - 1 - i\theta - 
+R(\theta )\, \Bigg| \cr
+&\hskip-11.35pt= \;\Bigg|\; \sum_{k\geq 0} p_k  + i\, {\up{\theta}\over\down{a}}
+\sum_{k\geq 0} p_k\, k  + \sum_{k\geq 0} p_k\, R\Big( k\, {\up{\theta}  
+\over\down{a}} \Big) - 1 - i\theta -  R(\theta )\, \Bigg| \cr
+&\hskip-11.35pt= \;\Bigl|\; \sum_{k\geq 0} p_k\, R\Big( k\, {\up{\theta}  
+\over\down{a}} \Big) -  R(\theta )\, \Bigl| \cr
+&\hskip-11.35pt \leq \;{\theta^2 \over 2 }\;\Bigg[\; \sum_{k\geq 0} p_k\, 
+{k^2\over a^2}
++ 1 \;\Bigg] \cr }$$
+Pour la troisi\`eme \'equation ci-dessus,  on a utilis\'e le fait que
+$a = \sum k\, p_k$;  dans la quatri\`eme ligne,  on voit s'introduire
+le moment d'ordre 2 de la variable al\'eatoire $Z_1$,  \`a savoir 
+$M_2 = \sum p_k\, k^2$.  En fin de compte:
+$$\Bigl|\Phi_{n+1} (a^{-(n+1)}t) - \Phi_n (a^{-n}t)\Bigr| \leq {t^2
+\over 2\, a^{2n}}
+\times \bigg( {M_2 \over a^2} +1 \bigg) \times a^n = 
+{t^2 \over 2\, a^{n}} \times \bigg( {M_2 \over a^2} +1 \bigg)$$
+Ceci montre (puisque $a > 1$) que {\it pour tout} $t$ la s\'erie
+$\Phi_{n+1} (a^{-(n+1)}t) - \Phi_n (a^{-n}t)$ est major\'ee par une 
+s\'erie g\'eom\'etrique de raison $1/a$.  Du point de vue
+math\'ematique, cette conclusion n'est  valable que si la s\'erie $\sum
+p_k\, k^2$ converge;  mais nous avons d\'ej\`a  fait remarquer plus d'une
+fois que dans les probl\`emes pratiques les $p_k$ sont toujours nuls \`a
+partir d'un certain rang (et surtout dans le cas des neutrons de fission). 
+\medskip
+Ainsi,  pour les valeurs {\it complexes} de $t$,  la fonction limite 
+$\Phi (t) = 1 + Q(it)$ n'est la somme d'une s\'erie enti\`ere que dans un
+disque,  mais pour les valeurs {\it r\'eelles} de $t$,  $\Phi (t)$ est
+d\'efinie  sur tout l'intervalle $] -\infty \quad +\infty\, [$ comme 
+la limite de la suite des fonctions $\Phi_n (a^{-n}t)$.
+
+\bigskip
+
+La question est alors de savoir comment on peut calculer effectivement
+cette fonction limite $\Phi (t) = 1 + Q(it)$. Nous avons d\'ej\`a vu 
+comment calculer r\'ecursivement les coefficients de Taylor de la 
+fonction $Q( \zeta )$: cet algorithme est efficace pour calculer 
+$Q( \zeta )$, donc en particulier $Q( it )$, pour les petites valeurs de $t$,
+mais la petitesse du disque de convergence ne permet pas de le calculer
+pour les grandes valeurs de $t$. Pour ces derni\`eres, on utilisera alors
+l'\'equation fonctionnelle v\'erifi\'ee par la fonction $Q$ (ou par la 
+fonction $\Phi$):
+$$\eqalign{
+Q( a\zeta ) &= F\bigl( Q( \zeta ) \bigr) \cr
+\Phi (at) &= G\bigl( \Phi (t) \bigr) \cr } \eqno (VIII.20.)$$
+En effet, si $Q$ ou $\Phi$ est connue au voisinage de z\'ero,  on peut en
+d\'eduire les valeurs dans un voisinage $a$ fois plus grand en utilisant
+ces \'equations fonctionnelles; puis en r\'ep\'etant le processus, dans
+un voisinage $a^2$, puis $a^3$, $a^4$, $\ldots$ $a^n$ fois plus grand. 
+Si
+on proc\`ede ainsi avec un nombre complexe $\zeta$ quelconque, le proc\'ed\'e finira par diverger lorsqu'on atteindra les bords
+du domaine d'analyticit\'e; mais ce que nous venons de voir nous
+garantit que pour $t$ r\'eel on pourra poursuivre aussi loin qu'on
+voudra\ftn{2}{Ce que nous venons de voir pr\'esupposait que
+$M_2 =
+\sum p_k\, k^2$ ne soit pas infini;  cela revient \`a supposerque la fonction $G(x)$ est d\'erivable \`a l'ordre deux en $x = 1$.}. 
+\medskip
+{\eightpoint 
+On peut par exemple suivre le plan que voici.  On calcule d'abord les 
+valeurs de $\Phi (t)$ entre $t=10^{-5}$ et $t=10^{-5}\times a$ en
+utilisant la s\'erie enti\`ere. \xsp  Par exemple, on calcule les valeurs
+en dix points $t_0 = 10^{-5}$, $\; t_1 = 10^{-5}\times [1 + 0.1\, (a-1)]$, 
+$\; t_2 =
+10^{-5} \times [1 + 0.2\, (a-1)]$, $\; t_3 = 10^{-5} \times[1 + 0.3\, (a-1)]$,
+ $\; \ldots\; $ $\; t_{10} = 10^{-5} \times a$. \xsp Ou bien $t_0 = 10^{-5}$,  $\; t_1 = 
+10^{-5} \times a^{0.1}$, $\; t_2 = 10^{-5} \times a^{0.2}$, $\; t_3 = 10^{-5}
+\times a^{0.3}$, $\; \ldots\; $ $\; t_{10} = 10^{-5} \times a$. \xsp  Ensuite,  on calcule
+les valeurs en $t_{11} = a\, t_1$,  $\; t_{12} = a\, t_2$, 
+$\;t_{13} = a\, t_3$,  $\;\ldots\;$  $\; t_{21} = a^2\, t_1$, 
+$\;t_{22} = a^2\, t_2$, $\; t_{23} = a^2\, t_3$, 
+$\;\ldots\, ,\; \ldots\;$ \xsp Si le choix de $10^{-5}$ ne convient pas,  soit que 
+les intervalles agrandis sont trop grossiers,  soit que le disque de
+convergence est trop petit,  on prendra $10^{-6}$ ou $10^{-7}$.
+\medskip
+On trouvera en fin de chapitre un programme \'ecrit en langage
+{\eightrm PASCAL},  qui calcule la fonction $\Phi (t)$ par ce 
+proc\'ed\'e,  pour toute donn\'ee de la loi initiale de $Z_1$.
+Les calculs effectu\'es \`a l'aide de ce programme sont montr\'es
+sur les figures $21$,  $22$,  et $23$. \par}
+\vskip7pt plus7pt minus3pt
+Enfin,  lorsque la fonction caract\'eristique asymptotique $\Phi$ est
+connue (par exemple par le calcul num\'erique),  on peut reconstituer la
+densit\'e limite en effectuant une transformation de Fourier inverse.
+Il faut cependant prendre en compte deux choses. 
+\medskip
+a) \xsp  La probabilit\'e (non nulle lorsque
+$a = G'(1) > 1$) del'extinction ultime,  qui est \'egale \`a $x_0$,  l'unique racine
+$< 1$ de l'\'equation $G(x) = x$.  La loi de probabilit\'e de $Z_n$ 
+pour $n$ grand est en effet compos\'ee de deux parties:  d'une part la
+valeur z\'ero qui a une probabilit\'e $x_0$ non infinit\'esimale, 
+et
+d'autre part un nombre \'enorme de valeurs enti\`eres distribu\'ees
+entre $0$ et $N^n$ ($N$ \'etant la plus grande des valeurs prises par
+$Z_1$),  ayant chacune une probabilit\'e infinit\'esimale,  mais
+totalisant la probabilit\'e restante $1 - x_0$.  C'est bien s\^ur la
+deuxi\`eme partie qui est ad\'equatement d\'ecrite par la densit\'e,
+tandis que la premi\`ere partie reste discr\`ete.
+ Ainsi $x_0$ estla probabilit\'e de z\'ero,  et la transform\'ee de Fourier inverse
+de $\Phi(t) - x_0$ donnera le reste de la loi.  Convenons d'appeler
+{\it loi r\'esiduelle} la partie de la loi concernant les valeurs autres
+que $Z_n = 0$. 
+\medskip
+b) La transform\'ee de Fourier inverse de $\Phi_n(a^{-n}t) - x_0$ donnera
+la loi r\'esiduelle discr\`ete exacte.  La densit\'e de cette loi
+r\'esiduelle exacte s'obtiendra en effectuant un lissage de cette loi
+discr\`ete;  mais comme on a vu au chapitre {\bf VII},  le simple
+fait de calculer,  non pas l'int\'egrale 
+$$f(x) = {1 \over 2\pi }\int_{-\infty}^{+\infty}
+\big[ \Phi (t) - x_0 \big]\,\e^{-ixt} dt$$
+compl\`ete,  sur tout l'intervalle de $-\infty$ \`a $+\infty$, 
+mais seulement sur un intervalle fini $-A\, , +A$,  \'equivaut \`a un
+lissage de la loi par le filtre passe-bas $\rho(x) = \sin(Ax) \Big/
+(\pi\, x)$,  dont la longueur de corr\'elation est $\varepsilon \sim 1/A$. 
+Or l'\'ecartement entre les valeurs dont on cherche la densit\'e est
+$a^{-n}$  (il est constant puisque les valeurs de $Z_n$ sont enti\`eres). 
+Comme la fonction $\Phi(t)$ a \'et\'e construite avec le changement
+d'\'echelle $\Phi(t) = \lim_{n \to \infty}\Phi_n(a^{-n}t)$,  il suffit
+donc de prendre $a^{n} \gg A \gg 1$ pour avoir le lissage correct. 
+\medskip
+On peut donc dire que la loi asymptotique de $Z_n$ est enti\`erement
+d\'etermin\'ee par la connaissance de $x_0$ (probabilit\'e que $Z_n = 
+0$) et de la densit\'e $f$,  de sorte que pour $0 < a < b$,  $n$ grand, 
+et $b-a \gg a^{-n}$:
+$${\cal P}\, (Z_n = 0) \; \simeq \; x_0 \hskip9mm \hbox{et} \hskip9mm
+{\cal P}\, (a < {Z_n \over a^n} < b) \; \simeq \; \int_a^b f(x) \, dx$$
+La transform\'ee de Fourier de la loi discr\`ete exacte est la fonction 
+caract\'e\-ristique compl\`ete de $Z_n$,  donn\'ee sur tout
+l'intervalle $-\infty < t < +\infty$:
+$$\Phi (t/a^n)\; = \; x_0\, + \sum_{1}^{k_max} p_k\,\e^{itk/a^n}\;
+\simeq \;\; \Phi(t) \eqno (VIII.21.)$$
+Par cons\'equent,  la loi r\'esiduelle discr\`ete exacte de $a^{-n}Z_n$
+(pour $n$ grand) est la transform\'ee de
+Fourier inverse de$\Phi (t) - x_0$,  tandis que la densit\'e $f$ sera donn\'ee, 
+en prenant $A$ tel que $a^{n} \gg A \gg 1$,  par l'int\'egrale
+$$f(x) \; = \; {1 \over 2\pi }\int_{-A}^{+A}
+\big[ \Phi (t) - x_0 \big]\,\e^{-ixt} dt  \eqno (VIII.22.)$$
+\medskip
+{\eightpoint {Remarque.} 
+Il est sans doute utile ici de rappeler ceci: l'int\'egrale $VIII.22$ est
+forc\'ement convergente puisque ses bornes sont finies;  si on prenait des
+bornes infinies,  elle serait divergente,  ce qui est logique puisque
+la loi est discr\`ete;  il faut consid\'erer la transform\'ee de Fourier
+inverse de $\Phi (t) - x_0$ au sens des distributions par exemple; 
+mais le lecteur de ce livre peut ignorer compl\`etement cette subtilit\'e, 
+puisque seule nous int\'eresse la densit\'e de la loi discr\`ete, 
+et que celle-ci est donn\'ee par l'int\'egrale convergente $VIII.22$.\par}
+\medskip
+La formule $VIII.22$ fournit donc un proc\'ed\'e
+num\'erique ---~on peut utiliser n'importe quel algorithme de
+transformation de Fourier~---  pour d\'eterminer $f$ \`a partir de la
+fonction caract\'eristique asymptotique $\Phi$,  suppos\'ee obtenue par
+les proc\'ed\'es indiqu\'es pr\'ec\'edemment.  Bien entendu la 
+probabilit\'e $x_0$ s'obtiendra en cherchant la racine de l'\'equation
+$G(x_0) = x_0$ par it\'erations (m\'ethode de Newton).
+
+\vfill\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig20.eps} }
+\vskip7mm
+\centerline{\eightpoint figure 20.}
+\vskip3mm
+{\eightpoint\baselineskip=14pt
+Ce graphique repr\'esente la partie r\'eelle de la fonction 
+caract\'eristique asymptotique $\Phi (t)$ de la loi $p_0 = {1\over 9}
+\;   ;\; p_1 = {2\over 9}\; ;\; p_2 = 0\; ;\; p_3 = {2\over 3}$, dont la
+moyenne est $a = 2.22$. Il s'agit donc de la limite, lorsque $n$ tend vers 
+l'infini, des fonctions $\Phi_n(t) = G_n(e^{ia^{-n}t})$, avec $G(z) = (1 + 
+2z + 6z^3)/9$. Ce graphique a \'et\'e obtenu avec 9 it\'erations, c'est
+donc   le graphique de $G_9(e^{ia^{-9}t})$ (on n'obtient pas un meilleur 
+graphique en it\'erant davantage, car le gain en pr\'ecision devient alors 
+inf\'erieur \`a la d\'efinition de l'imprimante). 
+\medskip
+Cette fonction contient toute l'information utile sur la distribution
+de probabilit\'e de la variable al\'eatoire $Z_n$ pour $n$ grand, 
+c'est-\`a-dire qu'elle d\'ecrit la situation statistique limite de la 
+fission apr\`es un certain temps de relaxation. Elle n'est pas la fonction
+caract\'eristique d'une loi de probabilit\'e discr\`ete, mais d'une
+loi asymptotique: la loi limite de  $Z_n / a^n$ lorsque $n$ tend vers
+l'infini. Nous avons vu que cette loi limite comporte un partie discr\`ete
+(la probabilit\'e que $Z_n=0$, \'egale \`a $x_0$, la racine
+de l'\'equation $G(x) = x$) et une densit\'e continue qui d\'ecrit
+la distribution en probabilit\'e des valeurs non nulles. On constate que 
+le graphique est form\'e d'une partie centrale avec un maximum 
+accentu\'e (toutes les fonctions caract\'eristiques sont maximum en
+$t=0$ et ce maximum vaut toujours $1$), et d'une partie plate sur les
+bords, qui correspond au fait que la limite de la fonction 
+caract\'eristique asymptotique pour $t$ grand est toujours \'egale \`a
+$x_0$.}
+
+\vfill\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig21.eps} }
+\vskip15mm
+\centerline{\eightpoint figure 21.}
+\vskip4mm
+\centerline{\vbox{\hsize=12cm\eightpoint \baselineskip=14pt
+Ce graphique presque identique au pr\'ec\'edent a \'et\'e obtenu avec un 
+algorithme tr\`es diff\'erent:  on a cette fois utilis\'e les proc\'ed\'es 
+\'etudi\'es dans le texte.  On a commenc\'e par d\'eterminer les
+coefficients de la s\'erie de Taylor de $Q(\zeta )$; puis on a calcul\'e
+$Q(it)$ en quatre points tr\`es proches de z\'ero \`a l'aide de cette 
+s\'erie; enfin, pour les valeurs \'eloign\'ees de z\'ero, on a utilis\'e
+l'\'equation fonctionnelle $\Phi (at) = G\big( \Phi (t)\big)$. On remarque
+que loin de z\'ero, la courbe devient une ligne bris\'ee: cela est d\^u au
+manque de finesse de la discr\'etisation, et montre qu'en pratique  
+quatre points initiaux sont insuffisants. C'est pourquoi les deux courbes
+de la page suivante sont meilleures (elles font appel \`a huit et seize
+points initiaux).  Mais cet algorithme est bien plus rapide que 
+l'it\'eration directe de la fonction $G$. }} 
+\vskip10mm
+\vfill\break
+
+\null
+\vskip-13mm plus8mm minus8mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig22.eps} }
+\vskip1mm
+\centerline{\eightpoint figure 22.}
+\vskip2mm
+\centerline{\vbox{\hsize=9cm\eightpoint 
+On a am\'elior\'e la courbe pr\'ec\'edente en prenant 8 points initiaux au 
+lieu de quatre.}}
+
+\vskip3mm
+plus3mm minus2mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig23.eps} }
+\vskip1mm
+\centerline{\eightpoint figure 23.}
+\vskip2mm
+\baselineskip=14pt 
+\centerline{\vbox{\hsize=12cm\eightpoint
+Encore mieux avec 16 points initiaux. Le r\'esultat est maintenant aussi
+bon qu'avec l'it\'eration, et le calcul bien plus rapide.} }
+
+\vskip1pt\break
+
+\null\vfill
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig24.eps} }
+\vskip5mm
+\centerline{\eightpoint figure 24.}
+\vskip3mm
+{\eightpoint\baselineskip=12pt
+Et voici maintenant la {\it densit\'e} de la loi limite. Cette densit\'e
+d\'ecrit la distribution en probabilit\'e des valeurs non nulles
+de $a^{-n}Z_n$ (pour $n$ grand). Si on voulait repr\'esenter sur ce m\^eme
+graphique la probabilit\'e discr\`ete que $Z_n = 0$, il faudrait dessiner 
+un pic extr\^emement haut et \'etroit concentr\'e sur l'axe vertical 
+situ\'e au milieu du graphique (cet axe marque l'abscisse z\'ero). 
+\medskip
+Le graphique a \'et\'e obtenu par la {\it transform\'ee de Fourier 
+inverse}. La fonction caract\'eristique d'une loi de probabilit\'e est en 
+effet sa transform\'ee de Fourier, on retrouve donc la loi de probabilit\'e
+\`a partir de la  fonction caract\'eristique en effectuant l'op\'eration
+inverse.  Mais la densit\'e repr\'esent\'ee ci-dessus n'est qu'une partie 
+de la loi,  celle qui concerne les valeurs non nulles. Si $f(x)$ est la
+densit\'e repr\'esent\'ee ci-dessus (de sorte que ${\cal P}\, (Z_n = k) =
+f(k/a^n)$) la fonction caract\'eristique asymptotique est 
+$$\Phi (t) = x_0 + \sum_{k\geq 1} f(a^{-n}\, k)\;\e^{ika^{-n}t}$$
+puisque ${\cal P}\, (Z_n = 0) = x_0$, o\`u $x_0$ est la racine de 
+$G(x_0) = x_0$. Lorsque $n$ est grand la somme devient une int\'egrale 
+avec $dx = a^{-n}$ et $x = a^{-n}k$:
+$$\Phi (t) = x_0 + \int_{x>0} f(x)\;\e^{ixt}$$
+ce qui montre que $f(x)$ n'est pas la transform\'ee de Fourier 
+inverse de $\Phi (t)$, mais de $\Phi (t) - x_0$.
+Un lissage par convolution est effectu\'e automatiquement par le
+simple fait d'avoir omis les grandes valeurs de $t$:  on s'est bien
+gard\'e de calculer l'int\'egrale de Fourier ci-dessus sur l'intervalle
+$]-\infty\, , +\infty\, [$,  on s'est limit\'e \`a la fen\^etre graphique
+de la figure.  Comme on l'a vu \`a la section {\bf 3} du chapitre {\bf VII}, 
+cela \'equivaut \`a une convolution par un filtre du type $\sin(k\, x) / x$.
+C'est pourquoi aucun bruit discret n'appara{\^\i}t sur la figure ci-dessus. 
+En outre il serait trop fin pour la r\'esolution de l'imprimante.
+\medskip
+Les m\'ethodes expos\'ees dans ce chapitre permettent de d\'eterminer
+la fonction carac\-t\'eristique asymptotique de $a^{-n}Z_n$; pour obtenir
+la densit\'e, il suffit ensuite d'effectuer num\'eriquement cette 
+transform\'ee de Fourier inverse. } 
+
+\vfill\break
+
+\null
+\vskip-10mm plus8mm minus8mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig25.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 25.}
+\vskip2mm plus3mm minus1mm
+\centerline{\vbox{\hsize=12cm\eightpoint 
+Voici (ci-dessus et pages suivantes) quelques autres exemples de
+fonctions caract\'eristiques asymptotiques (gra\-phi\-que du haut) et leurs
+densit\'es (graphique du bas) pour diff\'erentes loi de probabilit\'e
+initiales: ici,  $G(z) = (3 + 2z + z^2 + 4z^3) / 10$;  la moyenne de $Z_1$ 
+est donc $a = 1.4$. Pour $x_0$, la probabilit\'e que $Z_n = 0$, le calcul
+donne $0.444\, 922\, 417$.  
+\medskip
+On constate que la densit\'e est nulle pour les abscisses n\'egatives,
+ce qui est normal puisque $Z_n$ ne prend que des valeurs positives.
+Le maximum de la densit\'e correspond en g\'en\'eral \`a la valeur
+moyenne de  $Z_n$, soit $k=a^n$. Bien entendu, $a^n$ tend vers l'infini
+avec $n$, on  choisit donc toujours pour les abcisses une \'echelle o\`u
+$a^n$ repr\'esente l'unit\'e.  }}
+
+\vskip1pt\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig26.eps} }
+\vskip12mm
+\centerline{\eightpoint figure 26.}
+\vskip3mm
+\centerline{\eightpoint $G(z) = (1 + 2z + 3z^2 + 4z^3) / 10$}
+\centerline{\eightpoint $a = 2.00$} 
+\centerline{\eightpoint $x_0 = 0.133\, 726\, 403$}
+
+\vfill\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig27.eps} }
+\vskip14mm
+\centerline{\eightpoint figure 27.}
+\vskip3mm
+\centerline{\eightpoint $G(z) = (1 + z + z^2 + z^3) / 4$}
+\centerline{\eightpoint $a = 1.50$} 
+\centerline{\eightpoint $x_0 = 0.418\, 888\, 986$}
+
+\vfill\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig28.eps} }
+\vskip10mm
+\centerline{\eightpoint figure 28.}
+\vskip3mm
+\centerline{\eightpoint $G(z) = (1 + z + 7z^2 + 3z^3) / 12$}
+\centerline{\eightpoint $a = 2.00$} 
+\centerline{\eightpoint $x_0 = 0.098\, 950\, 997$}
+
+\vfill\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig29.eps} }
+\vskip8mm
+\centerline{\eightpoint figure 29.}
+\vskip3mm
+\centerline{\eightpoint Loi de Poisson de moyenne $9$:}
+\medskip
+\centerline{\eightpoint $G(z) = \e^{9\, (z-1)}$}
+\centerline{\eightpoint $a = 9.00$} 
+\centerline{\eightpoint $x_0 = 0.000\, 123\, 547$}
+
+\vfill\break
+
+\null
+\vskip-6mm plus8mm minus4mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig30.eps} }
+\vskip6mm
+\centerline{\eightpoint figure 30.}
+\vskip3mm
+\centerline{\eightpoint Loi de Poisson de moyenne $19$:}
+\medskip
+\centerline{\eightpoint $G(z) = \e^{19\, (z-1)}$}
+\centerline{\eightpoint $a = 19.00$} 
+\centerline{\eightpoint $x_0 = 5.6 \cdot 10^{-9}$}
+\medskip
+\centerline{\vbox{\hsize=12cm\eightpoint  Dans le graphique du haut,
+les abscisses sont r\'etr\'ecies d'un facteur  ${1 \over 2}$ par rapport 
+\`a celui de la page pr\'ec\'edente. }}
+
+\vskip1pt\break
+
+\null
+\vskip-13mm plus8mm minus8mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig31.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 31.}
+\vskip3mm
+\centerline{\eightpoint Loi de Poisson de moyenne $39$:}
+\medskip
+\centerline{\eightpoint $G(z) = \e^{39\, (z-1)}$}
+\centerline{\eightpoint $a = 39.00$} 
+\centerline{\eightpoint $x_0 = 1.2 \cdot 10^{-17}$}
+\medskip
+\centerline{\vbox{\hsize=12cm\eightpoint  Dans le graphique du haut,
+les abscisses sont r\'etr\'ecies d'un facteur  ${1 \over 2}$ par rapport 
+\`a celui de la page pr\'ec\'edente (donc d'un facteur  ${1 \over 4}$ par
+rapport \`a celui de la figure 29). }}
+
+\vskip1pt\break
+
+\null
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch08eps/fig32.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 32.}
+\vskip3mm
+\centerline{\eightpoint Loi de Bernoulli de moyenne
+$5$ et de degr\'e $9$:}
+\medskip
+\centerline{\eightpoint $G(z) = \bigl( 1 + {5\over 9}\, (z-1)\bigr)^9$}
+\centerline{\eightpoint $a = 5.00$} 
+\centerline{\eightpoint $x_0 = 0.000\, 301\, 865$}
+
+\vfill\break
+
+\null
+\vskip-13mm plus8mm minus8mm
+\centerline{\epsfbox{../imgEPS/ch08eps/fig33.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 33.}
+\vskip2mm
+\centerline{\eightpoint Loi de Bernoulli de moyenne
+$15$ et de degr\'e $19$:}
+\medskip
+\centerline{\eightpoint $G(z) = \bigl( 1 + {15\over 19}\,
+(z-1)\bigr)^{19}$} 
+\centerline{\eightpoint $a = 15.00$} 
+\centerline{\eightpoint $x_0 = 2.9 \cdot 10^{-14}$}
+\medskip
+\centerline{\vbox{\hsize=12cm\eightpoint  Dans le graphique du haut,
+les abscisses sont r\'etr\'ecies d'un facteur  ${1 \over 2}$ par rapport 
+\`a celui de la page pr\'ec\'edente. }}
+
+\vskip1pt\break
+
+Voici un programme qui calcule la {\it fonction caract\'eristique 
+asymptotique} $\Phi (t)$ de la variable al\'eatoire $a^{-n}\, Z_n$, en 
+utilisant  la m\'ethode d\'evelopp\'ee dans ce chapitre: on calcule 
+d'abord  les coefficients $q_1, q_2, q_3,\ldots$ de la fonction $Q(\zeta 
+)$, ce qui permet de calculer $\Phi (t) = 1 + Q(it)$ pour de petites 
+valeurs de  $t$; puis on utilise l'\'equation fonctionnelle $\Phi (at) = 
+G\bigl( \Phi (t)  \bigr)$ pour calculer $\Phi (t)$ pour des valeurs de 
+plus en plus  grandes de $t$. C'est le programme qui a engendr\'e la 
+figure 23.
+
+\vskip7mm plus2mm minus2mm
+
+\def\q{\hskip5mm}
+\def\qq{\hskip14mm}
+
+{\obeylines
+
+{\bf program} gener;
+\medskip
+ {\bf const}  disc = 16; \q {\eightpoint ** nombre de points initiaux **}
+\medskip
+ {\bf var}
+  a, b, c, d, N, j0, $jj$, L : integer;
+  p, q, x, y, s, t, retemp, imtemp, norm, init, initcour : real;
+  q1, q2, q3, q4, a1, a2, a3, apow, t0, x0, y0, lna : real;
+  tabj : {\bf array} [0..disc] {\bf of} integer;
+  tabt, tabx, taby : {\bf array} [0..disc] {\bf of} real;
+\bigskip
+ {\bf function} rep (u, v : real) : real;  \q \hbox{\eightpoint ** partie\  
+r\'eelle de $G$ **}
+  {\bf var}
+   s, t : real;
+ {\bf begin}
+  t := d * u;
+  s := 3 * t + c;
+  t := t + c;
+  t := t * u + b;
+  rep := (a + u * t - s * v * v) / N;
+ {\bf end};
+ \bigskip
+ {\bf function} imp (u, v : real) : real;  \q \hbox{\eightpoint ** partie\  
+imaginaire de $G$ **}
+  {\bf var}
+   t : real;
+ {\bf begin}
+  t := d * u;
+  t := 3 * t + 2 * c;
+  imp := v * (b + u * t - d * v * v) / N;
+ {\bf end};
+\bigskip
+{\bf begin}
+ a := 1;  \q {\eightpoint ** a, b, c, d sont les coefficients de $G$ **}
+ b := 2;
+ c := 0;  \q {\eightpoint ** $G(z)$ = a + b $z$ + c $z^2$ + d $z^3$ **} 
+ d := 6;
+ N := 9;
+ a1 := (b + 2 * c + 3 * d) / N; \q \hbox{\eightpoint ** a1, a2, a3 : \ 
+ coefficients de  $F$ **} 
+ a2 := (c + 3 * d) / N;  \qq \hbox{\eightpoint ** $F(w)$ = \ 
+a1 $w$ + a2 $w^2$  + a3 $w^3$ **} 
+ a3 := d / N;
+ L := 96; \q {\eightpoint ** demi-largeur (en pixels) du graphique **}
+ norm := 24; \q {\eightpoint ** unit\'e (en pixels) sur les abscisses **}
+ init := 0.05; \q {\eightpoint ** abscisse du point initial **}
+ p := (b + 2 * c + 3 * d) / N;  \q {\eightpoint** moyenne de la loi **}
+ q := 1;
+\medskip
+ q1 := 1; \q \hbox{\eightpoint ** calcul it\'eratif des coefficients de \ 
+Taylor q1, ** }
+ apow := a1; \q {\eightpoint ** q2, q3, q4 de la fonction $Q(\zeta )$ **}
+ q2 := a2 / (a1 * (a1 - 1));
+ apow := apow * a1;
+ q3 := (2 * a2 * q2 + a3) / (a1 * (apow - 1));
+ apow := apow * a1;
+ q4 := (a2 * (q2 * q2 + 2 * q3) + 3 * a3 * q2) / (a1 * (apow - 1));
+\medskip
+ {\bf writeln}; \q {\eightpoint ** affichage **}
+ {\bf writeln} (N : 1, ': ', a : 1, ',', b : 1, ',', c : 1, ',', d : 1);
+ {\bf writeln};
+ {\bf writeln} ('a = ', a1 : 4 : 2);
+ {\bf writeln};
+ {\bf writeln} ('disc = ', disc : 1);
+\medskip
+ {\bf MoveTo} (220 + 2 * L, 250);  \q \hbox{\eightpoint ** tra\c{c}age \ 
+des axes de coordonn\'ees **}
+ {\bf LineTo} (220 + 2 * L, 10);
+ {\bf MoveTo} (220 - 2 * L, 250); \  {\bf LineTo} (220 - 2 * L, 10);
+ {\bf MoveTo} (220, 255); \  {\bf LineTo} (220, 10);
+ {\bf MoveTo} (220 - 2 * L, 250); \  {\bf LineTo} (220 + 2 * L, 250);
+\medskip
+ {\bf MoveTo} (28, 255);  \q \hbox{\eightpoint ** tra\c{c}age des \ 
+graduations en abscisse **}
+ {\bf LineTo} (28, 250);
+ {\bf MoveTo} (52, 255); \  {\bf LineTo} (52, 250);
+ {\bf MoveTo} (76, 255); \  {\bf LineTo} (76, 250);
+ {\bf MoveTo} (100, 255); \  {\bf LineTo} (100, 250);
+ {\bf MoveTo} (124, 255); \  {\bf LineTo}(124, 250);
+ {\bf MoveTo} (148, 255); \  {\bf LineTo} (148, 250);
+ {\bf MoveTo} (172, 255); \  {\bf LineTo} (172, 250);
+ {\bf MoveTo} (196, 255); \  {\bf LineTo} (196, 250);
+ {\bf MoveTo} (244, 255); \  {\bf LineTo} (244, 250);
+ {\bf MoveTo} (268, 255); \  {\bf LineTo} (268, 250);
+ {\bf MoveTo} (292, 255); \  {\bf LineTo} (292, 250);
+ {\bf MoveTo} (316, 255); \  {\bf LineTo} (316, 250);
+ {\bf MoveTo} (340, 255); \  {\bf LineTo} (340, 250);
+ {\bf MoveTo} (364, 255); \  {\bf LineTo} (364, 250);
+ {\bf MoveTo} (388, 255); \  {\bf LineTo} (388, 250);
+ {\bf MoveTo} (412, 255); \  {\bf LineTo} (412, 250);
+\medskip
+ {\bf MoveTo} (220, 220 - 2 * L); \q {\eightpoint ** point de d\'epart **}
+\medskip
+ lna := ln(a1);
+\medskip
+ t0 := init;
+ {\bf for} $jj$ := 0 {\bf to} disc {\bf do}  
+\smallskip
+  {\bf begin} \q {\eightpoint ** calcul des points initiaux dans tabt **}
+   tabt$\, [jj]$ := t0;
+   j0 := round(norm * t0);
+   tabj$\, [jj]$ := j0;
+   t0 := t0 * exp(lna / disc);
+   s := tabt$\, [jj]$ * tabt$\, [jj]$;
+   tabx$\, [jj]$ := 1 + s * (q4 * s - q2);
+   taby$\, [jj]$ := t0 * (q1 - q3 * s);
+   {\bf LineTo} (220 + tabj$\, [jj]$, 220 - round(2 * L * tabx$\, [jj]$));
+  {\bf end};
+\medskip
+ initcour := init;
+\medskip
+ {\bf while} j0 $\leq$ 2 * L {\bf do}
+\smallskip
+  {\bf begin} \q \hbox{\eightpoint  **it\'eration \`a partir de\ 
+l'\'equation fonctionnelle **}
+   initcour := initcour * a1;
+   t0 := initcour;
+   {\bf for} jj := 0 {\bf to} disc {\bf do}
+\smallskip
+    {\bf begin}
+     tabt$\, [jj]$ := t0;
+     j0 := round(norm * t0);
+     tabj$\, [jj]$ := j0;
+     t0 := t0 * exp(lna / disc);
+     retemp := rep(tabx$\, [jj]$, taby$\, [jj]$);
+     imtemp := imp(tabx$\, [jj]$, taby$\, [jj]$);
+     tabx$\, [jj]$ := retemp;
+     taby$\, [jj]$ := imtemp;
+     {\bf LineTo} (220 + tabj$\, [jj]$, 220 - round(2 * L * tabx$\, [jj]$));
+    {\bf end};
+\medskip
+  {\bf end};
+\medskip
+ {\bf MoveTo} (220, 220 - 2 * L);
+\medskip
+ t0 := init;
+ {\bf for} jj := 0 {\bf to} disc {\bf do}
+\smallskip
+ {\bf begin} \q \hbox{\eightpoint  ** r\'ep\'etition pour la partie\  
+gauche du graphique **}
+   tabt$\, [jj]$ := t0;
+   j0 := round(norm * t0);
+   tabj$\, [jj]$ := j0;
+   t0 := t0 * exp(lna / disc);
+   s := tabt$\, [jj]$ * tabt$\, [jj]$;
+   tabx$\, [jj]$ := 1 + s * (q4 * s - q2);
+   taby$\, [jj]$ := t0 * (q1 - q3 * s);
+   {\bf LineTo} (220 - tabj$\, [jj]$, 220 - round(2 * L * tabx$\, [jj]$));
+  {\bf end};
+\medskip
+ initcour := init;
+\medskip
+ {\bf while} j0 $\leq$ 2 * L {\bf do}
+\smallskip
+  {\bf begin}
+   initcour := initcour * a1;
+   t0 := initcour;
+   {\bf for} jj := 0 {\bf to} disc {\bf do}
+\smallskip
+    {\bf begin}
+     tabt$\, [jj]$ := t0;
+     j0 := round(norm * t0);
+     tabj$\, [jj]$ := j0;
+     t0 := t0 * exp(lna / disc);
+     retemp := rep(tabx$\, [jj]$, taby$\, [jj]$);
+     imtemp := imp(tabx$\, [jj]$, taby$\, [jj]$);
+     tabx$\, [jj]$ := retemp;
+     taby$\, [jj]$ := imtemp;
+     {\bf LineTo} (220 - tabj$\, [jj]$, 220 - round(2 * L * tabx$\, [jj]$));
+    {\bf end};
+\medskip
+  {\bf end};
+\medskip
+{\bf end}.
+
+} %%% end of \obeylines %%%
+
+\vfill\break
+
+
+
+
+\bye
+
+ pictures 
+
+Four1.7  : le maximum peu marqu\'e correspond \`a x=1.7^n;
+Four9  : j=7 correspond \`a x=9^n (max), j=19 \`a la fin de la bosse;
+Four19  : j=12 correspond \`a x=19^n, j=23 \`a la fin de la bosse
+et j=5 au d\'ebut;
+Four1206  : m = 2.22    r=0.145566419;
+Four3214  : m = 1.60    r=0.444922417;
+Four1234  : m = 2.00    r=0.133726403;
+Four1111  : m = 1.50    r=0.418888986;
+Four1173  : m = 2.00    r=0.098950997;
+FourB9    :   m = 5.00    r=0.000301865;
+FourB19   :  m = 15.00  r=2.9e-14;
+FourP9   :    m = 9.00    r=0.000123547;
+FourP19  :   m = 19.00  r=5.6e-9;
+FourP39  :   m = 39.00  r=1.2e-17;
+

@@ -1,0 +1,921 @@
+\input/home/harthong/tex/formats/twelvea4.tex
+\input/home/harthong/tex/formats/epsf.tex
+\vsize=218mm
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Marches al\'eatoires et lois de l'h\'er\'edit\'e}
+
+\pageno=61 
+ 
+\null\vskip10mm plus4mm minus3mm 
+ 
+\centerline{\tit III. DEUX APPLICATIONS CLASSIQUES:} 
+\vskip7pt 
+\centerline{\tit les marches al\'eatoires et les lois de l'h\'er\'edit\'e.} 
+
+\vskip10mm plus4mm minus3mm  
+ 
+Une marche al\'eatoire \`a une dimension est le mouvement d'un point 
+mat\'eriel qui fait des pas vers l'avant ou vers l'arri\`ere sur un axe,  
+chacune de ces deux possibilit\'es \'etant choisie au hasard. On peut 
+d\'esigner par $t_0,\, t_1,\, t_2,\, \ldots$ les instants successifs o\`u  
+ces pas sont effectu\'es, et par $\varepsilon_0 = t_1-t_0,\, 
+\varepsilon_1 = t_2-t_1,\, \varepsilon_2 = t_3-t_2,\, \ldots$ les 
+intervalles de temps entre deux pas successifs. Alors $x_0,\, x_1,\, 
+x_2,\, \ldots$ seront les abscisses successives du point; les amplitudes 
+de chaque pas seront $\alpha_0 = x_1-x_0,\, \alpha_1 = x_2-x_1,\, 
+\alpha_2 = x_3-x_2,\, \ldots$. On ne se pr\'eoccupera pas de la 
+cin\'ematique int\'erieure aux intervalles (en fait  on fera comme si la 
+vitesse entre deux pas cons\'ecutifs \'etait constante).   
+\medskip 
+\`A chaque pas, le sens (avant ou arri\`ere) peut \^etre choisi par un  
+tirage \`a pile ou face, par un algorithme de nombres au hasard (par 
+exemple la fonction {\bf random} des langages de programmation usuels), 
+par des collisions avec les mol\'ecules d'un liquide, ou tout autre 
+proc\'ed\'e.  
+\medskip 
+Nous allons \'etudier les marches al\'eatoires {\it uniformes},  pour 
+lesquelles les $\varepsilon_j$ et les valeurs absolues des $\alpha_j$  
+sont toutes \'egales: $\varepsilon_j = \varepsilon$ et $\alpha_j = 
+\pm\alpha$. L'\'etude des marches al\'eatoires non uniformes n'est pas 
+plus difficile dans le principe, mais les calculs \`a faire sont alourdis 
+par la variation des $\varepsilon_j$ et $\alpha_j$: ces deux param\`etres 
+deviennent des {\it variables al\'eatoires} (voir chapitre {\bf VI}). 
+L'\'etudiant qui a compris le cas uniforme et assimil\'e le chapitre {\bf  
+VI} sur les variables al\'eatoires saura traiter lui-m\^eme le cas non 
+uniforme  (en fait les propri\'et\'es sont les m\^emes). 
+\medskip 
+Nous ne donnons ici que des rudiments sur les marches al\'eatoires, en
+traitant au moins par exemple les marches uniformes  \`a une dimension. 
+Les cas les plus int\'eressants de marches al\'eatoires sont en dimension 
+deux ou trois, et non uniformes. Alors, \`a chaque pas, au  lieu de 
+{\it deux} choix possibles pour le sens, il y a toutes 
+les directions possibles: cela correspond \`a une distribution de 
+probabilit\'e sur le  cercle en dimension deux, sur la sph\`ere en dimension 
+trois (une telle distribution pouvant bien s\^ur \^etre discr\'etis\'ee), 
+avec en outre une distribution de probabilit\'e pour la longueur du pas.   
+Une \'etude des marches al\'eatoires de dimensions sup\'erieures \`a un  
+est math\'ematiquement assez p\'enible mais semblable dans son 
+principe au cas de la dimension 1. 
+\medskip 
+Une marche al\'eatoire en dimension trois est un mod\`ele  
+math\'ematique  pour le mouvement brownien.  Mais beaucoup de 
+propri\'et\'es du mouvement brownien se voient d\'ej\`a sur les  
+marches al\'eatoires uniformes de dimension un,  d'o\`u l'int\'er\^et 
+scolaire d'une telle \'etude.  
+\medskip 
+Il faut ajouter \`a cela que les marches al\'eatoires, surtout en dimension  
+1, peuvent aussi servir de mod\`ele \`a des probl\`emes de probabilit\'es 
+tr\`es simples, tels que la partie de {\it pile ou face}. Le principal  
+avantage de la mod\'elisation par marche al\'eatoire est la possibilit\'e  
+de raisonner g\'eom\'etriquement: on peut alors utiliser toutes les 
+ressources de la g\'eom\'etrie euclidienne (voir {\bf III. 3}
+le principe de sym\'etrie de D\'esir\'e Andr\'e).
+\bigskip
+Un domaine d'application important et significatif du Calcul des
+pro\-ba\-bi\-lit\'es  est aussi la g\'en\'etique. Depuis qu'on conna{\^\i}t
+les m\'ecanismes mol\'eculaires de l'h\'er\'edit\'e on a pu en expliquer
+certaines lois empiriques par le Calcul des probabilit\'es. Cela r\'esulte
+de ce que ces m\'ecanismes mol\'eculaires sont des combinaisons de
+g\`enes ob\'eissant \`a une causalit\'e spatio-temporelle, et sont par
+cons\'equent soumis,  comme les boules qu'on dispose dans des bo\^\i
+tes, aux diff\'erentes r\`egles de d\'enombrement du chapitre {\bf II}. 
+Nous en donnerons un bref aper\c cu en pr\'esentant deux exemples
+simples et c\'el\`ebres de lois de la g\'en\'etique, celles de  Mendel
+(section {\bf III.5}) et de Hardy-Weinberg (section {\bf III.6}).  On
+verra que le Calcul des probabilit\'es joue un r\^ole capital en
+g\'en\'etique, car c'est lui qui en fait une science exacte (quantitative). 
+\bigskip 
+Le contenu de ce chapitre ne pr\'etend \`a aucune originalit\'e: on pourra
+en trouver un expos\'e pratiquement identique dans d'autres ouvrages, 
+notamment celui de William Feller. Mais les applications trait\'ees ici
+sont tellement typiques que nous les utiliserons fr\'equemment dans la
+suite comme exemples pour rendre plus concr\`ete l'introduction de
+tel ou tel nouveau concept. Il serait g\^enant pour la coh\'erence du
+pr\'esent ouvrage de renvoyer \`a chaque fois le lecteur \`a d'autres
+sources. 
+
+\vskip7mm plus4mm minus3mm
+
+{\bf III. 1. Graphe d'une marche al\'eatoire.}
+\medskip 
+\midinsert
+\epsfxsize=\larg
+\epsfbox{../imgEPS/ch03eps/fig6a.eps}
+\endinsert
+\midinsert
+\epsfxsize=\larg
+\epsfbox{../imgEPS/ch03eps/fig6b.eps}
+\endinsert
+\midinsert
+\epsfxsize=\larg
+\epsfbox{../imgEPS/ch03eps/fig6c.eps}
+\endinsert
+\midinsert
+\epsfxsize=\larg
+\epsfbox{../imgEPS/ch03eps/fig6d.eps}
+\endinsert
+On suppose donc \`a partir de maintenant que les marches al\'eatoires sont 
+toujours uniformes. Une marche al\'eatoire \'etant avant tout un {\it 
+mouvement}, on peut repr\'esenter l'\'evolution du point mat\'eriel sur un 
+graphique, avec le temps en abscisse et la position sur l'axe en ordonn\'ee. 
+Chaque instant $t_j = j\varepsilon$ peut correspondre \`a un changement  
+du sens de parcours, ce qui sur un tel graphique se traduit par un 
+changement de pente (voir figures pages suivantes). Dans le graphique on fait 
+comme si la vitesse entre deux changements de direction cons\'ecutifs 
+\'etait constante, quoique ce d\'etail soit insignifiant; par ailleurs, 
+on choisit les unit\'es sur les axes $t$ et $x$ de sorte que la vitesse soit 
+toujours 1 en valeur absolue.    
+\medskip 
+L'espace des \'epreuves pour une marche al\'eatoire \`a $n$ pas est  
+l'ensemble de {\it tous} les mouvements possibles; mais chaque 
+mouvement possible est d\'etermin\'e par la liste des $n$ choix de sens: 
+on peut le repr\'esenter par une liste de $n$ signes $+$ ou $-$. L'espace 
+des \'epreuves $\Omega$ est donc isomorphe \`a celui des parties de pile 
+ou face \`a $n$ lancers, en particulier son cardinal est $2^n$: il y a $2^n$ 
+marches al\'eatoires diff\'erentes \`a $n$ pas, qui correspondent \`a 
+$2^n$ graphes diff\'erents, ou \`a $2^n$ suites diff\'erentes de $+$ et de 
+$-$. Le hasard pur se traduit ici par le fait que toutes les marches 
+possibles sont \'equiprobables.  
+\medskip 
+Cette repr\'esentation g\'eom\'etrique sous forme de graphes est bien  
+s\^ur {\it logiquement} \'equivalente \`a la repr\'esentation sous forme 
+de suites form\'ees de $+$ et de $-$, mais le fait qu'elle soit 
+g\'eom\'etrique permet de poser des probl\`emes de suites sous une 
+forme imag\'ee qui, comme nous le verrons, peut fournir des m\'ethodes 
+astucieuses de r\'esolution.  
+\medskip 
+Ainsi une question qui se formule tr\`es ais\'ement dans le langage 
+g\'eo\-m\'e\-tri\-que est ``quelle est la probabilit\'e pour qu'une marche  
+al\'eatoire partie de $0$ \`a l'instant $0$ aboutisse \`a $x$ \`a l'instant 
+$n$''. Essayez donc de formuler la question \'equivalente dans le langage 
+des suites de $+$ et de $-$. Pourtant, si on {\it pose} mieux la question 
+dans le langage g\'eom\'etrique, on la {\it r\'esoud} mieux en 
+consid\'erant les suites. En effet, si une suite est faite de $p$ signes $+$ 
+et de $q$ signes $-$ (avec \'evidemment $p+q=n$), la marche 
+correspondante parviendra \`a l'ordonn\'ee $x=p-q$. Cette valeur ne 
+d\'epend pas de l'ordre des $+$ et des $-$, mais seulement de leur 
+nombre. Autrement dit, toutes les marches qui ont effectu\'e $p$ pas en 
+avant et $q$ pas en arri\`ere aboutissent au m\^eme point $x$. Leur 
+nombre est le nombre de mani\`eres diff\'erentes de placer $p$ signes 
+$+$ et $q$ signes $-$, soit $n! / p!\, q!$ (chapitre {\bf II}, 
+section {\bf 3}).  Si on veut calculer $p$ et $q$ en fonction de $x$, 
+il suffit de r\'esoudre le syst\`eme  
+$$\eqalign{ 
+p+q &= n \cr 
+p-q &= x \cr }$$ 
+si $n$ et $x$ ont la m\^eme parit\'e, cela donne $p = {1 \over 2} (n + x),\;  
+q = {1 \over 2} (n - x)$ (si $n$ et $x$ n'ont pas la m\^eme parit\'e il n'y a 
+aucune solution). Ainsi l'\'ev\'enement $A$: ``la marche, partie de 0 \`a 
+l'instant 0 aboutit \`a $x$ \`a l'instant $n$'' est de cardinal $n! / p!\, q!$ 
+avec $p = {1 \over 2} (n + x),\;  q = {1 \over 2} (n - x)$ si $n$ et $x$ ont  
+la m\^eme parit\'e, et de cardinal 0 si $n$ et $x$ n'ont pas la m\^eme 
+parit\'e. D'o\`u la probabilit\'e:  
+$${\cal P}\, (A)\;\;  = \cases{  
+2^{-n}\, {n! \over p!\, q!} & si $n$ et $x$ ont m\^eme parit\'e \cr  
+\noalign{\medskip} 
+\quad  0 & si $n$ et $x$ ont des parit\'es diff\'erentes. \cr }$$ 
+ 
+\vskip7mm plus4mm minus3mm  
+ 
+{\bf III. 2. Le probl\`eme du retour \`a z\'ero d'une marche al\'eatoire.} 
+\medskip 
+Dans le paragraphe pr\'ec\'edent nous avons cherch\'e la probabilit\'e  
+pour  qu'une marche de $n$ pas aboutisse (au $n^{\rm e}$, c'est-\`a-dire 
+au {\it dernier} pas) au point d'ordonn\'ee $x$. Pour $m < n$ on peut aussi 
+chercher la probabilit\'e pour qu'une marche (toujours de $n$ pas) passe 
+en un point donn\'e $x$ au $m^{\rm e}$ pas: soit donc $A_{m,x}$ 
+l'\'ev\'enement: ``la  marche passe au point $x$ au $m^{\rm e}$ pas''. Ce 
+qui a \'et\'e vu au paragraphe pr\'ec\'edent s'applique \'egalement. Pour 
+une marche appartenant \`a $A_{m,x}$ il faut que parmi les $m$ premiers 
+pas il y ait $p$ pas en avant et $q$ pas en arri\`ere avec $p+q = m$ et 
+$p-q = x$; par contre ce qui arrive apr\`es le $m^{\rm e}$ pas est 
+indiff\'erent. Il y a donc (du moins si $m$ et $x$ sont de m\^eme parit\'e) 
+$m! / p! q!$ possibilit\'es avec les $m$ premiers pas et $2^{n-m}$ 
+possibilit\'es pour les pas suivants (de $m+1$ \`a $n$) de sorte que $\# 
+A_{m,x} = 2^{n-m}\, {m \choose p}$ avec $p = {1 \over 2}(m+x)$ si $x$ a  
+la m\^eme parit\'e que $m$, et 0 sinon. On voit qu'on obtient pour la 
+probabilit\'e  $$ {\cal P}\, (A_{m,x}) = {\# A_{m,x} \over \#\Omega } = 
+{2^{n-m}\, {m \choose p} \over 2^n} = 2^{-m}\, {m \choose p}$$ 
+c'est-\`a dire la m\^eme chose que si l'espace des \'epreuves $\Omega$  
+avait \'et\'e l'ensemble de toutes les marches \`a $m$ pas au lieu d'\^etre 
+l'ensemble de toutes les marches \`a $n$ pas. On voit que le r\'esultat ne 
+d\'epend pas de la mod\'elisation choisie. Si donc on s'int\'eresse \`a ce  
+qui se produit \`a l'instant $m$, ou avant, mais que ce qui arrive apr\`es 
+est indiff\'erent, il est inutile de consid\'erer des marches ayant plus de 
+$m$  pas.  
+\medskip 
+Un cas particulier int\'eressant est celui o\`u $x = 0$. Si l'\'ev\'enement 
+$A_{m,0}$ correspondant se produit, on dira aussi: ``il y a un retour \`a 
+z\'ero \`a l'instant $m$''. Cet \'ev\'enement est vide si $m$ est impair, et 
+de  probabilit\'e  $2^{-2\ell }\, {2\ell \choose \ell}$ si $m = 2\ell$.  
+Ce r\'esultat se d\'eduit par une application imm\'ediate de $(II.5.)$  
+\medskip 
+Pour les retours \`a z\'ero il se pose cependant un autre probl\`eme, celui  
+du {\it premier} retour \`a z\'ero. La question est cette fois de trouver la 
+probabilit\'e pour qu'\`a l'instant $m = 2\ell$ la marche soit revenue \`a 
+z\'ero, {\it et qu'en outre} il n'y ait eu aucun autre retour \`a z\'ero avant.  
+Il est clair que la probabilit\'e pour qu'\`a l'instant $m$ se produise {\it  
+le premier} retour \`a z\'ero est inf\'erieure \`a la probabilit\'e pour 
+qu'\`a l'instant $m$ se produise {\it un} retour \`a z\'ero.  Mais quelle
+est sa valeur exacte ? C'est ce que nous nous proposons de calculer 
+maintenant. On voit que pour tous ces probl\`emes (retour \`a z\'ero ou 
+premier retour \`a z\'ero \`a l'instant $m$) il est inutile de consid\'erer 
+ce qui se passe apr\`es l'instant $m$, et donc nous prenons pour 
+$\Omega$ l'ensemble des marches de $m$ pas, qui contient $2^m$ \'el\'ements.  
+\medskip 
+L'\'ev\'enement ``\`a l'instant $m$ se produit un retour \`a 0'' \'etant 
+vide si $m$ est impair nous posons $m = 2\ell$; les marches appartenant \`a  
+cet \'ev\'enement ont en commun que $x_0 = 0$ et $x_{2\ell} = 0$. Par 
+contre  les marches appartenant \`a l'\'ev\'enement $P_\ell$ : ``\`a 
+l'instant $2\ell$ se produit le {\it premier} retour \`a 0'' v\'erifient en 
+outre $x_1 \neq 0, \, x_2 \neq 0, \,  x_3 \neq 0, \ldots x_{2\ell - 1} \neq 
+0$. On ne peut d\'enombrer  $P_\ell$ par application imm\'ediate d'une 
+formule du chapitre $II$. Ce type de probl\`eme est plus d\'elicat, mais 
+nous allons voir qu'en exploitant la g\'eom\'etrie on peut trouver des 
+m\'ethodes efficaces; en effet, le grand avantage des marches 
+al\'eatoires est leur sens g\'eom\'etrique: les graphes se situent dans le 
+plan euclidien et par cons\'equent toute la g\'eom\'etrie euclidienne peut 
+\^etre mise \`a profit. Or beaucoup de probl\`emes de probabilit\'es qui au 
+d\'epart n'ont rien \`a voir avec la g\'eom\'etrie peuvent se mod\'eliser 
+en termes de marches al\'eatoires: par exemple un jeu de pile ou face 
+avec mises entre deux joueurs $P$ et $F$, o\`u $P$ re\c coit $1$ Euro de 
+$F$ chaque fois que sort {\it pile}, tandis que $P$ donne $1$ Euro \`a $F$ 
+chaque fois que sort {\it face} . Une marche al\'eatoire est en effet 
+caract\'eris\'ee de fa\c con biunivoque par la suite des signes $+$ et $-$ 
+de chacun de ses pas. Si donc on traduit $+$ par {\it pile} et $-$ par {\it 
+face} on voit qu'il y a une correspondance bijective entre l'ensemble de 
+toutes les marches possibles et l'ensemble de toutes les parties de pile 
+ou face possibles. L'ordonn\'ee  $x_j$ est alors le gain de $P$ \`a 
+l'instant $j$.  L'\'ev\'enement $P_\ell$ signifie dans ce cas que le gain de 
+$P$ est rest\'e constamment positif de l'instant $1$ jusqu'\`a l'instant 
+$2\ell - 1$.   
+\medskip 
+Une premi\`ere \'etape pour le d\'enombrement de $P_\ell$ fait d\'ej\`a  
+appel \`a la g\'eom\'etrie: elle consiste \`a remarquer que par sym\'etrie, 
+\`a tout graphe tel que $x_0 = 0, \, x_1 > 0, \, x_2 > 0, \,  x_3 > 0, \ldots 
+x_{2\ell - 1} > 0$ correspond bijectivement un graphe tel que $x_0 = 0, \, 
+x_1 < 0, \, x_2 < 0, \,  x_3 < 0, \ldots x_{2\ell - 1} < 0$ (figure 7). 
+Mais d'autre part un graphe tel que $x_0 = 0, \, x_1 \neq 0, \, x_2 
+\neq 0, \, x_3 \neq 0, \ldots x_{2\ell - 1} \neq 0$ ne peut \^etre que
+de l'un ou l'autre des deux types pr\'ec\'edents, en vertu du fait bien
+connu qu'on ne peut passer du n\'egatif au positif (ou vice-versa) sans
+passer par 0 (on pourrait passer par exemple de $-\alpha$ \`a $+\alpha$
+avec un pas \'egal \`a $2\alpha$,  mais la marche al\'eatoire ne  fait
+que des pas \'egaux \`a $\pm \alpha$). 
+Par cons\'equent l'\'ev\'enement $P_{2\ell}$: $x_0 = 0, \, x_1 \neq 0, \, 
+x_2 \neq 0, \,  x_3 \neq 0, \ldots x_{2\ell - 1} \neq 0,\, x_{2\ell} = 0$ 
+doit contenir exactement {\it deux} fois le nombre d'\'el\'ements de 
+$P_{2\ell}^{(+)}$: $x_0 = 0, \, x_1 > 0, \, x_2 > 0, \,  x_3 > 0, \ldots 
+x_{2\ell - 1} > 0,\, x_{2\ell} = 0$ ou de $P_{2\ell}^{(-)}$: $x_0 = 0, \, x_1  
+< 0, \, x_2 < 0, \,  x_3 < 0, \ldots x_{2\ell - 1} < 0,\, x_{2\ell} = 0$. 
+ 
+\vskip7mm plus4mm minus3mm  
+\penalty-800
+ 
+{\bf III. 3. Le principe de sym\'etrie de D\'esir\'e Andr\'e.} 
+
+\penalty800
+\medskip 
+Cette utilisation des sym\'etries g\'eom\'etriques pour le  
+d\'enombrement  est attribu\'ee historiquement \`a D\'esir\'e Andr\'e 
+({\oldstyle 1887}). Elle consiste \`a \'etablir des correspondances 
+biunivoques entre \'ev\'enements par sym\'etrie ou translation dans le 
+plan (ou dans l'espace). Pour cela il faut bien s\^ur avoir trouv\'e 
+auparavant une mod\'elisation g\'eom\'etrique du probl\`eme. 
+\medskip 
+Nous allons appliquer une seconde fois ce principe pour calculer le 
+cardinal de $P_{2\ell}^{(+)}$ (et par voie de cons\'equence, celui de 
+$P_{2\ell}$).  On remarquera tout d'abord qu'une marche appartenant \`a  
+$P_{2\ell}^{(+)}$ v\'erifie n\'ecessairement $x_{2\ell - 1} = +1$ et  
+$x_{2\ell  - 2} = +2$; en effet on ne peut arriver \`a $x_{2\ell} = 0$ que  
+par $x_{2\ell  - 1} = +1$ ou $x_{2\ell - 1} = -1$, la seconde possibilit\'e 
+\'etant exclue dans   $P_{2\ell}^{(+)}$. De m\^eme, on ne peut arriver \`a 
+$x_{2\ell - 1} = +1$ que par $x_{2\ell - 2} = +2$ ou $x_{2\ell - 2} = 0$, la 
+seconde possibilit\'e \'etant elle aussi exclue dans $P_{2\ell}^{(+)}$. Le 
+nombre de marches v\'erifiant $x_0 = 0, \, x_1 > 0, \, x_2 > 0, \,  x_3 > 0, 
+\ldots x_{2\ell - 1} > 0,\, x_{2\ell} = 0$ est donc \'egal au nombre de 
+marches v\'erifiant $x_0 = 0, \, x_1 > 0, \, x_2 > 0, \,  x_3 > 0, \ldots 
+x_{2\ell - 3} > 0,\, x_{2\ell - 2} = 2$. 
+\medskip
+
+\midinsert 
+\epsfxsize=\larg
+\centerline{\epsfbox{../imgEPS/ch03eps/fig7.eps}} 
+\vskip2pt 
+\centerline{\eightpoint figure 7} 
+\vskip6pt 
+\endinsert 
+
+Ainsi nous sommes ramen\'es \`a d\'enombrer l'\'ev\'enement $C_{2\ell  
+-  2}^2$: $x_0 = 0, \, x_1 > 0, \, x_2 > 0, \,  x_3 > 0, \ldots x_{2\ell - 3} > 
+0,\, x_{2\ell - 2} = 2$. Appelons plus g\'en\'eralement pour $n$ et $r$ 
+quelconques $C_{2n}^{2r}$  l'\'ev\'enement  $x_0 = 0, \, x_1 > 0, \, x_2 > 
+0, \,  x_3 > 0, \ldots x_{2n -1} > 0,\, x_{2n} = 2r$. $C_{2n}^{2r}$ 
+est ainsi l'ensemble des marches al\'eatoires issues de $0$ \`a l'instant  
+$0$ et aboutissant \`a $2r$ \`a l'instant $2n$, et qui restent constamment 
+positives. Or une marche  al\'eatoire issue de $0$ \`a l'instant $0$ et 
+aboutissant \`a $2r$  (avec $2r > 0$) \`a l'instant $2n$ est ou bien 
+toujours positive, ou bien peut s'annuler au moins une fois entre $0$ et 
+$2n$ (ce {\it ou bien} \'etant exclusif). C'est pourquoi nous allons 
+consid\'erer les marches al\'eatoires telles que $x_0 = 0, \, x_1 = +1, \,  
+x_{2n} = 2r$ et les d\'ecomposer en deux parties disjointes, celles qui 
+restent constamment positives, et celles qui repassent par 0 entre les 
+instants 1 et $2n$.  
+\medskip 
+Introduisons donc les \'ev\'enements: 
+$$\eqalign{ 
+&A_{2n}^{2r}: x_0=0,\, x_1=+1, \;\hbox{\eightrm et}\; x_{2n}=2r\, ;\cr 
+&B_{2n}^{2r}: x_0=0,\, x_1=+1, \,  x_{2n}=2r \; \hbox{\eightpoint  
+et il existe un $j$,  $1<j<2n$, tel que $x_j = 0$}\, ; \cr 
+&D_{2n}^{2r}: x_0=0,\, x_1=-1, \;\hbox{\eightrm et}\; \, x_{2n}=2r\, ;\cr  
+&E_{2n}^{2r}: x_0 = 0, \, x_{2n} = 2r\, . \cr}$$ 
+L'\'ev\'enement $A_{2n}^{2r}$ est donc l'ensemble de toutes les marches 
+telles que $x_0 = 0, \, x_1 = +1, \,  x_{2n} = 2r$, positives ou non;  
+$B_{2n}^{2r}$ est le sous-ensemble de $A_{2n}^{2r}$ des marches qui 
+repassent par $0$, et, rappelons-le, $C_{2n}^{2r}$ le sous-ensemble des 
+marches toujours positives; de sorte que $A_{2n}^{2r} = B_{2n}^{2r} \cup 
+C_{2n}^{2r}$, r\'eunion de deux ensembles disjoints, d'o\`u  
+$$\# A_{2n}^{2r} = \# B_{2n}^{2r} + \# C_{2n}^{2r}$$  
+Mais comme le montre la figure 7, on peut associer de mani\`ere  
+biunivoque \`a tout graphe de $B_{2n}^{2r}$ un graphe de $D_{2n}^{2r}$,  
+en vertu de la sym\'etrie par rapport \`a l'axe des abscisses: pour 
+n'importe quelle marche appartenant \`a $B_{2n}^{2r}$, on prend la 
+branche positive entre l'instant $0$ et celui du premier retour \`a  
+z\'ero (qui a forc\'ement lieu puisqu'on est dans $B_{2n}^{2r}$), et on  
+la remplace par sa sym\'etrique, en laissant intact ce qui arrive apr\`es 
+le premier retour \`a z\'ero.    
+\medskip 
+Par cons\'equent:  
+$$\# B_{2n}^{2r} = \# D_{2n}^{2r}$$ 
+(ceci constitue le principe de sym\'etrie de D\'esir\'e Andr\'e).  
+\medskip 
+On en d\'eduit alors un moyen de calculer  $\# C_{2n}^{2r} = \# 
+A_{2n}^{2r} - \# D_{2n}^{2r}$: en effet les cardinaux de $A_{2n 
+}^{2r}$ et $D_{2n}^{2r}$ peuvent, eux (contrairement \`a celui de  
+$C_{2n}^{2r}$), \^etre calcul\'es par application imm\'ediate de $(II.5.)$: 
+$A_{2n}^{2r}$ \'equivaut \`a l'ensemble de toutes les marches issues de 
+$+1$ \`a l'instant $1$ et aboutissant \`a $2r$ \`a l'instant $2n$, qui  
+doivent donc faire $p$ pas en avant et $q$ pas en arri\`ere avec $p+q = 
+2n -1$ et $p-q = 2r-1$, il  y en a $(2n-1)! / (n+r-1)!\, (n-r)!$; 
+$C_{2n}^{2r}$ \'equivaut \`a l'ensemble de toutes les marches issues de 
+$-1$ \`a l'instant $1$ et aboutissant \`a $2r$ \`a l'instant $2n$, qui  
+doivent donc faire $p$ pas en avant et $q$ pas en arri\`ere avec $p+q = 
+2n-1$ et $p-q = 2r+1$, il y en a $(2n-1)! / (n+r)!\, (n-r-1)!$ 
+D'o\`u    
+$$\openup 2\jot \eqalignno{  
+\# C_{2n}^{2r} &= \# A_{2n}^{2r} - \# D_{2n}^{2r} \cr  
+& = {2n-1 \choose n+r-1} - {2n-1 \choose n+r} \cr 
+&= {(2n-1)! \over (n+r-1)!\, (n-r)!} - {(2n-1)! \over (n+r)!\, 
+(n-r-1)!}  &(III.1.)\cr  
+&= {(2n-1)! \over (n+r)!\, (n-r)!} \cdot 2r  \cr 
+&= {(2n)! \over (n+r)!\, (n-r)!} \cdot {r \over n} \cr }$$  
+Il ne reste plus qu'\`a voir que dans le cas particulier qui nous int\'eresse 
+($r = 1$ et $2n = 2\ell - 2$) on a  $\# C_{2\ell - 2}^2 = \bigl( (2n)! / n!^2 
+\bigr)\cdot \bigl( 1 / 2(2n-1)\bigr)$. D'apr\`es ce qui avait \'et\'e dit  
+plus haut l'\'ev\'enement $P_{2\ell}$ a un cardinal exactement double, de 
+sorte que la probabilit\'e que le {\it premier} retour se produise \`a 
+l'instant  $2\ell$ est   
+$${\cal P}\, (P_{2\ell}) = 2^{-2\ell}\; {(2\ell )! \over \ell !^2} \; 
+{1 \over 2\ell-1} \eqno (III.2.)$$  
+On voit qu'elle est $2\ell - 1$ fois plus petite que la probabilit\'e pour  
+qu'il y ait un retour \`a z\'ero (non n\'ecessairement le premier) \`a 
+l'instant $2\ell$. 
+
+\vskip7mm plus4mm minus3mm  
+\penalty-800 
+{\bf III. 4. La loi du dernier retour.} 
+
+\penalty800 
+\medskip 
+Un autre probl\`eme qui m\'erite une \'etude est le suivant: consid\'erons  
+une marche al\'eatoire de $2n$ pas\ftn 1{Dans le cas impair $2n-1$ le 
+calcul est un peu diff\'erent mais de fa\c con absolument inessentielle; 
+c'est pourquoi on peut le laisser de c\^ot\'e.}. Quelle est la probabilit\'e 
+pour que le pr\'ec\'edent retour \`a z\'ero ait eu lieu \`a l'instant $2k$ ? 
+(c'est-\`a-dire que la marche soit pass\'ee par z\'ero \`a l'instant $2k$ 
+mais plus jamais ensuite entre $2k$ et $2n$).  
+\medskip 
+Peut-\^etre cette fa\c con de formuler le probl\`eme n'est-elle pas assez 
+concr\`ete. Alors imaginons les choses ainsi: supposons qu'on reproduise  
+des milliards de fois une marche al\'eatoire (par exemple un ordinateur 
+dessine des milliards de graphes du type de la figure 6 \`a partir d'un 
+programme qui appelle la fonction {\bf random}). Pour chacun de ces 
+graphes on note le dernier instant avant la fin o\`u le graphe est pass\'e  
+par z\'ero, c'est-\`a-dire l'instant du dernier retour. Comment se 
+r\'epartissent ces instants ? Il se trouve que leur r\'epartition est 
+inattendue: il est fortement probable que ce dernier retour ait eu lieu  
+\`a un instant soit tout r\'ecent (c'est-\`a-dire proche de $2n$), soit 
+tr\`es ancien (c'est-\`a-dire proche de $0$), et faiblement probable qu'il 
+ait eu lieu \`a mi-chemin. Pour donner une id\'ee plus quantitative, on 
+peut dire que la probabilit\'e pour que le dernier retour ait eu lieu 
+pendant le premier dixi\`eme de la dur\'ee totale du parcours est $1 
+\over 5$, la probabilit\'e pour qu'il ait eu lieu pendant le dernier 
+dixi\`eme est aussi $1 \over 5$, et la probabilit\'e pour qu'il ait eu lieu 
+pendant les huit dixi\`emes interm\'ediaires est $3 \over 5$.   
+\medskip   
+Avec cette r\'epartition des probabilit\'es on doit s'attendre \`a ce que  
+pour un \'echantillon de graphes pris au hasard, un nombre important 
+d'entre eux aient  fluctu\'e tout au d\'ebut autour de z\'ero, pour ensuite 
+rester toujours loin de l'axe; par exemple d'apr\`es les chiffres ci-dessus 
+une marche sur cinq environ devrait fluctuer autour de z\'ero pendant le 
+premier dixi\`eme de son parcours, puis demeurer constamment positive  
+ou constamment n\'egative sur les neuf dixi\`emes restants: un coup 
+d'oeil \`a la figure 6 montre que tel est bien le cas (il n'y a eu aucun 
+trucage). Une marche sur {\it dix} devrait ne fluctuer autour de z\'ero que 
+sur le premier {\it cinquanti\`eme} de son parcours. Ces longs s\'ejours 
+de la marche al\'eatoire  loin de 0 ne sont donc pas l'effet  d'une cause 
+inconnue qui favoriserait de tels \'ecarts (par exemple si la fonction {\bf 
+random} du logiciel de calcul \'etait incorrecte), mais bien celui du {\it 
+pur hasard}. 
+ 
+\bigskip 
+ 
+Pour poser math\'ematiquement le probl\`eme, \'ecrivons l'\'ev\'enement  
+$A_k$ qui, en tant que sous-ensemble de l'ensemble de toutes les  
+marches possibles, exprime le fait que le dernier retour en 0 a eu lieu \`a 
+l'instant $2k$. Une marche appartenant \`a $A_k$ v\'erifie donc $x_0 = 0$ 
+et $x_{2k} = 0$, mais aucune condition n'est requise pour les $x_j$ avec 
+$0 < j < 2k$. Pour une marche al\'eatoire allant de z\'ero \`a $2n$ il y a 
+donc $2k \choose k$ possibilit\'es diff\'erentes pour la partie ayant lieu 
+entre $0$ et $2k$. En ce qui concerne la partie entre $2k$ et $2n$, on 
+commencera  par remarquer que l'on doit avoir  $x_{2k+1} \neq 0, \, 
+x_{2k+2} \neq 0, \, x_{2k+3}  \neq 0, \ldots  x_{2n-1} \neq 0$, et aussi, 
+si on suppose qu'il n'y a pas retour \`a z\'ero \`a l'instant $2n$ 
+lui-m\^eme (car alors on aurait $k = n$), $x_{2n} \neq 0$. \`A cause de 
+l'invariance par translation, il y a exactement autant de possibilit\'es 
+pour cette partie de la marche situ\'ee entre $2k$ et $2n$ que pour une 
+marche de $2n - 2k$ pas v\'erifiant $x_{0} = 0, \, x_{1} \neq 0, \, x_{2} 
+\neq 0, \, x_{3} \neq 0, \ldots  x_{2n-2k-1} \neq 0, \, x_{2n-2k} \neq 0$. 
+L'ensemble de toutes les possibilit\'es pour les $2n$ pas est alors le {\it 
+produit} du nombre de possibilit\'es pour les $2k$ premiers pas par le 
+nombre de possibilit\'es  pour les $2n-2k$ pas suivants, puisque \`a 
+chaque possibilit\'e pour les $2k$ premiers pas on peut ajouter n'importe 
+laquelle des possibilit\'es pour les pas suivants\ftn 2{Cette propri\'et\'e 
+est en fait l'ind\'ependance stochastique, cf. chapitre $IV$.}. 
+\medskip 
+Le probl\`eme est donc r\'eduit \`a d\'enombrer les marches telles que  
+$x_{0} = 0, \, x_{1} \neq 0, \, x_{2} \neq 0, \, x_{3} \neq 0, \ldots  
+x_{2m-1} \neq 0, \, x_{2m} \neq 0$ pour $m$ quelconque, apr\`es quoi on 
+prendra $m = n-k$. Par sym\'etrie leur nombre est exactement le double  
+de celles qui v\'erifient $x_{0} = 0, \, x_{1} > 0, \, x_{2} >0, \, x_{3} > 0, 
+\ldots  x_{2m-1} > 0, \, x_{2m} > 0$. Or une marche qui v\'erifie ces 
+conditions appartient \`a un et un seul des \'ev\'enements $A_{m}^{r}\; :  
+\; x_{0} = 0, \, x_{1} > 0, \, x_{2} >0, \, x_{3} > 0, \ldots  x_{2m-1} > 0, \, 
+x_{2m} = 2r$ avec $r=1,2,3, \ldots m$. Leur nombre est donc 
+$\sum_{r=1}^{r=m}\# A_{m}^{r}$ 
+\medskip 
+Enfin, pour calculer chacun des $\# A_{m}^{r}$, on utilise le principe  
+de sym\'etrie de D\'esir\'e Andr\'e; il suffit en effet de r\'eutiliser  
+$(III.1.)$ qui nous dit que  
+$$ \# A_{m}^{r} = {2m-1 \choose m+r-1} - {2m-1 \choose m+r}$$ 
+On doit sommer cela de $r=1$ \`a $r=m$, ce qui fait que les termes 
+s'annulent mutuellement : 
+$$\eqalignno{ 
+\sum_{r=1}^{r=m} \# A_{m}^{r} &= {2m-1 \choose m} - {2m-1  \choose 
+m+1} + {2m-1 \choose m+1} - {2m-1 \choose m+2} + \cr 
+&+ {2m-1 \choose m+2} - {2m-1 \choose m+3} + {2m-1 \choose m+3} -  
+\cdots \cr  
+\noalign{\bigskip} 
+&= \; {2m-1 \choose m}\; = \; {1 \over 2} \, {2m \choose m} \cr }$$ 
+Le nombre de toutes les marches de $2m$ pas ne revenant jamais \`a  
+z\'ero est donc le double, soit ${2m \choose m}$; enfin, le nombre de 
+marches de $2n$ pas, revenant \`a z\'ero \`a l'instant $2k$ et n'y revenant 
+plus entre $2k+1$ et $2n$ inclus est alors (comme nous l'avions d\'ej\`a 
+dit plus haut) le produit ${2k \choose k} \times {2(n-k) \choose n-k}$.  
+\bigskip 
+De sorte que la probabilit\'e pour que le dernier retour avant l'instant $2n$
+se soit produit \`a l'instant $2k$ est (l'approximation vient de $II.7$):
+$$ 2^{-2n} \cdot {2k \choose k} \cdot {2(n-k) 
+\choose n-k} \simeq {1 \over \pi \sqrt{k(n-k)}}$$ 
+Si on cherche par exemple la probabilit\'e pour que le dernier retour ait  
+eu lieu {\it avant} l'instant $2\ell$, il suffit de faire la somme de ces 
+valeurs pour $k$ allant de $1$ \`a $\ell$ (le dernier retour ne peut 
+avoir lieu \`a deux instants diff\'erents \`a la fois, donc les \'ev\'enements 
+correspondants sont disjoints et les probabilit\'es s'additionnent). Ainsi 
+$$\eqalign{ 
+{\cal P}\, (\hbox{dernier retour avant $2\ell$}) &=\sum_{k=1}^{k=\ell} 
+2^{-2n} \cdot {2k \choose k} \cdot {2(n-k) \choose n-k} \cr 
+&\simeq \sum_{k=1}^{k=\ell} {1 \over \pi \sqrt{k(n-k)}} \cr }$$  
+Cette somme discr\`ete peut \^etre interpr\'et\'ee comme la somme de  
+Riemann de l'int\'egrale $\int_0^x \bigl[ 1 / \pi \sqrt{t(1-t)}\bigr] \;  
+dt$ avec $x = \ell / n$.  Or cette int\'egrale peut \^etre calcul\'ee par 
+primitives, elle est \'egale \`a ${2 \over \pi} \arcsin(\sqrt{x})$, de sorte 
+que finalement    
+$${\cal P}\, (\hbox{dernier retour avant $2\ell$}) \simeq {\up{2} \over  
+\down{\pi}} \arcsin\Bigg\{\sqrt{\up{\ell} \over \down{n}}\,\Bigg\}
+\eqno (III.3.)$$  
+Les estimations donn\'ees au d\'ebut du paragraphe ont \'et\'e tir\'ees  
+de  cette approximation. Bien s\^ur il faut \^etre dans le domaine de 
+validit\'e  de cette approximation: elle est en principe incorrecte si 
+$\ell$ ou $n-\ell$ est trop petit, mais elle donne d\'ej\`a un r\'esultat 
+correct \`a $4\%$  pr\`es pour $k$ ou $n-k$ sup\'erieur \`a 3, et \`a  
+$1\%$ pr\`es pour $k$ ou $n-k$ sup\'erieur \`a 10. 
+
+\vskip7mm plus4mm minus3mm  
+
+{\bf III. 5. Loi de l'h\'er\'edit\'e de Mendel} 
+\medskip
+La loi de Mendel concerne la transmission de caract\`eres par  
+l'h\'er\'edit\'e. On appelle {\it ph\'enotypes} ces caract\`eres. Un  
+exemple de ph\'enotype (\'etudi\'e par Mendel) est la forme, lisse ou 
+rid\'ee, des grains de petits pois. D'autres ph\'enotypes connus sont les 
+groupes sanguins, le facteur Rh\'esus, la couleur des yeux ou de 
+certaines fleurs, le type albinos, des maladies g\'en\'etiques telles  
+que  la mucoviscidose. Consid\'erons l'exp\'erience suivante, qu'on peut 
+effectuer par exemple sur le  {\it mirabilis},  une plante africaine dont  
+les fleurs s'ouvrent la nuit (appel\'ee pour cela  ``belle de nuit''): on a 
+s\'electionn\'e sur un grand nombre de  g\'en\'erations deux vari\'et\'es 
+de mirabilis: l'une \`a fleurs rouges, l'autre \`a fleurs blanches. Tout 
+croisement entre deux fleurs rouges donne un descendant \`a fleurs 
+rouges et tout croisement entre deux  fleurs blanches donne un 
+descendant \`a fleurs blanches.  On effectue alors des croisements  
+entre une fleur rouge et une fleur blanche, qui  donnent toujours des 
+descendants \`a fleurs roses. Puis on effectue \`a nouveau des 
+croisements entre deux de ces descendants \`a fleurs roses, et on  
+observe parfois une fleur rouge, parfois une blanche, parfois une  rose.  
+Si on renouvelle un grand nombre de fois les croisements de fleurs  
+roses, afin de disposer d'un \'echantillon statistiquement significatif,  
+on observe qu'on obtient une fois sur quatre une fleur rouge, une fois  
+sur quatre une blanche, et une fois sur deux une fleur rose. Ces 
+exp\'eriences avaient \'et\'e effectu\'ees par Gregor Mendel au milieu du 
+$XIX^{\rm e}$ si\`ecle sur des souches de petits pois (pois rid\'es et pois 
+lisses).  
+\medskip 
+Les conclusions que Gregor Mendel a tir\'ees de ces exp\'eriences sont  
+les suivantes. Le premier croisement entre une fleur rouge et une fleur 
+blanche, qui donne une fleur rose, pourrait s'expliquer par le m\'elange  
+de deux substances. Mais le second croisement, o\`u l'on peut retrouver  
+une fois sur deux une couleur pure, montre que le m\'elange n'a pas 
+r\'eellement  eu lieu, et que les \'el\'ements mat\'eriels qui ont servi de 
+vecteur aux caract\`eres h\'er\'editaires ont d\^u se transmettre sous 
+forme pure  jusqu'\`a la g\'en\'eration suivante. Gregor Mendel a d\'eduit 
+de ses exp\'eriences en {\oldstyle 1865} que ces \'el\'ements 
+d'h\'er\'edit\'e  restaient s\'epar\'es: les diff\'erents ph\'enotypes 
+r\'esultaient bien  de leur combinaison, mais les \'el\'ements devaient  
+se combiner en conservant leur int\'egrit\'e au cours des g\'en\'erations. 
+La biologie  du  $XX^{\rm e}$ si\`ecle a identifi\'e ces \'el\'ements 
+d'h\'er\'edit\'e, qu'on appelle aujourd'hui les g\`enes.  
+\medskip 
+Le principe de la transmission des caract\`eres est donc le suivant: 
+un g\`ene $R\,$ est responsable de la couleur rouge, un autre $B\,$ de la 
+couleur blanche; mais chacun des deux parents apporte un g\`ene, et  
+c'est  la combinaison $RR\,$ et non la pr\'esence d'un seul g\`ene $R\,$  
+qui  produit la couleur rouge. De m\^eme c'est la combinaison $BB\,$ qui   
+produit la   couleur blanche. Si l'un des parents est rouge et l'autre   
+blanc, la combinaison sera $RB\,$ ou $BR\,$ et produira la couleur rose.  
+On appelle {\it homozygote} une combinaison de deux g\`enes 
+identiques, et {\it h\'et\'erozygote} une combinaison de deux g\`enes 
+diff\'erents. Ainsi $RR\,$ et $BB\,$ sont des combinaisons homozygotes, 
+$RB\,$ et $BR\,$ sont  des combinaisons h\'et\'erozygotes. La th\'eorie  
+de Mendel  postule que les m\'ecanismes de la reproduction s\'eparent  
+\`a nouveau les combinaisons en deux g\`enes intacts, qui se recombinent 
+autrement  pour former la g\'en\'eration suivante. Si les deux parents  
+sont rouges (combinaison $RR\,$   et $RR$) il n'y a aucun g\`ene $B\,$ qui 
+peut appara\^\i  tre et  les enfants seront \'egalement rouges. Si les 
+parents  sont tous les deux roses il y  a quatre possibilit\'es:   
+\medskip   
+\centerline{\vbox{\hsize=10.5cm 
+1. Les parents sont $RB$ et $RB$; alors l'enfant est $RR$. 
+\smallskip   
+2. Les parents sont $RB$ et $BR$; alors l'enfant est $RB$. 
+\smallskip   
+3. Les parents sont $BR$ et $RB$; alors l'enfant est $BR$. 
+\smallskip   
+4. Les parents sont $BR$ et $BR$; alors l'enfant est $BB$. } } 
+\medskip   
+On voit que la combinaison fille a \'et\'e obtenue en retenant la  
+premi\`ere lettre  de chacune des deux combinaisons parentales, mais 
+bien entendu ceci n'est qu'une convention d'\'ecriture; les parents ne  
+``sont'' pas $RB$ ou $BR$; ils sont h\'et\'erozygotes, et ce 
+sont les hasards de la recombinaison qui d\'ecident ce qui sera ---~dans 
+cette convention~--- la premi\`ere lettre. Le m\'ecanisme 
+mol\'eculaire r\'eel de ce processus a \'et\'e \'elucid\'e au milieu du  
+$XX^{\rm e}$ si\`ecle, c'est la division des chromosomes. La reproduction 
+sexu\'ee fonctionne de la mani\`ere suivante. Tous les g\`enes sont 
+regroup\'es en cha\^\i nes ordonn\'ees appel\'ees chromosomes, qui sont  
+toujours coupl\'es par paires homologues: ces paires sont des cha\^\i nes  
+doubles comportant deux cha\^\i nons sym\'etriques  qui se font face  
+(les chromosomes homologues), de telle sorte qu'\`a chaque g\`ene de  
+l'un des  cha\^\i nons correspond un compagnon sym\'etrique sur l'autre   
+cha\^\i non appel\'e all\`ele. Les combinaisons de deux g\`enes qui  
+interviennent dans la  th\'eorie de Mendel concernent ces couples  
+d'all\`eles. Lors de la reproduction les deux chromosomes homologues  
+se s\'eparent, et chaque chromosome ainsi isol\'e se recombine {\it au 
+hasard} avec un chromosome isol\'e de l'autre parent. Chaque parent  
+fournit un seul des deux chromosomes de chaque paire, le choix \'etant  
+fait au hasard. Ainsi une nouvelle paire sera form\'ee \`a partir d'un 
+chromosome du p\`ere et d'un chromosome de la m\`ere. Il y a donc quatre 
+recombinaisons \'equiprobables possibles. 
+\medskip 
+L'ensemble des g\`enes possibles, ainsi que leur place sur les cha\^\i 
+nons, est une caract\'eristique invariable de l'esp\`ece. C'est pourquoi  
+\`a un endroit donn\'e du chromosome (on appelle cela un {\it locus}) on 
+trouvera toujours les m\^emes g\`enes (les all\`eles du locus): les g\`enes  
+pouvant occuper un locus donn\'e sont g\'en\'eralement peu nombreux. 
+Dans les cas les plus simples, il n'y a qu'un seul all\`ele sur le locus (tout 
+le monde est alors homozygote) ou deux, par exemple $R$ et $B$, et alors  
+les quatre combinaisons $RR$, $RB$,  $BR$, et $BB$ sont possibles. Mais 
+bien entendu ce n'est pas la r\`egle g\'en\'erale: il y a souvent plus que  
+deux all\`eles.  Dans une esp\`ece donn\'ee, on trouvera presque 
+toujours l'une des combinaisons possibles  d'all\`eles au locus 
+correspondant (les exceptions sont les {\it mutations});  mais en un 
+autre locus, on trouvera  des combinaisons d'all\`eles diff\'erents. Si les 
+deux parents sont h\'et\'erozygotes  et s'il n'y a que deux all\`eles (cas 
+o\`u on croise deux fleurs roses), les quatre recombinaisons possibles de 
+chromosomes  donneront {\it au locus consid\'er\'e} les  quatre 
+combinaisons $BB$,  $BR$, $RB$, et $RR$.  
+\medskip 
+Dans une population naturelle, il n'y a aucune raison que les all\`eles 
+soient tous exactement aussi r\'epandus: g\'en\'eralement, les uns sont 
+plus rares que les autres (par exemple les mirabilis \`a fleurs rouges  
+sont plus rares que ceux \`a fleurs blanches). Toutefois, dans les 
+exp\'eriences comme celle d\'ecrite plus  haut, on  a pr\'ealablement 
+s\'electionn\'e la vari\'et\'e rouge et la vari\'et\'e blanche, de sorte  
+qu'en croisant les fleurs rouges avec les blanches on a cr\'e\'e 
+artificiellement une population comportant exactement autant de   
+g\`enes $R\,$ que de g\`enes $B$. La r\`egle statistique observ\'ee par 
+Mendel s'explique ais\'ement par l'\'equiprobabilit\'e des quatre 
+recombinaisons de chromosomes: au locus consid\'er\'e, si les deux  
+parents sont h\'et\'erozygotes, on obtiendra (avec probabilit\'e ${1\over 
+4}$ pour chacune) les combinaisons $RR$, $RB$, $BR$, et $BB$. On appelle 
+{\it g\'enotype} la combinaison de g\`enes, le ph\'enotype \'etant le  
+caract\`ere observable. La couleur rose de  la fleur est un ph\'enotype 
+qui correspond indistinctement \`a l'un ou l'autre des g\'enotypes $RB$ ou 
+$BR$, donc sa probabilit\'e sera ${1\over 4} + {1\over 4} = {1\over 2}$. 
+Le ph\'enotype rouge correspond au g\'enotype  $RR$. Mais une 
+telle correspondance entre g\'enotype et ph\'enotype est exceptionnelle; 
+l'immense majorit\'e des g\'enotypes n'ont aucun effet ponctuellement 
+observable sous  forme de ph\'enotype; non que le  g\'enotype soit sans 
+effet, mais cet effet est tellement  dilu\'e qu'il ne  lui correspond aucun  
+caract\`ere manifeste.   
+\medskip   
+\'Etant donn\'ee l'\'equiprobabilit\'e de ces combinaisons,  on peut   
+\'etendre les raisonnements probabilistes \`a des situations plus 
+g\'en\'erales,  o\`u il n'y a pas exactement autant de g\`enes $R$ que de 
+g\`enes $B$ dans la population,  ce qui conduit \`a la loi de 
+Hardy-Weinberg.  Pour \'etablir la loi de Mendel on n'a crois\'e que des 
+fleurs roses,  parmi lesquelles il y a autant de $BR$ que de $RB$.  On 
+retrouve alors forc\'ement autant de g\`enes $B$ que de g\`enes $R$  
+dans la population fille.  Mais si on croise des fleurs au hasard,  \`a partir 
+d'une population naturelle,  sans tenir compte de la couleur,  et qu'il y a 
+moins de rouges que de blanches,  on n'aura plus cette sym\'etrie.     
+ 
+\vskip7mm plus4mm minus3mm  
+ 
+{\bf III. 6. Loi de Hardy-Weinberg.} 
+\medskip 
+On \'etablit la loi de Hardy-Weinberg par le Calcul des probabilit\'es; 
+c'est ce qu'a fait le math\'ematicien Hardy ({\oldstyle 1900}) dont le nom 
+est associ\'e. Prenons par exemple le cas de la mucoviscidose (chez 
+l'homme). Il s'agit d'une maladie g\'en\'etique, c'est-\`a-dire due \`a la 
+pr\'esence d'un g\`ene sp\'ecifique dans le code g\'en\'etique de l'individu 
+qui en est  atteint. Cette maladie est fortement invalidante: l'un des 
+sympt\^omes, particuli\`erement p\'enible, est l'obstruction permanente 
+des bronches par du mucus, entra\^\i nant difficult\'es respiratoires et 
+toux permanentes. Il en va de m\^eme dans les canaux excr\'eteurs du 
+pancr\'eas, ce qui bloque le passage de l'insuline. La cause en est la  
+viscosit\'e excessive des s\'ecr\'etions muqueuses, d'o\`u le nom de la  
+maladie. Parmi les individus poss\'edant le g\`ene responsable, seuls ceux 
+qui portent la combinaison homozygote sont frapp\'es par la maladie; ceux  
+qui poss\`edent le g\`ene sous la forme h\'et\'erozygote sont  sains et de  
+ce fait appel\'es {\it porteurs sains}.  
+\medskip 
+Appelons $M$ le g\`ene fatidique.  Celui-ci peut se trouver combin\'e \`a 
+son all\`ele $X$ (cas h\'et\'erozygote $XM$ ou $MX$), ou \`a lui-m\^eme 
+(cas homozygote $MM$).  Il importe peu ici de savoir s'il n'y a que deux 
+all\`eles ($X$ repr\'esentant alors un g\`ene unique) ou plus ($X$ 
+repr\'esentant alors n'importe lequel des autres all\`eles),  puisque les 
+g\`enes autres que $M$ n'interviennent pas dans la mucoviscidose.  La 
+fr\'equence de la maladie dans la population europ\'eenne est d'environ 
+$1/2500$ (un enfant sur $2\, 500$ qui naissent en est atteint).  Comme 
+pour les croisements entre deux fleurs rouges de mirabilis, deux parents 
+atteints tous les deux de mucoviscidose auraient forc\'ement des   
+enfants \'egalement atteints, mais ce cas est \'evidemment rarissime et 
+peut \^etre n\'eglig\'e.  Le cas o\`u l'un des deux parents serait atteint, 
+quoique moins improbable,  peut aussi \^etre n\'eglig\'e,  d'autant plus que  
+la maladie d\'etourne du mariage et de la procr\'eation.  Le cas normal est
+celui de parents qui sont tous deux h\'et\'erozygotes.  
+\medskip 
+Supposons que tous les parents sains s'accouplent au hasard;  cette 
+hypoth\`ese signifie concr\`etement que les parents ignorent s'ils sont 
+porteurs ou non,  ou que s'ils le savent cela n'a aucune incidence sur leur 
+f\'econdit\'e.  Cette hypoth\`ese est appel\'ee la {\it panmixie};  le terme 
+anglo-saxon {\it random mating} est cependant plus courant.  Parmi  
+ces parents ``pris au hasard'',  il y a autant de p\`eres que de m\`eres; 
+soit donc $N$ le nombre de  p\`eres (ou de m\`eres).  Si parmi les $N$ 
+p\`eres,  il y a $k$ porteurs sains, la proportion de porteurs sains est  
+$x = k/N$.  Le g\`ene $M$ \'etant distribu\'e ind\'ependamment du sexe,   
+on aura la m\^eme proportion chez les m\`eres, donc $k$ m\`eres 
+h\'et\'erozygotes (environ, car la proportion pr\'esente toujours des 
+fluctuations statistiques). La proportion $x$ est  l'inconnue que justement 
+nous d\'esirons calculer \`a partir de la fr\'equence connue de la maladie. 
+Dans la loi de Mendel le hasard intervenait dans la recombinaison des 
+chromosomes.  Ici le hasard intervient en outre dans le choix des parents 
+possibles:  on admet que dans la population,  {\it tous les couples de 
+parents sont \'equiprobables}.  Le nombre de tous les couples possibles est 
+$N \times N$.  Parmi ces couples, ceux dont les membres sont tous deux 
+h\'et\'erozygotes $MX$ ou $XM$ sont au nombre de $k \times k$.  La proportion
+de couples dont les membres sont tous deux porteurs sains est donc $k^2/n^2 
+= x^2$.  Mais  nous devons tenir compte des deux interventions du hasard; 
+l'espace des \'epreuves correspondant n'est pas l'ensemble des couples de 
+parents,  mais l'ensemble des combinaisons de chromosomes r\'esultant de 
+la division des paires parentales:  chaque parent fournit un chromosome de  
+la paire,  donc chaque couple peut produire quatre combinaisons de 
+chromosomes.  Par cons\'equent l'espace $\Omega$ des \'epreuves est de 
+cardinal $4 N^2$ (quatre combinaisons de chromosomes pour chaque couple 
+de parents).  Si les parents ne sont pas tous les deux porteurs du g\`ene 
+$M$,  {\it aucune} combinaison ne pourra donner le g\'enotype $MM$;  mais 
+si les parents sont tous les deux porteurs sains,  une seule des quatre 
+combinaisons qu'ils peuvent produire donnera le g\'enotype $MM$:  par 
+cons\'equent le nombre de possibilit\'es d'avoir le g\'enotype $MM$ est 
+$k^2$ (une seule combinaison pour chaque couple d'h\'et\'erozygotes,  plus 
+z\'ero combinaisons pour les autres couples).  La probabilit\'e d'avoir un 
+enfant de g\'enotype $MM$ sera donc ${k^2 \over 4N^2} = {x^2 \over 4}$.    
+\medskip 
+Or on sait par les donn\'ees cliniques que cette  proportion est $1/2500$,  
+c'est-\`a-dire que ${x^2 \over 4} = {1 \over 2500}$, d'o\`u $x = 
+1/25 = 0.04$. On peut donc d\'eduire de la proportion $1/2500$ de cas 
+homozygotes que la proportion de cas h\'et\'erozygotes est $1/25$. Un 
+individu sur vingt  cinq est porteur sain.   
+\medskip  
+Il est ais\'e de trouver la formule g\'en\'erale: si pour un g\`ene 
+$G$  quelconque $\varepsilon$ est la proportion d'homozygotes $GG$, la 
+proportion d'h\'et\'erozygotes $GX$ ou $XG$ est $x = 2\sqrt{\varepsilon}$, 
+car on doit avoir ${x^2 \over 4} = \varepsilon$. Cela r\'esulte directement 
+du d\'enombrement: il y a $N$ p\`eres et $N$ m\`eres donc $N^2$ couples 
+possibles, qui peuvent donner  chacun quatre combinaisons possibles de 
+chromosomes, donc $\#\Omega = 4 N^2$; parmi ceux-ci il y a $k^2$ 
+couples qui peuvent donner chacun une combinaison $GG$, donc  
+l'\'ev\'enement $A$: ``l'enfant est de g\'enotype $GG$'' a pour cardinal  
+$k^2$. La probabilit\'e pour que tous ces couples form\'es au hasard 
+engendrent un enfant $GG$ est donc  
+$$\varepsilon = {\#A \over \#\Omega } = {\up{k^2} \over 4 N^2} =  
+{\up{x^2} \over 4} \eqno (III.4.)$$ 
+Cette formule extr\^emement simple permet de calculer la 
+fr\'equence  $\varepsilon$ de la maladie \`a partir de la proportion 
+statistique $x$ de porteurs sains.  On en d\'eduit que si par exemple on 
+dissuade la moiti\'e des porteurs sains de procr\'eer, on divise par quatre  
+le nombre de cas de mucoviscidose. Inversement, on obtiendra la proportion 
+inconnue $x$ de porteurs sains \`a partir de la fr\'equence $\varepsilon$  
+de la maladie  ($x = 2\sqrt{\varepsilon}$). Rappelons encore qu'il s'agit  
+de la fr\'equence dans une population o\`u les parents se choisissent 
+``au hasard''. Il est bien \'evident qu'une personne qui parmi ses proches  
+(fr\`eres ou cousins) compte d\'ej\`a un cas de mucoviscidose a une  
+probabilit\'e bien plus forte que $x$ d'\^etre porteur sain. Deux parents qui 
+ont d\'ej\`a mis au monde un enfant atteint sont assur\'ement tous les  
+deux porteurs sains et ont donc une chance sur quatre que le prochain 
+enfant ait aussi la maladie. 
+\medskip 
+La fr\'equence moyenne $\varepsilon$ est variable selon les populations: 
+$1/2500$ \'etait sa valeur sur l'ensemble de  l'Europe occidentale. Mais  
+elle  diff\`ere d'un pays \`a l'autre; \`a l'int\'erieur d'un m\^eme pays elle 
+varie selon les r\'egions. En outre, la mucoviscidose est beaucoup  plus 
+rare en Asie, par exemple.  Le tableau suivant\ftn{3}{D'apr\`es G.  Lenoir 
+{\it La mucoviscidose} \'Ed Doin.} en montre quelques exemples:  
+\medskip 
+\centerline{\vbox{ 
+\halign{#&\quad#\hfill \cr 
+France:\quad\dotfill\quad   global &$1/2\, 000$ \cr 
+\hfill                                   Finist\`ere Nord &$1/1\, 650$ \cr 
+\hfill                                   Morbihan &$1/3\, 500$ \cr 
+\noalign{\medskip} 
+Royaume Uni:\quad\dotfill\quad   Angleterre &$1/2\, 350$ \cr 
+\hfill                                            Pays de Galles &$1/1\,  
+650$ \cr 
+\noalign{\medskip} 
+Italie:\quad\dotfill\quad global &$1/2\, 700$ \cr 
+\noalign{\medskip} 
+Su\`ede:\quad\dotfill\quad global &$1/5\, 700$ \cr  
+\noalign{\medskip} 
+Hawaii:\quad\dotfill\quad   
+              population de souche europ\'eenne &$1/3\, 800$ \cr 
+\hfill     population de souche polyn\'esienne &$1/90\, 000$ \cr }  }  } 
+\medskip 
+On d\'eduit  alors imm\'ediatement la proportion de porteurs sains dans  
+ces  populations: France $1/22$, Su\`ede $1/34$, hawaiiens de souche 
+polyn\'esienne $1/150$, etc. Bien entendu le raisonnement suivi pour  
+obtenir la formule $III.4$ suppose une population  g\'en\'etiquement  
+stable et isol\'ee (endo\-gamique), ainsi que  l'\'equiprobabilit\'e des  
+choix de parents (random mating). Ces  hypoth\`eses ne sont que tr\`es 
+approximativement v\'erifi\'ees dans les  populations humaines r\'eelles. 
+Mais il est possible  de les r\'ealiser en  laboratoire sur des cultures de 
+fleurs ou de bact\'eries. En observant la  distribution statistique de 
+ph\'enotypes dans de telles cultures artificielles, et en la comparant \`a 
+des probabilit\'es a priori calcul\'ees  \`a partir de {\it mod\`eles de 
+g\'enotypes}, il devient possible  d'\'etudier scientifiquement l'influence 
+des g\`enes sur les ph\'enotypes. Cette m\'ethode est \`a la base de la 
+g\'en\'etique.   
+\medskip  
+Dans le raisonnement suivi plus haut, nous avons cependant n\'eglig\'e   
+que la naissance d'un $GG$ peut aussi provenir du croisement d'un $GX$  
+avec un $GG$, ou du croisement de deux $GG$.  Cette n\'egligence  
+volontaire se justifie, soit parce que le g\'enotype $GG$ est tr\`es 
+invalidant (donc rend l'acc\`es \`a la procr\'eation difficile ou  
+impossible), soit  tout simplement parce que le g\'enotype $GG$ est si  
+rare qu'on peut  statistiquement le n\'egliger. Ces deux conditions  
+\'etaient v\'erifi\'ees  pour  la mucoviscidose.  
+\medskip 
+Si le g\'enotype $GG$ n'est ni rare ni invalidant, il faut tenir compte des 
+mariages $GX + GG$ ou $GG + GG$. Supposons toujours que les couples de 
+parents sont choisis au hasard. L'\'ev\'enement $A$: ``naissance d'un $GG$'' 
+est alors la r\'eunion  des quatre \'ev\'ene\-ments suivants:   
+\medskip  
+\centerline{\vbox{\hsize=8cm 
+$A_1$:\hskip2mm $GX + GX \rightarrow 
+GG$\hskip4mm (probabilit\'e  ${x^2\over 4}$); 
+\smallskip 
+$A_2$:\hskip2mm $GG + GX \rightarrow GG$\hskip4mm (probabilit\'e  
+${\varepsilon x\over 2}$);  
+\smallskip 
+$A_3$:\hskip2mm $GX + GG \rightarrow GG$\hskip4mm (probabilit\'e  
+${x\varepsilon\over 2}$);  
+\smallskip 
+$A_4$:\hskip2mm $GG + GG \rightarrow GG$\hskip4mm (probabilit\'e  
+$\varepsilon^2$); } } 
+\medskip  
+Les probabilit\'es de $A_2$, $A_3$, et $A_4$ se calculent par 
+d\'enombrement exactement de la m\^eme fa\c con que pour $A_1$.  
+Ces quatre \'ev\'enements \'etant disjoints, on obtient donc  
+$${x^2\over 4} + {\varepsilon x\over 2} + {\varepsilon x\over 2} + 
+\varepsilon^2 = \varepsilon$$  
+de sorte que $x$ est solution de l'\'equation du second degr\'e 
+${x^2\over 4} + x\varepsilon + \varepsilon^2 - \varepsilon = 0$, dont la 
+seule solution positive est  
+$$x = 2\, (\sqrt{\varepsilon} - \varepsilon ) \eqno (III.5.)$$ 
+Cette relation est la loi de Hardy-Weinberg. Le raisonnement simplifi\'e 
+pr\'ec\'edent donnait $x = 2\sqrt{\varepsilon}$, ce qui est \`a peu pr\`es 
+la m\^eme chose si $\varepsilon$ est petit (nous avions pass\'e sous 
+silence les \'ev\'enements $A_2$, $A_3$, et $A_4$, qui pour $\varepsilon$ 
+petit sont en effet  beaucoup moins probables que $A_1$). 
+\medskip  
+La loi de Hardy-Weinberg n'est \'evidemment applicable que si les 
+hypoth\`eses d'\'equiprobabilit\'e sont satisfaites. Pour d\'enombrer les  
+quatre \'ev\'enements $A_1$, $A_2$, $A_3$, et $A_4$, nous avons admis 
+que les g\`enes se combinaient uniform\'ement. Cela suppose que les 
+parents qui procr\'eent se choisissent ``au hasard'', et qu'en outre, la 
+recombinaison des chromosomes est parfaitement uniforme. Il est bien 
+clair que les couples ne se forment jamais au hasard, mais le ``hasard 
+pur'' n'est exig\'e que pour ce qui concerne les combinaisons des g\`enes 
+$X\,$et $G$. Si les ph\'enotypes corres\-pondant  \`a ces combinaisons 
+n'ont aucun effet susceptible d'augmenter ou de diminuer l'attirance 
+sexuelle, la f\'econdit\'e, etc. tout se passera selon le hasard pur,  
+m\^eme  si on peut trouver des d\'eterminismes sociaux ou psychologiques   
+\`a la formation des couples. Il est cependant assez \'evident que  
+si la combinaison homozygote $GG$ produit des sympt\^omes 
+invalidants, ceux-ci auront  une r\'eelle influence (n\'egative) sur la 
+f\'econdit\'e, ou aboutiront \`a la mort  de l'individu avant la pubert\'e. 
+Seuls les individus porteurs de $XX$ ou de $GX$ seront d\'epourvus du 
+caract\`ere invalidant et s'accoupleront au hasard. Cela exclut les 
+\'ev\'enements $A_2$, $A_3$,  et $A_4$, et dans ce cas notre 
+raisonnement approch\'e devient correct m\^eme si $\varepsilon$ n'est  
+pas petit. Toutefois supposer $\varepsilon$ grand signifie que le 
+carac\-t\`ere invalidant est fr\'equent, et aucune  esp\`ece ayant subi la 
+lutte pour la vie pendant des mill\'enaires ne peut correspondre \`a une 
+telle hypoth\`ese.  D'autre part on peut critiquer l'application de ces 
+hypoth\`eses \`a l'homme civilis\'e: celui-ci n'est  pas soumis \`a la lutte 
+pour la vie; des caract\`eres invalidants peuvent  \^etre suffisamment 
+att\'enu\'es par la m\'edecine  pour ne plus d\'etourner de la  
+procr\'eation; un caract\`ere qui augmente la f\'econdit\'e peut \^etre  
+compens\'e par l'usage de contraceptifs, un caract\`ere qui la diminue  
+peut  \^etre combattu par des traitements hormonaux, etc. 
+\medskip 
+Le Calcul des probabilit\'es joue un r\^ole essentiel en g\'en\'etique; les 
+m\'ethodes que nous avons mises en oeuvre pour aboutir aux lois de  
+Mendel et de Hardy-Weinberg peuvent \^etre g\'en\'eralis\'ees \`a des 
+situations  moins simples. Pour \'etudier en laboratoire les m\'ecanismes 
+mol\'eculaires de  l'h\'er\'edit\'e on analyse les prot\'eines: celles-ci  
+sont form\'ees d'acides amin\'es qu'on peut isoler par des m\'ethodes 
+ad\'equates (chromatographie, etc.) Mais la bio\-logie mol\'eculaire ne 
+permet  pas de conna\^\i tre la r\'epartition des g\`enes dans une 
+population, ni l'influence d'un g\`ene sur le ph\'enotype d'une plante.  
+C'est pourquoi  les g\'en\'eticiens cultivent en laboratoire des 
+po\-pu\-la\-tions  enti\`erement artificielles (comme le fit Mendel),   
+dans lesquelles  l'observation empirique permet de mesurer la  
+r\'epartition statistique  de certains ph\'enotypes. L'\'equiprobabilit\'e  
+des recombinaisons chromosomiques et des croisements de semences 
+permet d'autre part de calculer a \hbox{priori} des probabilit\'es de  
+r\'epartition de g\'enotypes: toute hypoth\`ese sur un  g\'enotype peut  
+ainsi \^etre confront\'ee \`a l'observation statistique.    
+\medskip 
+En ce qui concerne la m\'ethodologie, le point essentiel est le caract\`ere 
+quantitatif des pr\'edictions:  toute hypoth\`ese sur un g\'enotype peut 
+\^etre test\'ee quantitativement \`a l'aide d'observations statistiques 
+sur les ph\'enotypes correspondants. Cette m\'ethode rigoureuse, initi\'ee 
+par Gregor Mendel dans le cas le plus simple o\`u le ph\'enotype \'etudi\'e 
+est d\'etermin\'e par deux all\`eles seulement, et o\`u le Calcul des 
+probabilit\'es joue un r\^ole cl\'e, est  donc le fondement de la 
+g\'en\'etique. Pour  que les exp\'eriences soient statistiquement 
+pr\'ecises, il faut disposer en laboratoire de populations nombreuses et 
+pouvoir les croiser sur un grand nombre de g\'en\'erations; donc les 
+esp\`eces \'etudi\'ees doivent \^etre  de petite  taille et se reproduire 
+vite; d'o\`u la pr\'ef\'erence pour des esp\`eces particuli\`eres ayant ces 
+propri\'et\'es: bact\'erie {\it Escherichia coli}, mouche drosophile, fleur 
+{\it Arabidopsis thaliana} (arabette des dames).   
+\medskip 
+ 
+ 
+ 
+ 
+ 
+\bye 

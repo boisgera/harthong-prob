@@ -1,0 +1,1542 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+
+\auteurcourant={\tensl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\tensl Tests statistiques}
+
+\pageno=289
+
+\def\w{\hskip1.2pt$\bullet$\hskip1.2pt}
+\def\trv{\vrule height26.2pt depth0pt width0.4pt}
+
+\newdimen\blocksize  \blocksize=\vsize  \advance\blocksize by -12pt
+
+\def\six{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vskip2.4pt
+\hbox to 25.2pt {\w\hfill\w\hfill\w}
+\vfill
+\hbox to 25.2pt {\w\hfill\w\hfill\w}
+\vskip2pt
+\hrule } \hskip-4pt\trv } }
+
+\def\cinq{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vskip2pt
+\hbox to 25.2pt {\w\hfill\w}
+\vfill
+\hbox to 25.2pt {\hfill\w\hfill}
+\vfill
+\hbox to 25.2pt {\w\hfill\w}
+\vskip2.4pt
+\hrule } \hskip-4pt\trv } }
+
+\def\quatre{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vskip2.4pt
+\hbox to 25.2pt {\w\hfill\w}
+\vfill
+\hbox to 25.2pt {\w\hfill\w}
+\vskip2.4pt
+\hrule } \hskip-4pt\trv } }
+
+\def\trois{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vskip2.4pt
+\hbox to 25.2pt {\hfill\w}
+\vfill
+\hbox to 25.2pt {\hfill\w\hfill}
+\vfill
+\hbox to 25.2pt {\w\hfill}
+\vskip2.4pt
+\hrule } \hskip-4pt\trv } }
+
+\def\deux{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vskip4.8pt
+\hbox to 25.2pt {\hfill\w\hskip2.4pt}
+\vfill
+\hbox to 25.2pt {\hskip2.4pt\w\hfill}
+\vskip4.8pt
+\hrule } \hskip-4pt\trv } }
+
+\def\as{\lower9.6pt\hbox{\trv\vbox to 26.2pt{\offinterlineskip
+\hrule
+\vfill
+\hbox to 25.2pt {\hfill\w\hfill}
+\vfill
+\hrule } \hskip-4pt\trv } }
+
+\null\vskip10mm plus3mm minus3mm
+
+\centerline{\tit XI. TESTS STATISTIQUES}
+
+\vskip10mm plus3mm minus3mm
+
+{\bf XI. 1. Les densit\'es $\chi_r^2(t)$}  
+\medskip
+Au chapitre pr\'ec\'edent, nous avons vu comment utiliser la loi 
+gaussienne pour distinguer une v\'eritable anomalie d'une simple
+fluctuation al\'eatoire. L'exemple que nous avons retenu pour discuter
+\'etait celui d'une pi\`ece de monnaie qu'on lance un grand nombre $n$ de
+fois. La loi gaussienne des fluctuations nous dit que la probabilit\'e pour
+que le nombre de pile ou de face s'\'ecarte de la valeur m\'ediane $n/2$ 
+de plus que, disons, cinq fois l'\'ecart-type $\sigma = \sqrt{n/2}$ 
+est si faible qu'il est pratiquement impossible qu'un tel \'ecart se
+produise, ce qui permet, si cela se produit, d'affirmer avec un tr\`es 
+haut degr\'e de certitude que la pi\`ece \'etait donc mal \'equilibr\'ee. 
+\medskip
+Les tests statistiques sont des recettes bas\'ees sur ce principe. Tous ne
+font que transposer le raisonnement pr\'ec\'edent, en introduisant un
+interm\'ediaire math\'ematique qui ne change rien quand au fond, mais
+facilite le calcul. Dans le cas de la pi\`ece de monnaie le recours direct 
+\`a la loi gaussienne \'etait facile: il suffisait de compter le nombre de 
+pile, puis de comparer son \'ecart par rapport \`a $n/2$ \`a l'\'ecart-type 
+$\sigma = \sqrt{n/2}$, et on pouvait alors sans calcul suppl\'ementaire 
+se servir d'une table de la loi gaussienne.
+\medskip
+Les choses deviennent plus complexes lorsqu'au lieu d'une pi\`ece de
+monnaie, on teste un d\'e. Si on lance le d\'e $6000$ fois, chaque face du 
+d\'e doit appara{\^\i}tre environ $1000$ fois, et c'est alors l'\'ecart par
+rapport \`a $1000$ qui mesure la fluctuation. Mais il y a {\it six}
+fluctuations, une par face. En fait, il n'y en a que cinq ind\'ependantes, 
+car, de m\^eme que pour la pi\`ece de monnaie le nombre de pile
+d\'eterminait automatiquement le nombre de face, pour le d\'e la
+connaissance de cinq fluctuations d\'etermine la sixi\`eme. Il est bien
+entendu que chacune de ces six fluctuations ob\'eit \`a une loi
+approximativement gaussienne, et qu'on peut donc analyser chacune
+s\'epar\'ement, avec sa propre loi gaussienne. Mais il est assez rare en
+Statistique qu'une information aussi d\'etaill\'ee soit utile: il suffit de
+savoir si le d\'e est globalement bon ou mauvais et il est inutile de
+s'encombrer de ce qui arrive \`a chacune des faces.  Le d\'e sera
+consid\'er\'e comme mal \'equilibr\'e m\^eme si un seul des six \'ecarts
+est trop grand (par exemple sup\'erieur \`a deux et demi ou trois fois
+l'\'ecart-type); autrement dit: un d\'e qui est parfaitement \'equilibr\'e pour
+les faces $1,2,5,6$, mais mal \'eqilibr\'e pour les faces $3$ et $4$, n'est 
+pas meilleur qu'un d\'e qui est mal \'equilibr\'e sur toutes les faces. Dans un 
+tel cas tester l'\'ecart pour chacune des six faces s\'epar\'ement est une
+perte de temps, et on souhaiterait plut\^ot pouvoir mesurer un \'ecart
+global, par exemple la somme des carr\'es des fluctuations. Certes, la
+somme des valeurs absolues des fluctuations, ou la somme des
+quatri\`emes puissances pourraient convenir \'egalement, mais, comme
+cela a d\'ej\`a \'et\'e discut\'e \`a propos de la variance (voir {\bf VI.2.}),
+la somme des carr\'es est consid\'er\'ee pour diverses raisons comme la
+plus pratique (bien entendu la somme {\it alg\'ebrique} des fluctuations
+est par nature toujours nulle et ne mesure donc rien). 
+\medskip
+Pour que la discussion soit plus concr\`ete, imaginons que le d\'e,
+lanc\'e $6000$ fois, donne les r\'esultats suivants:
+$$\eqalign{
+&\as \hbox to 20mm {\hfill 1064 fois} \hskip25mm
+\quatre \hbox to 20mm {\hfill 1009 fois} \cr
+&\deux \hbox to 20mm {\hfill 987 fois} \hskip25mm 
+\cinq \hbox to 20mm {\hfill 977 fois} \cr
+&\trois \hbox to 20mm {\hfill 961 fois} \hskip25mm
+\six \hbox to 20mm {\hfill 1002 fois} \cr } \eqno (XI.1.)$$
+Si on veut faire comme nous avons fait pour la pi\`ece de monnaie,
+il faudra comparer les six r\'esultats aux fluctuations gaussiennes autour 
+de la moyenne 1000; dans ce cas il faut d\'eterminer l'\'ecart-type: en
+l'occurrence il vaut $\sqrt{1000} \simeq 32$. Ici l'\'ecart-type est le 
+m\^eme pour chacune des six faces, ce qui est \'evident puisqu'il y a
+sym\'etrie (les six faces sont interchangeables). On peut aussi 
+calculer la somme des carr\'es qui est alors 
+$$S = 64^2 + 13^2 + 39^2 + 9^2 + 23^2 + 2^2 = 6400 \eqno (XI.2.)$$
+Mais plus question de comparer cette valeur \`a l'\'ecart-type 32. Il y a 
+\`a cela trois raisons: la premi\`ere est qu'on fait la somme de six
+contributions, il faudrait donc comparer \`a six fois la valeur moyenne
+attendue pour l'une; la seconde est qu'on prend les carr\'es (qui sont
+beaucoup plus grands), il faudrait donc comparer \`a six fois le carr\'e de
+l'\'ecart-type. Mais ce raisonnement serait faux: ce n'est pas \`a six fois
+le carr\'e de l'\'ecart-type qu'il faut comparer ce nombre, car (c'est la
+troisi\`eme raison) cette somme de carr\'es ne suit pas une loi gaussienne.
+Il se trouve en effet que, si les fluctuations ob\'eissent \`a une loi
+gaussienne, ce n'est plus le cas de leurs carr\'es.
+\medskip
+
+\midinsert
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig41.eps} }
+\vskip2mm
+\centerline{\eightpoint figure 41}
+\vskip8mm
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig42.eps} }
+\vskip1mm
+\centerline{\eightpoint figure 42}
+\vskip3mm
+\endinsert
+
+Si on n'a pas du tout r\'efl\'echi \`a la question, on peut \^etre surpris
+d'apprendre que le carr\'e d'une variable al\'eatoire n'ob\'eit pas \`a la 
+m\^eme loi que la variable elle-m\^eme, mais cela est logique et a d\'ej\`a
+\'et\'e \'evoqu\'e: par exemple dans le probl\`eme des distributions au 
+hasard de cordes sur un cercle (chapitre {\bf I}) la diff\'erence entre les
+trois lois se traduisait math\'ematiquement par le fait que les variables
+al\'eatoires correspondantes sont li\'ees par des relations non lin\'eaires.
+Sur la figure $41$ on peut voir deux graphiques de loi. Celui du haut
+repr\'esente une loi $\{ x_j\; ; \; (p_j) \}$ telle que les $p_j$ soient tous
+\'egaux \`a $1 \over 17$ et $x_j = {1 \over 10}j$: les valeurs sont donc 
+\'equidistantes et vont de $0$ \`a $1.6$; elles sont toutes \'equiprobables
+et, comme il y en a $17$ en tout,  la probabilit\'e de chacune est $1 \over
+17$. Le graphique du bas repr\'esente la loi du carr\'e: les $x_j$ sont 
+remplac\'ees par les $x_j^2$, mais les $p_j$ ne changent pas: le passage 
+au carr\'e rend plus petit ce qui est inf\'erieur \`a $1$, mais rend plus 
+grand ce qui est sup\'erieur \`a $1$. Ce qui a pour effet que les valeurs
+inf\'erieures \`a $1$ se trouvent davantage comprim\'ees vers $0$, 
+tandis que les valeurs sup\'erieures \`a $1$ sont dilat\'ees. Par
+cons\'equent la {\it densit\'e},  qui \'etait uniforme, se trouve 
+augment\'ee entre $0$ et $1$ (d'autant plus qu'on est plus pr\`es de $0$) 
+et diminu\'ee au-del\`a de $1$. Si on effectue un lissage de cette loi
+discr\`ete (celle du carr\'e) pour faire appara{\^\i}tre sa densit\'e, on
+obtient le graphique de la figure 42; le lissage de la loi initiale $\{ x_j\; ;
+\; (p_j) \}$ aurait \'evidemment donn\'e une densit\'e constante entre $0$
+et $1.6$. Ainsi, comme nous en avions d\'ej\`a eu des exemples ailleurs, 
+ce n'est pas une modification des probabilit\'es qui change la loi, mais 
+une modification dans la r\'epartition des valeurs, cons\'ecutive \`a
+une transformation non lin\'eaire. 
+\medskip
+
+\midinsert
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig43.eps} }
+\vskip6mm
+\centerline{\eightpoint figure 43}
+\vskip6mm
+\endinsert
+
+On s'attend donc \`a un effet analogue pour la loi bin\^omiale. Sur la
+figure $43$ on peut voir en $(a)$ la loi bin\^omiale et en $(b)$ la m\^eme 
+loi apr\`es lissage par convolution; ces graphiques sont les m\^emes que 
+sur les figures 11 (en haut), et 14 ($\varepsilon = 0.42$) du chapitre {\bf
+VII}. Si $X$ est une variable al\'eatoire de loi $\{ x_j\; ; \; (p_j) \}$, son
+carr\'e a pour loi $\{ x_j^2\; ; \; (p_j)\}$: c'est-\`a-dire que les
+probabilit\'es $p_j$ ne changent pas, mais les valeurs $x_j$ sont
+remplac\'ees par les carr\'es. Si parmi les $x_j$ il y en a deux distinctes
+$x_{j_1}$ et $x_{j_2}$ qui ont le m\^eme carr\'e, la probabilit\'e de ce
+carr\'e sera \'evidemment $p_{j_1} + p_{j_2}$.
+Dans le cas de la loi bin\^omiale repr\'esent\'ee
+sur la figure $43\; a$, qui est sym\'etrique,  cela se produit pour 
+chacune des $x_j$, sauf $0$. Ainsi la probabilit\'e de $+x_j$ est
+(approximativement) $p_0\exp (- x_j^2/2)$, et la probabilit\'e de $-x_j$
+est aussi $p_0\exp (- x_j^2/2)$, de sorte que la probabilit\'e de $x_j^2$
+sera $2p_0 \exp (- x_j^2/2)$, \`a l'exception de $x_0 = 0$ qui est seule 
+\`a avoir $0$ pour carr\'e, et dont la probabilit\'e ne sera donc pas $2p_0$,
+mais $p_0$. C'est pourquoi on voit en $(c)$ que les b\^atons du graphique
+(dont la longueur est proportionnelle \`a la probabilit\'e correspondante)
+sont deux fois plus longs que les b\^atons du graphique $(a)$, \`a
+l'exception du tout premier,  qui se confond presque avec le second. 
+Mais ce n'est pas la seule diff\'erence;  car sur
+le graphique $(a)$ les b\^atons sont \'equidistants (en effet les valeurs
+$x_j$ de la loi bin\^omiale sont toutes des multiples entiers de $x_1$), et
+sur le graphique $(c)$ ils ne le sont plus car leurs abscisses sont les
+carr\'es des pr\'ec\'edentes. Ainsi les valeurs prises par le carr\'e sont
+plus denses au voisinage de z\'ero et moins denses loin de l'origine. Si on
+effectue une convolution sur la loi $(c)$, afin de mieux visualiser la {\it
+densit\'e} de la loi, on obtient le graphique $(d)$, qui ne ressemble plus 
+du tout au graphique $(b)$. 
+\medskip
+La loi de probabilit\'e qui est repr\'esent\'ee par le graphique $(c)$ ou, 
+sous forme liss\'ee, par le graphique $(d)$, est appel\'ee {\it la loi du
+$\chi^2$ \`a un degr\'e de libert\'e}. En toute rigueur, la loi du $\chi^2$ 
+\`a un degr\'e de libert\'e n'est qu'asymptotiquement la loi du carr\'e
+d'une variable {\it bin\^omiale}, 
+c'est-\`a-dire que la loi discr\`ete$(c)$ a pour limite la loi du $\chi^2$ lorsque le nombre de b\^atons tend
+vers l'infini et que la
+distance entre eux tend conjointement vers z\'ero, de m\^eme que la loi
+gaussienne est la limite de la loi bin\^omiale. Les graphiques $(c)$ et $(d)$ ne correspondent donc qu'asymptotiquement
+\`a la loi du $\chi^2$ \`a un degr\'e de libert\'e. 
+\vskip12pt plus6pt minus4pt
+On peut r\'esumer:
+\medskip
+\line{\hfill \vrule height59.75pt depth 0pt width 0.4pt
+\vbox{\hsize=11.5cm \hrule
+\vskip5pt
+\centerline{\vbox{\hsize=108mm
+La densit\'e normalis\'ee $\chi_1^2 (t)$ \`a un degr\'e de libert\'e est la
+densit\'e du carr\'e d'une variable al\'eatoire de densit\'e gaus\-sienne 
+${1\over\sdown{9}{\sqrt{2\pi}}}\exp (-x^2/2)$.
+ } }
+\vskip7pt
+\hrule }\vrule height59.75pt depth 0pt width 0.4pt \hfill }
+\vskip12pt plus6pt minus4pt
+Mais dans $(XI.2.)$ il y avait une somme de carr\'es. Lorsqu'on addi\-tionne
+des variables al\'eatoires gaussiennes ind\'ependantes, leur somme est
+\'egalement gaussienne, avec une variance qui est la somme des 
+variances de chacune;  cela r\'esulte d'une propri\'et\'e tr\`es
+sp\'eciale que les densit\'es gaus\-siennes poss\`edent, \`a savoir
+que la convolution de plusieurs densit\'es gaus\-siennes est aussi une
+densit\'e gaus\-sienne. Les carr\'es ont pour densit\'e $\chi^2(t)$ et non
+$\e^{-x^2/2}$, donc il n'y a aucune raison pour que leur somme soit aussi 
+une densit\'e $\chi^2(t)$. Nous allons voir ci-dessous lorsque nous
+calculerons ces fonctions que la densit\'e de la somme de plusieurs
+carr\'es (disons $r$ carr\'es) n'est pas semblable \`a la densit\'e d'un 
+seul carr\'e, et on l'appelle la densit\'e $\chi_r^2(t)$, ou densit\'e
+$\chi^2(t)$ \`a $r$ degr\'es de libert\'e. 
+\bigskip
+On pourra donc retenir la d\'efinition suivante:
+\medskip
+\penalty-200
+\line{\hfill \vrule height75.3pt depth 0pt width 0.4pt
+\vbox{\hsize=11.5cm \hrule
+\vskip5pt
+\centerline{\vbox{\hsize=108mm
+La densit\'e normalis\'ee $\chi_r^2 (t)$ \`a $r$ degr\'es de libert\'e est 
+la densit\'e de la somme des carr\'es de $r$ variables al\'eatoires
+sto\-chas\-ti\-que\-ment ind\'e\-pen\-dantes,  chacune de densit\'e 
+gaussienne ${1\over\sdown{9}{\sqrt{2\pi}}}\exp (-x^2/2)$.
+ } }
+\vskip8.4pt
+\hrule }\vrule height75.3pt depth 0pt width 0.4pt \hfill }
+
+\bigskip
+
+{\eightpoint
+Soit $X$ une variable de loi $\e^{-x^2/2}$. On sous-entendra qu'il 
+s'agit de
+lois asymptotiques et qu'en r\'ealit\'e la loi est discr\`ete. Cela signifie que
+$${\cal P}\, (a \leq X < b) \;\; \simeq \;\; {1\over \sdown{11} \sqrt{2\pi}}
+\int_a^b \e^{-{\hbox{\sevenmi x}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}}dx$$
+si $b-a$ est suffisamment grand pour contenir un nombre
+statistiquement significatif de valeurs discr\`etes. Il suffit d'ailleurs
+pour caract\'eriser la densit\'e, de conna{\^\i}tre la fonction
+$$F(x) \;\; = \;\; {\cal P}\, (X<x) \;\; \simeq \;\; {1\over \sdown{11}
+\sqrt{2\pi}} \int_{-\infty}^x 
+\e^{-{\hbox{\sevenmi t}^{\hbox{\fiverm 2}}\over \sdown{4.5} 2}}dt \eqno (XI.3.)$$
+appel\'ee {\it fonction de r\'epartition} de $X$; en effet, ${\cal P}\,
+(a<X<b) = F(b) - F(a)$. Pour d\'eterminer la densit\'e du carr\'e de $X$, 
+nous partirons donc du fait que la fonction de r\'epartition de $X$ est 
+celle donn\'ee par $(XI.3.)$ et il s'agit de calculer la fonction de
+r\'epartition $G(x)$ de $X^2$. 
+\medskip
+Or 
+$$G(x) \;\; = \;\; {\cal P}\, (X^2<x) \;\; = \;\; 
+{\cal P}\, (-\sqrt{x}<X<\sqrt{x})\;\;  
+\simeq \;\; {1\over \sdown{11} \sqrt{2\pi}}\int_{-\sqrt{x}}^{\sqrt{x}} 
+\e^{-{\hbox{\sevenmi t}^{\hbox{\fiverm 2}} \over
+\sdown{4.5} 2}}dt $$
+Puisque la fonction \`a int\'egrer ci-dessus est paire, on a aussi
+$$G(x) \;\; \simeq \;\;\; {2\over \sdown{11} \sqrt{2\pi}}\int_{0}^{\sqrt{x}} 
+\e^{-{\hbox{\sevenmi t}^{\hbox{\fiverm 2}}
+\over \sdown{4.5} 2}}dt $$
+Effectuons dans l'int\'egrale le changement de variable $s = t^2$; on obtient 
+$$G(x) \;\; \simeq \;\;\; {1\over \sdown{11} \sqrt{2\pi}}\int_{0}^{x} 
+\hbox{\tenmi s \vrule
+height7.5pt width0pt}^{-{1 \over \sdown{4.5} 2}} \e^{-{\hbox{\sevenmi s}\over \sdown{4.5} 2}}\, ds $$
+L'astuce, dans le changement de variable, \'etait de faire en sorte que
+la
+borne sup\'erieure de l'int\'egrale,  qui \'etait devenue $\sqrt{x}$, 
+redevienne $x$.  Ainsi la probabilit\'e pour que $X^2$ soit inf\'erieur
+\`a $x$ est l'int\'egrale de $0$ \`a $x$ (et non plus de $0$ \`a
+$\sqrt{x}$) de la
+densit\'e $\sqrt{1/2\pi }\; s^{-{1 / 2}}\, \e^{-{s / 2}}$;  c'est la preuve que la fonction sous l'int\'egrale est
+bien la densit\'e cherch\'ee.  La densit\'e $\chi_1^2 (t)$ sera donc
+$$\chi_1^2 (t) \;\; = \;\; \sqrt{{1\over 2\pi }}\; t^{-{1 \over \sdown{4.5} 
+2}}\, \e^{-{\hbox{\sevenmi s} \over
+\sdown{4.5} 2}} \eqno (XI.4.)$$
+On voit que cette densit\'e tend vers l'infini comme $1/\sqrt{t}$ quand 
+$t$ tend vers $0$.  Cette singularit\'e est \'evidemment un artefact du
+passage \`a une limite continue:  il ne peut pas y avoir une telle densit\'e
+infinie pour des lois discr\`etes et r\'eelles,  comme le montrent les
+figures $42$ et $43\; (d)$.  Le ph\'enom\`ene doit \^etre compris de la 
+fa\c{c}on suivante.  Nous avons vu au chapitre {\bf VII} que lorsqu'on dit
+qu'une loi discr\`ete tend vers une densit\'e continue,  cela signifie que
+c'est la loi \'echantillonn\'ee ou liss\'ee par convolution qui tend (au 
+sens de la convergence uniforme des fonctions) vers la densit\'e continue;
+mais la loi \'echantillonn\'ee ou liss\'ee est d'autant plus proche de sa
+limite que les valeurs de la loi discr\`ete sont plus nombreuses et plus
+proches les unes des autres:  ce qui fait qu'une loi discr\`ete ``tend''
+vers une densit\'e continue,  est que la distance moyenne entre les valeurs
+cons\'ecutives (le pas de discr\'etisation) tend vers z\'ero.  Si dans le
+graphique de la figure $41$ ou celui de la figure $43\; (a)$ on augmente 
+le nombre de valeurs en m\^eme temps qu'on les rapproche les unes des
+autres (par exemple,  au lieu de prendre les $17$ valeurs $x_j = {1\over
+10}j$ pour $j=0,\, 1,\, \ldots 16$,  chacune ayant la probabilit\'e ${1 \over
+17}$,  on prend $1,7 \cdot 10^{n}$ valeurs $x_j = 10^{-n}j$ pour $j=0,\,
+1,\, \ldots 1,7 \cdot 10^n-1$,  chacune ayant la probabilit\'e $1/1,7\cdot
+10^n$, et on fait tendre $n$ vers l'infini),  on ne change rien au fait
+que la
+loi liss\'ee sera uniforme;  par contre la loi liss\'ee du carr\'e(figure
+$42$) va tendre vers la densit\'e $1 / \sqrt{t}$ (bien entendu le
+param\`etre $\varepsilon$ --- la longueur de corr\'elation --- du filtre 
+de lissage devra tendre corr\'elativement vers z\'ero).  Il n'est pas
+possible,  \`a cause du faible pouvoir s\'eparateur des graphiques,  de
+pr\'esenter les dessins qui illustreraient le ph\'enom\`ene;  mais si on le
+pouvait,  on verrait que la courbe de la figure $42$ tendrait vers la courbe 
+$y = 1 / \sqrt{x}$:  en particulier l'abscisse de son maximum,  qui est
+d\'ej\`a proche de z\'ero sur le graphique, s'en rapprocherait de plus en
+plus,  tandis que son ordonn\'ee prendrait des valeurs de plus en plus
+grandes.  Cela se comprend ais\'ement:  si les valeurs discr\`etes se
+densifient,  le fait de les \'elever au carr\'e produira une densit\'e 
+\'enorme tout pr\`es de z\'ero (par exemple si la distance entre les 
+valeurs est $\varepsilon$,  la distance entre les valeurs du carr\'e au
+voisinage imm\'ediat de z\'ero sera de l'ordre de $\varepsilon^2$).  Tant 
+que la loi est discr\`ete,  cette densit\'e \'enorme ne peut toutefois pas
+\^etre infinie,  et c'est pourquoi la courbe liss\'ee poss\`ede pr\`es de 
+z\'ero un maximum aigu,  mais non une singularit\'e.  Ce maximum se
+transforme cependant en singularit\'e \`a la limite continue. 
+\medskip
+
+\midinsert
+\vbox to \blocksize{\null
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig44a.eps} }
+\vskip4mm
+\centerline{\eightpoint La densit\'e $\chi^2$ \`a un degr\'e de libert\'e.}
+\vfill
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig44b.eps} }
+\vskip4mm
+\centerline{\eightpoint La densit\'e $\chi^2$ \`a deux degr\'es de
+libert\'e.}
+\vskip12mm
+\centerline{\eightpoint figure 44}
+\vskip15pt }
+\endinsert
+
+\midinsert
+\vbox to \blocksize{\null
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig45a.eps} }
+\vskip4mm
+\centerline{\eightpoint La densit\'e $\chi^2$ \`a huit degr\'es de libert\'e.}
+\vfill
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig45b.eps} }
+\vskip4mm
+\centerline{\eightpoint La densit\'e $\chi^2$ \`a seize degr\'es de
+libert\'e.}
+\vskip12mm
+\centerline{\eightpoint figure 45}
+\vskip8pt
+\centerline{\vbox{\hsize=11cm\eightpoint 
+Voici quatre exemplaires (figures 44 et 45) choisis parmi les densit\'es
+$\chi^2$; les quatre
+graphiques sont \`a la m\^eme \'echelle.} }
+\vskip15pt }
+\endinsert
+
+\midinsert
+\vbox to \blocksize{\null
+\vfill
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig46.eps} }
+\vskip8mm
+\centerline{\eightpoint figure 46}
+\vskip8mm
+\centerline{\vbox{\hsize=11cm\eightpoint 
+Voici, toujours \`a la m\^eme \'echelle que sur les figures 44 et 45, les
+graphiques superpos\'es des six premi\`eres densit\'es $\chi_r^2$ ($r = 
+1,\, 2,\, 3,\, 4,\, 5,\, 6$).} } 
+\vfill }
+\endinsert
+
+On peut de la m\^eme mani\`ere calculer la densit\'e $\chi_r^2(t)$ \`a $r$
+degr\'es de libert\'e. Cette fois il s'agit de la {\it somme} de $r$ carr\'es
+ind\'ependants, on a donc $r$ variables al\'eatoires $X_1,\, X_2,\, X_3,\,
+\ldots X_r$ stochastiquement ind\'ependantes, et pour chacune on a
+$${\cal P}\, (X_j < x) \;\; \simeq \;\; \int_{-\infty }^x 
+{1\over \sdown{11} \sqrt{2\pi}}\;
+\e^{-{\hbox{\sevenmi t}^{\hbox{\fiverm 2}}\over \sdown{4.5} 2}}dt$$
+Puisque les $X_j$ sont stochastiquement ind\'ependantes, leur loi 
+conjointe s'obtient par factorisation, de sorte que pour la somme des
+carr\'es on aura 
+$$\eqalign{
+{\cal P}\, (&X_1^2 + X_2^2 + X_3^2 + \cdots X_r^2 < x)\quad \simeq \cr
+\noalign{\smallskip}
+&\simeq\quad\int\!\!\int\!\!\int\!\!\cdots\int_{ \kern-56pt
+\lower8pt\hbox{ $\scriptstyle t_1^2 + t_2^2 + t_3^2 +\cdots t_r^2 < x$}}
+\biggl[ {1\over \sdown{11} \sqrt{2\pi}}\biggr]^r \e^{-{\hbox{\vrule depth2.4pt
+width0pt$\scriptstyle
+t_1$}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}}\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_2$}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}} \e^{-{\hbox{\vrule depth2pt width0pt$\scriptstyle
+t_3$}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}} \cdots \; 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_r$}^{\hbox{\fiverm 2}}\over \sdown{4.5} 2}} \; dt_1\, dt_2\, dt_3 \cdots dt_r \cr
+\noalign{\smallskip}
+&=\quad\int\!\!\int\!\!\int\!\!\cdots\int_{ \kern-56pt
+\lower8pt\hbox{ $\scriptstyle t_1^2 + t_2^2 + t_3^2 +\cdots t_r^2 < x$}}
+\biggl[ {1\over \sdown{11} \sqrt{2\pi}}\biggr]^r
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_1$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_2$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_3$}^{\hbox{\fiverm 2}} + \cdots + \hbox{\vrule depth2.4pt
+width0pt$\scriptstyle t_r$}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}}\; dt_1\, 
+dt_2\, dt_3 \cdots dt_r \cr }$$
+On voit que dans cette int\'egrale multiple tout est \`a sym\'etrie 
+sph\'erique, aussi bien la fonction \`a int\'egrer que le domaine
+d'int\'egration. On peut donc avantageusement passer en coordonn\'ees
+sph\'eriques, ce qui donne 
+$${\cal P}\, (X_1^2 + X_2^2 + X_3^2 + \cdots X_r^2 < x)\;\; \simeq 
+\;\; \biggl[ {1\over \sdown{11} \sqrt{2\pi}}\biggr]^r 
+\int_{\rho^2 < x} \rho^{r-1} \e^{-{\hbox{\vrule depth2.4pt width0pt
+$\scriptstyle
+\rho$}^{\hbox{\fiverm 2}} \over \sdown{4.5} 2}} d\rho
+\;\cdot\; {2\,\pi^{r \over \sdown{4.5} 2} \over \sdown{11} \Gamma\bigl(
+{\hbox{\eightmi r} \over
+2}\bigr)}$$le facteur $2\,\pi^{r/2} \big/ \,\Gamma (r/2)$ provenant de l'int\'egration
+des coordonn\'ees sph\'e\-riques angulaires (c'est l'aire de la sph\`ere
+unit\'e dans l'espace \`a $r$ dimensions).
+\medskip
+\`A partir de l\`a nous pouvons proc\'eder comme dans le calcul 
+pr\'ec\'edent \`a une dimension: nous faisons le changement de variable 
+$s = \rho^2$, ce qui donne
+$${\cal P}\, (X_1^2 + X_2^2 + X_3^2 + \cdots X_r^2 < x)\quad \simeq
+\quad {1\over \sdown{11.5} 2^{r \over \sdown{4.5} 2}\,\Gamma\bigl(
+{\hbox{\eightmi r} \over \sdown{4.5} 2}\bigr)} \int_0^x s^{{r \over 
+\sdown{4.5} 2} - 1} \e^{-{\hbox{$\scriptstyle
+s$} \over \sdown{4.5} 2}} ds$$
+Sous cette forme on voit appara{\^\i}tre la densit\'e que nous cherchions. 
+On peut donc conclure
+$$\chi_r^2(t) \;\; = \;\; {1\over \sdown{11.5} 2^{r \over \sdown{4.5}
+2}\,\Gamma\bigl({\hbox{\eightmi r} \over \sdown{4.5} 2}\bigr)}\;
+t^{{r \over \sdown{4.5} 2} - 1} \e^{-{\hbox{$\scriptstyle
+t$} \over \sdown{4.5} 2}} \eqno (XI. 5.)$$
+} %%%% end of \eightpoint
+
+\midinsert
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig47.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 47}
+\vskip8pt
+\centerline{\vbox{\hsize=11cm\eightpoint Ici sont superpos\'es les
+graphiques des densit\'es $\chi_r^2$ pour $r = 3$ \`a $r = 16$. 
+L'\'echelle des abscisses est la m\^eme que sur les figures 44, 45, 46, 
+mais les ordonn\'ees ont \'et\'e agrandies $2,5$ fois.} }
+\vskip4mm
+\endinsert
+
+{\bf XI. 2. Le test du $\chi^2$}
+\medskip
+Revenons maintenant \`a $(XI.2.)$ On avait calcul\'e la somme des 
+carr\'es des six fluctuations du d\'e, et il s'agissait de d\'eterminer la
+loi de probabilit\'e de cette somme de carr\'es, afin de pouvoir en 
+d\'eduire si la valeur calcul\'ee \'etait probable ou pas: si la valeur
+effectivement observ\'ee est tr\`es peu probable, on en d\'eduit que le
+d\'e est tr\`es probablement mal \'equilibr\'e; si au contraire la valeur
+effectivement observ\'ee est une valeur probable, on n'a plus aucune 
+raison de conclure que le d\'e est mauvais. Mais on ne peut plus utiliser 
+la loi gaussienne pour estimer ces probabilit\'es, puisque la somme des
+carr\'es ne suit pas une loi gaussienne. Nous allons \'etablir maintenant
+que la somme des six carr\'es suit une loi qui {\it asymptotiquement} a
+pour densit\'e $\chi_5^2(t)$ (et non $\chi_6^2(t)$). Math\'ematiquement,
+cela s'\'enonce ainsi:
+\medskip
+{\narrower {\bf Th\'eor\`eme:} Soient $X_1$, $X_2$, $\ldots$, $X_r$ des
+variables al\'eatoires gaus\-siennes normalis\'ees (c'est-\`a-dire
+que leurs lois ont une densit\'e \'egale \`a $(1/2\pi )\; \e^{-x^2/2}$, 
+de moyenne $0$ et
+d'\'ecart-type $1$). Si la loi conjointe de ces variables a pour densit\'e
+$(1/2\pi )^r\exp\{ -(x_1^2 + x_2^2 + \cdots x_r^2)/2\}$ et si elles sont
+li\'ees par la relation $X_1 + X_2 + \cdots + X_r = 0$, alors la somme 
+de leurs carr\'es a pour densit\'e $\chi_{r-1}^2(t)$. \par }
+\medskip
+D'apr\`es ce qui a \'et\'e vu au \S 1 ci-dessus, on pourrait dire que 
+si les $r = 6$ fluctuations \'etaient stochastiquement ind\'ependantes
+les unes des autres, la somme de leurs carr\'es aurait pour densit\'e
+(approximativement) $\chi_6^2(t)$. C'est bien s\^ur parce que les six
+fluctuations $X_1,\,  X_2,\, X_3,\, X_4,\, X_5,\, X_6$ sont li\'ees
+par la relation lin\'eaire $X_1 + X_2 + X_3 + X_4 + X_5 + X_6 = 0$ que 
+la dimension baisse ainsi d'une unit\'e. Mais il n'est pas \'evident 
+sans v\'erification math\'ematique que cette liaison lin\'eaire ne modifie
+pas par exemple l'\'ecart-type. Afin de bien comprendre ce qui se passe, 
+il faut examiner cette affaire de plus pr\`es, et pour cela nous allons
+{\it d\'emontrer} le th\'eor\`eme. Pour que cette d\'emonstration soit plus
+imag\'ee, nous gardons le cas particulier $r=6$ du d\'e.
+\medskip
+Suivre cette d\'emonstration demande un effort: ne la lisez que si vous
+souhaitez vraiment comprendre {\it pourquoi} la relation lin\'eaire entre
+les $X_j$ (qui fait baisser d'une unit\'e le nombre de degr\'es de libert\'es)
+ne change pas le caract\`ere gaussien de la densit\'e.
+\medskip
+Si les six fluctuations $X_1,\, X_2,\, X_3,\, X_4,\, X_5,\, X_6$ \'etaient
+stochastiquement ind\'ependantes les unes des autres, la densit\'e de leur
+loi conjointe serait 
+$$f_6(t_1,\, t_2,\, t_3,\, t_4,\, t_5,\, t_6) \;\; = \;\; \biggl[
+{1\over \sdown{11} \sqrt{2\pi}}\biggr]^r
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_1$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_2$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_3$}^{\hbox{\fiverm 2}} + \cdots + \hbox{\vrule depth2.4pt
+width0pt$\scriptstyle t_r$}^{\hbox{\fiverm 2}} \over 2}} \quad \eqno (XI.6.)$$
+Si elles sont li\'ees par la relation $X_1 + X_2 + X_3 + X_4 + X_5 + X_6 =
+0$, cela signifie que le point $M$ de coordonn\'ees $X_1,\, X_2,\, X_3,\, 
+X_4,\, X_5,\, X_6$ est situ\'e sur l'hyperplan $H$ d'\'equation $X_1 + 
+X_2 + X_3 + X_4 + X_5 + X_6 = 0$. Le fait que les valeurs des $X_j$
+soient enti\`eres et que leur densit\'e ne soit donn\'ee par $(XI.6.)$
+qu'asymptotiquement ne change rien \`a cela. Supposons qu'on effectue un
+\'echantillonnage (ce serait la m\^eme chose pour une convolution) des
+valeurs discr\`etes. Pour effectuer cet \'echantillonnage on peut par
+exemple quadriller l'espace \`a six dimensions en hypercubes ou pav\'es
+dont
+les ar\`etes sont parall\`eles aux six axes $OX_1,\, OX_2,\, OX_3,\, 
+OX_4,\, OX_5,\, OX_6$,  mais on peut tout aussi bien le quadriller selon 
+six autres directions mutuellement perpendiculaires,  et telles que les 
+cinq premi\`eres soient parall\`eles \`a l'hyperplan $H$.  On choisira bien
+s\^ur la taille $\varepsilon$ des pav\'es de telle sorte qu'ils contiennent 
+chacun un nombre assez grand de points de la distribution discr\`ete, 
+tout en \'etant suffisamment petit pour conserver un sens \`a la notion 
+de densit\'e continue.  Dans ces conditions il est bien clair que la
+probabilit\'e pour que le point $M$ de coordonn\'ees $X_1,\, X_2,\,
+X_3,\, X_4,\, X_5,\, X_6$ soit situ\'e dans un pav\'e $P$ est
+approximativement donn\'ee par la densit\'e asymptotique continue: 
+$$\eqalignno{ 
+{\cal P}\, (M \in P)\;\;  &\simeq \;\; \int_P f_6(t_1,\, t_2,\, t_3,\,
+t_4,\, t_5,\,
+t_6)\; dt_1\, dt_2\, dt_3\, dt_4\, dt_5\, dt_6 \cr&\simeq \;\; \varepsilon^6
+\cdot f(M_0) &(XI.7.)\cr } $$o\`u $M_0$ d\'esigne par exemple le centre du pav\'e.  Or la densit\'e 
+$f(M)$ ne d\'epend en fait que de $\rho = OM$ (la distance de $M$ \`a
+l'origine). Si on impose aux six variables $X_1,\, X_2,\, X_3,\, X_4,\,
+X_5,\, X_6$ d'avoir une somme nulle, cela signifie qu'on ne consid\`ere 
+que les points $M$ situ\'es sur l'hyperplan $H$, ou, ce qui revient au 
+m\^eme puisque la densit\'e $f$ n'a pas de discontinuit\'e, les points qui
+sont distribu\'es dans une bande $H_\varepsilon$ de largeur $\varepsilon$
+autour de l'hyperplan (on a suppos\'e que le quadrillage de l'espace en
+pav\'es est parall\`ele \`a l'hyperplan).  Ainsi la densit\'e de la loi
+conjointe des $X_j$ li\'ees par la relation $\sum X_j = 0$ sera donn\'ee
+par la
+r\'epartition des probabilit\'es selon les pav\'es contigus \`al'hyperplan: 
+il s'agit donc simplement des probabilit\'es conditionnelles${\cal P}\, (M
+\in P \mid M \in H_\varepsilon)$. Or cette probabilit\'econditionnelle est, 
+conform\'ement \`a $(IV.1.)$,  donn\'ee par$$\eqalign{ 
+&{\cal P}\, (M \in P \mid M \in H_\varepsilon) \quad = \quad {{\cal P}\, 
+(M \in P) \over {\cal P}\, (M \in H_\varepsilon)} \quad \simeq\cr 
+&\simeq \quad { {\displaystyle \int_P \vrule depth13pt width0pt
+f_6(s_1,\, s_2,\, s_3,\, s_4,\,
+s_5,\, s_6)\; ds_1\, ds_2\, ds_3\, ds_4\, ds_5\, ds_6} \over
+{\displaystyle\int_{0 \leq s_6 < \varepsilon}\vrule height19pt width0pt
+f_6(s_1,\, s_2,\, s_3,\,
+s_4,\, s_5,\, s_6)\; ds_1\, ds_2\, ds_3\, ds_4\, ds_5\, ds_6} }\cr } 
+\eqno (XI.8.)$$ 
+En effet, la densit\'e $f(M)$ ne d\'ependant que de $\rho = OM$
+est invariante par changement de rep\`ere orthonorm\'e, de sorte que 
+nous pouvons int\'egrer par rapport aux coordonn\'ees $s_1,\, s_2,\, 
+s_3,\, s_4,\, s_5,\, s_6$ du nouveau rep\`ere, dans lequel l'\'equation de
+l'hyperplan $H$ est $s_6 = 0$: la bande de largeur $\varepsilon$ autour 
+de $H$, form\'ee par l'ensemble des pav\'es contigus \`a $H$ (qui est le
+domaine de l'int\'egrale au d\'enominateur), est la r\'egion de l'espace
+o\`u $0 \leq s_6 < \varepsilon$. La densit\'e $f(M)$ peut \^etre
+refactoris\'ee dans le nouveau rep\`ere. En effet: 
+$$\eqalignno{ 
+f(M)\;\; &= \;\; \e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_1$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_2$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_3$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_4$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_5$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_6$}^{\hbox{\fiverm 2}} \over 2}} \cr
+&= \;\; \e^{-{\hbox{\vrule depth2pt width0pt$\scriptstyle
+t_1$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_2$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_3$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_4$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_5$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+t_6$}^{\hbox{\fiverm 2}} \over 2}} \cr
+&= \;\; \e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_1$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_2$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_3$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_4$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_5$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_6$}^{\hbox{\fiverm 2}} \over 2}} \cr
+&= \;\; \e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_1$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_2$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_3$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_4$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_5$}^{\hbox{\fiverm 2}} \over 2}} \cdot 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_6$}^{\hbox{\fiverm 2}} \over 2}} \cr }$$
+Si en utilisant cela on refactorise l'int\'egrale au d\'enominateur de
+$(XI.8.)$ et qu'on remplace celle du num\'erateur par son expression
+approch\'ee (pour $\varepsilon$ petit) donn\'ee par $(XI.7.)$, on obtient 
+pour la probabilit\'e conditionnelle
+$${\cal P}\, (M \in P \mid M \in H)\;\;  
+\simeq \;\; {\varepsilon^6 f_6(s_1,\, s_2,\,s_3,\, s_4,\, s_5,\, 0) \over 
+\varepsilon \int f_6(s_1,\, s_2,\,s_3,\, s_4,\, s_5,\, 0)\; ds_1\, 
+ds_2\, ds_3\, ds_4\, ds_5 } $$
+Mais $f_6(s_1,\, s_2,\,s_3,\, s_4,\, s_5,\, 0) = f_5(s_1,\, s_2,\,s_3,\,
+s_4,\, s_5)\, \big/ \sqrt{2\pi}$, de sorte que finalement apr\`es
+simplification 
+$${\cal P}\, (M \in P \mid M \in H)\;\;  
+\simeq \;\; \varepsilon^5 f_5(s_1,\, s_2,\,s_3,\, s_4,\, s_5)$$
+On comprend ainsi que 
+\smallskip
+a) la loi conjointe des six variables $X_1,\, X_2,\, X_3,\, X_4,\, X_5,\,
+X_6$ li\'ees par la relation $X_1 + X_2 + X_3 + X_4 + X_5 + X_6 = 0$
+est une loi discr\`ete de valeurs distribu\'ees sur l'espace \R${}^6$, mais
+toutes situ\'ees sur l'hyperplan $H$; 
+\smallskip
+b) si {\it \`a l'int\'erieur de} $H$ on choisit un rep\`ere orthonorm\'e, les 
+valeurs discr\`etes de cette loi conjointe peuvent \^etre rep\'er\'ees par
+les {\it cinq} coordonn\'ees $s_1,\, s_2,\, s_3,\, s_4,\, s_5$, et (apr\`es
+\'echantillonnage par pav\'es) elles sont distribu\'ees selon la densit\'e 
+$$f_5(s_1,\, s_2,\, s_3,\, s_4,\, s_5)\;\;  = \;\; 
+\e^{-{\hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_1$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_2$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_3$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_4$}^{\hbox{\fiverm 2}} + \hbox{\vrule depth2.4pt width0pt$\scriptstyle
+s_5$}^{\hbox{\fiverm 2}} \over 2}} $$
+Or la propri\'et\'e caract\'eristique de la fonction exponentielle (\`a
+savoir que l'expo\-nen\-tielle d'une somme est le produit des
+expo\-nen\-tielles) a pour cons\'equence que cette densit\'e se factorise, 
+de sorte que tout se passe comme si les valeurs discr\`etes prises par le
+vecteur al\'eatoire $X_1,\, X_2,\, X_3,\, X_4,\, X_5,\, X_6$, qui sont toutes
+situ\'ees sur l'hyperplan $H$, \'etaient les valeurs discr\`etes d'un vecteur
+al\'eatoire $S_1,\, S_2,\, S_3,\, S_4,\, S_5$ \`a cinq composantes {\it
+stochastiquement ind\'ependantes} (mais dans le nouveau rep\`ere). 
+\medskip
+La d\'emonstration du th\'eor\`eme s'ach\`eve ici.
+\medskip
+On peut conclure que lorsque six variables al\'eatoires $X_1$,
+$X_2$, $X_3$, $X_4$, $X_5$, $X_6$, chacune de densit\'e $e^{-t^2/2}$, sont
+li\'ees par la relation $X_1 + X_2 + X_3 + X_4 + X_5 + X_6 = 0$, leur loi
+conjointe est agenc\'ee comme suit: 
+\smallskip
+a) la probabilit\'e pour que le vecteur $X_1,\, X_2,\, X_3,\, X_4,\, X_5,\,
+X_6$ soit en dehors de l'hyperplan est nulle;
+\smallskip
+b) \`a l'int\'erieur de l'hyperplan elle est approximativement la
+m\^eme que celle de cinq
+variables al\'eatoires {\it stochastiquementind\'ependantes} et ayant
+chacune la densit\'e $e^{-t^2/2}$.
+\medskip
+Pour d\'emontrer cela, nous avons utilis\'e, de fa\c{c}on essentielle, 
+deux
+propri\'et\'es de la densit\'e gaussienne: la premi\`ere est qu'ellene d\'epend que de la somme des carr\'es des coordonn\'ees et est donc
+invariante par changement de rep\`ere orthonorm\'e (c'est cette
+propri\'et\'e qui entra{\^\i}ne que la trace de $f_6$ sur l'hyperplan est
+$f_5$) et la seconde est que l'exponentielle d'une somme est le produit 
+des exponentielles (c'est cette propri\'et\'e qui permet la factorisation 
+de $f_5$ en produit, prouvant ainsi l'ind\'ependance stochastique des 
+cinq nouvelles coordonn\'ees).  Le th\'eor\`eme \'enonc\'e ci-dessus 
+n'est donc vrai qu'\`a la limite o\`u les $X_j$ sont gaussiennes; 
+il n'est
+qu'approximativement vrai pour la loi discr\`ete {\it exacte}. Cela peut se comprendre \`a partir d'arguments g\'eom\'etriques simples: 
+supposons
+pour all\'eger qu'on ait trois variables $X_1$, $X_2$, $X_3$au lieu de six,
+ avec $X_1 + X_2 + X_3 = 0$.  On peut les exprimer enfonction de deux
+variables ind\'ependantes $S_1$,  $S_2$, par exemple$$\eqalign{
+X_1 &= S_1 + S_2 \cr
+X_2 &= S_1 - S_2 \cr
+X_3 &= -2 S_1 \cr }$$
+Or si $S_1$ et $S_2$ prennent toutes les valeurs enti\`eres possibles, 
+$X_1$ et $X_2$ auront n\'ecessairement la m\^eme parit\'e et $X_3$ sera
+toujours paire, donc on ne couvrira pas ainsi toutes les valeurs que
+peuvent prendre $X_1$, $X_2$, $X_3$. On pourra essayer toutes les
+combinaisons pour exprimer $X_1$, $X_2$, $X_3$ en fonction de $S_1$, 
+$S_2$ (de sorte que $X_1$, $X_2$, $X_3$ prennent des valeurs
+enti\`eres et $X_1 + X_2 + X_3 = 0$), il sera impossible de recouvrir
+exactement les valeurs prises par $X_1$, $X_2$, $X_3$; soit on n'en
+retrouvera qu'une partie, soit on devra y ajouter des demi-entiers. Cela 
+est d\^u simplement \`a ce que, si l'espace \R${}^3$ est invariant par
+rotation, il n'en est plus de m\^eme pour une partie {\it discr\`ete} de
+\R${}^3$. Par contre la propri\'et\'e est {\it approximativement} vraie 
+lorsque les lois discr\`etes sont {\it approximativement} gaussiennes.
+\medskip
+Par ailleurs, en y regardant de pr\`es, on comprendra
+\'egalement que les $X_j$ doivent avoir {\it le m\^eme \'ecart-type} (ici
+il valait $1$): en effet, si les \'ecarts-types des $X_j$ \'etaient
+diff\'erents, il n'y aurait plus d'invariance par rotation (toutefois on 
+aurait pu pallier cet inconv\'enient en choisissant dans $H$ un rep\`ere
+orthogonal, mais non norm\'e).
+\medskip
+L'importante propri\'et\'e que nous venons d'\'etablir, que la loi conjointe
+de $r$ variables al\'eatoires gaussiennes $X_1,\, X_2,\, X_3, \ldots X_r$
+d'\'ecart-type $1$ et de somme nulle est \'egalement une gaussienne, 
+mais avec un degr\'e de libert\'e (une dimension) de moins, a donc pour 
+cons\'equence que la somme de leurs carr\'es suit une loi dont la densit\'e 
+est $\chi_{r-1}^2$; en effet, la somme des carr\'es des $X_j$ est alors
+\'egale \`a la somme des carr\'es de $r-1$ variables al\'eatoires,
+\'egalement gaussiennes et d'\'ecart-type $1$, mais stochastiquement
+ind\'ependantes. 
+\medskip
+Si on veut tester un d\'e \`a l'aide de la somme $S$ des carr\'es des
+fluctuations $(XI.2.)$, il faut donc utiliser la densit\'e $\chi_{5}^2$; 
+mais comme celle-ci est pr\'evue pour des variables al\'eatoires 
+d'\'ecart-type $1$, il faut encore se ramener \`a ce cas. En effet, les
+fluctuations d'un d\'e qu'on a jet\'e $6n$ fois ont un \'ecart-type \'egal 
+\`a $\sqrt{n}$; on se ram\`enera donc \`a un \'ecart-type \'egal \`a $1$ en 
+divisant chaque fluctuation par $\sqrt{n}$.  Donc la somme $S$ doit \^etre
+divis\'ee par $1000$ pour qu'on puisse lui appliquer la loi $\chi_{5}^2$.
+La probabilit\'e pour que $S$ soit sup\'erieure \`a un seuil donn\'e $x$ 
+peut donc \^etre calcul\'ee approximativement par
+$${\cal P}\, \Bigl( {S \over 1000} > x \Bigr) \;\; \simeq \;\; 
+\int_x^\infty
+\chi_5^2 (t) \, dt$$
+Bien s\^ur l'int\'egrale ci-dessus ne se calcule pas par primitives, mais
+nu\-m\'e\-ri\-que\-ment (il y a pour cela des logiciels ou des tables); dans 
+l'exemple pris ici, $S = 6400$, donc $S/1000 = 6,4$; si on consulte alors
+une table on voit que la probabilit\'e pour que $S$ soit sup\'erieur ou 
+\'egal \`a $6,4$ est environ $0,27$; ces fluctuations n'\'etant pas ``peu
+probables'' on n'est donc pas fond\'e \`a conclure que le d\'e est truqu\'e 
+(ce qui ne signifie pas qu'on est fond\'e \`a conclure que le d\'e n'est pas
+truqu\'e). Si par contre la somme $S$ des carr\'es des six fluctuations
+avait \'et\'e \'egale \`a $15\, 000$, la m\^eme table aurait montr\'e
+qu'avec un d\'e normal une telle amplitude n'avait qu'une chance sur cent 
+de se produire; alors on aurait \'et\'e fond\'e \`a conclure que le d\'e est 
+probablement truqu\'e. 
+\medskip
+On voit que les op\'erations \`a faire sont simples:
+\smallskip
+a) se fixer un seuil de certitude $\alpha$, par exemple $\alpha = 0.99$;
+\smallskip
+b) calculer la somme $S$ des carr\'es des fluctuations;
+\smallskip
+c) diviser par la variance ($n/6$ si on a lanc\'e le d\'e $n$ fois) pour 
+obtenir $x = S \bigl/ (n/6)$; 
+\smallskip
+d) chercher sur une table la valeur de $\int_0^x\chi_5^2 (t)\, dt$;  si
+celle-ci est sup\'erieure \`a $\alpha$, on a d\'epass\'e le seuil, ce qui 
+signifie que la probabilit\'e pour que les fluctuations aient une telle
+amplitude est inf\'erieure \`a $1-\alpha$, et que donc le d\'e est
+probablement fauss\'e. 
+\medskip
+C'est cette s\'erie d'op\'erations qui constitue le {\it test du} $\chi^2$.
+\medskip
+Tout ce qui a \'et\'e dit depuis le d\'ebut de ce chapitre avait pour but de
+montrer que ce test du $\chi^2$ est math\'ematiquement \'equivalent \`a 
+ce qu'aurait donn\'e une analyse s\'epar\'ee de chacune des six
+fluctuations, et utilisant la loi gaussienne. En effet, on aurait pu
+\'egalement chercher s\'epar\'ement pour chacune des six fluctuations
+quelle probabilit\'e elle avait de se produire (ou plut\^ot: quelle \'etait la
+probabilit\'e pour que la fluctuation ait une amplitude au moins \'egale 
+\`a la fluctuation observ\'ee), puis accepter ou rejeter, selon le r\'esultat 
+de ces six calculs, l'hypoth\`ese que le d\'e est fauss\'e. L'avantage d'une
+\'etude s\'epar\'ee des six fluctuations est qu'elle permet de savoir
+laquelle ou lesquelles des faces du d\'e sont favoris\'ees: si on souhaite
+disposer de cette information, il ne faut pas faire le test du $\chi^2$, 
+mais l'analyse s\'epar\'ee. Par contre le test du $\chi^2$ est bien plus
+rapide et est donc pr\'ef\'erable d\`es lors que seul importe le r\'esultat
+global.
+\medskip
+Il reste une derni\`ere remarque \`a faire. Les densit\'es $\chi_1^2 (t)$ 
+et $\chi_2^2 (t)$ sont grandes au voisinage de $t = 0$, et deviennent
+petites pour $t$ grand, comme on peut voir sur la figure 44. Par contre
+on peut voir sur la figure 45 que pour $r$ grand (par exemple $r =
+8$ ou $r = 16$) la densit\'e est petite non seulement pour les grandes
+valeurs de $t$, mais aussi pour les petites. Cela signifie que lorsqu'il y 
+a beaucoup de fluctuations, c'est-\`a-dire beaucoup de degr\'es de
+libert\'e,  la somme $S$ des carr\'es de ces fluctuations a non 
+seulement une faible probabilit\'e d'\^etre grande, mais aussi une faible
+probabilit\'e d'\^etre petite. Or cela se comprend ais\'ement si on y
+r\'efl\'echit. En effet, $S$ est la somme des carr\'es, donc si $S$ est
+petit, c'est que {\it toutes} les fluctuations sont petites; la faible
+densit\'e au voisinage de z\'ero signifie donc qu'il est peu probable que
+toutes les fluctuations soient petites en m\^eme temps. De fa\c{c}on
+plus quantitative: la moyenne des carr\'es des fluctuations est la 
+variance $V$; il est peu probable que ces carr\'es deviennent beaucoup 
+plus grands que la variance, mais il est peu probable aussi (s'ils sont 
+nombreux) qu'ils soient {\it tous en m\^eme temps} nettement plus
+petits que la variance. Cela signifierait en quelque sorte que le hasard a
+{\it trop bien} fait les choses. Ainsi pour une pi\`ece de monnaie qu'on
+lance $2000$ fois, le r\'esultat le plus probable est d'avoir $1000$ fois
+pile (en avoir $999$ est un tout petit peu moins probable). Mais si on
+lance $6000$ fois un d\'e, obtenir {\it exactement} $1000$ fois chacune
+des six faces n'est pas le r\'esultat le plus probable, c'est au contraire
+improbable, et si au lieu de six faces, il y en avait douze, il serait
+encore plus improbable que toutes les douze apparaissent exactement
+$500$ fois chacune. En calculant un peu, on peut constater que la
+densit\'e $\chi_5 (t)$ est maximum pour $t = 3,5$; dans l'exemple o\`u 
+on lance $6000$ fois un d\'e, cela signifie que la valeur ``la plus
+probable'' de $S / 1000$ est $3,5$ et non z\'ero. 
+\medskip
+Toutefois lorsqu'on pratique le test du $\chi^2$ pour savoir par exemple 
+si le d\'e est mal \'equilibr\'e, on ne peut pas interpr\'eter les faibles 
+valeurs de $S$ de la m\^eme fa\c{c}on que les grandes. En effet, si le d\'e 
+est mal \'equilibr\'e, il sera encore moins probable d'avoir des valeurs
+``trop'' petites pour $S$; par cons\'equent on ne pourra conclure que le 
+d\'e est mal \'equilibr\'e que si $S$ se situe dans les grandes valeurs
+improbables. Les valeurs trop petites de $S$ signifient que les r\'esultats
+\'etaient {\it trop} exacts. Imaginons un exp\'erimentateur qui fraude; il
+annonce comme r\'esultats de mesure des r\'esultats invent\'es,
+c'est-\`a-dire calcul\'es d'apr\`es ce qu'il souhaite prouver
+frauduleusement. Si $V$ est alors la variance des erreurs de mesures (qui
+est donc un param\`etre caract\'eristique des appareils utilis\'es), cet
+exp\'erimentateur devra veiller \`a inventer \'egalement des fluctuations
+autour des r\'esultats invent\'es, de telle sorte que la somme des carr\'es
+de ces fluctuations, divis\'ee par $V$, corresponde \`a un maximum de la
+densit\'e $\chi^2$ (avec le nombre convenable de degr\'es de libert\'e). S'il
+ne prend pas cette pr\'ecaution, les experts appel\'es par des coll\`egues
+soup\c{c}onneux ne manqueront pas d'invoquer un test du $\chi^2$ \`a sa
+charge. Dans ce cas, le test du $\chi^2$ portera sur les petites valeurs de
+$S$ et non sur les grandes, et servira \`a conclure qu'une accumulation
+de r\'esultats trop exacts est anormale.
+\medskip
+On pourra donc retenir en conclusion que le test du $\chi^2$ peut servir
+\`a estimer si des fluctuations sont trop grandes, mais aussi trop
+petites. Bien entendu l'interpr\'etation du test ne sera pas du tout la 
+m\^eme dans les deux cas. En revanche le principe du test est toujours 
+le m\^eme;  on teste une hypoth\`ese. Le raisonnement est le suivant: si 
+l'hypoth\`ese est vraie, le r\'esultat observ\'e est improbable, donc on
+conclut que, l'\'ev\'enement improbable {\it ayant eu lieu}, c'est
+l'hypoth\`ese qui est probablement fausse; ou inversement: si le test
+conclut que le r\'esultat observ\'e \'etait probable, il n'y a aucune
+incompatibilit\'e entre l'hypoth\`ese et l'observation. Un tel test permet
+une quantification pr\'ecise et objective des seuils de certitude, mais 
+cela ne prot\`ege \'evidemment pas contre la l\'eg\`eret\'e dans
+l'interpr\'etation.
+
+\vskip5mm plus3mm minus3mm
+
+{\bf XI. 3. Comment tester une hypoth\`ese.}
+\medskip
+Toute la discussion de la section pr\'ec\'edente concerne un exemple
+(le d\'e).
+ Mais la m\'ethode du test peut s'appliquer de mani\`erebien plus g\'en\'erale.
+\medskip
+Il se trouve que l'hypoth\`ese ``le d\'e est correctement \'equilibr\'e'' 
+se traduit math\'ematiquement par ``les probabilit\'es des six faces 
+sont toutes \'egales \`a ${1 \over 6}$''.  Autrement dit, l'hypoth\`ese se 
+traduit math\'ematiquement par la donn\'ee d'une loi de probabilit\'e. 
+Imaginons qu'apr\`es un test n\'egatif, c'est-\`a-dire un test ayant 
+donn\'e un r\'esultat tr\`es peu probable dans l'hypoth\`ese o\`u le 
+d\'e est correctement \'equilibr\'e,  nous souhaitions trouver la loi de
+probabilit\'e r\'eelle (et non uniforme) du d\'e. Le test ayant consist\'e
+\`a lancer $6\, 000$ fois le d\'e, on peut prendre les fr\'equences
+relatives de chaque face comme un premi\`ere indication. Mettons pour
+fixer les id\'ees que les r\'esultats obtenus, au lieu d'\^etre ceux de
+$(XI.1.)$ soient les suivants
+$$\openup 3 \jot \eqalignno{ 
+\noalign{\vskip1pt plus3pt minus1pt}\cr
+&\as \hbox to 20mm {\hfill
+980 fois} \hskip25mm \quatre \hbox to 20mm {\hfill 993 fois} \cr
+\noalign{\vskip1pt plus3pt minus1pt}\cr
+&\deux \hbox to 20mm {\hfill 812 fois} \hskip25mm 
+\cinq \hbox to 20mm {\hfill 1133 fois} &(XI.9.)\cr
+\noalign{\vskip1pt plus3pt minus1pt}\cr
+&\trois \hbox to 20mm {\hfill 1019 fois} \hskip25mm
+\six \hbox to 20mm {\hfill 1063 fois} \cr 
+\noalign{\vskip1pt plus3pt minus1pt}\cr
+}$$
+Il saute aux yeux que les r\'esultats anormaux sont le deux qui ne sort 
+que $812$ fois et le cinq qui sort $1133$ fois. \`A l'aide de la loi
+gaussienne (cette fois il est pr\'ef\'erable de ne pas utiliser le test du
+$\chi^2$, puisqu'on veut analyser les r\'esultats pour la face deux et la
+face cinq, et non globalement) on peut voir que la probabilit\'e d'avoir
+plus de $1100$ fois le cinq sur $6000$ lancers (dans l'hypoth\`ese d'un 
+d\'e correctement \'equilibr\'e) est $0.0008$; la probabilit\'e d'avoir 
+moins de $850$ fois le deux est inf\'erieure \`a $10^{-4}$. Comme le
+premier coup d'oeil le laissait pressentir, le test est donc n\'egatif, 
+et on est conduit \`a conclure que la probabilit\'e du cinq est en
+r\'ealit\'e sup\'erieure \`a ${1 \over 6}$ tandis que la probabilit\'e 
+du deux est inf\'erieure \`a ${1 \over 6}$. On peut \'evaluer ces
+probabilit\'es par les fr\'equences observ\'ees dans $(XI.9.)$ qui
+seraient donc
+$${980 \over 6000}\; , \quad {812 \over 6000}\; , \quad {1019
+\over 6000}\; , \quad {993 \over 6000}\; , \quad {1133 \over 6000}
+\; , \quad
+{1063 \over 6000}\; ,$$mais il serait absurde de les \'evaluer avec une telle
+pr\'ecision
+puisque nous savons que les fluctuations normales autour deces
+valeurs sont de l'ordre de $\sqrt{1000}/6000 \simeq 0.005$.  Donc le
+r\'esultat observ\'e pour le un,  \`a savoir $980 / 6000$, ne doit pas
+\^etre tenu pour significativement diff\'erent de $1 / 6$. On peut alors
+faire la {\it nouvelle} hypoth\`ese que les probabilit\'es sont ${1
+\over 6}\, ,\; 0.13\, ,\; {1 \over 6}\, ,\; {1 \over 6}\, ,\; 0.20\, ,\;
+0.17$.  Telles qu'elles sont choisies, ces valeurs donneront
+\'evidemment un test positif (les fluctuations autour de ces valeurs
+sont petites puisqu'elles ont \'et\'e choisies pour cela). Toutefois il
+serait prudent de tester la nouvelle hypoth\`ese ind\'ependamment en
+lan\c{c}ant \`a nouveau le d\'e $6000$ fois (cela co\^ute \'evidemment
+du temps et de l'argent, mais comme toutes les bonnes choses, la
+certitude se paie).
+\medskip
+Si avec la nouvelle hypoth\`ese on veut effectuer le second test pour
+la somme des carr\'es (c'est-\`a-dire globalement et non pour une ou
+plusieurs faces particuli\`eres), il faudra tenir compte d'un fait 
+nouveau par rapport \`a la loi uniforme: les fluctuations $X_j$ n'ont pas
+toutes le m\^eme \'ecart-type; en effet si les probabilit\'es ne sont 
+pas toutes les six \'egales \`a ${1 \over 6}$, mais ont des valeurs
+diff\'erentes $p_j$, les \'ecarts-types correspondants vaudront
+$\sqrt{6000\, p_j}$ au lieu de $\sqrt{1000}$.  Dans ce cas il serait
+erron\'e de calculer la somme des carr\'es des fluctuations, de la 
+diviser par $1000$, puis de la situer par rapport \`a la r\'epartition
+$\chi_5^2$, car la densit\'e $\chi_5^2$ est celle de la somme de six
+fluctuations (de somme nulle) ayant {\it chacune} un \'ecart-type \'egal
+\`a 1.  La loi de la variable al\'eatoire ``somme des carr\'es'' n'a pas
+pour densit\'e $\chi_5^2$ et il convient de la remplacer par la variable
+al\'eatoire 
+$$S = \Bigl( {X_1 \over \sigma_1}\Bigr)^2 + \Bigl( {X_2
+\over \sigma_2}\Bigr)^2 + \Bigl( {X_3 \over \sigma_3}\Bigr)^2 +
+\Bigl( {X_4 \over \sigma_4}\Bigr)^2 + \Bigl( {X_5 \over
+\sigma_5}\Bigr)^2 + \Bigl( {X_6 \over \sigma_6}\Bigr)^2$$
+qui est la somme des carr\'es des variables al\'eatoires $X_j' = X_1 /
+\sigma_1$, qui, elles, ont bien un \'ecart-type \'egal \`a 1. On pourrait
+objecter ici que les variables al\'eatoires $X_j'$ ont certes chacune un
+\'ecart-type \'egal \`a 1, mais que leur somme n'est pas nulle, car c'est 
+la somme des $X_j$ qui est nulle. Or d'apr\`es le th\'eor\`eme \'enonc\'e
+\`a la section {\bf 2}, si
+six variables al\'eatoires ont chacune un\'ecart-type \'egal \`a 1 et une
+somme nulle, alors la somme de leurscarr\'es a une loi de densit\'e
+$\chi_5^2$. Cela r\'esultait de lapropri\'et\'e typique que la densit\'e gaussienne \`a six dimensions, 
+$\exp\{ -{1 \over 2}( x_1^2 + x_2^2 +
+x_3^2 + x_4^2 + x_5^2 + x_6^2 )\}$, est invariante par rotation et que sa trace sur un sous-espace de
+dimension cinq est une densit\'e
+gaussienne \`a cinq dimensions. Mais cela aurait \'et\'e vrai pour {\it
+n'importe quel} sous-espacede dimension cinq, \`a cause justement de
+l'invariance par rotation. Ce serait donc tout aussi vrai pour l'hyperplan
+d'\'equation$\sigma_1 X'_1 + \sigma_2 X'_2 + \sigma_3 X'_3 +
+\sigma_4 X'_4 + \sigma_5 X'_5 + \sigma_6 X'_6 = 0$ que pour
+l'hyperplan d'\'equation $X'_1 + X'_2 + X'_3 + X'_4 + X'_5 + X'_6 = 0$.
+Donc malgr\'e la modification, il demeure que la loi de la variable
+al\'eatoire $S = \sum {X'}_j^2$ a bien la densit\'e $\chi_5^2$. 
+\medskip
+Si on refait alors le test avec la nouvelle hypoth\`ese que les six faces
+ne sont pas \'equiprobables, mais ont les probabilit\'es $p_1 = {1
+\over 6}\, ,\; p_2 = 0.13\, ,\; p_3 = {1 \over 6}\, ,\; p_4 = {1 \over
+6}\, ,\; p_5 = 0.20\, ,\; p_6 = 0.17$, et qu'on trouve sur $N$
+lancers $N_1$ fois la face 1, $N_2$ fois la face 2, etc. on calculera 
+la grandeur 
+$$\eqalignno{
+S \;= \; {(N_1 - p_1 N)^2 \over p_1 N} \; &+ \; {(N_2 - p_2 N)^2
+\over p_2 N} \; + \; {(N_3 - p_3 N)^2 \over p_3 N} \; + \; 
+{(N_4 - p_4 N)^2 \over p_4
+N} \; + \; \cr
+&\hskip13mm + {(N_5 - p_5 N)^2 \over p_5 N} \; + \; {(N_6 - p_6 N)^2 
+\over p_6 N} &(XI.10)\cr } $$
+C'est donc sur ce mod\`ele que sont pratiqu\'es les tests d'hypoth\`ese 
+dits ``du $\chi^2$''. L'hypoth\`ese est une loi de probabilit\'e qu'on
+postule a priori soit parce qu'on y est conduit par des consid\'erations
+th\'eoriques (par exemple que les six faces d'un d\'e sont 
+\'equiprobables), soit par une observation pr\'ealable, soit par un
+cahier des charges (si on veut d\'etecter des d\'efauts sur une
+cha{\^\i}ne de fabrication) ou pour toute autre raison. Ce que nous venons
+de voir montre que l'hypoth\`ese faite ne comprend pas seulement la loi de
+probabilit\'e, mais \'egalement les \'ecarts-types (ou les variances)
+des fluctuations. En effet, le calcul de la grandeur $S$ dans $(XI.10)$
+fait appel non seulement \`a la donn\'ee des probabilit\'es $p_j$, 
+mais
+{\it aussi} \`a la donn\'ee des \'ecarts-types $\sigma_j$ des
+fluctuations. On n'est donc pas en mesure d'appliquer un test du
+$\chi^2$ si on n'a pas une id\'ee pr\'econ\c{c}ue sur l'\'ecart-type de
+chaque fluctuation. On peut tr\`es bien avoir postul\'e une loi de
+probabilit\'e $p_j$ correcte, et cependant avoir un test n\'egatif parce
+qu'on s'est tromp\'e sur les \'ecarts-types. Les \'ecarts-types retenus
+dans $(XI.10)$ sont ceux de la loi multin\^omiale (``sextin\^omiale''
+pour \^etre pr\'ecis), puisque c'est cette loi qui r\'egit les lancers de
+d\'es. Donc on ne conna{\^\i}t pas a priori les probabilit\'es $p_j$ car
+les d\'es ont un d\'efaut non contr\^ol\'e d'\'equilibrage, mais on est
+s\^ur d\`es le d\'epart que les r\'esultats d'un grand nombre de lancers
+sont soumis \`a la loi multin\^omiale, et les \'ecarts-types sont alors
+une fonction connue des $p_j$. Il suffit de faire une hypoth\`ese sur les
+$p_j$ et de calculer ensuite $S$ selon $(XI.10)$. 
+\medskip
+Toutes les explications pr\'ec\'edentes ont \'et\'e d\'evelopp\'ees \`a 
+propos d'une exp\'erience de d\'e qu'on lance six mille fois. Il est bien
+entendu que cette exp\'erience de pens\'ee n'\'etait ici qu'un support
+didactique, permettant de mieux comprendre la {\it signification} du test.
+\medskip
+En pratique le test du $\chi^2$ est souvent utilis\'e dans des situations 
+o\`u la nature gaussienne des fluctuations n'est pas assur\'ee \`a l'avance
+avec autant de rigueur. Toutefois l'exp\'erience de pens\'ee du d\'e reste
+un {\it mod\`ele} ou un {\it id\'eal}. Il repr\'esente l'{\it esprit des
+sciences exactes} dans des contextes exp\'erimentaux o\`u cet esprit
+n'est qu'un id\'eal inaccessible.
+\medskip
+Voici un type d'exp\'erience tr\`es simple sur des souris qui est typique
+des applications possibles de tests statistiques en biologie ou 
+psychologie exp\'erimentale. Quoique de nos jours la sophistication des
+m\'ethodes statistiques d\'epasse presque toujours celle de cet exemple
+scolaire,  il n'y a rien de nouveau quant au principe. Nous discuterons
+cette exp\'erience afin d'en montrer les limites.
+\smallskip 
+\midinsert
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig48.eps} }
+\vskip6.33mm
+\centerline{\eightpoint figure 48}
+\vskip7mm
+\endinsert
+\smallskip
+La figure 48 montre un dispositif destin\'e \`a \'etudier l'apprentissage 
+(ou toute autre facult\'e, sens de l'orientation inn\'e, etc.) chez les 
+souris. Sur une ar\`ene centrale d\'ebouchent $n$ couloirs (ici $n=8$)
+absolument identiques, num\'erot\'es de $1$ \`a $8$ sur la figure. On 
+veut tester si les souris sont capables de reconna{\^\i}tre le num\'ero en
+leur offrant par exemple, pendant une p\'eriode d'apprentissage, dix fois 
+de suite de la nourriture dans le couloir $N^\circ 7$. Apr\`es cette
+p\'eriode d'apprentissage, on veut savoir si les souris se dirigeront
+pr\'ef\'erentiellement du premier coup dans le couloir $N^\circ 7$, ou si 
+au contraire, comme la toute premi\`ere fois, elles choisiront au hasard
+(``au hasard'' voulant dire que les $n$ couloirs sont \'equiprobables).
+On peut aussi tester leur sens de l'orientation en pla\c{c}ant la nourriture
+dans un couloir dont le num\'ero change al\'eatoirement, mais qui reste
+toujours celui qui va vers le nord. Avec ce proc\'ed\'e, on peut 
+tester toutes sortes de facult\'es sensorielles.
+\medskip
+Apr\`es la p\'eriode d'apprentissage, on place successivement disons 
+deux cents souris dans l'ar\`ene et on r\'ep\`ete exactement les 
+conditions qui ont r\'egn\'e durant l'apprentissage; par exemple, si
+l'arriv\'ee de nourriture \'etait annonc\'ee par un son, on produira ce
+m\^eme son. Puis on note pour chaque souris le num\'ero du couloir qu'elle
+choisit {\it en premier}. On obtient alors une distribution statistique: 
+pour chacun des huit couloirs, le nombre de souris l'ayant choisi. 
+\medskip
+Si toutes les deux cents souris (ou presque, par exemple cent 
+quatre-vingt-dix-sept) choisissent le bon tunnel, point n'est besoin de
+test et la conclusion est claire. Mais en g\'en\'eral, dans ce genre
+d'exp\'eriences, les r\'esultats sont loin d'\^etre aussi tranch\'es. Il 
+faudra alors savoir si une l\'eg\`ere pr\'ef\'erence pour le bon couloir 
+peut \^etre l'effet du hasard (donc une fluctuation normale), ou bien si,
+sous l'hypoth\`ese de l'\'equiprobabilit\'e des huit choix, il est peu
+vraisemblable que la pr\'ef\'erence soit due au hasard.
+\medskip
+Il y a une analogie avec le probl\`eme longuement discut\'e ci-dessus du 
+d\'e. Toutefois des diff\'erences sautent aux yeux: avec le d\'e on savait
+que les fluctuations seraient gaussiennes et on en connaissait les
+\'ecarts-types, car on avait la loi bin\^omiale qui r\'esultait des
+sym\'etries du d\'e.  On ne peut avoir de telles certitudes avec des
+organismes vivants. Il \'etait raisonnable d'admettre que les lancers
+successifs du d\'e \'etaient stochastiquement ind\'ependants: le d\'e 
+n'est pas influenc\'e par ce qui s'est pass\'e avant. Mais qui nous prouve
+que le couloir choisi par la premi\`ere souris ne garde pas une trace (une
+odeur par exemple) qui poussera les souris suivantes \`a emprunter le
+m\^eme couloir? Si on {\it veut} tenir compte d'un tel effet, on {\it peut}
+am\'eliorer le protocole de l'exp\'erience pour \'eliminer ce facteur: par
+exemple permuter al\'eatoirement les num\'eros des couloirs, de sorte
+que la nourriture ne soit pas toujours dans le m\^eme couloir, mais
+toujours au $N^\circ 7$. Cependant on n'est jamais \`a l'abri de facteurs
+insoup\c{c}onn\'es; on aura pens\'e \`a l'odorat, mais on ne sait pas tout
+sur la vie des souris.
+\medskip
+Une autre diff\'erence est aussi le nombre: en r\'ep\'etant six mille fois,
+les r\'esultats sont bien plus concluants qu'avec deux cents. Mais on peut
+aussi y rem\'edier en prenant six mille souris. C'est le sens des
+exp\'eriences m\'edico-pharmacologiques \`a tr\`es grande \'echelle, 
+comme celle qui est cit\'ee du journal {\sl The Lancet} au chapitre {\bf X}.
+\medskip
+Une diff\'erence plus subtile est la suivante: supposons que l'on ait
+utilis\'e six mille souris, ou m\^eme un million si vous voulez; le test 
+du $\chi^2$ suppose que, comme pour le d\'e, les \'ecarts-types des 
+huit fluctuations soient ceux de la loi multin\^omiale.  Cela est
+n\'ecessairement le cas si l'exp\'erience est {\it parfaitement 
+reproductible}: quelles que soient les probabilit\'es a priori $p_j$ pour 
+que chaque souris prenne le couloir $N^\circ j$, la r\'ep\'etition de 
+l'exp\'erience conduira forc\'ement \`a la loi multin\^omiale et 
+l'expression $XI.10$ (pour huit possibilit\'es au lieu de six) suivra la 
+loi $\chi^2$ \`a sept degr\'es de libert\'e. Mais l'exp\'erience est-elle
+exactement reproductible? On retrouve ici la discussion du chapitre {\bf
+X}. Des \^etres vivants aussi \'evolu\'es que les souris ne pourraient-ils 
+pas \^etre influenc\'es par des d\'etails perceptifs insignifiants pour
+l'exp\'erimentateur, qui conduiraient \`a augmenter l'\'ecart-type du
+quatri\`eme couloir et \`a reserrer celui du sixi\`eme, par exemple?
+Imaginons que pendant l'apprentissage le couloir $N^\circ 7$ o\`u
+\'etait dispos\'ee la nour\-ri\-ture \'etait trop souvent au nord,
+l'exp\'erimentateur {\it n'ayant pas song\'e} \`a ce d\'etail.
+L'exp\'erimentateur croit que seul le num\'ero distingue les couloirs. 
+Mais essayez de vous mettre \`a la place d'une de ces souris (elles sont 
+des mammif\`eres comme vous et moi, et ont une certaine forme de
+pens\'ee): elles ont faim, et pour manger doivent deviner le bon couloir.
+Pourquoi penseraient-elles d'abord au num\'ero, qui pour elles est bien 
+plus abstrait et \'eloign\'e de leur mode de perception que par exemple
+l'orientation (peu importe ici de savoir comment elles arrivent \`a
+s'orienter). On observerait alors des effets diff\'erents selon que les
+deux crit\`eres, le num\'ero {\it et} l'orientation,  se conjuguent ou
+s'opposent.  Si les deux crit\`eres se conjuguent, les deux cat\'egories 
+de souris, d'une part les intellectuelles qui pensent d'abord au num\'ero,
+et d'autre part les instinctives qui pensent d'abord \`a l'orientation,
+vont agir de m\^eme et ``pr\'ef\'erer'' le couloir $N^\circ 7$. Si au
+contraire les deux crit\`eres s'opposent, les souris ayant d'abord 
+pens\'e \`a l'orientation choisiront un autre couloir que le $N^\circ 7$
+et le r\'esultat statistique sera une augmentation de l'\'ecart-type. 
+\medskip 
+Si l'exp\'erimentateur pense \`a randomiser soigneusement
+l'orientation,  il \'evitera l'artefact correspondant. Mais nos
+connaissances sur les souris sont beaucoup moins compl\`etes que nos
+connaissances sur les d\'es. Combien restera-t-il de facteurs ignor\'es?
+Nul ne le sait. Donc l'hypoth\`ese que les huit \'ecarts-types sont ceux
+de la loi multin\^omiale est peut-\^etre syst\'ematiquement fausse. 
+\medskip
+Les mammif\`eres sont plus proches de l'homme que du d\'e. On peut 
+mieux comprendre les souris en mettant un enfant humain \`a leur place
+qu'en mettant un d\'e \`a leur place.  C'est pourquoi on pourra m\'editer
+l'exemple suivant \ftn 1{Exemple emprunt\'e \`a Stella Baruk, mais je
+ne sais plus dans quel livre.}. Des \'el\`eves du primaire sont 
+confront\'es au probl\`eme math\'ematique: ``calculer $(10 \times 7)$, 
+puis $(3 \times 7)$; en d\'eduire $13 \times 7$.'' Un des \'el\`eves
+r\'epond respectivement ``$70$, $21$, et $0$''. Le ma{\^\i}tre {\it n'avait
+pas pens\'e} que l'expression ``en d\'eduire'' avait deux sens diff\'erents
+en fran\c{c}ais et conclut que l'\'el\`eve n'a pas compris. Si l'\'enonc\'e
+pr\'ec\'edent figure dans un questionnaire dont les r\'esultats seront
+trait\'es statistiquement, le mot ambigu aura pour effet d'augmenter
+l'\'ecart-type des notes (et de baisser leur moyenne). On peut r\'ealiser 
+des exp\'eriences consistant \`a donner des \'enonc\'es diff\'erents du
+m\^eme probl\`eme math\'ematique; s'ils sont donn\'es successivement 
+aux m\^emes \'el\`eves,  ceux-ci ayant en m\'emoire les pr\'ec\'edents
+\'enonc\'es ne r\'epondront pas ind\'ependamment; si on change la
+population, on introduit une nouvelle incertitude (les nouveaux \'el\`eves,
+venant peut-\^etre d'un milieu social diff\'erent, n'ayant pas forc\'ement 
+la m\^eme perception de la langue que les pr\'ec\'edents). 
+\medskip
+Lorsqu'on publie des r\'esultats exp\'erimentaux sur les animaux de
+laboratoire, les revues sp\'ecialis\'ees exigent des tests quantitatifs. 
+La raison en est que m\^eme avec les limites indiqu\'ees ci-dessus, la
+pr\'esence de statistiques quantifi\'ees dans une publication 
+scientifique permet une comparaison plus objective: m\^eme si le test 
+du $\chi^2$ est fallacieux pour une des raisons indiqu\'ees, il permet 
+dans une certaine mesure de comparer des r\'esultats obtenus par une
+\'equipe japonaise \`a ceux obtenus par une \'equipe danoise. 
+\medskip
+Une telle comparaison des r\'esultats est relativement sens\'ee, plus
+parce que les erreurs commises dans la manipulation du test sont 
+partout les m\^emes (par exemple, que les ``facteurs ignor\'es'' sont les
+m\^emes pour l'\'equipe japonaise que pour l'\'equipe danoise), que 
+parce que le test est bien appliqu\'e dans son principe.
+
+\bigskip
+
+{\bf XI.4. Le test de Student.}
+\medskip
+Le test du $\chi^2$, comme nous avons vu, convient pour tester
+l'hypoth\`ese que plusieurs possibilit\'es sont \'equiprobables, ou plus
+g\'en\'eralement que ces possibilit\'es ob\'eissent \`a une loi de 
+probabilit\'e suppos\'ee (et qu'il s'agit justement de tester), mais
+\`a condition de conna{\^\i}tre les \'ecarts-types.
+\medskip
+Le test dit {\it de Student} (invent\'e en fait par le
+statisticien anglais G{\eightrm OSSET} $\sim$ {\oldstyle 1900}) que
+nous allons \'etudier maintenant, est g\'en\'eralement utilis\'e pour 
+tester des moyennes empiriques, sans conna{\^\i}tre l'\'ecart-type. 
+\medskip
+Afin de bien comprendre l'{\it id\'ee} du test de Student,
+imaginons une exp\'erience reproductible mod\'elis\'ee par une
+variable al\'eatoire $X$ dont la loi est approximativement gaussienne.
+Pour fixer les id\'ees on peut imaginer que $X$ repr\'esente les
+fluctuations de la mesure d'une grandeur. Si on mesure un tr\`es grand
+nombre de fois une grandeur (suppos\'ee \'evidemment reproductible),
+on retient g\'en\'eralement la moyenne empirique des r\'esultats comme 
+\'etant la vraie valeur; mais supposons que, par exemple \`a la suite 
+d'une pr\'ediction th\'eorique, on ait d\'ej\`a une bonne raison de penser
+que la valeur de la grandeur soit $m$. La moyenne empirique $M$ obtenue
+par les mesures ne sera pas forc\'ement \'egale \`a $m$, mais comment 
+savoir si la diff\'erence est significative et n'est pas une fluctuation 
+due au hasard? Dans le test du $\chi^2$ on voulait tester si (un d\'e
+\'etant lanc\'e six mille fois, ou des souris \'etant l\^ach\'ees huit
+cents fois) la diff\'erence entre les probabilit\'es mesur\'ees et les
+probabilit\'es suppos\'ees est due au hasard ou non. Maintenant nous
+voudrions tester si la diff\'erence entre la moyenne mesur\'ee et la
+moyenne suppos\'ee est due au hasard ou non. On ne peut pas utiliser le
+test du $\chi^2$ pour cela. Ou plut\^ot, on pourrait l'utiliser si on
+connaissait l'\'ecart-type des erreurs de mesure (c'est-\`a-dire
+l'\'ecart-type de la variable al\'eatoire $X$): il suffirait alors de
+calculer la somme normalis\'ee des carr\'es des \'ecarts par rapport 
+\`a $m$. En effet, une valeur fausse de $m$ rendrait cette somme trop
+grande et le test du $\chi^2$ serait n\'egatif. Mais pour calculer la
+somme {\it normalis\'ee} des carr\'es des \'ecarts, il faut diviser par
+l'\'ecart-type; si celui-ci n'est pas connu, on ne peut pas proc\'eder
+ainsi. 
+\medskip
+Dans le cas d'une exp\'erience reproductible avec un nombre plut\^ot 
+petit de possibilit\'es (six pour les d\'es, huit pour les souris, etc.) on
+pouvait d\'eduire l'\'ecart-type de la loi multin\^omiale (cf. $IX.10$). 
+Mais ici nous avons des erreurs de mesure dont nous ne connaissons pas
+l'origine; il est raisonnable de les supposer gaussiennes, mais rien de
+raisonnable ne permet de deviner leur \'ecart-type. Il faut donc un test
+ind\'ependant de cet \'ecart-type. C'est le test de Student.
+\medskip
+Pour l'analyse math\'ematique du probl\`eme, appelons $m$ la moyenne 
+de $X$ et $\sigma$ son \'ecart-type. Cela signifie qu'en r\'ep\'etant 
+l'exp\'erience on obtient des r\'esultats $x_1,\; x_2, \ldots x_n$ qui 
+ont chaque fois une probabilit\'e a priori ${\cal P}\, (X=x_j)$ de se
+produire, ou, en termes de densit\'e, que la probabilit\'e pour que 
+$x_j$ soit compris entre $x_j-\varepsilon$ et $x_j+\varepsilon$ est
+\'egale \`a
+$${\cal P}\, (x_j-\varepsilon < X < x_j+\varepsilon ) \;\; \simeq
+\;\; {1\over \sdown{13} \sigma\sqrt{2\pi }}\int_{x_j-\varepsilon}^{x_j+\varepsilon}
+\e^{-{(x-m)^2\strup{2}\over\sdown{6.6}2\sigma^2 }}\; dx$$
+La r\'ep\'etition \`a l'identique de l'exp\'erience implique que les 
+r\'esultats successifs $x_j$ sont stochastiquement ind\'ependants et 
+tous distribu\'es selon la loi de $X$; autrement dit, les variables
+al\'eatoires $(x_j - m)/ \sigma$ sont ind\'ependantes et de densit\'e
+$\e^{-x^2/2}$. Par cons\'equent la somme de leurs carr\'es, soit
+$$S_{0} = \sum_{j=1}^{j=n} {(x_j - m)^2\over\sigma^2}$$
+ob\'eit \`a la loi du $\chi^2$ \`a $n$ degr\'es de libert\'es.
+Mais ici nous ne connaissons pas forc\'ement $\sigma$,  qui est
+l'\'ecart-type {\it th\'eorique}. 
+\medskip
+Remarquons \`a ce propos que, si pour le test du $\chi^2$ la 
+connaissance a priori de l'\'ecart-type est n\'ecessaire, celle de la
+moyenne th\'eorique en revanche ne l'est pas. Lorsque la moyenne 
+th\'eorique $m$ est inconnue, on peut la remplacer par la moyenne {\it
+empirique} $M = (x_1 + x_2 + \cdots +x_n)/n$. Au lieu de calculer la
+somme $S_0$, on calculera 
+$$S_{1} = \sum_{j=1}^{j=n} {(x_j - M)^2\over\sigma^2}$$ 
+La diff\'erence essentielle avec $S_0$ est que les variables al\'eatoires
+$x_j - M$ ne sont plus stochastiquement ind\'ependantes,  puisque $M$
+d\'epend de chacune d'elles. Toutefois il est clair que la somme des 
+$x_j - M$ est nulle; on est donc dans la situation du th\'eor\`eme de la
+section pr\'ec\'edente {\bf IX.2}: les variables al\'eatoires $x_j$ sont
+ind\'ependantes, mais la somme des $x_j - M$ est nulle. D'apr\`es le
+th\'eor\`eme, la somme $S_1$ ob\'eit \`a la loi $\chi^2$, mais avec
+$n-1$ degr\'es de libert\'e. La contrainte que la somme est nulle fait
+baisser d'une unit\'e le nombre de degr\'es de libert\'e. Que cet
+abaissement ne modifie pas le caract\`ere gaussien de la loi est une
+propri\'et\'e sp\'eciale de la loi gaussienne,  voir {\bf XI.2}. Toujours
+est-il que la somme {\it normalis\'ee} $S_0$ ou $S_1$ des carr\'es des
+\'ecarts par rapport \`a $m$ ou $M$ ne peut \^etre calcul\'ee \`a partir
+des mesures $x_1,\; x_2, \ldots x_n$ que si on conna{\^\i}t a priori
+l'\'ecart-type $\sigma$. 
+\vskip6pt plus5pt minus4pt 
+Pour faire dispara{\^\i}tre le param\`etre $\sigma$, l'id\'ee du
+test de Student consiste alors \`a consid\'erer la variance empirique
+\ftn 1{on notera que dans l'expression de $V_{\rm emp}$ la somme des 
+carr\'es des \'ecarts est divis\'ee par $n-1$ et non par $n$. La raison de
+ce choix est expliqu\'ee au chapitre suivant ({\bf XII.2}).} 
+$$V_{\rm emp} \;\; = \;\; {1\over n-1}\sum_{j=1}^{j=n} (x_j - M)^2$$
+et d'\'etudier la loi de probabilit\'e (ou plut\^ot la densit\'e) du
+quotient
+$$S \;\; = \;\; {1\over\sdown{15}\sqrt{V_{\rm emp}}}
+\sum_{j=1}^{j=n} (x_j - m)$$ 
+Pour calculer la loi de ce quotient nous commen\c{c}ons par chercher
+celle de la grandeur $V_{\rm emp} / \sigma^2$. Chacune des valeurs 
+$x_j$ peut fluctuer autour de sa moyenne $m$ selon une loi gaussienne
+d'\'ecart-type inconnu $\sigma$. Donc la grandeur $V_{\rm emp} /
+\sigma^2$, qui est la somme {\it normalis\'ee} des carr\'es des 
+\'ecarts par rapport \`a $M$, ob\'eit \`a la loi du $\chi^2$ \`a $n-1$
+degr\'es de libert\'e, qui ne fait pas intervenir $\sigma$. D'autre part 
+la grandeur ${1\over\textdown{\sigma }}\sum_j (x_j-m)$, qui est 
+la somme normalis\'ee des \'ecarts par rapport \`a $m$, ob\'eit \`a la 
+loi gaussienne centr\'ee et normalis\'ee \`a $n$ degr\'es de libert\'e
+${1\over 2\pi}\exp\{ -(x_1^2 + x_2^2 + \cdots + x_n^2) /2\}$ 
+qui ne fait pas non plus intervenir $\sigma$. Or $S$ est le quotient des
+deux, dans lequel les $\sigma$ inconnus se simplifient: 
+$$\eqalign{
+S\;\;  &= \;\; {1\over\sdown{15}\sqrt{V_{\rm emp}}}
+\sum_{j=1}^{j=n} (x_j - m) \cr
+&= \;\; {1\over\sdown{15}\sqrt{{V_{\rm emp}/\sigma^2}} } 
+\;\; \cdot \;\; {{\displaystyle \sum_{j=1}^{j=n} (x_j - m)} \strup{18}
+\over \sdown{15}\sigma }\cr }$$
+On peut donc conclure que la loi de probabilit\'e de $S$ est celle d'un
+quotient de la forme $Y/\sqrt{Z}$ o\`u $Y$ est une variable al\'eatoire 
+qui suit la loi gaussienne centr\'ee et normalis\'ee ${1\over 2\pi}\,
+\e^{-{x^2/2}}$ et $Z$ une autre variable al\'eatoire, ind\'ependante
+de $Y$, qui suit la loi $\chi^2$ \`a $n-1$ degr\'es de libert\'es. Aucune 
+de ces deux lois ne fait intervenir $\sigma$, donc la loi de $S$ est
+indiff\'erente \`a la quantit\'e inconnue $\sigma$. C'est l\`a le principe
+du test de Student. 
+\medskip
+Il ne reste plus qu'\`a calculer la densit\'e de Student elle-m\^eme.
+Nous proc\'edons comme au chapitre {\bf IX} pour calculer la densit\'e 
+de Cauchy ou au paragraphe {\bf XI.1} pour calculer celle du $\chi^2$. 
+La densit\'e sera en effet donn\'ee par les probabilit\'es ${\cal P}\, (a 
+< S < b)$ lorsqu'on les aura exprim\'ees sous la forme d'une int\'egrale
+entre les bornes $a$ et $b$. Puisque $S = Y/\sqrt{\hbox{\eightpoint
+$Z$}}$ l'\'ev\'enement $\{ a < S < b \}$ est identique 
+\`a l'\'ev\'enement $\{ a\,\sqrt{\hbox{\eightpoint $Z$}} < 
+Y < b\,\sqrt{\hbox{\eightpoint $Z$}} \}$, et on peut \'ecrire 
+$$\eqalign{
+{\cal P}\, (a < S < b)\quad &\simeq\quad \int\quad\int_{\hbox{
+\lower8.5pt \hbox{ $\scriptstyle \kern-47pt a\sqrt{z} < y < b\sqrt{z}$}}}
+{1\over\sdown{13} \sqrt{2\pi }}\;\e^{-{y^2\strup{2}\over 2}} 
+\chi_{n-1}^2 (z)\; dy\, dz\cr
+&=\quad {1\over\sdown{13} \sqrt{2\pi }}\; {1\over\sdown{13} 
+2^{{r\over 2}}\Gamma \big( {r\strup{1.8}\over 2}\big) }\quad\int\quad
+\int_{\hbox{ \lower8.5pt \hbox{ $\scriptstyle \kern-50pt a\sqrt{z} < y <
+b\sqrt{z}$}}} \e^{-{y^2\strup{2} \over 2}} z^{{r\over 2} - 1}
+\e^{-{z\over 2}} \; dy\, dz\cr }$$ 
+Nous avons simplement report\'e ici l'expression $XI.5$ de la
+densit\'e $\chi_r^2$ \`a $r$ degr\'es de libert\'e. Dans le pr\'esent 
+contexte, $r = n-1$, mais nous oublions l'entier $n$ pour la dur\'ee du
+calcul. 
+\medskip 
+\midinsert
+\vbox to \blocksize{\eightpoint
+\epsfxsize = \hsize
+\line{\epsfbox{../imgEPS/ch11eps/fig49.eps} }
+\vfill
+\centerline{\vbox{\hsize=11cm figure 49 : \hskip10pt
+Les graphiques ci-dessus sont ceux des densit\'es de Student \`a $r$
+degr\'es de libert\'e pour $r = 1,\, 2,\, 3,\, 4,\, 5,\, 12,\, 20,\, 30,\, 
+60,\, 100$. Les derniers ne se distinguent pratiquement plus de leur
+limite gaussienne.} } }
+\endinsert 
+Effectuons maintenant le changement de variable $s=y/\sqrt{z}$, de
+mani\`ere \`a passer des variables $y,z$ aux variables $s,z$. Le 
+jacobien de la transformation est $\sqrt{z}$, de sorte que notre
+int\'egrale devient 
+$$\eqalign{
+{\cal P}\, (a < S < b)\;\;  &\simeq \;\; {1\over\sdown{13}\sqrt{2\pi }}\; 
+{1\over\sdown{13} 2^{{r\over 2}} \Gamma \big( {r\strup{1.5}\over 2}
+\big) }\; \int\int_{\hbox{\lower6pt \hbox{ $\scriptstyle \kern-23pt a < 
+s < b$}}}\;\e^{-{z s^2\strup{1.7} \over 2}} z^{r\over 2}\,  
+\e^{-{z\over 2}} \; ds\, dz \;\; \cr
+ &= \;\; {1\over\sdown{13} \sqrt{2\pi }}\; {1\over\sdown{13}2^{{r\over 2}} 
+\Gamma\big( {r\strup{1.5}\over 2}\big)}\;\int_a^b\left\{\int_0^\infty 
+\e^{-{s^2 + 1 \strup{2} \over 2}z}\,  z^{r-1\over 2}\, dz
+\right\} ds \cr }$$ 
+Ceci montre d\'ej\`a que la densit\'e cherch\'ee sera
+l'expression entre accolades (multipli\'ee par le coefficient), 
+qui est une int\'egrale eul\'erienne connue. En effet, puisque
+$$\Gamma (x) \;\; = \;\; \int_0^\infty \e^{-z} z^{x-1} dz$$ 
+on voit que notre densit\'e sera
+$$f(s)\;\; = \;\; {1\over\sdown{13}\sqrt{2\pi }}\; 
+{1\over\sdown{13}2^{{r\over
+2}} \Gamma \big( {r\strup{1.5}\over 2}\big)}\;\int_0^\infty \e^{-{s^2 +
+1\over 2}z^2} z^{r-1\over 2} dz \;\; = \;\; {1\over\sdown{13}\sqrt{2\pi }}\; 
+{1\over \sdown{13} 2^{{r\over 2}}\Gamma \big( {r\strup{1.5}\over 2}\big) }\;
+{\Gamma \big(
+{r+1\strup{2}\over 2}\big)\strup{5.3}\over \sdown{15.5}\bigl( {s^2 + 1
+\over 2}\bigr)^{{r+1\strup{2}\over 2}} }$$
+En regroupant toutes les puissances de $2$ \'eparpill\'ees dans cette
+derni\`ere expression, on peut simplifier: $\sqrt{2} \cdot 2^{{r\over 2}}
+\cdot 2^{-{r+1\strup{2}\over 2}} = 1$; d'o\`u
+$$f(s) \;\; = \;\; {1\over\sdown{13}\sqrt{\pi }}\; {1\over\sdown{13}\Gamma
+\big( {r\strup{1.5}\over 2}\big) }\; {\Gamma\big( {r+1\strup{2}\over
+2 }\big)\strup{5.3}\over\sdown{14}( s^2 + 1 )^{{r+1\strup{2}\over 2}} }
+\eqno (XI.11)$$
+Rappelons que dans ces calculs $r = n-1$. La variable $Z$ est ici la
+somme des carr\'es des \'ecarts par rapport \`a la moyenne th\'eorique
+$m$ suppos\'ee connue. Mais la variance empirique est \'egale \`a
+$Z/\hbox{\eightpoint $(n\! -\! 1)$}$ (cf. chapitre suivant 
+$XII.\, 6$).  Pour {\it pratiquer} le test de Student on peut
+indiff\'eremment consid\'erer $Y/\sqrt{\hbox{\eightpoint
+$Z$}}$ ou bien $Y/\sqrt{\hbox{\eightpoint $Z/(n\! -\! 1)$}} =
+\hbox{\eightpoint $\sqrt{n\! -\! 1}$} \cdot
+Y/\sqrt{\hbox{\eightpoint $Z$}}$.  Toutefois la convention
+commun\'ement admise est de consid\'erer $Y/\sqrt{
+\hbox{\eightpoint $Z/(n\! -\! 1)$}}$. La loi de Student
+(ou plut\^ot la {\it densit\'e} de Student) est celle de $Y/\sqrt{ 
+\hbox{\eightpoint $Z/(n\! -\! 1)$}}$ et non celle de $Y/\sqrt{
+\hbox{\eightpoint $Z$}}$. Ce n'est qu'une convention, 
+mais \'etant donn\'e que tous les logiciels de statistique la
+respectent, on doit la respecter aussi si on veut employer ces derniers
+tels qu'ils sont livr\'es au client.  La relation entre les deux densit\'es
+est simple:  c'est la relation entre les densit\'es de deux variables
+al\'eatoires proportionnelles:  si $f(t)$ est la densit\'e d'une variable
+al\'eatoire $X$, et $g(t)$ celle de $\alpha X$, on a bien s\^ur
+$${\cal P}\, (a < X < b) \;\; \simeq \;\; \int_a^b f(t)\, dt$$
+d'o\`u 
+$$\eqalignno{ 
+\int_a^b g(t)\, dt \quad &\simeq\quad {\cal P}\, (a < \alpha X < b)\quad =
+\quad {\cal P}\, \bigl( {\up{a}\over\down\alpha } < X < {\up{b}\over
+\down\alpha }\bigr) \cr
+&\simeq\quad\int_{a/\alpha }^{\, b/\alpha } f(t)\, dt \quad
+= \quad\int_{a}^{b} f\big( {\up{s}\over\down\alpha }\big)\,
+{\up{1}\over\down\alpha } ds \cr }$$
+o\`u la derni\`ere \'egalit\'e s'obtient par le changement de variable
+$s = \alpha t$. Pour faire appara{\^\i}tre la densit\'e d'une variable
+al\'eatoire $W$, il suffit d'exprimer la probabilit\'e ${\cal P}\, (a < W < 
+b)$ sous la forme d'une int\'egrale dont les bornes sont $a$ et $b$,
+ce qui est le cas ci-dessus. Par cons\'equent 
+$$g(t) \;\; = \;\; {\up{1}\over\down\alpha }\, f\bigl(
+{\up{t}\over\down\alpha }
+\bigr) \eqno (XI.12)$$ 
+formule qui permet de calculer tr\`es facilement la densit\'e de $\alpha
+X$ \`a partir de celle de $X$. Or la densit\'e de Student est celle de
+$\hbox{\eightpoint $\sqrt{n\! -\! 1}$}\cdot Y/\sqrt{\hbox{
+\eightpoint $ Z$}}$, il suffit donc de prendre $\alpha =
+\hbox{\eightpoint $\sqrt{n\! - \! 1}$} = \sqrt{r}$ dans $XI.12$: 
+la
+densit\'e $f(t)$ de $Y/\sqrt{\hbox{\eightpoint $ Z$}}$ 
+\'etant donn\'ee par $XI.11$, on obtient pour la densit\'e de Student 
+$$g(t) \;\; = \;\; {1\over\sdown{12}\sqrt{\pi r}}\; {\Gamma \big(
+{r+1\strup{1.5} \over 2 }\big)\strup{6.3}\over\sdown{12}\Gamma\big(
+{r\strup{1.5} \over 2} \big) }\; {1\over\sdown{14}\big( {t^2\over
+\textdown{r}}
++ 1 \big)^{{r+1 \strup{1.5} \over 2}} } \eqno (XI.13)$$ 
+On l'appelle densit\'e de Student {\it \`a $r$ degr\'es de libert\'e}. 
+Mais $r$ est \'egal \`a $n-1$, car, tout comme pour la densit\'e $\chi^2$, 
+les $n$ variables al\'eatoires gaussiennes dont la somme des carr\'es est
+$Z$ (les $n$ fluctuations autour de $m$) ont une somme nulle, ce qui
+diminue d'une unit\'e leurs degr\'es de libert\'e. 
+\medskip
+Lorsque $r$ tend vers l'infini, cette densit\'e de Student tend vers une
+limite. En effet, on sait que le quotient $\Gamma\big(x+{1\over 2}\big)
+\big/\Gamma (x)$ est \'equivalent \`a $x^{1\over 2}$ lorsque $x$ tend 
+vers l'infini (ici $x = r/2$) et que $(1 + t^2 / r)^{-{r+1 \over 2}}$ tend
+vers $\e^{-{t^2\over 2}}$, donc la densit\'e limite sera
+$(1/\hbox{\eightpoint $\sqrt{2\pi}$}\, )\, \e^{-{t^2\over 2}}$, 
+c'est-\`a-dire la densit\'e gaussienne normalis\'ee. En pratique, pour les
+exigences de pr\'ecision courantes,  cette limite est d\'ej\`a atteinte
+pour $r=20$ (voir figure 49). 
+\medskip
+{\parfillskip=7cm
+Une fois connue la densit\'e de $S = Y/\sqrt{Z}$ ou de $S' = Y/\sqrt{
+\hbox{\eightpoint $Z/(n\! - \! 1)$}}$ on pourra effectuer un
+test d'hypoth\`ese: on calcule \`a partir de la valeur a priori $m$ et 
+des donn\'ees statistiques la valeur {\it observ\'ee} de la va\-ria\-ble
+al\'eatoire $S$ ci-dessus. Si elle d\'epasse un seuil d\'etermin\'e, on
+conclura que, {\it ind\'ependamment de la valeur inconnue de} $\sigma$,
+les \'ecarts par rapport \`a la moyenne sont trop forts pour que
+l'hypoth\`ese d'\'equiprobabilit\'e puisse \^etre retenue comme 
+plausible. Pour la d\'etermination de ce seuil on proc\'edera comme 
+pour le test du $\chi^2$: il sera tel que la probabilit\'e de le d\'epasser
+soit inf\'erieure \`a une norme de certitude conventionnelle, par 
+exemple $0.05$ ou $0.01$. \par }
+\medskip
+Ainsi le test du $\chi^2$ doit \^etre utilis\'e lorsqu'on conna{\^\i}t
+a
+priori les \'ecarts-types: on forme alors la somme normalis\'ee des carr\'es des \'ecarts par rapport \`a la moyenne empirique. En revanche 
+le test de Student sera utilis\'e lorsqu'on conna{\^\i}t la moyenne
+th\'eorique $m$ a priori, et qu'on sait \'egalement a priori (par des
+consid\'erations de sym\'etrie et d'invariance) que les \'ecarts par 
+rapport \`a $m$ ont tous le m\^eme \'ecart-type $\sigma$, mais que ce
+dernier est inconnu. 
+\medskip
+Il est essentiel, lorsqu'on recourt \`a ces tests, de les employer {\it 
+\`a bon escient}. Des tests pharmaceutiques effectu\'es en clinique (par
+exemple l'observation sur un groupe de cinquante personnes recevant un
+m\'edicament hypotenseur, comme nous en avons discut\'e au chapitre
+{\bf X}) ne s'apparentent pas \`a l'exp\'erience avec les d\'es, m\^eme si
+on n'en conteste pas la reproductibilit\'e. En effet les fluctuations de la
+tension dans un groupe (ou au cours du temps chez une m\^eme personne)
+n'ont aucune raison d'ob\'eir \`a la loi multin\^omiale; d'ailleurs, la
+tension ne prend pas que six ou huit valeurs, c'est un param\`etre
+pratiquement continu. Il est raisonnable de consid\'erer les fluctuations
+de tension comme gaussiennes, mais on en ignore l'\'ecart-type.
+\medskip 
+On a \'etabli empiriquement avec une pr\'ecision assez pouss\'ee que
+la r\'epartition des $Q.I.$ (quotient intellectuel) dans une tr\`es grande 
+population est gaussienne, car on a pu disposer de donn\'ees assez 
+nombreuses. Le $Q.I.$ semble en effet suffisamment passionner les 
+d\'ecideurs pour que des exp\'eriences \`a grande \'echelle puissent 
+trouver un financement. Mais l'\'ecart-type varie beaucoup selon
+les populations; il n'y a pas pour le $Q.I.$ un \'ecart-type universel.
+\medskip
+Les m\'ecanismes mol\'eculaires de l'h\'er\'edit\'e ob\'eissent 
+\`a une causalit\'e spatio-temporelle simple qui permettent
+de cerner ``le niveau o\`u intervient le hasard pur''. Si par d\'eduction 
+a priori on \'etablit une loi multin\^omiale pour la combinaison de
+certains g\`enes, et qu'on souhaite tester sur un \'echantillon une
+hypoth\`ese sur les effets observables de cette combinaison, le test 
+du $\chi^2$ prend tout son sens, comme dans l'exemple du d\'e. En
+revanche, le m\'etabolisme d'un organisme vivant complexe, ou la
+psychologie animale, ne sont pas r\'eductibles \`a une causalit\'e
+spatio-temporelle simple (plus exactement: m\^eme si cette r\'eduction
+est possible, nous ne savons pas l'effectuer); les tests ne reposent 
+alors que sur des extrapolations plausibles. Dans la plupart des cas qui
+concernent le vivant, l'hypoth\`ese des fluctuations gaussiennes est
+simplement plausible. 
+\medskip
+Le choix du test pertinent ne doit donc jamais \^etre laiss\'e au hasard.
+Lorsque ce choix est d\^ument motiv\'e, il exprime toujours une 
+hypoth\`ese sur le r\^ole jou\'e par le hasard dans le ph\'enom\`ene
+test\'e. Ces hypoth\`eses devraient ---~selon le v\'eritable esprit
+scientifique~--- \^etre formul\'ees explicitement et discut\'ees, mais
+c'est rarement le cas dans la pratique. 
+\medskip
+Bien entendu il existe d'innombrables autres tests statistiques que les
+deux que nous venons d'\'etudier, mais ce n'est pas l'ambition de cet
+ouvrage de pr\'esenter un expos\'e exhaustif de tous les tests. Et bien
+entendu, on peut rencontrer des situations o\`u {\it aucun} des
+deux tests \'etudi\'es ne convient; c'est pourquoi les statisticiens en 
+ont cr\'e\'e d'autres. Mais tout test, aussi sophistiqu\'e qu'il soit, 
+repose sur des hypoth\`eses implicites.
+
+
+
+
+
+
+\bye

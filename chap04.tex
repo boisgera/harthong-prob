@@ -1,0 +1,1739 @@
+\input/home/harthong/tex/formats/twelvea4.tex
+\input/home/harthong/tex/formats/epsf.tex
+\vsize=218mm
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl L'ind\'ependance stochastique}
+
+\pageno=82
+
+\def\punkt{\vrule height0.4pt depth0pt width0.4pt}
+\def\struta{\vrule depth2.2pt width0pt}
+\def\ata{\hskip-2.5pt}
+\def\aub{\hskip1pt}
+
+\null\vskip10mm plus4mm minus3mm
+
+\centerline{\bf IV.  L'IND\'EPENDANCE STOCHASTIQUE.}
+\vskip10mm
+
+{\bf IV\ata .\aub 1. La signification de l'ind\'ependance stochastique.}
+\medskip
+
+L'id\'ee d'ind\'ependance stochastique est assez naturelle; reprenons par
+exemple le probl\`eme des boules qu'on jette successivement dans des 
+cases. Au chapitre $I$ nous avions vu que l'\'equiprobabilit\'e des huit
+distributions dans la colonne de gauche de la figure 1 r\'esultait des 
+deux faits suivants: 
+\smallskip
+a) les deux cases sont sym\'etriques de par leurs positions dans l'espace
+(aucune des deux n'est privil\'egi\'ee).
+
+b) chaque boule {\it ignore} ce qui est arriv\'e aux pr\'ec\'edentes.
+\smallskip
+La condition b) est bien s\^ur aussi n\'ecessaire que la premi\`ere, car si 
+elle n'\'etait pas v\'erifi\'ee, les deux cases cesseraient d'\^etre
+sym\'etriques apr\`es que la premi\`ere boule ait \'et\'e plac\'ee (ce qui
+justement est le cas pour des particules de Bose). La condition b) signifie
+donc qu'il y a {\it ind\'ependance} entre les lancers successifs. 
+\medskip
+C'est cette sorte d'ind\'ependance qui correspond au concept d'{\it
+ind\'e\-pen\-dance stochastique}.
+\medskip
+Lorsque le Calcul des probabilit\'es fut axiomatis\'e, on chercha \`a 
+donner une d\'efinition purement math\'ematique de l'ind\'ependance
+stochastique. Une d\'efinition purement math\'ematique, cela signifie une
+d\'efinition qui ne recourt pas \`a des consid\'erations physiques (telles
+que la s\'eparabilit\'e spatio-temporelle), ni \`a des consid\'erations
+philosophiques (telles que la ``nature'' de l'ignorance mutuelle des 
+boules). Une d\'efinition purement math\'ematique doit porter
+uniquement sur ce qui se passe \`a l'int\'erieur du mod\`ele
+math\'ematique, c'est-\`a-dire, dans le cas du Calcul de probabilit\'es,
+\`a l'int\'erieur de l'espace $\Omega$. Mais $\Omega$ n'a aucune 
+structure math\'ematique en dehors de la structure nue d'ensemble 
+\ftn 1{Bien s\^ur, comme nous l'avons vu au chapitre $I$, la {\it
+structure} de cet ensemble doit contenir sous forme implicite toute
+l'information qu'on poss\`ede sur le probl\`eme concret sous-jacent, 
+mais la construction ou le choix de cette structure concerne la phase de
+{\it mod\'elisation}, et non la partie purement math\'ematique du Calcul
+des probabilit\'es qui, elle,  pr\'esuppose simplement un ensemble 
+$\Omega$ d\'ej\`a donn\'e.}.  Il faut donc fournir une d\'efinition qui 
+porte sur cette seule structure d'ensemble,  c'est-\`a-dire sur les {\it
+\'el\'ements} (\'epreuves),  les {\it parties} (\'ev\'enements),  les {\it
+ensembles de parties},  etc.  
+\medskip
+Commen\c cons par observer la premi\`ere colonne de la figure 1. 
+Dans ce cas $\Omega$ est un ensemble \`a huit \'el\'ements, il y a donc
+exactement $2^8=256$ parties (en incluant la partie vide et le tout). 
+Il
+est bien clair qu'une \'etude exhaustive, comme celle qui va suivre, serait difficile avec un $\Omega$ \`a plusieurs milliards d'\'el\'ements! 
+Pour faciliter la nomenclature, num\'erotons les \'epreuves de 1 \`a 8, 
+en allant du haut vers le bas sur la figure 1: ainsi l'\'epreuve $5$ est
+la cinqui\`eme en partant du haut sur la colonne de gauche de la figure 1
+(voir cette figure) et correspond au cas: ``boule 1 dans la case de gauche
+ou case ${\cal A}$, boules 2 et 3 dans la case de droite ou case ${\cal
+B}$'', etc.  Parmi les $256$ sous-ensembles possibles, on peut remarquer
+les six suivants, qui expriment chacun un \'ev\'enement concernant l'une
+des trois boules: 
+$$\eqalign{
+&A_1 : \hbox{``la boule 1 est dans la case ${\cal A}$''} = \{ 1,2,4,5 \} \cr
+&A_2 : \hbox{``la boule 2 est dans la case ${\cal A}$''} = \{ 1,2,3,6 \} \cr
+&A_3 : \hbox{``la boule 3 est dans la case ${\cal A}$''} = \{ 1,3,4,7 \} \cr
+&B_1 : \hbox{``la boule 1 est dans la case ${\cal B}$''} = \{ 3,6,7,8 \} \cr
+&B_2 : \hbox{``la boule 2 est dans la case ${\cal B}$''} = \{ 4,5,7,8 \} \cr 
+&B_3 : \hbox{``la boule 3 est dans la case ${\cal B}$''} = \{ 2,5,6,8 \} \cr }
+$$
+Par exemple,  $A_1$ est constitu\'e des \'el\'ements $N^{\rm os}\, 1,2,4,$
+et $5$ c'est-\`a-dire des \'epreuves que voici:
+\def\trv{\vrule height8pt depth3pt width0.5pt}
+\newdimen\lrg 
+\lrg=13mm
+\def\trh{\hrule height0.4pt depth0pt width29.285mm}
+\def\sp{\hskip\lrg}
+\def\boule#1{\hbox to 7.76pt{$\bigcirc$\hskip-8pt
+\raise0.5pt\hbox{$\scriptstyle #1$}\hfill }}
+\vskip12pt
+\line{\hfill\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill \boule3 \hfill } 
+\trv \hbox to \lrg { \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill }
+\trv \hbox to \lrg { \hfill \boule3 \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule2 \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill }
+\trv \hbox to \lrg { \hfill \boule2 \hfill \boule3 \hfill } \trv}\trh } \hfill
+}
+\vskip12pt
+En regardant la figure 1 on voit bien que ces quatre \'epreuves sont la
+premi\`ere, la deuxi\`eme, la quatri\`eme, et la cinqui\`eme en partant du 
+haut. 
+\medskip
+De m\^eme, $A_3$ est constitu\'e des \'el\'ements $N^{\rm os}\, 1,3,4,$
+et $7$ c'est-\`a-dire:
+\vskip12pt
+\line{\hfill\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \hskip-0.8pt\boule1 \hfill \boule2 \hfill \boule3
+\hskip0.8pt \hfill } \trv \hbox to \lrg { \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule2 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule1 \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule2 \hfill } \trv}\trh } \hfill 
+\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill } \trv}\trh }
+\hfill } \vskip12pt
+Les intersections deux par deux de ces six \'ev\'enements sont: 
+$$\eqalign{
+&A_1A_2 = \{ 1,2 \} \quad A_1A_3 = \{ 1,4 \} \quad 
+A_2A_3 = \{ 1,3 \} \cr
+&A_1B_2 = \{ 4,5 \} \quad A_1B_3 = \{ 2,5 \} \quad 
+A_2B_3 = \{ 2,6 \} \cr
+&A_2B_1 = \{ 3,6 \} \quad A_3B_1 = \{ 3,7 \} \quad 
+A_3B_2 = \{ 4,7 \} \cr
+&B_1B_2 = \{ 7,8 \} \quad B_1B_3 = \{ 6,8 \} \quad 
+B_2B_3 = \{ 5,8 \} \cr }$$
+(on n'a pas compt\'e $A_1 B_1$, $A_2 B_2$, $A_3 B_3$, qui sont
+\'evidemment vides puis\-qu'une boule ne peut pas \^etre \`a la fois dans la
+case ${\cal A}$ et dans la case ${\cal B}$).
+\medskip
+Les intersections par trois peuvent \'egalement \^etre not\'ees; les 
+seules qui sont non vides sont les suivantes:
+ $$\eqalign{
+& A_1A_2A_3 = \{ 1 \} \quad A_1A_2B_3 = \{ 2 \} \quad 
+  A_1B_2A_3 = \{ 4 \} \quad  B_1A_2A_3 = \{ 3 \} \cr
+& B_1A_2B_3 = \{ 6 \} \quad A_1B_2B_3 = \{ 5 \}  \quad 
+  B_1B_2A_3 = \{ 7 \} \quad B_1B_2B_3 = \{ 8 \} \cr }$$
+On voit que toutes les intersections par deux sont compos\'ees de deux
+\'el\'ements, et que toutes les intersections par trois sont compos\'ees 
+d'un seul \'el\'ement (si elles ne sont pas vides); en termes de
+probabilit\'es cela se traduit par le fait que les probabilit\'es des
+\'ev\'enements $A_j$ ou $B_j$ valent $1 \over 2$, celles des 
+intersections par deux valent $1 \over 4$ (qui est le carr\'e de $1 \over
+2$), et celles des intersections par trois valent $1 \over 8$ (qui est le
+cube de $1 \over 2$); autrement dit les \'egalit\'es ${\cal P}\, (E \cap F)
+= {\cal P}\, (E) \times {\cal P}\, (F)$ et ${\cal P}\, (E \cap F \cap G) =
+{\cal P}\, (E) \times {\cal P}\, (F) \times {\cal P}\, (G)$ s'appliquent pour
+les intersections retenues ci-dessus. En revanche elles ne s'appliquent
+pas pour les intersections vides, telles que $A_1B_1$, $A_2B_2$,
+$A_1A_2B_1$, $A_1B_2A_2$, etc, ni pour les intersections trop pleines
+telles que $A_1A_1 = A_1$, $A_1 B_2 B_2$, etc. Un examen plus attentif
+montre que les intersections qui {\it ne v\'erifient pas} la r\`egle
+``probabilit\'e de l'intersection \'egale produit des probabilit\'es'' sont
+celles o\`u un indice est r\'ep\'et\'e, tandis que les intersections qui 
+{\it v\'erifient} la r\`egle sont celles o\`u les indices sont distincts. Or
+l'indice est le num\'ero de la boule; on peut donc dire que la r\`egle ${\cal
+P}\, (E \cap F) = {\cal P}\, (E) \times {\cal P}\, (F)$ s'applique si les
+\'ev\'enements $E$ et $F$ concernent\ftn 1{Lorsqu'on dit par exemple que
+l'\'ev\'enement $E$ {\it concerne} la boule $N^{\rm o} 1$, il faut
+comprendre par l\`a qu'en tant que sous-ensemble de $\Omega$ il
+regroupe toutes les \'epreuves o\`u la boule $N^{\rm o} 1$ joue un r\^ole
+particulier: par exemple l'\'ev\'enement $A_1$ est l'ensemble de toutes
+les \'epreuves o\`u la boule $N^{\rm o} 1$ est dans la case ${\cal A}$.} des
+boules diff\'erentes, et ne s'applique plus lorsque les \'ev\'enements $E$
+et $F$ concernent une seule et m\^eme boule. C'est ainsi que la r\`egle du
+produit exprime math\'ematiquement le fait que par exemple la boule
+$N^{\rm o} 2$ ``ignore'' ce qui est arriv\'e \`a la boule $N^{\rm o} 1$.
+
+\bigskip
+
+Un examen encore plus approfondi de ce ph\'enom\`ene montre cependant 
+que le mod\`ele math\'ematique (c'est-\`a-dire l'ensemble $\Omega$) est
+plus riche en \'ev\'enements ind\'ependants que la {\it v\'eritable}
+causalit\'e physique ne l'impose. Consid\'erons par exemple les
+\'ev\'enements suivants: 
+$$C_1 = \{ 1,2,3,4 \} \hskip15mm C_2 = \{ 3,4,5,6 \} \hskip15mm 
+C_3  = \{ 2,4,6,8 \}$$
+On observera que la r\`egle du produit s'applique aussi \`a ces trois
+\'ev\'enements: en effet 
+$$C_1C_2 = \{ 3,4 \} \quad C_1C_3 = \{ 2,4 \} \quad C_2C_3 = \{ 4,6 \} $$
+ainsi que
+$$C_1C_2C_3 = \{ 4 \}$$
+de sorte qu'on a \'egalement ${\cal P}\, (C_1C_2) = {\cal P}\, (C_2C_3) =
+{\cal P}\, (C_1C_3) = {1 \over 4}$ et ${\cal P}\, (C_1C_2C_3) = {1 \over
+8}$, mais on ne voit pas tr\`es bien quelles propri\'et\'es se trouvent 
+ainsi {\it s\'epar\'ees} quant \`a la causalit\'e. En r\'ealit\'e le cas des
+\'ev\'enements $C_1$,  $C_2$,  $C_3$,  n'est qu'un art\'efact du mod\`ele
+math\'ematique.  Cela appara{\^\i}t encore plus clairement si au lieu de se
+limiter \`a trois boules et deux cases on consid\`ere le cas g\'en\'eral de
+$m$ boules et $N$ cases: les \'ev\'enements du type $A_j$, $B_j$, etc.
+conservent leur sens ainsi que la r\`egle du produit; on trouvera pour tout
+$m$ et tout $N$ des \'ev\'enements tels que les $C_j$, qui v\'erifient
+aussi la r\`egle du produit,  mais sans qu'on puisse leur trouver un sens
+qui soit conserv\'e lorsque le nombre de boules ou de cases change.
+
+\bigskip
+
+On peut donc introduire la d\'efinition math\'ematique suivante:
+\medskip
+Deux \'ev\'enements $E$ et $F$ seront dits {\it stochastiquement
+ind\'ependants} si ${\cal P}\, (E \cap F) = {\cal P}\, (E) \times {\cal P}\,
+(F)$; plus g\'en\'eralement, si $E_1,E_2,E_3,\ldots E_m$ et
+$F_1,F_2,F_3,\ldots F_n$ sont deux familles d'\'ev\'enements sur un 
+espace d'\'epreuves $\Omega$, on dira que la famille $\{ E_i \}$ est {\it
+stochastiquement ind\'ependante} de la famille $\{ F_j \}$ si pour tout
+couple $(i,j)$ on a
+$${\cal P}\, (E_i \cap F_j) = {\cal P}\, (E_i) \times {\cal P}\, (F_j)$$ 
+Dans ce cas n'importe quelle r\'eunion de plusieurs d'entre
+les $E_i$ sera stochastiquement ind\'ependante de n'importe quelle 
+r\'eunion de plusieurs d'entre les $F_j$. 
+\medskip
+Mais il ne faut pas oublier qu'une telle d\'efinition formelle, par nature,
+introduit toujours des art\'efacts.
+
+\bigskip
+
+On comprendra mieux la signification de l'ind\'ependance stochastique
+formelle en la reliant \`a l'arithm\'etique: elle n'est rien d'autre 
+que le reflet de propri\'et\'es purement arithm\'etiques li\'ees \`a la
+divisibilit\'e du nombre entier $\#\Omega$. On pouvait d\'ej\`a soup\c
+conner cela d'apr\`es la propri\'et\'e du produit: en effet dire que ${\cal
+P}\, (AB) = {\cal P}\, (A) \times {\cal P}\, (B)$ revient \`a dire que $\#
+(AB) \times \# \Omega = \# (A) \times \# (B)$, ce qui montre bien que
+$\# \Omega$ et $\# (A)$ ou $\# (B)$ doivent avoir des diviseurs 
+communs. Tout cela devient plus clair si on repr\'esente l'espace
+$\Omega$ non comme une liste s\'equentielle, mais comme un tableau qui
+refl\`ete la divisibilit\'e de $\#\Omega$ par exemple si $\#\Omega =
+35$ on peut pr\'esenter la liste compl\`ete de ses \'el\'ements comme un
+tableau \`a cinq lignes et sept colonnes (ou vice-versa). La colonne de
+gauche de la figure 1, dans laquelle $\#\Omega = 8 = 4 \times 2$ peut
+ainsi \^etre repr\'esent\'ee comme sur la figure 8.
+
+\midinsert
+\def\trv{\vrule height8pt depth4pt width0.5pt}
+\newdimen\lrg 
+\lrg=13mm \advance\lrg by -0.5pt
+\def\trh{\hrule height0.5pt depth0pt width2.895cm}
+\def\sp{\hskip\lrg}
+\def\boule#1{\hbox to 9.7pt{$\bigcirc$\hskip-8pt
+\raise0.5pt\hbox{$\scriptstyle #1$}\hfill }}
+\vskip12pt
+\centerline{
+\vtop{\hsize=4cm
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill } \trv}\trh 
+\vskip12pt
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill }
+\trv \hbox to \lrg { \hfill \boule3 \hfill } \trv } \trh 
+\vskip12pt
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill }
+\trv \hbox to \lrg { \hfill \boule2 \hfill \boule3 \hfill } \trv } \trh 
+\vskip12pt
+\hbox{\trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule2 \hfill } \trv } \trh 
+\vskip12pt }
+\hskip1cm
+\vtop{\hsize=4cm
+\hbox{\trv
+\hbox to \lrg { \hfill \boule2 \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule1 \hfill } \trv } \trh 
+\vskip12pt
+\hbox{\trv
+\hbox to \lrg { \hfill \boule2 \hfill }
+\trv \hbox to \lrg { \hfill \boule1 \hfill \boule3 \hfill } \trv } \trh 
+\vskip12pt
+\hbox{\trv \hbox to \lrg { \hfill } \trv
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill \boule3 \hfill }
+\trv} \trh 
+\vskip12pt
+\hbox{\trv \hbox to \lrg { \hfill \boule3 \hfill }
+\trv \hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill } \trv }\trh 
+\vskip12pt }  }
+\centerline{\eightpoint figure 8}
+
+\bigskip
+\endinsert
+\medskip
+La colonne de gauche de la figure 8 est l'\'ev\'enement 
+que nous avions d\'esign\'e 
+ci-dessus par $A_1$ et la colonne de droite l'\'ev\'enement $B_1$.
+L'\'ev\'enement $A_2$ est form\'e des deux premi\`eres {\it lignes},
+l'\'ev\'enement $B_2$ des deux derni\`eres lignes,  l'\'ev\'enement $B_3$
+des lignes $N^{\rm os}$ 2 et 3, l'\'ev\'enement $A_3$ des lignes $N^{\rm
+os}$ 1 et 4. La propri\'et\'e du produit est donc simplement l'expression 
+du fait bien connu que le nombre d'\'el\'ements d'un tableau est \'egal au
+nombre de lignes multipli\'e par le nombre de colonnes. 
+\medskip
+Bien s\^ur dans la figure 8 les configurations ont \'et\'e rang\'ees en 
+tenant compte du {\it sens} de l'exp\'erience, c'est-\`a-dire du r\^ole
+jou\'e par les trois boules, de m\^eme que le choix des \'ev\'enements
+$A_1,\, A_2,\, A_3,\, B_1,\, B_2,\, B_3,\, $ avait \'et\'e dict\'e par ce
+sens. Mais on conserve cette propri\'et\'e de multiplication en permutant
+n'importe comment les \'el\'ements de la deuxi\`eme colonne: dans ce cas
+les colonnes sont globalement inchang\'ees (elles consistent toujours 
+dans les \'ev\'enements $A_1$ et $B_1$) mais les lignes sont
+diff\'erentes:  par exemple sur la figure 8 les lignes $N^{\rm os}$ 2 et 3
+avaient en commun que la boule $N^{\rm o}$ 3 \'etait dans la case ${\cal
+B}$ (\'ev\'enement $B_3$);  apr\`es permutation de la deuxi\`eme colonne
+il ne reste plus rien qui ait un rapport avec la boule $N^{\rm o}$ 3: le sens
+est perdu, mais la propri\'et\'e de multiplication subsiste.
+
+\medskip
+
+En fait $\#\Omega = 8$ peut se d\'ecomposer davantage; au lieu de $2
+\times 4$, c'est $2 \times 2 \times 2$, donc au lieu d'un tableau \`a
+quatre lignes et deux colonnes, c'est un cube, ou un tableau \`a trois 
+entr\'ees de deux \'el\'ements chacune: la premi\`ere entr\'ee correspond 
+aux \'ev\'enements $A_1$ et $B_1$, la deuxi\`eme entr\'ee aux
+\'ev\'enements $A_2$ et $B_2$, et la troisi\`eme entr\'ee aux
+\'ev\'enements $A_3$ et $B_3$ (voir figure 9). 
+
+\medskip
+
+\midinsert
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch04eps/figure.eps} }
+\vskip3mm
+\centerline{\eightpoint figure 9}
+\vskip6pt
+\endinsert
+
+\medskip
+
+On retrouve ainsi ce qui en r\'ealit\'e avait pr\'esid\'e d\`es le d\'epart 
+\`a la construction du mod\`ele math\'ematique $\Omega$.  L'espace des
+\'epreuves a une structure qui refl\`ete directement les invariances
+physiques ou la causalit\'e qui sont \`a l'origine de l'\'equiprobabilit\'e.
+Mais en construisant un tel mod\`ele, on introduit ipso facto des
+r\'egularit\'es suppl\'ementaires (qui d\'erivent de celles qu'on a 
+postul\'e a priori par des permutations) qui n'ont plus aucune
+signification par rapport au probl\`eme qu'on voulait mod\'eliser.
+\medskip
+Ainsi, on peut voir sur la figure 9 que l'\'ev\'enement $A_1$ (``la boule
+$N^{\rm o} 1$ est dans la case ${\cal A}$'') correspond \`a la face gauche 
+du cube; l'\'ev\'enement $A_2$ \`a la face avant; l'\'ev\'enement $A_3$
+\`a la face de dessous;  l'\'ev\'enement $B_1$ \`a la face de droite;
+l'\'ev\'enement $B_2$ \`a la face arri\`ere;  l'\'ev\'enement $B_3$ \`a la
+face de dessus.  Les intersections $A_1 A_2$,  $A_1 A_3$, etc. sont donc 
+des intersections de deux faces,  c'est-\`a-dire des ar\`etes (ou rien si
+les
+faces sont oppos\'ees comme $A_1 B_1$).  Les intersections par trois
+$A_1 A_2 A_3$, $A_1 B_2 A_3$, etc. sont des sommets.  Tout ce qui avait
+\'et\'e dit plus haut s'interpr\`ete donc selon la structure de {\it produit
+cart\'esien} de l'espace $\Omega$.  Le fait que chacune des trois boules
+ignore ce que font les deux autres (ce qui constitue la propri\'et\'e
+causale caract\'eristique du probl\`eme \`a mod\'eliser) est traduit dans
+le mod\`ele $\Omega$ par un produit cart\'esien d'ensembles:  pour chaque
+boule il y a deux possibilit\'es ${\cal A}$ ou ${\cal B}$,  et il y a trois
+boules qui s'ignorent mutuellement {\it donc} l'ensemble $\Omega$ sera
+de la forme $\{ {\cal A},{\cal B}\}^3$.  L'espace $\Omega$ de toutes les
+\'epreuves possibles pour $n$ cases et $r$ boules serait un hypercube \`a
+$r$ dimensions, avec des ar\`etes \`a $n$ \'el\'ements;  en toute logique,
+son cardinal est $n^r$,  conform\'ement \`a $(II.1.)$  Si maintenant on
+permute n'importe comment chaque ar\`ete,  on ne change pas la structure
+de produit,  mais on fait dispara{\^\i}tre le rapport avec les boules. 
+\medskip
+L'ind\'ependance stochastique formelle d'une famille d'\'ev\'enements 
+par rapport \`a une autre,  c'est-\`a-dire le simple fait d'avoir ${\cal P}\,
+(AB) = {\cal P}\, (A) \times {\cal P}\, (B)$,  est toujours li\'ee \`a une
+d\'ecomposition de $\Omega$ en produit d'ensembles plus petits (et donc
+aussi \`a la d\'ecomposition de l'entier $\#\Omega$ en produit de 
+facteurs premiers).  Tout probl\`eme de probabilit\'e qui comporte une 
+ind\'ependance {\it causale} se mod\'elisera sous forme d'un produit
+cart\'esien qui refl\`ete directement et par construction cette
+ind\'ependance causale;  mais cela n'entra{\^\i}ne de loin pas que
+r\'eciproquement,  toute autre d\'ecomposition de $\Omega$ en produit
+implique une signification causale.
+\medskip
+
+\midinsert
+\def\trv{\vrule height6pt depth4pt width0.5pt}
+\newdimen\lrg 
+\lrg=10mm \advance\lrg by -0.5pt
+\def\trh{\hrule height0.5pt depth0pt width3.43cm}
+\def\sp{\hskip\lrg}
+\def\ball{\hbox{$\scriptscriptstyle\bigcirc$}}
+
+\line{\vbox{
+\hbox{\trv
+\hbox to \lrg { \hskip-1.1pt \hfill \ball \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill } \trv \hbox to \lrg { \hfill } \trv}\trh }
+\hfill\vbox{
+\hbox{\trv\hbox to \lrg { \hfill } \trv 
+\hbox to \lrg { \hskip-1.1pt \hfill \ball \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill } \trv}\trh }
+\hfill\vbox{
+\hbox{\trv \hbox to \lrg { \hfill } \trv \hbox to \lrg { \hfill } \trv
+\hbox to \lrg { \hskip-1.1pt \hfill \ball \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv} \trh }
+}
+\bigskip
+\line{\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill } \trv \hbox to \lrg { \hfill } \trv}
+\trh } 
+\hfill\vbox{
+\hbox{\trv \hbox to \lrg { \hfill } \trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill } \trv}\trh }
+\hfill\vbox{
+\hbox{\trv\hbox to \lrg { \hfill \ball \hfill } \trv \hbox to \lrg { \hfill } 
+\trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv }\trh }
+}
+\bigskip
+\line{\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill } \trv 
+\hbox to \lrg { \hfill } \trv 
+\hbox to \lrg { \hfill \ball \hfill } \trv} \trh }
+\hfill\vbox{
+\hbox{\trv \hbox to \lrg { \hfill \ball \hfill } \trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill }
+ \trv \hbox to \lrg { \hfill } \trv} \trh }
+\hfill\vbox{
+\hbox{\trv \hbox to \lrg { \hfill } \trv \hbox to \lrg { \hfill \ball \hfill } 
+\trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hfill }
+\trv}\trh }
+}
+\bigskip
+\line{\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill } \trv \hbox to \lrg { \hfill \ball 
+\hfill } \trv}\trh } 
+\hfill\vbox{
+\hbox{\trv\hbox to \lrg { \hfill \ball \hfill } \trv 
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill } \trv}\trh }
+\hfill\vbox{
+\hbox{\trv \hbox to \lrg { \hfill \ball \hfill } \trv  \hbox to \lrg { \hfill
+\ball \hfill } \trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill }
+\trv}\trh }
+}
+\bigskip
+\line{\vbox{
+\hbox{\trv \hbox to \lrg { \hfill } \trv  \hbox to \lrg { \hfill \ball \hfill
+\ball \hfill } \trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill }
+\trv}\trh }
+\hfill\vbox{
+\hbox{\trv\hbox to \lrg { \hfill \ball \hfill \ball \hfill } \trv 
+\hbox to \lrg { \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill } \trv}\trh }
+\hfill\vbox{
+\hbox{\trv
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill }
+\trv \hbox to \lrg { \hfill \ball \hfill \ball \hfill } \trv \hbox to \lrg {
+\hfill } \trv}\trh } 
+}
+\bigskip
+\centerline{\eightpoint figure 10}
+\bigskip
+\endinsert
+
+C'est ce qu'on peut constater par exemple dans le cas de la statistique de
+Bose-Einstein.  Le nombre de configurations pour $r$ particules et $N$
+\'etats est $(r+N-1)!\; / \; r!\, (N-1)!$ Ce nombre n'est certes jamais
+premier et on peut donc toujours d\'ecomposer $\Omega$ d'une fa\c con 
+ou d'une autre en produit. Mais contrairement \`a ce qui \'etait le cas pour
+les boules, o\`u le nombre de facteurs du produit \'etait toujours \'egal 
+au nombre de boules, l'espace $\Omega$ pour $m$ particules de Bose et
+$N$ \'etats quantiques est bien d\'ecomposable en produit, mais de
+diff\'erentes mani\`eres, qui varient selon les valeurs de $m$ et de $N$,
+sans qu'on puisse observer une r\`egle permanente; ceci refl\`ete le fait
+que lorsque des particules de Bose viennent occuper des \'etats 
+quantiques, elles ne s'y rangent pas ind\'ependamment les unes des autres
+(cette propri\'et\'e est appel\'ee la {\it non-s\'eparabilit\'e quantique}).
+Il n'y a pas d'ind\'ependance causale entre les particules, mais cela
+n'emp\^eche pas de trouver dans chaque cas particulier (c'est-\`a-dire
+pour chaque valeur particuli\`ere de $m$ ou $N$) des factorisations
+possibles pour l'espace $\Omega$. 
+\medskip
+Pour illustrer cela,  on a repr\'esent\'e sur la figure 10 l'espace $\Omega$
+pour une statistique de Bose \`a $4$ particules et $3$ \'etats;  il y a
+$15 = 5
+\times 3$ modes d'occupation possibles, donc une factorisation en 
+tableau \`a deux dimensions. 
+\medskip
+La m\^eme structure que celle repr\'esent\'ee sur la figure 10 peut \^etre
+d\'ecrite par le tableau de chiffres que voici:
+$$\matrix{
+& (4,\, 0,\, 0)\quad    & (0,\, 4,\, 0)\quad    & (0,\, 0,\, 4)\quad    \cr
+& (3,\, 1,\, 0)\quad    & (0,\, 3,\, 1)\quad    & (1,\, 0,\, 3)\quad    \cr
+& (3,\, 0,\, 1)\quad    & (1,\, 3,\, 0)\quad    & (0,\, 1,\, 3)\quad    \cr
+& (2,\, 1,\, 1)\quad    & (1,\, 2,\, 1)\quad    & (1,\, 1,\, 2)\quad    \cr
+& (0,\, 2,\, 2)\quad    & (2,\, 0,\, 2)\quad    & (2,\, 2,\, 0)\quad    \cr }$$
+On peut s'amuser \`a constater que par exemple la
+famille d'\'ev\'enements $\{ A_j \}\; (j = 1,2,3)$ correspondant aux
+colonnes du tableau peut recevoir le sens physique suivant: $A_j$ est
+l'\'ev\'enement ``l'\'etat $N^{\rm o} j$ poss\`ede le nombre d'occupation 
+non ex-aequo le plus \'elev\'e''. La famille $\{ B_i \}$ correspondant \`a
+des lignes recevrait le sens suivant: 
+\smallskip
+$B_1$ ``les nombres d'occupation sont 4, 0, et 0'' ($1^{\rm re}$ ligne);
+
+$B_2$ ``les nombres d'occupation sont 3, 1, et 0'' ($2^{\rm e}$ et $3^{\rm
+e}$ lignes); 
+
+$B_3$ ``les nombres d'occupation sont 2, 1, et 1'' ($4^{\rm e}$ ligne); 
+
+$B_4$ ``les nombres d'occupation sont 2, 2, et 0'' ($5^{\rm e}$ ligne);
+\smallskip
+Les \'ev\'enements de la famille $A$ sont stochastiquement 
+ind\'ependants de ceux de la famille $B$.  Ceci a-t-il une signification
+quant \`a la causalit\'e physique?  Par exemple cela aurait-il la
+signification que les particules,  une fois que leur r\'epartition en 
+groupes d'effectifs fix\'es est faite, vont placer le groupe le plus
+nombreux {\it ind\'ependamment} de la r\'epartition?  Pour que cela
+corresponde \`a une propri\'et\'e physique,  il faudrait au moins que cela
+reste vrai quel que soit le nombre d'\'etats et le nombre de particules; 
+or si on prend trois particules occupant trois \'etats,  il y a $10 = 2 
+\times 5$ configurations,  donn\'ees par le tableau suivant:  
+$$\matrix{
+& (3,\, 0,\, 0)\qquad    & (0,\, 2,\, 1)    \cr
+& (2,\, 0,\, 1)\qquad    & (0,\, 1,\, 2)    \cr
+& (1,\, 2,\, 0)\qquad    & (0,\, 3,\, 0)    \cr
+& (1,\, 0,\, 2)\qquad    & (0,\, 0,\, 3)    \cr
+& (1,\, 1,\, 1)\qquad    & (2,\, 1,\, 0)    \cr }$$
+On peut toujours fabriquer des paires d'\'ev\'enements ind\'ependants en
+regroupant des lignes et des colonnes,  mais la propri\'et\'e physique qui
+avait sembl\'e appara{\^\i}tre dans le cas pr\'ec\'edent a compl\`etement
+disparu:  il n'y a aucune chance de finir par la faire appara{\^\i}tre en
+permutant correctement la deuxi\`eme colonne par rapport \`a la
+premi\`ere,  puisque tout simplement le nombre de colonnes n'est plus
+\'egal au nombre d'\'etats,  et ne {\it peut pas} l'\^etre, parce que 3 n'est
+pas un diviseur de 10.
+\medskip  
+En fin de compte tout est li\'e \`a la divisibilit\'e de l'entier $\#\Omega$:
+plus il poss\`ede de diviseurs,  plus nombreuses sont les familles
+d'\'ev\'enements stochastiquement ind\'ependantes.  Mais il est 
+rarissime que cette ind\'ependance stochastique formelle soit le 
+reflet d'une ind\'ependance causale.  Lorsque c'est le cas,  c'est que
+l'ind\'ependance causale a \'et\'e postul\'ee a priori et a {\it pr\'esid\'e}
+\`a la fabri\-ca\-tion du mod\`ele:  comme  dans le cas des trois boules, 
+le
+mod\`ele est alors fabriqu\'e d\'elib\'er\'ement sous forme de produit
+cart\'esien,  pr\'ecis\'ement pour refl\'eter une ind\'ependance causale
+sous la forme de l'ind\'ependance stochastique.  Par permutations il s'y
+ajoute encore une foule d'autres familles stochastiquement
+ind\'ependantes d'\'ev\'enements,  mais qui n'ont aucune signification
+causale.  Dans le cas des particules de Bose,  le mod\`ele n'est pas
+fabriqu\'e au d\'epart sous forme de produit cart\'esien,  et s'il se trouve
+qu'il est factorisable,  cela ne refl\`ete rien de physique. 
+\medskip 
+Il est bien s\^ur impossible d'affirmer avec certitude qu'aucune de ces
+factorisations ``parasites'' ne peut \^etre le reflet d'une causalit\'e 
+encore inconnue; mais ces factorisations non voulues \`a l'avance
+proviennent de propri\'et\'es arithm\'etiques des nombres entiers, et
+dispara{\^\i}traient sous leur forme exacte si par exemple
+l'\'equiprobabilit\'e postul\'ee a priori n'\'etait qu'approximative au lieu
+d'\^etre math\'ematiquement exacte. Or on ne peut donner un sens
+physique \`a une propri\'et\'e qui dispara{\^\i}t d\`es lors que les
+param\`etres physiques subissent une variation arbitrairement petite.
+C'est pourquoi une propri\'et\'e du type ${\cal P}\, (AB) \simeq {\cal P}\,
+(A) \times {\cal P}\, (B)$ (avec $\simeq$ au lieu de $=$), mais qui ne
+changerait pas compl\`etement pour chaque nouvelle valeur de $m$ ou
+$N$, aurait bien plus de chances d'avoir un sens physique que des
+factorisations exactes.
+
+\bigskip
+
+{\bf IV\ata .\aub 2. L'effacement de la causalit\'e.}
+\medskip
+
+Afin de bien comprendre ce que signifie r\'eellement l'ind\'ependance
+stochastique,  il faut encore la relier \`a la {\it nature} du hasard.
+Tout au long de ce chapitre, nous avons beaucoup insist\'e sur
+l'ind\'ependance stochastique en tant que reflet d'une ind\'ependance
+causale sous-jacente. Ainsi l'exemple des trois boules ``qui s'ignorent
+mutuellement''. Dans ce cas, l'ignorance mutuelle s'expliquait par la
+M\'ecanique classique. On pourrait \'etudier plus en d\'etail le r\^ole 
+jou\'e par la M\'ecanique en reprenant le mod\`ele simplifi\'e de
+roulette pr\'esent\'e au chapitre {\bf I}.  Les trois boules seraient 
+une bille de roulette qu'on aurait lanc\'ee trois fois.  L'\'ev\'enement
+que la boule tombe dans la bo{\^\i}te ${\cal A}$ correspondrait \`a un
+r\'esultat tel que ``rouge'',  ``impair'',  ou ``manque''.  Par exemple
+on peut
+supposer que le disque est divis\'e en trente six secteurs \'egaux
+(d'ouverture 10 degr\'es chacun),  num\'erot\'es de 1 \`a 36;  on dira que 
+le r\'esultat est ``impair'' si la bille s'arr\^ete dans un secteur portant un
+num\'ero impair.  Lorsqu'on lance la bille avec un certain angle $\theta$ 
+et  un coefficient de frottement $k$,  le point du disque o\`u la bille
+s'arr\^etera est,  comme nous avons vu au chapitre {\bf I},  parfaitement
+d\'etermin\'e,  mais il y a un ph\'enom\`ene de chaos d\'eterministe qui
+cr\'ee du hasard.  Le r\'esultat, par exemple ``impair'',  est d\'etermin\'e
+par les conditions initiales de lancement,  c'est-\`a-dire par les valeurs
+--~rigoureusement exactes~-- de $\theta$ et $k$.  L'ind\'ependance
+causale entre les trois lancers signifie que les valeurs de $\theta$ et
+$k$ au moment o\`u on lance une deuxi\`eme fois la bille sont
+ind\'ependantes du point o\`u celle-ci \'etait arriv\'ee la premi\`ere
+fois,  et de m\^eme,  que ces valeurs au moment o\`u on lance une
+troisi\`eme fois la bille sont ind\'ependantes des points o\`u celle-ci
+\'etait arriv\'ee la premi\`ere et la deuxi\`eme fois.  Lorsqu'on voit les
+choses ainsi,  il est  clair qu'il n'y a eu aucune intervention du hasard
+entre le moment o\`u la bille a \'et\'e l\^ach\'ee sur le disque et la
+manifestation du r\'esultat:  le hasard serait intervenu au moment du
+``choix'' des valeurs de $\theta$ et $k$ et plus jamais ensuite.  Or toute
+la discussion pr\'esent\'ee en {\bf I.4.} sur  le hasard montrait au
+contraire,  que non seulement {\it du} hasard est cr\'e\'e par le 
+mouvement lui-m\^eme,  mais que c'est m\^eme {\it le} hasard qui 
+par nature est toujours cr\'e\'e comme cela.  M\^eme si un {\it autre}
+hasard est intervenu au moment du choix des valeurs de $\theta$ et $k$,
+celui-ci n'est peut-\^etre pas d'une autre nature,  il  peut lui aussi avoir
+\'et\'e produit par un effet de chaos (par exemple les valeurs de $\theta$
+et $k$ peuvent \^etre choisies par une fonction {\bf random},  ou bien la
+bille peut avoir \'et\'e lanc\'ee par un croupier alcoolique dont la main
+tremble),  mais en renvoyant tout \`a ce hasard premier nous n'expliquons
+rien,  nous ne faisons que d\'eplacer le probl\`eme.  
+\medskip 
+C'est pourquoi il nous faut encore examiner de plus pr\`es comment le
+mouvement
+d\'eterministe de la bille cr\'ee l'ind\'ependance stochastiquel\`a o\`u au d\'epart il n'y a pas d'ind\'ependance causale,  en effa\c{c}ant
+en quelque sorte la causalit\'e.  On compl\`etera ainsi la discussion du
+chapitre {\bf I},  car le m\'ecanisme par lequel le chaos transforme
+le d\'eterminisme en hasard consiste pr\'ecis\'ement \`a rendre 
+{\it stochastiquement} ind\'ependants des ph\'enom\`enes qui sont 
+{\it causalement} d\'ependants.
+\medskip
+Imaginons que la bille soit bien lanc\'ee trois fois,  mais que les choix
+initiaux de $\theta$ et $k$,  au lieu d'\^etre causalement ind\'ependants
+entre eux,  soient \'etroitement d\'ependants:  pour fixer les id\'ees,
+disons que,  si $\theta_1$ et $k_1$ sont les valeurs initiales du
+premier lancer et sont,  elles,  ``choisies au hasard'',  alors le second
+lancer sera effectu\'e avec $\theta_2 = \alpha\,\theta_1$ et $k_2 = 
+k_1$,  et le troisi\`eme avec $\theta_3 = \theta_1$ et  $k_3 = \beta\,
+k_1$,  $\alpha$ et $\beta$ \'etant des param\`etres fix\'es \`a l'avance.   
+On suppose bien entendu comme au chapitre {\bf I} que $k_1$ est petit,    
+de l'ordre de $10^{-4}$,  de sorte que la bille ne s'arr\^etera qu'apr\`es
+plusieurs milliers de tours.  Dans ces conditions les trois lancers ne sont
+absolument pas ind\'ependants,  puisque $\theta_2$,  $\theta_3$, $k_2$, 
+et $k_3$ sont fonctions de $\theta_1$ et $k_1$.  De ce fait les choix de
+$\theta_1$,  $\theta_2$,  et $\theta_3$ (ou de $k_1$, $k_2$, et $k_3$) ne
+sont pas stochastiquement ind\'ependants,  ce qu'on peut  v\'erifier
+ais\'ement:  si on divise l'intervalle des valeurs possibles de $\theta$, 
+soit $] 0\, , \, \pi  [$ en deux demi-intervalles,  par exemple en  $] 0\, , \,
+{\pi \over 2} [$ et $[ {\pi \over 2}\, , \, \pi [$, alors la probabilit\'e pour
+que $\theta_1$,  qui est choisi au hasard,  soit dans l'un ou l'autre de ces
+deux demi-intervalles,  par exemple $] 0\, , \, {\pi \over 2} [$, est bien
+s\^ur  ${1 \over 2}$;  mais (compte tenu que les valeurs de $\theta_1$,
+$\theta_2$,  et $\theta_3$ sont fonctions les unes des autres) la
+probabilit\'e pour que $\theta_1$, $\theta_2$,  et $\theta_3$ soient {\it
+tous les trois} dans ce m\^eme demi-intervalle n'est pas ${1 \over 8}$; 
+un rapide calcul montre qu'elle est \'egale \`a ${1 \over 2 \alpha }$ si
+$\alpha > 1$ et \`a ${1 \over 2}$ si $\alpha \leq 1$; en effet, puisque
+$\theta_2 = \alpha\,\theta_1$ et $\theta_3 = \theta_1$,  on voit bien 
+que si $\alpha > 1$, la condition n\'ecessaire et suffisante pour que
+$\theta_1$,  $\theta_2$,  et $\theta_3$ soient tous les trois dans
+l'intervalle $]0\, , \, {\pi\over 2}[$ est que $\theta_1$ soit dans $]0\, , \,
+{\pi\over 2\alpha }[$, \'ev\'enement dont la probabilit\'e est  bien  ${1
+\over 2\alpha}$;  si par contre $\alpha <1$,  cette condition n\'ecessaire 
+et suffisante est que $\theta_1$ soit dans $]0\, , \, {\pi\over 2}[$ (il est
+vrai que si $\alpha = 4$,  la probabilit\'e est quand m\^eme ${1\over 8}$,
+mais ceci est un cas particulier sans signification).  Cela exprime la 
+forte d\'ependance entre les trois valeurs.  S'il y avait ind\'ependance
+stochastique entre les trois choix de $\theta_1$, $\theta_2$,  et
+$\theta_3$,  alors,  puisque chacun des trois choix aurait une probabilit\'e
+${1 \over 2}$ de tomber dans le demi-intervalle $] 0\, , \, {\pi \over 2}
+[\,$, la probabilit\'e pour que tous les trois y tombent \`a la fois serait 
+le produit ${1 \over 2} \times {1 \over 2}  \times {1 \over 2} =  {1 \over
+8}$.  Mais comme $\theta_3 = \theta_1$, si $\theta_1$ y tombe,
+$\theta_3$ y sera automatiquement aussi et $\theta_2$ y sera
+\'egalement si $\theta_1$ est dans $] 0\, , \, {\pi \over 2\alpha }[$.  Un
+constat analogue vaut pour $k_1$, $k_2$, et $k_3$, ou  pour les neuf
+couples $(\theta_i\, , k_j)$.     
+\medskip  
+Puisque les conditions initiales des trois lancers ne sont pas
+ind\'e\-pen\-dan\-tes, et que les positions finales atteintes par
+la bille
+sont rigoureusement d\'etermin\'ees par les conditions initiales, il ne
+peut pas y avoir non plus ind\'ependance causale rigoureuse entreles
+trois positions finales. Et pourtant, si on fait l'exp\'erience, on obtiendra
+malgr\'e cela des r\'esultats stochastiquement ind\'ependants.
+C'est-\`a-dire que la d\'ependance causale des choix de $\theta_1$,
+$\theta_2$, et $\theta_3$ se traduit bien par leur d\'ependance
+stochastique(la pro\-ba\-bi\-lit\'e que les trois soient dans le demi-intervalle
+$] 0\, , \, {\pi \over 2} [$ est ${1 \over 2\alpha }$ et non ${1 \over
+8}$),  mais les trois positions {\it en fin de trajectoire},  bien qu'\'etant
+toujours,  en toute rigueur,  causalement li\'ees,  seront,
+elles, 
+stochastiquement ind\'ependantes. \medskip
+Le ph\'enom\`ene de chaos
+d\'eterministe produit par letr\`es grand nombre de r\'eflexions sur le
+bord, que nousavons analys\'e au chapitre {\bf I}, aura eu pour effet
+d'{\it
+effacer} la d\'ependance entre les trois lancers. 
+\medskip  
+Faire l'exp\'erience signifie ici recommencer les trois lancers 
+un tr\`es grand nombre de fois, par exemple un million de fois, et mesurer
+les probabilit\'es par la fr\'equence de chaque chiffre. Cette exp\'erience
+peut fort bien n'\^etre qu'une simulation num\'erique. La probabilit\'e
+d'avoir ``impair'' \'etant ${1 \over 2}$ avec le premier  des trois lancers,
+on aura environ $500\,000$ fois ``impair'' et $500\,000$ fois ``pair'' pour
+le premier  des trois r\'esultats. Mais,  bien que les trois lancers ne
+soient pas du  tout ind\'ependants, et que par exemple sur le million
+d'essais il  arrivera environ $500\,000  / \alpha$ fois que les trois
+valeurs  $\theta_1$, $\theta_2$, et $\theta_3$ soient toutes trois
+inf\'erieures \`a ${\pi \over 2}$, il n'arrivera que $125\, 000$ fois
+environ que les  trois r\'esultats \`a la fois soient impairs (r\'ev\'elant
+ainsi une probabilit\'e de ${1 \over 8}$), c'est-\`a-dire  que tout se
+passera comme si les trois r\'esultats \'etaient stochastiquement
+ind\'ependants. C'est ainsi que le chaos d\'eterministe {\it efface} la
+causalit\'e. Comment cela est-il possible?  
+\medskip
+Dans cette question nous laissons volontairement inexpliqu\'e le hasard qui
+choisit la valeur de $\theta_1$; nous ne nous int\'eressons qu'au hasard
+relatif qui est fabriqu\'e par le chaos pour les positions finales aux 
+second et troisi\`eme lancer.
+\medskip
+Si on r\'ealisait effectivement cette exp\'erience par simulation
+num\'erique, on {\it constaterait} qu'au premier lancer la bille s'arr\^ete 
+une fois sur deux sur un chiffre impair, et que une fois sur huit 
+toutes les trois s'arr\^etent sur un chiffre impair. On {\it constaterait},
+mais on ne {\it comprendrait} pas pour autant. Une explication qualitative
+est dans de tels cas plus instructive. La cl\'e du probl\`eme  est bien
+s\^ur que de petits changements sur $\theta$ entra{\^\i}nent de grands
+changements sur le r\'esultat final. Ainsi, si on prend $\theta_2 =
+\theta_1 + \varepsilon$, avec $\varepsilon$ tr\`es petit, nous savons
+d'apr\`es ce qui a \'et\'e vu  en {\bf I.4.} que le point o\`u la bille aboutira
+au second lancer se situera  \`a une distance de l'ordre de
+$NR\varepsilon$ ($N$ \'etant le nombre de cordes parcourues et $R$ le
+rayon du disque) du point atteint au premier lancer (en supposant que $k$
+n'a pas chang\'e). Cette distance est en g\'en\'eral nettement sup\'erieure
+\`a la largeur d'un secteur de 10 degr\'es. Si $\theta_2 =
+\alpha\,\theta_1$, $\alpha$ n'\'etant pas sp\'ecialement proche de 1, la
+disparit\'e des positions finales sera  encore bien plus consid\'erable. La
+probabilit\'e pour que $\theta_1$ et $\theta_2$ soient tous deux dans le
+m\^eme demi-intervalle $] 0\, , \, {\pi \over 2} [$ est  ${1 \over 2\alpha
+}$ et non ${1 \over 4}$, parce que les deux valeurs $\theta_1$ et
+$\theta_2$ sont li\'ees. Supposons maintenant que, au lieu d'avoir deux
+demi-intervalles de longueur 90 degr\'es, on ait d\'ecoup\'e l'intervalle
+de 0 \`a 180 degr\'es  en 10800 petits intervalles de longueur une minute
+d'angle, alternativement pairs  et impairs. On peut repr\'esenter cela
+graphiquement en noircissant les intervalles impairs et en laissant en
+blanc les intervalles pairs:  
+\vskip8pt plus4pt minus4pt
+\setbox11=\hbox to 22mm{\hfill\vrule height0.4pt depth0pt width11mm}
+\setbox7=\hbox to 14mm{\hfill\vrule height0.4pt depth0pt width7mm}
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11
+\hfill } 
+\vskip12pt plus4pt minus4pt
+\noindent alors, pour que $\theta_1$ et $\theta_2$ soient tous
+deux dans un intervalle pair, il faut que non seulement $\theta_1$ soit 
+tomb\'e par hasard dans un intervalle pair, mais que $\alpha\,\theta_1$ 
+soit lui aussi dans un intervalle pair: cela revient donc \`a d\'ecouper
+l'intervalle de 0 \`a 180 degr\'es en
+$10800 \times \alpha$ petits intervalles de longueur $1/\alpha$ minute
+d'angle, alternativement pairs  et impairs, et \`a exiger que $\theta_1$
+soit dans un intervalle pair de cette nouvelle s\'erie, qu'on peut
+repr\'esenter graphiquement de la m\^eme fa\c con:
+\vskip8pt plus4pt minus4pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\hfill}
+\vskip12pt plus4pt minus4pt
+\noindent Ainsi la condition que $\theta_1$ et $\theta_2$ soient tous
+deux dans un intervalle pair de la premi\`ere s\'erie, \'equivaut \`a dire 
+que  $\theta_1$ soit \`a la fois dans un intervalle pair 
+de la premi\`ere
+s\'erie  et dans un intervalle pair de la deuxi\`eme s\'erie; autrement dit,
+$\theta_1$ doit \^etre dans une zone qui est blanche \`a 
+la fois sur la
+premi\`ere et la deuxi\`eme s\'erie, ce qu'on peut visualiser en 
+superposant les deux s\'eries: 
+\vskip8pt plus4pt minus4pt
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \hfill } \vskip-12.5pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\hfill}
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \hfill } \vskip-15pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\hfill }
+\vskip12pt plus4pt minus4pt
+\noindent Sur la ligne du bas, les deux s\'eries sont compl\`etement
+superpos\'ees, alors que sur les deux lignes rapproch\'ees du haut on les
+voit encore s\'epar\'ees. La condition pour que $\theta_1$ et $\theta_2$
+soient tous deux dans un intervalle pair de la premi\`ere s\'erie se traduit
+par le fait que $\theta_1$ se trouve dans une r\'egion rest\'ee blanche
+apr\`es la superposition. Puisque $\theta_1$ est choisi au hasard, la
+probabilit\'e pour qu'il en soit ainsi est simplement le rapport entre la
+somme des longueurs des r\'egions rest\'ees blanches et la longueur 
+totale de 180 degr\'es. Ce rapport n'est pas facile \`a calculer car il varie
+avec la finesse de la subdivision; mais il tend vers une limite quand la
+subdivision devient de plus en plus fine (des intervalles d'une minute
+d'angle sont en pratique assez fins pour \^etre assimil\'es au cas limite).
+Voici par exemple ce que donnent graphiquement des subdivisions de
+plus en plus fines:
+
+\vskip10pt plus4pt minus4pt
+
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \hfill } \vskip-12pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\hfill }
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \hfill } \vskip-15pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\hfill }
+
+\vskip15pt plus4pt minus4pt
+
+\setbox11=\hbox to 11mm{\hfill\vrule height0.4pt depth0pt width5.5mm}
+\setbox7=\hbox to 7mm{\hfill\vrule height0.4pt depth0pt width3.5mm}
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \copy11\copy11\copy11\copy11\copy11\copy11\hfill } 
+\vskip-12pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\copy7\copy7\copy7\copy7\copy7
+\copy7\copy7\copy7\copy7\copy7\hfill }
+\line{\punkt\copy11\copy11\copy11\copy11\copy11\copy11 \copy11\copy11\copy11\copy11\copy11\box11\hfill }
+\vskip-15pt
+\line{\punkt\copy7\copy7\copy7\copy7\copy7\copy7\copy7 \copy7\copy7\copy7\copy7\copy7\copy7\copy7
+\copy7\copy7\copy7\copy7\box7\hfill }
+
+\vskip15pt plus4pt minus4pt
+
+\setbox21=\hbox to 5.5mm{\hfill\vrule height0.4pt depth0pt
+width2.75mm} 
+\setbox17=\hbox to 3.5mm{\hfill\vrule height0.4pt
+depth0pt width1.75mm}
+\line{\punkt\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21\copy21\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21\copy21\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21
+\copy21\hfill } \vskip-12pt
+\line{\punkt\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\hfill }
+\line{\punkt\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21\copy21\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21\copy21\copy21\copy21\copy21\copy21\copy21\copy21
+\copy21\box21\hfill } 
+\vskip-15pt
+\line{\punkt\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\copy17
+\copy17\copy17\copy17\copy17\copy17\copy17\copy17\box17
+\hfill }
+\vskip12pt plus4pt minus4pt
+
+\setbox31=\hbox to 2.75mm{\hfill\vrule height0.4pt depth0pt
+width1.375mm} 
+\setbox27=\hbox to 1.75mm{\hfill\vrule height0.4pt
+depth0pt width0.875mm}
+\line{\punkt\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\hfill } 
+\vskip-12pt
+\line{\punkt\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\hfill }
+\line{\punkt\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\copy31\copy31\copy31\copy31\copy31
+\copy31\copy31\copy31\hfill } 
+\vskip-15pt
+\line{\punkt\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\copy27
+\copy27\copy27\copy27\copy27\copy27\copy27\copy27\hfill }
+
+\vskip12pt plus4pt minus4pt
+\noindent On voit que les r\'egions rest\'ees blanches sont de plus en plus 
+petites, mais en m\^eme temps de plus en plus nombreuses, de sorte que
+la proportion de blanc sur la longueur totale (qui est la probabilit\'e pour
+que $\theta_1$ et $\theta_2$ soient tous deux dans un intervalle pair) 
+tend vers une limite.
+\medskip
+On peut calculer num\'eriquement cette limite (il n'y a pas de formule
+analytique simple pour l'exprimer, mais on peut faire un petit programme
+simple qui la calcule num\'eriquement); le tableau suivant en donne les
+valeurs $x$ pour diff\'erentes valeurs de $\alpha$. \`A titre de
+comparaison on a donn\'e entre parenth\`eses la valeur de $1/2\alpha$, 
+qui \'etait la probabilit\'e pour que $\theta_1$ et $\theta_2$ soient 
+tous deux dans le demi-intervalle $]0\, ,\, {\pi \over 2}[$.
+$$\matrix{
+&\alpha \quad &x  &\bigl( {1 \over 2\alphaÊ} \bigr) \qquad\qquad 
+&\alpha \quad &x  &\bigl( {1 \over 2\alphaÊ} \bigr) \cr
+\noalign{\medskip}
+&3/2 \quad &0.25 &(0.333)\qquad\qquad  
+&4/3 \quad &0.25 &(0.375)\cr
+&5/3 \quad &0.2667 &(0.300)\qquad\qquad  
+&5/4 \quad &0.25 &(0.400) \cr
+&6/5 \quad &0.25 &(0.417)\qquad\qquad  
+&7/5 \quad &0.2571 &(0.357) \cr
+&7/6 \quad &0.25 &(0.428)\qquad\qquad  
+&8/7 \quad &0.25 &(0.4375) \cr
+&9/7 \quad &0.254 &(0.3889)\qquad\qquad  
+&9/8 \quad &0.25 &(0.444) \cr
+&10/7 \quad &0.25 &(0.350)\qquad\qquad  
+&10/9 \quad &0.25 &(0.450) \cr
+&11/8 \quad &0.25 &(0.3636)\qquad\qquad  
+&11/9 \quad &0.2525 &(0.409)\cr
+&11/10 \quad &0.25 &(0.454)\qquad\qquad  
+&12/11 \quad &0.25 &(0.458)\cr
+&13/10 \quad &0.25 &(0.3846)\qquad\qquad  
+&13/11 \quad &0.2517 &(0.423)\cr 
+&13/12 \quad &0.25 &(0.4615)\qquad\qquad 
+&14/11 \quad &0.25 &(0.3928)\cr  
+&14/13 \quad &0.25&(0.4643)\qquad\qquad  
+&15/11 \quad &0.2515 &(0.3667) \cr
+&15/13 \quad &0.2513 &(0.4333)\qquad\qquad  
+&15/14 \quad &0.25 &(0.4667) \cr
+&16/13 \quad &0.25 &(0.406)\qquad\qquad  
+&16/15 \quad &0.25 &(0.469) \cr
+&17/13 \quad &0.2511 &(0.382)\qquad\qquad  
+&17/14 \quad &0.25 &(0.412) \cr
+&17/15 \quad &0.2510 &(0.441)\qquad\qquad  
+&17/16 \quad &0.25 &(0.471) \cr
+&18/13 \quad &0.25 &(0.361)\qquad\qquad  
+&18/17 \quad &0.25 &(0.472) \cr
+&19/15 \quad &0.2509 &(0.395)\qquad\qquad  
+&19/16 \quad &0.25 &(0.421) \cr
+&19/17 \quad &0.2508 &(0.447)\qquad\qquad  
+&19/18 \quad &0.25 &(0.4737) \cr
+&129/113 \quad &0.25 &(0.438)\qquad\qquad  
+&79/73 \quad &0.25 &(0.462) \cr
+}$$
+On voit que la valeur de $x$ est toujours proche de ${1 \over 4}$; le plus
+souvent elle est m\^eme exactement ${1 \over 4}$ (sur le tableau les
+valeurs marqu\'ees $0.25$ correspondent au cas o\`u $x$ est {\it
+exactement} \'egal \`a ${1 \over 4}$; on aurait marqu\'e $0.2500$ si 
+c'\'etait une valeur approch\'ee \`a $10^{-4}$ pr\`es). Le cas o\`u $x$ 
+est diff\'erent de  ${1 \over 4}$ provient de contraintes li\'ees \`a la
+divisibilit\'e des nombres entiers qui interviennent ici ($\alpha$ est
+fractionnaire); on pourrait montrer math\'ematiquement que $x$ vaut
+toujours ${1 \over 4}$ quand $\alpha$ est irrationnel, mais cela est sans
+int\'er\^et pour la question qui nous pr\'eoccupe ici; il suffit de voir que
+$x$ est presque toujours \'egal \`a ${1 \over 4}$, et, m\^eme quand il
+n'est pas exactement \'egal \`a ${1 \over 4}$, en est toujours proche.
+\medskip
+Cela montre que l'ind\'ependance stochastique n'est pas li\'ee
+\`a l'existence d'une ind\'ependance effective entre $\theta_1$ et
+$\theta_2$,mais seulement \`a la finesse de la subdivision: avec la
+m\^eme relation liant $\theta_1$ et $\theta_2$, on constate que la
+propri\'et\'e du produit n'est pas v\'erifi\'ee lorsque l'intervalle de 0 \`a 180 
+degr\'es est divis\'e en deux moiti\'es, et qu'il suffit de subdiviser
+en un grand nombre d'intervalles pour qu'elle le devienne. Toutefois,
+comme le montre le tableau pr\'ec\'edent, il y a des exceptions: pour
+certaines valeurs de $\alpha$, la propri\'et\'e du produit n'est pas
+exactement v\'erifi\'ee, ce qui refl\`ete qu'une certaine d\'ependance
+stochastique subsiste; cela signifie simplement que le {\it brouillage} 
+n'a pas \'et\'e suffisant pour cr\'eer un hasard parfait. Le m\'ecanisme
+exact de ce r\'esidu de d\'ependance est une affaire d'arithm\'etique et 
+de divisibilit\'e due \`a la p\'eriodicit\'e de la subdivision. Il suffirait
+de
+subdiviser en intervalles de longueur variable (mais comportant chacun
+une moiti\'e paire et une moiti\'e impaire) pour  supprimer cette
+p\'eriodicit\'e; et en effet, avec des subdivisions \`a pas variable, on
+supprimerait les contraintes de divisibilit\'e et la valeur limite
+$x$ serait alors toujours exactement ${1 \over 4}$. Le brouillage serait
+alors devenu suffisant.  
+\medskip 
+Or, pour le point d'arriv\'ee de la bille, le brouillage est encore bien
+plus consid\'erable: les 36 secteurs du disque ont une largeur de 10
+degr\'es, ce qui est trop large pour que ce qui vient d'\^etre mis en
+\'evidence se produise  avec l'angle  $\theta$, mais largement suffisant
+pour que cela se  produise avec le point d'arriv\'ee de la bille, gr\^ace \`a
+l'amplification  caract\'eristique du chaos d\'eterministe: si $\theta_2
+= \alpha\theta_1$, le second point d'arriv\'ee de la bille sera une
+fonction parfaitement d\'etermin\'ee du premier point d'arriv\'ee, mais
+avec une variabilit\'e telle que cette fois le brouillage sera parfait:
+toutes les contraintes de d\'ependance auront \'et\'e {\it effac\'ees} par
+le tr\`es grand nombre de  rebondissements  de la bille sur le bord du
+disque. La division du cercle en $36$ secteurs de $10$ degr\'es chacun
+\'equivaut \`a une subdivision infiniment fine \`a cause de l'amplification; 
+la transformation du d\'eterminisme en hasard est donc due \`a la finesse
+effective de la subdivision. On peut ainsi deviner que le brouillage par
+le chaos se ram\`ene toujours d'une mani\`ere ou d'une autre \`a 
+raffiner des subdivisions.
+\medskip 
+Ce n'est bien s\^ur pas par hasard que la roulette, m\^eme
+sousla forme d'un mod\`ele tr\`es simplifi\'e, illustre si bien tous 
+les m\'ecanismes du hasard. Toutes nos discussions montrent que la
+roulette est con\c cue de mani\`ere \`a accumuler la plus grande
+vari\'et\'e possible de  {\it brouillages} dans un processus qui par
+nature est d\'eterministe. On peut dire que la roulette est une
+v\'eritable machine \`a effacer la causalit\'e. Un d\'e est aussi un
+syst\`eme destin\'e \`a effacer la causalit\'e, mais moins sophistiqu\'e;
+le roulement du d\'e, par exemple, a pour fonction de changer un grand
+nombre de fois la face dirig\'ee vers le haut avant l'arr\^et, ce qui joue
+le m\^eme r\^ole que les nombreuses r\'eflexions de la bille de la
+roulette, \`a savoir cr\'eer l'amplification de la sensibilit\'e aux
+conditions initiales. L'effacement des causes est d'autant plus radical
+que les subdivisions sont plus fines compar\'ees \`a la variabilit\'e des
+param\`etres; cette finesse relative peut \^etre renforc\'ee soit en
+augmentant le nombre des subdivisions (c'est pourquoi la roulette
+comporte 36 chiffres plut\^ot que 5, 7, ou 10; dans le cas du d\'e
+cela reviendrait \`a faire des faces plus nombreuses et plus petites),
+soit en augmentant l'amplification de la sensibilit\'e aux conditions
+initiales (c'est pourquoi la roulette agence des mouvements tr\`es
+chaotiques). Dans le cas d'une bille de roulette, la sensibilit\'e aux
+conditions initiales du mouvement est telle que pour pouvoir pr\'edire
+le point d'arriv\'ee \`a partir des lois de la M\'ecanique classique, il
+faudrait contr\^oler la position et la vitesse initiales de la bille ainsi
+que la forme exacte du plateau avec une pr\'ecision bien plus grande 
+que la dimension des atomes, c'est-\`a-dire avec une pr\'ecision telle
+que la M\'ecanique classique ne pourrait m\^eme plus \^etre tenue 
+pour valide. 
+\medskip 
+L'ind\'ependance stochastique n'est donc pas l'expression exacte d'une
+ind\'ependance causale r\'eelle et absolue;  elle r\'esulte d'un {\it
+effacement} de la causalit\'e par des  proc\'ed\'es de brouillage 
+ad\'equats (subdivisions fines et amplification). Ces proc\'ed\'es de
+brouillage peuvent \^etre aussi  bien artificiels (roulette, d\'e, fonctions
+{\bf random}, publication d'une information sur le Net, etc.) que  naturels
+(agitation thermique des mol\'ecules,
+combinaison des  g\`enes, dispersion des semences par le vent).
+
+\vskip5mm plus3mm minus3mm
+
+{\bf IV\ata .\aub 3. Probabilit\'es conditionnelles.}
+\medskip
+
+Lorsque deux \'ev\'enements $A$ et $B$ ne sont pas stochastiquement
+in\-d\'e\-pen\-dants, c'est-\`a-dire lorsque ${\cal P}\, (AB) \neq 
+{\cal P}\, (A)
+\times {\cal P}\, (B)$, on peut introduire le rapport
+$${\cal P}\, (A\mid B) = {{\cal P}\, (AB)\over {\cal P}\, (B)}\eqno(IV.1.)$$
+\hskip12pt Si $A$ et $B$ \'etaient stochastiquement ind\'ependants, \hskip2pt 
+on aurait bien s\^ur ${\cal P}\, (A \mid B) = {\cal P}\, (A)$. On dit que ce
+rapport est la
+{\bf probabilit\'e conditionnelle} de $A$ par rapport \`a $B$;dans le langage imag\'e, on dit aussi que c'est la probabilit\'e conditionnelle
+de $A$ ``sachant que $B$ s'est produit''.  Le concept math\'e\-ma\-tique ainsi
+introduit est \'evidemment cens\'e refl\'eter l'id\'ee sugg\'er\'ee par le
+langage imag\'e,  \`a savoir que la probabilit\'e conditionnelle est la
+pro\-ba\-bi\-lit\'e sur un ensemble restreint d'\'epreuves (celles qui 
+v\'erifient une condition,  exprim\'ee par le langage imag\'e). 
+\medskip
+On peut aussi \'ecrire la relation $(IV.1.)$ sous la forme
+$${\cal P}\, (A \mid B) = {\#(AB) \over \# B}$$
+Si on la rapproche de $(I.2.)$ cela signifie que cette fois on consid\`ere 
+l'\'ev\'enement $AB$ dans l'espace des \'epreuves $B$. En interpr\'etant, 
+cela revient \`a dire qu'on traite le probl\`eme suivant: parmi l'ensemble
+des \'epreuves \'equiprobables qui constituent l'\'ev\'enement $B$,
+quelle est la proportion de celles qui satisfont en outre \`a
+l'\'ev\'enement $A$? Autrement dit, il s'agit de la probabilit\'e pour que
+$A$ se produise, mais sur l'espace restreint des \'epreuves qui
+correspondent \`a la r\'ealisation de $B$. Cela exprime bien l'id\'ee de la
+pro\-ba\-bi\-lit\'e conditionnelle de $A$, {\it sachant que} $B$ s'est produit.
+L'ind\'ependance stochastique entre $A$ et une famille $B_i$ peut donc 
+se traduire en disant que la probabilit\'e conditionnelle de $A$ sachant
+que $B_i$ s'est produit, est la m\^eme pour tous les $B_i$.
+\medskip
+Du point de vue purement formel,  une probabilit\'e conditionnelle
+est donc simplement une probabilit\'e sur un espace d'\'epreuves
+restreint.  Dans n'importe quel probl\`eme de probabilit\'es,  on doit
+construire un espace d'\'epreuves $\Omega$ adapt\'e \`a la r\'esolution 
+du probl\`eme,  et nous voyons ici qu'on peut toujours consid\'erer
+$\Omega$ comme une partie d'un espace plus gros,  les probabilit\'es
+d\'efinies sur $\Omega$ \'etant alors des probabilit\'es conditionnelles
+sur le plus grand espace.  Le meilleur choix de $\Omega$ est toujours le
+plus petit,  mais il est peu commode de modifier $\Omega$ en cours de
+probl\`eme.  Le meilleur $\Omega$ est donc le plus petit possible,  parmi
+ceux qui contiennent tous les \'ev\'enements \'etudi\'es.
+\medskip
+Pour illustrer cela,  prenons une urne qui contient $p$ bulletins {\eightrm
+OUI} et $q$ bulletins {\eightrm NON}, donc $n = p+q$ bulletins en tout. On
+tire au hasard un bulletin; il est intuitivement \'evident que la 
+probabilit\'e pour que ce bulletin porte {\eightrm OUI} est $p / n$, et la
+probabilit\'e pour qu'il porte {\eightrm NON} est $q / n$; un calcul
+rigoureusement d\'eriv\'e des principes aboutirait, heureusement, au 
+m\^eme r\'esultat. Si on fait deux tirages successifs (sans 
+remplacement), il est plus difficile de r\'epondre  imm\'ediatement avec
+la seule perception intuitive, et le calcul rigoureusement d\'eriv\'e des
+principes peut \^etre pr\'ef\'erable; il passe par le d\'enombrement
+syst\'ematique: pour un seul tirage on pouvait prendre pour espace
+$\Omega$ l'ensemble des bulletins de l'urne, pour deux tirages il faut
+prendre l'ensemble des couples de bulletins (mais sans r\'ep\'etition).
+D'apr\`es $II.2.$ son cardinal est $n(n-1)$. Le nombre de couples form\'es
+de deux bulletins {\eightrm OUI} est $p(p-1)$, le nombre  de couples
+form\'es de deux bulletins {\eightrm NON} est $q(q-1)$, et le nombre de
+couples form\'es d'un bulletin {\eightrm OUI} et d'un bulletin  {\eightrm
+NON}  est $pq$ (quel que soit l'ordre). Donc la probabilit\'e d'avoir deux
+bulletins {\eightrm OUI} en deux tirages est $p(p-1) / n(n-1)$, celle
+d'avoir  deux bulletins {\eightrm NON} est $q(q-1) / n(n-1)$, et celle
+d'avoir un {\eightrm OUI} puis un {\eightrm NON} (ou l'inverse) est $pq /
+n(n-1)$.  
+\medskip
+Il n'y a pas ind\'ependance stochastique entre les tirages (il y en aurait 
+si on effectuait des tirages {\it avec} remplacement). Cela peut se
+constater en introduisant les \'ev\'enements relatifs \`a chaque tirage,
+tout comme  on avait introduit les \'ev\'enements relatifs \`a chaque
+boule dans l'exemple discut\'e en $IV.1.$\looseness=-1
+\medskip
+On posera donc:
+$$\eqalignno{
+A_1 &: \hbox{``le premier bulletin est un {\eightrm OUI}''} \cr 
+B_1 &: \hbox{``le premier bulletin est un {\eightrm NON}''} \cr 
+A_2 &: \hbox{``le deuxi\`eme bulletin est un {\eightrm OUI}''} \cr 
+B_2 &: \hbox{``le deuxi\`eme bulletin est un {\eightrm NON}''} \cr }$$
+L'\'ev\'enement ``les deux bulletins sont des {\eightrm OUI} sera alors 
+$A_1 A_2$, l'\'ev\'enement ``les deux bulletins sont des {\eightrm NON}
+sera  $B_1 B_2$, l'\'ev\'enement ``le premier bulletin est un {\eightrm 
+OUI}  et le deuxi\`eme est un {\eightrm NON}'' sera $A_1 B_2$, et
+l'\'ev\'enement   ``le premier bulletin est un {\eightrm NON}  et le
+deuxi\`eme est un {\eightrm OUI}'' sera $A_2 B_1$.
+\medskip
+On a ainsi, comme cela a \'et\'e dit plus haut:
+$$\openup 2\jot\eqalignno{
+{\cal P}\, (A_1) = {p \over n} \quad 
+&\qquad {\cal P}\, (B_1)  = {q \over n} \cr  
+\noalign{\medskip}
+{\cal P}\, (A_1A_2)  &= {p(p-1) \over n(n-1)} \cr 
+{\cal P}\, (A_1B_2)  &= {pq \over n(n-1)} \cr 
+{\cal P}\, (B_1A_2)  &= {pq \over n(n-1)} \cr 
+{\cal P}\, (B_1B_2)  &= {q(q-1) \over n(n-1)} \cr }$$
+Les probabilit\'es ${\cal P}\, (A_2)$ et ${\cal P}\, (B_2)$ n'avaient pas
+encore \'et\'e \'evoqu\'ees avant; mais on les obtient sans difficult\'e: 
+$A_2 = A_2 A_1 \cup A_2 B_1$ et $A_1,\, B_1$ sont disjoints, donc 
+$$\openup 2\jot\eqalignno{
+{\cal P}\, (A_2)  &=  {\cal P}\, (A_2 A_1) + {\cal P}\, (A_2 B_1) = 
+{p(p-1) \over n(n-1)} + {pq \over n(n-1)} = {p \over n} \cr  
+{\cal P}\, (B_2)  &=  {\cal P}\, (B_2 A_1) + {\cal P}\, (B_2 B_1) = 
+{pq \over n(n-1)} + {q(q-1) \over n(n-1)} = {q \over n} \cr  }$$
+On peut voir que la r\`egle du produit n'est pas satisfaite:
+$$\openup 2\jot\eqalignno{
+{\cal P}\, (A_1) \times {\cal P}\, (A_2)  
+&= {p \over n} \times {p \over n} \neq {p(p-1) \over n(n-1)} \cr 
+{\cal P}\, (A_1) \times {\cal P}\, (B_2)  
+&= {p \over n} \times {q \over n} \neq {pq \over n(n-1)} \cr 
+{\cal P}\, (B_1) \times {\cal P}\, (A_2)  
+&= {q \over n} \times {p \over n} \neq {pq \over n(n-1)} \cr 
+{\cal P}\, (B_1) \times {\cal P}\, (B_2)  
+&= {q \over n} \times {q \over n} \neq {q(q-1) \over n(n-1)} \cr }$$
+\medskip
+Calculons alors les probabilit\'es conditionnelles ${\cal P}\, (A_2 \mid
+A_1)$, ${\cal P}\, (B_2 \mid A_1)$, ${\cal P}\, (A_2 \mid B_1)$, et 
+${\cal P}\, (B_2 \mid B_1)$. On trouve 
+$$\openup 2\jot\eqalignno{
+{\cal P}\, (A_2 \mid A_1) &= {{\cal P}\, (A_2  A_1) \over {\cal P}\, 
+(A_1)} = {p(p-1) / n(n-1) \over p / n} = {p-1 \over n-1} \cr 
+{\cal P}\, (A_2 \mid B_1) &= {{\cal P}\, (A_2  B_1) \over {\cal P}\, 
+(B_1)} = {pq / n(n-1) \over q / n} = {p \over n-1} \cr 
+{\cal P}\, (B_2 \mid A_1) &= {{\cal P}\, (B_2  A_1) \over {\cal P}\, 
+(A_1)} = {pq / n(n-1) \over q / n} = {q \over n-1} \cr 
+{\cal P}\, (B_2 \mid B_1) &= {{\cal P}\, (B_2  B_1) \over {\cal P}\, 
+(B_1)} = {q(q-1) / n(n-1) \over q / n} = {q-1 \over n-1} \cr }$$
+Cette suite de calculs \'etait fastidieuse, quoique facile, mais 
+maintenant nous pouvons {\it interpr\'eter}.
+\medskip
+Par exemple ${\cal P}\, (A_2 \mid A_1)$, la probabilit\'e conditionnelle
+pour que $A_2$ se produise sachant que $A_1$ s'est produit, est dans le
+langage imag\'e ``la probabilit\'e pour que le second bulletin tir\'e soit 
+un  {\eightrm OUI}, sachant que le premier \'etait un {\eightrm OUI}''. Si 
+on raisonne selon l'intuition premi\`ere, on dira que si le premier bulletin 
+tir\'e  a \'et\'e un  {\eightrm OUI} il reste dans l'urne $p-1$ {\eightrm 
+OUI} et $q$ {\eightrm NON}; donc la probabilit\'e de tirer un bulletin
+{\eightrm OUI} la deuxi\`eme fois est toujours le rapport du nombre de
+bulletins {\eightrm OUI} au nombre total de bulletins, soit $(p-1)\; /\;
+(n-1)$.  De m\^eme, si le premier bulletin tir\'e a \'et\'e un {\eightrm
+NON}, il reste dans l'urne $n-1$ bulletins, dont $p$ {\eightrm OUI} et
+$q-1$ {\eightrm NON}, de sorte que la probabilit\'e de tirer un {\eightrm
+OUI} est cette fois $p \; /\;  (n-1)$.
+\medskip
+L'intuition premi\`ere que tout le monde peut avoir a priori ne permet pas 
+de voir imm\'ediatement et de mani\`ere \'evidente quelle doit \^etre la
+valeur de probabilit\'es telles que ${\cal P}\, (A_1 A_2)$, ${\cal P}\, 
+(A_1 B_2)$, ${\cal P}\, (B_1 A_2)$, et ${\cal P}\, (B_1 B_2)$; pour les
+trouver, il a fallu d\'enombrer les couples de bulletins en utilisant $II.2.$
+Par contre il \'etait imm\'ediatement \'evident que les probabilit\'es
+${\cal P}\, (A_1)$ et ${\cal P}\, (B_1)$ valent respectivement $p/n$ et
+$q/n$. Il  y a dans tous les domaines des choses qu'on peut percevoir par
+intuition imm\'ediate et d'autres qu'on ne peut que trouver par un
+raisonnement complexe, c'est-\`a-dire compos\'e de plusieurs
+d\'eductions dont une seule \`a la fois peut \^etre reconnue comme
+imm\'ediatement \'evidente, et il en est \'egalement ainsi en Calcul des
+proba\-bi\-lit\'es.  Or il est aussi imm\'ediatement \'evident que la
+probabilit\'e pour que le second bulletin tir\'e soit un {\eightrm OUI} {\it
+sachant que le premier \'etait un} {\eightrm OUI} est $(p-1)\; / \; (n-1)$,
+puisque cela r\'esulte directement, tout comme le calcul de  ${\cal P}\,
+(A_1)$,  du fait que le nombre de bulletins {\eightrm OUI} pr\'esents dans
+l'urne est $p-1$. Pour d\'enombrer tous les couples possibles de
+bulletins,  il faut d\'ej\`a faire appel \`a  des notions math\'ematiques
+telles que le produit cart\'esien de deux ensembles, qui sont abstraites 
+et ne rel\`event pas de l'\'evidence imm\'ediate.  Il faut en effet {\it
+d\'eduire} le nombre de couples possibles \`a partir du nombre donn\'e de
+bulletins,  alors que relier la probabilit\'e et le quotient de $p$ par $n$
+(ou de $p-1$ par $n-1$) rel\`eve de l'intuition premi\`ere.   
+\medskip
+Ci-dessus,  nous avons pr\'esent\'e le calcul de ${\cal P}\, (A_2 \mid 
+A_1)$  de telle fa\c con qu'il se d\'eduise, par la d\'efinition
+math\'ematique $(IV.1.)$, du calcul pr\'ealable, et non \'evident, de 
+${\cal P}\, (A_2 A_1)$. En proc\'edant ainsi, nous retrouvons un r\'esultat 
+qui aurait pu \^etre obtenu directement par l'intuition premi\`ere. Cette
+fa\c con de proc\'eder est didactiquement int\'eressante, car elle montre 
+que la th\'eorie marche. On fait souvent cela dans l'enseignement:
+retrouver par une voie indirecte et compliqu\'ee un r\'esultat qui \'etait
+\'evident a priori. C'est tr\`es mauvais pour calculer, mais tr\`es bon pour
+comprendre. En effet, lorsqu'on expose une th\'eorie \'elabor\'ee, sous
+forme axiomatique, les \'etudiants ont le sentiment d'un savoir qui tombe
+du ciel. Mais les math\'ematiciens du pass\'e qui ont cr\'e\'e de toutes
+pi\`eces ces concepts math\'ematiques (espaces d'\'epreuves,
+ind\'ependance stochastique, proba\-bi\-lit\'es conditionnelles, etc.) sont
+partis de l'intuition premi\`ere et ont construit peu \`a peu la th\'eorie
+par t\^atonnements. Le crit\`ere essentiel de validit\'e qui guidait les
+cr\'eateurs \'etait que la bonne th\'eorie serait celle qui, dans tous les
+cas o\`u l'intuition premi\`ere permet de calculer un r\'esultat,
+concorderait avec cette intuition premi\`ere. En Physique, il faut que la
+th\'eorie soit confirm\'ee par l'exp\'erience: chaque fois que la th\'eorie
+permet de calculer un r\'esultat et l'exp\'erience de le mesurer, les deux
+r\'esultats doivent concorder. Il en va de m\^eme pour le Calcul des
+proba\-bi\-lit\'es, sauf que ce qui joue le r\^ole de l'exp\'erience est
+l'intuition premi\`ere.  En effet,  le Calcul des proba\-bi\-lit\'es n'est
+pas une
+science exp\'erimentale;  on ne {\it mesure} jamais lesproba\-bi\-lit\'es:
+ c'est, comme pour la g\'eom\'etrie, \`a partir  desym\'etries
+fondamentales qu'on postule l'\'equiprobabilit\'e d'unensemble
+d'\'epreuves (voir chapitre $I$).  Si dans beaucoup
+d'applications du Calcul des probabilit\'es on recoupe les faits 
+exp\'erimentaux,  c'est parce que les sym\'etries fondamentales (de
+l'espace-temps ou des particules quantiques,  par exemple) sont d'origine
+exp\'erimentale.  Mais \`a l'int\'erieur du Calcul des proba\-bi\-lit\'es
+ces sym\'etries fondamentales sont postul\'ees et on en d\'eduit des {\it
+probabilit\'es a priori}.  C'est pourquoi le r\^ole jou\'e par l'intuition
+premi\`ere est absolument essentiel et constitue le v\'eritable
+fondementdu Calcul des proba\-bi\-lit\'es.  Si la d\'efinition $(IV.1.)$ permet
+de retrouver,  par l'application rigoureuse et abstraite des principes de
+base,  ce que l'intuition tient pour \'evident,  en l'occurrence que ${\cal
+P}\, (A_2   \mid A_1) = (p-1)\; / \; (n-1)$,  c'est un signe que la th\'eorie
+est bonne.  Mais  s'il en est ainsi, c'est bien entendu parce que tout avait
+\'et\'e fabriqu\'e pour qu'il en soit ainsi:  le choix du mod\`ele $\Omega$ 
+et l'\'equiprobabilit\'e des \'epreuves que ce choix sous-entend contient 
+{\it en germe} le r\'esultat.  La th\'eorie a \'et\'e faite expr\`es pour 
+qu'il en soit ainsi.   
+\medskip  
+Cela dit,  si retrouver par la th\'eorie un r\'esultat qui \'etait \'evident
+a priori est conceptuellement instructif,  on peut aussi utiliser le chemin
+inverse dans un but strictement pragmatique.  Supposons que nous
+voulions calculer ${\cal P}\, (A_2 A_1)$ (dont la valeur ne se voit pas
+imm\'ediatement \`a partir de l'intuition  premi\`ere).  Au lieu de
+proc\'eder par d\'enombrement comme nous l'avons fait,  on pourrait
+aussi suivre le chemin inverse:  il est {\it \'evident} que ${\cal P}\, (A_1)
+= p/n$; il est {\it \'evident aussi} que ${\cal P}\, (A_2 \mid A_1) =
+(p-1)\; / \; (n-1)$. En inversant la d\'efinition $(IV.1.)$ on obtient 
+$${\cal P}\, (A_2 A_1) = {\cal P}\, (A_2 \mid A_1) \times {\cal
+P}\, (A_1) \eqno (IV.2.)$$  
+et on en d\'eduit alors que ${\cal P}\, (A_2 A_1) = {\struta p
+\over\ldown{\scriptstyle n}} \cdot {\struta p-1 \over\lldown{
+\scriptstyle n-1}}$, c'est-\`a-dire la m\^eme chose que ce qu'on  avait
+obtenu  par d\'enombrement direct.  
+\medskip 
+Cet exemple montre l'int\'er\^et pratique des probabilit\'es 
+conditionnelles. En pratique $(IV.2.)$ est plus int\'eressant et plus
+fr\'equemment utilis\'e que $(IV.1.)$, car il arrive souvent, du moins 
+dans les probl\`emes de niveau \'el\'ementaire, que les probabilit\'es
+conditionnelles soient plus ``\'evidentes'' ou en tous cas plus faciles \`a
+calculer que celles des intersections, et les probabilit\'es des
+intersections d'\'ev\'enements s'obtiennent alors par produits successifs.   
+\medskip
+On remarquera aussi comment nous avons calcul\'e ${\cal P}\, (A_2)$ et 
+${\cal P}\, (B_2)$. Contrairement aux probabilit\'es ${\cal P}\, (A_1)$ et 
+${\cal P}\, (B_1)$, il n'y a aucune \'evidence imm\'ediate, car on ignore 
+ce qui s'est pass\'e au premier tirage et par cons\'equent on ne conna{\^\i}t
+pas le nombre de bulletins {\eightrm OUI} pr\'esents dans l'urne au
+moment o\`u on effectue le second tirage.  Lorsqu'on avait \`a \'evaluer
+${\cal P}\, (A_2 \mid A_1)$ ou ${\cal P}\, (A_2 \mid B_1)$ on pouvait
+conna{\^\i}tre le nombre de bulletins {\eightrm OUI} pr\'esents dans 
+l'urne car on se pla\c cait dans l'hypoth\`ese o\`u le premier tirage 
+\'etait donn\'e; mais si on veut conna{\^\i}tre la probabilit\'e d'avoir
+{\eightrm OUI} au second tirage sans savoir ce qui s'est produit au
+premier,  il n'y a plus d'argument imm\'ediatement \'evident.  L'intuition
+premi\`ere peut donner le sentiment vague que la probabilit\'e d'avoir
+{\eightrm OUI} au deuxi\`eme tirage doit \^etre une sorte de moyenne sur
+les deux possibilit\'es qui peuvent se produire au premier tirage. Mais
+pour donner un contenu quantitatif clair et solide \`a ce sentiment vague,
+il faut un raisonnement math\'ematique plus sophistiqu\'e, comme celui
+que nous avons effectivement suivi: ce raisonnement consiste \`a
+d\'ecomposer l'\'ev\'enement $A_2$ en deux  parties disjointes $A_2
+A_1$ et $A_2 B_1$ dont on peut calculer s\'epar\'ement les
+probabilit\'es; alors $\# A_2 = \# (A_2 A_1) + \#   (A_2 B_1)$, ou ${\cal
+P}\, (A_2) =  {\cal P}\, (A_2 A_1) + {\cal P}\, (A_2 B_1)$. Mais si on
+utilise $(IV.2.)$ on peut \'ecrire cela sous la forme 
+$${\cal P}\, (A_2) = {\cal P}\, (A_2 \mid A_1) \cdot {\cal P}\, (A_1)
+ + {\cal P}\, (A_2 \mid B_1) \cdot {\cal P}\, (B_1) \eqno (IV.3.)$$
+formule qui exprime effectivement la probabilit\'e de $A_2$ comme une
+moyenne  des probabilit\'es conditionnelles sur les deux possibilit\'es 
+qui peuvent se produire au premier tirage; les coefficients qui
+interviennent  dans ce calcul de moyenne sont les probabilit\'es
+respectives de chacune  de  ces deux possibilit\'es.
+\medskip
+L'int\'er\^et de cette formule est qu'elle permet de calculer une 
+probabilit\'e non \'evidente a priori, par composition de probabilit\'es
+\'evidentes. Mais elle n'est rien d'autre qu'une mani\`ere un peu
+sophistiqu\'ee de r\'ep\'eter que la probabilit\'e de la r\'eunion de deux
+\'ev\'enements disjoints est la somme des probabilit\'es de chacun. 
+\medskip
+Cette formule $(IV.3.)$ peut d'ailleurs \^etre g\'en\'eralis\'ee comme suit. 
+On d\'ecoupe $\Omega$ en $r$ morceaux disjoints $E_1, \, E_2, \, E_3, 
+\ldots E_r$ (une telle famille d'\'ev\'enements disjoints et dont la 
+r\'eunion  est $\Omega$ tout entier est appel\'ee une {\it famille
+exhaustive d'\'ev\'enements}). Soit $A$ un \'ev\'enement quelconque. 
+Alors on peut dire que les \'ev\'enements  $A E_1, \, A E_2, \, A E_3,
+\ldots A E_r$ sont \'egalement disjoints et que leur r\'eunion est $A$.  
+On en d\'eduit que ${\cal P}\, (A) = {\cal P}\, (A E_1) + {\cal P}\, (A E_2) 
++ {\cal P}\, (A E_3) +  \cdots  + {\cal P}\, (A E_r)$, ou encore
+$$\eqalign{
+{\cal P}\, (A) = {\cal P}\, (A \mid E_1) \cdot {\cal P}\, (E_1) &+
+{\cal P}\, (A \mid E_2) \cdot {\cal P}\, (E_2) + \cr
+&+ \cdots  + {\cal P}\, (A \mid E_r)  \cdot {\cal P}\, (E_r) \cr }
+\eqno (IV.4.)$$
+Ceci est vrai quel que soit l'\'ev\'enement $A$ et quelle que soit la
+famille exhaustive $E_1, \, E_2, \, E_3, \ldots E_r$, mais pour en tirer 
+un  r\'esultat int\'eressant dans un probl\`eme donn\'e il faut bien s\^ur 
+choisir astucieusement les $E_j$.
+\medskip
+Nous verrons une application importante de cette formule au chapitre
+{\bf VIII} (Processus en cascade): voir probl\`eme $N^\circ 2$. Nous en
+discuterons une autre application (\`a la g\'en\'etique) dans la
+section suivante ({\bf IV.4}). On peut pratiquer le Calcul des
+probabilit\'es sans jamais y recourir, en d\'ecomposant l'\'ev\'enement
+$A$ en la r\'eunion disjointe des $AE_j$.  Mais la discussion ci-dessus
+montre que les probabilit\'es  conditionnelles sont souvent plus
+commodes ou plus \'evidentes que celles des intersections: c'est ce qui
+rend cette formule tr\`es pratique dans beaucoup de cas.
+\medskip
+Plus haut nous avons justifi\'e l'introduction des probabilit\'es
+conditionnelles par un argument de commodit\'e: dans l'exemple des 
+bulletins qu'on sort de l'urne, la valeur de ${\cal P}\, (A_2)$ n'\'etait pas
+``\'evidente a priori'', tandis que ${\cal P}\, (A_1)$ et  ${\cal P}\, (A_2
+\mid A_1)$ l'\'etaient.
+\medskip
+Pour {\it vraiment} comprendre les probabilit\'es conditionnelles il est
+utile de revenir sur les raisons de cette \'evidence. D\`es le d\'ebut 
+de cet ouvrage, nous avons appris que pour calculer une probabilit\'e il
+fallait op\'erer de la mani\`ere suivante:
+\smallskip
+a) trouver l'ensemble $\Omega$ de toutes les \'epreuves \'equiprobables
+possibles; 
+\smallskip
+b) traduire l'\'ev\'enement $A$ dont on cherche la probabilit\'e en terme 
+de sous-ensemble de $\Omega$.
+\smallskip
+c) d\'enombrer $\Omega$ et $A$.
+\medskip
+Les probabilit\'es \'evidentes sont celles o\`u le quotient $\#A\; / 
+\;\#\Omega$ est tout de suite \'evident, sans  qu'on ait besoin de
+r\'efl\'echir pour  effectuer a), b), c). Il en est ainsi pour la probabilit\'e
+de tirer  un bulletin {\eightrm OUI} dans une urne qui en contient $p$, 
+sur $n$ bulletins en tout, car on voit tout de suite que $\#\Omega
+=  n$ et $\#A = p$. Les cardinaux sont \'evidents avant m\^eme d'avoir
+r\'efl\'echi \`a la nature des \'el\'ements. Lorsque les \'epreuves sont 
+des mots de $n$ lettres, des permutations  d'un ensemble, ou des choses
+encore plus compliqu\'ees, il faut d'abord  un raisonnement abstrait (les
+\'etapes a et b ci-dessus) pour comprendre  que $\Omega$ est bien
+l'ensemble des mots de $n$ lettres. Ensuite il faut appliquer une des
+formules de d\'enombrement  du chapitre {\bf II}. Ces formules ne 
+peuvent pas \^etre  devin\'ees en vitesse, elles font partie des
+connaissances accumul\'ees par les math\'ematiciens au cours des
+si\`ecles. En outre elles ne suffisent pas \`a elles seules et leur
+application ne constitue que l'\'etape c): auparavant il faut avoir fait le
+travail de mod\'elisation, qui constitue les \'etapes a) et b).  M\^eme 
+dans le cas  tr\`es simple de $A_1A_2$ (tirer deux fois de suite un
+{\eightrm OUI}), il faut r\'efl\'echir un peu, et abstraitement, pour
+comprendre  que $\Omega$   est l'ensemble de tous  les tirages de deux
+bulletins  distincts, et qu'il  rel\`eve du deuxi\`eme cas  de
+d\'enombrement ({\bf II.2.} tirages sans remise) d'o\`u $\#\Omega =
+n(n-1)$; il faut  encore recourir une seconde fois au m\^eme type de
+raisonnement abstrait pour $\#(A_1A_2) = p(p-1)$. C'est pourquoi une
+personne  n'ayant jamais \'etudi\'e le Calcul des probabilit\'es et \`a
+peine fait de math\'ematiques dans sa vie  pourra  deviner la valeur de
+${\cal P}\, (A_1)$, mais pas celle de ${\cal P}\, (A_1A_2)$; et encore
+moins celle  de ${\cal P}\, (A_2)$, car pour calculer cette derni\`ere il
+faut en outre  la d\'ecomposition ensembliste $A_2 =  A_1A_2 \cup
+B_1A_2$.  
+\medskip
+Or la m\^eme personne n'ayant jamais \'etudi\'e le calcul des
+probabilit\'es comprendra ais\'ement que si le premier bulletin tir\'e 
+\'etait un {\eightrm OUI}, la probabilit\'e de tirer un {\eightrm OUI} une
+seconde fois est $(p-1)/(n-1)$. Les \'etapes a) et b) sont ici aussi
+inutiles, car il saute aux yeux que pour ce probl\`eme l'ensemble des
+\'epreuves  est l'ensemble  des bulletins restants, et l'\'ev\'enement
+l'ensemble des bulletins  {\eightrm OUI} restants. Si on consid\`ere ce
+sous-probl\`eme: ``on a d\'ej\`a tir\'e un bulletin {\eightrm OUI} au
+premier tirage, quelle est la probabilit\'e d'en tirer un au second tirage''
+et qu'on veut malgr\'e tout passer par  a) et b), on prendra pour $\Omega$
+l'ensemble des $n-1$ bulletins restant apr\`es le premier tirage, et pour
+$A$ l'ensemble des $p-1$ bulletins {\eightrm OUI} restant apr\`es le 
+premier tirage: c'est en tous cas la d\'emarche implicite dans le
+raisonnement na\"\i f.  Toutefois, si on veut co\^ute que co\^ute
+proc\'eder selon les r\`egles formelles  a), b), c), il  vaut mieux prendre
+en compte pour ce premier  tirage tous les cas possibles, ce qui revient
+\`a prendre pour $\Omega$ l'ensemble de tous les tirages de deux
+bulletins {\it dont le premier} est {\eightrm OUI}, et pour $A$
+l'ensemble de tous les tirages de deux bulletins qui sont tous deux des
+{\eightrm OUI}; autrement dit, on prend pour espace des \'epreuves
+$A_1$ et pour  \'ev\'enement $A = A_1A_2$. Compar\'es
+(respectivement) \`a l'espace de tous les tirages de deux bulletins,  et
+\`a l'\'ev\'enement ``le second est un {\eightrm OUI}'', ces deux
+ensembles s'obtiennent en ne retenant que les \'epreuves qui satisfont
+la condition ``le premier tirage est {\eightrm OUI}''.  
+\medskip 
+Dans ce probl\`eme ``r\'eduit'', o\`u l'espace des \'epreuves est $A_1$ et
+l'\'ev\'e\-ne\-ment $A_1 A_2$, la probabilit\'e s'obtient toujours selon 
+la formule {\it cardinal de l'\'ev\'enement} sur {\it cardinal de l'espace},
+mais cela devient alors exactement ce que dit $IV.1$.
+\medskip
+Le but de ces remarques est le suivant: il n'y a absolument aucune
+diff\'erence de nature entre une probabilit\'e conditionnelle et une
+probabilit\'e tout court. On ne parle de probabilit\'e conditionnelle que
+si on se situe dans un probl\`eme donn\'e, et qu'on y distingue un
+sous-probl\`eme. N'importe quel probl\`eme de probabilit\'e peut
+toujours \^etre consid\'er\'e comme un sous-probl\`eme d'un probl\`eme
+plus vaste, de sorte qu'on puisse le traiter en termes de probabilit\'es
+conditionnelles. Par  exemple, dans le probl\`eme des bulletins on peut
+toujours supposer qu'avant le premier tirage avait eu lieu un tirage
+$N^\circ 0$. La probabilit\'e $p/n$ de tirer un bulletin {\eightrm OUI} au
+premier tirage est identique \`a la probabilit\'e conditionnelle de tirer 
+ce bulletin  {\eightrm OUI} sachant qu'au tirage $N^\circ 0$ on avait tir\'e
+un  {\eightrm NON}, et qu'il y avait alors $n+1$ bulletins en tout dont $p$
+{\eightrm OUI}, ou \`a la probabilit\'e conditionnelle de tirer ce bulletin 
+{\eightrm OUI} sachant qu'au tirage $N^\circ 0$ on avait tir\'e un 
+{\eightrm OUI}, et qu'il y avait alors $n+1$ bulletins en tout dont $p+1$
+{\eightrm OUI}.
+
+\bigskip
+
+{\bf IV. 4. Relativit\'e du hasard.}
+\medskip
+Ce constat concernant la nature essentiellement relative des
+probabilit\'es conditionnelles a des cons\'equences pratiques. Jusqu'ici, 
+nous avons toujours rencontr\'e des probl\`emes o\`u la premi\`ere 
+chose \`a faire \'etait de chercher les invariances afin de d\'eterminer 
+a priori ce qui est \'equiprobable. (en langage imag\'e ``le niveau o\`u
+intervient le hasard pur''). Dans le probl\`eme longuement discut\'e
+ci-dessus, o\`u on tirait un bulletin au hasard dans  une urne, il \'etait
+ais\'e de postuler que tous les bulletins sont \'equiprobables, parce que
+nous savions que nous tirions des bulletins individuels. Transformons un
+peu l'exp\'erience: imaginons  qu'\`a l'int\'erieur de l'urne se trouvent, 
+non des bulletins, mais des  d\'es: une partie des d\'es est blanche, les
+autres  sont rouges; disons $p$ d\'es blancs et $q$ d\'es rouges, le 
+nombre  total de d\'es \'etant $n = p + q$. Les d\'es rouges ont une face
+gagnante:  si un d\'e rouge est tir\'e au sort,  et qu'en le faisant rouler 
+il marque ``six'',  je gagne. Mais les d\'es blancs n'ont aucune face
+gagnante. Il est ais\'e  de d\'eterminer l'espace des \'epreuves $\Omega$
+correspondant, c'est l'ensemble de toutes les faces  de d\'es possibles,
+dont le nombre est $6n$: $\#\Omega = 6n$. L'\'ev\'enement $A$ ``je 
+gagne'' est l'ensemble  des faces gagnantes, c'est-\`a-dire l'ensemble 
+des faces ``six'' de d\'es rouges, soit $q$ faces en tout. La probabilit\'e 
+de gagner est donc $\#A\;  /\;\#\Omega = q / 6n$. 
+\medskip
+Nous avons ainsi
+raisonn\'e une fois de plus  par \'equiprobabilit\'e a priori, comme nous le faisons depuis le d\'ebut. Ici, le ``niveau o\`u
+intervenait le hasard pur'' \'etait le choix d'une face de d\'e parmi $6n$
+faces \'equiprobables.
+\medskip
+Mais supposons que ce niveau  nous reste cach\'e; par exemple, supposons
+que nous ignorions ce qui se trouve \`a l'int\'erieur de l'urne, que le 
+tirage d'un d\'e se fasse \`a l'int\'erieur de l'urne et \`a l'abri des 
+regards, soit  par un m\'ecanisme cach\'e, soit par un g\'enie qui habite
+l'urne. Chaque fois que nous frottons l'urne, le g\'enie tire au hasard un
+d\'e: si ce d\'e est rouge, le g\'enie le jette hors de l'urne puis nous (qui
+sommes \`a l'ext\'erieur) le lan\c cons; si le d\'e est blanc, le g\'enie ne
+se manifeste pas et rien ne sort de l'urne. 
+\medskip 
+Dans cette seconde version de l'exp\'erience il nous serait difficile de
+deviner comment intervient le hasard pur. En effet, rien ne nous dit que 
+la d\'ecision du g\'enie de lancer un d\'e hors de l'urne, provient d'un
+tirage entre des d\'es \'equiprobables; nous ignorons qu'il y a aussi des 
+d\'es blancs; le constat que les d\'es qui sortent sont toujours rouges  
+ne  permet aucune d\'eduction. Certes, nous voyons bien comment
+intervient le hasard dans la partie visible du processus: lorsque nous
+lan\c cons le  d\'e que le g\'enie nous a jet\'e, nous sommes assur\'es 
+que ses six faces sont \'equiprobables; mais la d\'ecision du g\'enie de
+lancer un d\'e ou non,  peut \^etre attribu\'ee \`a n'importe quelle forme
+de hasard.   Et nous n'avons aucun moyen de  savoir a priori quelle va
+\^etre la probabilit\'e pour qu'il lance un d\'e hors de l'urne; nous ne
+pouvons que  la mesurer statistiquement: en frottant un tr\`es grand
+nombre de fois l'urne, on peut par exemple constater empiriquement 
+que dans $30\%$  des cas, un d\'e est jet\'e hors de l'urne. 
+\medskip
+Le point essentiel est alors le suivant: malgr\'e notre ignorance de la 
+nature du ph\'enom\`ene, nous pouvons calculer la probabilit\'e de gagner 
+en utilisant la formule $IV.4$, \`a condition d'y introduire les
+probabilit\'es empiriques mesur\'ees.  Soit en effet $S$ l'\'ev\'enement
+``un d\'e sort de l'urne'', $R$ l'\'ev\'enement ``rien  ne sort'', et $G$
+l'\'ev\'enement ``je gagne''. En utilisant $IV.4$, on peut dire que   
+$${\cal P}\, (G) = {\cal P}\, (G\mid S) \cdot {\cal P}\, (S) + 
+{\cal P}\, (G\mid R) \cdot {\cal P}\, (R) =
+{\up{1} \over 6} \cdot 0.3 + 0 \cdot 0.7 = 0.05$$
+Le raisonnement a priori aurait donn\'e $q/6n$, donc (pour $q/n = 0.3$),
+le m\^eme r\'esultat.  Du moment que les probabilit\'es ${\cal P}\,
+(S)$ et ${\cal P}\, (R)$ sont connues (peu importe que ce soit a priori
+ou empiriquement),  la probabilit\'e ${\cal P}\, (G)$ est d\'etermin\'ee
+{\it ind\'ependamment de la mani\`ere dont le hasard est intervenu dans
+l'urne}.  Si par exemple le choix al\'eatoire effectu\'e \`a notre insu par 
+le g\'enie dans l'urne \'etait d'une grande complexit\'e,  de sorte que
+le ``v\'eritable'' espace $\Omega$ aurait un cardinal \'enorme,  que le 
+quotient $p/n$ serait une fraction compliqu\'ee (c'est-\`a-dire que $p$
+et $n$ seraient tous deux de tr\`es grands entiers),  mais proche de $0.3$,
+le calcul ci-dessus, quoique approch\'e, serait tout aussi correct.
+Math\'ematiquement,  la formule $IV.4$ se {\it d\'emontre} \`a partir de
+l'existence d'un espace des \'epreuves.  Mais, une fois fix\'ees les
+probabilit\'es  ${\cal P}\, (E_j)$, la probabilit\'e ${\cal P}\, (A)$ sera
+d\'etermin\'ee ind\'e\-pen\-dam\-ment de la nature de l'espace 
+$\Omega$. On peut m\^eme oublier qu'il existe quelque part un niveau
+o\`u intervient le pur hasard.  Si toutefois ce niveau n'{\it existe 
+r\'eellement pas},  alors la formule $IV.4$ peut perdre toute validit\'e.
+C'est ce qui se produit dans la M\'ecanique quantique,  lorsque des
+amplitudes interf\`erent (voir une discussion sur ce point \`a la section
+{\bf XIII.3}). 
+\medskip
+Ainsi la formule $IV.4$ est utilisable dans les cas o\`u les
+invariances ne sont pas int\'egralement connues,  de sorte qu'une partie
+seulement des probabilit\'es peuvent \^etre calcul\'ees a priori et que 
+les autres,  d'origine empirique,  ne peuvent \^etre d\'etermin\'ees 
+qu'a posteriori par des mesures statistiques.
+\medskip
+Autrement dit, la formule $IV.4$ permet de remplacer une partie des
+probabilit\'es a priori par des probabilit\'es empiriques.
+Cet exp\'edientest in\'evitable lorsqu'on ne peut pas acc\'eder au niveau o\`u intervient
+une invariance (cf. la discussion de la section {\bf I.2}).
+
+\bigskip
+
+Nous allons imm\'ediatement appliquer cela \`a un probl\`eme de 
+g\'en\'etique, celui des mariages consanguins. Imaginons que dans une
+population on isole un couple de parents, de sorte que les enfants de ces
+parents se reproduisent ensuite entre eux. Nous nous int\'eressons
+\`a la mani\`ere dont un g\`ene particulier, $G$, se combinera \`a ses
+compagnons all\`eles du m\^eme locus (voir {\bf III.5} et {\bf III.6}).
+Nous supposons d'abord que la combinaison homozygote $GG$ n'est pas
+invalidante et que les individus $GG$ acc\`edent autant que les autres 
+\`a la procr\'eation.
+\medskip
+Plusieurs cas de figure peuvent se pr\'esenter.  Chacun des deux parents
+peut appartenir \`a l'une des quatre cat\'egories $XX$, $XG$, $GX$, $GG$.
+La distinction entre $XG$ et $GX$ ne correspond \`a aucune diff\'erence
+biologique entre les individus porteurs,  mais repr\'esente le choix qui
+s'op\`ere entre les deux chromosomes au moment de la f\'econdation: 
+dire que le p\`ere est $XG$ signifie que c'est le chromosome
+porteur de $X$ qui sera retenu pour constituer une nouvelle paire: 
+la
+premi\`ere des deux lettres correspond au chromosome retenu.  Ainsi il 
+y aura seize cat\'egories pour le couple.  Si les parents sont tous deux
+$GX$,  les enfants seront tous $GG$,  et par cons\'equent si ces enfants 
+se croisent ensuite entre eux les petits enfants le seront aussi;  si les
+parents sont $XG$ et $GX$ (ou inversement),  aucun enfant ne sera $GG$
+mais un enfant sur deux sera $GX$ (les autres seront alors $XG$).  Il y 
+aura alors une chance sur quatre que les petits-enfants soient $GG$.  Si 
+les parents sont $XX$ et $GX$ (ou $XX$ et $XG$),  les enfants seront aussi
+pour moiti\'e $XG$ et pour l'autre moiti\'e $XG$,  et donc les
+petits-enfants auront aussi une chance sur quatre d'\^etre $GG$.  En
+regroupant syst\'ematiquement les diff\'erents cas qui se  pr\'esentent 
+on peut distinguer les trois \'ev\'enements suivants,  selon la 
+cat\'egorie des parents:  
+\medskip
+\centerline{\vbox{
+\halign{#\quad &#\crÊ
+ $E_1$:  &$GG + GG$, $GG + GX$, $GX + GG$, ou $GX + GX$ \cr
+\noalign{\smallskip}
+ $E_2$:   &$GG + XX$, $GG + XG$, $XG + GG$, $XX + GG$, \cr
+              &$GX + XX$, $GX + XG$, $XG + GX$, ou $XX + GX$ \cr
+\noalign{\smallskip}
+ $E_3$:  &$XG + XG$, $XG + XX$, $XX + XG$, ou $XX + XX$ \cr }   }   }
+\medskip
+Dans chacun de ces trois \'ev\'enements on aura une probabilit\'e 
+sp\'ecifique pour que les petits-enfants soient $GG$:
+\medskip
+\centerline{\vbox{
+\halign{ # &\hskip6mm #\hfill &\hskip6mm #\hfill \cr
+ parents   &enfants   &petits-enfants \cr
+\noalign{\medskip}
+$E_1$  & $100\%\; GG$  & $100\%\; GG$ \cr
+$E_2$  & $50\%\; GX$ et $50\%\; XG$ & $25\%\; GG$\cr
+$E_3$ & $100\%\; XX$  & $0\%\; GG$ \cr }   }   }
+\medskip
+Si on appelle $E$ l'\'ev\'enement ``un petit-enfant est $GG$'', on
+peut interpr\'eter le nombre qui figure dans la troisi\`eme colonne de ce
+tableau comme la probabilit\'e conditionnelle de $E$ sachant que $E_1$,
+$E_2$, ou $E_3$ s'est produit. Ainsi
+$${\cal P}\,(E \mid E_1) = 1\quad ; \quad {\cal P}\,(E \mid E_2) = 0.25
+\quad ; \quad {\cal P}\,(E \mid E_3) = 0\quad ; $$
+Pour conna{\^\i}tre la probabilit\'e de $E$ lorsque les parents sont pris 
+au hasard dans la population (donc on ignore s'ils sont dans $E_1$, dans
+$E_2$, ou dans $E_3$), on utilise $IV.4$, ce qui donne:
+$${\cal P}\,(E) = {\cal P}\,(E \mid E_1) \cdot {\cal P}\,(E_1) + 
+{\cal P}\,(E \mid E_2) \cdot {\cal P}\,(E_2) + {\cal P}\,(E \mid E_3) 
+\cdot {\cal P}\,(E_3)$$ 
+Tout comme pour l'exp\'erience avec le g\'enie cach\'e dans l'urne, on ne 
+peut  pas, dans ce probl\`eme, trouver ${\cal P}\,(E_1)$, ${\cal P}\,(E_2)$
+et  ${\cal P}\,(E_3)$ en cherchant des \'epreuves \'equiprobables a priori
+car les m\'ecanismes d'apparition des g\`enes $G$ et $X$ nous sont 
+inconnus et certainement si complexes que nous serions bien incapables 
+d'y  trouver des invariances. Conform\'ement aux remarques faites au 
+d\'ebut de cette section, on peut cependant ignorer ces invariances, 
+il n'est m\^eme pas n\'ecessaire qu'il existe un moyen de les mettre en 
+\'evidence. Il
+suffit de remplacer les coefficients ${\cal P}\,(E_j)$  parleurs
+valeurs observ\'ees. Ainsi, l'espace $\Omega$ reste ici inconnu,  mais
+nous pouvons nous en passer en utilisant des donn\'ees empiriques.
+Celles-ci nous fournissent la valeur du nombre $\varepsilon$ (la
+proportion d'individus $GG$ dans la population, d'o\`u nous d\'eduisons 
+par la loi de Hardy-Weinberg que si on choisit au  hasard un individu
+dans  la population, la probabilit\'e pour qu'il soit  $GG$ sera
+$\varepsilon$, la probabilit\'e pour qu'il soit h\'et\'erozygote $GX/XG$ 
+sera $2\, (\sqrt{\varepsilon } - \varepsilon )$, et la probabilit\'e pour 
+qu'il  soit  $XX$ sera $\eta = 1 -  2\sqrt{\varepsilon } +\varepsilon = (1 -
+\sqrt{\varepsilon })^2$. Si les couples de parents sont pris au hasard,
+la probabilit\'e pour que par exemple les deux parents soient $GG$ sera
+$\varepsilon^2$. L'\'ev\'enement $E_1$ du tableau ci-dessus aura donc 
+la probabilit\'e  
+$$\eqalignno{
+{\cal P}\, (GG+GG) + {\cal P}\, (GG+GX) 
+&+ {\cal P}\, (GX+GG)  + {\cal P}\, (GX+GX) \cr
+\noalign{\smallskip}
+&= \quad\varepsilon^2 + \varepsilon\cdot {\up{x}\over\ldown{2}} + 
+{\up{x}\over\ldown{2}}\cdot \varepsilon + {\up{x}\over\ldown{2}}\cdot
+{\up{x}\over\ldown{2}} \cr   
+\noalign{\smallskip}
+&=\quad\varepsilon^2 +
+x\varepsilon + {\up{x^2}\over\ldown{4}}\quad = \quad\varepsilon\cr }$$
+L'\'ev\'enement $E_2$ aura la probabilit\'e  
+$$\eqalignno{
+{\cal P}\, (GG &+ XG) + {\cal P}\, (GG+XX) + {\cal P}\, (GX+XG)  + 
+{\cal P}\, (GX+XX) + \cr
+ + {\cal P}\, (XG &+ GG) +   
+{\cal P}\, (XG+GX) + {\cal P}\, (XX+GG)  + {\cal P}\, (XX+GX) \cr
+\noalign{\smallskip}
+&= \quad\varepsilon\cdot {\up{x}\over\ldown{2}} + \varepsilon\cdot\eta 
++ {\up{x}\over\ldown{2}}\cdot {\up{x}\over\ldown{2}} + 
+{\up{x}\over\ldown{2}}\cdot\eta + {\up{x}\over\ldown{2}}\cdot
+\varepsilon + {\up{x}\over\ldown{2}}\cdot {\up{x}\over\ldown{2}} +  
+\eta\cdot\varepsilon  + \eta\cdot{\up{x}\over\ldown{2}} \cr 
+\noalign{\smallskip}
+&=\quad2\,\big(\sqrt\varepsilon -\varepsilon\big)\quad =\quad x\cr }$$
+Enfin, l'\'ev\'enement $E_3$ aura la probabilit\'e   
+$$\eqalignno{
+{\cal P}\, (XG+XG) + {\cal P}\, (XG+XX) 
+&+ {\cal P}\, (XX+XG)  + {\cal P}\, (XX+XX) \cr
+\noalign{\smallskip}
+&= \quad{\up{x}\over\ldown{2}}\cdot 
+{\up{x}\over\ldown{2}} + {\up{x}\over\ldown{2}}\cdot\eta +\eta\cdot
+{\up{x}\over\ldown{2}} + \eta^2 \cr 
+\noalign{\smallskip}
+&= \quad\big( 1-\sqrt\varepsilon\,\big)^2\quad = \quad\eta \cr }$$ 
+Ces trois r\'esultats auraient pu \^etre obtenus sans calcul:
+l'\'ev\'enement $E_1$ regroupe en effet les couples de parents qui
+procr\'eeront des $GG$, l'\'ev\'enement $E_2$ les couples de parents qui
+procr\'eeront des h\'et\'erozygotes, et l'\'ev\'enement $E_3$ les couples
+de parents qui  procr\'eeront des $XX$; il est donc logique (puisqu'on
+suppose que tous les couples ont la m\^eme f\'econdit\'e) que les poids
+relatifs de ces \'ev\'enements soient \'egaux \`a celui de la
+prog\'eniture correspondante. 
+\medskip
+Appliquons alors la r\`egle $IV.4$ des probabilit\'es conditionnelles:
+${\cal P}\, (E) = \varepsilon + 0.25\, x + 0\, \eta = {1\over
+2}\,(\sqrt\varepsilon + \varepsilon )$. 
+\medskip
+On peut donc \'enoncer le r\'esultat suivant: dans une population o\`u
+la proportion d'individus $GG$ est $\varepsilon$, un couple de parents
+pris au hasard a (pour chaque enfantement) la probabilit\'e $\varepsilon$ 
+de mettre au monde un individu $GG$. Mais un couple form\'e de fr\`ere et 
+soeur a la probabilit\'e ${1\over 2}\, (\sqrt\varepsilon + \varepsilon )$
+de  mettre au monde un individu $GG$. Si par exemple il y a un $GG$ sur 
+$10\, 000$ dans la population, la procr\'eation entre fr\`ere et soeur a 
+une chance sur deux cent de produire un $GG$.
+\medskip
+La loi des accouplements consanguins peut \^etre g\'en\'eralis\'ee
+mais nous ne donnons ici que les r\'esultats\ftn{1}{On trouvera un
+expos\'e assez complet (mais rapide) des lois probabilistes  de
+l'h\'er\'edit\'e dans le petit ouvrage de Gustave Mal\'ecot {\it Les
+math\'ematiques de l'h\'er\'edit\'e} (Masson, Paris, {\oldstyle 1948}). 
+Le lecteur qui ne craint pas d'effectuer tous les calculs lui-m\^eme pourra
+trouver le th\`eme de la consanguinit\'e trait\'e en exercices dans l'ouvrage
+de William  Feller  (chapitre V, probl\`emes $N^{\rm os}\, 33$ \`a $40$, 
+pages 144 -- 145.}. Par le m\^eme proc\'ed\'e que celui utilis\'e plus 
+haut (application de la r\`egle $IV.4$ des probabilit\'es conditionnelles) 
+on peut analyser l'effet de croisements moins fortement consanguins;
+dans le cas de croisements entre fr\`eres et soeurs, nous avons divis\'e 
+les choix possibles de parents en  cat\'egories; pour des cousins 
+germains, qui n'ont pas les m\^emes parents, mais les m\^emes
+grands-parents, il faudra remonter \`a ces derniers.   Les lois obtenues
+sont simples: pour les exprimer on introduit un nombre appel\'e {\it
+facteur de consanguinit\'e}. Ce nombre vaut ${1\over 2}$ pour des 
+fr\`eres et soeurs; il est \'egal \`a ${1\over 8}$ pour un couple form\'e
+d'un demi-fr\`ere et sa demi-soeur ou de doubles cousins germains, \`a
+${1\over 16}$ pour des cousins germains, etc. Si $f$ est le facteur de
+consanguinit\'e d'un couple, la probabilit\'e pour  qu'il engendre un enfant
+$GG$ est $f\sqrt{\varepsilon } + (1- f)\varepsilon$ (dans l'hypoth\`ese
+o\`u les individus $GG$ ont  autant de chances de procr\'eer que les
+autres). Pour les maladies g\'en\'etiques   tr\`es rares, $\varepsilon$ est
+n\'egligeable devant $\sqrt\varepsilon$;  la probabilit\'e de transmettre
+la maladie est donc beaucoup plus \'elev\'ee  en cas de mariage
+consanguin, car le facteur $f$  est alors beaucoup plus grand que
+$\sqrt\varepsilon$. Pour la mucoviscidose, qui n'est pas rarissime,
+$\varepsilon = 1/2500$ et $\sqrt\varepsilon = 1/50$, donc un mariage
+entre cousins germains donnera une probabilit\'e $1/615$, quatre fois
+plus grande que pour une procr\'eation exogamique. 
+\medskip
+Il ne faut pas oublier qu'il s'agit l\`a des probabilit\'es correspondant 
+\`a un choix au hasard de cousins germains parmi la population. Il est 
+bien clair que si les cousins savent que l'un d'entre eux est homozygote
+$XX$, la  probabilit\'e d'engendrer un $GG$ sera nulle, et s'ils savent
+\^etre tous deux h\'et\'erozygotes, la probabilit\'e sera ${1\over 4}$.
+
+
+
+
+
+\bye

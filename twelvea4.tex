@@ -1,0 +1,324 @@
+
+
+\hfuzz 5pt
+\catcode `\@=11
+
+
+%********************************************************
+
+% les blancs
+
+\def\v{\vskip 2pt plus 1pt minus 1pt} 
+\def\vv{\vskip 5pt plus 2pt minus 2pt}
+\def\vvv{\vskip 15pt plus 3pt minus 3pt}
+\def\va{\vskip 9pt plus 2pt minus2pt}
+
+\def\vvd{\vskip 5pt plus 2pt minus 2pt\nobreak}
+\def\vvvd{\vskip 15pt plus 3pt minus 3pt\nobreak}
+
+ 
+ 
+\def\hh{\hskip .5cm}
+\def\a{\hskip 4pt} 
+\def\b{\hskip 2pt}
+\def\cv{\hskip 0.5pt}
+ 
+\def\hfb{\hf\break}
+
+\def\tv{\vrule height12pt depth5pt}
+\def\ti{\vrule height12pt depth5pt width 0pt}
+\def\th{\omit\hrulefill}
+\def\ttv{\vrule height 11pt}
+
+
+
+\abovedisplayskip=11pt plus 3pt minus 3pt
+\abovedisplayshortskip=4pt plus 3pt minus 3pt
+\belowdisplayskip=11pt plus 3pt minus 3pt
+\belowdisplayshortskip=11pt plus 3pt minus 3pt
+\normalbaselineskip=15pt
+\normalbaselines
+
+\def\ent#1{{\raise-2pt
+\vbox{\hrule
+\hbox{\ttv
+\vbox{\kern2pt
+\hbox{\kern3pt#1}
+\kern2pt}
+\ttv}
+\hrule}}}
+\def\x{\kern4pt}
+\def\vv{\vskip5pt}
+\def\page{\vfill\eject}
+
+
+
+
+% ********************* les fontes *****************
+
+
+\font\tenrm=cmr12
+\font\eightrm=cmr10
+\font\sevenrm=cmr8
+\font\sixrm=cmr7
+\font\fiverm=cmr6
+
+\font\tenbf=cmbx12
+\font\eightbf=cmbx10 
+\font\sevenbf=cmbx8
+\font\sixbf=cmbx7
+\font\fivebf=cmbx6  
+
+\font\tenit=cmti12
+\font\eightit=cmti10
+\font\sevenit=cmti8
+\font\sixit=cmti7 
+\font\fiveit=cmti6 
+
+\font\tensl=cmsl12
+\font\eightsl=cmsl10
+\font\sevensl=cmsl8 
+\font\sixsl=cmsl7 
+\font\fivesl=cmsl6 
+
+\font\twelvemi=cmmi12 scaled 1200
+\font\tenmi=cmmi12
+\font\eightmi=cmmi10 
+\font\sevenmi=cmmi8
+\font\sixmi=cmmi7 
+\font\fivemi=cmmi6 
+
+\font\tensy=cmsy12 
+\font\eightsy=cmsy10 
+\font\sevensy=cmsy8 
+\font\sixsy=cmsy7 
+\font\fivesy=cmsy6
+
+\font\sssi=cmssi12
+\font\ssssi=cmssi10
+
+                \textfont0=\tenrm
+                \scriptfont0=\sevenrm 
+                \scriptscriptfont0=\fiverm
+            \def\rm{\fam\z@\tenrm}%
+                \textfont\bffam=\tenbf    
+                \scriptfont\bffam=\sevenbf
+                \scriptscriptfont\bffam=\fivebf
+            \def\bf{\fam\bffam\tenbf}%
+                \textfont1=\tenmi 
+                \scriptfont1=\sevenmi 
+                \scriptscriptfont1=\fivemi
+            \def\oldstyle{\fam\@ne\tenmi}%
+                \textfont2=\tensy 
+                \scriptfont2=\sevensy 
+                \scriptscriptfont2=\fivesy
+            \def\cal{\fam2}%
+                \textfont\itfam=\tenit
+
+%%%% some special fonts %%%%
+
+   \font\fivegoth=eufm5         \font\fivebb=bbm5  
+   \font\sixgoth=eufm6          \font\sixbb=bbm6  
+   \font\sevengoth=eufm7        \font\sevenbb=bbm7  
+   \font\eightgoth=eufm8        \font\eightbb=bbm8   
+   \font\tengoth=eufm10         \font\tenbb=bbm10 
+   \font\twelvegoth=cmfrak12    \font\twelvebb=bbm12 
+     
+   \font\svtnrm=cmr17
+   \font\tit=cmbx17
+  
+\newfam\bbfam                    
+\textfont\bbfam=\twelvebb       \scriptfont\bbfam=\eightbb
+\scriptscriptfont\bbfam=\sixbb
+\def\bb{\fam\bbfam}
+
+\newfam\gothfam        
+\textfont\gothfam=\twelvegoth   \scriptfont\gothfam=\eightgoth
+\scriptscriptfont\gothfam=\sixgoth
+\def\goth{\fam\gothfam}
+
+\chardef\tcaccent='024
+\def\tc{\tcaccent \hskip-5.8pt c}
+
+\def\eightpoint{%
+   \def\e{\hbox{\tenmi e \vrule height9pt width0pt}}%     
+                \textfont0=\eightrm
+                \scriptfont0=\sixrm 
+                \scriptscriptfont0=\fiverm
+            \def\rm{\fam\z@\eightrm}%
+                \textfont1=\eightmi 
+                \scriptfont1=\sixmi 
+                \scriptscriptfont1=\fivemi
+            \def\oldstyle{\fam\@ne\eightmi}%
+                \textfont2=\eightsy 
+                \scriptfont2=\sixsy 
+                \scriptscriptfont2=\fivesy
+            \def\cal{\fam2}%
+                \textfont\itfam=\eightit
+            \def\pc##1##2|{{\eightrm##1\sixrm##2}}%
+            \def\it{\fam\itfam\eightit}%
+                \textfont\slfam=\eightsl
+            \def\sl{\fam\slfam\eightsl}%
+                \textfont\bffam=\eightbf    
+                \scriptfont\bffam=\sixbf
+                \scriptscriptfont\bffam=\fivebf
+            \def\bf{\fam\bffam\eightbf}%
+                \textfont\bbfam=\tenbb       
+                \scriptfont\bbfam=\sevenbb
+                \scriptscriptfont\bbfam=\fivebb
+            \def\bb{\fam\bbfam\tenbb}%
+                \textfont\gothfam=\tengoth 
+                \scriptfont\gothfam=\sevengoth
+                \scriptscriptfont\gothfam=\fivegoth
+            \def\goth{\fam\gothfam\tengoth}%
+                \abovedisplayskip=8.4pt plus 3pt minus 3pt
+                \abovedisplayshortskip=3.6pt plus 3pt minus 3pt
+                \belowdisplayskip=8.4pt plus 3pt minus 3pt
+                \belowdisplayshortskip=8.4pt plus 3pt minus 3pt
+                \normalbaselineskip=12pt
+                \setbox\strutbox=\hbox{\vrule height8.4pt depth2pt width0pt}%
+            \def\euro{\kern1.5pt\hbox{{\ssssi C} \kern-10.3pt
+                \raise2.5pt\hbox{\vbox{\offinterlineskip
+                \smash{\hskip0.2pt\hbox to 5.2pt{\hrulefill}} 
+                \vskip1.2pt
+                \smash{\hbox to 5.1pt{\hrulefill}}}}}\kern0.8pt}%
+            \normalbaselines
+                \rm}
+
+\textfont2=\tensy    \scriptfont2=\sevensy    \scriptscriptfont2=\fivesy
+\def\cal{\fam2}
+
+\def\pc#1#2|{{\tenrm#1\eightrm#2}}
+\def\pd#1 {{\pc#1|}\ }
+\def\bfpc#1#2|{{\tenbf#1\eightbf#2}}
+\def\bfpd#1 {{\bfpc#1|}\ }
+\let\old=\oldstyle
+\rm
+
+%%%%%%%%%%%%%%% dactylographie francaise %%%%%%%%%%%%%%%%%
+ 
+\catcode`\;=\active
+\def;{\relax\ifhmode\ifdim\lastskip>\z@
+\unskip\fi\kern\fontdimen2\font \kern -1.2\fontdimen3\font
+\fi\string;}
+\catcode`\:=\active
+\def:{\relax\ifhmode\ifdim\lastskip>\z@
+\unskip\fi\kern\fontdimen2\fontÊ\kern -1.1\fontdimen3\font
+\fi\string:}
+\catcode`\!=\active
+\def!{\relax\ifhmode\ifdim\lastskip>\z@
+\unskip\fi\kern\fontdimen2\font \kern -1.1\fontdimen3\font
+\fi\string!}
+\catcode`\?=\active
+\def?{\relax\ifhmode\ifdim\lastskip>\z@
+\unskip\fi\kern\fontdimen2\font \kern -1.1\fontdimen3\font
+\fi\string?}
+
+
+\frenchspacing
+
+
+%%%%%%%%%%%%%%%% format de la page de sortie %%%%%%%%%%%%%%%%
+
+
+\newif\ifpagetitre      \pagetitretrue
+\newtoks\auteurcourant  \auteurcourant={\hfil}
+\newtoks\titrecourant   \titrecourant={\hfil}
+
+\pretolerance=500 \tolerance=1000 \brokenpenalty=5000
+\newdimen\hmargehaute   \hmargehaute=0cm
+\newdimen\lpage         \lpage=15cm        \hsize=13.5cm
+\newdimen\hpage         \hpage=24cm        \vsize=21.6cm
+\newdimen\larg          \larg=13.5cm
+
+\parskip=0pt            \parindent=15pt 
+\def\margebasse{\vss}
+
+\output{\shipout\vbox to \hpage{\corpsdepage\margebasse}
+\advancepageno\global\pagetitrefalse
+\ifnum\outputpenalty>-2000 \else\dosupereject\fi}
+
+\def\corpsdepage{\hbox to\lpage{\hss\pagetexte\hss}}
+
+\def\pagetexte{\begingroup\def\line{\hbox to \larg}\vbox
+{\makeheadline\pagebody\makefootline}\endgroup}
+
+\headline={\ifpagetitre\titleheadline\else
+\ifodd\pageno\rightheadline\else\leftheadline\fi\fi}
+
+\def\titleheadline{\hfil}
+\def\rightheadline{\tensl\hfil\the\auteurcourant\hfil}
+\def\leftheadline{\tensl\hfil\the\titrecourant\hfil}
+
+\def\footnoterule{\kern-6\p@\hrule width 8cm\kern 5.6\p@}
+
+\baselineskip=15pt
+
+\catcode `\@=12
+
+\hoffset=4.8mm   \voffset=14.4mm
+
+
+%%%%%%%%%%%%%%%%%%% quelques macros %%%%%%%%%%%%%%%%%%%%
+ 
+
+\def\ftn#1#2{\footnote{${}^{(#1)}$} {\eightpoint #2}}
+
+\def\C{{\bb C}}
+\def\N{{\bb N}}
+\def\Q{{\bb Q}}
+\def\R{{\bb R}}
+\def\Z{{\bb Z}}
+
+\def\grad{\leavevmode\kern3.6pt\hbox{\raise 6pt\hbox to 17pt{
+\rightarrowfill} \kern-21pt grad}\kern2.4pt }
+\def\rot{\leavevmode\hbox{\raise 6pt\hbox{\eightpoint$\rightarrow$}
+\kern-15.5pt rot}\kern2.4pt }
+\def\intt_#1{\raise-18pt\hbox to 0mm{\hskip4.8pt $\scriptstyle #1$\hss}
+\int\!\!\!\!\int}
+\def\over{\above.2pt}
+\def\inttt_#1{\raise-18pt\hbox to 0mm{\hskip4.8pt $\scriptstyle #1$\hss}
+\int\!\!\!\!\int\!\!\!\!\int}
+\def\up#1{\hbox{\lower2.6pt\hbox{$#1$}}}
+\def\down#1{\hbox{\raise3pt\hbox{$#1$}}}
+\def\textdown#1{\hbox{\raise1.7pt\hbox{$\scriptstyle#1$}}}
+\def\ldown#1{\hbox{\raise1.8pt\hbox{$#1$}}}
+\def\lldown#1{\hbox{\raise0.8pt\hbox{$#1$}}}
+\def\scriptdown#1{\hbox{\raise1.2pt\hbox{$\scriptscriptstyle#1$}}}
+\def\eightup#1{\hbox{\lower2.4pt\hbox{$#1$}}}
+\def\eightdown#1{\hbox{\raise3.6pt\hbox{$#1$}}}
+\def\eighttextdown#1{\hbox{\raise1.7pt\hbox{$\scriptstyle#1$}}}
+\def\eightldown#1{\hbox{\raise1.8pt\hbox{$#1$}}}
+\def\eightlldown#1{\hbox{\raise0.8pt\hbox{$#1$}}}
+\def\eightscriptdown#1{\hbox{\raise1.2pt\hbox{$\scriptscriptstyle#1$}}}
+\def\strup#1{\vrule depth#1pt width0pt}
+\def\sdown#1{\vrule height#1pt width0pt}
+\def\e{\hbox{\twelvemi e \vrule height11pt width0pt}}
+\def\fg{\leavevmode\raise.3ex\hbox{$\scriptscriptstyle\,\rangle\!\rangle$}}
+\def\og{\leavevmode\raise.3ex\hbox{$\scriptscriptstyle\langle\!\langle$}}
+
+\mathchardef\rad="3370
+\mathchardef\bigrad="3371
+\mathchardef\Bigrad="3372
+\mathchardef\biggrad="3373
+\mathchardef\Biggrad="3374
+\mathchardef\rars ="3128
+\mathchardef\rart ="3129
+
+\def\cqfd  {{\unskip\nobreak\hfil\penalty50
+\hskip2em\hbox{}\nobreak\hfil{\eightrm CQFD}
+\parfillskip=0pt \finalhyphendemerits=0 \par }}
+
+           \def\euro{\kern2.25pt\hbox{{\sssi C} \kern-11.3pt
+              \raise2.7pt\hbox{\vbox{\offinterlineskip
+              \smash{\hskip0.3pt\hbox to 6.2pt{\hrulefill}} 
+              \vskip1.8pt
+              \smash{\hbox to 6pt{\hrulefill}}}}}\kern1.2pt}%
+ 
+\def\og{\leavevmode\raise.3ex\hbox{$\scriptscriptstyle
+\langle\!\langle$}}
+\def\fg{\leavevmode\raise.3ex\hbox{$\scriptscriptstyle
+\kern0.3pt\rangle\!\rangle$}}
+
+\def\cit{\eightpoint \leftskip28pt \rightskip10pt}
+

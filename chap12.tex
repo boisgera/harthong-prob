@@ -1,0 +1,2637 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Analyse statistique des d\'ependances}
+
+\pageno=321 
+
+\def\xx{\hskip-5pt + \hskip-5pt} 
+\def\tv{\vrule height 30pt depth 6pt width0.4pt} 
+\def\punkt{\vrule height0.4pt depth0pt width0.4pt} 
+ 
+\newdimen\blocksize  \blocksize=\vsize  \advance\blocksize by -12pt 
+
+\null\vskip11mm plus3mm minus3mm
+ 
+\centerline{\tit XII. ANALYSE STATISTIQUE} 
+\vskip7pt
+\centerline{\tit DES D\'EPENDANCES.} 
+
+\vskip11mm plus3mm minus3mm
+ 
+{\bf XII. 1. Corr\'elation de deux variables al\'eatoires.}
+\medskip 
+Au chapitre {\bf VI} (variables al\'eatoires), nous avions introduit une 
+grandeur appel\'ee la {\it covariance} de deux variables al\'eatoires. 
+Nous avions vu alors que, lorsque deux variables al\'eatoires $X$ et $Y$ 
+sont stochastiquement ind\'ependantes, leur covariance est nulle, mais 
+que la covariance peut \^etre nulle aussi pour des variables d\'ependant 
+l'une de l'autre. Les trois tableaux du chapitre {\bf VI} montrent trois 
+possibilit\'es pour la loi conjointe de deux va\-ria\-bles al\'eatoires: 
+(1) elles sont stochastiquement ind\'ependantes; (2) l'une est fonction de 
+l'autre; (3) elles ne sont pas stochastiquement ind\'ependantes, et ne 
+sont pas non plus fonction l'une de l'autre. Les trois exemples avaient
+\'et\'e choisis de sorte que dans les trois cas, la covariance soit nulle. 
+Ceci afin de bien montrer que la covariance n'est pas une mesure de la 
+d\'ependance, qu'elle serait d'autant plus grande que la d\'ependance entre 
+les deux varia\-bles serait plus forte (si tel \'etait le cas, la covariance 
+serait nulle pour le tableau 1 seulement; elle serait maximum pour le 
+tableau 2 et entre les deux pour le tableau 3). En examinant les
+choses de pr\`es, il appara{\^\i}t que la covariance ne mesure pas
+la d\'ependance en g\'en\'eral, mais seulement la d\'ependance
+{\it lin\'eaire},  ou plus exactement la d\'ependance {\it affine}. 
+Dans le tableau 2 du chapitre {\bf VI}, $Y$ d\'epend de $X$, 
+mais pas lin\'eairement: $Y = X^2$, donc $Y$ est bien fonction de $X$, 
+mais \`a une valeur donn\'ee de $Y$ correspondent deux valeurs 
+oppos\'ees de $X$, qui s'annulent mutuellement dans le calcul de la 
+covariance. On peut v\'erifier que si $Y$ \'etait une fonction lin\'eaire 
+(ou affine) de $X$,  la covariance serait maximum. Si au lieu d'une 
+d\'ependance lin\'eaire rigoureuse, on avait une d\'ependance ``floue'' 
+(mais lin\'eaire),  la covariance serait interm\'ediaire entre 
+z\'ero et le maximum. 
+\medskip 
+Afin de voir cela en d\'etail, le mieux est d'introduire une troisi\`eme
+variable al\'eatoire $Z_\lambda = Y - \lambda X$, o\`u $\lambda$ est
+un param\`etre r\'eel fix\'e. Si la loi conjointe de $X$ et $Y$ est 
+donn\'ee, elle permet bien s\^ur de calculer la loi de $Z_\lambda$. Si 
+par exemple la variance de $Z_\lambda$ est nulle, cela signifie que 
+$Z_\lambda$ est, avec probabilit\'e 1, c'est-\`a-dire avec certitude, 
+\'egale \`a sa moyenne $m = {\bf E}(Z_\lambda )$. Mais comme 
+$Z_\lambda = Y - \lambda X$, cela signifierait aussi que $Y$ est avec 
+certitude \'egale \`a $\lambda X + m$, donc que $Y$ est une fonction 
+affine, de pente $\lambda$, de $X$. Si la variance de $Z_\lambda$ n'est 
+pas nulle, mais petite, cela signifie que $Z_\lambda$ s'\'ecarte peu, ou 
+ne s'\'ecarte qu'avec une faible probabilit\'e, de sa moyenne $m$, et 
+cela revient \`a dire que $Y$ s'\'ecarte peu, ou avec une faible 
+probabilit\'e, de $\lambda X + m$, ou encore, que la d\'ependance de $Y$ 
+par rapport \`a $X$ est floue (comme dans le tableau 3), mais affine de 
+pente $\lambda$. On peut donc dire que la variance de $Z_\lambda$ est 
+une mesure du degr\'e de d\'ependance affine, pour une pente 
+$\lambda$  donn\'ee,  de $Y$ par rapport \`a $X$. Voyons maintenant 
+comment interpr\'eter la covariance de $X$ et $Y$ dans ce contexte. 
+\medskip 
+D\'esignons par $r_{j,k} = {\cal P}\, (X = x_j\; ; \; Y = y_k)$ la loi 
+conjointe de $X$ et de $Y$, par $a = \sum_{j,k}\; r_{j,k}\> x_j$ la 
+moyenne de $X$, et par $b = \sum_{j,k}\; r_{j,k}\> y_k$ la moyenne de 
+$Y$. Si on calcule la variance de $Z_\lambda$ \`a partir de ces 
+ingr\'edients, on obtient ceci : 
+$$\eqalign{ {\bf Var}\, (Z_\lambda ) \;\; 
+&= \;\; \sum_{j,k} r_{j,k}\; \bigl[ y_k - b - \lambda\, (x_j -a) \bigr]^2 \cr 
+&= \;\; \sum_{j,k} r_{j,k}\; \bigl[ (y_k - b)^2 - 2\,\lambda\, (x_j -a)\,
+(y_k - b) + \lambda^2\, (x_j -a)^2 \bigr] \cr 
+&= \;\; {\bf Var}\, (Y) - 2\,\lambda\, {\bf Cov}\, (X,Y) + \lambda^2\, {\bf 
+Var}\, (X) \cr }$$ 
+Or la variance est une grandeur qui est par nature positive, de sorte
+que, quelle que soit la valeur de $\lambda$, on aura toujours ${\bf 
+Var}\, (Z_\lambda ) \geq 0$; d'apr\`es ce qui pr\'ec\`ede, cela a pour
+cons\'equence que
+$${\bf Var}\, (Y) - 2\,\lambda\, {\bf Cov}\, (X,Y) + \lambda^2\, {\bf
+Var}\, (X) \;\; \geq \;\; 0$$ 
+Cette in\'egalit\'e \'etant vraie quel que soit $\lambda$, on en d\'eduit
+que n\'ecessairement, dans tous les cas 
+$${\bf Cov}\, (X,Y) \;\; \leq \;\; \sqrt{{\bf Var}\, (X) \cdot {\bf Var}\, (Y)}
+\eqno (XII.1.)$$
+en outre, on peut dire que, pour que ${\bf Var}\, (Z_\lambda ) = 0$, 
+il faut et il suffit que
+$${\bf Cov}\, (X,Y) \;\; = \;\; \sqrt{{\bf Var}\, (X) \cdot {\bf Var}\, (Y)}
+\eqno (XII.2.)$$
+et que
+$$\lambda \;\; = \;\; \sqrt{{\bf Var}\, (Y) \over {\bf Var}\, (X)}
+\eqno (XII.3.)$$ 
+Ainsi, ${\bf Cov}\, (X,Y)$ est maximum lorsque ${\bf 
+Var}\, (Z_\lambda ) = 0$, $\lambda^2$ \'etant \'egal \`a 
+${\bf Var}\, (Y) / {\bf Var}\, (X)$. 
+\medskip 
+On peut donc r\'esumer les choses ainsi: dans tous les cas la
+covariance de $X$ et $Y$ peut au maximum \^etre \'egale \`a $\sqrt{{\bf 
+Var}\, (X) \cdot {\bf Var}\, (Y)}$; elle {\it atteint} ce maximum lorsque 
+$Y$ est une fonction affine de $X$ de pente $(XII.3)$. Lorsque la 
+corr\'elation n'est pas \'egale \`a ce maximum, mais en est proche, 
+$Y$ est approximativement \'egale \`a $\lambda X + m$, ce qui veut 
+dire que $Y$ ne s'\'ecarte sensiblement de $\lambda X + m$ qu'avec
+une faible probabilit\'e (d\'ependance ``floue''). 
+\medskip 
+ 
+\midinsert 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig50.eps} } 
+\vskip2mm 
+\centerline{\eightpoint figure 50} 
+\vskip8pt 
+\centerline{\vbox{\hsize=11cm\eightpoint
+Ce graphique repr\'esente les valeurs prises par les deux variables 
+al\'eatoires $X$ et $Y$ du tableau 2 du chapitre {\bf VI} (les valeurs
+de $X$ sont les abscisses des points et les valeurs de $Y$ sont les 
+ordonn\'ees des points). Chaque point est affect\'e du poids 
+correspondant \`a sa probabilit\'e, donn\'ee par la loi conjointe de $X$
+et $Y$: le point de coordonn\'ees $x_j\, ,\, y_k$ a le poids ${\cal P}\, 
+(X=x_j\, ;\, Y=y_k)$ (mais les poids ne se voient pas sur le graphique). 
+La droite de r\'egression est repr\'esent\'ee: c'est la droite la plus 
+proche possible (en un certain sens, d\'efini dans le texte) du nuage des 
+points.  Ici, bien que ce soit {\it la plus} proche, elle n'est pas proche
+car la corr\'elation entre les deux variables al\'eatoires est nulle. } }
+\vskip 3mm
+\endinsert 
+ 
+La valeur maximum de la covariance donn\'ee par $(XII.2)$ d\'epend 
+des variances de $X$ et $Y$; la covariance n'est donc pas la pure 
+mesure du degr\'e de d\'ependance lin\'eaire entre $X$ et $Y$, mais
+inclut aussi une mesure de leurs variances. Afin de s\'eparer les deux, 
+il est commode d'introduire la grandeur
+$$\rho \;\; = \;\; {{\bf Cov}\, (X,Y) \over \sdown{14.3}\sqrt{{\bf Var}\,
+(X) \cdot {\bf Var}\, (Y)}} \eqno (XII.4.)$$ 
+qu'on appelle le coefficient de corr\'elation de $X$ et $Y$; celui-ci est
+n\'eces\-sai\-re\-ment compris entre $-1$ et $+1$, et il est \'egal \`a $+1$
+si, et seulement si, l'\'egalit\'e $(XII.2.)$ est satisfaite, c'est-\`a-dire 
+lorsque $Y$ est une fonction affine de $X$. Le coefficient de 
+corr\'elation mesure donc le degr\'e de d\'ependance affine entre
+$X$ et $Y$, ind\'ependamment de leurs variances res\-pec\-tives 
+et sans pr\'ejuger de la pente $\lambda$. Ce degr\'e est de $100\%$
+lorsque $Y$ est une fonction affine de $X$, et 
+est proche de $100\%$ si $Y$ est proche d'une fonction affine de $X$, 
+ou du moins si $Y$ ne s'\'ecarte qu'avec une faible probabilit\'e d'une 
+fonction affine de $X$. Dans le cas du couple $X,Y$ d\'ecrit sur le 
+tableau 2 du chapitre {\bf VI}, on a $Y = X^2$, c'est-\`a-dire que $Y$ est 
+fonction de $X$, mais le degr\'e de d\'ependance {\it lin\'eaire} de $Y$ 
+par rapport \`a $X$ est nul. Cela peut se comprendre ais\'ement: si on 
+repr\'esente les valeurs que peut prendre (avec une probabilit\'e non 
+nulle) le couple $X,Y$ par des points du plan ayant ces valeurs comme 
+coordonn\'ees, on obtient des points situ\'es sur une parabole (voir 
+figure 50); si $Y$ \'etait une fonction affine de $X$, les points seraient 
+sur une droite. On peut dire que le degr\'e de d\'ependance lin\'eaire de 
+$Y$ par rapport \`a $X$ est \'elev\'e si l'ensemble des points reste 
+proche d'une certaine droite (par \hbox{exemple} sur la figure 51). 
+Pour les points de la figure 50, aucune droite ne peut approcher 
+correctement la parabole, et toutes les droites possibles sont 
+\'egalement peu satisfaisantes; c'est pourquoi on peut dire que le 
+degr\'e de d\'ependance lin\'eaire de $Y$ par rapport \`a $X$ est nul. 
+\medskip 
+ 
+\midinsert 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig51.eps} } 
+\vskip2mm 
+\centerline{\eightpoint figure 51} 
+\vskip8pt 
+\centerline{\vbox{\hsize=11cm\eightpoint
+Ce graphique montre un nuage de points correspondant aux valeurs qui 
+seraient prises par deux variables al\'eatoires fortement corr\'el\'ees 
+(c'est-\`a-dire dont le coefficient de corr\'elation est proche de 1). 
+Ici, contrairement \`a la figure 50, la droite de r\'egression est 
+r\'eellement proche du nuage des points. } } 
+\vskip 3mm 
+\endinsert 
+ 
+En g\'en\'eral, pour un couple quelconque $X,Y$ de variables al\'eatoires, 
+il existe une valeur de $\lambda$ qui rend minimum l'expression 
+$(XII.1.)$, c'est-\`a-dire qui rend minimum la variance de $Z_\lambda = 
+Y - \lambda X$; la droite d'\'equation $y = \lambda x + {\bf E}\, 
+(Z_\lambda )$, correspondant \`a ce minimum, est appel\'ee la {\it
+droite de r\'egression} de $Y$ par rapport \`a $X$. En interpr\'etant la 
+variance de $Z_\lambda$ comme la somme des carr\'es des \'ecarts 
+des points par rapport \`a la droite (pond\'er\'es par les probabilit\'es 
+correspondantes), on peut dire que la droite de r\'egression est la 
+droite des ``moindres carr\'es''. Si on calcule la valeur de $\lambda$ 
+correspondant \`a ce minimum, on obtient
+$$\lambda \;\; = \;\; \rho\;\sqrt{{\bf Var}\, (Y) \over {\bf Var}\, (X)}$$
+ce qui redonne $(XII.3)$ lorsque $\rho = 1$. L'ordonn\'ee \`a l'origine de
+la droite de r\'egression est simplement ${\bf E}\, (Z_\lambda ) = {\bf E}\,
+(Y) - \lambda\, {\bf E}\, (X)$. 
+\medskip 
+Il faut bien comprendre ceci: on peut toujours calculer la droite de 
+r\'egression, sauf si la variance de $X$ est nulle. Par exemple, dans le 
+cas du tableau 2 du chapitre {\bf VI}, la droite de r\'egression existe 
+(elle est repr\'esent\'ee sur la figure 50): c'est la droite de pente $0$
+et d'ordonn\'ee \`a l'origine $2$. En effet $\lambda = \rho\,\sqrt{{\bf
+Var} \, (Y) / {\bf Var}\, (X)} = 0$ et ${\bf E}\, (Y) - \lambda\, {\bf E}\, 
+(X) = 2$. Mais bien que cette droite existe, elle n'est pas proche de la 
+parabole, de sorte qu'elle n'a rien \`a voir avec la d\'ependance de $Y$ 
+par rapport \`a $X$:  elle minimise bien la somme des carr\'es des 
+\'ecarts, mais ce minimum n'est pas petit. Ainsi, pour n'importe quel 
+couple $X,Y$ de variables al\'eatoires (sauf si ${\bf Var}\, (X) = 0$), on 
+peut trouver une fonction affine des moindres carr\'es, mais celle-ci
+ne repr\'esentera correctement la d\'ependance de $Y$ par rapport \`a 
+$X$ que si le coefficient de corr\'elation est assez proche de 1. 
+\medskip 
+Dans le cas du tableau 2 du chapitre {\bf VI}, on devrait pouvoir dire
+que le degr\'e de d\'ependance lin\'eaire de $Y$ par rapport \`a $X$
+est $0$,  mais qu'en revanche le degr\'e de d\'ependance ``quadratique'' 
+de $Y$ par rapport \`a $X$ est de $100\%$. Peut-on introduire des 
+param\`etres li\'es aux variables al\'eatoires $X$ et $Y$, qui joueraient 
+un r\^ole analogue \`a la covariance et au coefficient de corr\'elation, 
+et qui permettraient de calculer quantitativement le degr\'e de 
+d\'ependance ``quadratique'' de $Y$ par rapport \`a $X$? La r\'eponse 
+est oui, mais il n'existe pas pour des fonctions non lin\'eaires de 
+proc\'ed\'e aussi simple que pour le cas lin\'eaire. Nous reprendrons 
+cela plus loin, dans la section {\bf 4} (``r\'egression non lin\'eaire''). 
+ 
+\vskip6mm plus3mm minus3mm 
+ 
+{\bf XII. 2. Moyenne, variance, et covariance empiriques.}
+\medskip 
+Dans le Calcul des probabilit\'es, on calcule des probabilit\'es \`a
+partir d'une invariance postul\'ee. Les probabilit\'es que l'on d\'eduit 
+ainsi par le calcul, sont appel\'ees des {\it probabilit\'es a priori}. 
+Leurs valeurs sont exactes: par exemple on trouvera que la probabilit\'e 
+de tel ou tel \'ev\'enement est $31 \over 73$ et non un nombre 
+approximativement \'egal \`a $3 \over 7$, $0.42$ ou $0.425$. 
+\medskip 
+\`A l'inverse du Calcul des probabilit\'es, la Statistique ne traite pas
+de probabilit\'es a priori. Elle ne fait que mesurer sur des 
+\'echantillons. Nous avons d\'ej\`a discut\'e au chapitre {\bf X}\a ce 
+qu'elle mesure.  Soit, par pr\'el\`evement d'un \'echantillon sur une 
+population, elle permet (c'est la m\'ethode du sondage) de mesurer 
+approximativement les proportions exactes sur la population totale; 
+soit elle permet, en r\'ep\'etant un grand nombre de fois une 
+exp\'erience reproductible (par exemple le lancer d'une pi\`ece de 
+monnaie) de mesurer approximativement les probabilit\'es a priori de 
+l'exp\'erience. Si par exemple on a une pi\`ece de monnaie non 
+\'equilibr\'ee, qui a un peu plus de chances de tomber sur pile que sur 
+face, on peut difficilement trouver le ``niveau o\`u intervient le hasard 
+pur'' (celui-ci \'etait facile \`a trouver si la pi\`ece est sym\'etrique, 
+car justement la sym\'etrie conduit \`a des invariances,  mais sans 
+sym\'etrie, on ne peut plus).  Dans ce cas on peut cependant mesurer a 
+posteriori la probabilit\'e de pile en lan\c{c}ant un grand nombre de 
+fois la pi\`ece et en comptant combien de fois la pi\`ece est tomb\'ee 
+sur pile. Pour conna{\^\i}tre les fr\'equences moyennes d'accidents
+(et cette connaissance est n\'ecessaire pour organiser des services 
+d'assistance ou calculer le montant des primes d'assurance) 
+on ne peut pas proc\'eder autrement, car on est incapable de trouver 
+une invariance a priori. Il en va de m\^eme lorsqu'on explore un 
+domaine enti\`erement nouveau, o\`u il existe une invariance 
+sous-jacente, mais inconnue. Par exemple pour la statistique de
+Bose -- Einstein, on ignorait au d\'epart le principe d'invariance 
+sous-jacent (``indiscernabilit\'e des particules''). Celui-ci n'a pas 
+\'et\'e devin\'e \`a partir de rien par la seule logique: il a \'et\'e 
+d\'eduit par induction \`a partir de r\'esultats {\it statistiques} 
+exp\'erimentaux. 
+\medskip 
+Ainsi la Statistique traite des donn\'ees brutes, \`a travers lesquelles
+on cherche \`a d\'etecter l'effet de probabilit\'es inconnues. Les
+donn\'ees brutes sont mesur\'ees sur des objets, et un ensemble de 
+donn\'ees est mesur\'e sur un ensemble d'objets appel\'e un {\it 
+\'echantillon}: les donn\'ees sont des grandeurs se rapportant aux
+objets de l'\'echantillon. Par exemple l'\'echantillon est un ensemble
+de pi\`eces manufactur\'ees, disons pour fixer les id\'ees cent 
+cinquante cylindres en acier inoxydable. On peut mesurer les longueurs 
+de ces cylindres, les diam\`etres, et les poids. Si on num\'erote (ne 
+serait-ce que par la pens\'ee) les cylindres de $1$ \`a $150$, appelons 
+par exemple $x_i$ la longueur du $i^{\rm \,e}$ cylindre, $y_i$ son poids, 
+et $z_i$ son diam\`etre. Les trois grandeurs $x_i$, $y_i$, et $z_i$ 
+viennent donc du m\^eme objet $N^\circ i$. 
+\medskip 
+On distinguera donc l'ensemble des {\it objets}, appel\'e \'echantillon, 
+et les donn\'ees num\'eriques qui s'y rapportent, qui sont les
+{\it variables d'\'echantillon} ou {\it grandeurs empiriques}. 
+Ainsi la longueur $x$, le poids $y$, et le diam\`etre $z$ de l'exemple 
+pr\'ec\'edent sont trois variables empiriques relatives au m\^eme 
+\'echantillon. De m\^eme que le Calcul des probabilit\'es traite 
+essentiellement de variables al\'eatoires, la Statistique traite de 
+variables d'\'echantillon.  Au paragraphe $1$ ci-dessus, nous avons vu 
+comment la covariance de deux variables al\'eatoires permettait 
+d'\'evaluer leur degr\'e de d\'ependance lin\'eaire mutuelle. Si on 
+souhaite d\'etecter sur un \'echantillon les effets d'une relation 
+lin\'eaire inconnue entre deux param\`etres, on ne peut pas utiliser les 
+grandeurs introduites au paragraphe $1$, \`a savoir la covariance ou le 
+coefficient de corr\'elation, puisque nous ne connaissons pas de 
+probabilit\'es a priori. C'est pourquoi la Statistique fait appel \`a des 
+grandeurs de nature diff\'erente, li\'ees \`a l'\'echantillon et non \`a 
+des probabilit\'es a priori (mais ayant un rapport avec les 
+pr\'ec\'edentes, que nous allons \'elucider), et qui sont la moyenne, la 
+variance, ou la covariance {\it d'\'echantillon}. On dit aussi moyenne, 
+variance, ou covariance {\it empiriques}. Par opposition, on appellera 
+moyenne, variance, ou covariance {\it th\'eorique} la moyenne, 
+variance, ou covariance d'une variable al\'eatoire (telles qu'elles sont 
+d\'efinies au paragraphe $1$). 
+\medskip 
+Pour un \'echantillon comportant $n$ objets, la moyenne d'une variable 
+d'\'echantillon $x_i$ ($i = 1,\, 2, \ldots n$) est d\'efinie comme suit
+$$M \;\; = \;\; {1 \over n}\sum_{i=1}^{i=n} x_i \eqno (XII.5.)$$
+Ceci est tr\`es facile \`a comprendre puisque c'est ainsi qu'on calcule
+les moyennes aux examens (l'\'echantillon est alors l'ensemble des 
+copies).  La variance d'\'echantillon de la variable $x_i$ sera 
+$$P \;\; = \;\; {1 \over n-1}\sum_{i=1}^{i=n} (x_i - \overline{x})^2
+\eqno (XII.6.)$$
+o\`u $\overline{x} = M$ est la moyenne de la m\^eme variable. Notez 
+bien le facteur $1/\hbox{\eightpoint $(n\! - \! 1)$}$ et 
+non $1/n$). La covariance d'\'echantillon de deux variables $x_i$ et 
+$y_i$ se rapportant au {\it m\^eme} \'echantillon est
+$$Q \;\; = \;\; {1 \over n-1}\sum_{i=1}^{i=n} (x_i - 
+\overline{x})\, (y_i - \overline{y}) \eqno (XII.7.)$$
+o\`u $\overline{x}$ est la moyenne des $x_i$ et $\overline{y}$ celle
+des $y_i$. La covariance entre deux variables ne se rapportant pas au 
+m\^eme \'echantillon n'a g\'en\'eralement pas de signification. 
+\medskip 
+On notera tout particuli\`erement le coefficient $1\over 
+\textdown{n}$ pour les moyennes, mais $1\over n-1$ pour les 
+variances ou la covariance. Nous donnerons plus loin l'explication de
+ce choix qui au premier abord peut sembler bizarre. 
+\medskip 
+La variance (th\'eorique) d'une variable al\'eatoire et la variance 
+(empirique) d'une variable d'\'echantillon sont des concepts
+diff\'erents, quoique appa\-rent\'es.  De m\^eme pour les moyennes ou les 
+covariances. Du point de vue math\'ematique, d'abord, le calcul de la 
+moyenne ou de la variance d'une variable al\'eatoire s'effectue en 
+affectant \`a chaque valeur de la variable un {\it poids} \'egal \`a la 
+probabilit\'e de cette valeur; par contre lorsqu'on calcule la moyenne 
+ou la variance d'un \'echantillon, tous les points (ou coordonn\'ees) de 
+l'\'echantillon ont le m\^eme poids (par exemple $1 \over n-1$ pour la 
+variance et $1\over \textdown{n}$ pour la moyenne). Du point de 
+vue pratique, ensuite, la variance d'une variable al\'eatoire se calcule 
+d'apr\`es des probabilit\'es a priori,  tandis que la variance d'un 
+\'echantillon se calcule d'apr\`es des r\'esultats qui se sont produits, 
+qui n'ont donc pas ou qui n'ont plus de probabilit\'e. 
+\medskip 
+Lorsqu'on dispose de donn\'ees statistiques sur une population (par 
+exem-ple la tension art\'erielle pour chaque personne d'un groupe de
+cent), on peut calculer la moyenne ou la variance de la tension
+art\'erielle pour cet \'echantillon. Il suffit d'appliquer une formule, 
+et cela peut se faire sans se poser aucune question. Les probl\`emes 
+commencent lorsqu'on se demande ce que repr\'esentent exactement
+les grandeurs ainsi calcul\'ees: quel est leur sens, quelle information 
+peut-on en tirer concernant l'\'echantillon? Et aussi: pourquoi la 
+variance doit-elle \^etre calcul\'ee avec le coefficient $1 \over n-1$ 
+alors que la moyenne l'est avec le coefficient $1\over 
+\textdown{n}$ ? 
+\medskip 
+Pour \'eclaircir ces myst\`eres, il faut revenir \`a une remarque faite
+au chapitre {\bf X}: \`a propos de l'exp\'erience consistant \`a tester 
+l'effet d'un m\'edicament sur un groupe, nous avons distingu\'e 
+soigneusement, d'une part la probabilit\'e a priori pour que le 
+m\'edicament agisse sur une personne donn\'ee (cette probabilit\'e
+r\'esulte du hasard cr\'e\'e par le chaos des m\'ecanismes 
+mol\'eculaires), et d'autre part la distribution des effets parmi les 
+diff\'erentes personnes d'un groupe. On peut enregistrer les effets du 
+m\'edicament sur le groupe en notant pour chaque personne la baisse de 
+tension sur les 24 heures qui suivent l'administration du m\'edicament; 
+l'ensemble de ces donn\'ees chiffr\'ees constitue alors une variable 
+d'\'echantillon: on pourra calculer la moyenne d'\'echantillon et 
+la variance d'\'echantillon. 
+\medskip
+Par ailleurs, on peut imaginer {\it pour chaque personne consid\'er\'ee
+s\'epar\'e\-ment}, la variable al\'eatoire dont les valeurs sont les
+baisses de tension possibles avec les probabilit\'es a priori
+correspondantes (ces probabilit\'es sont \'evidemment difficiles
+\`a mesurer et impossibles \`a calculer a priori, et en outre
+d\'ependent du temps, mais cela importe peu pour comprendre
+le principe). On peut alors imaginer aussi ce que signifie 
+la moyenne (ou esp\'erance math\'ematique) de cette variable 
+al\'eatoire, ou sa variance, et compendre que ces grandeurs n'ont aucun 
+rapport avec la moyenne ou la variance d'\'echantillon calcul\'ee sur le 
+groupe. Comme nous l'avions soulign\'e au chapitre {\bf X}, il n'y a 
+aucune raison que la moyenne d'\'echantillon calcul\'ee sur le groupe 
+soit \'egale \`a la moyenne de la variable al\'eatoire li\'ee \`a une 
+personne particuli\`ere, et de m\^eme pour la variance: cela provient
+de ce que les ph\'enom\`enes se produisant dans le m\'etabolisme d'une 
+personne particuli\`ere ne peuvent pas influer sur ce qui se passera 
+dans le m\'etabolisme des autres. Il s'agit de deux grandeurs qui n'ont
+aucun rapport entre elles. On peut m\^eme affirmer, en l'absence de 
+ph\'enom\`enes tels que la contagion ou des comportements de groupe 
+avec incidences biologiques (tabagisme, alcoolisme, habitudes 
+ali\-men\-taires, etc.) que certaines variables al\'eatoires li\'ees
+au m\'etabolisme d'individus diff\'erents sont stochastiquement 
+ind\'ependantes. 
+\vskip6pt plus 4pt minus3pt 
+Il en va tout diff\'eremment si on consid\`ere un \'echantillon
+provenant de la r\'ep\'etition d'une {\it exp\'erience reproductible}. 
+Si la variable al\'eatoire (appelons-la $X$) est le r\'esultat d'une 
+exp\'erience reproductible, elle aura une moyenne $m = {\bf E}\, (X)$
+et une variance $v = {\bf Var}\, (X)$ (dites {\it th\'eoriques}). Par 
+exemple pour le jeu de pile ou face, $X$ vaudrait 0 pour face et 1 pour 
+pile, avec probabilit\'e $1 \over 2$, ce qui donnerait $m = {1 \over 2}$ 
+et $v = {1 \over 4}$. Si on reproduit l'exp\'erience un grand nombre de 
+fois, la loi des grands nombres aura pour effet que la proportion de 
+chacun des r\'esultats possibles sera proche de la probabilit\'e a 
+priori; par exemple, si on lance mille fois la pi\`ece, on obtiendra 
+environ $500$ pile et $500$ face (avec, comme nous l'avons d\'ej\`a
+vu, une incertitude de l'ordre de $\pm 30$). Si on consid\`ere les
+$1000$ r\'esultats comme un \'echantillon statistique, et qu'on calcule 
+la moyenne et la variance {\it empiriques} pour cet \'echantillon, alors 
+elles seront proches de la moyenne et de la variance th\'eoriques de la 
+variable al\'eatoire; si on poursuit le lancement de la pi\`ece, $2000$
+fois, $10\, 000$ fois, $100\, 000$ fois, etc., la taille de l'\'echantillon 
+augmentera et la moyenne empirique sera de plus en plus proche de 
+l'esp\'erance math\'ematique $m$ de la variable al\'eatoire $X$ 
+(respectivement: la variance empirique sera de plus en plus proche de
+la variance th\'eorique $v$). 
+\vskip6pt plus 4pt minus3pt 
+On peut donc dire ceci: la moyenne (resp. la variance) d'une grandeur 
+empirique sur un \'echantillon ${\cal A}$ et la moyenne (resp: la
+variance) th\'eorique d'une variable al\'eatoire $X$ qui repr\'esente le 
+r\'esultat possible d'une exp\'erience reproductible ${\cal E}$, sont 
+deux grandeurs pratiquement identiques {\bf lorsque l'\'echantillon 
+${\cal A}$ est constitu\'e par la r\'ep\'etition d'un grand nombre de 
+fois l'exp\'erience ${\cal E}$} (ou encore: les grandeurs empiriques 
+tendent vers les valeurs th\'eoriques lorsque la taille de l'\'echantillon 
+tend vers l'infini). Mais cette \'equivalence entre les grandeurs 
+empiriques et th\'eoriques n'est va\-lable que pour des exp\'eriences 
+reproductibles. Lorsqu'on fait appel \`a cette \'equivalence pour 
+interpr\'eter des donn\'ees relatives \`a des organismes vivants,  par 
+exemple, il faut s'assurer que l'hypoth\`ese de reproductibilit\'e est 
+\`a peu pr\`es l\'egitime. 
+\vskip6pt plus 4pt minus3pt 
+Les d\'efinitions des grandeurs empiriques donn\'ees en $(XII.5.)$ et 
+$(XII.6.)$ ont \'et\'e convenues d\'elib\'er\'ement de mani\`ere \`a
+satisfaire cette \'equivalence. En particulier, le myst\'erieux facteur
+$1 \over n-1$ qui appara{\^\i}t dans ces expressions de la variance (ou
+de la covariance) empirique, n'a pas d'autre justification que d'\^etre
+le facteur qui rend la grandeur empirique le plus proche possible de la 
+grandeur th\'eorique correspondante {\it dans le cas o\`u cette
+\'equivalence s'applique}. Si on avait pris le facteur $1 \over \textdown n$
+dans la variance, au lieu du facteur $1 \over n-1$, la grandeur empirique
+co{\"\i}nciderait moins bien avec la grandeur th\'eorique. 
+Tout cela s'explique math\'ematiquement comme suit. 
+\medskip 
+Ayant en vue le principe d'\'equivalence \'enonc\'e ci-dessus, 
+consid\'erons l'\'echan\-til\-lon comme r\'esultant de la r\'ep\'etition 
+d'une m\^eme exp\'erience, pour laquelle des probabilit\'es a priori 
+existent. Soit donc la variable al\'eatoire  $X$ dont les $r$ valeurs 
+$x_j$ ($j = 1,2, \ldots r$) sont prises avec probabilit\'e $p_j$. Si on 
+r\'ep\`ete $n$ fois l'exp\'erience d\'ecrite par $X$, on obtiendra un 
+certain nombre $n_j$ de fois la valeur $x_j$, de sorte que $\sum_j  
+n_j =  n$.  On peut alors former les grandeurs
+$$S_0 \;\; = \;\; \sum_{j=1}^{j=r} n_j\, (x_j - m)^2$$ 
+o\`u $m$ est l'esp\'erance math\'ematique de la variable $X$, 
+c'est-\`a-dire la moyenne th\'eorique a priori, et
+$$S_1 \;\; = \;\; \sum_{j=1}^{j=r} n_j\, (x_j - M)^2$$ 
+o\`u $M = {1\over\textdown{n}}\sum n_j\, x_j$ est la moyenne 
+empirique de l'\'echantillon. Si on part du principe que les r\'esultats 
+$x_j$ sont tous des r\'ealisations d'une m\^eme exp\'erience 
+reproductible, cela signifie que $S_0$ et $S_1$ sont des variables 
+al\'eatoires qu'on peut \'ecrire
+$$\eqalign{ 
+S_0\;\; &= \;\; \sum_{i=1}^{i=n} (X_i - m)^2 \cr 
+S_1\;\; &= \;\; \sum_{i=1}^{i=n} (X_i - M)^2 \cr }$$ 
+o\`u les $X_i$ sont $n$ variables al\'eatoires stochastiquement 
+ind\'ependantes et de m\^eme loi (celle de $X$), et o\`u $M = 
+{1\over\textdown{n}}\sum_i X_i$. Cela n'est que l'expression 
+math\'ematique de l'hypoth\`ese que l'exp\'erience est reproductible, 
+et signifie simplement qu'on reproduit $n$ fois, {\it ind\'ependamment} 
+et {\it \`a l'identique} la variable al\'eatoire $X$. 
+\medskip 
+La diff\'erence essentielle entre $S_0$ et $S_1$ est que les variables 
+al\'eatoires $X_i - m$ sont stochastiquement ind\'ependantes, alors
+que les $X_i - M$ sont li\'ees par la relation que leur somme est nulle. 
+Entre $S_0$ et $S_1$ on a l'identit\'e 
+$$S_0 - S_1 \;\; = \;\; n\, (M-m)^2 \eqno (XII.8)$$ 
+Cela est facile \`a \'etablir, il suffit de d\'evelopper les expressions
+de $S_0$ et $S_1$. Pour la premi\`ere: 
+$$\eqalignno{ 
+S_0 \;\; &= \;\; \sum_{i=1}^{i=n} (X_i - m)^2 \cr 
+&= \;\; \sum_{i=1}^{i=n} X_i^2 - 2m\sum_{i=1}^{i=n} X_i + n\, m^2\cr
+&= \;\; \sum_{i=1}^{i=n} X_i^2 - 2n\, mM + n\, m^2\cr }$$ 
+Pour la seconde: 
+$$\eqalignno{ 
+S_1 \;\; &= \;\; \sum_{i=1}^{i=n} (X_i - M)^2 \cr 
+&= \;\; \sum_{i=1}^{i=n} X_i^2 - 2M \sum_{i=1}^{i=n} X_i + n\, M^2 \cr 
+&= \;\; \sum_{i=1}^{i=n} X_i^2 - 2n\, M^2 + n\, M^2\cr 
+&= \;\; \sum_{i=1}^{i=n} X_i^2 - n\, M^2 \cr }$$ 
+On voit en soustrayant membre \`a membre que les termes $\sum
+X_i^2$ s'annulent et il reste 
+$$S_0 - S_1 \;\; = \;\; - 2n\, mM + n\, m^2 + n M^2 = n\, (M-m)^2$$ 
+ce qui montre bien $(XII.8)$. 
+\medskip 
+L'esp\'erance math\'ematique de $S_0$ est par d\'efinition 
+$n\, {\bf Var} (X)$, donc celle de $S_1$, ${\bf E} (S_1)$, est \'egale \`a 
+$n\, {\bf Var} (X) - {\bf E} (n[M-m]^2)$. 
+\medskip 
+Il est facile de calculer ${\bf E} ([M-m]^2)$: 
+$${\bf E} ([M-m]^2) \;\; = \;\; {\bf E} \bigg( \bigg[ {\up{1}\over\down{n}} 
+\sum_{i=1}^{i=n} (X_i - m)^2\bigg] \bigg) \;\; = \;\; {\up{1}\over\down{n}} 
+{\bf Var} (X)$$ 
+Par cons\'equent ${\bf E} (S_1) = (n-1)\, {\bf Var} (X)$, alors que
+${\bf E} (S_0) = n\, {\bf Var} (X)$. On comprend ainsi pourquoi on a 
+introduit le coefficient $1\, /\,\hbox{\eightpoint $(n-1)$}$ 
+dans $XII.6$:  d'apr\`es la loi des grands nombres appliqu\'ee \`a 
+l'exp\'erience reproductible,  si $n$ est grand,  les valeurs de $S_1$ 
+fluctueront autour de leur moyenne ${\bf E} (S_1) = (n-1)\, {\bf Var} (X)$, 
+avec des \'ecarts de l'ordre de $\sqrt{n}$. La diff\'erence entre ${\bf E} 
+(S_1)$ et ${\bf E} (S_0)$, \'egale \`a ${\bf Var} (X)$, est certes faible 
+compar\'ee \`a $\sqrt{n}$ (amplitude moyenne des fluctuations), mais 
+introduit un d\'ecalage syst\'ematique ou {\it biais}.  La valeur ${1\over 
+n-1} {\bf E} (S_1)$ est une meilleure estimation de ${\bf Var} (X)$ que 
+${1\over \textdown{n}} {\bf E} (S_1)$, parce qu'elle est 
+bas\'ee sur le centre exact des fluctuations de la variable $S_1$. 
+\medskip 
+Il faut bien noter que le choix du coefficient ${1 \over n-1}$ repose
+sur une id\'ee pr\'econ\c{c}ue de la ``vraie'' variance, \`a savoir que
+la ``vraie'' variance est ${\bf Var}(X)$. Cette id\'ee pr\'econ\c{c}ue
+n'a de sens que par le principe de l'\'equivalence entre grandeurs
+th\'eoriques et grandeurs empiriques pour les exp\'eriences
+reproductibles. Le coefficient ${1 \over n-1}$ ne sert qu'\`a ajuster
+la varian\-ce empirique \`a la variance th\'eorique, de mani\`ere \`a
+satisfaire au plus juste l'\'equivalence. 
+\medskip 
+Si on \'etudie une r\'epartition statistique qui ne provient pas d'une 
+exp\'erience reproductible, par exemple dans l'\'etude de l'effet d'un 
+m\'edi\-ca\-ment sur diff\'erentes personnes (cf chapitre {\bf X}), 
+il n'est plus possible d'avoir une id\'ee pr\'econ\c{c}ue de la ``vraie'' 
+variance. Dans ce cas n'importe quel coef\-fi\-cient autre que ${1 \over 
+n-1}$ est tout aussi bon, car la variance empirique (qui seule existe) 
+ne peut servir qu'\`a comparer les dispersions statistiques sur 
+diff\'erents groupes; bien s\^ur,  pour que la comparaison d'\'etudes
+provenant de pays diff\'erents soit possible et sens\'ee, il faut une 
+norme internationale (par exemple, que {\it par convention} tout le 
+monde adopte la somme $S_1$ des carr\'es des \'ecarts, ou ${1\over 
+\textdown{n}}\, S_1$, ou encore ${1\over n-1}\, S_1$), mais la 
+d\'efinition $XII.6$, c'est-\`a-dire ${1\over n-1}\, S_1$, n'est alors
+pas plus juste qu'une autre. 
+\medskip 
+La norme internationale qui a \'et\'e adopt\'ee est celle de la
+d\'efinition $XII.6$, par analogie avec les exp\'eriences reproductibles. 
+Mais en dehors de ces derni\`eres, ce n'est qu'une convention. Il ne faut 
+donc pas en \^etre dupe. 
+ 
+\vskip6mm plus3mm minus3mm 
+ 
+{\bf XII. 3. Corr\'elation statistique.}
+\medskip 
+Nous avons vu au paragraphe $1$ que la corr\'elation \'etait la 
+d\'ependance lin\'eaire (mesur\'ee par le coefficient de corr\'elation). 
+Mais cela a \'et\'e trait\'e pour des variables al\'eatoires, dont la loi 
+conjointe est connue. De m\^eme qu'on a pu, dans la section {\bf 
+XII.1}, d\'eriver la corr\'elation de deux variables al\'eatoires de 
+leur covariance et de leurs variances, on doit pouvoir d\'eriver une 
+corr\'elation empirique de la covariance et de la variance empiriques 
+d'un \'echantillon.  Formellement, cela ne pose aucun probl\`eme; mais
+il faudra en interpr\'eter la signification. 
+\medskip 
+Consid\'erons l'exemple suivant. Dans un groupe de cent personnes 
+(num\'erot\'ees de $i=1$ \`a $i=100$ par randomisation), on rel\`eve
+la tension art\'erielle. On repr\'esente celle-ci sur un graphique de la 
+mani\`ere sui\-vante: \`a chaque personne $i$ correspond un point, dont 
+l'abscisse $x_i$ est l'\^age, et l'ordonn\'ee $y_i$ la tension (disons la 
+tension systolique pour fixer les id\'ees). On dispose ainsi d'un 
+\'echantillon de cent points dans le plan $\{ x,y \}$, mais ceux-ci ne
+sont pond\'er\'es par aucune loi de probabilit\'e. Les {\it moyennes 
+d'\'echantillon} sont alors les nombres $\overline{x} = {1 \over 
+100}\sum_{i=1}^{100} x_i$ (\^age moyen de l'\'echantillon) et
+$\overline{y} = {1 \over 100}\sum_{i=1}^{100} y_i$ (tension moyenne
+de l'\'echantillon). La {\it covariance d'\'echantillon} de l'\^age et de la 
+tension est la grandeur
+$$Q = {\up{1} \over 99}\sum_{i=1}^{i=100} (x_i - \overline{x})\, (y_i 
+- \overline{y})$$
+et de m\^eme les {\it variances d'\'echantillon} sont 
+$$\eqalignno{ 
+P \;\; &= \;\; {\up{1} \over 99}\sum_{i=1}^{i=100} (x_i - \overline{x})^2
+\quad \hbox{(variance de l'\^age)} \cr 
+R \;\; &= \;\; {\up{1} \over 99}\sum_{i=1}^{i=100} (y_i - \overline{y})^2
+\quad \hbox{(variance de la tension)} \cr }$$ 
+\medskip
+Rien n'emp\^eche d'introduire un coefficient de corr\'elation empirique 
+formel\-le\-ment analogue \`a celui du paragraphe $1$: 
+$$\rho \;\; = \;\; {\hbox{covariance d'\'echantillon (entre la tension
+et l'\^age)} \strup{8} \over \sdown{17} \sqrt{\sdown{9.5} \hbox{variance
+de l'\^age} \times \hbox{variance de la tension}}}$$ 
+Sur le graphique on a cent points (dont l'abscisse repr\'esente l'\^age et 
+l'ordonn\'ee la tension). Il est facile de v\'erifier que si $\rho$ \'etait 
+\'egal \`a $\pm 1$ ces cent points seraient sur une droite: il n'est en
+effet pas n\'ecessaire de refaire les calculs du paragraphe $1$, puisque 
+formellement la situation est la m\^eme (au paragraphe $1$, les cent 
+points avaient pour poids les probabilit\'es a priori, ici ils ont tous le 
+m\^eme poids $1 / 99$, mais les calculs effectu\'es formellement ne 
+sont pas affect\'es par la diff\'erence de signification). La pente de la 
+droite serait \'egale \`a
+$$\lambda \;\; = \;\; \cases{ + \sqrt{\hbox{\vrule depth4pt width0pt
+variance de la tension} \over \hbox{\vrule height10pt width0pt variance
+de l'\^age}} & si $\rho = +1$ \cr
+\noalign{\vskip9pt plus3pt minus3pt} 
+- \sqrt{\hbox{\vrule depth4pt width0pt variance de la tension}\over 
+\hbox{\vrule height10pt width0pt variance de l'\^age}} & si $\rho = 
+-1$ \cr }$$
+Bien entendu il n'arrive jamais dans la r\'ealit\'e que les cent points 
+soient sur une droite (cela signifierait que la tension serait exactement 
+une fonction lin\'eaire de l'\^age!). Mais ce qu'on observe, c'est que la 
+tension est en moyenne plus \'elev\'ee chez des personnes plus
+\^ag\'ees. Sur le graphique, cela devrait avoir l'effet que les points 
+dont l'abscisse est plus grande doivent avoir aussi (``en moyenne'') une 
+ordonn\'ee plus grande, ce qui se traduit par un nuage de points 
+allong\'e et inclin\'e comme ceux qui sont repr\'esent\'es sur la figure 
+$52$; un graphique de la tension et de l'\^age aurait l'aspect de la 
+figure $52.2$ ou $52.3$, donc la corr\'elation est assez faible. 
+\vskip6pt plus6pt minus3pt
+En Statistique, la connaissance de la droite de r\'egression joue un
+r\^ole capital. Elle sert en effet \`a corriger des donn\'ees brutes et
+\`a s\'eparer les diverses causes qui influencent un ph\'enom\`ene. 
+Supposons que nous cherchions \`a d\'eterminer une corr\'elation entre 
+le tabagisme et l'hypertension. Nous effectuons une \'etude clinique sur 
+deux groupes de personnes, un groupe de cinquante fumeurs consommant 
+au moins vingt cigarettes par jour, et un groupe t\'emoin de cinquante 
+personnes qui ne fument jamais. \`A premi\`ere vue, il peut sembler
+que, pour que l'\'etude soit valide, il suffit de choisir ces groupes par 
+randomisation. En effet, il s'agit de montrer que sur l'ensemble de la
+population (disons la population fran\c{c}aise pour fixer les id\'ees) 
+la tension art\'erielle moyenne de l'ensemble des fumeurs est
+nettement sup\'erieure \`a la tension moyenne sur les non-fumeurs; 
+comme il est impossible de faire une \'etude sur tous les fumeurs 
+fran\c{c}ais, on utilise la m\'ethode du sondage en pr\'elevant des 
+\'echantillons de cinquante personnes dans ces deux populations 
+(comme on ne s'int\'eresse pas \`a conna{\^\i}tre la tension art\'erielle 
+moyenne \`a trois d\'ecimales pr\`es, mais seulement de v\'erifier que 
+l'une est nettement sup\'erieure \`a l'autre, un \'echantillon de taille 
+mo\-deste suffit). La randomisation garantira alors que les 
+\'echantillons sont bien ``pris au hasard'', conform\'ement \`a ce qui 
+avait \'et\'e dit au chapitre {\bf X}. 
+\vskip6pt plus6pt minus3pt
+Mais il se peut que les fumeurs ne soient pas r\'epartis uniform\'ement 
+selon l'\^age. Par exemple, une mode anti-tabac aurait pu, au cours des 
+ann\'ees mille-neuf-cent-quatre-vingt-dix, inciter beaucoup de jeunes \`a
+ne jamais fumer, habitude qu'ils garderont ensuite, tandis que chez leurs
+ain\'es les non-fumeurs seraient rest\'es rares. Si des \'echantillons
+sont choisis par randomisation dans l'ensemble de la population, on aura
+certes un reflet de la population totale, mais comment savoir si la tension 
+art\'erielle plus \'elev\'ee qu'on observera dans le groupe des fumeurs 
+provient du tabagisme et non tout simplement du seul fait que les 
+personnes plus \^ag\'ees y sont plus nombreuses que dans le groupe des 
+non-fumeurs? Ce probl\`eme demeurerait, m\^eme si l'\'etude \'etait 
+effectu\'ee sur la population totale, et ne peut \^etre attribu\'e \`a la
+taille modeste de l'\'echantillon. 
+\vskip6pt plus6pt minus3pt
+Une solution est \'evidemment de r\'eunir, non pas deux \'echantillons, 
+mais quarante r\'epartis selon l'\^age, de mani\`ere \`a disposer de
+vingt couples d'\'echantillons fumeurs $/$ non-fumeurs, chacun de ces 
+couples \'etant homog\`ene quant \`a l'\^age. Mais cette solution est 
+beaucoup plus on\'ereuse. L'\'etude statistique des corr\'elations
+permet de s'en passer. 
+\medskip 
+ 
+\midinsert 
+\vbox to \blocksize {
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-1.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.1} 
+\vfill\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-2.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.2} 
+\vskip8pt 
+\centerline{\eightpoint Nuages de points faiblement corr\'el\'es} 
+\vskip15pt}
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize {\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-3.eps} } 
+\vskip2mm 
+\centerline{\eightpoint figure 52.3} 
+\vfill
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-4.eps} } 
+\vskip2mm 
+\centerline{\eightpoint figure 52.4} 
+\vskip8pt 
+\centerline{\vbox{\hsize=11cm\eightpoint
+Ici, la corr\'elation est plus grande qu'\`a la page pr\'ec\'edente (en
+fait le coefficient de corr\'elation $\rho$ dans les diff\'erentes 
+figures est tel que d'une figure \`a la figure suivante 
+$\sqrt{1-\rho^2}$ est diminu\'e de moiti\'e). 
+ } } 
+\vskip15pt} 
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize {\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-5.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.5} 
+\vfill\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-6.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.6} 
+\vskip8pt 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+Les nuages de points sont maintenant tr\`es nettement distribu\'es \`a 
+proximit\'e de leur droite de r\'egression. On peut dire que celle-ci a
+une v\'eritable signification. 
+ } } 
+\vfill} 
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize {\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-7.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.7} 
+\vfill\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig52-8.eps} } 
+\vskip4mm 
+\centerline{\eightpoint figure 52.8} 
+\vskip8pt 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+Enfin, voici l'aspect pris par le nuage de points lorsque la corr\'elation
+est vraiment tr\`es forte. Sur $52.8$, $1-\rho^2$ est $4000$ fois plus 
+petit qu'en $52.1$, ce qui veut dire que $\rho$ est pratiquement \'egal 
+\`a $1$. Dans ce cas on peut dire que l'ordonn\'ee est pratiquement une 
+fonction lin\'eaire de l'abscisse. 
+ } } 
+\vfill} 
+\endinsert 
+ 
+Il suffit en effet de repr\'esenter les r\'esultats concernant les deux 
+\'echan\-til\-lons sur deux graphiques, chaque personne correspondant
+\`a un point dont l'abscisse est l'\^age et l'ordonn\'ee la tension; 
+on obtient ainsi deux graphiques de cinquante points chacun,  l'un 
+repr\'esente les non-fumeurs et l'autre les fumeurs. Si, comme il 
+\'etait \`a craindre,  le groupe des fumeurs contient davantage de 
+personnes \^ag\'ees de plus de quarante ans que le groupe des 
+non-fumeurs, cela se traduira sur le graphique par une in\'egale 
+r\'epartition de la densit\'e des points: sur le graphique fumeurs,  
+le nuage de points sera plus dense vers la droite,  sur le graphique 
+non-fumeurs, il sera plus dense vers la gauche. Mais la droite de 
+r\'egression n'est pas affect\'ee par ces diff\'erences de densit\'e. 
+Bien s\^ur si on prend un autre \'echantillon, on peut observer une 
+droite de r\'egression un peu diff\'erente, et une r\'epartition de 
+densit\'e \'egalement diff\'erente, mais ce ne sont que des fluctuations 
+par rapport \`a une valeur moyenne. Ce qui int\'eresse alors le clinicien 
+n'est pas la r\'epartition, in\'egale, de la densit\'e selon l'\^age, mais 
+la droite de r\'egression: si $y = ax +b$ est la droite de r\'egression 
+des non-fumeurs, et $y=cx + d$ celle des fumeurs, l'influence du 
+tabagisme sur la tension art\'erielle sera consid\'er\'ee comme 
+\'etablie si {\bf pour tout $x$, $cx + d$ est sup\'erieur \`a $ax + b$}. On 
+comprend que, si la corr\'elation est forte, (c'est-\`a-dire si le nuage 
+de points ne s'\'ecarte pas beaucoup de la droite), le fait que pour une 
+certaine valeur de $x$ on ait $cx + d > ax + b$ signifie que parmi les 
+personnes d'\^age $x$, la tension art\'erielle est plus \'elev\'ee chez 
+les fumeurs que chez les non-fumeurs. Si cette in\'egalit\'e a lieu 
+pour tout $x$, cela signifie qu'ind\'ependamment de l'\^age, la tension
+est plus \'elev\'ee chez les fumeurs que chez les non-fumeurs. Toutefois, 
+pour que cette conclusion soit fond\'ee, certaines conditions doivent 
+\^etre r\'eunies, qui sont les trois suivantes. 
+\vskip6pt plus4pt minus4pt 
+1. Si $cx + d - ax - b$, quoique formellement positif, est nettement
+plus petit que la largeur (mesur\'ee par la variance de $y - ax$) du 
+nuage de points, la signification du r\'esultat est nulle, car la valeur 
+moyenne de $cx + d - ax - b$ pourrait \^etre $0$ et la valeur positive 
+trouv\'ee une fluctuation pratiquement aussi fr\'equente que la valeur 
+$0$ elle-m\^eme; en particulier, si le nuage de points est tr\`es large 
+(donc si le coefficient de corr\'elation est petit), il est pratiquement 
+impossible de fonder la conclusion. Si on veut estimer 
+quantitativement la signification du r\'esultat, autrement dit d\'ecider 
+si la valeur positive est significative ou au contraire due \`a des 
+fluctuations normales, on effectuera un test du $\chi^2$ ou apparent\'e. 
+\vskip4pt plus3pt minus3pt 
+2. L'\'etude de la r\'egression a \'et\'e rendue n\'ecessaire (au lieu que
+nous nous contentions d'un simple calcul de moyenne) par le soup\c{c}on 
+d'une corr\'elation entre le tabagisme et l'\^age, corr\'elation qui se 
+superposerait \`a la corr\'elation cherch\'ee entre le tabagisme et 
+l'hypertension et fausserait ainsi les observations. Mais qui nous
+prouve qu'il n'existe pas d'autres corr\'elations, que nous ne
+soup\c{c}onnons pas, et qui viendraient fausser \'egalement les
+r\'esultats ?  Il existe par exemple une corr\'elation entre la tension
+et le poids (les ob\`eses sont davantage hypertendus), or fumer agit
+{\it n\'egativement} sur le poids.  Il faudrait alors, en toute rigueur, 
+\'etudier aussi la r\'egression tension $/$ poids dans les deux groupes, 
+et effectuer une nouvelle comparaison.  Il faudrait refaire la m\^eme 
+op\'eration pour {\it toutes} les corr\'elations possibles (du moins 
+celles qui sont suffisamment fortes et par cons\'equent non 
+n\'egligeables), et pouvoir s'assurer qu'on n'en ignore aucune. 
+\vskip4pt plus3pt minus3pt 
+3. Enfin, toutes ces \'etudes de r\'egression sont valables tant qu'il
+s'agit de d\'ependances lin\'eaires; la corr\'elation entre la tension et 
+l'\^age est suf\-fisam\-ment nette pour qu'on puisse dire ---~avec la 
+pr\'ecision correspondante~--- que la tension augmente en moyenne 
+lin\'eairement avec l'\^age. Mais si la corr\'elation est nulle, qu'il
+existe cependant une nette d\'ependance non lin\'eaire (comme cela a 
+\'et\'e illustr\'e sur la figure 50), les droites de r\'egression ne nous 
+apprennent plus rien et ne nous permettent plus de corriger les 
+donn\'ees statistiques. Il faut alors faire appel \`a la r\'egression 
+non lin\'eaire (voir section suivante). On peut donc avoir calcul\'e 
+soigneusement toutes les corr\'elations possibles et effectu\'e les 
+corrections correspondantes, mais aboutir \`a des conclusions 
+fausses simplement parce qu'une d\'ependance non lin\'eaire 
+tr\`es forte aura \'echapp\'e \`a toutes ces pr\'ecautions. 
+\vskip8pt plus5pt minus4pt 
+Toutes ces r\'eserves sont n\'ecessaires pour montrer les limites de 
+l'analyse statistique. Dans beaucoup de situations pratiques on 
+rencontre suffisamment peu de corr\'elations ou de d\'ependances pour 
+que ces m\'ethodes aient n\'eanmoins une valeur empirique correcte. 
+Mais il est bien clair que tous les abus (pressentis et d\'enonc\'es par
+le bon sens populaire) proviennent du non-respect de ces r\'eserves. 
+Aucune m\'ethode math\'ematique ne permet d'en faire l'\'economie: on 
+peut corriger des donn\'ees par des calculs de r\'egression (lin\'eaire
+ou non lin\'eaire), mais les r\'esultats ne sont pleinement corrig\'es 
+que si l'ensemble des d\'ependances a \'et\'e pris en compte; il est 
+l\'egitime de n\'egliger les influences faiblement corr\'el\'ees avec le 
+param\`etre \'etudi\'e, mais il suffit d'avoir ignor\'e un seul facteur 
+fortement corr\'el\'e avec le param\`etre \'etudi\'e pour que la
+conclusion perde toute validit\'e. Il est vain d'appliquer des
+m\'ethodes math\'ematiques, aussi sophistiqu\'ees soient-elles: en 
+aucun cas on ne pourra ainsi compenser l'omission des facteurs 
+occultes. 
+ 
+\vskip6mm plus3mm minus3mm 
+\penalty-600
+ 
+{\bf XII. 4. R\'egression non lin\'eaire.} 
+
+\penalty600
+\medskip 
+La recherche de la droite de r\'egression d'une variable $Y$ par rapport
+\`a une variable $X$ se ramenait \`a un probl\`eme de moindres
+carr\'es: trouver, pour un nuage de points donn\'e (avec ou sans poids) 
+la fonction affine $Y = f(X) = aX+b$ qui {\it minimise} les \'ecarts 
+al\'eatoires.  Il va de soi que cette op\'eration est possible pour 
+n'importe quelle fonction $Y = f(a,b\, ; X)$ d\'ependant de deux 
+param\`etres $a$ et $b$ (ou plus).  On aurait pu chercher la {\it 
+parabole des moindres carr\'es} pour les nuages de points des figures 
+52. Mais on comprend bien que cette parabole n'aurait aucune 
+pertinence: c'est flagrant pour la figure $52.8$, quoiqu'il puisse y avoir 
+un doute pour la figure $52.1$. En effet, que la parabole qui rend 
+minimum la somme des carr\'es des \'ecarts existe est une chose; que 
+ce minimum soit petit en est une autre. C'est-\`a-dire que la parabole 
+des moindres carr\'es a aussi peu de pertinence dans la figure $52.8$ 
+que la droite de r\'egression n'en avait pour la figure 50. 
+\medskip 
+L'id\'ee de la r\'egression {\it non} lin\'eaire est d'effectuer cette 
+g\'en\'eralisation: au lieu de chercher la droite de r\'egression d'un
+nuage de points, chercher une courbe de r\'egression. Mais il n'existe 
+\'evidemment aucune recette permettant de d\'eterminer le bon type
+de courbe, qu'il n'y aurait ensuite plus qu'\`a ajuster. Si on a une
+raison de penser que le nuage de points suit une parabole plut\^ot que
+n'importe quel autre type de courbe, on peut poser pour la fonction
+$Y = f(X) = a X^2 + b X + c$ (tout comme on avait pos\'e $f(X) = a X + b$ 
+pour la r\'egression lin\'eaire), puis d\'eterminer les coefficients $a$, 
+$b$, et $c$ de mani\`ere \`a rendre minimum la somme des carr\'es
+des \'ecarts. Cherchons cette parabole des moindres carr\'es. 
+\medskip 
+La somme des carr\'es des \'ecarts est
+$$S \;\; = \;\; \sum_{i=1}^n p_i\,\big[ y_i - f(x_i) \big]^2 \;\; 
+= \;\; \sum_{i=1}^n p_i\,\big[ y_i - a x_i^2 - b x_i - c \big]^2$$ 
+o\`u on a tenu compte du poids ou probabilit\'e $p_i$ de chaque point 
+$(x_i,y_i)$: s'il s'agit de variables al\'eatoires $X$ et $Y$, les $p_i$
+sont donn\'es par la loi conjointe, s'il s'agit d'un nuage empirique, on
+aura $p_i=1/n$. En d\'eveloppant le carr\'e et en introduisant les
+corr\'elations suivantes, qu'on peut appeler {\it corr\'elations
+non lin\'eaires}: 
+$$M_{\alpha,\beta}(X,Y) \;\; = \;\; \sum_{i=1}^n p_i\, x_i^\alpha y_i^\beta$$
+on obtient
+$$\eqalignno{ 
+S \;\; &= \;\; M_{0,2} + a^2\, M_{4,0} - 2a\, M_{2,1} + 2ab\, M_{3,0}\, + \cr 
+&\hskip6mm + (b^2 +2ac)\, M_{2,0} - 2b\, M_{1,1} - 2c\, M_{0,1} +  
+2bc\, M_{1,0} + c^2 \cr }$$ 
+Cette expression est minimum lorsque ses d\'eriv\'ees partielles par 
+rapport \`a $a$, $b$, et $c$ s'annulent. La condition (n\'ecessaire) de 
+minimum est donc le syst\`eme de trois \'equations lin\'eaires \`a 
+trois inconnues $a$, $b$, $c$ suivant: 
+$$\matrix{ 
+a\; M_{4,0} &\xx &b\; M_{3,0} &\xx &c\; M_{2,0} &= & M_{2,1} \cr 
+a\; M_{3,0} &\xx &b\; M_{2,0} &\xx &c\; M_{1,0} &= & M_{1,1} \cr 
+a\; M_{2,0} &\xx &b\; M_{1,0} &\xx &c &= & M_{0,1} \cr } 
+\eqno(XII.9)$$ 
+Si au lieu d'une parabole, on cherche la courbe de r\'egression non 
+lin\'eaire sous la forme d'un graphe de polyn\^ome de degr\'e $Q$, 
+soit $Y = P(X) = \sum a_j X^j$, on obtiendra un syst\`eme de $Q+1$ 
+\'equations lin\'eaires \`a $Q+1$ inconnues $a_j$ (les coefficients du 
+polyn\^ome): 
+$$\sum_{j=0}^Q a_j M_{k+j,0} \;\; = \;\; M_{k,1} \eqno(XII.10)$$ 
+pour $k=0,1,2, \ldots Q$. 
+\medskip
+Un tel syst\`eme se r\'esoud num\'eriquement par la {\it m\'ethode du pivot}
+bien connue.
+\medskip 
+Rien n'impose d'ailleurs les polyn\^omes et n'importe quelle fonction 
+de la forme $Y = f(X) = \sum a_j \Phi_j(X)$, o\`u les $\Phi_j$ sont des 
+fonctions de base, conduiront \`a un syst\`eme d'\'equations lin\'eaires 
+dont les inconnues seront les coefficients $a_j$. Mais la lin\'earit\'e 
+des conditions de minimum $XII.9$ et $XII.10$ provient \'evidemment
+du fait que la fonction $f$ d\'epend elle-m\^eme lin\'eairement des 
+param\`etres.  Si on cherche la courbe de r\'egression sous la forme
+$Y = f(X) = a\e^{\alpha X}$, qui d\'epend des deux param\`etres $a$ et 
+$\alpha$ (mais non lin\'eairement en $\alpha$), les conditions de 
+moindre carr\'e seront alors, et pour cause, un syst\`eme de deux 
+\'equations \`a deux inconnues, mais non lin\'eaires. 
+\medskip 
+On comprend que pour les calculs pratiques il vaut mieux chercher les 
+courbes de r\'egression sous une forme qui soit lin\'eaire selon les
+param\`etres. 
+\medskip
+Toutefois lorsqu'on a de bonnes raisons de chercher une d\'ependance
+non lin\'eaire, il existe un proc\'ed\'e algorithmique efficace (du 
+moins si le nombre de param\`etres n'est pas trop \'elev\'e) connu sous 
+le nom de {\it m\'ethode de Levenberg-Marquardt}. Ce proc\'ed\'e est 
+pr\'esent\'e dans l'annexe qui suit ce chapitre. L'algorithme de
+Levenberg-Marquardt est parfaitement robuste quand il n'y a que deux 
+param\`etres. Sa robustesse d\'ecro{\^\i}t ensuite avec le nombre de 
+param\`etres: au del\`a de six, l'algorithme n'est plus gu\`ere fiable, 
+mais il est tr\`es rare que la d\'ependance soit non lin\'eaire selon 
+six param\`etres; presque toujours, on aura une d\'ependance lin\'eaire 
+par rapport \`a la plupart des param\`etres, en sorte que seuls deux ou trois 
+d'entre eux produiront la d\'ependance non lin\'eaire. Il suffira alors 
+d'\'eliminer pr\'ealablement les premiers par la m\'ethode lin\'eaire 
+du pivot, et traiter ensuite les deux ou trois param\`etres restants par 
+la m\'ethode de Levenberg-Marquardt. 
+\medskip 
+Le probl\`eme g\'en\'eral de la d\'ependance n'est cependant pas
+r\'esolu pour autant. Car si on peut ajuster les param\`etres d'une 
+famille de courbes, on ne sait pas comment choisir cette famille de 
+courbes.  Or la m\'ethode de Levenberg-Marquardt ne r\'esoud \'evidemment
+pas ce probl\`eme l\`a;  elle permet seulement de calculer les param\`etres 
+optimaux {\it pour une famille donn\'ee}.
+\medskip 
+Si la r\'egression lin\'eaire ne donne aucun r\'esultat, en ce sens 
+que la {\it droite} de r\'egression correspond \`a un minimum {\it 
+qui n'est pas petit} (ce qui se produit sur la figure 50), on peut 
+chercher une {\it courbe} des moindres carr\'es qui correspond \`a un 
+minimum petit; on peut par exemple augmenter le degr\'e du polyn\^ome 
+jusqu'\`a ce que le minimum devienne petit. En proc\'edant ainsi, on est 
+assur\'e du succ\`es, puisqu'on sait \`a l'avance que pour un polyn\^ome 
+dont le degr\'e est {\it \'egal} au nombre de points du nuage, la somme
+des carr\'es des \'ecarts sera nulle (polyn\^ome d'interpolation des 
+points). Mais ce proc\'ed\'e, qui aboutira donc {\it forc\'ement} au 
+succ\`es si le nombre de points du nuage est fini, fournira aussi une 
+courbe de r\'egression d\'epourvue de la moindre pertinence. La courbe 
+doit repr\'esenter une loi, dont le nuage de points serait une expression 
+bruit\'ee; si on interpole les points du nuage, et qu'on refait une autre 
+s\'erie de mesures qui fourniront un autre nuage, la courbe 
+d'interpolation aura chang\'e. Or la {\it loi} du ph\'enom\`ene observ\'e 
+(si elle existe) est ce qui ne change pas d'une s\'erie de mesures \`a 
+l'autre, le {\it bruit} est ce qui change. 
+\medskip 
+On peut donc pr\'eciser comme suit les conditions dans lesquelles la 
+r\'egression non lin\'eaire est recommand\'ee.  La r\'egression {\it 
+lin\'eaire} est un probl\`eme bien pos\'e parce que les fonctions 
+lin\'eaires, c'est-\`a-dire les rapports de proportionnalit\'e, jouent un 
+r\^ole privil\'egi\'e dans l'\'etude des grandeurs. Math\'ematiquement
+la r\'egression {\it non} lin\'eaire n'est un probl\`eme bien pos\'e que
+si on choisit a priori une famille param\'etr\'ee de fonctions. 
+Le probl\`eme formul\'e ainsi: ``parmi toutes les fonctions 
+possibles et imaginables, laquelle minimise la somme des carr\'es
+des \'ecarts?'' est \'evidemment absurde. En effet, parmi {\it toutes} 
+les fonctions possibles et imaginables, il y en a forc\'ement une, et 
+m\^eme une infinit\'e, qui rendent exactement nulle la somme des 
+carr\'es des \'ecarts. Si $P(x)$ est le polyn\^ome
+d'interpolation des $n$ points, pour lequel $y_i = P(x_i)$, on aura 
+$S = \sum \big[ y_i - P(x_i)\big]^2 = 0$. \`A partir de ce polyn\^ome, 
+on peut ensuite fabriquer une infinit\'e de fonctions ayant la m\^eme 
+propri\'et\'e; soit en effet $Q(x)$ une fonction \'egale \`a $1$ lorsque 
+$x$ est \'egal \`a l'un des $x_i$, mais \`a n'importe quoi en dehors 
+des valeurs $x_i$ (rien n'emp\^eche une telle fonction d'\^etre 
+diff\'erentiable ou analytique).  Alors toute fonction $f(x)$ de la forme 
+$P(x) \cdot Q(x)$ remplira \'egalement les conditions requises. 
+\medskip 
+La r\'egression non lin\'eaire est donc une technique qui n'a de sens
+que lorsqu'on a d\'ej\`a de bonnes raisons th\'eoriques de postuler un 
+type particulier de d\'ependance, et qu'on souhaite seulement en
+ajuster empiriquement les param\`etres. 
+\medskip 
+On appellera {\it mod\`ele de d\'ependance} un choix particulier d'une 
+famille param\'etr\'ee de fonctions; selon le nombre des param\`etres, 
+le mod\`ele sera dit {\it \`a $n$ param\`etres}. 
+ \medskip 
+Mais il ne suffit pas que le probl\`eme soit {\it math\'ematiquement} 
+bien pos\'e gr\^ace \`a la pr\'esence d'un mod\`ele de d\'ependance. Il 
+faut aussi que le mod\`ele postul\'e soit pertinent. Pratiquer la 
+r\'egression non lin\'eaire en utilisant la m\'ethode de Levenberg-Marquardt, 
+ou un logiciel qui la met en \oe uvre, est une 
+simple technique. Trouver le mod\`ele pertinent est une question 
+d'imagination, mais surtout d'intuition et d'exp\'erience, voire de 
+g\'enie. Car la difficult\'e n'est pas d'ajuster des param\`etres pour 
+minimiser la somme des carr\'es des \'ecarts, ni de postuler un 
+mod\`ele plus ou moins arbitraire; la difficult\'e est de s\'eparer ce 
+qui constitue la loi du ph\'enom\`ene (qui reste invariable d'une s\'erie 
+de mesures \`a l'autre), et ce qui constitue le bruit. On peut tester a 
+posteriori un mod\`ele de r\'egression non lin\'eaire par les deux 
+crit\`eres suivants: 
+\smallskip 
+a) le mod\`ele doit rester valide pour toutes les s\'eries de mesures, 
+c'est-\`a-dire que le minimum de la somme des carr\'es des \'ecarts
+doit \^etre petit pour {\it toutes} les s\'eries de mesures que l'on 
+effectue; 
+\smallskip 
+b) le bruit constitu\'e par les \'ecarts doit \'egalement conserver des 
+caract\`eres statistiques constants d'une s\'erie de mesures \`a
+l'autre. Par exemple si les \'ecarts sont distribu\'es selon une 
+loi gaussienne (cas de loin le plus commun), et si 
+l'\'ecart-type empirique change notablement d'une s\'erie de mesures 
+\`a l'autre, il faudrait conclure que la s\'eparation entre loi et bruit 
+effectu\'ee par le mod\`ele postul\'e n'\'etait pas correcte. 
+\medskip 
+Le crit\`ere $b$ ne peut \^etre n\'eglig\'e au profit du seul crit\`ere
+$a$.  Imaginons par exemple qu'en \'etudiant la r\'egression lin\'eaire 
+de deux variables $X$ et $Y$, on constate que les \'ecarts sont
+\'elev\'es pour $X$ petit et deviennent de plus en plus faibles quand
+$X$ augmente (voir par exemple figure 53.2). Lorsqu'on effectue des 
+mesures il arrive bien plus souvent que les \'ecarts augmentent 
+proportionnellement \`a $X$ au lieu de diminuer, car il est fr\'equent 
+que les erreurs soient relatives plut\^ot qu'absolues. L'inverse est 
+donc surprenant et devrait mettre la puce \`a l'oreille.  Si les 
+fluctuations sont caus\'ees (comme les r\'esultats du chapitre {\bf 
+VII} le font soup\c{c}onner) par d'innombrables petites perturbations 
+al\'eatoires ind\'ependantes qui s'accumulent, on comprend 
+difficilement pourquoi ces perturbations s'\'evanouissent lorsque $X$ 
+devient grand. Il s'est donc produit un ph\'enom\`ene qui est 
+int\'eressant par lui-m\^eme \ftn 1{Pour l'explication d'un tel 
+ph\'enom\`ene, voir plus loin dans cette section.}. Si on veut analyser 
+la situation de mani\`ere compl\`ete, la seule droite de r\'egression
+ne suffit pas, il faut inclure une pr\'ediction concernant la variation 
+\'eventuelle des \'ecarts. On appellera donc {\it mod\`ele de
+r\'egression} (lin\'eaire ou non) un mod\`ele de d\'ependance (famille 
+param\'etr\'ee de fonctions) accompagn\'e d'une pr\'ediction 
+concernant le bruit (par exemple que le bruit est gaussien et que son 
+\'ecart-type est proportionnel \`a $X$). En pratique les mod\`eles de 
+r\'egression non lin\'eaire sont rarement autres que gaussiens et 
+incluent toujours un \'ecart-type constant ou proportionnel \`a $X$, 
+car les ph\'enom\`enes du type de la figure 53.2 sont des artefacts, 
+comme nous le verrons plus loin. 
+\medskip 
+L'importance du crit\`ere $b$ intervient encore sous un autre aspect. 
+Dans des \'etudes exp\'erimentales, on ne peut pas donner \`a la
+variable $X$ des valeurs arbitrairement grandes ou arbitrairement 
+petites; les valeurs accessibles sont en effet toujours limit\'ees par 
+les possibilit\'es pratiques. C'est pourquoi il n'est pas toujours facile 
+de distinguer une d\'ependance exponentielle d'une d\'ependance 
+polyn\^omiale: par exemple $\e^X \simeq 1 + X + {1\over 2} X^2$; on 
+pourrait ais\'ement d\'epartager l'exponentielle du polyn\^ome, 
+m\^eme si le nuage est tr\`es flou, si on pouvait faire tendre $X$ vers 
+l'infini.  Mais si les valeurs mesurables de $X$ sont limit\'ees, on ne le 
+peut pas. Existe-t-il alors un moyen statistique de remarquer la 
+diff\'erence? La r\'eponse est oui: supposons par exemple que le bruit 
+soit gaussien et qu'on le constate pour les petites valeurs de $X$; 
+supposons en outre que le ph\'enom\`ene soit exponentiel ``en 
+r\'ealit\'e'', mais qu'on ait choisit un mod\`ele de d\'ependance de la 
+forme $a + bX + cX^2$, qui apr\`es ajustage par moindres carr\'es donne 
+$a=1$, $b=1$, $c={1\over 2}$.  Alors les \'ecarts ne seront plus 
+exactement gaussiens pour les grandes valeurs de $X$, \`a cause d'une 
+erreur syst\'ematique sur la moyenne.  Le mod\`ele exponentiel 
+s\'eparerait mieux le signal du bruit que le mod\`ele polyn\^omial. 
+\medskip 
+Ainsi l'analyse statistique du seul bruit permet aussi de d\'etecter si
+le mod\`ele de d\'ependance est correct. 
+\medskip 
+Ce qui implique que si l'un des deux crit\`eres $a$ et $b$ manque, le 
+mod\`ele de r\'egression doit \^etre revu. Mais il n'existe pas de 
+m\'ethode pour trouver un mod\`ele. La Statistique ne fournit que
+des crit\`eres de v\'erification a posteriori. 
+\medskip 
+Un point doit encore \^etre pr\'ecis\'e. Lorsque les mesures donnent
+des \'ecarts faibles, c'est-\`a-dire que le bruit est tr\`es petit par 
+rapport au \hbox{signal}, que le nuage de points est concentr\'e au 
+voisinage imm\'ediat d'une courbe qui saute aux yeux, comme sur la 
+figure 52.8, alors les techniques statistiques de r\'egression sont 
+\'evidemment superflues. Ces techniques deviennent utiles lorsque le 
+bruit est important (ou lorsqu'il varie nettement avec l'une des 
+variables,  comme sur les figures 53 \`a 57), c'est-\`a-dire lorsque le 
+nuage est flou,  mais qu'on a de bonnes raisons de penser qu'il existe 
+une loi noy\'ee dans ce bruit, et qu'il s'agit de la d\'ecouvrir. Comme 
+nous avons pu le constater avec les tests statistiques (chapitre {\bf 
+XI}),  la Statistique est un outil qui devient inutile quand les 
+fluctuations al\'eatoires sont faibles. Il est inutile d'appliquer le test 
+du $\chi^2$ pour v\'erifier l'\'equilibre d'un d\'e si on peut le lancer un 
+million de fois et donc obtenir des fluctuations de l'ordre de $0.1\%$; 
+ce test ne prend son sens que si, n'ayant jet\'e le d\'e que cent fois, les 
+fluctuations sont trop fortes pour donner un r\'esultat flagrant. De 
+m\^eme, les m\'ethodes de r\'egression ne sont utiles que si 
+l'amplitude des fluctuations, c'est-\`a-dire l'\'epaisseur du nuage, est 
+si grande qu'elle efface la loi du ph\'enom\`ene.  Ces m\'ethodes 
+statistiques n'apportent cependant pas de certitude quant \`a la loi en 
+question; elles ne doivent pas dispenser d'une \'etude plus exacte du 
+ph\'enom\`ene (tout comme un alcootest ne doit pas dispenser d'une 
+prise de sang), mais permettent tout au plus d'\'economiser du temps 
+et des moyens en \'evitant de retenir pour une \'etude plus approfondie 
+un mod\`ele d\'ej\`a incompatible avec les premi\`eres donn\'ees. 
+\medskip 
+Il faut aussi signaler que la recherche d'une {\it courbe} de
+r\'egression se ram\`ene le plus souvent \`a la r\'egression lin\'eaire 
+apr\`es un changement de variable ad\'equat. En pratique ce proc\'ed\'e 
+est infiniment plus courant que la recherche directe des moindres 
+carr\'es \`a partir d'un mod\`ele non lin\'eaire: il est tout 
+particuli\`erement r\'epandu sous la forme du papier logarithmique, 
+analogue au papier millim\'etr\'e, sauf que les abscisses et les
+ordonn\'ees sont toutes deux gradu\'ees logarithmiquement (ou les
+abscisses seulement sur papier semilogarithmique) et non
+arithm\'etiquement. Ainsi une d\'ependance de la forme $Y = 
+aX^\alpha$, c'est-\`a-dire une fonction puissance, se traduit sur
+papier logarithmique par une droite de pente $\alpha$ et d'ordonn\'ee 
+\`a l'origine $\log (a)$, puisque les nouvelles variables $\log (X)$ et 
+$\log (Y)$ sont li\'ees par la d\'ependance lin\'eaire $\log (Y) = \alpha 
+\log (X) + \log (a)$. Par cons\'equent, au lieu de chercher une courbe
+de r\'egression de la forme $Y = a\, X^\alpha$ en d\'eterminant $a$ et 
+$\alpha$ par les moindres carr\'es (ce qui est d'autant plus difficile 
+que le param\`etre $\alpha$ n'intervient pas lin\'eairement), il est bien 
+plus pratique et plus parlant de chercher la droite de r\'egression de 
+$\log (Y)$ par rapport \`a $\log (X)$. Mais si on cherche \`a analyser 
+l'\'ecart lui-m\^eme, par exemple pour savoir si l'\'ecart-type est 
+constant en valeur relative ($\Delta X / X$) ou au contraire en valeur 
+absolue ($\Delta X$), il peut \^etre pr\'ef\'erable d'employer la 
+m\'ethode directe. 
+\medskip 
+Afin d'illustrer cela, on a donn\'e sur les figures 53 \`a 57 divers 
+exemples de telles transformations non lin\'eaires. On peut constater
+que si sur le nuage avant transformation, les \'ecarts sont homog\`enes, 
+soit en valeur absolue ($\Delta X$), soit en valeur relative (${\Delta X 
+\over X}$), il n'en est plus du tout de m\^eme apr\`es transformation. 
+Il est ais\'e de donner une description math\'ematique de ces 
+transformations: supposons que $Y = f(X) + \varepsilon$, o\`u $f$ est
+une fonction non lin\'eaire et $\varepsilon$ une variable al\'eatoire 
+repr\'esentant le bruit. Les points de coordonn\'ees $\big(x_i, 
+y_i=f(x_i) + \varepsilon_i\big)$ sont les points du nuage. 
+\medskip 
+
+\midinsert 
+\vbox to \blocksize{ 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig53-1.eps} }
+\vskip3mm 
+\centerline{\eightpoint figure 53.1} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+$y = ax^3 + \varepsilon$ 
+} } 
+\vfill 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig53-2.eps} } 
+\vskip3mm
+\centerline{\eightpoint figure 53.2} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+$y = \root 3 \of {ax^3 + \varepsilon }$ 
+} } \vskip15pt }
+\endinsert 
+
+\midinsert 
+\vbox to \blocksize{\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig54-1.eps} } 
+\vskip3mm
+\centerline{\eightpoint figure 54.1} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+$y = ax^3 \cdot (1 + \varepsilon )$ 
+} } 
+\vfill 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig54-2.eps} } 
+\vskip3mm
+\centerline{\eightpoint figure 54.2} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+$y = \root 3 \of {ax^3 \cdot (1 + \varepsilon )}$ 
+} } \vskip15pt } 
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize{
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig55.eps} } 
+\vskip-1mm
+\centerline{\eightpoint figure 55} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint \noindent
+$\log y = \log (ax^3 + \varepsilon )$ avec $\varepsilon$ extr\^emement 
+petit. Le trait horizontal est l'axe des $\log x$ (correspondant \`a
+$y=0$). La pente de la droite de r\'egression est $3$, mais l'axe des 
+$\log y$ a \'et\'e comprim\'e pour une meilleure mise en page. } } 
+\vfill 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig56.eps} } 
+\vskip-1mm 
+\centerline{\eightpoint figure 56} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint 
+$\log y = \log (ax^3 + \varepsilon )$ avec $\varepsilon$ mod\'er\'ement 
+petit. } } \vskip15pt } 
+\endinsert 
+
+Repr\'esentons maintenant non plus les points $\big(x_i,y_i\big)$, 
+mais les points $\big(x_i, g(y_i)\big)$, o\`u $x=g(y)$ est la fonction 
+inverse de $y=f(x)$. Si $\varepsilon$ reste assez petit, on peut faire 
+un d\'eveloppement limit\'e de $g(y_i) = g\big( f(x_i) + 
+\varepsilon_i\big)$ en puissances de $\varepsilon_i$: 
+$$\eqalign{ 
+g(y_i) \;\; &\simeq \;\; g\big( f(x_i)\big) + g'\big( f(x_i)\big)\,
+\varepsilon_i + {1 \over 2}\, g''\big( f(x_i)\big)\, \varepsilon_i^2 \cr 
+&= \;\; x_i + {1 \over f'(x_i)}\;\varepsilon_i 
+- {1 \over 2}\, {f''(x_i)\over f'(x_i)^3}\;\varepsilon_i^2 \cr }$$ 
+On a utilis\'e les d\'eriv\'ees connues de la fonction inverse: 
+$g'\big( f(x)\big) = 1/f'(x)$ et $g''\big( f(x)\big) = -f''(x)/f'(x)^3$. 
+On en conclut que la d\'ependance non lin\'eaire entre $Y$ et $X$ 
+devient une d\'ependance lin\'eaire entre $g(Y)$ et $X$, mais la 
+r\'epartition des \'ecarts al\'eatoires $\big( 1/f'(x)\big)\, \varepsilon$ 
+(le bruit) subit une distorsion. Si l'\'ecart-type de $\varepsilon$ est 
+constant, alors dans la nouvelle repr\'esentation il variera en $1/f'(X)$. 
+Si $f'(x)$ est croissante, le nouveau nuage de points sera flou pour les 
+petits $x$, mais se resserrera au voisinage de la droite de r\'egression 
+$y=x$ (voir figure 53.2). Si $f'(x)$ est d\'ecroissante, le nuage 
+s'\'evasera pour les grandes valeurs de $x$. Le bruit sera r\'eparti de 
+fa\c{c}on inhomog\`ene le long de la droite de r\'egression. 
+\medskip 
+ 
+\midinsert 
+\epsfxsize=\hsize
+\line{\epsfbox{../imgEPS/ch12eps/fig57.eps} } 
+\vskip-1mm
+\centerline{\eightpoint figure 57} 
+\vskip3mm 
+\centerline{\vbox{\hsize=11cm\eightpoint \noindent
+$\log y = \log\big( ax^3 \cdot [1 + \varepsilon ]\big)$ avec 
+$\varepsilon$ mod\'er\'ement petit. Le trait horizontal est l'axe des 
+$\log x$ (correspondant \`a $y=0$). } } 
+\endinsert 
+
+Pour reprendre une remarque faite plus haut: si dans une s\'erie 
+d'ob\-ser\-va\-tions on constate un tel ph\'enom\`ene, on peut en d\'eduire 
+que les variables $X$ et $Y$ ne sont pas rapport\'ees \`a la bonne 
+repr\'esentation. Une transformation non lin\'eaire ad\'equate des 
+coordonn\'ees r\'etablira l'ordre. 
+\medskip 
+Lorsque le bruit appara{\^\i}t en valeurs relatives, le m\^eme 
+d\'eveloppement limit\'e conduit \`a un bruit de la forme
+$\big( f(x)/f'(x)\big)\, \varepsilon$ apr\`es transformation (figures 54.1
+et 54.2). 
+\medskip 
+Supposons qu'on recherche par la m\'ethode des moindres carr\'es sur
+les param\`etres $a$ et $\alpha$ la fonction $y = ax^\alpha$ de 
+r\'egression du nuage de points de la figure 53.1, puis la droite de 
+r\'egression du nuage de points de la figure 53.2 (ou bien la m\^eme 
+chose pour les figures 54.1 et 54.2). Techniquement cela est plus 
+compliqu\'e que si le param\`etre $\alpha$ intervenait lin\'eairement, 
+mais ce n'est qu'une affaire de programmation facile et sans 
+importance pour le propos qui suit. Il n'y a aucune raison pour que la 
+droite soit exactement la transform\'ee de la courbe $y=a\, x^\alpha$ par
+$g(Y) = \root 3\of {Y}$ (toutefois elle en sera assez proche si le bruit 
+$\varepsilon$ est petit). C'est-\`a-dire que le proc\'ed\'e d'optimisation 
+par les moindres carr\'es n'est pas covariant dans la transformation. 
+Il ne revient au m\^eme, ni de rechercher la loi du ph\'enom\`ene, ni 
+d'analyser le bruit dans les deux repr\'esentations, surtout si le bruit 
+est de forte amplitude. 
+\medskip 
+On ne doit donc pas conclure que dans n'importe quel cas {\og il suffit de 
+passer \`a une repr\'esentation o\`u la d\'ependance est lin\'eaire\fg}. 
+Si le bruit est une perturbation d'un signal, on ne peut pas comprendre 
+que sa dispersion varie bizarrement selon la valeur du signal, si ce 
+n'est en admettant que la repr\'esentation est artificielle. En comparant 
+par exemple les figures 53.1 et 53.2, on sera conduit \`a conclure 
+que la r\'epartition du bruit en 53.1 est naturelle, mais que celle de
+53.2 ne l'est pas. La repr\'esentation dans laquelle la d\'ependance
+est lin\'eaire est donc {\og artificielle\fg}. Cela montre bien que la
+r\'egression non lin\'eaire n'est pas \'equivalente \`a une r\'egression
+lin\'eaire apr\`es transformation. 
+\medskip 
+On peut aussi faire subir aux deux coordonn\'ees \`a la fois une 
+transformation non lin\'eaire; c'est ce que par exemple on effectue 
+automatiquement lorsqu'on reporte des mesures sur papier 
+logarithmique. Dans ce cas, au lieu de repr\'esenter $X$ en abscisse et 
+$Y$ en ordonn\'ee,  on repr\'esente $\log (X)$ en abscisse et $\log (Y)$ en 
+ordonn\'ee.  Cette repr\'esentation logarithmique est particuli\`erement 
+indiqu\'ee pour les fonctions puissance $f(x) = a\, X^\alpha$: 
+\medskip 
+--- si $Y = a\, X^\alpha + \varepsilon$ (\'ecart absolu): 
+$$\ln (Y) = \alpha\ln (X) + \ln (a) + \ln\Big(1 + {\varepsilon\over a\, 
+X^\alpha}\Big)$$ 
+ 
+--- si $Y = a\, X^\alpha (1+ \varepsilon )$ (\'ecart relatif): 
+$$\ln (Y) = \alpha\ln (X) + \ln (a) + \ln\Big(1 + \varepsilon\Big)$$ 
+ 
+Si $\varepsilon$ est petit et repr\'esente un \'ecart absolu 
+uniform\'ement distribu\'e, on aura dans la repr\'esentation 
+logarithmique un bruit en $\varepsilon / a\, X^\alpha$, qui est donc 
+fortement variable le long de la droite de r\'egression. Si $\varepsilon$ 
+est un \'ecart relatif, la transformation donnera un \'ecart absolu \'egal 
+\`a $\varepsilon$. 
+\medskip 
+Le r\'esultat est montr\'e sur les figures 55, 56, et 57 pour $\alpha = 
+3$. La figure 55 doit \^etre compar\'ee \`a 53.1: elle repr\'esente le 
+m\^eme nuage de points, mais sur papier logarithmique. De m\^eme 56 
+doit \^etre compar\'ee \`a 54.1. 
+\medskip 
+Ces figures illustrent tr\`es nettement le ph\'enom\`ene; si dans la 
+repr\'e\-sen\-ta\-tion {\og naturelle\fg}, le bruit est distribu\'e 
+uniform\'ement,  alors dans la nouvelle repr\'esentation o\`u la 
+d\'ependance est rendue lin\'eaire, l'inhomog\'en\'eit\'e des \'ecarts 
+peut \^etre consid\'erable. Cette id\'ee de repr\'esentation {\og naturelle\fg} 
+est \`a rapprocher de la discussion \`a la fin de la section {\bf IX.1}. La 
+r\'epartition du bruit est en effet li\'ee aux invariances naturelles de 
+la Physique (spatiale et temporelle). Prenons pour exemple le cas 
+illustr\'e par les figures 53.1 et 55 o\`u le bruit $\varepsilon$ est un 
+\'ecart absolu uniforme, de densit\'e gaussienne. La d\'ependance de $y$ 
+par rapport \`a $x$ est alors telle que $y = ax^3 + \varepsilon$. On peut 
+dire que dans cette repr\'esentation {\og naturelle\fg}, l'\'ecart de $y$ par 
+rapport \`a $ax^3$ est la somme d'un grand nombre de perturbations 
+stochastiquement ind\'ependantes, puisque c'est g\'en\'eralement ainsi 
+que sont engendr\'ees les fluctuations gaussiennes. Pour que des 
+perturbations puissent s'ajouter, il faut qu'elles repr\'esentent des 
+quantit\'es additives, par exemple des d\'eplacements dans l'espace. 
+Notons que des erreurs de mesure se ram\`enent toujours en derni\`ere 
+instance \`a des sommes de d\'eplacements dans l'espace; par exemple
+les tremblements des aiguilles d'instruments en face d'une graduation 
+sont bien des fluctuations spatiales (les affichages par cristaux
+liquides rendent cela moins flagrant, mais ce n'est qu'un masque et on 
+sera toujours ramen\'e \`a l'espace et au temps par une analyse plus 
+pouss\'ee).  Si le bruit est distribu\'e uniform\'ement, c'est-\`a-dire
+si l'\'ecart-type de $\varepsilon$ est constant (ind\'ependant de $x$), 
+cela a une signification concr\`ete: c'est que les nombreux effets 
+ind\'ependants qui contribuent \`a cr\'eer la fluctuation gaussienne ne 
+sont pas influenc\'es par la valeur de $x$. L'uniformit\'e du bruit est 
+donc le reflet d'une invariance occulte. 
+\medskip 
+En repr\'esentant alors les variables $x$ et $y$ sur papier 
+logarithmique, on fait dispara{\^\i}tre, ou du moins on occulte davantage 
+cette invariance. On voit bien que dans ce cas la repr\'esentation $y = 
+ax^3 + \varepsilon$ est r\'eellement plus {\og naturelle\fg} que la 
+repr\'esentation logarithmique, de m\^eme que les rep\`eres galil\'eens 
+sont r\'eellement plus {\og naturels\fg} que les autres. 
+\medskip 
+En conclusion, le papier logarithmique (ou n'importe quel proc\'ed\'e
+faisant appara{\^\i}tre artificiellement une d\'ependance lin\'eaire) est
+certes un moyen commode pour faciliter la mise en \'evidence des 
+d\'ependances, mais il ne faut jamais oublier que la structure du bruit 
+peut elle aussi contenir des informations essentielles. L'\'etude des
+corr\'elations (lin\'eaires) sur le graphique 55 effacerait ces
+informations; seule l'\'etude de la r\'egression non lin\'eaire sur le 
+graphique 53.1 permet de les obtenir. 
+ 
+\vskip6mm plus3mm minus3mm
+
+{\bf XII. 5. Comment trouver le bon mod\`ele: l'exemple de Planck.}
+\medskip 
+Lorsqu'on est confront\'e \`a des r\'esultats de mesures ou
+d'exp\'eriences qui, report\'ees sur un papier millim\'etr\'e ou 
+logarithmique se traduisent par un nuage de points, la grande 
+difficult\'e n'est pas d'appliquer les techniques de Statistique, mais
+de trouver le bon mod\`ele. Cela est encore plus vrai aujourd'hui (o\`u
+le travail purement technique de mise en oeuvre des recettes 
+statistiques est enti\`erement effectu\'e par des logiciels 
+sp\'ecialis\'es) qu'autrefois. Les logiciels de r\'egression 
+non lin\'eaire les plus performants attendent de l'utilisateur qu'il 
+choisisse un {\it mod\`ele de r\'egression}. Si l'utilisateur n'en
+propose pas de pertinent, les r\'esultats des calculs seront grossiers 
+et peu significatifs, et la sophistication du logiciel ne compensera 
+pas cette lacune (tout au plus elle servira \`a mieux tromper les 
+profanes, objectif certes essentiel \`a notre \'epoque, mais hors de 
+notre sujet).  On peut \'ecrire des manuels sur les techniques
+statistiques, mais enseigner l'intuition, l'imagination, l'astuce, est 
+impossible. Le pr\'esent ouvrage ne le pr\'etend pas non plus. 
+Toutefois, cet ouvrage \'etant vou\'e \`a la signification et \`a la 
+compr\'ehension des concepts scientifiques, ne peut laisser de
+c\^ot\'e ce qui cons\-titue justement {\it la seule d\'emarche porteuse 
+de sens et de compr\'ehension}, \`a savoir la cr\'eation de mod\`eles 
+pertinents.  C'est pourquoi nous consacrons une section \`a pr\'esenter 
+un exemple particuli\`erement f\'econd: la d\'ecouverte de la Physique 
+quantique, Berlin, {\oldstyle 1899}\ftn{1}{Nous suivons en gros 
+l'expos\'e original de Max Planck \`a la Soci\'et\'e allemande de 
+Physique (s\'eance du 19 octobre {\oldstyle 1900}: {\it \"Uber eine 
+Verbesserung der Wienschen Spectralgleichung} Verhandlungen der 
+Deutschen Physikalischen Gesellschaft, Band 2, {\oldstyle 1900}, 
+pages 237 -- 245.}. 
+\medskip 
+\`A la fin du chapitre {\bf II} nous avons rencontr\'e la loi de Planck, 
+qui s'exprime par une fonction du type
+$$f(\nu ) = {A\, \nu^3 \over\sdown{17}\e^{\alpha \nu \over T} - 1} 
+\eqno (XII.\, 11)$$ 
+o\`u $\nu$ est la fr\'equence et $T$ la temp\'erature absolue du
+rayonnement. Les constantes $A$ et $\alpha$ \'etaient li\'ees \`a la 
+constante de Planck $\hbar$ (voir {\bf II. 6}). 
+Cette loi de d\'ependance de l'\'energie rayonn\'ee par le 
+corps noir en fonction de la fr\'equence \'etait inconnue avant Planck. 
+Planck ne l'a pas d\'eduite comme nous de raisonnements probabilistes 
+faisant appel \`a la M\'ecanique quantique, c'est au contraire la 
+M\'ecanique quantique qui a \'et\'e d\'eduite de la loi. Il l'a obtenue 
+directement \`a partir de lois empiriques ant\'erieures \`a la 
+Physique quantique. Dans ces lois classiques il n'y avait \'evidemment 
+nulle trace de la constante $\hbar$, qui est justement issue de ce 
+travail. 
+\medskip 
+Ce qui \'etait connu avant \'etaient les deux cas asymptotiques 
+suivants: 
+\smallskip 
+a) lorsque la fr\'equence $\nu$ est petite 
+$$f(\nu ) = {8\pi\nu^2 \over c^3}\; k\, T \eqno (XII.\, 12)$$ 
+o\`u $c$ est la vitesse de la lumi\`ere et $k$ la constante de 
+Boltzmann. Cette loi portait le nom de Rayleigh--Jeans\ftn 1{En toute 
+rigueur historique, la loi de Rayleigh--Jeans n'\'etait pas encore 
+connue officiellement au moment o\`u Planck r\'efl\'echissait au 
+probl\`eme ({\oldstyle 1899}) puisque l'article de Rayleigh o\`u elle 
+fut pr\'esent\'ee a paru en juin {\oldstyle 1900}, mais elle \'etait 
+connue ``officieusement''. Ce d\'etail historique est toutefois sans 
+int\'er\^et pour notre propos.}; elle avait \'et\'e obtenue par voie 
+th\'eorique \`a partir des lois classiques du rayonnement,  mais ne se 
+v\'erifiait exp\'erimentalement que dans l'infra-rouge,  c'est-\`a-dire 
+pour les petites fr\'equences. 
+\smallskip 
+b) lorsque la fr\'equence $\nu$ est grande 
+$$f(\nu ) = A\, \nu^3 \e^{-{\alpha \nu \over T}} \eqno (XII.\, 13)$$ 
+appel\'ee loi de Wien, plut\^ot empirique, et r\'esultant 
+des observations sur les rayonnements de haute fr\'equence 
+(ultra-violet); les constantes $A$ et $\alpha$ \'etaient empiriques et 
+non (comme pour la loi de Rayleigh--Jeans) exprim\'ees en fonction de 
+constantes d\'ej\`a connues. On ne savait pas justifier th\'eoriquement 
+la loi de Wien; c'\'etait une \'enigme de la Physique. 
+\medskip 
+Peut-on deviner la loi $XII.\, 11$ \`a partir de $XII.\, 12$ et $XII.\, 
+13$?  Si on pose \`a un math\'ematicien le probl\`eme: ''trouver une 
+fonction qui se comporte comme $1\over\textdown x$ pour $x$ 
+petit et comme $\e^{-x}$ pour $x$ grand, il est probable qu'apr\`es un 
+temps de r\'eflexion assez court il propose la fonction $1 / (\e^x - 1)$. 
+Il est donc possible de deviner. Toutefois si on lit les publications de 
+Planck \`a cette \'epoque charni\`ere de la Physique ({\oldstyle 1899} 
+-- {\oldstyle 1900}) on constatera qu'il n'a pas proc\'ed\'e ainsi. Il a 
+commenc\'e par chercher quelle expression pour l'entropie $S$ du 
+rayonnement en fonction de la grandeur $U = c^3 f(\nu ) / 8\pi\nu^2$ 
+impliquaient les relations $XII.\, 12$ et $XII.\, 13$, sachant que ${dS 
+\over dU} = {1\over T}$.  La grandeur $U$ avait dans ce contexte un
+sens particulier, qu'il est trop long de d\'evelopper ici.  Mais si on
+r\'e\'ecrit $XII.\, 12$ et $XII.\, 13$ pour la grandeur $U$, cela donne 
+respectivement: 
+$$U = k\, T \eqno (XII.\, 12\, a.)$$ 
+pour la loi de Rayleigh-Jeans et 
+$$U = b\,\nu\, \e^{-{\alpha\nu\over T}} \eqno (XII.\, 13\, a.)$$ 
+o\`u $b = c^3 A / 8\pi$,  pour la loi de Wien. 
+\medskip 
+On d\'eduit ais\'ement de $XII.\, 12\, a$ que ${1\over T} = 
+{k \over U}$ d'o\`u
+$${d^2S \over dU^2} \; = \; -{k \over U^2}$$
+et de $XII.\, 13\, a$ que ${1\over T} = -{1 \over
+\textdown{\alpha\nu }} \ln (U / b\nu )$ d'o\`u
+$${d^2S \over dU^2} \; = \; -{1 \over \alpha\nu }\cdot {1\over U}$$ 
+Ce d\'etour par l'entropie \'etait n\'ecessaire pour Planck; sa
+sp\'ecialit\'e \'etait la Thermodynamique et il pensait pouvoir {\it 
+comprendre} la vraie nature du ph\'enom\`ene par ce biais car (dit-il 
+dans son autobiographie scientifique) ``l\`a, il se trouvait en terrain 
+connu''. En introduisant la grandeur $R = 1\big/ {d^2S \over dU^2}$, on 
+obtient dans le cas correspondant \`a $XII.\, 12\, a$ 
+$$ R \; = \; -{1 \over k}\, U^2$$ 
+et dans le cas correspondant \`a $XII.\, 13\, a$ 
+$$ R \; = \; -\alpha\nu\, U$$ 
+Autrement dit, la loi de Rayleigh--Jeans (pour les petites fr\'equences) 
+conduisait \`a une d\'ependance quadratique entre $R$ et $U$, tandis 
+que la loi de Wien (pour les hautes fr\'equences) conduisait \`a une 
+d\'ependance lin\'eaire. 
+\medskip 
+Planck proposa alors d'essayer la combinaison la plus simple de ces
+deux formules, sous la forme 
+$$R \; = \; -{1 \over k}\, U^2 -\alpha\nu\, U \eqno (XII.\, 14)$$ 
+de sorte que si $\nu$ est petite, le second terme devient n\'egligeable 
+et le premier pr\'edomine, par contre si $\nu$ est grande c'est
+l'inverse. Il suffit alors de revenir en arri\`ere pour retrouver $U$
+en fonction de $T$: 
+$${d^2S\over dU^2} \; = \; {\up{1}\over R} \; = \; - \, {1\over 
+\; {1 \over k}\, U^2+\alpha\nu\, U \sdown{13}\; } \eqno (XII.\, 15)$$ 
+La primitive de cette fonction de $U$ est ${1\over 
+\textdown{\alpha\nu }} \ln ( 1 + b\nu/U )$, d'o\`u on d\'eduit que 
+$${1\over T} \; = \; {dS\over dU} \; = \; {1\over\ldown{\alpha\nu }}\,
+\ln\Big( 1 + {b\nu \over U}\Big) \eqno (XII.\, 16)$$ 
+Ceci est une expression de ${1/ T}$ en fonction de $U$, qu'on peut 
+inverser pour obtenir une expression de $U$ en fonction de $1/T$, qui
+est
+$$U \; = \; {b\nu\over\sdown{17}\e^{b\nu\over T} - 1}\eqno (XII.\, 17)$$ 
+On constate que Planck a largement us\'e de la relation 
+thermodynamique ${dS \over dU} = {1 \over T}$. En comparant $XII.\, 
+17$ avec $II.\, 14$ on voit que $\alpha$ est \'egal \`a $2\pi\hbar / k$ 
+(rappelons que la fr\'equence $\nu$ n'est pas \'egale \`a la pulsation 
+$\omega$, mais \`a $\omega / 2\pi$). Les physiciens de {\oldstyle 
+1900} ne pouvaient pas faire cette comparaison. Mais ils savaient que
+le rayonnement de corps noir est ind\'ependant des mat\'eriaux qui 
+constituent la cavit\'e, et que par cons\'equent les constantes $b$ et 
+$\alpha$ devaient \^etre (comme $c$ ou $k$) des constantes
+universelles de la Physique. 
+\medskip 
+C'est ainsi que $\hbar$ (ou plut\^ot $h = 2\pi\hbar$) apparut pour la
+premi\`ere fois,  d'o\`u son nom de {\it constante de Planck}. 
+\medskip 
+Cette histoire est int\'eressante pour nous ici parce qu'elle montre 
+comment on devine un mod\`ele. Planck n'aurait jamais trouv\'e 
+l'explication fondamentale du rayonnement du corps noir s'il avait 
+cherch\'e un polyn\^ome qui approche la courbe empirique \`a toutes
+les fr\'equences. Si l'ambition de la Physique consistait \`a approcher 
+les courbes empiriques par des mod\`eles math\'ematiques d\'epourvus 
+d'une signification plus profonde, et ayant pour seule vertu de se 
+rapprocher le plus possible des courbes fournies par l'exp\'erience, ce 
+ne serait plus la Physique et Planck n'aurait pas d\'ecouvert $\hbar$
+(ni Newton la gravitation, etc). La vraie nature de la d\'emarche de 
+Planck d\'ecrite ci-dessus est d'avoir attribu\'e a priori aux deux lois
+empiriques $XII.\, 12$ et $XII.\, 13$ un sens plus profond que la simple 
+description des faits exp\'erimentaux. Au d\'epart de sa d\'emarche 
+figurait la conviction intime que les courbes exp\'erimentales sont
+des apparences, sous-tendues par des causes {\it intelligibles} qu'on
+ne peut atteindre que par la pens\'ee (cf. Platon, {\sl La R\'epublique} 
+Livre {\bf VII});  sa tactique n'a pas consist\'e \`a approcher co\^ute 
+que co\^ute la courbe exp\'erimentale pour toutes les fr\'equences, 
+mais \`a partir du principe (dict\'e par une intime conviction et non
+par l'observation) que la {\it cause intelligible} du ph\'enom\`ene se 
+r\'ev\'elerait mieux dans les deux cas asymptotiques $\nu \rightarrow 
+0$ et $\nu \rightarrow \infty$ que dans le cas interm\'ediaire des 
+fr\'equences moyennes. Le passage par l'entropie $S$ est la meilleure 
+preuve que son approche fut bien celle-l\`a; mais il en t\'emoigne 
+aussi lui-m\^eme dans nombre de textes. 
+\medskip 
+Un point essentiel de la d\'emarche (revendiqu\'e par Planck) est 
+\'egalement le passage par les relations les plus simples possibles. 
+Deviner la loi g\'en\'erale \`a partir des deux cas asymptotiques 
+directement sous la forme $XII.\, 12$ et $XII.\, 13$ e\^ut \'et\'e 
+possible comme nous l'avons indiqu\'e plus haut. Mais Planck a 
+pr\'ef\'er\'e passer par l'interm\'ediaire de $R = 1\big/ 
+\hbox {\eightpoint ${d^2S \over \sdown{6.7}dU^2}$}$ car 
+les relations atteignaient alors le maximum de simplicit\'e (relation 
+lin\'eaire ou quadratique) et surtout, le maximum de {\bf 
+signification}. Le proc\'ed\'e est toujours le m\^eme:  passer par 
+l'intelligible plut\^ot que par une description purement empirique. 
+\medskip 
+On peut tirer de cet exemple magistral deux le\c{c}ons 
+essentielles \`a retenir lorsqu'on doit chercher un mod\`ele. Ces
+le\c{c}ons sont valables m\^eme quand on ne nourrit pas l'ambition de 
+r\'evolutionner la Physique: 
+\smallskip 
+{\leftskip=20pt 
+a) Ne pas chercher simplement \`a approcher le nuage de points ou la 
+courbe empirique, mais r\'efl\'echir d'abord et essayer de trouver \`a 
+quelle n\'ecessit\'e purement intelligible le mod\`ele doit ob\'eir 
+(sym\'etries ou invariances, analogie avec des situations connues, 
+n\'ecessit\'es logiques). Nous avons d\'ej\`a fait appel avec insistance 
+\`a ce type de d\'emarche dans le pr\'esent ouvrage, en indiquant que 
+pour r\'esoudre un probl\`eme de probabilit\'e ``il faut commencer par 
+chercher ce qui est \'equiprobable''). 
+\smallskip 
+b) Effectuer sur les variables qui sont en jeu des transformations 
+qui ram\`enent autant que possible aux types de d\'ependance les plus 
+simples: proportionnalit\'e ou \`a la rigueur d\'ependance quadratique. 
+Ainsi une d\'ependance du type $Y = a\, X^\alpha$ devient une
+r\'egression lin\'eaire entre $\log (Y)$ et $\log (X)$ (papier 
+logarithmique), une d\'ependance du type $Y = a\,\e^{\alpha X}$
+devient une r\'egression lin\'eaire entre $\log (Y)$ et $X$ (papier 
+semilogarithmique). \par }
+\medskip
+Bien entendu, pour d\'ecouvrir la M\'ecanique quantique, il a fallu
+pousser l'imagination un peu plus loin, mais le principe reste le m\^eme. 
+
+\vskip6mm plus3mm minus3mm
+
+{\bf XII. 6. Corr\'elation et causalit\'e.} 
+\medskip 
+L'id\'ee essentielle qui se cache derri\`ere ces probl\`emes de 
+corr\'elation ou de r\'egression est celle de la {\it causalit\'e}. 
+Dans le langage courant, y compris les jargons techniques (et m\^eme
+{\it surtout} dans les jargons techniques) la diff\'erence entre la 
+d\'ependance statistique et la causalit\'e n'est pas clairement 
+d\'efinie. C'est pourquoi nous allons encore discuter du sens des
+diff\'erentes notions introduites dans ce chapitre, \`a savoir 
+la corr\'elation ou la r\'egression. Cette discussion compl\'etera les 
+discussions d\'ej\`a amorc\'ees au chapitre {\bf X}\hskip6pt sur la 
+signification des mesures statistiques. Nous avions alors bien insist\'e 
+sur la diff\'erence entre la mesure d'une probabilit\'e a priori (cas de 
+l'exp\'erience reproductible) et la mesure d'une proportion dans une 
+population (cas du sondage), les deux pouvant parfois se recouvrir. Ici, 
+nous ne discutons plus les mesures simples, mais la d\'ependance. 
+\medskip 
+Nous pouvons en effet interpr\'eter une forte corr\'elation, par
+exemple dans le cas extr\^eme o\`u le coefficient de corr\'elation est 
+\'egal \`a $+1$ ou $-1$, comme une d\'ependance lin\'eaire. Une telle 
+d\'ependance n'est pas flagrante dans le cas de la corr\'elation entre 
+la tension art\'erielle et l'\^age, car cette corr\'elation est m\'ediocre, 
+et correspond \`a peu pr\`es \`a ce qu'on peut voir sur les figures 
+$52.2$ ou $52.3$. La situation serait beaucoup plus claire avec un nuage 
+de points tel que celui de la figure $52.7$ ou $52.8$. Ce type de figure 
+peut vous rappeler un T.P. d'\'electricit\'e o\`u il s'agissait de 
+v\'erifier la loi d'Ohm: supposons qu'on reporte la tension \'electrique 
+$U$ entre les bornes de la r\'esistance en abscisse et l'intensit\'e $I$ 
+du courant en ordonn\'ee; on obtiendrait bien des graphiques de ce type. 
+\medskip 
+Les lois de l'\'electromagn\'etisme sont souvent enseign\'ees
+aujourd'hui de fa\c{c}on d\'eductive. Les \'equations de Maxwell sont 
+postul\'ees comme s'il s'agissait d'une v\'erit\'e math\'ematique a 
+priori, dont on d\'eduit tout le reste; la r\'esistance d'un conducteur 
+n'est alors qu'un effet macroscopique sur un nombre \'enorme de 
+mol\'ecules et d'\'electrons et on retrouverait la loi d'Ohm, en 
+expliquant {\og tout\fg} par moyennisation \`a partir des seules \'equations 
+fondamentales de Maxwell.  Mais le cheminement historique va en sens 
+inverse, et les \'equations de Maxwell ont \'et\'e peu \`a peu {\it 
+d\'egag\'ees} par induction \`a partir d'observations exp\'erimentales, 
+telles que justement cette loi d'Ohm qui a \'et\'e \'etablie par Georg S. 
+Ohm en effectuant des mesures de tension \'electrique et d'intensit\'e. 
+\medskip 
+Si on effectue r\'eellement ces mesures, ce qu'on obtient est un 
+tableau de chiffres ou, si on les repr\'esente graphiquement, un nuage 
+de points comme celui de la figure $52.8$. Si on calcule le coefficient 
+de corr\'elation du nuage on obtiendra une valeur proche de $1$ et une 
+droite de r\'egression dont la pente est appel\'ee la r\'esistance $R$ 
+du conducteur. $U = RI$ est l'\'equation de la droite de r\'egression. 
+\medskip 
+Toutes les lois de la physique ont \'et\'e, soit obtenues directement 
+par un tel proc\'ed\'e, soit d\'eduites ou induites math\'ematiquement 
+\`a partir de tels proc\'ed\'es. Ce n'est que lorsque la forme 
+math\'ematique issue de tout ce travail devient vraiment abstraite 
+(par exemple lorsqu'elle prend la forme des \'equations de Maxwell) 
+qu'on croit pouvoir lui donner une valeur de v\'erit\'e sup\'erieure, 
+qui serait plus exacte que ce que la variance des mesures exp\'erimentales 
+laisse supposer. On dit alors que les lois abstraites sont les
+{\og vraies\fg} lois (par exemple $U=RI$) et que les petits \'ecarts
+du nuage de points par rapport \`a cette loi sont {\og du bruit\fg}. 
+Mais cette l\'egende sur la nature des lois physiques ne doit pas faire
+oublier qu'au d\'epart, toute l'information a \'et\'e recueillie dans
+des graphiques tels que ceux de la figure $52.8$. Il n'est pas difficile
+de comprendre le proc\'ed\'e litt\'eraire qui permet de passer d'un nuage
+de points comme celui de la figure $52.8$ \`a une loi math\'ematique
+comme les \'equations de Maxwell: la premi\`ere \'etape consiste \`a
+dire que $U$ est {\it \'egal} \`a $RI$ au lieu de dire que la variance
+d'\'echantillon de $U - RI$ est petite. 
+\medskip 
+Mais dans la loi d'Ohm il y a m\^eme bien plus que la seule relation 
+math\'ematique $U = RI$. On dit en effet que la tension \'electrique 
+appliqu\'ee aux bornes est la {\it cause} du courant. 
+\medskip
+Cette id\'ee de causalit\'e est tout \`a fait \'evidente si on con\c{c}oit 
+le courant \'electrique selon l'\'electromagn\'etisme moderne. En effet, le
+courant \'electrique est un d\'eplacement d'\'electrons dans le conducteur, 
+et les \'electrons ne se d\'eplacent que si on leur applique un champ 
+\'electrique. Le champ \'electrique est alors la cause du mouvement des 
+\'electrons comme le champ de gravit\'e est la cause de la chute des 
+corps. Or on cr\'ee un tel champ dans le conducteur en appliquant une 
+tension \'electrique aux bornes, ce qui veut dire que la tension 
+\'electrique est la cause du champ et donc aussi la cause du courant 
+\'electrique. 
+\medskip
+Mais une simple d\'ependance ne suffit pas \`a d\'eterminer
+ce qui est la cause et ce qui est l'effet. Par exemple, on aurait tout
+aussi bien pu \'ecrire $I = U/R$, cela n'aurait pas pour autant fait de 
+$I$ la cause et de $U$ l'effet. On voit donc qu'une corr\'elation 
+statistique, m\^eme tr\`es forte, ne peut pas \`a elle seule d\'ecider
+ce qui est la cause ou ce qui est l'effet. La simple constatation d'une 
+corr\'elation entre le tabagisme et l'hypertension ne suffit pas \`a 
+certifier que le tabagisme est la cause et l'hypertension l'effet; il se 
+pourrait par exemple que l'hypertension ait une cause biologique qui 
+favorise chez la m\^eme personne le go\^ut pour le tabac.  
+\medskip
+La causalit\'e est donc une relation plus forte que la d\'ependance 
+statistique. Si on a observ\'e sur un \'echantillon de mesures les
+valeurs de deux param\`etres (tels que \^age et tension art\'erielle, 
+ou intensit\'e et tension \'electrique), et que le nuage de points est 
+distribu\'e le long d'une courbe d'\'equation $y = f(x)$ de telle sorte que 
+la variance de $y-f(x)$ sur l'\'echantillon de tous les points est petite, 
+on dira qu'il y a une forte d\'ependance statistique entre les deux 
+param\`etres (si la fonction $f$ est lin\'eaire, on appellera cela une 
+corr\'elation). Pour qu'en outre on puisse dire que le premier 
+param\`etre (celui qui est en abscisse) est la {\it cause} de l'autre, il 
+faut que la r\'ealisation du premier pr\'ec\`ede toujours la r\'ealisation 
+du second (en Relativit\'e, la condition est encore plus forte: il faut que 
+le premier soit r\'ealis\'e avant le second, mais de sorte qu'un photon 
+parti du premier imm\'ediatement apr\`es sa r\'ealisation puisse
+arriver au second avant sa r\'ealisation). 
+\medskip
+On peut r\'esumer cela en disant que
+$$\hbox{causalit\'e} = \hbox{d\'ependance statistique} + 
+\hbox{ant\'eriorit\'e} \eqno (XII.18.)$$
+Au del\`a de cette d\'efinition de la causalit\'e, on peut 
+s'interroger sur le probl\`eme de savoir si la causalit\'e se r\'eduit 
+enti\`erement \`a $(XII.18.)$; si deux param\`etres ont entre eux une 
+forte d\'ependance statistique et un rapport d'ant\'eriorit\'e, mais sans 
+qu'on puisse pour autant {\it comprendre} la relation de n\'ecessit\'e 
+qui les relie,  peut-on encore parler de causalit\'e?  Cette question a 
+\'et\'e \'etudi\'ee au $XVIII^{e}$ si\`ecle par David Hume\ftn1{David 
+HUME {\it Enqu\^ete sur l'entendement humain} ({\oldstyle 1748}).} qui 
+a r\'epondu que la causalit\'e ne peut pas \^etre {\it plus} que ce qui 
+est exprim\'e par $(XII.18.)$ Quoique sa r\'eponse ait \'et\'e critiqu\'ee, 
+je dois lui donner enti\`erement raison. Les critiques qui lui ont \'et\'e 
+oppos\'ees reposent essentiellement sur l'argument que voici: 
+supposons que, chaque fois qu'un \'ev\'enement $A$ se produit, un 
+\'ev\'enement $B$ se produit peu apr\`es, et $B$ ne se produit jamais 
+sans que $A$ se soit produit juste avant; on ne peut alors 
+s\'erieusement tenir $A$ pour la cause de $B$ que si le rapport de 
+n\'ecessit\'e entre $A$ et $B$ est clair pour l'entendement. 
+C'est-\`a-dire que $(XII.18.)$ ne suffit pas, il faut en outre un rapport 
+de n\'ecessit\'e. Cette situation est illustr\'ee sous forme comique 
+dans {\it La vie criminelle d'Archibald de la Cruz}, un film de Luis 
+Bunuel ({\oldstyle 1955}), dont le personnage principal (Archibald de 
+la Cruz) constate que, chaque fois que dans sa vie il a \'eprouv\'e de
+l'hostilit\'e envers une personne, celle-ci est morte quelques heures
+ou quelques jours apr\`es. Il acquiert ainsi la certitude que, par un 
+m\'ecanisme inconnu, son sentiment de haine est la {\it cause} de la 
+mort de ses victimes. Lorsque, tortur\'e par les remords, il se livre
+\`a la police, personne ne le croit. Or, une situation toute analogue
+s'est produite lorsque Kepler a d\'ecouvert les lois du mouvement des 
+plan\`etes. En effet, Kepler a constat\'e que le temps mis par une une 
+plan\`ete quelconque pour parcourir une portion de son orbite est 
+proportionnel \`a l'aire balay\'ee par le segment Soleil -- plan\`ete 
+(loi des aires). Quoique \`a cette \'epoque les m\'ethodes
+statistiques n'\'etaient pas encore aussi syst\'ematiquement 
+quantitatives, ni surtout aussi sophistiqu\'ees math\'ematiquement 
+qu'aujourd'hui, on peut n\'eanmoins, avec un anachronisme certain, mais 
+qui ne touche pas \`a l'essentiel, imaginer Kepler repr\'esentant les 
+r\'esultats de ses mesures et de ses calculs sur un graphique, avec les 
+dur\'ees en ordonn\'ee et les aires balay\'ees en abscisse. Les 
+points trac\'es ont bien la caract\'eristique de former un nuage 
+concentr\'e au voisinage d'une droite. Il y a donc une d\'ependance 
+entre la vitesse et la distance au Soleil; lorsque la plan\`ete s'approche 
+du Soleil, elle va plus vite, et la loi des aires permet de calculer cette 
+variation. 
+\medskip
+Or, constatant cela, Kepler ne s'est pas content\'e d'en tirer une loi 
+purement descriptive; voyant que le Soleil \'etait au foyer de toutes
+les orbites des plan\`etes, il a estim\'e que le Soleil ne pouvait pas ne 
+pas \^etre la {\it cause} du mouvement des plan\`etes: en effet, les 
+autres plan\`etes ne pouvaient pas \^etre tenues pour la cause du 
+mouvement de l'une d'entre elles, car elles \'etaient interchangeables; 
+or par d\'efinition, la cause n'est pas interchangeable avec l'effet. 
+Seul le Soleil pouvait jouer ce r\^ole. On voit bien que la simple 
+corr\'elation constat\'ee ne suffit pas \`a conclure \`a une causalit\'e, 
+il a fallu faire appel \`a un raisonnement a priori. 
+\medskip 
+Mais ce n'est pas tout. La distance entre le Soleil et la plan\`ete
+\'etant \'enorme, comment la plan\`ete, lorsqu'elle passe \`a un endroit
+de son orbite, peut-elle {\og savoir\fg} que, s'\'etant par exemple 
+rapproch\'ee du Soleil, il lui convient d'augmenter sa vitesse pour 
+respecter la loi des aires? D'autre part, la loi des aires est valable 
+pour chaque plan\`ete s\'epar\'ement, et ne fait intervenir que le 
+couple plan\`ete-Soleil, de sorte que le mouvement d'une plan\`ete
+est ind\'ependant des autres plan\`etes. Il faut dire que du temps de 
+Kepler, on ne connaissait pas encore la gravitation, et \`a plus forte 
+raison, on ne savait pas que chaque plan\`ete subit aussi l'attraction 
+des autres plan\`etes. La gravitation du Soleil \'etant de beaucoup la 
+plus forte, et la pr\'ecision des observations \'etant insuffisante, 
+Kepler ne pouvait pas percevoir l'influence mutuelle des plan\`etes. 
+Si donc une des plan\`etes disparaissait brusquement, cela ne devrait 
+rien changer \`a la validit\'e de la loi des aires pour celles qui restent. 
+Donc le Soleil (c'est-\`a-dire la cause) agissait {\it sans savoir} si 
+les plan\`etes \'etaient l\`a pour en subir les effets. Comment la 
+corr\'elation observ\'ee est-elle possible s'il n'y a pas une 
+communication entre le Soleil et la plan\`ete? L'\'etude des textes 
+laiss\'es par Kepler montre qu'il avait \'et\'e troubl\'e par cette 
+question et qu'il avait cherch\'e une r\'eponse. Son explication a \'et\'e 
+la suivante. Puisque le Soleil est la cause et que cette cause produit 
+son effet \`a des centaines de millions de kilom\`etres, c'est que le 
+Soleil doit \'emettre constamment un fluide qui se diffuse dans 
+l'espace, et ce fluide, lorsqu'il arrive \`a la plan\`ete, lui donne de la 
+vitesse. Kepler a alors tent\'e de calculer la loi d'action de ce fluide 
+sur la plan\`ete, en partant du principe que, puisque le Soleil agit sans 
+savoir s'il existe ou non des plan\`etes, il doit \'emettre son fluide 
+ind\'ependamment des plan\`etes, donc isotropiquement (c'est-\`a-dire 
+uniform\'ement dans toutes les directions). La quantit\'e de fluide 
+pr\'esente sur un petit morceau d'orbite est alors facile \`a calculer, 
+mais ce qu'on trouve n'est pas proportionnel \`a la vitesse. Kepler, 
+persuad\'e qu'en vertu d'une causalit\'e n\'ecessaire il {\it devait} y 
+avoir quelque chose comme un fluide, n'a jamais r\'eussi \`a faire 
+co{\"\i}ncider cette id\'ee avec les calculs quantitatifs, mais les
+textes montrent qu'il a beaucoup cherch\'e. C'est Newton qui a trouv\'e 
+la solution du probl\`eme, en disant que ce n'est pas un fluide (dont la 
+densit\'e est forc\'ement une grandeur scalaire) mais une force (qui 
+est un vecteur) qu'il convenait d'invoquer; et qu'en outre, suivant 
+Galil\'ee, la force agit sur l'acc\'el\'eration et non sur la vitesse. 
+\medskip
+La moralit\'e de cette histoire est la suivante: l'observation n'a
+jamais fourni que des corr\'elations, mais les corr\'elations brutes
+ne fournissent aucune {\it compr\'ehension} du ph\'enom\`ene. 
+Comprendre un ph\'enom\`ene signifie y distinguer des \'el\'ements
+qui sont des causes et d'autres qui sont des effets, et pour cela, 
+l'entendement est oblig\'e d'inventer de toutes pi\`eces des 
+m\'ecanismes abstraits qui ne sont pas observables en tant que 
+tels. Ainsi Archibald de la Cruz ne pouvait pas comprendre la 
+corr\'elation entre ses fantasmes meurtriers et la mort violente de
+ses victimes sans faire appel \`a un fluide, ou \`a une force, \'emis par 
+son esprit et se propageant dans l'espace, ou tout autre m\'ecanisme 
+bizarre d\'eclench\'e dans son cerveau et finissant par produire le 
+d\'eplacement d'objets contondants \`a proximit\'e de ses victimes. 
+C'est en ce sens que David Hume a raison: si la science, d'une fa\c{c}on 
+ou d'une autre, d\'ecouvre par l'observation brute une relation telle
+que $(XII.18.)$, mais sans que l'entendement humain puisse y trouver 
+aucune relation de n\'ecessit\'e a priori, la r\'eaction de la 
+post\'erit\'e ne sera pas de nier que $(XII.18.)$ soit une v\'eritable 
+relation de cause \`a effet, mais de chercher par tous les moyens un 
+artifice conceptuel, tel que les fluides ou les forces, qui {\it ajoutera} 
+\`a $(XII.18.)$ le caract\`ere de n\'ecessit\'e logique qui lui manquait, 
+afin de rassurer l'entendement. Autrement dit, si les \'ev\'enements 
+$A$ et $B$ sont li\'es par $(XII.18)$,  l'absence d'une n\'ecessit\'e 
+logique entre eux n'est pas une raison valable pour nier que $A$ soit
+la cause de $B$, car une telle n\'ecessit\'e logique peut toujours
+\^etre invent\'ee: il suffit d'avoir de l'imagination. En revanche, la 
+d\'ependance statistique et l'ant\'eriorit\'e ne peuvent pas \^etre 
+invent\'ees, car elles doivent se conformer aux observations. 
+\medskip 
+Ainsi les r\'eflexions de Hume dans {\it Enqu\^ete sur 
+l'entendement humain} ne sont pas des sp\'eculations philosophiques
+que les scientifiques peuvent n\'egliger, mais sont \`a la base m\^eme 
+de l'esprit scientifique et ont une incidence {\it pratique} sur la 
+m\'ethode: les ignorer m\`ene tout droit \`a l'erreur. L'insistance de 
+Hume \`a vouloir \'evacuer la relation de n\'ecessit\'e n'est pas 
+l'expression d'un positivisme dogmatique,  mais d'une exigence de 
+rigueur: d\'efinir la causalit\'e comme une simple corr\'elation avec 
+ant\'eriorit\'e, c'est la soumettre totalement et exclusivement au 
+verdict de l'exp\'erience objective; au contraire, la d\'efinir comme une
+corr\'elation avec relation de n\'ecessit\'e, c'est introduire un 
+\'el\'ement de subjectivit\'e dans la connaissance. Autrement dit, 
+refuser de reconna{\^\i}tre une corr\'elation avec ant\'eriorit\'e comme 
+causalit\'e au pr\'etexte qu'il y manque une relation de n\'ecessit\'e 
+\'equivaut \`a s'interdire de {\it chercher} une nouvelle relation de 
+n\'ecessit\'e que la science ne poss\`ede pas encore, (donc interdire
+\`a Kepler d'inventer son histoire de fluide, \`a Newton d'inventer les 
+forces, \`a Faraday d'inventer les champs, etc.) et donc \`a soumettre 
+la connaissance future \`a la connaissance pr\'esente. De m\^eme, 
+voir de la causalit\'e dans une corr\'elation {\it sans ant\'eriorit\'e 
+\'etablie} au pr\'etexte qu'on y voit une relation de n\'ecessit\'e 
+\'equivaut \`a donner \`a un pr\'ejug\'e la priorit\'e sur l'exp\'erience. 
+
+\vskip20mm plus4mm minus3mm 
+
+\centerline{\tit ANNEXE DU CHAPITRE XII.} 
+
+\vskip10mm plus4mm minus3mm 
+
+\centerline{\bf LA M\'ETHODE DE LEVENBERG-MARQUARDT} 
+\smallskip 
+\centerline{\bf pour le calcul de la r\'egression non lin\'eaire.} 
+ 
+\vskip6mm plus4mm minus3mm 
+ 
+Comme on l'a vu \`a la section {\bf 12. 4}, un probl\`eme de
+r\'egression non lin\'eaire consiste \`a chercher le minimum de la 
+fonction 
+$$S(\alpha ) \; = \; \sum_{i=1}^{n} p_i\, \big[ f(\alpha , x_i) - y_i\big]^2 
+\eqno (12\, A.1)$$ 
+en faisant varier les param\`etres $\alpha = (\alpha_1, \alpha_2, 
+\ldots \alpha_Q)$. Ce minimum \'etant un point o\`u le gradient de $S$
+s'annule, cela revient \`a trouver les $\alpha$ tels que $\grad S = 0$. 
+\medskip 
+Lorsque le mod\`ele de r\'egression non lin\'eaire $f(\alpha , 
+x_i)$ d\'epend lin\'eairement des param\`etres \`a optimiser,  la
+fonction $S$ est du second degr\'e, donc son gradient est lin\'eaire. 
+L'\'equation $\grad S = 0$ est alors un syst\`eme lin\'eaire de $Q$
+\'equations \`a $Q$ inconnues qu'on r\'esoud num\'eriquement par la
+m\'ethode du pivot de Gauss. 
+\smallskip 
+{\bf N. B.} On notera que le terme {\it lin\'eaire} (ou le terme 
+{\it non lin\'eaire}) a, dans le pr\'esent contexte, deux sens ind\'ependants 
+\`a ne pas confondre: le mod\`ele de r\'egression {\it non lin\'eaire}
+$f(\alpha , x_i)$ peut d\'ependre {\it lin\'eairement} ou non des
+param\`etres $\alpha$ : $y=f(\alpha , x)$ est un mod\`ele de r\'egression 
+{\it non lin\'eaire} si $f$ d\'epend non lin\'eairement de $x$, mais il peut 
+d\'ependre lin\'eairement de $\alpha$; ainsi $f(\alpha , x) = \alpha_1 x^2 
++ \alpha_2 x + \alpha_3$ est un mod\`ele de r\'egression non lin\'eaire, qui 
+d\'epend lin\'eairement de $\alpha$. 
+\medskip 
+Lorsque la d\'ependance en $\alpha$ n'est pas lin\'eaire on doit traiter
+un syst\`eme non lin\'eaire de $Q$ \'equations \`a $Q$ inconnues et il 
+existe pour cela un algorithme num\'erique qui a fait ses preuves, 
+connu sous le nom de {\sl Levenberg -- Marquardt}\ftn{1}{D. W. 
+Marquardt J. Soc. Ind. Appl. Math. vol {\bf 11} ({\oldstyle 1963}) pp 431 
+-- 441.}.  Mon exp\'erience d'enseignement dans une \'ecole 
+d'ing\'enieur m'a appris que les probl\`emes de moindres carr\'es sont 
+de loin les plus fr\'equemment rencontr\'es par les praticiens. Il me 
+semble donc utile d'inclure ici une description de cette m\'ethode, 
+accompagn\'ee d'explications conformes \`a l'esprit de cet ouvrage. 
+\medskip 
+\'Etant donn\'e que la fonction $S(\alpha )$ s'exprime analytiquement 
+\`a l'aide de fonctions \'el\'ementaires (la fonction $f(\alpha , x)$ ne 
+peut offrir un bon mod\`ele de r\'egression que si elle est
+\'el\'ementaire), elle est facile \`a d\'eriver. On a 
+$$S_\ell \;\; = \;\; {\eightup{\partial S} \over \partial\alpha_\ell} \;\; 
+= \;\; \sum_{i=1}^{n} 2\, p_i \, \big[ f(\alpha , x_i) - y_i \big]\, 
+{\partial f \over \partial\alpha_\ell} (\alpha , x_i) \eqno (12\, A.2)$$ 
+Le vecteur $\{ S_\ell \}_{\ell = 1, 2, \ldots Q}$ est le gradient 
+d\'ej\`a mentionn\'e. Les d\'eriv\'ees secondes seront 
+$$\eqalignno{ 
+S_{k \ell}\;\;  &= \;\; {\partial S_\ell \over \partial\alpha_k} \;\; 
+= \;\; {\partial S_k \over \partial\alpha_\ell} \;\; = &(12\, A.3) \cr 
+&= \;\; \sum_{i=1}^{n} 2\, p_i \, \Bigg\{ \big[ f(\alpha , x_i) - y_i
+\big]\, {\partial^2 f \over \partial\alpha_\ell \partial\alpha_k}
+(\alpha , x_i) + {\partial f \over \partial\alpha_k} (\alpha , x_i) \cdot 
+{\partial f \over \partial\alpha_\ell} (\alpha , x_i) \Bigg\} \cr }$$ 
+Ces expressions se pr\`etent parfaitement bien \`a la programmation 
+et par cons\'equent l'algorithme it\'eratif qui conviendra le mieux 
+\`a la r\'esolution du syst\`eme d'\'equations $\grad S = 0$ est la 
+m\'ethode de Newton ou m\'ethode de la tangente. Elle consiste \`a 
+choisir des valeurs initiales $\alpha_1^{(0)}, \alpha_2^{(0)}, \ldots 
+\alpha_Q^{(0)}$ ---~qu'on notera collectivement $\alpha^{(0)}$~--- 
+\`a partir desquelles on calcule $\alpha^{(1)}$ par 
+$$\alpha^{(1)} \; = \; \alpha^{(0)} - \, {\goth S}_2^{-1} \circ {\goth S}_1 
+\eqno (12\, A.4)$$ 
+o\`u ${\goth S}_1 = \grad S (\alpha^{(0)})$ et ${\goth S}_2$ est 
+la matrice des $S_{k \ell}(\alpha^{(0)})$. Apr\`es quoi on
+recommence en rempla\c{c}ant $\alpha^{(0)}$ par $\alpha^{(1)}$, puis 
+$\alpha^{(1)}$ par $\alpha^{(2)}$, et ainsi de suite. Rappelons que 
+cette m\'ethode de Newton s'interpr\`ete g\'eom\'etriquement de la
+mani\`ere suivante :  l'\'equation 
+$$\beta \; = \; \grad S (\alpha_1, \alpha_2, \ldots \alpha_Q)
+\eqno (12\, A.5)$$
+repr\'esente une hypersurface de dimension $Q$ dans l'espace $\R^{2Q}$
+des coordonn\'ees $\alpha_1$, $\alpha_2$,  $\ldots$ $\alpha_Q$, 
+$\beta_1$, $\beta_2$,  $\ldots$ $\beta_Q$; la solution du syst\`eme 
+d'\'equations $\grad S = 0$ (ce qu'on cherche) correspond \`a 
+l'intersection de cette hypersurface avec le sous-espace (de dimension $Q$) 
+$\beta = 0$. La m\'ethode consiste alors \`a se rapprocher de ce point
+en suivant l'hyperplan tangent \`a l'hypersurface;  celui-ci en effet
+coupe le sous-espace $\beta = 0$ en un seul point.  Ainsi $\alpha^{(1)}$
+est ce point d'intersection; puis $\alpha^{(2)}$ sera le point d'intersection
+de l'hyperplan tangent en $\alpha^{(1)}$ avec le sous-espace $\beta = 0$, 
+et ainsi de suite. 
+\medskip 
+La m\'ethode de Newton est recommand\'ee lorsque la d\'eriv\'ee de
+la fonction (ici $\grad S$) est facile \`a programmer, ce qui est 
+justement le cas. Elle converge extr\^emement vite, \`a condition de 
+prendre $\alpha^{(0)}$ d\'ej\`a pr\`es du point qu'on veut atteindre: 
+l'erreur est alors \`a chaque it\'eration de l'ordre du carr\'e de l'erreur 
+pr\'ec\'edente, ce qui signifie que le nombre de d\'ecimales exactes
+double \`a chaque it\'eration. Mais si le point de d\'epart $\alpha^{(0)}$ 
+est \'eloign\'e du point qu'on veut atteindre, la m\'ethode ne converge 
+plus du tout ou converge trop lentement pour \^etre efficace. Or dans
+le probl\`eme des moindres carr\'es on ne peut pas deviner a priori un 
+bon point initial. 
+\medskip 
+L'id\'ee essentielle de la m\'ethode de Marquardt est de proposer un
+moyen simple et algorithmiquement \'economique pour, dans un
+premier temps, se rapprocher du minimum (appelons cela la {\it phase 
+de descente rapide}); apr\`es quoi, dans un second temps, on peut 
+amorcer avec profit l'it\'eration de Newton (qu'on appellera la {\it 
+phase critique}). 
+\medskip 
+Le principe est le suivant (la mise en \oe uvre pratique exigera 
+quelques am\'enagements semi-empiriques qu'on d\'ecrira apr\`es). Il
+s'agit, partant d'un point fix\'e arbitrairement, de se rapprocher aussi 
+rapidement que possible du minimum (suffisamment pour que 
+l'it\'eration de Newton devienne efficace). Pour cela il est logique de 
+suivre la ligne de plus grande pente sur la surface d'\'equation 
+$$\gamma \; = \; S(\alpha_1, \alpha_2, \ldots \alpha_Q) \eqno (12\, A.6)$$ 
+{\eightpoint {\bf N. B. } L'\'equation $12\, A.5$ consid\'er\'ee avant
+est vectorielle:  c'est un {\it syst\`eme} de $Q$ \'equations, il lui 
+correspond donc une hypersurface de dimension $Q$ dans l'espace $\R^{2Q}$. 
+Par contre l'\'equation $12\, A.6$ est scalaire, il lui correspond aussi
+une hypersurface de dimension $Q$,  mais dans l'espace $\R^{Q+1}$ des 
+param\`etres $\alpha_1$, $\alpha_2$, $\ldots$ $\alpha_Q$, $\gamma$. \par }
+\medskip 
+Or la ligne de plus grande pente sur une surface d'\'equation
+$12\, A.6$ (projet\'ee sur le sous-espace $\R^Q$ des coordonn\'ees 
+$\alpha_1$,  $\alpha_2$,  $\ldots$ $\alpha_Q$) a pour vecteur tangent 
+le vecteur $S_1, S_2, \ldots, S_Q$. Ce vecteur est centrifuge par 
+rapport au minimum. Donc pour se rapprocher du minimum \`a partir 
+d'un point $\alpha^{(0)}$ initial situ\'e sur le plan des $\alpha$, il
+suffit de prendre la direction $-\grad S(\alpha^{(0)})$. Ainsi on
+choisira le second point $\alpha^{(1)} = \alpha^{(0)} - \lambda \grad 
+S(\alpha^{(0)})$ (avec \'evidemment $\lambda > 0$).  Mais il faut 
+choisir $\lambda$ de mani\`ere optimale. Si on prend un $\lambda$
+trop petit il faudra un nombre trop grand d'it\'erations pour arriver 
+dans le voisinage du minimum; si on le prend trop grand,  on risque de
+d\'epasser ce minimum. C'est alors pour d\'eterminer le meilleur
+choix de ce param\`etre $\lambda$ qu'interviennent plusieurs
+am\'enagements empiriques que nous d\'ecrivons maintenant. 
+\medskip 
+D'abord les maxima ou minima locaux sont fr\'equents, surtout si 
+la dimension du mod\`ele, c'est-\`a-dire le nombre de param\`etres
+$\alpha$, est grande. Marquardt a donc propos\'e de placer dans 
+le programme le test simple suivant: on commence avec un 
+$\lambda$ petit, par exemple $1/100$ et on calcule $\alpha^{(1)} = 
+\alpha^{(0)} - \lambda \grad S(\alpha^{(0)})$; si $S(\alpha^{(1)}) < 
+S(\alpha^{(0)})$, cela indique qu'on descend la pente; on recommence 
+alors avec un $\lambda$ beaucoup plus grand (ainsi on \'evite des 
+maxima locaux). 
+\medskip 
+Par ailleurs il n'est pas indispensable de suivre {\it exactement} la
+ligne de plus grande pente; en pratique il suffit de ne pas trop s'en 
+\'ecarter, et sur ce point une approximation m\^eme grossi\`ere est 
+fortement recommand\'ee si elle \'economise du temps de calcul. 
+C'est pourquoi Marquardt propose de suivre la direction du vecteur
+$R$ de composantes $R_{\ell} = S_{\ell} / S_{\ell , \ell}$. 
+La bonne raison pour cela est que de cette mani\`ere le param\`etre 
+$\lambda$ sera sans dimension. Ce point n'est pas indiff\'erent car 
+le test doit choisir les valeurs petites ou grandes de $\lambda$ 
+sans conna{\^\i}tre les ordres de grandeurs sur le terrain. En 
+introduisant le vecteur $R$ on diminue les risques entra{\^\i}n\'es par 
+un mauvais choix. Toutefois, d'apr\`es la d\'efinition $12\, A.3$ des 
+$S_{k , \ell}$, les \'el\'ements diagonaux $S_{\ell , \ell}$ ne sont pas
+forc\'ement positifs et peuvent parfois s'annuler ou devenir trop
+petits; c'est pourquoi Marquardt a propos\'e aussi de remplacer la 
+d\'efinition $12\, A.3$ par 
+$$S_{k \ell} = \sum_{i=1}^{n} 2\, p_i \cdot {\partial f \over \partial 
+\alpha_k} (\alpha , x_i) \cdot {\partial f \over \partial\alpha_\ell} 
+(\alpha , x_i) \eqno (12\, A.7)$$ 
+qui garantit que les termes diagonaux seront positifs: ils ne peuvent 
+devenir nuls que si $\grad_\alpha f$ peut lui-m\^eme devenir nul, ce 
+qu'on \'evitera par le choix du mod\`ele. Cela implique que la m\'ethode 
+de Newton est quelque peu modifi\'ee. Mais les termes n\'eglig\'es (les 
+d\'eriv\'ees secondes de $f$ par rapport aux param\`etres $\alpha$) 
+sont multipli\'es par les facteurs $f(\alpha , x_i) - y_i$. Or de deux 
+choses l'une: 
+\smallskip 
+--- ou bien ces facteurs ne deviennent pas tous petits lorsqu'on se 
+rapproche du minimum; alors les termes n\'eglig\'es ne sont pas 
+n\'egligeables et le calcul sera faux; 
+\smallskip 
+--- ou bien ces facteurs deviennent tous petits lorsqu'on se 
+rapproche du minimum, et alors le calcul sera correct. 
+\medskip 
+Mais si les facteurs $f(\alpha , x_i) - y_i$ ne deviennent pas tous
+petits lorsqu'on se rapproche du minimum, c'est que le minimum de 
+$S(\alpha )$ n'est pas petit et que donc le mod\`ele est mauvais: il ne 
+permet pas d'approcher les points $x_i,y_i$. La m\'ethode des moindres 
+carr\'es n'ayant de toute fa\c{c}on aucun sens dans ce cas, on voit que 
+la proposition de Marquardt est justifi\'ee. 
+\medskip 
+Il existe encore une autre raison, au moins aussi importante que la 
+positivit\'e des $S_{\ell ,\ell}$, de remplacer $12\, A.3$ par $12\, 
+ A.7$. Comme nous venons de le voir, ce changement ne s'\'ecarte 
+gu\`ere de la m\'ethode de Newton si le minimum de $S(\alpha )$ est 
+petit; par contre si les facteurs $f(x_i) - y_i$ restent appr\'eciables, 
+l'it\'eration ne converge plus vers le minimum puisqu'on ne suit plus
+la tangente. {\it Or cela est m\^eme un avantage}: en effet, l'un des 
+d\'efauts bien connus de la m\'ethode de Newton est qu'elle converge 
+trop facilement vers des minima locaux (il suffit de l'amorcer avec 
+une valeur initiale $\alpha_0$ situ\'ee dans le bassin d'attraction d'un 
+tel minimum local pour qu'elle converge vers celui-ci et non vers celui 
+qu'on veut); mais si on applique $12\, A.7$ au lieu de $12\, A.3$, la 
+m\'ethode ne convergera justement {\it que} si on est pr\`es du vrai 
+minimum (le minimum absolu). Si on se trouve par hasard au voisinage 
+d'un minimum local o\`u $S(\alpha )$ n'est pas petit, l'it\'eration ne 
+conduira pas \`a s'en rapprocher; au contraire, au bout de quelques 
+it\'erations on sortira de son bassin d'attraction et on recommencera 
+le processus ailleurs. Ainsi seuls les minima effectivement petits 
+feront converger le proc\'ed\'e. En optant pour $12\, A.7$ au lieu de 
+$12\, A.3$,  Marquardt fait donc d'une pierre deux coups. 
+\medskip
+Une troisi\`eme astuce de Marquardt est encore la suivante. 
+La tactique g\'en\'erale est, comme on l'a vu plus haut, de suivre la
+pente (ou plut\^ot le vecteur $R$) lorsqu'on est loin du minimum, puis
+de passer \`a la m\'ethode de la tangente ---~modifi\'ee comme on
+vient de voir~--- lorsqu'on est suffisamment pr\`es. Marquardt 
+introduit pour cela la matrice $D$ dont les \'el\'ements sont 
+$$D_{j,k}(\alpha ) = 
+\cases{ S_{j,j}(\alpha ) \cdot (1+\lambda ) & si $j = k$ \cr 
+\noalign{\medskip} 
+S_{j,k}(\alpha ) & si $j \neq k$ \cr } \eqno (12\, A.8)$$ 
+o\`u $S_{j,k}(\alpha )$ est d\'efini par $12\, A.7$, et propose 
+d'appliquer la formule $12\, A.4$ avec la matrice $D$ ainsi 
+d\'efinie au lieu de la matrice ${\goth S}$: 
+$$\alpha^{(1)} = \alpha^{(0)} - D(\alpha^{(0)})^{-1} \circ \grad S 
+(\alpha^{(0)})\eqno (12\, A.9)$$ 
+ 
+Cela se comprend ainsi: lorsque $\lambda$ est petit, la matrice 
+$D_{j,k}(\alpha^{(0)})$ est pratiquement identique \`a la matrice 
+$S_{j,k} (\alpha^{(0)})$, donc avec $12\, A.9$ on applique en fait la
+m\'ethode de Newton; si au contraire $\lambda$ est grand, la matrice
+$D_{j,k}(\alpha^{(0)})$ est pratiquement identique \`a la matrice
+diagonale d'\'el\'ements $S_{j,j}(\alpha^{(0)})$, par cons\'equent
+$D^{-1} \circ \grad S$ est pratiquement identique au vecteur $R$ 
+introduit ci-dessus. Ainsi on dispose d'une grande souplesse 
+algorithmique pour passer progressivement de la phase de descente
+rapide \`a la phase critique: il suffit de jouer sur les valeurs du 
+param\`etre $\lambda$. 
+\medskip 
+Tous ces am\'enagements sont des recettes empiriques: choisir
+$\lambda$ grand ou petit selon des crit\`eres qui ne sont pas
+absolument fiables, suivre le vecteur $R$ plut\^ot que la ligne de plus 
+grande pente, remplacer $12\, A.3$ par $12\, A.7$, tout cela ne peut 
+pas \^etre justifi\'e par des d\'emonstrations rigoureuses et formelles 
+et c'est uniquement l'usage pratique qui a tranch\'e. En effet, 
+cette m\'ethode de Marquardt a aujourd'hui convaincu tous les 
+praticiens et elle est impl\'ement\'ee dans les logiciels de calcul 
+(Matlab, Statistica, etc). Mais il est clair qu'elle ne marche pas \`a 
+coup s\^ur. Son succ\`es est d\^u \`a ce qu'on n'a pas trouv\'e mieux. 
+\medskip 
+Parmi les causes de ``plantage'' possibles, la plus courante est 
+de tourner en rond dans une zone de minima d\'eg\'en\'er\'es; le 
+test qui sert \`a d\'eterminer $\lambda$ saute alors \'eternellement 
+entre un petit $\lambda$ et un grand. Un programme bien con\c{c}u doit 
+donc pr\'evoir un test d'arr\^et avec message d'erreur pour sortir 
+d'une telle boucle sans fin; par exemple si $\lambda$ passe plus de 
+dix fois d'une grande valeur \`a une petite et vice-versa, arr\^eter 
+le processus et afficher ``Sorry, but it seems I am in a wrong track''. 
+La meilleure solution est que le programme pr\'evoie alors une sortie 
+de secours avec entr\'ee manuelle des valeurs de $\lambda$. 
+\medskip 
+On peut donc r\'esumer la m\'ethode comme suit. 
+\smallskip 
+{\bf a)} Cr\'eer des routines qui calculent le vecteur $\grad S (\alpha )$ 
+donn\'e par $12\, A.2$ et la matrice $D$ donn\'ee par $12\, A.8$ en 
+fonction de $\alpha$ et $\lambda$, ainsi que son inverse $D^{-1}$ par 
+la m\'ethode du pivot. 
+\smallskip 
+{\bf b)} Choisir une valeur initiale $\alpha^{(0)}$ (en g\'en\'eral 
+compl\`etement arbitraire car on n'a aucun crit\`ere de choix), calculer 
+$S(\alpha^{(0)})$, et commencer l'it\'eration de $12\, A.9$ avec un 
+$\lambda$ moyen mais plut\^ot petit (de l'ordre de $0.01$ ou $0.001$), 
+ce qui va donner $S(\alpha^{(1)})$. Le fait de choisir ce premier 
+$\lambda$ plut\^ot petit revient \`a appliquer la m\'ethode de Newton 
+modifi\'ee par $12\, A.7$. 
+\smallskip 
+{\bf c)} Calculer $S(\alpha^{(1)})$ et le comparer \`a $S(\alpha^{(0)})$: 
+\smallskip 
+\leftskip=12pt 
+--- {\bf c1)} si $S(\alpha^{(1)}) \geq S(\alpha^{(0)})$ (ce qui veut dire 
+qu'on n'\'etait certainement pas au voisinage du bon minimum: on 
+devait \^etre au voisinage d'une instabilit\'e, ou d'un minimum local 
+non petit dont on s'est \'ecart\'e du fait qu'on n'applique pas $12\, 
+A.3$, mais $12\, A.7$), prendre un $\lambda$ beaucoup plus grand, 
+par exemple $\lambda = 1$ ou $\lambda = 0.1$ (ce qui veut dire qu'on 
+suit maintenant plut\^ot le vecteur $R$ afin de s'\'ecarter nettement
+de ce point qui n'\'etait visiblement pas bon) et recommencer {\bf b}; 
+\smallskip 
+--- {\bf c2)} si $S(\alpha^{(1)}) < S(\alpha^{(0)})$ (on peut alors penser
+qu'on est sur la bonne voie vers le minimum) prendre un $\lambda$ 
+encore plus petit (disons dix fois, ce qui veut dire qu'on applique 
+maintenant la m\'ethode de Newton modifi\'ee comme on a vu) et 
+recommencer aussi longtemps que $S(\alpha^{(n)})$ diminue, ce qui va 
+donner $\alpha^{(2)}$, $\alpha^{(3)}$, \dots. Continuer l'it\'eration tant 
+que $\Delta S = S(\alpha^{(n-1)}) - S(\alpha^{(n)})$ est positif et 
+appr\'eciable; revenir \`a {\bf c1} d\`es que $\Delta S$ devient $< 0$; 
+stopper lorsque $\Delta S$ devient petit en restant $> 0$, on est alors
+arriv\'e \`a destination (la petitesse ici est aussi question de flair: 
+en g\'en\'eral on convient que l'it\'eration peut s'arr\^eter quand 
+$\Delta S$ devient inf\'erieur \`a $0.01$; en r\'ealit\'e, cela d\'epend 
+fortement du mod\`ele et de l'\'echantillon). 
+\medskip 
+\leftskip=0pt 
+{\bf N. B.} Au stade {\bf c2} rien ne prouve encore d\'efinitivement 
+qu'on est sur la bonne voie: si on l'est, on s'\'ecartera peu de
+l'hyperplan tangent \`a l'hypersurface d'\'equation $12\, A.5$ et
+---~si le minimum n'est pas d\'eg\'en\'er\'e~--- l'it\'eration convergera; 
+sinon, il arrivera t\^ot ou tard que $S(\alpha^{(n)})$ augmente \`a nouveau, 
+puisqu'on ne suit pas l'hyperplan tangent. 
+\medskip 
+Les logiciels du commerce sont contraints de choisir forfaitairement 
+les crit\`eres tels que le choix de $\lambda$ ou la petitesse de $\Delta 
+S$. Mais les meilleurs sont programmables (par exemple Matlab) et 
+permettent un ajustement par l'utilisateur.  Cette possibilit\'e est 
+essentielle, car ces choix ne peuvent vraiment \^etre rendus optimaux 
+que pour un mod\`ele donn\'e,  d'apr\`es les exigences de pr\'ecision et 
+de temps de calcul impos\'es par les conditions concr\`etes du 
+probl\`eme. Le meilleur ajustement est toujours empirique, mais 
+l'utilisateur ne peut intervenir \`a bon escient que s'il a compris les 
+principes th\'eoriques expos\'es ci-dessus. 
+\medskip 
+Il est int\'eressant de comparer les calculs effectu\'es selon la 
+m\'ethode de Marquardt, lorsque le mod\`ele $y = f(\alpha , x)$ ne 
+d\'epend pas lin\'eairement des param\`etres $\alpha$, avec les 
+calculs \`a effectuer lorsque le mod\`ele d\'epend lin\'eairement des 
+param\`etres. Dans ce dernier cas, il y a seulement \`a r\'esoudre un 
+syst\`eme lin\'eaire de $Q$ \'equations \`a $Q$ inconnues, donc on 
+applique une seule fois la m\'ethode du pivot.  Dans la m\'ethode de 
+Marquardt, la m\'ethode du pivot est r\'eappliqu\'ee \`a chaque 
+it\'eration (cf {\bf a}). Cette partie du programme repr\'esente 
+\'evidemment la quasi totalit\'e du temps de calcul, sauf si la 
+dimension $Q$ est petite. Ainsi, si $N$ it\'erations en tout sont 
+n\'ecessaires pour parvenir au r\'esultat,  le mod\`ele sera $N$ fois 
+plus dispendieux qu'un mod\`ele \`a d\'ependance lin\'eaire. Cet 
+argument doit \^etre pris en compte lorsqu'on d\'ecide de choisir un 
+mod\`ele de grande dimension. En revanche, un mod\`ele \`a 
+d\'ependance non lin\'eaire de dimension $Q=2$ ou $Q=3$, est 
+certainement pr\'ef\'erable \`a un mod\`ele \`a d\'ependance
+lin\'eaire de dimension \'elev\'ee. Par exemple un mod\`ele du type 
+$f(\alpha_1, \alpha_1, x) = x\alpha_1\e^{-\alpha_2 x}$ sera bien 
+meilleur (s'il convient \`a l'\'echantillon) qu'un polyn\^ome de degr\'e 
+$10$. 
+
+\vskip20pt
+
+{\eightpoint On trouvera dans les pages suivantes un programme qui 
+ex\'ecute l'algorithme. Le langage {\eightrm PASCAL} a \'et\'e choisi 
+pour sa facilit\'e de lecture, une traduction en $C$ peut se faire 
+rapidement. \par} 
+
+\vfill\break 
+
+\hsize=160mm
+\larg=160mm
+
+\font\ko=cmr10
+\def\iA{\hskip4.8mm}
+\def\iB{\hskip9.6mm} 
+\def\iC{\hskip14.4mm} 
+ 
+\null\vskip10mm
+{\centerline{\bf Le programme que voici ex\'ecute la m\'ethode de 
+Marquardt.} \vskip10mm 
+{\obeylines 
+{\tt 
+{\bf program Marquardt}; 
+\medskip 
+{\bf label}   
+   \iA  99; 
+\medskip 
+ {\bf const} 
+   \iA N = 12; \hskip4mm {(\ko nombre de points)} 
+   \iA stop = 10; \hskip4mm {(\ko pour limiter le nombre d'it\'erations.)} 
+  \iA  eps = 1e-5;  \hskip4mm {(\ko pr\'ecision du calcul.)} 
+\medskip 
+ {\bf var} 
+   \iA p, q, u, v, u0, v0, u1, v1, w, z, max, scale : double; 
+   \iA det, lambda, delta, S0, S1 : double; 
+   \iA loi, xx, yy : array[1..N] of double; 
+   \iA i, j, k : integer; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Cette fonction d\'efinit le mod\`ele de r\'egression choisi.  }}}} 
+ {\bf function} phi (x, y, p : double) : double;      
+ \smallskip 
+  \iA {\bf begin}                                               
+  \iA  phi := exp(x * ln(p) - y * p); 
+  \iA {\bf  end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint D\'eriv\'ee par rapport \`a $x$ de la fonction {\tt phi}.  }}}} 
+ {\bf function} phix (x, y, p : double) : double; 
+\smallskip 
+  \iA {\bf begin} 
+  \iA phix := ln(p) * exp(x * ln(p) - y * p); 
+  \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint D\'eriv\'ee par rapport \`a $y$ de la fonction {\tt phi}.  }}}} 
+{\bf  function} phiy (x, y, p : double) : double; 
+\smallskip 
+  \iA {\bf begin} 
+  \iA phiy := -p * exp(x * ln(p) - y * p); 
+  \iA {\bf end}; 
+ 
+\vskip5mm 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=90mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint  
+Lorsqu'on voudra changer le mod\`ele de r\'egression sans changer le % 
+nombre de param\`etres, il suffira de remplacer ces trois fonctions % 
+sans toucher \`a la suite du programme. Mais si on veut passer % 
+\`a trois param\`etres ou plus, il faudra modifier aussi les fonctions % 
+SQ, Sx, etc.  }}}} 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint {\tt SQ} est la somme des carr\'es des \'ecarts.  }}}} 
+ {\bf function} SQ (x, y : double) : double; 
+\smallskip 
+  \iA {\bf var} 
+    \iB s : double; 
+    \iB l : integer; 
+\smallskip 
+  \iA {\bf begin} 
+  \iA s := 0; 
+  \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+    \iB {\bf begin} 
+    \iB  s := s + loi[l] * sqr(phi(x, y, xx[l]) - yy[l]); 
+    \iB {\bf end}; 
+  \iA SQ := s; 
+  \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Calcul de $\displaystyle {\partial {\tt SQ} \over \partial x}$.  
+}}}} 
+ {\bf function} Sx (x, y : double) : double; 
+\smallskip 
+   \iA {\bf var} 
+      \iB s : double; 
+      \iB l : integer; 
+\smallskip 
+   \iA {\bf begin} 
+   \iA s := 0; 
+   \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+      \iB {\bf begin} 
+      \iB s := s + loi[l] * (phi(x, y, xx[l]) - yy[l]) * phix(x, y, xx[l]); 
+      \iB {\bf end}; 
+   \iA Sx := s; 
+   \iA{\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm  \eightpoint  
+Calcul de $\displaystyle {\partial {\tt SQ} \over \partial y}$. }}}}  
+{\bf  function} Sy (x, y : double) : double; 
+\smallskip 
+   \iA var 
+   \iB  s : double; 
+   \iB  l : integer; 
+\smallskip 
+  \iA {\bf begin} 
+   \iA s := 0; 
+   \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+    \iB {\bf begin} 
+     \iB s := s + loi[l] * (phi(x, y, xx[l]) - yy[l]) * phiy(x, y, xx[l]); 
+    \iB {\bf end}; 
+   \iA Sy := s; 
+  \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm \eightpoint  
+Calcul de $\displaystyle {\partial^2 {\tt SQ} \over \partial x^2}$.  }}}} 
+ {\bf function} Sxx (x, y : double) : double; 
+\smallskip 
+   \iA {\bf var} 
+    \iB s : double; 
+    \iB l : integer; 
+\smallskip 
+  \iA {\bf begin} 
+   \iA s := 0; 
+   \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+    \iB {\bf begin} 
+     \iB s := s + loi[l] * phix(x, y, xx[l]) * phix(x, y, xx[l]); 
+    \iB {\bf end}; 
+   \iA Sxx := s * (1 + lambda); 
+  \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm \eightpoint  
+Calcul de $\displaystyle {\partial^2{\tt SQ} \over \partial x \, \partial y}$. 
+}}}} 
+ {\bf function} Sxy (x, y : double) : double; 
+\smallskip 
+   \iA {\bf var} 
+   \iB  s : double; 
+   \iB  l : integer; 
+\smallskip 
+   \iA  {\bf begin} 
+   \iA s := 0; 
+   \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+    \iB {\bf begin} 
+    \iB  s := s + loi[l] * phix(x, y, xx[l]) * phiy(x, y, xx[l]); 
+    \iB {\bf end}; 
+   \iA Sxy := s; 
+  \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm \eightpoint  
+Calcul de $\displaystyle {\partial^2 {\tt SQ} \over \partial y^2}$.  }}}} 
+ {\bf function} Syy (x, y : double) : double; 
+\smallskip 
+  \iA {\bf var} 
+     \iB s : double; 
+     \iB l : integer; 
+\smallskip 
+  \iA {\bf begin} 
+   \iA s := 0; 
+   \iA {\bf for} l := 1 {\bf to} N {\bf do} 
+     \iB {\bf begin} 
+     \iB s := s + loi[l] * phiy(x, y, xx[l]) * phiy(x, y, xx[l]); 
+     \iB {\bf end}; 
+  \iA  Syy := s * (1 + lambda); 
+  \iA {\bf end}; 
+ 
+\bigskip 
+ 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12pt\hbox{\vbox{\hsize=70mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint D\'ebut du programme principal.  }}}} 
+{\bf begin} 
+\medskip 
+ z := 0; 
+\vskip-12pt 
+\line{\hfill \smash{\lower19mm\hbox{\vbox{\hsize=85mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Mise en m\'emoire du nuage de points. {\tt xx[i]} est % 
+l'abcisse du point $N^\circ$ {\tt i}, {\tt yy[i]} son ordonn\'ee. % 
+Pour pouvoir tester plus facilement le programme,  % 
+on a choisi ici un nuage de points situ\'e exactement sur la courbe % 
+$y = x^u\,\e^{-vx}$, avec $u=1.75$ et $v=\sqrt{0.3}\simeq 0.5477$,  % 
+de sorte que le mod\`ele de r\'egression sera exact.   }}}} 
+{\bf  for} i := 1 {\bf to} N {\bf do} 
+ \iA   {\bf begin} 
+ \iA   w := z; 
+ \iA   xx[i] := i; 
+ \iA   q := sqrt(xx[i]); 
+ \iA   z := xx[i] * q * sqrt(q) * exp(-sqrt(0.3) * xx[i]); 
+ \iA   yy[i] := z; 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=70mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Recherche du maximum de {\tt yy[i]} afin de trouver la % 
+bonne \'echelle graphique ({\tt scale}).  }}}} 
+ \iA   {\bf if} z > w {\bf then} 
+   \iB   {\bf begin} 
+   \iB    max := z; 
+   \iB   {\bf end}; 
+ \iA  {\bf end}; 
+ scale := 220 / max; 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=50mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint {\tt loi[i]} est le poids du {\tt i}-i\`eme point.  
+Ici il est uniforme.  }}}} 
+ {\bf for} i := 1 {\bf to} N {\bf do} 
+   \iA {\bf begin} 
+   \iA  loi[i] := 1; 
+   \iA  {\bf end}; 
+ 
+ \medskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=50mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Repr\'esentation graphique du nuage de points.  }}}} 
+ {\bf MoveTo}(10, 242); 
+  {\bf LineTo}(10, 229); 
+  {\bf MoveTo}(9, 240); 
+  {\bf LineTo}(490, 240); 
+  {\bf for} i := 1 {\bf to} N {\bf do} 
+   \iA {\bf begin} 
+   \iA k := {\bf round}(scale * yy[i]); 
+   \iA {\bf MoveTo}(10 + 40 * i, 241 - k); 
+   \iA {\bf LineTo}(10 + 40 * i, 239 - k); 
+   \iA {\bf MoveTo}(9 + 40 * i, 240 - k); 
+   \iA {\bf LineTo}(11 + 40 * i, 240 - k); 
+   \iA {\bf end}; 
+ 
+ \medskip 
+ \filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower24mm\hbox{\vbox{\hsize=72mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Initialisation manuelle (au clavier) de l'it\'eration.  
+Cela laisse l'initiative \`a l'utilisateur. }}}} 
+  {\bf writeln}; 
+  {\bf  writeln}('   enter the initial parameters:'); 
+  {\bf write}('                        u = '); 
+  {\bf readln}(u); 
+  {\bf write}('                        v = '); 
+  {\bf readln}(v); 
+  {\bf writeln}; 
+ 
+  \medskip 
+  \filbreak 
+ 
+  99 :   \hfill {\eightpoint D\'ebut de l'it\'eration.  } \hfill  
+\smallskip 
+  lambda := 0.0\iB  delta := 1; 
+  i := 0; 
+\smallskip 
+  {\bf while} ((delta < -eps) {\bf or} (delta > 0)) {\bf and} % 
+(i <= stop) {\bf do}  
+\smallskip 
+    \iA {\bf begin} 
+\smallskip 
+    \iA {\bf MoveTo}(10, 240); 
+\smallskip 
+\vskip-12pt 
+   \line{\hfill \smash{\lower11.3mm\hbox{\vbox{\hsize=85mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint On repr\'esente graphiquement l'\'evolution du mod\`ele % 
+au cours de l'it\'eration. Si tout se passe bien, les courbes obtenues % 
+doivent finir par se rapprocher de plus en plus du nuage de points.  }}}} 
+ \iA {\bf for} j := 1 {\bf to} 120 {\bf do} 
+      \iB {\bf begin} 
+      \iB w := j / 10; 
+      \iB z := scale * phi(u, v, w); 
+      \iB {\bf if} z >= 500 {\bf then} \hfill % 
+{\eightpoint Ici, simple pr\'ecaution pour \'eviter {\it overflow}.  } 
+      \iB k := 500 
+      \iB {\bf else if} z <= -500 {\bf then} 
+      \iB k := -500 
+      \iB {\bf else} 
+      \iB k := {\bf round}(z); 
+      \iB {\bf LineTo}(10 + 4 * j, 240 - k); 
+      \iB {\bf end}; 
+\smallskip 
+  \filbreak 
+\vskip-12pt 
+ \line{\hfill \smash{\lower40mm\hbox{\vbox{\hsize=50mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Ci-contre on reconna{\^\i}t l'algorithme de Marquardt.  }}}} 
+  \iA i := i + 1; 
+   \iA S0 := SQ(u, v); 
+   \iA det := Sxx(u, v) * Syy(u, v) - Sxy(u, v) * Sxy(u, v); 
+   \iA u1 := Sx(u, v) * Syy(u, v) - Sy(u, v) * Sxy(u, v); 
+   \iA v1 := -Sx(u, v) * Sxy(u, v) + Sy(u, v) * Sxx(u, v); 
+   \iA u0 := u - u1 / det; 
+   \iA v0 := v - v1 / det; 
+   \iA S1 := SQ(u0, v0); 
+   \iA delta := S1 - S0; 
+  \filbreak 
+   \iA {\bf writeln}(i : 3, '   lambda = ', lambda : 11); 
+   \iA {\bf writeln}('u = ', u0 : 16 : 14, ' v = ', v0 : 16 : 14); 
+   \iA {\bf writeln}('delta = ', delta : 15); 
+   \iA {\bf writeln}('S0 = ', S0 : 15); 
+   \iA {\bf writeln}; 
+\smallskip 
+  \filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower8.3mm\hbox{\vbox{\hsize=75mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint On redonne l'initiative \`a l'utilisateur s'il appara{\^\i}t % 
+que l'it\'eration diverge trop.  }}}} 
+   \iA {\bf if} (S0 >= 10000) {\bf then} 
+\smallskip 
+      \iB {\bf begin} 
+\smallskip 
+      \iB {\bf writeln}; 
+      \iB {\bf writeln}('    I think your initial parameters are highly 
+      \iB unrealistic. '); 
+      \iB {\bf writeln}('    The process will probably not converge. '); 
+      \iB {\bf writeln}('    Could you choose other values? '); 
+      \iB {\bf writeln}; 
+      \iB {\bf writeln}('   enter new initial parameters:'); 
+      \iB {\bf write}('                        u = '); 
+      \iB {\bf readln}(u); 
+      \iB {\bf write}('                        v = '); 
+      \iB {\bf readln}(v); 
+      \iB {\bf writeln}; 
+     \iB {\bf goto} 99; \hfill % 
+{\eightpoint On revient au d\'ebut de l'it\'eration.  } 
+      \iB {\bf end}; 
+\smallskip 
+   \filbreak 
+\vskip-12pt 
+ \line{\hfill \smash{\lower25mm\hbox{\vbox{\hsize=55mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint Ci-contre on reconna{\^\i}t la seconde partie % 
+de l'algorithme de Marquardt.  }}}} 
+  \iA {\bf if} (delta >= 0) {\bf then} 
+\smallskip 
+      \iB {\bf begin} 
+      \iB lambda := 10 * lambda; 
+      \iB {\bf end} 
+\smallskip 
+   \filbreak 
+   \iA {\bf else} 
+\smallskip 
+      \iB {\bf begin} 
+      \iB lambda := lambda / 10; 
+      \iB u := u0; 
+      \iB v := v0; 
+      \iB {\bf end}; 
+\smallskip 
+   \iA {\bf end}; 
+ 
+\medskip 
+\filbreak 
+ \vskip-12pt 
+\line{\hfill \smash{\lower18mm\hbox{\vbox{\hsize=60mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint On trace un pointill\'e horizontal.  }}}} 
+    {\bf writeln}; 
+    {\bf write}('     '); 
+    {\bf for} j := 1 {\bf to} 21 {\bf do} 
+    {\bf write}('---'); 
+    {\bf writeln}; 
+    {\bf writeln}; 
+\smallskip 
+\filbreak 
+    {\bf if} (delta >= -eps) {\bf and} (delta <= 0) {\bf then} 
+\smallskip 
+\vskip-12pt 
+ \line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=40mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint \`A la fin de l'it\'eration, si la convergence est stabilis\'ee, %   
+on affiche le r\'esultat final \dots }}}} 
+      \iA {\bf begin} 
+      \iA {\bf writeln}('    final result:          S1 = ', S1 : 15); 
+      \iA {\bf writeln}('                            u =  ', u : 16 : 14); 
+      \iA {\bf writeln}('                            v =  ', v : 16 : 14); 
+ 
+\medskip 
+\filbreak 
+\vskip-12pt 
+ \line{\hfill \smash{\lower12mm\hbox{\vbox{\hsize=60mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint \dots avec la courbe correspondante \dots}}}} 
+     \iA {\bf MoveTo}(10, 240); 
+ \smallskip 
+     \iA {\bf for} j := 1 {\bf to} 120 {\bf do} 
+ \smallskip 
+        \iB {\bf begin} 
+         \iB w := j / 10; 
+         \iB z := phi(u, v, w); 
+         \iB k := {\bf round}(scale * z); 
+         \iB {\bf LineTo}(10 + 4 * j, 240 - k); 
+         \iB {\bf end}; 
+\smallskip 
+      \iA {\bf end} 
+\smallskip 
+\filbreak 
+\vskip-12pt 
+\line{\hfill \smash{\lower8.3mm\hbox{\vbox{\hsize=107mm  
+\rightskip=0mm plus4mm minus4mm 
+\eightpoint \dots  et si la convergence n'est pas stabilis\'ee,  % 
+on rend l'initiative \`a l'utilisateur. \dots }}}} 
+    {\bf else} 
+\smallskip 
+      \iA {\bf begin} 
+       \iA {\bf writeln}('  I have stopped computing because there is no'); 
+       \iA {\bf writeln}('appreciable progress after ', stop + 1 : 1, '  
+iterations . '); 
+       \iA {\bf writeln}('  Try other values for u and v or change the model.'); 
+       \iA {\bf end};
+\smallskip
+   {\bf end.}
+
+\medskip
+}
+}%end of \tt
+}%end of \obeylines
+
+
+\bye 

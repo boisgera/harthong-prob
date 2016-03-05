@@ -1,0 +1,1394 @@
+
+\input/home/harthong/tex/formats/twelvea4.tex
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl D\'enombrement}
+
+\font\twelvemi=cmmi12 
+\def\struta{\vrule depth2.4pt width0pt} 
+\def\strutb{\vrule depth4.8pt width0pt} 
+\def\strutc{\vrule depth3.6pt width0pt} 
+
+\pageno=34 
+ 
+\null\vskip10mm plus4mm minus3mm 
+ 
+\centerline{\tit II. D\'ENOMBREMENT.} 
+\vskip10mm 
+ 
+Comme il a \'et\'e dit au chapitre I, le calcul des probabilit\'es  
+consiste d'abord \`a mod\'eliser une situation sous la forme d'un 
+ensemble fini,  l'{\it espace des \'epreuves}, puis \`a calculer les 
+probabilit\'es des \'ev\'enements. Or dans un mod\`ele, calculer la 
+probabilit\'e d'un \'ev\'enement $A$ revient, en vertu de $(I.2.)$ \`a 
+calculer le nombre d'\'el\'ements (\'epreuves) que contient l'ensemble 
+$A$. Compter exhaustivement n'est que tr\`es rarement une m\'ethode 
+efficace,  surtout lorsque les ensembles sont gros. Il faut donc 
+commencer par apprendre les techniques \'el\'ementaires de {\it 
+d\'enombrement}, qui permettent de d\'eterminer sans fatigue le 
+nombre d'\'el\'ements des ensembles les plus ty\-pi\-ques. Dans ce 
+chapitre, nous apprendrons \`a r\'esoudre les probl\`emes sui\-vants:  
+\smallskip 
+--- avec un alphabet de $r$ lettres, combien de mots diff\'erents de  
+$n$ lettres peut-on \'ecrire? (suites avec r\'ep\'etition) 
+\smallskip 
+--- avec un alphabet de $r$ lettres, combien peut-on \'ecrire de mots  
+diff\'erents form\'es de $n$ lettres {\it toutes distinctes}? (suites  
+sans r\'ep\'etition ou arrangements)  
+\smallskip 
+--- combien de sous-ensembles diff\'erents \`a $n$ \'el\'ements y a-t-il 
+dans un ensemble \`a  $r$  \'el\'ements? (ensembles non ordonn\'es sans 
+r\'ep\'etition ou combinaisons) 
+\smallskip 
+--- on se donne $k$ nombres entiers $\geq 0$, $n_1$, $n_2 \ldots n_k$, 
+dont la somme est $n$; de combien de mani\`eres diff\'erentes peut-on  
+ranger $n$ \'el\'ements en $k$ groupes de (respectivement) $n_1$, $n_2 
+\ldots n_k$ \'el\'ements? (partitions en groupes de taille donn\'ee) 
+\smallskip 
+--- $n$ \'etant donn\'e, de combien de mani\`eres diff\'erentes peut-on  
+choisir les nombres $n_1$, $n_2 \ldots n_k$ du probl\`eme pr\'ec\'edent? 
+(subdivisions) 
+ 
+\medskip 
+La connaissance de ces cinq cas \'el\'ementaires de d\'enombrement  
+permet d\'ej\`a de r\'esoudre une quantit\'e de probl\`emes de 
+probabilit\'es. En fait, la quasi totalit\'e des probl\`emes usuels se 
+ram\`ene, apr\`es un travail math\'ematique ad\'equat (et plus ou moins 
+long selon  la difficult\'e intrins\`eque du probl\`eme), \`a un ou 
+plusieurs de ces cas de d\'enombrement.  
+\medskip 
+Ce chapitre est form\'e de cinq sections, chacune correspondant \`a 
+l'un de ces cinq cas. On pr\'esentera au fur et \`a mesure des exemples 
+simples illustrant  chaque formule. 
+ 
+\bigskip 
+\penalty-500 
+{\bf II. 1. Suites avec r\'ep\'etition ou tirages avec remise.}  
+\penalty500 
+\medskip 
+Avec un alphabet de $r$ lettres, combien de mots diff\'erents de $n$ 
+lettres peut-on \'ecrire?  
+\smallskip 
+Imaginons que notre alphabet soit form\'e des trois lettres $A,B,C$  
+($r=3$). On peut former trois mots diff\'erents de une lettre ($n=1$):  
+ces mots sont  $A$, $B$, et $C$. Mais on peut former neuf mots de deux  
+lettres ($n=2$):  
+$$\matrix{ &AA\; , \quad  &AB\; , \quad  &AC\; , \quad \cr  
+                  &BA\; , \quad  &BB\; , \quad  &BC\; , \quad \cr  
+                  &CA\; , \quad  &CB\; , \quad  &CC\; . \quad \cr }$$ 
+Il y a $27$ mots de trois lettres: 
+$$\matrix{ &AAA\; , \!\!\!  &AAB\; , \!\!\!  &AAC\; , \!\!\!  
+                  &ABA\; , \!\!\!  &ABB\; , \!\!\!  &ABC\; ,  \!\!\!  
+                  &ACA\; , \!\!\!  &ACB\; , \!\!\!  &ACC\; ,  \cr  
+                  &BAA\; , \!\!\!  &BAB\; , \!\!\!  &BAC\; ,  \!\!\!  
+                  &BBA\; , \!\!\!  &BBB\; , \!\!\!  &BBC\; ,  \!\!\!  
+                  &BCA\; , \!\!\!  &BCB\; , \!\!\!  &BCC\; ,  \cr                    
+                  &CAA\; , \!\!\!  &CAB\; , \!\!\!  &CAC\; , \!\!\!  
+                  &CBA\; , \!\!\!  &CBB\; , \!\!\!  &CBC\; ,  \!\!\!  
+                  &CCA\; , \!\!\!  &CCB\; , \!\!\!  &CCC\; .  \cr }$$ 
+Nous n'irons pas plus loin. On voit sur ces tableaux comment engendrer 
+syst\'ematiquement {\it tous} les mots possibles: si la premi\`ere  
+lettre est donn\'ee, par exemple $A$, il y a pour la seconde les trois 
+possibilit\'es $AA$, $AB$, et $AC$. Si les deux premi\`eres sont 
+donn\'ees, par exemple $AA$, il y a trois possibilit\'es pour la 
+troisi\`eme: $AAA$, $AAB$, et $AAC$. Autrement dit, pour chaque mot 
+possible de $n-1$ lettres, il y a  trois possibilit\'es pour la $n^{\rm e}$. 
+Si l'alphabet est form\'e de $r$ lettres, il y aura $r$ possibilit\'es 
+chaque fois qu'on ajoute une lettre de plus. Ainsi: avec une seule lettre, 
+il y a $r$ possibilit\'es; pour {\it chacune} de ces $r$ possibilit\'es, il y 
+a $r$ possibilit\'es pour la deuxi\`eme lettre, ce qui fait $r \times r = 
+r^2$ possibilit\'es. Pour {\it chacune} de ces $r^2$ possibilit\'es, il y a 
+\`a nouveau $r$ possibilit\'es pour la troisi\`eme lettre, ce qui fait $r^2 
+\times r = r^3$ possibilit\'es, et ainsi de suite. Il y aura donc $r^n$ mots 
+de $n$ lettres. On peut donc retenir que {\bf le nombre de mots de 
+$n$ lettres qu'on peut \'ecrire dans un alphabet de $r$ lettres} est  
+$$r^n \eqno (II.1.)$$ 
+Beaucoup de probl\`emes qui peuvent para\^\i tre \`a premi\`ere vue 
+diff\'erents sont en fait \'equivalents \`a la formation de mots avec  
+des lettres. Le probl\`eme que nous venons d'\'etudier est donc un {\it 
+mod\`ele} pour des probl\`emes diff\'erents. 
+\medskip 
+Ainsi, imaginons que nous ayons  $n$ boules num\'erot\'ees et $r$ 
+bo\^\i tes. Nous avons d\'ej\`a rencontr\'e ces histoires de boules et de 
+bo\^\i tes au chapitre {\bf I}: on voit cela dans la figure 1, o\`u on a 
+repr\'esent\'e toutes les mani\`eres diff\'erentes de disposer trois 
+boules dans deux bo\^\i tes. En les dessinant toutes sur la figure 1, 
+nous avons vu qu'il y avait huit mani\`eres diff\'erentes. En g\'en\'eral,  
+pour  $n$ boules et $r$ bo\^\i tes, il y a $r^n$ distributions 
+diff\'erentes,  de m\^eme qu'il y a $r^n$ mots de $n$ lettres avec un 
+alphabet de $r$ lettres. Les deux probl\`emes sont en r\'ealit\'e 
+identiques.  
+\medskip 
+On peut mettre cette identit\'e en \'evidence en {\it codant} 
+les distributions de  boules dans des bo\^\i tes; supposons en effet que 
+nous voulions repr\'esenter une distribution de boules par un code 
+chiffr\'e: on pourrait d\'esigner chaque bo\^\i te par une lettre, et 
+chaque boule par son num\'ero (elles sont suppos\'ees num\'erot\'ees). 
+Pour une distribution de boules donn\'ee,  on regarde dans quelle bo\^\i 
+te se trouve la boule $N^{\rm o}1$, disons que c'est la bo\^\i te $G$.  
+Puis on regarde dans quelle bo\^\i te se trouve la boule $N^{\rm o}2$, 
+disons que c'est la  bo\^\i te $U$, la boule $N^{\rm o}3$ serait dans la  
+bo\^\i te $S$, la  boule $N^{\rm o}4$ dans la bo\^\i te $T$, la boule 
+$N^{\rm o}5$ dans la bo\^\i te $A$, la boule $N^{\rm o}6$ dans  
+la bo\^\i te $V$, et la boule $N^{\rm o}7$ serait dans la bo\^\i te 
+$E$. On obtient ainsi un mot de sept lettres, $GU\! ST\! AV\! E$. 
+Quiconque conna\^\i t la r\`egle de codage peut reconstituer la 
+distribution des boules dans les bo\^\i tes \`a partir du mot  
+$GU\! ST\! AV\! E$: il prend la premi\`ere lettre, $G$, et place donc la 
+boule $N^{\rm o}1$ dans la   bo\^\i te $G$, et ainsi de suite. \`A chaque 
+distribution possible de $n$ boules dans $r$ bo\^\i tes, correspond de 
+fa\c con biunivoque un mot de $n$ lettres \'ecrit avec les $r$ lettres 
+qui ont servi \`a d\'esigner les bo\^\i tes. Il y a donc un {\it 
+isomorphisme} entre les deux probl\`emes.  
+\medskip 
+Un autre exemple est celui des tirages dans une urne. Une urne contient  
+$r$ boules de couleurs diff\'erentes, par exemple ($r=5$) une boule 
+blanche, une boule noire, une rouge, une verte, une jaune. On tire  une 
+boule, puis on la remet dans l'urne (apr\`es avoir not\'e sa couleur) on  
+tire \`a nouveau, on remet, etc. Combien de r\'esulats diff\'erents 
+sont possibles en $n$ tirages ? r\'eponse: $r^n$, puisque chaque  
+r\'esultat possible est la liste des $n$ couleurs successives: si on a 
+tir\'e, disons, la noire, puis la rouge, puis \`a nouveau la noire, puis la 
+verte ($n=4$),  on aura la liste $N\! RNV$, de sorte que chaque tirage est 
+cod\'e par un mot de quatre lettres \'ecrit dans l'alphabet $B,\, N,\, R,\, 
+V,\, J$. C'est pourquoi ce type de probl\`eme est souvent --~comme  
+dans le titre du paragraphe~--\hskip6pt d\'esign\'e par l'expression 
+``tirages  avec remise'' ou en anglais ``samples with replacement''. 
+ 
+\vskip12pt plus8pt minus5pt 
+ 
+{\bf II. 2. Suites sans r\'ep\'etition ou tirages sans remise.}  
+\vskip6pt plus4pt minus3pt 
+ 
+Avec un alphabet de $r$ lettres, combien de mots diff\'erents de $n$ 
+lettres {\it toutes distinctes} peut-on \'ecrire? Il s'agit du m\^eme 
+probl\`eme qu'au paragraphe pr\'ec\'edent, except\'e que les mots ne  
+doivent pas contenir deux fois la m\^eme lettre. 
+\medskip 
+Avec l'alphabet des trois lettres $A,B,C$, on peut \'ecrire trois 
+mots diff\'erents form\'es d'une seule lettre: $A$, $B$, et $C$. Mais on 
+ne peut plus \'ecrire neuf mots de deux lettres, car dans les mots $AA$, 
+$BB$, et $CC$ une m\^eme lettre est r\'ep\'et\'ee. Il n'y a donc que six 
+possibilit\'es:   
+$$\matrix{  
+                  &          \quad  &AB\; , \quad  &AC\; , \quad \cr  
+                  &BA\; , \quad  &                     &BC\; , \quad \cr  
+                  &CA\; , \quad  &CB\; , \quad  &                    \cr }$$ 
+Il n'y a plus que six mots de trois lettres: 
+$$\matrix{ &\hphantom{ABC\; ,  \!\!\! } &\hphantom{ABC\; ,  \!\!\! }   
+&\hphantom{ABC\; ,  \!\!\! }  
+ &\hphantom{ABC\; ,  \!\!\! }  &\hphantom{ABC\; ,  \!\!\! }   &ABC\; ,  
+\!\!\! &\hphantom{ABC\; ,  \!\!\! }  &ACB\; , \!\!\!  &\hphantom{ABC\; ,  
+\!\!\! }  \cr  
+&\hphantom{ABC\; , \!\!\! }   &\hphantom{ABC\; , \!\!\! }  &BAC\; , \!\!\!  
+&\hphantom{ABC\; ,  \!\!\! }  &\hphantom{ABC\; ,  \!\!\! }  
+&\hphantom{ABC\; ,  \!\!\! }   &BCA\; , \!\!\!  &\hphantom{ABC\; , \!\!\! }  
+&\hphantom{ABC\; ,  \!\!\! } \cr                    
+&\hphantom{ABC\; ,  \!\!\! }  &CAB\; , \!\!\!  &\hphantom{ABC\; , \!\!\! }  
+&CBA\; , \!\!\!  &\hphantom{ABC\; , \!\!\! }  & \hphantom{ABC\; , \!\!\! }  
+&\hphantom{ABC\; ,  \!\!\! }   &\hphantom{ABC\; ,  \!\!\! }   
+&\hphantom{ABC\; ,  \!\!\! }  \cr }$$ 
+Les deux tableaux sont identiques \`a ceux du paragraphe pr\'ec\'edent, 
+sauf qu'on y a effac\'e les mots contenant deux fois une m\^eme lettre. 
+En effa\c cant simplement sur les tableaux d\'ej\`a constitu\'es du 
+paragraphe pr\'ec\'edent ce qui ne doit plus y figurer, on ne fait pas 
+appara\^\i tre un proc\'ed\'e syst\'ematique, mais il n'est pas difficile  
+d'en faire appara\^\i tre un. En effet, si la premi\`ere  lettre est 
+donn\'ee, par exemple $A$, il y a pour la seconde non plus trois, mais 
+deux possibilit\'es, car $A$ ayant \'et\'e choisie pour la premi\`ere 
+place, elle est maintenant exclue du choix suivant, qui se fera entre 
+$B$ et $C$; de m\^eme si $B$ avait \'et\'e pris en premier, le choix 
+pour la deuxi\`eme place se ferait entre $A$ et $C$. Pour {\it chacun} 
+des trois choix possibles de la premi\`ere lettre, il y a donc  deux 
+choix possibles pour la deuxi\`eme lettre, soit entre  $B$ et $C$, soit  
+entre  $A$ et $C$, soit entre  $A$ et $B$, ce qui fait $3 \times 2 = 6$ 
+choix en tout. Si les deux premi\`eres lettres sont donn\'ees, il n'y a 
+plus qu'un choix possible pour la troisi\`eme, qui est $C$ si les deux 
+premi\`eres sont $AB$ ou $BA$, $B$ si les deux premi\`eres sont $AC$ 
+ou $CA$, $A$ si les deux premi\`eres sont $BC$ ou $CB$, ce qui fait 
+bien six choix en tout. Si on voulait poursuivre et ajouter une 
+quatri\`eme lettre, on verrait qu'il reste z\'ero choix possibles, 
+c'est-\`a-dire qu'on ne peut pas ajouter une quatri\`eme lettre sans 
+forc\'ement r\'ep\'eter l'une des trois premi\`eres.   
+\medskip 
+Plus g\'en\'eralement, avec un alphabet de $r$ lettres, il y a $r$ choix 
+possibles pour la premi\`ere lettre; celle-ci ne pouvant plus \^etre 
+r\'eutilis\'ee, il reste $r-1$ choix possibles pour la deuxi\`eme; 
+c'est-\`a-dire que pour {\it chacun} des $r$ choix de la premi\`ere, il y  
+a  $r-1$ choix pour la deuxi\`eme, ce qui fait $r\cdot (r-1)$ choix pour 
+les deux premi\`eres; ensuite, pour {\it chacun} des $r\cdot (r-1)$  
+choix des deux premi\`eres, il reste $r-2$ choix pour la troisi\`eme, ce 
+qui fait $r\cdot (r-1)\cdot (r-2)$ choix pour les trois premi\`eres; et 
+ainsi de suite. Lorsque les $n-1$ premi\`eres lettres sont d\'ej\`a 
+choisies, il reste $r-n+1$  possibilit\'es pour la $n$-i\`eme. De sorte 
+que pour avoir un mot de $n$ lettres, on aura en tout  
+$$r(r-1)(r-2) \cdots (r-n+1) \eqno (II.2.)$$ 
+possibilit\'es. On remarquera que si $n\leq r$ ce nombre est aussi  
+\'egal  \`a $r! / (r-n)!$ Bien entendu, si $r < n$ c'est nul, puisqu'apr\`es 
+avoir \'ecrit une fois chaque lettre de l'alphabet disponible, on ne peut 
+en ajouter une $(r+1)$-i\`eme sans r\'ep\'etition. 
+\medskip 
+Tout comme le probl\`eme du \S1, celui-ci sert de mod\`ele pour  
+d'autres situations. Ainsi nous avions vu que les mots de $n$ lettres 
+\'ecrits dans un alphabet de $r$ lettres permettaient de coder 
+biunivoquement des distributions de boules dans des bo\^\i tes: si on 
+consid\`ere uniquement des mots dont toutes les lettres sont 
+diff\'erentes, les distributions de boules correspondantes sont des 
+distributions o\`u aucune bo\^\i te ne re\c coit deux boules (aucune 
+lettre n'est \'ecrite \`a deux places dans le mot): ce sont donc les 
+distributions o\`u il y a au plus une boule par bo\^\i te. Il faut donc 
+retenir que {\bf le nombre de distributions de $n$ boules dans $r$  
+bo\^\i tes avec au plus une boule par bo\^\i te} est donn\'e par $(II.2.)$ 
+\medskip 
+Autre probl\`eme r\'epondant au m\^eme mod\`ele: les tirages sans  
+remises: une urne contient $r$ boules de couleurs diff\'erentes; on tire 
+successivement une premi\`ere boule, puis une deuxi\`eme, puis une 
+troisi\`eme, sans jamais les remettre dans l'urne; la deuxi\`eme ne peut 
+donc pas avoir la m\^eme couleur que la premi\`ere puisqu'elle n'est 
+plus dans l'urne, ni la troisi\`eme avoir la couleur de l'une des deux 
+premi\`eres, etc. Le nombre de tirages possibles est donc \'egalement 
+donn\'e par $(II.2.)$ 
+ 
+\bigskip 
+ 
+{\eightpoint On peut illustrer les deux pr\'ec\'edents paragraphes 
+imm\'ediatement par le probl\`eme suivant: 
+\smallskip 
+{\bf on \'ecrit 5 chiffres d\'ecimaux au hasard; quelle est la probabilit\'e  
+pour qu'ils soient tous diff\'erents?} 
+\smallskip 
+{\bf r\'eponse:} l'ensemble $\Omega$ de toutes les \'epreuves possibles  
+est l'ensemble de toutes les suites de cinq chiffres pris dans l'alphabet 
+$\{ 0,\,  1,\,  2,\,  3,\,  4,\,  5,\,  6,\,  7,\,  8,\,  9 \}$. 
+(ce qui revient \`a l'ensemble de tous les nombres entiers de 0 \`a $99\, 
+999$, en consid\'erant que le nombre 67 par exemple s'\'ecrit $00067$);  
+il y en a $100\, 000$ en tout d'apr\`es $(II.1.)$ L'\'ev\'enement qui nous 
+int\'eresse  est l'ensemble $A$ de tous les nombres dont les chiffres sont 
+tous diff\'erents: il y en a $10 \cdot 9 \cdot 8 \cdot 7  \cdot 6 = 30\, 
+240$ d'apr\`es $(II.2.)$. La probabilit\'e de cet \'ev\'enement est donc    
+$${\cal P}(A) = {\# A \over \#\Omega } = {30\, 240 \over 100\, 000} = 
+0,302\, 4$$   
+De m\^eme, pour des nombres \`a $j$ chiffres, si on d\'esigne par $A_j$ 
+l'\'ev\'enement: ``les $j$ chiffres  sont tous diff\'erents'': 
+ $$\openup 2\jot \eqalignno{ 
+ &{\cal P} (A_6) = {10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \over 
+1\, 000\, 000} = 0.151\, 2 \cr 
+ &{\cal P} (A_7) = {10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4  
+\over 10\, 000\, 000} = 0.060\, 48 \cr 
+ &{\cal P} (A_8) = {10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4  
+\cdot 3 \over 100\, 000\, 000} = 0.018\, 144 \cr 
+ &{\cal P} (A_9) = {10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4  
+\cdot 3 \cdot 2 \over 1\, 000\, 000\, 000} = 0.003\, 628\, 8 \cr 
+ &{\cal P} (A_{10}) = {10 \cdot 9 \cdot 8 \cdot 7 \cdot 6 \cdot 5 \cdot 4  
+\cdot 3 \cdot 2 \cdot 1 \over 10\, 000\, 000\, 000} = 0.000\, 362\, 88  
+\cr &{\cal P} (A_j) = 0 \quad \hbox{pour $j > 10$} \cr }$$ 
+ 
+\medskip 
+ 
+Une variante de ce probl\`eme est le suivant:  
+\smallskip 
+{\bf On prend au hasard un groupe de vingt \'etudiants; quelle est la 
+probabilit\'e pour que deux (au moins) d'entre eux aient leur anniversaire  
+le m\^eme jour ?} 
+\smallskip 
+{\bf r\'eponse:} le probl\`eme se mod\'elise de la mani\`ere suivante. On 
+consid\`ere que les jours de l'ann\'ee sont \'equiprobables pour les  
+naissances (ce qui est faux, mais grossi\`erement approximatif); de plus  
+on n\'eglige les cas de naissance un 29 f\'evrier. Pour une liste donn\'ee  
+des vingt \'etudiants, par exemple dans l'ordre alphab\'etique, on a \`a 
+consid\'erer toutes les listes possibles pour leurs jours de naissance, 
+c'est-\`a-dire toutes les listes possibles de vingt dates parmi 365 
+possibles; ces listes sont au nombre de $365^{20}$. Par ailleurs, 
+l'\'ev\'enement $A$ ``au moins deux sont n\'es le m\^eme jour'' est le 
+compl\'ementaire de l'\'ev\'enement $B$ ``toutes les dates sont 
+diff\'erentes''.  L'\'ev\'enement $B$ contient $365 \cdot 364 \cdot  363 
+\cdots 346$ \'el\'ements, de sorte que  
+$$ \eqalign{  
+{\cal P} (B) &= {365 \cdot 364 \cdot  363 \cdots 346 \over 365^{20}} \cr 
+&= \Bigl(1-{1 \over 365}\Bigr) \cdot \Bigl(1-{2 \over 365}\Bigr)  
+\cdot \Bigl(1-{3 \over 365}\Bigr) \cdots \Bigl(1-{19 \over 365}\Bigr) 
+\cr } \eqno (II.3.)$$ 
+On \'evalue cette expression en prenant le logarithme, sachant que 
+ $\ln (1 - \varepsilon ) \simeq -\varepsilon $.  Le logarithme du produit  
+est la somme des logarithmes, donc 
+$$\eqalign{\ln  {\scriptstyle \Bigl\{ \!\! \Bigl( \! 
+\hbox{$ 1 {\sevenmi -} { \hbox{1} \over \hbox{\vrule height8pt 
+width0pt $365$} }$} \!  \Bigr)\!\! \Bigl( \!  
+\hbox{$ 1 {\sevenmi -} { \hbox{2} \over \hbox{\vrule height8pt 
+width0pt $365$} }$} \! \Bigr) \cdots 
+\Bigl( \!  \hbox{$ 1 {\sevenmi -} { \hbox{$19$} \over \hbox{\vrule 
+height8pt width0pt $365$} }$} \!  
+\Bigr)\!\! \Bigr\} } &\simeq   - { 1+2+ \cdots + 19 \over 365 } \cr  
+ &= - {19 \cdot 20 \over 2 \cdot 365} \simeq -0.5 \cr }$$ 
+Ainsi on obtient la valeur approch\'ee 
+$${\cal P} (B) \simeq e^{-0.5} \simeq 0.6$$ 
+d'o\`u on d\'eduit 
+$${\cal P} (A)  \simeq 0.4$$ 
+Autrement dit, il y a $40\%$ de chances pour que deux \'etudiants aient  
+leur anniversaire le m\^eme jour. Le calcul approch\'e qui a \'et\'e fait 
+pour obtenir ce r\'esultat peut sembler tr\`es grossier (en fait la valeur 
+exacte de l'expression (II.3.) est $0.588\, 561\, 535$ soit une erreur de 
+$1\%$), mais l'hypoth\`ese de l'\'equiprobabilit\'e des jours de l'ann\'ee  
+est au moins aussi grossi\`ere; on pourrait aussi s'interroger sur 
+l'int\'er\^et de conna\^\i tre le r\'esultat au milli\`eme pr\`es. 
+}  %%% end of \eightpoint 
+\medskip 
+Un cas particulier qui vaut la peine d'\^etre soulign\'e est le cas o\`u la 
+suite ordonn\'ee utilise {\it toutes} les lettres disponibles, c'est-\`a-dire 
+$n = r$. La question devient alors: {\bf de combien de mani\`eres  
+diff\'erentes peut-on ordonner  $r$ objets ?}. Il s'agit du {\it nombre de 
+permutations} de $r$ objets. En prenant simplement $n = r$ dans $(II.2.)$  
+on obtient:  
+$$ \hbox{nombre de permutations de $r$ objets} = r! \eqno (II.4.)$$ 
+Dans l'exemple ci-dessus (probabilit\'e pour qu'un nombre de $j$ chiffres 
+d\'ecimaux pris au hasard ait tous ses chiffres diff\'erents) cela 
+correspond au cas de dix chiffres (nombres compris entre z\'ero inclu  
+et dix milliards exclu). 
+\medskip 
+Bien entendu, dans aucun cas on ne peut avoir $n > r$, puisque si on doit 
+\'ecrire plus de lettres qu'il n'y en a dans l'alphabet disponible, on ne  
+peut qu'en r\'ep\'eter.  
+ 
+\bigskip 
+ 
+{\bf II. 3.  Combinaisons.} 
+\medskip 
+Lorsqu'on fait le produit de deux expressions alg\'ebriques, par exemple  
+$(x_1 + y_1) \cdot (x_2 + y_2)$ on utilise la distributivit\'e de la 
+multiplication: $(x_1 + y_1) \cdot (x_2 + y_2) = x_1x_2 + x_1y_2 + 
+y_1x_2 + y_1x_1$. De m\^eme $(x_1 + y_1) \cdot (x_2 + y_2)  \cdot 
+(x_3 + y_3) = x_1x_2x_3 + x_1y_2x_3 + y_1x_2x_3 + y_1x_1x_3 +  
+x_1x_2y_3 + x_1y_2y_3 + y_1x_2y_3 + y_1x_1y_3$. Les mon\^omes 
+qu'on obtient dans l'expression d\'evelopp\'ee sont les mots de deux  
+(pour le produit de deux facteurs) ou trois (pour le produit de trois 
+facteurs) lettres \'ecrits avec l'alphabet $\{ x,\, y \}$; l'indice ne sert 
+ici qu'\`a indiquer la place de la lettre dans le mot. Le nombre de mots 
+est, conform\'ement \`a $(II.1.)$, $2^2 = 4$ pour deux facteurs, $2^3 = 8$ 
+pour trois facteurs. Si on fait un produit de deux ou trois facteurs 
+identiques, on obtient les d\'eveloppements sans indices: 
+$$\displaylines{ 
+(x+y) \cdot (x+y) = xx + xy + yx + yy \cr 
+(x+y) \cdot (x+y) \cdot (x+y) = xxx + xyx + yxx + yyx + xxy + xyy + yxy + 
+yyy \cr }$$ 
+Plus g\'en\'eralement, si on d\'eveloppe un produit de $n$ fois le  
+facteur $(x+y)$, le d\'eveloppement est la somme de tous les mon\^omes  
+possibles, c'est-\`a-dire la somme de tous les mots de $n$ lettres 
+qu'on peut former avec les deux lettres $x$ et $y$. Si on tient compte 
+de la commutativit\'e de la multiplication, les mon\^omes $xyx$, $yxx$, 
+et $xxy$ sont \'egaux; on regroupe donc leur somme en $3x^2y$; de 
+m\^eme les mon\^omes $yyx$, $xyy$, et $yxy$ peuvent \^etre regroup\'es 
+en $3xy^2$. Ainsi se pose la question: parmi les $2^n$ mots de $n$ 
+lettres qu'on peut former avec les deux lettres $x$ et $y$, combien 
+comportent $k$ fois la lettre $x$ et $n-k$ fois la lettre $y$? La 
+formule connue du bin\^ome de Newton r\'epond \`a cette question: elle 
+nous dit que  
+$$(x+y)^n = \sum_{k=0}^{k=n} {n \choose k}\; x^ky^{n-k}\quad ,$$ 
+c'est-\`a-dire que le nombre de mon\^omes \'egaux \`a $x^k y^{n-k}$ (et 
+qui par cons\'equent peuvent \^etre regroup\'es) est \'egal au  
+$k$-i\`eme coefficient du bin\^ome d'ordre $n$  
+$${n \choose k} = {n! \over k!\, (n-k)!} = {n(n-1(n-2) \cdots (n-k+1) \over 
+k!} \eqno (II.5.)$$ 
+Ainsi, {\bf le nombre de mots de $n$ lettres qu'on peut former avec un 
+alphabet de  deux lettres, et qui comportent $k$ fois l'une et $n-k$ fois 
+l'autre} est \'egal au coefficient bin\^omial ${n \choose k}$. 
+\medskip 
+Nous avons vu au \S1 qu'il y avait isomorphisme ou \'equivalence entre  
+les mots et les distributions de boules dans des bo\^\i tes; traduisons 
+ce que nous venons de constater pour les mon\^omes en termes de 
+boules: cela correspond donc \`a $n$ boules \`a distribuer dans $r=2$ 
+bo\^\i tes. Ainsi il y a ${n \choose k}$ mani\`eres de distribuer $n$  
+boules dans deux bo\^\i tes, de telle fa\c con qu'il y en ait $k$ dans  
+l'une et $n-k$ dans l'autre. Placer $k$ (parmi $n$) boules dans une  
+bo\^\i te (il en restera alors forc\'ement $n-k$ pour l'autre bo\^\i te) 
+revient \`a choisir un sous-ensemble de $k$ boules parmi l'ensemble  
+des $n$ boules.  
+\medskip 
+On remarquera qu'il s'agit de sous-ensembles, c'est-\`a-dire que  
+l'ordre dans lequel les {\it \'el\'ements} du sous-ensemble sont  
+donn\'es ne joue pas: les num\'eros des $k$ boules qui sont dans la 
+bo\^\i te $x$ forment un sous-ensemble \`a $k$ \'el\'ements de 
+l'ensemble $\{ 1,\,   2,\,  3,\,  \cdots n \}$. Mais ce sous-ensemble non 
+ordonn\'e d\'etermine l'ordre dans lequel les lettres $x$ et $y$  
+apparaissent dans le mon\^ome. Si  par exemple $n=5$ et $k=3$, le  
+sous-ensemble  $\{ 2,\,  4,\,  5 \}$ est  le m\^eme que $\{ 4,\,  5,\,  2  
+\}$ ou $\{ 5,\,  4,\,  2 \}$. Le mon\^ome correspondant \`a ce  
+sous-ensemble est  $yxyxx$ (c'est-\`a-dire que la lettre $x$ occupe  
+les places $2$, $4$, et $5$, peu importe dans quel ordre ces num\'eros 
+de places ont \'et\'e dict\'es); si on m\'elange l'ordre des lettres {\it 
+dans le  mon\^ome}, pour obtenir par exemple le mon\^ome $xyxyx$ (qui 
+est   donc \'egal au pr\'ec\'edent compte tenu de  la commutativit\'e de 
+la  multiplication), ce nouveau  mon\^ome correspond \`a un {\it autre}  
+sous-ensemble, \`a savoir $\{ 1,\,  3,\,  5 \}$.  
+\medskip 
+Traduit en termes de tirages dans des urnes, le probl\`eme revient \`a 
+ceci: au \S1 on caract\'erisait un tirage par la suite ordonn\'ee des 
+couleurs obtenues successivement (cela formait un mot). Si on traduit 
+de la m\^eme fa\c con, nous avons ici deux boules, par exemple une noire 
+et une rouge. On tire $n$ fois avec remise. En notant \`a chaque fois la 
+couleur tir\'ee, $x$ pour rouge et $y$ pour noire, on obtient un  
+mon\^ome en $x$ et $y$. 
+\smallskip 
+Une autre fa\c con d'habiller le m\^eme probl\`eme, toujours  
+\'equivalente,  consiste, puisqu'il n'y a que deux couleurs ou deux 
+lettres, \`a d\'enombrer les suites de r\'esultats possibles obtenus en 
+lan\c cant $n$ fois une pi\`ece de monnaie: on \'ecrit $x$ quand sort  
+pile et $y$ quand sort face. Si un joueur donne un franc \`a l'autre  
+joueur chaque fois que sort pile (et inversement quand sort face), le 
+gain est \'egal au nombre de $x$ moins le nombre de $y$; si $k$ est le 
+nombre de $x$, le nombre de $y$ sera $n-k$, donc le gain sera $w = k - 
+(n-k) = 2k - n$.  Ce gain ne d\'epend donc pas de la place des $x$ et des 
+$y$ dans le mon\^ome, mais seulement du nombre $k$ de $x$, 
+c'est-\`a-dire du nombre de pile. Par cons\'equent le nombre de  
+r\'esultats diff\'erents apportant un  m\^eme gain $w = 2k-n$ est ${n 
+\choose k}$.  
+\medskip 
+{\eightpoint 
+Les coefficients bin\^omiaux sont aussi donn\'es par le triangle de 
+Pascal, qu'on obtient en \'ecrivant pour chaque $n$ les $2n+1$ 
+coefficients bin\^omiaux  d'ordre $n$ sur une ligne, la premi\`ere ligne 
+correspondant \`a $n=1$, la seconde \`a $n=2$, etc. Cela donne pour les 
+lignes 0 \`a 13:  
+$$\hskip-12pt\matrix{ 
+&1  &    &    &    &    &    &    &    &    &    &    &    &    &  \cr 
+&1  &1   &    &    &    &    &    &    &    &    &    &    &    &  \cr 
+&1  &2   &1   &    &    &    &    &    &    &    &    &    &    &  \cr 
+&1  &3   &3   &1   &    &    &    &    &    &    &    &    &    &  \cr 
+&1  &4   &6   &4   &1   &    &    &    &    &    &    &    &    &  \cr 
+&1  &5   &10  &10  &5   &1   &    &    &    &    &    &    &    &  \cr 
+&1  &6   &15  &20  &15  &6   &1   &    &    &    &    &    &    &  \cr  
+&1  &7   &21  &35  &35  &21  &7   &1   &    &    &    &    &    &  \cr  
+&1  &8   &28  &56  &70  &56  &28  &8   &1   &    &    &    &    &  \cr  
+&1  &9   &36  &84  &126 &126 &84  &36  &9   &1   &    &    &    &  \cr  
+&1  &10  &45  &120 &210 &252 &210 &120 &45  &10  &1   &    &    &  \cr  
+&1  &11  &55  &165 &330 &462 &462 &330 &165 &55  &11  &1   &    &  \cr  
+&1  &12  &66  &220 &495 &792 &924 &792 &495 &220 &66  &12  &1   &  \cr  
+&1  &13  &78  &286 &715 &1287&1716&1716&1287&715 &286 &78  &13  &1 \cr  }$$ 
+Le triangle de Pascal a la propri\'et\'e suivante: chaque \'el\'ement  
+d'une ligne est la somme de deux \'el\'ements de la ligne pr\'ec\'edente: 
+celui qui est au-dessus et son voisin de gauche;  ainsi $1716 = 924 + 
+792$,  $165 =120 + 45$, etc. 
+Cela correspond \`a la relation de r\'ecurrence suivante: 
+$${n-1 \choose k} + {n-1 \choose k-1} = {n \choose k}$$ 
+Cette relation de r\'ecurrence est tr\`es facile \`a v\'erifier  
+directement.  En effet, en \'ecrivant les coefficients bin\^omiaux avec 
+des factorielles,  selon $(II.5.)$ cela revient \`a 
+$${(n-1)! \over k!\, (n-1-k)!} + {(n-1)! \over (k-1)!\, (n-k)!} = {(n-1)!  
+\over k!\, (n-k)!}\; \bigl[ (n-k) + k \bigr] = {n! \over k!\, (n-k)!}$$ 
+Si on se propose de calculer {\it num\'eriquement} les coefficients  
+bin\^omiaux, il se trouve que cette formule de r\'ecurrence est 
+l'algorithme le plus efficace qu'on connaisse. La raison en est que si on 
+le met en oeuvre, il n'effectue que des additions, alors qu'un calcul 
+m\^eme habile des factorielles demande des multiplications et des 
+divisions. Son  d\'efaut est que, m\^eme si on veut ne calculer qu'un seul 
+coefficient bin\^omial, par exemple ${72 \choose 27}$, on doit calculer les 
+lignes compl\`etes du triangle de Pascal; le nombre d'additions n\'ecessaire  
+est alors environ $2500$. Calculer directement en passant par les 
+factorielles est visiblement maladroit:  $72!$ exige $72$ 
+multiplications, $27$ en exige $27$ et $(72-27)!$ en exige $72-27$, soit 
+$144$ multiplications en tout. En outre, en proc\'edant ainsi, on calcule 
+d'abord s\'epar\'ement des nombres {\it bien plus gros} que celui qu'on veut 
+finalement obtenir (${72 \choose 27}$ est grand aussi,  mais nettement 
+moins que $72!$);  on gaspille ainsi du temps \`a calculer des nombres 
+entiers tr\`es longs,  que l'on divise ensuite.  On pourrait certes faire
+une \'economie en calculant par exemple ${72 \over 27} \cdot {71 \over 26}  
+\cdot {70 \over 25} \cdots {47 \over 2} \cdot 46$, mais les diff\'erents 
+facteurs sont alors des fractions et ne peuvent donc \^etre manipul\'es 
+qu'en virgule flottante (donc en perdant l'exactitude). En utilisant le 
+triangle de Pascal, les calculs interm\'ediaires ne font jamais appel \` a 
+des nombres plus gros que celui qu'on veut atteindre, et on ne fait 
+intervenir que des entiers. En fin de compte on y gagne, surtout si on n'en 
+veut pas un seul coefficient, mais par exemple toute une ligne. \par} 
+\medskip 
+ 
+\def\ldown#1{\hbox{\raise1.5pt\hbox{$#1$}}} 
+ 
+Lorsque $k$ varie de $0$ \`a $n$, le coefficient bin\^omial  ${n 
+\choose k}$ est croissant tant que $2k < n$, puis d\'ecroissant quand 
+$2k > n$; si $n$ est pair (disons $n = 2p$), il est maximum pour  
+$k=p$ et vaut alors $(2p)! / p!^2$; si $n$ est impair (disons $n = 2p-1$), 
+il est maximum ex aequo pour  $k=p-1$ et $k=p$ et vaut alors $(2p-1)! / 
+p!\, (p-1)! = {1 \over 2}\cdot (2p)! / p!^2$. Pour s'en rendre compte, il 
+suffit de comparer ${n \choose k+1}$ \`a ${n \choose k}$: en divisant 
+les factorielles, on voit que  
+$${n \choose k+1} = {n-k \over k+1} \cdot {n \choose k}$$ 
+la suite des ${n \choose k}$ est donc croissante tant que $(n-k) / 
+(k+1) \geq 1\quad$ ($\Leftrightarrow 2k \leq n-1$)  et d\'ecroissante 
+quand $(n-k) / (k+1) \leq 1\quad$($\Leftrightarrow 2k \geq n-1$), 
+{\eightrm C.Q.F.D.} 
+\medskip 
+Le calcul num\'erique exact des coefficients bin\^omiaux ${n \choose k}$  
+(par exemple avec l'algorithme du triangle de Pascal) devient tr\`es ardu 
+lorsque $n$ est tr\`es grand; le calcul op\`ere sur des entiers, mais 
+lorsqu'ils sont grands on ne peut se contenter de deux octets et les temps 
+de calcul deviennent vite prohibitifs. En outre, il est bien rare que pour  
+$n$ grand une expression exacte pr\'esente seulement un int\'er\^et. Or  
+il se trouve qu'il existe une  expression approch\'ee simple et tr\`es utile 
+des coefficients bin\^omiaux. Voyons le cas o\`u $n$ est pair ($n=2p$); le   
+cas $n$ impair doit \^etre trait\'e s\'epar\'ement, mais il est analogue. 
+Posons $k = p+j$ pour sym\'etriser ($j$ est alors nul quand $k = p$ et $j$ 
+varie de $-p$ \`a $+p$).  On a bien s\^ur ${2p \choose p-j} = {2p \choose 
+p+j}$, et il sufit  d'examiner le cas o\`u $j > 0$.  
+\vskip8pt plus7pt minus4pt 
+En d\'ecomposant convenablement les factorielles qui figurent au 
+nu\-m\'e\-ra\-teur et au d\'e\-no\-mi\-na\-teur des coefficients 
+bin\^omiaux, on peut \'ecrire, si $j$ est positif:   
+$$\eqalignno {{2p 
+\choose p+j} &= {2p \choose p} \; {p(p-1)(p-2) \cdots (p-j+1) \over 
+(p+1)(p+2) \cdots (p+j) } \cr 
+\noalign{\medskip} 
+&= {2p \choose p}\; {\vrule depth12pt width0pt  
+p^j \; \biggl[{\displaystyle \biggl( 1 - {1 
+\over\ldown p}\biggr) \biggl( 1 - {2 \over\ldown p}\biggr) \cdots 
+\biggl( 1 - {j-1 \over\ldown p}\biggr)}\biggr]  
+\over  
+\vrule height19pt width0pt p^j \; \biggl[{\displaystyle\biggl( 1 + {1  
+\over\ldown p}\biggr) \biggl( 1 + {2 \over\ldown p}\biggr) \cdots  
+\biggl( 1 + {j  \over\ldown p}\biggr)}\biggr] } \cr }$$ 
+Pour \'evaluer les expressions entre crochets en num\'erateur et  
+d\'enominateur on prend leurs logarithmes; on sait que  
+$$\ln (1 + \varepsilon ) = \varepsilon - {\varepsilon^2\over 2} + 
+{\varepsilon^3\over 3} - \cdots$$ 
+de sorte que pour l'expression au d\'enominateur on obtient 
+$$\eqalign{\ln  {\scriptstyle \Bigl\{ \!\! \Bigl( \! 
+\hbox{$ 1 {\sevenmi +} { \hbox{1} \over \hbox{\vrule height5pt 
+width0pt $p$} }$} \!  \Bigr)\!\! \Bigl( \!  
+\hbox{$ 1 {\sevenmi +} { \hbox{2} \over \hbox{\vrule height5pt 
+width0pt $p$} }$} \! \Bigr) \cdots 
+\Bigl( \!  \hbox{$ 1 {\sevenmi +} { \hbox{$j$}\vrule depth3pt width0pt  
+\over \hbox{\vrule height5pt width0pt $p$} }$} \!  
+\Bigr)\!\! \Bigr\} } &=   { 1+2+ \cdots + j \over p } - { 1+4+ \cdots +  
+j^2 \over 2\, p^2 } + \cdots \cr  
+ &= {j(j+1) \over 2\, p} - {O(j^3) \over 6\, p^2} \cr  
+&\simeq  {j^2 \over 2\, p} }$$ 
+Pour l'expression au num\'erateur (en utilisant cette fois $\ln (1 - 
+\varepsilon ) = -\varepsilon - {\varepsilon^2\over 2} - {\varepsilon^3 
+\over 3} - \cdots$) on obtiendrait de m\^eme  
+$$\eqalign{\ln  {\scriptstyle \Bigl\{ \!\! \Bigl( \! 
+\hbox{$ 1 {\sevenmi -} { \hbox{1} \over \hbox{\vrule height6pt 
+width0pt $p$} }$} \!  \Bigr)\!\! \Bigl( \!  
+\hbox{$ 1 {\sevenmi -} { \hbox{2} \over \hbox{\vrule height6pt 
+width0pt $p$} }$} \! \Bigr) \cdots 
+\Bigl( \!  \hbox{$ 1 {\sevenmi -} { \hbox{$j\! - \!1$}\vrule depth3pt 
+width0pt  \over \hbox{\vrule height6pt width0pt $p$} }$} \!  
+\Bigr)\!\! \Bigr\} } &=   -{1+\cdots + (j\! - \! 1) \over p} - { 
+1+ \cdots +  j^2 \over 2\, p^2 } + \cdots \cr  
+ &= -{j(j-1) \over 2\, p} - {O(j^3) \over 6\, p^2} \cr  
+&\simeq  {-j^2 \over 2\, p} }$$ 
+En revenant aux exponentielles des logarithmes et en regroupant tout, 
+il appara\^\i t que  
+$${2p \choose p+j} \simeq {2p \choose p} \; \exp \Bigl[ - {j^2\over 
+\ldown p}\Bigr]$$  
+Cette approximation est valable pourvu que l'erreur commise, qui  
+comme nous l'avons vu au cours du calcul, est de l'ordre de $j^3 / p^2$, 
+soit n\'egligeable. Or si $j$ est de l'ordre de $\sqrt{p}$ ou plus petit, 
+$j^3  / p^2$ sera de l'ordre de $1/\sqrt{p}$ qui est n\'egligeable si $p$ 
+est grand. Si $j$ est plus grand que $\sqrt{p}$ en ordre de grandeur, 
+l'erreur n'est  plus n\'egligeable en ce sens que $j^3 / p^2$ n'est pas 
+petit devant $j^2 /p$, mais  en fait cela ne porte pas \`a cons\'equence 
+car dans ce cas le rapport ${2p \choose p+j} \bigl/ {2p \choose p}$  
+est tellement petit que, erreur ou pas,  on peut le remplacer aussi bien 
+par $0$ que par $\exp (-j^2/n)$.  
+\medskip 
+Quand \`a la valeur maximum ${2p \choose p} = (2p)! / p!^2$ 
+elle-m\^eme, elle peut \^etre approch\'ee en utilisant la formule 
+de Stirling: $p! \simeq p^pe^{-p} \sqrt{2\pi p}$. Ainsi 
+$${2p \choose p} = (2p)! / p!^2 \simeq {2^{2p}\, p^{2p}\, 
+e^{-2p}\,\sqrt{4\pi p} \over p^{2p}\, e^{-2p}\, 2\pi p} 
+= {2^{2p} \over  \sqrt{\pi p}}$$ 
+On peut donc conclure que pour $p$ grand:  
+$${2p \choose p + j} = {2p \choose p - j} \simeq 
+{ 2^{2p} \over \sqrt{\pi p} } \cdot \exp\Bigl[ - {j^2 \over\ldown 
+p}\Bigr] \eqno (II.6.)$$ 
+Pour le cas impair on aurait obtenu par des voies semblables: 
+$${2p-1 \choose p + j} = {2p-1 \choose p - j - 1} \simeq 
+{ 2^{2p-1} \over \sqrt{\pi p} } \cdot \exp\Bigl[ - {j^2 \over\ldown 
+p}\Bigr] \eqno (II.6a.)$$ 
+ 
+\bigskip 
+ 
+{\bf II. 4.  Partitions en groupes de taille donn\'ee.} 
+\medskip 
+Maintenant la question est celle-ci: 
+on se donne $m$ nombres entiers $\geq 0$, $n_1$, $n_2 \ldots n_m$, 
+dont la somme est $n$; de combien de mani\`eres diff\'erentes peut-on  
+ranger $n$ \'el\'ements en $m$ groupes de (respectivement) $n_1$, $n_2 
+\ldots n_m$ \'el\'ements?  
+\medskip 
+On peut interpr\'eter le probl\`eme \'etudi\'e dans le paragraphe  
+pr\'ec\'edent en disant qu'on cherchait le nombre de partitions de  
+l'ensemble \`a $n$ \'el\'ements  en {\it deux} sous-ensembles ayant 
+respectivement $k$ et $n-k$ \'el\'ements, ce qui \'etait donc le cas 
+particulier correspondant \`a $m=2$, $n_1=k$ et $n_2=n-k$. C'est ce qui 
+apparaissait quand le probl\`eme \'etait interpr\'et\'e en termes de boules 
+\`a distribuer  dans des bo\^\i tes: il y avait alors $2^n$ distributions 
+possibles de $n$ boules dans deux bo\^\i tes, et parmi celles-ci il y en  
+avait ${n \choose k}$ pour lesquelles la premi\`ere bo\^\i te recevait $k$ 
+boules et la deuxi\`eme $n-k$. Si le nombre de bo\^\i tes est quelconque,  
+disons $m$, il s'agit des distributions de boules dans $m$ bo\^\i tes: le 
+probl\`eme se g\'en\'eralise alors ainsi: {\bf quel est le nombre de 
+partitions d'un ensemble \`a $n$ \'el\'ements en $m$ sous-ensembles  
+ayant respectivement $n_1, \; n_2, \ldots  n_m$ \'el\'ements?} Les  
+nombres $n_1, \; n_2, \ldots  n_m$ sont appel\'es les nombres  
+d'occupation; $n_j$ est le nombre d'occupation de  la $j$-i\`eme bo\^\i te. 
+\medskip 
+Dans le paragraphe pr\'ec\'edent nous avons abord\'e le probl\`eme en  
+\'etudiant le d\'eveloppement du bin\^ome: $(x+y)^n$. De la m\^eme fa\c 
+con on peut aborder le probl\`eme du nombre de partitions \`a partir, non 
+plus du {\it bi}n\^ome, mais de $(x_1 + x_2 + \cdots x_m)^n$: on est alors 
+ramen\'e \`a compter, sur les $m^n$ mon\^omes de l'expression 
+d\'evelopp\'ee, combien sont \'egaux \`a $x_1^{n_1} x_2^{n_2} x_3^{n_3} 
+\cdots x_m^{n_m}$, ou encore (en termes de mots et de lettres): {\bf  
+parmi les $m^n$ mots de $n$ lettres qu'on peut former avec l'alphabet  
+$\{ x_1, \, x_2, \,  x_3, \ldots  x_m \}$  combien y en a-t-il qui 
+contiennent $n_1$ fois la lettre $x_1$,  $n_2$ fois la lettre $x_2$,   
+$n_3$ fois la lettre $x_3$, $\ldots$  $n_m$ fois la lettre $x_m$?}  
+(nous y reviendrons un peu plus loin). 
+\medskip 
+Toujours au paragraphe pr\'ec\'edent, au lieu de poser le probl\`eme en  
+termes de mots \'ecrits avec les deux lettres $x$ et $y$, on aurait aussi  
+pu le poser de la mani\`ere suivante: pour un ensemble $E$ de $n$ objets il  
+y a $n!$ permutations. Si on consid\`ere une partition en {\it deux} 
+sous-ensembles $E_k$ et $E_{n-k}$, alors toute permutation qui permute 
+les \'el\'ements de $E_{k}$ entre  eux et les \'el\'ements de $E_{n-k}$  
+entre eux laisse ces deux ensembles intacts; or il y a $k!\, (n-k)!$ telles 
+permutations. Toute autre  permutation de $E$ mo\-di\-fie les deux 
+sous-ensembles, mais non leur nombre (2), ni le nombre de leurs 
+\'el\'ements respectifs ($k$ et $n-k$); autrement dit, toute autre 
+permutation transforme une partition en deux sous-ensembles \`a $k$ et 
+$n-k$ \'el\'ements en une autre partition en deux sous-ensembles \`a $k$  
+et $n-k$ \'el\'ements. Le nombre total de permutations (soit $n!$) est donc  
+le produit du nombre de partitions en deux sous-ensembles \`a $k$ et   
+$n-k$ \'el\'ements par le nombre de permutations qui laissent chacune 
+intacte,  ou inversement, le nombre de partitions en deux sous-ensembles 
+\`a $k$ et $n-k$ \'el\'ements est le quotient du nombre total de 
+permutations par le nombre  de permutations qui laissent chacune intacte, 
+soit $n!/k!\, (n-k)!$.  On retrouve ainsi $(II.5)$.  
+\medskip  
+Cette fa\c con de compter donne imm\'ediatement la r\'eponse \`a la 
+question du pr\'esent paragraphe. Pour une partition en $m$ 
+sous-ensembles $E_{n_1},\; E_{n_2}, \ldots  E_{n_m}$, toute 
+permutation qui permute les \'el\'ements de chacun des $E_{n_j}$  entre 
+eux (pour $j$ de 1 \`a $m$)  laisse ces $m$ ensembles intacts; or il y  a 
+$n_1!\, n_2! \cdots n_m!$ telles permutations. Toute autre permutation  
+de $E$ mo\-di\-fie les $m$ sous-ensembles, mais non leur nombre ($m$), ni 
+le nombre de leurs  \'el\'ements, c'est-\`a-dire les nombres 
+d'occupation ($n_1, \; n_2, \ldots  n_m$); autrement dit, toute autre 
+permutation transforme une partition en $m$ sous-ensembles \`a $n_1, 
+\; n_2, \ldots  n_m$ \'el\'ements en une autre partition en $m$ 
+sous-ensembles \`a $n_1,  \; n_2, \ldots  n_m$ \'el\'ements. Le nombre  
+total de permutations (soit $n!$) est donc le produit du nombre de 
+partitions en $m$ sous-ensembles  \`a $n_1, \; n_2, \ldots  n_m$ 
+\'el\'ements par le nombre de  permutations qui laissent chacune 
+intacte, ou encore, le nombre de partitions en $m$ sous-ensembles \`a 
+$n_1, \; n_2, \ldots  n_m$ \'el\'ements  est le quotient du nombre total 
+de permutations par le nombre  de permutations qui laissent chacune 
+intacte, soit    
+$$n! \over n_1!\, n_2! \cdots n_m!\; . \eqno (II.7.)$$    
+Pour donner un exemple de ce type de d\'enombrement, prenons notre 
+promotion de $72$ \'etudiants. De combien de mani\`eres diff\'erentes  
+peut-on les diviser en trois groupes de T.D. de 24 \'etudiants chacun? 
+R\'eponse:  ${72! / 24!\, 24!\, 24!} \simeq 2.564 \cdot 10^{32}$.  De 
+m\^eme, le nombre de mani\`eres diff\'erentes de r\'epartir $72$  
+\'etudiants dans trois groupes de respectivement 30, 25, et 17 
+\'etudiants est ${72! / 30!\, 25!\, 17!} \simeq 4.184 \cdot 10^{31}$. Dans 
+des groupes de 32, 22, et 18: ${72! / 32!\, 22!\, 18!} \simeq 3.234 \cdot 
+10^{32}$. Si les tailles des trois groupes sont davantage 
+diff\'erenci\'ees, le nombre devient plus petit: ${72! / 60!\, 8!\, 4!} 
+\simeq 7.605 \cdot 10^{15}$. En revanche pour des groupes plus nombreux 
+le nombre de possibilit\'es augmente: ${72! / 32!\, 22!\, 10!\, 8!} \simeq 
+1.4155 \cdot 10^{36}$. On pourrait montrer (d'ailleurs on le fera plus 
+loin) que pour un nombre de groupes donn\'e, le nombre de possibilit\'es 
+est maximum lorsque les  groupes sont de tailles \'egales, 
+c'est-\`a-dire lorsque les nombres d'occupation sont \'egaux entre eux.  
+\medskip  
+On retrouve encore ces nombres lorsqu'on d\'eveloppe le polyn\^ome 
+$(x_1 + x_2 + \cdots + x_m)^n$. Cela n'a rien de surprenant puisqu'ils ne 
+font que g\'en\'eraliser les nombres $II.5.$ Ainsi: 
+$$(x_1 + x_2 + \cdots + x_m)^n = \sum_{n_1+n_2+ \cdots +n_m=n}  {n! 
+\over n_1!\,  n_2! \cdots n_m!}\, x_1^{n_1}\, x_2^{n_2} \cdots  
+ x_m^{n_m} $$  
+la sommation portant sur toutes les familles d'indices possibles qui 
+v\'erifient $n_1 + n_2 +  \cdots  + n_m = n$. C'est pourquoi ces nombres  
+sont appel\'es {\it coefficients multin\^omiaux}, de m\^eme que ceux de  
+la section pr\'ec\'edente \'etaient appel\'es coefficients bin\^omiaux. 
+Quoique cette notation soit moins c\'el\`ebre que celle des coefficients 
+bin\^omiaux, on d\'esigne les coefficients  multin\^omiaux de mani\`ere 
+analogue:  
+$${n \choose n_1,\,  n_2,  \cdots   n_m} = {n \over n_1!\,  n_2! 
+\cdots   n_m!}$$ 
+ 
+De m\^eme que tous les probl\`emes de combinaisons de lettres que  
+nous avons abord\'e jusqu'ici, le probl\`eme du nombre de partitions en 
+groupes de taille donn\'ee peut s'interpr\'eter en termes de boules \`a 
+ranger dans des bo\^\i tes. Lorsqu'il s'agissait de mots (de $n$ lettres) 
+\'ecrits avec un alphabet de $m$ lettres, nous avons vu l'\'equivalence 
+avec la r\'epartition de $n$ boules dans $m$ bo\^\i tes. Ici, il s'agit du 
+nombre de mots diff\'erents qui contiennent {\it un nombre donn\'e de 
+fois} chacune des $m$ lettres de l'alphabet. En termes de boules et de 
+bo\^\i tes,  chaque bo\^\i te correspond \`a une lettre de l'alphabet, et 
+chaque boule correspond \`a la place occup\'ee par une lettre dans le 
+mot. Le probl\`eme revient alors au nombre de r\'epartitions pour 
+lesquelles la bo\^\i te correspondant \`a la lettre $x_j$ contient $n_j$ 
+boules: il s'agit donc du nombre de r\'epartitions diff\'erentes pour 
+lesquelles chaque bo\^\i te contient un nombre fix\'e \`a l'avance de 
+boules: {\bf de combien de mani\`eres diff\'erentes peut-on r\'epartir 
+$n$ boules dans $m$ bo\^\i tes, de telle sorte que la premi\`ere en 
+contienne $n_1$, la deuxi\`eme $n_2$, la troisi\`eme $n_3$, etc ?}  
+\medskip 
+De m\^eme que pour les coefficients bin\^omiaux, on peut avoir une 
+approximation simple et pratique pour $n$ grand. On peut v\'erifier que  
+$n! \bigl/ n_1!\, n_2!\, n_3! \cdots n_m!$ est maximum lorsque les 
+nombres $n_1,\, n_2,\, n_3, \ldots n_m$ sont \'egaux (si $n$ est un 
+multiple de $m$) ou \'egaux \`a une unit\'e pr\`es (si $n$ n'est pas un 
+multiple de $m$). En utilisant la formule de Stirling, comme nous 
+l'avons fait pour le maximum des coefficients bin\^omiaux, on obtient 
+pour ce maximum l'approximation 
+$${n! \over n_1!\, n_2!\, n_3! \cdots n_m!} \simeq 
+{m^{n+{m\over 2}} \over \sdown{16}\sqrt{(2\pi n)^{m-1}}}$$ 
+(\`a partir d'ici $n_1,\, n_2,\, n_3, \ldots n_m$ d\'esignent les 
+valeurs correspondant au {\it maximum}). 
+Pour conna\^\i tre la variation {\it autour} du maximum, on proc\`ede 
+comme au \S 3, on introduit $j_1,\, j_2,\, j_3, \ldots j_m$ et on 
+remarque que  
+$$\eqalign{ &{n! \over (n_1+j_1)!\, (n_2+j_2)!\, (n_3+j_3)! \cdots 
+(n_m+j_m)!}  = \cr 
+=  &{n! \over n_1!\, n_2!\, n_3! \cdots n_m!} \cdot  {n_1! \over 
+(n_1+j_1)!} \cdot {n_2! \over (n_2+j_2)!}\cdot {n_3! \over 
+(n_3+j_3)!}\;\cdots\; {n_m! \over (n_m+j_m)!} \cr }$$ 
+Chacun des facteurs ${n_i! / (n_i+j_i)!}$ peut \^etre approch\'e en 
+utilisant le proc\'ed\'e que nous avons d\'ej\`a vu. Si $j_i > 0$  on  
+\'ecrit 
+$$\eqalign{ 
+{n_i! \over (n_i+j_i)!} &= {1 \over \quad (n_i+1)(n_i+2)(n_i+3) \cdots 
+(n_i+j_i)\quad }\cr  
+\noalign{\medskip} 
+&= {1 \over \quad\vrule height17pt width0pt n_i^{j_i} \; \biggl[ 
+{\displaystyle\biggl( 1 + {1  \over\ldown n_i}\biggr) \biggl( 1 + {2 
+\over\ldown n_i}\biggr) \cdots  \biggl( 1 + {j_i  \over\ldown 
+n_i}\biggr)}\biggr]\quad } \cr 
+\noalign{\medskip} 
+&\simeq {1 \over n_i^{j_i}\vrule height11pt width0pt}\cdot 
+\e^{-{\; j_i^2\strutb\over 
+2n_i}} \cr }$$  
+et si $j_i < 0$  
+$$\eqalign{  
+{n_i! \over (n_i+j_i)!} &= n_i(n_i-1)(n_i-2)(n_i-3)\cdots (n_i-|j_i|+1) \cr 
+&= n_i^{|j_i|} \; \biggl[\biggl( 1 - {1  \over\ldown n_i}\biggr) \biggl( 1 -  
+{2 \over\ldown n_i}\biggr) \cdots  \biggl( 1 - {|j_i|-1  \over\ldown 
+n_i}\biggr)\biggr] \cr 
+&\simeq {1 \over n_i^{j_i}\vrule height11pt width0pt}\cdot 
+\e^{-{\; j_i^2\strutb\over 
+2n_i}} \cr }$$  
+(on voit que l'approximation a la m\^eme expression analytique, 
+ind\'e\-pen\-dam\-ment du signe de $j_i$). Si maintenant on applique ce 
+r\'esultat \`a  chacun des facteurs ${n_i! \bigl/ (n_i+j_i)!}$, on obtient  
+$$\eqalign{ &{n! \over (n_1+j_1)!\, (n_2+j_2)!\, (n_3+j_3)! 
+\cdots (n_m+j_m)!} \quad \simeq \cr 
+\noalign{\medskip} 
+\simeq \quad &{n! \over n_1!\, n_2!\, n_3! \cdots n_m!} \;\cdot\;   
+{\e^{- {\; j_1^2\strutb\over 2n_1} - {\; j_2^2\strutb\over 2n_2} - {\; 
+j_3^2\strutb\over 2n_3} \cdots - {\; j_m^2\strutb\over 2n_m} }\over 
+n_1^{j_1} n_2^{j_2} n_3^{j_3}\vrule height13pt width0pt \cdots  
+n_m^{j_m} } \qquad \cr } \eqno (II.8.)$$ 
+Il ne faut pas oublier que la somme des $n_i$ est toujours \'egale \`a  
+$n$ donc la somme des $j_i$ est nulle; l'exposant de l'exponentielle est  
+la somme des $j_i^2 / 2n_i$, mais les $j_i$ ne sont pas ind\'ependants. 
+\medskip 
+Pour obtenir $(II.8.)$ nous n'avons pas utilis\'e le fait que les valeurs 
+des nombres $n_1,\, n_2,\, n_3,\ldots n_m$   correspondent au 
+maximum du coefficient multin\^omial; formellement, $(II.8.)$ est  
+vrai pour {\it n'importe quelle valeur de} $n_1,\, n_2,\, n_3,\,\ldots 
+n_m$. Mais si le facteur $1 \bigl/ n_1^{j_1} n_2^{j_2} n_3^{j_3} \cdots 
+n_m^{j_m}$ n'est pas {\it stationnaire}, cette formule ne sert \`a rien, 
+car lorsque les $j_i$ varient, ce facteur peut augmenter bien plus vite 
+que la fonction $\exp (-j_i^2/2n_i)$ ne diminue, de sorte qu'il ne sert 
+plus \`a rien d'avoir mis en \'evidence ce facteur gaussien. Dire que le 
+facteur est stationnaire signifie qu'il ne varie pas (ou tr\`es peu)  
+lorsque les $j_i$ s'\'ecartent de $0$; or cela se produit pr\'ecis\'ement 
+lorsque les $n_i$ sont \'egaux: dans ce cas $n_1^{j_1} n_2^{j_2}  
+n_3^{j_3} \cdots n_m^{j_m} = n_1^{j_1+j_2+j_3+ \cdots +j_m} = n_1^0 = 
+1$. Il est \'evident que la fonction $\exp\, (-\sum_i j_i^2/2n_i)$ est 
+maximum quand les  $j_i$ sont tous nuls; mais pour que le {\it produit} 
+de $1 \bigl/ n_1^{j_1} n_2^{j_2} n_3^{j_3} \cdots n_m^{j_m}$ par $\exp\,  
+(-\sum_i  j_i^2/2n_i)$ soit maximum, il faut que $1 \bigl/ 
+n_1^{j_1} n_2^{j_2} n_3^{j_3} \cdots n_m^{j_m}$ soit maximum en 
+m\^eme temps, ou du moins qu'il reste constant. La stationnarit\'e de  
+ce facteur est donc la condition sine qua non pour que le produit soit 
+maximum. 
+ 
+\bigskip 
+ 
+{\bf II. 5.  Subdivisions.} 
+\medskip 
+La section pr\'ec\'edente traitait du nombre de r\'epartitions en 
+sous-ensembles de taille fix\'ee \`a l'avance (par la donn\'ee des  
+nombres d'oc\-cu\-pa\-tion). Mais il reste la question de conna\^\i tre 
+le nombre  de choix possibles pour les nombres d'occupation. Ceux-ci 
+v\'erifient  n\'ecessairement la relation $n_1 + n_2 + \cdots + n_m = n$. 
+{\bf Combien  y a-t-il de possibilit\'es de choisir $m$ nombres 
+v\'erifiant cette \'egalit\'e ?} On peut encore formuler la question en 
+terme de d\'eveloppement multin\^omial: nous avons vu au paragraphe 
+pr\'ec\'edent comment les {\it coefficients multin\^omiaux} 
+interviennent dans le d\'eveloppement 
+$$\sum_{n_1+n_2+ \cdots +n_m=n}  {n! \over n_1!\,  n_2! \cdots n_m!}\, 
+x_1^{n_1}\, x_2^{n_2} \cdots  x_m^{n_m} $$  
+La question que nous traitons maintenant est celle du {\it nombre de 
+termes} qu'il y a dans cette somme. On remarquera que les nombres 
+d'occupation peuvent \^etre nuls: quand on consid\`ere toutes les  
+distributions possibles de boules dans des bo\^\i tes, on inclut le cas  
+o\`u des bo\^\i tes sont enti\`erement vides; ou encore, dans le  
+d\'eveloppement multin\^omial ci-dessus, beaucoup de mon\^omes ne 
+contiennent pas toutes les $n$ variables, par exemple le mon\^ome 
+$x_1^n$. Mais on peut aussi d\'enombrer les distributions qui ne laissent 
+{\it aucune} bo\^\i te vide: nous \'etudierons \'egalement ce cas.  
+\medskip  
+Consid\'erons d'abord le cas o\`u les sous-ensembles vides sont admis.  
+On r\'esoud ce probl\`eme en le ramenant \`a un autre de la fa\c con 
+suivante. Le probl\`eme d'une distribution de $n$ objets dans $m$ 
+sous-ensembles est \'evidemment identique \`a celui d'une distribution 
+de $n$ boules dans $m$ cases. On peut repr\'esenter graphiquement une 
+telle distribution (m\^eme  si on ne peut le faire qu'abstraitement et 
+non sur du papier, comme ce serait le cas si par exemple on devait avoir 
+$m=10^{1000000}$) comme dans la figure 1 (chapitre {\bf I}). On 
+sch\'ematise alors la s\'eparation entre deux cases adjacentes par une 
+barre verticale, ce qui donne un graphique du type suivant: \vskip0mm plus3mm minus2mm
+$$\bigcirc\;\bigcirc\mid\bigcirc\mid\bigcirc\mid\bigcirc\;\bigcirc 
+\mid\bigcirc\;\bigcirc\mid\bigcirc\bigcirc\bigcirc\mid\bigcirc  
+\mid\;\mid\bigcirc\mid\bigcirc\bigcirc\bigcirc\mid\;\mid 
+\;\mid\bigcirc \mid\bigcirc$$ 
+\vskip4mm plus3mm minus2mm
+\noindent on a ici 18 boules dans 14 cases, les nombres d'occupation \'etant 2, 1,  
+1,  2, 2, 3, 1, 0, 1, 3, 0, 0, 1, 1. On peut voir que le probl\`eme, vu sous 
+cet angle, est simplement le probl\`eme de la r\'epartition de $n$ ronds 
+et $m-1$ barres sur $n + m -1$ places: \`a chaque sch\'ema de ce type 
+correspond une et une seule distribution de $n$ boules dans $m$ cases et 
+vice-versa. Si on change l'ordre des ronds (entre eux) ou celui des barres 
+(entre elles) on ne change rien au sch\'ema de sorte que le nombre de 
+sch\'emas diff\'erents est donn\'e par la section {\bf II. 3.}: il y en a 
+$(n+m-1)! / n!\, (m-1)!$  
+\medskip 
+Pour le cas o\`u les sous-ensembles vides ne sont pas admis, le sch\'ema 
+ci-dessus ne marche plus car il y a des cases vides (correspondant \`a  
+des barres non s\'epar\'ees par un rond). Ne correspondent alors \`a notre 
+probl\`eme que les sch\'emas sans barres contigu\"es. On peut 
+interpr\'eter un tel sch\'ema comme une combinaison, non plus de $\mid$  
+et de $\bigcirc$, mais de $\mid\bigcirc$ et de $\bigcirc$. Comme les 
+sch\'emas ont un rond \`a leur extr\'emit\'e gauche, qui est obligatoire  
+et  ne change donc rien au {\it nombre} de possibilit\'es, le choix ne 
+portera que sur les $n-1$ autres ronds. De plus, comme chacun des $m-1$ 
+symboles  $\mid \bigcirc$ repr\'esente une case {\it et} une boule, il 
+faudra n'ajouter que $n-m$ symboles $\bigcirc$ pour  avoir $n-1$ boules 
+en tout. De sorte  que le nombre total de signes $\mid\bigcirc$ ou 
+$\bigcirc$ \`a choisir  sera $n-1$, et par cons\'equent le nombre de 
+toutes les combinaisons sera $(n-1)! / (m-1)!\, (n-m)!$     
+\medskip 
+ 
+En fin de compte: 
+$$\eqalignno{ \vcenter{\hsize=42mm \baselineskip=0pt 
+\line{\hbox{nombre de subdivisions}\hfil} 
+\vskip-3pt 
+\line{\raise2pt\hbox{en $m$ sous-ensembles}\hfil} 
+\vskip-3pt 
+\line{\hbox{pouvant \^etre vides}\hfil} } 
+ &= {(n+m-1)! \over n!\, (m-1)!}\; ; &(II.9.)\cr 
+\noalign{\medskip} 
+\vcenter{\hsize=42mm \baselineskip=0pt 
+\line{\hbox{nombre de subdivisions}\hfil} 
+\vskip-3pt 
+\line{\raise2pt\hbox{en $m$ sous-ensembles}\hfil} 
+\vskip-3pt 
+\line{\hbox{non vides}\hfil} } 
+&= {(n-1)! \over (n-m)!\, (m-1)!}\; .  &(II.10.)\cr }$$  
+\medskip 
+{\eightpoint 
+Le nombre donn\'e en $II.9.$ est aussi le nombre de d\'eriv\'ees 
+partielles d'ordre $n$ d'une fonction de $m$ variables. Par exemple on  
+peut voir dans les tableaux suivants le nombre de d\'eriv\'ees partielles 
+d'ordre 1 \`a 5 pour des fonctions de deux, trois, quatre, et cinq 
+variables:  
+\bigskip 
+\line{\hfill 
+\vtop{\hsize=27mm 
+\centerline{fonctions de}  
+\centerline{deux variables} 
+\vskip-10pt 
+$$\matrix{ 
+\hbox{ordre}  &\hbox{nombre}  \cr 
+\noalign{\medskip} 
+1                   &2               \cr 
+2                   &3               \cr 
+3                   &4               \cr 
+4                   &5               \cr 
+5                   &6               \cr } 
+$$} 
+\hfill 
+\vtop{\hsize=27mm 
+\centerline{fonctions de}  
+\centerline{trois variables} 
+\vskip-10pt 
+$$\matrix{ 
+\hbox{ordre}  &\hbox{nombre}  \cr 
+\noalign{\smallskip} 
+1                   &3                \cr 
+2                   &6                \cr 
+3                   &10              \cr 
+4                   &15              \cr 
+5                   &21              \cr } 
+$$} 
+\hfill 
+\vtop{\hsize=29mm 
+\centerline{fonctions de}  
+\centerline{quatre variables} 
+\vskip-10pt 
+$$\matrix{ 
+\hbox{ordre}  &\hbox{nombre}  \cr 
+\noalign{\smallskip} 
+1                   &4                \cr 
+2                   &10              \cr 
+3                   &20              \cr 
+4                   &35              \cr 
+5                   &56              \cr } 
+$$} 
+\hfill 
+\vtop{\hsize=27mm 
+\centerline{fonctions de}  
+\centerline{cinq variables} 
+\vskip-10pt 
+$$\matrix{ 
+\hbox{ordre}  &\hbox{nombre}  \cr 
+\noalign{\medskip} 
+1                   &5                \cr 
+2                   &15              \cr 
+3                   &35              \cr 
+4                   &70              \cr 
+5                   &126            \cr } 
+$$} 
+\hfill } 
+ 
+}  %%% end of \eightpoint 
+  
+\medskip 
+La formule de d\'enombrement $(II.9.)$ est essentielle en physique 
+statistique.  Elle est \`a la base de la {\it statistique de Bose-Einstein}. 
+Au chapitre {\bf I} nous avions donn\'e l'exemple de trois particules de 
+Bose \`a placer dans deux \'etats quantiques (voir figure 1,  colonne de 
+droite).  Cet exemple \'etait oppos\'e \`a celui de trois boules non 
+quantiques \`a ranger dans deux bo\^\i tes (figure 1,  colonne de 
+gauche).  \`A cette occasion, nous avons insist\'e sur le fait que
+pour les boules,  les \'epreuves \'equiprobables \'etaient les huit
+distributions possibles (on consid\'erait que deux distributions qui
+diff\`erent par une permutation des boules constituent deux \'epreuves
+distinctes),  tandis que pour les particules de Bose,  les \'epreuves
+\'equiprobables \'etaient les quatre modes d'occupation possibles
+(on consid\'erait que deux distributions qui diff\`erent par une
+permutation des particules ne constituent pas deux \'epreuves distinctes).  
+\medskip 
+La formule $(II.9.)$ g\'en\'eralise cela pour $n$ particules et $m$  
+\'etats quantiques. Si on prend $n = 3$ et $m = 2$ on a bien 
+$${(n+m-1)! \over n!\, (m-1)!} = {(3+2-1)! \over 3!\, (2-1)!} = {4! \over 
+3!\, 1!} = 4$$ 
+Ainsi ${(n+m-1)! \bigl/ n!\, (m-1)!}$ est le nombre de modes  
+d'occupation de $m$ \'etats quantiques par $n$ particules de Bose. 
+\medskip 
+Le postulat de base de la statistique de Bose-Einstein est que les 
+modes d'occupation sont \'equiprobables (ils constituent les \'epreuves 
+parmi lesquelles ``le hasard choisit''). Mais il faut bien comprendre que 
+ce hasard, tout comme dans les exemples de chaos d\'eterministe que 
+nous avons analys\'es au chapitre {\bf I}, n'est pas une propri\'et\'e 
+premi\`ere de la nature,  mais r\'esulte d'un brouillage chaotique, qui  
+est l'agitation thermique.  L'agitation thermique est d'autant plus intense
+que la temp\'erature du gaz de particules est plus \'el\'ev\'ee;  elle a
+pour effet que les particules sont sans cesse d\'elog\'ees des \'etats
+quantiques qu'elles occupent par toutes sortes d'interactions;  des milliards
+de milliards de fois par seconde,  des milliards de milliards de photons ou 
+d'\'electrons se prom\`enent \`a travers l'espace pour apporter ou enlever
+de petites quantit\'es d'\'energie \`a ces particules;  ainsi ces derni\`eres
+passent sans cesse (des milliards de milliards de fois par seconde) d'un
+\'etat quantique \`a un autre:  chaque fois qu'elles absorbent un photon
+elles passent \`a un \'etat d'\'energie sup\'erieure,  chaque fois qu'elles 
+\'emettent un photon elles passent \`a un \'etat d'\'energie inf\'erieure. 
+Ce brouillage est incomparablement plus puissant que par exemple celui 
+qui r\'esulte des nombreuses r\'eflexions sur le bord de la roulette;  le 
+mod\`ele simplifi\'e  de roulette discut\'e au chapitre {\bf I} \'etait un 
+exemple choisi d\'elib\'er\'ement pour sa simplicit\'e et restait dans 
+les limites du calculable. Il n'est pas question d'en faire autant pour un 
+gaz form\'e de $10^{24}$ particules (environ le nombre d'Avogadro), 
+c'est-\`a-dire appliquer la M\'ecanique quantique {\it exacte} \`a un   
+tel syst\`eme.  Mais il est remarquable que ce brouillage produise 
+l'\'equiprobabilit\'e des modes d'occupation et non par exemple celui des 
+distributions de particules discernables.  Ceci est une loi fondamentale 
+de la Physique et ne peut se d\'eduire de consid\'erations a priori sur 
+les invariances spatio-temporelles. 
+\medskip 
+Attention!  Ce sont les modes d'occupations pour des \'etats {\it  
+d'\'energie \'egale} qui sont \'equiprobables.  Si on consid\`ere deux 
+\'etats  d'\'energie diff\'erente,  celui dont l'\'energie est plus basse a 
+plus de chances d'\^etre occup\'e. On peut comprendre cela en imaginant 
+qu'on remue un pierrier  sur une pente; bien que les pierres se mettent en 
+mouvement de mani\`ere al\'eatoire et impr\'evisible, elles ont plus de 
+chances de descendre que de monter: pour monter, il faut qu'une pierre  
+ait par exemple heurt\'e  en descendant une autre pierre plus lente, et 
+rebondi sur elle, de sorte que la quantit\'e de mouvement totale soit 
+conserv\'ee; pour que la pierre monte, il faut que l'autre pierre descende 
+plus vite. Il en va de m\^eme pour les particules: l'agitation thermique ne 
+fait que r\'epartir l'\'energie; l'\'energie totale se conserve, de sorte que 
+pour qu'une particule ``monte'' dans un \'etat de plus grande \'energie, il 
+faut qu'en compensation une ou plusieurs autres ``descendent''. On con\c 
+coit donc qu'en moyenne, il est plus difficile pour les particules de 
+monter que de descendre, et on s'attend \`a ce  que les nombres 
+d'occupation des \'etats de grande \'energie soient en moyenne plus 
+petits que les nombres d'occupation des \'etats de faible \'energie.  
+\medskip 
+S'il n'y avait aucune agitation thermique, les particules seraient toutes 
+dans l'\'etat dit fondamental, celui dont l'\'energie est la plus basse  
+(c'est ce qui se produirait si la temp\'erature devenait exactement 
+\'egale \`a $0$ degr\'e Kelvin). C'est donc uniquement l'agitation 
+thermique, c'est-\`a-dire l'\'echange incessant d'\'energie entre les 
+particules, qui permet \`a certaines de monter (au d\'etriment des 
+autres). 
+\medskip 
+Afin de d\'enombrer les diff\'erents modes d'occupation entre tous les 
+\'etats quantiques, quelle que soit leur \'energie, on d\'ecoupe les  
+valeurs possibles de l'\'energie des \'etats en petits intervalles de 
+largeur  $\delta$; ainsi $\varepsilon_0$ sera l'\'energie la plus basse;  
+on consid\'erera les valeurs discr\`etes $\varepsilon_i = \varepsilon_0 
++ i \delta$. Si $\delta$ est petit, les \'etats dont l'\'energie est 
+comprise entre $\varepsilon_i$ et $\varepsilon_{i+1}$ ont pratiquement 
+la m\^eme \'energie; soit $m_i$ leur nombre. Il est bien clair que les  
+nombres $m_i$ sont \`a peu pr\`es proportionnels \`a $\delta$: si par 
+exemple $\delta$ est doubl\'e, il y aura deux fois moins d'intervalles 
+d'\'energie, mais les nombres $m_i$ seront aussi deux fois plus grands.  
+Puisque par construction les \'etats d'un m\^eme intervalle ont \`a peu  
+pr\`es la m\^eme \'energie, les modes d'occupation des $m_i$ \'etats de  
+l'intervalle seront tous \`a peu pr\`es \'equiprobables. On serait tent\'e de 
+dire que plus $\delta$ est petit, plus cette \'equiprobabilit\'e est  exacte; 
+mais cela n'a gu\`ere de sens car le principe de l'\'equiprobabilit\'e des 
+modes d'occupations est par nature approximatif, et si $\delta$ est si 
+petit que $m_i$ devient \'egal \`a 0, 1, ou 2, le principe devient m\^eme 
+carr\'ement faux; en fait il est essentiel que $\delta$ ne soit ni trop 
+grand, ni trop petit, et $m_i$ doit \^etre un grand nombre, plut\^ot de 
+l'ordre du nombre d'Avogadro que de l'ordre de cent ou mille.   
+\medskip  
+Pour les $m_i$ \'etats quantiques d'\'energie comprise entre  
+$\varepsilon_i$ et $\varepsilon_{i+1}$, il y aura donc pour $n_i$   
+particules $(n_i + m_i -1)!  \bigl/ n_i!\, (m_i-1)!$ modes d'occupation: 
+cela veut dire que si $n_i$  particules sont distribu\'ees entre les $m_i$ 
+\'etats d'\'energie  comprise entre $\varepsilon_i$ et $\varepsilon_{i+1}$, 
+alors elles peuvent se r\'epartir selon $(n_i + m_i -1)! \bigl/ n_i!\, 
+(m_i-1)!$  modes d'occupation diff\'erents. A priori on ne peut pas 
+conna\^\i tre les  valeurs des $n_i$, mais par contre celles des $m_i$ sont 
+d\'etermin\'ees par les caract\'eristiques macroscopiques du syst\`eme. 
+Ce sont g\'en\'eralement les \'equations de la M\'ecanique {\it classique} 
+qui permettent de les d\'eterminer. En effet, les $m_i$ font partie des 
+propri\'et\'es globales du syst\`eme, qui constituent en quelque sorte 
+l'environnement de la population de particules. Par exemple, si on sait  
+que les particules sont des photons de rayonnement \`a l'int\'erieur d'une 
+cavit\'e, les \'etats qu'ils peuvent occuper sont caract\'eris\'es par les 
+fr\'equences propres de la cavit\'e: pour chacune de ces fr\'equences 
+propres, il y aura deux \'etats quantiques possibles (diff\'erant par la 
+polarisation) pour le photon. Calculer l'\'evolution du syst\`eme complexe 
+qu'est la population de photons par la M\'ecanique quantique exacte est 
+d'une complexit\'e inou\"\i e, mais calculer les fr\'equences propres de  
+la cavit\'e est assez facile car la forme g\'eom\'etrique de la cavit\'e  
+ne subit pas le brouillage thermique; on effectuera donc des calculs 
+classiques d\'etaill\'es pour la cavit\'e, mais on appliquera les lois du 
+hasard \`a  la population de photons. Cette fa\c con d'aborder les 
+syst\`emes form\'es d'un tr\`es grand nombre de particules ou de 
+mol\'ecules constitue la  {\it Physique statistique}. Afin d'en donner une 
+id\'ee plus pr\'ecise, le mieux est de traiter en d\'etail un exemple  
+concret, qui est aussi une application directe de ce que nous venons de  
+voir concernant la statistique de Bose-Einstein: la loi de Planck. 
+ 
+\bigskip
+ 
+{\bf II. 6.  Une introduction \`a la physique statistique: la loi de Planck  
+et le rayonnement du corps noir.}
+\medskip
+Le probl\`eme du {\it corps noir} est un des grands probl\`emes  
+historiques de la Physique, car il est \`a l'origine de la M\'ecanique 
+quantique (Max Planck, {\oldstyle1900}). Concr\`etement, un corps noir  
+est par exemple une cavit\'e \`a l'int\'erieur d'un corps opaque, qui est 
+chaud \`a l'int\'erieur mais thermiquement isol\'e \`a l'ext\'erieur: dans  
+la cavit\'e il y a un rayonnement d\^u \`a l'\'emission thermique par le 
+corps; plus le corps est chaud, plus nombreux sont les photons de haute 
+fr\'equence (le corps peut avoir \'et\'e chauff\'e ``au rouge'', ou ``\`a 
+blanc''). Planck a d'abord trouv\'e la loi qui porte son nom en interpolant 
+entre la loi de Rayleigh-Jeans (qui \'etait correcte pour les faibles 
+fr\'equences) et la loi de Wien (correcte pour les hautes fr\'equences), 
+et non par le raisonnement probabiliste que nous pr\'esentons ici, 
+puisque les photons et la statistique de Bose-Einstein n'\'etaient 
+\'evidemment pas encore connus. Voir \`a ce sujet {\bf XII.5.}  
+Planck  a cherch\'e ensuite une explication statistique, 
+mais c'est Einstein qui, en {\oldstyle 1905}, a eu l'id\'ee de 
+consid\'erer des {\it quanta de lumi\`ere} pour expliquer la  
+loi de Planck ({\sl Annalen der Physik}, vol {\bf 17}, 
+1905, pages 132 -- 148). Toutefois, dans cette publication de 1905,  
+rien n'est dit sur l'aspect probabiliste. C'est Satyandranath Bose qui a 
+propos\'e un fondement statistique ({\sl Zeitschrift f\"ur Physik}, 
+vol {\bf 26}, 1924, pages 178 -- 181): 
+\smallskip 
+{\cit Supposons que le rayonnement soit enferm\'e dans un 
+volume $V$ et que son \'energie totale soit $E$. Il existe diff\'erentes 
+sortes de quanta en nombre $N_s$ et d'\'energie $h \nu_s$, o\`u $s$ 
+va de $s=0$ \`a $s=\infty$ (\dots ) Si nous pouvions exprimer la  
+probabilit\'e de chacune des distributions caract\'eris\'ees par un  
+nombre $N_s$ arbitraire, alors la solution sera obtenue en prenant le 
+crit\`ere de rendre cette probabilit\'e maximale. \par } 
+\medskip 
+Cette probabilit\'e est alors cherch\'ee par le raisonnement suivant: 
+\smallskip 
+{\cit Soit $N_s$ le nombre de quanta appartenant au domaine de 
+fr\'equences $d\nu_s$. De combien de mani\`eres peut-on les distribuer 
+entre les cellules appartenant \`a $d\nu_s$? Soit $p_{0,s}$ le nombre 
+de cellules vides, $p_{1,s}$ le nombre de celles contenant un quantum, 
+$p_{2,s}$ le nombre de celles en contenant deux, etc. Le nombre de 
+distributions possibles est alors 
+$${A_s \over p_{0,s}!\, p_{1,s}!\, \ldots }$$ 
+o\`u $A_s = (8\pi\nu^2/c^3)\, d\nu_s$, et o\`u $N_s = 0 \cdot p_{0,s} +  
+1 \cdot p_{1,s} + 2 \cdot p_{2,s} + \cdots$ est le nombre de quanta  
+appartenant \`a la cellule $d\nu_s$. \par } 
+\medskip 
+On voit donc que le raisonnement suivi par Bose est celui d'une 
+distribution de boules entre des cellules, mais dans son approche les 
+nombres $p_{j,s}$ ne sont pas les nombres d'occupation, qui sont les 
+$N_s$. 
+\medskip
+En {\oldstyle 1900}, quoique ne poss\'edant pas le concept quantique de
+``mode d'occupation'', Planck a postul\'e que pour chaque fr\'equence le
+rayonnement se  distribuait par unit\'es discr\`etes entre des
+``r\'esonateurs'' hypoth\'etiques, et a suivi, pour calculer l'entropie 
+de ces r\'esonateurs, un raisonnement  finalement assez proche de celui 
+que nous pr\'esentons ici. On pourra consulter l'article original  
+{\it  \"Uber das Gesetz der Energieverteilung im Normalspectrum.}  
+Annalen  der Physik, vol {\bf 4}, {\oldstyle 1901},  pages 553 -- 563).
+Pour une traduction fran\c caise, voir la bibliographie. 
+\medskip 
+Si au lieu de consid\'erer uniquement des \'etats de m\^eme \'energie,  
+ou d'\'energie voisine, on consid\`ere l'ensemble de {\it tous} les 
+\'etats quelle  que soit leur \'energie, le nombre total de modes 
+d'occupations sera  bien  s\^ur le produit 
+$$N = \prod_{i} {(n_i + m_i -1)! \over n_i!\, (m_i-1)!} \eqno (II.11)$$ 
+Comme les nombres $m_i$ et $n_i$ sont tr\`es grands, on ne peut  
+gu\`ere  tirer de conclusions de ces grosses factorielles, et c'est 
+pourquoi nous allons, comme pour les autres formules de 
+d\'enombrement, trouver une  expression approch\'ee. Le proc\'ed\'e 
+pour cela est toujours le m\^eme: d'abord trouver le maximum, et autour 
+du maximum les factorielles peuvent \^etre approch\'ees par une 
+fonction de la forme $\exp(-x^2)$. 
+\medskip 
+Les $m_i$ \'etant d\'etermin\'es, consid\'erons une perturbation $n_i +  
+j_i$ des nombres  $n_i$. Le nombre $N$ sera alors chang\'e en  
+$$N' = \prod_{i} {(n_i+j_i + m_i -1)! \over (n_i+j_i)!\, (m_i-1)!}$$ 
+Pour comparer $N'$ \`a $N$ on examinera $N'/N$.  
+Or pour $j_i > 0$ on peut \'ecrire  
+$$\eqalignno{ 
+&{(n_i+j_i + m_i -1)! \over (n_i+j_i)!} \biggl/ 
+{(n_i+ m_i -1)! \over n_i!} \quad = \cr 
+\noalign{\medskip} 
+=\quad &{(n_i + m_i)(n_i + m_i+1) \cdots  
+(n_i + m_i+j_i-1) \over (n_i+1)(n_i+2)\cdots (n_i+j_i)} \cr 
+\noalign{\medskip} 
+=\quad &\Bigl[ {n_i + m_i \over n_i}\Bigr]^{j_i} \cdot {\Bigl(1 +  
+{1\strutc \over n_i + m_i}\Bigr) \Bigl(1 + {2\strutc\over n_i + 
+m_i}\Bigr) \cdots \Bigl(1 + {j_i-1\strutc\over n_i + m_i}\Bigr)  
+\strup{8} \over \sdown{13}\Bigl(1 + {1\strutc 
+\over n_i}\Bigr) \Bigl(1 + {2\strutc\over n_i}\Bigr) \cdots 
+\Bigl(1 + {j_i\strutc\over n_i}\Bigr)} \cr 
+\noalign{\medskip} 
+\simeq\quad &\Bigl[ {n_i + m_i \over n_i}\Bigr]^{j_i} \exp\biggl[ {\;  
+j_i^2 \over 2(n_i +m_i)} - {\; j_i^2 \over 2n_i}\biggr] \cr 
+\noalign{\medskip} 
+=\quad &\Bigl[ {n_i + m_i \over n_i}\Bigr]^{j_i} \exp\biggl[ -{ m_i \; 
+j_i^2 \over 2 n_i (n_i + m_i)}\biggr] 
+\cr }$$ 
+Pour $j_i < 0$, quoique le calcul soit l\'eg\`erement diff\'erent, on  
+obtient  la m\^eme expression analytique pour l'approximation. En 
+regroupant tout dans le produit: 
+$$N' = N\; \prod_i\Bigl[ 1 + {m_i \over n_i}\Bigr]^{j_i}\; \exp\Bigl[ 
+-\sum_i { m_i\; j_i^2\strutc \over 2 n_i (n_i + m_i)}\Bigr]$$ 
+Comme nous avons vu au paragraphe pr\'ec\'edent pour les coefficients 
+multin\^omiaux, on peut alors dire que la condition pour que $N$ soit 
+maximum est que le facteur  
+$$\prod_i\Bigl[ 1 + {m_i \over n_i}\Bigr]^{j_i}$$ 
+soit stationnaire lorsque les $j_i$ s'\'ecartent de $0$. Il est clair que  
+ce facteur {\it ne peut pas} rester stationnaire si les $j_i$ sont tous 
+ind\'ependants les uns des autres (il faudrait pour cela que les $m_i$ 
+soient tous nuls).  Dans le cas des coefficients multin\^omiaux, pour 
+obtenir $(II.7.)$, nous avions utilis\'e le fait que  la somme des $j_i$ 
+\'etait nulle. Cette condition exprime que le nombre total de particules 
+ne varie pas. Mais une autre condition est possible: que l'\'energie  
+totale ne varie pas; ou m\^eme les deux \`a la fois. Le maximum ne sera 
+pas le m\^eme selon la contrainte qui lie les $j_i$ entre eux, et par 
+cons\'equent on n'obtient pas la m\^eme statistique. Par exemple s'il 
+s'agit d'un gaz de photons (rayonnement  de corps noir) 
+l'\'energie totale du rayonnement se conserve (c'est justement pour cela 
+qu'il est dit ``noir''),  mais pas le nombre de photons, car pour maintenir 
+l'\'equilibre thermique avec le corps noir  il faut constamment que 
+celui-ci absorbe ou \'emette des photons.  Si par contre il ne s'agit  
+pas de rayonnement, mais d'helium liquide, les particules de Bose 
+consid\'er\'ees sont alors des noyaux d'$H\! e\, 4$, dont le nombre  
+total doit se conserver. Ici c'est le cas du rayonnement qui nous 
+int\'eresse, c'est-\`a-dire le gaz de photons,  o\`u c'est l'\'energie totale 
+et non le nombre de particules qui se conserve. Alors la contrainte sur 
+les $j_i$  est $\sum_i  \varepsilon_i j_i = 0$; on peut donc exprimer l'un 
+quelconque des $j_i$ en fonction des autres: par exemple   
+$$j_a = -{1 \over \varepsilon_a} \sum_{i \neq a} \varepsilon_i j_i $$  
+En rempla\c cant $j_a$ par cette expression dans le facteur qui doit  
+rester stationnaire, on obtient  
+$$\eqalignno{ 
+\prod_i\Bigl[ 1 + {m_i \over\ldown{n_i}}\Bigr]^{j_i}\; &=  
+\quad\Bigl[ 1 + {m_a \over\ldown{n_a}}\Bigr]^{j_a} \cdot  
+\prod_{i \neq a}\Bigl[ 1 + {m_i \over\ldown{n_i}}\Bigr]^{j_i} \cr 
+\noalign{\bigskip} 
+&= \quad\Bigl[ 1 + {m_a \over\ldown{n_a}}\Bigr]^{-{1\over 
+\varepsilon_a} \sum_{i\neq a}j_i\varepsilon_i} \cdot\prod_{i \neq 
+a}\Bigl[ 1 + {m_i \over\ldown{n_i}}\Bigr]^{j_i}\cr 
+\noalign{\medskip} 
+&= \quad\prod_{i \neq a}\left[ {1 + {m_i \vrule depth3pt width0pt 
+\over n_i} \vrule depth10pt width0pt 
+\over \Bigl(1 + {m_a \vrule depth3pt width0pt\over n_a} 
+\Bigr)^{\varepsilon_i \vrule height4pt depth3pt width0pt\over 
+\varepsilon_a} }\right]^{j_i}\cr } $$ 
+Cette fois les $j_i$ (pour $i \neq a$) sont ind\'ependants, donc la 
+condition pour que ce produit soit stationnaire est que chacun des 
+facteurs soit \'egal \`a 1, soit 
+$$1 + {m_i \over\ldown{n_i}} = \Bigl(1 + {m_a \over\ldown{ 
+n_a}}\Bigr)^{\varepsilon_i\strutc \over \varepsilon_a}$$ 
+Cette \'egalit\'e devant \^etre v\'erifi\'ee pour $i$ et $a$ arbitraires,  
+on peut donc dire que  
+$$K = \Bigl(1 + {m_i \over\ldown{n_i}}\Bigr)^{1 \over \varepsilon_i} 
+\eqno (II.12.)$$ 
+est ind\'ependant de $i$; c'est-\`a-dire qu'il existe une constante $K$ 
+telle que 
+$$1 + {m_i \over\ldown{n_i}} = K^{\varepsilon_i}$$ 
+et par cons\'equent 
+$$n_i = {m_i \over K^{\varepsilon_i} - 1} \eqno (II.13.)$$ 
+Pour les photons, les \'etats quantiques qu'ils peuvent occuper sont 
+carac\-t\'e\-ris\'es par la fr\'equence $\nu$; l'\'energie d'un photon de 
+fr\'equence $\nu_i$ est $\varepsilon_i = h\nu_i$, $h$ \'etant la constante  
+de Planck. Le nombre $m_i$ est alors le nombre de fr\'equences propres  
+de rayonnement  (dans la cavit\'e) comprises entre $\nu_i$ et $\nu_{i+1}  
+= \nu_i + \delta /h$ (en fait le double car pour chaque fr\'equence propre  
+il y a deux \'etats de polarisation). La condition de {\it maximum} pour le 
+nombre total $N$ de modes d'occupation est donc  que les $n_i$ soient  
+tous \'egaux \`a  $m_i \bigl/ (K^{\varepsilon_i} - 1)$.   
+\medskip 
+Autour de leurs valeurs optimales correspondant au maximum, les  
+$n_i$ peuvent varier: cela aura pour effet de diminuer la valeur de $N$; 
+la diminution de $N$ par rapport \`a sa valeur maximum 
+$N_{\hbox{\sevenrm max}}$ est alors donn\'ee par le facteur gaussien 
+$$N = N_{\hbox{\sevenrm max}}\;\exp\Bigl[ -\sum_i { m_i\; j_i^2 
+\strutc \over 2 n_i (n_i + m_i)}\Bigr]$$ 
+Ce facteur gaussien devient infinit\'esimal lorsque l'exposant d\'epasse  
+environ $10$ (en valeur absolue); cela se produit lorsque les $j_i$ sont 
+en moyenne sup\'erieurs \`a plusieurs fois la quantit\'e $\sqrt{n_i\, 
+(1+(n_i/m_i)}$.  En principe les nombres $m_i$ et $n_i$ sont tous les 
+deux grands, mais du m\^eme ordre (de l'ordre du nombre d'Avogadro, 
+$\sim 10^{24}$); on peut donc consid\'erer que $N$ reste proche de sa 
+valeur maximum tant que les fluctuations $j_i$ des $n_i$ sont de 
+l'ordre de $\sqrt{n_i} \sim 10^{12}$; au del\`a, $N$ devient tr\`es vite 
+infiniment plus petit que sa valeur maximum. Les modes d'occupation 
+pour lesquels les nombres d'occupation $n_i$ diff\`erent de la valeur 
+optimale $m_i \bigl/  (K^{\varepsilon_i} - 1)$ de plus que quatre ou  
+cinq fois leur racine  carr\'ee sont donc extr\^emement peu nombreux. 
+\medskip 
+Or, le hasard pur ``choisit'' parmi les modes d'occupation, qui sont tous 
+\'equi\-pro\-bables. Nous venons de voir que pour la quasi totalit\'e 
+de ces modes d'occupation, les nombres $n_i$ sont, \`a $j_i 
+\sim \sqrt{n_i}$ pr\`es, \'egaux \`a $m_i \bigl/ (K^{\varepsilon_i} - 
+1)$, tandis que les $n_i$ ne s'\'ecartent de cette valeur optimale que 
+pour un nombre incomparablement plus petit de modes d'occupation.  
+Par cons\'equent le choix du hasard pur sera presque s\^urement un  
+mode d'occupation pour lequel les $n_i$ seront \`a peu pr\`es \'egaux  
+\`a $m_i \bigl/ (K^{\varepsilon_i} - 1)$. La cause de cela n'est pas que  
+le hasard ``pr\'ef\`ere'' les modes d'occupations pour lesquels 
+$n_i \simeq m_i \bigl/ (K^{\varepsilon_i} - 1)$, mais tout simplement  
+que ces modes d'occupation sont de tr\`es loin les plus nombreux. 
+\medskip   
+M\^eme s'il arrivait que {\it par hasard} un mode d'occupation rare se 
+produise, il ne durerait qu'un temps infinit\'esimal ($10^{-12}$ seconde 
+ou m\^eme bien moins), car l'agitation thermique a pour effet de 
+d\'eloger sans cesse les particules de l'\'etat qu'elles occupent, de 
+sorte que les modes d'occupation changent sans cesse; il est donc 
+logique que ceux qui constituent l'immense majorit\'e soient presque 
+toujours en place.  
+\medskip 
+Le myst\'erieux param\`etre $K$ qui appara\^\i t dans $II.12$ et $II.13$ 
+doit \^etre li\'e \`a la temp\'erature absolue $T$ du corps noir. En effet,  
+si la temp\'erature est grande, les  hautes fr\'equences doivent \^etre 
+occup\'ees par davantage de  photons, et si elle est nulle, seule la 
+fr\'equence 0 doit \^etre  occup\'ee. Autrement dit, pour $\varepsilon_i > 
+0$ le d\'enominateur $K^{\varepsilon_i} - 1$ doit devenir infini lorsque  
+la temp\'erature est nulle afin que $n_i$ soit nul, donc $K$ doit \^etre 
+infini pour $T=0$. Inversement, le d\'enominateur doit \^etre de plus en 
+plus petit pour les grandes valeurs de $T$, afin que le $n_i$ 
+correspondant soit grand,  donc $K$ doit tendre vers 1 quand la 
+temp\'erature $T$ tend  vers l'infini.  Dans l'article cit\'e, Planck a  
+obtenu une expression pr\'ecise de ce param\`etre $K$ en comparant  
+$II.13.$ \`a la loi de Wien, qui \'etait connue et v\'erifi\'ee par  
+l'exp\'erience pour le rayonnement ultra-violet. Celle-ci comportait un  
+facteur $\exp (-\alpha\nu_i / T)$, dans lequel $\nu$ est la fr\'equence  
+du rayonnement (pour nous, les photons), $T$ la temp\'erature absolue en 
+Kelvin, et $\alpha$ une constante empirique.  
+\medskip 
+Cette loi de Wien n'\'etait valable que pour les grandes fr\'equences.  
+Compar\'ee \`a celle de Planck, elle 
+correspond au cas o\`u on peut n\'egliger le terme $-1$ dans le 
+d\'enominateur de $II.13$. Planck soup\c connait que la loi de Wien devait 
+\^etre une version asymptotique de la v\'eritable loi qu'il \'etait en train 
+de chercher; les raisonnements probabilistes de la Physique statistique 
+laissent les param\`etres tels  que les nombres $m_i$ ind\'etermin\'es, 
+car on ne  peut pas mesurer directement leur valeur. Il fallait donc 
+rattacher la loi obtenue $II.13$  \`a des grandeurs mesurables 
+exp\'erimentalement, or justement la loi de Wien, quoique obtenue au 
+d\'epart par des arguments th\'eoriques, \'etait une loi empirique: \'etant 
+de forme exponentielle, il suffisait de reporter sur une \'echelle 
+logarithmique les valeurs  mesur\'ees de l'intensit\'e du rayonnement dans 
+chaque intervalle de fr\'equence, qui se r\'epartissaient alors le long d'une 
+droite.  Partant donc de cette id\'ee que le facteur $1 / (K^\varepsilon - 
+1)$ dans $II.13$ doit \^etre asymptotiquement \'equivalent au facteur 
+$\exp (-\alpha\nu / T)$ de la loi de Wien, on obtient  
+$$K^{-\varepsilon_i} = e^{-{\alpha\nu 
+\over T}}$$  
+Pour que l'identification ait un sens physique, il faut que 
+l'argument  dans l'exponentielle soit sans dimension; or  $\varepsilon_i$ 
+ayant la dimension d'une \'energie, Planck a choisi de prendre $K = \exp (1 
+/ kT)$  et $\varepsilon_i = k\alpha\nu_i$ o\`u $k$  est la constante de 
+Boltzmann ($\simeq 1.38 \cdot 10^{-16}\;  \hbox{\eightrm 
+erg}/\hbox{\eightrm deg}$). C'est la constante $h = k\alpha \simeq 6.55 
+\cdot 10^{-27}\; \hbox{\eightrm erg} \cdot \hbox{\eightrm sec}$ qui a  
+pris le nom  de  {\it constante  de Planck}, et la relation $\varepsilon_i = 
+h\nu_i$, d\'eduite par identification \`a la loi empirique de Wien, est \`a 
+l'origine de la M\'ecanique quantique.  
+\medskip 
+En conclusion, pour un rayonnement {\it de corps noir}, c'est-\`a-dire  
+un rayonnement emprisonn\'e dans une cavit\'e et en \'equilibre  
+thermique avec la mati\`ere formant les parois de la cavit\'e, le  
+nombre $n_i$  de photons dont la fr\'equence est comprise entre 
+$\nu_i$ et $\nu_{i+1}$ est \'egal \`a  
+$${m_i \over \vrule height15pt width0pt \e^{{h\nu_i\vrule depth2.2pt width0pt 
+\over \vrule height4.5pt width0pt kT}} - 1}$$ 
+o\`u $T$ est la temp\'erature qui r\`egne dans la cavit\'e et $h$ la 
+constante de Planck. L'\'etude purement \'electromagn\'etique des 
+fr\'equences propres de la cavit\'e montre que le nombre d'\'etats $m_i$ 
+correspondant \`a un intervalle  de fr\'equences $[\nu_i,  \nu_{i+1}[$ de 
+largeur $\eta = \delta  / h$ est proportionnel \`a  $\nu_i^2 \eta$ \ftn 
+1{voir {\it Quantique} par Levy-Leblond et Balibar, page 453.}; de plus,  
+un photon  de fr\'equence $\nu$ porte une \'energie $h\nu$; on aboutit 
+ainsi \`a la {\it loi de Planck}: l'intensit\'e (l'\'energie) de la part de 
+rayonnement dont la fr\'equence est comprise entre $\nu_i$ et 
+$\nu_{i+1}$ est proportionnelle \`a    
+$${h\nu_i^3\eta \over \vrule height15pt width0pt \e^{{h\nu_i \vrule 
+depth2.2pt width0pt \over\vrule height4.5pt width0pt kT}} - 1}  
+\eqno (II.14.)$$
+Il faut bien comprendre que cette loi est due {\it uniquement} 
+\`a l'action du hasard qui choisit, des milliards de milliards de fois par  
+seconde,  des modes d'occupation parmi l'ensemble de tous les modes  
+d'occupation possibles, sans en favoriser aucun. La loi de Planck est 
+v\'erifi\'ee, non parce que les photons lui ``ob\'eissent'', mais parce 
+que les photons n'ob\'eissent \`a rien.
+
+
+
+
+\bye 

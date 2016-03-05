@@ -1,0 +1,1030 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Variables al\'eatoires}
+
+\pageno=130
+
+\newdimen\blocksize  \blocksize=\vsize \advance\blocksize by -8pt
+\def\struta{\vrule depth1.8pt width0pt}
+\def\strutb{\vrule height7.5pt width0pt}
+\def\ata{\hskip-2.5pt}
+\def\aub{\hskip1pt}
+
+\null\vskip10mm plus5mm minus4mm
+
+\centerline{\tit VI.  VARIABLES AL\'EATOIRES.}
+
+\vskip10mm plus3mm minus2mm
+
+{\bf VI.\aub 1. Le concept de variable al\'eatoire.}
+\medskip
+Dans les livres sur le Calcul des probabilit\'es, on d\'efinit usuellement 
+une variable al\'eatoire en disant que c'est une application d\'efinie sur
+l'espace $\Omega$ des \'epreuves, et \`a valeurs r\'eelles.
+\medskip
+Ceci est une d\'efinition math\'ematique; l'id\'ee sous-jacente est celle 
+d'une grandeur qui prend des valeurs ``au hasard''. Voyons cela sur des
+exemples. Imaginons une exp\'erience de physique avec un d\'etecteur, 
+par exemple on veut d\'etecter les impacts d'\'electrons sur un \'ecran
+fluorescent. La position de l'\'electron sur l'\'ecran est impr\'evisible 
+(peu importe que ce soit pour des raisons quantiques ou thermiques ou
+autres). On peut rep\'erer cette position par deux coordonn\'ees $x$ et
+$y$. Mais ni $x$, ni $y$, n'ont une valeur d\'etermin\'ee. Elles peuvent
+prendre n'importe quelle valeur (entre les limites de l'\'ecran), et d'un
+impact \`a l'autre ces valeurs varient au hasard: elles sont variables et
+al\'eatoires. C'est pourquoi on dit que $x$ et $y$ sont des {\it variables
+al\'eatoires}. Il s'agit maintenant de comprendre le rapport entre cette
+id\'ee et la d\'efinition math\'ematique. 
+\medskip
+Au chapitre $I$ nous avons vu que la structure de l'espace des \'epreuves
+$\Omega$ contenait implicitement  toute l'information sur la mani\`ere 
+dont intervient le hasard pur dans le probl\`eme consid\'er\'e. On parvient
+en quelque sorte au {\it hasard pur} lorsqu'on a identifi\'e le niveau 
+auquel se situent les choix \'equiprobables (nous avions insist\'e alors
+sur l'analogie entre le hasard {\it pur} et les rep\`eres galil\'eens). Ainsi,
+dans l'exemple des trois boules qui remplissent deux cases (figure 1), on
+a vu qu'il y a  huit distributions diff\'erentes, dont l'\'equiprobabilit\'e
+refl\`ete les sym\'etries spatio-temporelles: chaque boule a une chance 
+sur deux exactement de choisir l'une ou l'autre case (sym\'etrie spatiale)
+et l'exp\'erience avec une boule est rigoureusement reproductible
+(invariance temporelle), de sorte que la deuxi\`eme ou la troisi\`eme
+boule n'est pas influenc\'ee par ce qui est arriv\'e aux pr\'ec\'edentes. Si
+les deux cases ont la m\^eme probabilit\'e $1 \over 2$ d'\^etre choisies,
+on consid\`ere que c'est le hasard pur qui a pr\'esid\'e (si l'on peut dire)
+au choix; si l'une des deux cases avait plus de chances que l'autre, on
+penserait qu'une cause, peut-\^etre inconnue, modifie les choix purs du
+hasard. Comme nous l'avons vu \`a la fin du chapitre {\bf I}, quand il y a
+\'equiprobabilit\'e quelque  part, la qu\^ete d'une cause s'arr\^ete, car on
+a alors atteint en quelque sorte le niveau de connaissance maximale sur 
+la partie compr\'ehensible du ph\'enom\`ene. Cela est tout
+particuli\`erement convaincant dans le cas des quantons\ftn
+1{particules soumises \`a la M\'ecanique quantique; cf. l'ouvrage de J. M.
+LEVY-LEBLOND et F. BALIBAR, {\it Quantique, rudiments}.}: la propri\'et\'e
+de non-s\'eparabilit\'e quantique fait que pour des bosons par exemple il
+n'y a pas huit distributions,  mais quatre modes d'occupation
+\'equiprobables. Une cons\'equence de cela est que (si on lance les
+particules l'une apr\`es l'autre) le deuxi\`eme boson a une probabilit\'e
+$2 \over 3$ d'aller dans l'\'etat d\'ej\`a occup\'e par le premier et  une
+probabilit\'e $1 \over 3$ d'aller dans l'\'etat encore vide. On dit alors
+qu'il y a une cause qui influence le second boson afin qu'il pr\'ef\`ere
+aller dans l'\'etat d\'ej\`a occup\'e et on donne des noms \`a cette cause:
+non-s\'eparabilit\'e, condensation de Bose, etc. Mais cela signifie
+simplement que le hasard pur n'intervient pas au niveau du choix,
+s\'epar\'e pour chaque quanton, de l'\'etat qu'il va occuper. Si on veut
+chercher \`a quel niveau intervient le hasard pur, il faut chercher ce qui
+est \'equiprobable et on trouve que ce sont les modes d'occupation (figure
+1, colonne de droite). 
+\medskip  
+Dans l'exp\'erience avec un d\'etecteur, nous mesurons les coordonn\'ees
+$x$ et $y$ des impacts d'\'electrons sur un \'ecran; si nous constatons 
+une certaine r\'epartition, qui favorise certains points et en d\'efavorise
+d'autres (par exemple si les impacts s'accumulent le long de certaines
+lignes et forment ainsi une figure d'interf\'erence), nous dirons que le
+hasard pur n'agit pas directement au niveau du choix du point sur
+l'\'ecran, et qu'il y a une cause qui favorise les cr\^etes des franges
+d'interf\'erence. L'espace $\Omega$ devra \^etre recherch\'e ``en amont''.
+Par contre si les impacts se r\'epartissent uniform\'ement sur l'\'ecran,
+on pourra prendre pour $\Omega$ l'ensemble des pixels de l'\'ecran. Dans
+le cas o\`u $\Omega$ devra \^etre  recherch\'e en amont, chaque
+\'el\'ement de $\Omega$ devra \'evidemment correspondre \`a un
+r\'esultat possible; autrement dit, \`a {\it chaque} \'epreuve $\omega$,
+\'el\'ement de $\Omega$, doit correspondre un impact {\it d\'etermin\'e}
+sur l'\'ecran. Ici, attention! Le mot {\it d\'etermin\'e} ne doit  pas \^etre
+compris comme signifiant qu'il y a du d\'eterminisme. Pour chaque
+\'electron, il y a un choix {\it non d\'eterministe}, en ce sens que s'il y a
+eu un d\'eterminisme quelconque dans ce choix, il a \'et\'e effac\'e
+par un brouillage; mais le choix ``par le pur hasard'' ne se situe pas au
+niveau de la position sur l'\'ecran, puisqu'il n'y a pas \'equiprobabilit\'e
+\`a ce niveau, et que donc l'action du hasard est m\'elang\'ee avec celle
+d'une cause qui favorise les cr\^etes de franges. L'action du pur hasard se
+situe ``en amont'', \`a un niveau o\`u il y a une \'equiprobabilit\'e des
+choix, un niveau qu'il s'agit de d\'ecouvrir et qui sera celui de l'espace
+des \'epreuves $\Omega$. Alors, pour chaque choix non-d\'eterministe
+fait par le hasard {\it \`a ce niveau}, il correspondra un impact {\it
+d\'etermin\'e} sur l'\'ecran, de coordonn\'ees $x$ et $y$. Ainsi, $x$ et $y$
+sont des fonctions de ce choix.   
+\medskip  
+D'o\`u la d\'efinition math\'ematique ``une variable al\'eatoire est une 
+fonction d\'efinie sur l'espace des \'epreuves, \`a valeurs r\'eelles''. Cela
+signifie tout simplement qu'\`a chaque choix \'equiprobable $\omega$ 
+(une \'epreuve, un \'el\'ement de $\Omega$), la fonction fait correspondre
+un nombre (par exemple la coordonn\'ee de l'impact sur l'\'ecran. Le 
+hasard pur choisit aveugl\'ement, au  niveau o\`u il intervient, une
+\'epreuve parmi toutes les \'epreuves \'equiprobables possibles, sans en
+favoriser aucune, et on observe une valeur num\'erique $x$, qui est  un
+effet de ce choix, mais qui n'a aucune raison d'\^etre r\'epartie
+uniform\'ement sur l'ensemble des valeurs possibles. C'est cette valeur
+num\'erique qui constitue la variable al\'eatoire. 
+
+\bigskip
+
+{\bf VI.\aub 2. \vtop{\hsize=9cm  
+\hbox{La loi d'une variable al\'eatoire. Esp\'erance, variance.} 
+\hbox{Fonction g\'en\'eratrice. Fonction caract\'eristique.} } }  
+\medskip
+On peut donc r\'esumer ce qui pr\'ec\`ede de la fa\c{c}on suivante: une 
+variable al\'eatoire prend une valeur num\'erique d\'etermin\'ee pour
+chaque \'epreuve $\omega$ (en langage math\'ematique: c'est une 
+fonction de $\Omega$ dans \R ). Ce n'est pas la valeur num\'erique prise
+par la variable al\'eatoire qui est ``choisie au hasard'', mais l'\'epreuve
+$\omega$;  le choix de $\omega$ parmi toutes les \'epreuves
+\'equiprobables d\'etermine alors la valeur que prendra la variable
+al\'eatoire. Il est clair que les valeurs num\'eriques prises par la 
+variable al\'eatoire ne sont pas, sauf exception, \'equiprobables. Par
+cons\'equent chacune des valeurs num\'eriques possibles a une certaine
+probabilit\'e.  On appelle alors la donn\'ee de ces probabilit\'es la {\bf 
+loi de la variable al\'eatoire}. En termes plus math\'ematiques: 
+\medskip
+{\narrower Soit $X$ une variable al\'eatoire. L'ensemble $X(\Omega )$ 
+de toutes les valeurs prises par $X$ est n\'ecessairement fini (et de
+cardinal au plus \'egal \`a celui de $\Omega$), appelons $x_1, \, x_2, \,
+x_3, \ldots x_N$ ses \'el\'ements. Pour chaque $x_k$ soit $A_k$
+l'ensemble des  \'epreuves $\omega$ telles que $X(\omega ) = x_k$ ($A_k
+= \{ \omega  \mid X(\omega ) = x_k \}$). $A_k$ est donc un \'ev\'enement
+qu'on peut d\'esigner dans le langage imag\'e par ``la variable al\'eatoire
+$X$ prend  la valeur $x_k$''. Chaque $A_k$ a une probabilit\'e $p_k = \#
+A_k / \#\Omega$. La loi de $X$ est la donn\'ee des $x_k$ et des $p_k$:
+on la notera $\{ x_k\,  ,\, (p_k)\}$.}
+\medskip 
+{\bf Exemple a.}\hskip5pt Des cordes \'etant distribu\'ees au hasard sur 
+un cercle  de rayon $R$ (selon l'un des trois proc\'ed\'es que nous avons
+vu au chapitre $I$), la  {\it longueur}  d'une corde est une variable
+al\'eatoire. Appelons-la  $\ell$; l'\'ev\'enement $A$ dont nous avions
+calcul\'e la probabilit\'e au chapitre $I$ \'etait ``$\ell > R\sqrt{3}$''.  
+Une
+autre variable al\'eatoire est $d$, la distance au centre du cercle.
+L'\'ev\'enement $A$ est aussi ``$d < {1 \over 2}R$''. Pour fixer les id\'ees,
+mettons que les cordes sont distribu\'ees selon le cas 2 (cf. figure 2), et
+que leur distribution est discr\'etis\'ee en 360 degr\'es d'angle pour
+rep\'erer (\`a 1 degr\'e pr\`es, donc) la direction de la corde, et que le
+rayon $R = 1\, m.$ est divis\'e en $100\, cm$ (ainsi $\#\Omega = 36000$).
+Alors la variable al\'eatoire $d$ prend les valeurs num\'eriques (en
+$cm.$): $x_0 = 0, \,  x_1 = 1, \, x_2 = 2, \, x_3 = 3, \ldots  x_{100} =
+100$, avec les probabilit\'es $p_0 = 0.01, \, p_1 = 0.01, \, p_2 = 0.01, \,
+p_3 = 0.01, \ldots p_{99} = 0.01$ (elles sont toutes \'egales, on peut dire
+que la loi est {\it uniforme}).  
+\smallskip
+Si on s'int\'eresse \`a la variable $\ell$, on discr\'etisera les valeurs 
+prises par la longueur. Celle-ci variant entre $0\, cm$ et $200\, cm$, il 
+est naturel de discr\'etiser en $cm.$ On trouve alors que la probabilit\'e
+pour que  $\ell = k\, cm.$ (ou de fa\c{c}on plus pr\'ecise  $k\, cm. \leq 
+\ell  < k+1 \, cm.$) est $k\; / \; 2\sqrt{40000 - k^2}$ (cette fois la loi
+n'est plus uniforme). 
+\medskip
+{\bf Exemple b.}\hskip5pt On consid\`ere les marches al\'eatoires \`a 
+$2n$ pas. L'abscisse $X$ atteinte  par la marche au $2n^{\rm e}$ pas est
+une variable al\'eatoire  qui prend les valeurs $-2n, \, -2n+2, \, -2n+4,
+\ldots +2n-4, \, +2n-2, \, +2n$ avec les probabilit\'es suivantes (cf.
+chapitre $III\;$): 
+$$\eqalign{
+{\cal P}\, (X=-2n) &= 2^{-2n} \cr
+{\cal P}\, (X=-2n+2) &= 2^{-2n}{2n \choose 1} \cr
+{\cal P}\, (X=-2n+4) &= 2^{-2n}{2n \choose 2} \cr
+\noalign{\smallskip}
+&\ldots \cr
+\noalign{\smallskip}
+{\cal P}\, (X=-2n+2k) &= 2^{-2n}{2n \choose k}  \cr
+\noalign{\smallskip}
+&\ldots \cr
+\noalign{\smallskip}
+{\cal P}\, (X=2n-4) &= 2^{-2n}{2n \choose 2}  \cr
+{\cal P}\, (X=2n-2) &= 2^{-2n}{2n \choose 1}  \cr
+{\cal P}\, (X=2n) &= 2^{-2n}  \cr }$$
+Nous avons vu au chapitre {\bf II} que les coefficients bin\^omiaux 
+${2n \choose k}$ atteignaient leur maximum pour $k = n$, que ce 
+maximum, pour $n$ grand, pouvait \^etre approch\'e par $2^{2n} /
+\sqrt{\pi n}$, et que au voisinage du maximum on avait (cf. $II.6.$)
+$${2n \choose n + j} \simeq {2n \choose n}\cdot
+\e^{-{\; j^2 \struta\over n}} \simeq { 2^{2n} \over \sqrt{\pi n}}
+\cdot  \e^{-{\;  j^2\struta \over n}}$$
+On en d\'eduit que {\it si $n$ est grand}, ces probabilit\'es 
+(c'est-\`a-dire la loi de $X$) sont 
+$${\cal P}\, (X = 2j) \simeq { 1 \over \sqrt{\pi n}}\cdot 
+\e^{-{\; j^2\struta \over n}}$$
+Pour $\; j^2 \gg n\;$ ces probabilit\'es sont infinit\'esimales; elles ne
+sont  notables que lorsque $j$ est du m\^eme ordre de grandeur que
+$\sqrt{n}$ ou plus petit. Pour se faire une id\'ee plus concr\`ete, soit
+$n=1000$; alors  $\sqrt{n} \simeq 32$; si $j > 100$, $\e^{-j^2/n} <
+\e^{-10} \simeq 0.0000454$, si $j > 150$, $\e^{-j^2/n} < \e^{-22.5} \simeq
+1.7 \cdot 10^{-10}$. On voit qu'il est pratiquement impossible que $X$
+prenne  des valeurs sup\'erieures \`a  $300$ ou inf\'erieures \`a $-300$.
+La probabilit\'e pour que $X = -2000$ ou $X = +2000$ est $2^{-2000}
+\simeq 10^{-602}$, alors que la probabilit\'e pour que $X=0$ est
+$2^{-2000} \cdot {2000 \choose 1000} \simeq 1/\sqrt{1000\pi}
+\simeq 1/56$. Ainsi, alors que toutes les marches possibles sont
+\'equiprobables, on observe une \'enorme disparit\'e pour les
+probabilit\'es des valeurs prises par la variable $X$. Sur l'ensemble
+$\Omega$ de tous les parcours possibles, le hasard n'en favorise aucun; 
+mais pr\'ecis\'ement de ce fait il en r\'esulte, {\it uniquement par
+l'interm\'ediaire des m\'ecanismes de combinaisons}, que le hasard
+favorise \'enorm\'ement les valeurs de $X$ comprises entre $-300$ et
+$+300$, au d\'etriment des valeurs extr\^emes. 
+\medskip
+Si on avait pris $n=1\, 000\, 000$, ce ph\'enom\`ene serait encore plus
+marqu\'e; en effet, on aurait alors ${\cal P}\, (X=\pm 2\, 000\, 000) =
+2^{-2\, 000\, 000} \simeq 10^{-602\, 060}$, et ${\cal P}\, (X=0) \simeq
+1/1772$. La probabilit\'e pour que $X$ soit compris entre $-5000$ et 
+$+5000$ est alors sup\'erieure \`a $0.9996$. Si on compte en valeur
+relative, c'est-\`a-dire \`a l'\'echelle de $n$, en posant $x = X/n$, cela
+signifie que la probabilit\'e pour que $x$ soit compris entre $-0.005$ 
+et $+0.005$ est sup\'erieure \`a $0.9996$. Pour $n=1\, 000\, 000\,
+000$, $x$ serait compris entre  $-0.0002$ et $+0.0002$ avec une
+probabilit\'e sup\'erieure \`a $0.9999$. Autrement dit, {\it par le seul 
+m\'ecanisme des combinaisons}, un choix al\'eatoire entre des parcours
+\'equiprobables se traduit, lorsque  le nombre de pas $n$ est tr\`es
+grand, par un quasi-d\'eterminisme au niveau de l'ordonn\'ee atteinte:
+on est pratiquement certain que celle-ci est proche  de 0. En g\'en\'eral,
+la loi est la suivante:
+\medskip
+{\narrower La probabilit\'e pour que $X/\sqrt{n}$ s'\'ecarte de 0 de plus 
+de  5 est inf\'erieure \`a $0.0005$; ou encore: la probabilit\'e pour que
+$x = X/n$ s'\'ecarte de 0 de plus de  $5/\sqrt{n}$ est inf\'erieure \`a
+$0.0005$. \par }
+\medskip
+On est donc pratiquement certain que $x$ sera dans un intervalle de
+largeur $10/\sqrt{n}$ autour de 0. La largeur de cet intervalle diminue 
+proportionnellement \`a $1/\sqrt{n}$ quand $n$ augmente, elle devient
+donc minuscule quand $n$ est tr\`es grand. Le facteur 10 au 
+num\'erateur de la fourchette $10/\sqrt{n}$ est li\'e au degr\'e de
+certitude (d\'etermin\'e ici par la probabillit\'e $0.0005$); si on prend
+une fourchette  moins large, le degr\'e de certitude baisse: ainsi la
+probabilit\'e pour que $x$ s'\'ecarte de 0 de plus de $4/\sqrt{n}$ est
+$0.0046$; pour  $3/\sqrt{n}$ elle est de $0.034$, pour $2/\sqrt{n}$ elle
+est de $0.157$, et pour  $1/\sqrt{n}$ elle est de $0.48$. On voit donc
+que si la fourchette est cinq fois plus \'etroite, il n'y a pratiquement
+plus de certitude. Tout cela r\'esulte de la variation en $\e^{-t^2}$:  cette
+fonction garde une valeur notablement diff\'erente de z\'ero tant que
+$t$ est inf\'erieur \`a 2 environ; pour $t > 3$, elle devient tr\`es vite
+extr\^emement petite.
+\medskip
+La propri\'et\'e qui se manifeste ainsi est une propri\'et\'e g\'en\'erale 
+du hasard, que nous voyons ici \`a l'oeuvre dans un cas particulier. Cette
+propri\'et\'e est {\bf la loi des grands nombres}; elle sera \'etudi\'ee 
+sous sa forme g\'en\'erale au chapitre suivant. La loi des grands
+nombres a pour effet de transformer le hasard en d\'eterminisme.
+L'exemple ci-dessus de la variable al\'eatoire $x = X/n$ le montre. Pour
+de petites valeurs de  $n$, par exemple $n=2$ ou $n=5$, la variable $x$
+est r\'eellement {\it al\'eatoire}, c'est-\`a-dire que les diff\'erentes
+valeurs qu'elle peut prendre ($-2\,$, $-1\,$, $0\,$, $+1\,$, $+2\,$ si 
+$n=2$ et $-2\,$, $-1.6\,$, $-1.2\,$,  $-0.8\,$, $-0.4\,$, $0\,$, $+0.4\,$,
+$+0.8\,$, $+1.2\,$, $+1.6\,$, $+2\,$ pour $n=5$) sont impr\'evisibles et 
+ont seulement une certaine probabilit\'e. Mais si $n$ est tr\`es grand,
+et qu'on mesure les valeurs prises par la variable avec une pr\'ecision
+de l'ordre de  $5\over \sqrt{n}$, alors la variable $x$ prend la valeur 0
+avec certitude. Dans un tel processus, le hasard n'a pas cess\'e d'agir:
+c'est bien toujours ``le hasard pur'' qui effectue pour la marche
+al\'eatoire des choix \'equiprobables {\it sur l'ensemble de tous les
+parcours possibles}; mais \`a un autre niveau d'observation, qui est
+celui des valeurs prises par la variable $x$, cela se traduit par du
+d\'eterminisme.  
+\medskip 
+Cette loi des grands nombres par laquelle le hasard se transforme en
+d\'eterminisme est en quelque sorte l'inverse  du chaos, qui transforme
+le d\'eterminisme en hasard. Ce ph\'enom\`ene n'est pas diff\'erent de
+celui que nous avons plusieurs  fois d\'ej\`a soulign\'e, \`a savoir que
+des choix \'equiprobables du hasard \`a un certain niveau se traduisent
+par des r\'esultats non \'equiprobables \`a un autre niveau (que par
+exemple un choix \'equiprobable des deux extr\'emit\'es d'une corde sur
+un cercle se traduisait par une r\'epartition non \'equiprobable de la
+distance au centre); la loi des grands nombres est un effet de ce type,
+mais amplifi\'e au point que la non-\'equiprobabilit\'e devient extr\^eme.
+\medskip
+Nous avions \'etudi\'e \`a la fin du chapitre {\bf II} un exemple typique 
+o\`u intervient cette loi des grands nombres: la loi de Planck. En termes 
+de variables al\'eatoires, on peut reformuler le probl\`eme \'etudi\'e 
+alors (cf. {\bf II.6.}) en disant que les {\it nombres d'occupation} $n_i$ 
+de   chaque intervalle d'\'energie sont des variables al\'eatoires. La loi de
+Planck r\'esultait de la loi des grands nombres, car la probabilit\'e pour
+que les $n_i$ soient proches de $m_i \bigl/ \bigl(\exp(\hbar\omega_i /
+kT)  - 1\bigr)$ est pratiquement \'egale \`a 1 pour la m\^eme raison que 
+ci-dessus pour la variable al\'eatoire $x=X/n$. Lorsqu'on constate
+exp\'erimentalement la distribution selon les fr\'equences du 
+rayonnement \'emis par un corps chauff\'e, la loi de Planck appara{\^\i}t
+comme une loi d\'eterministe. En r\'ealit\'e elle est un effet du hasard.
+\medskip
+La Physique a montr\'e que le monde macroscopique est
+enti\`erement gouvern\'e par la loi des grands nombres\ftn2{Pour en 
+savoir plus sur le  r\^ole jou\'e par la loi des grands nombres dans le
+comportement des corps macroscopiques, on pourra consulter : {\it Cours
+de Physique de Berkeley}, vol. {\bf 5}, {\it Physique statistique} (Armand
+Colin, \'ed., coll. U), chapitre 1: propri\'et\'es caract\'eristiques des
+syst\`emes macroscopiques.}. Le monde des atomes et des particules est
+gouvern\'e par le hasard, qui effectue des choix \'equiprobables sur
+l'ensemble de tous les \'etats quantiques possibles (par exemple sur
+l'ensemble des modes d'occupations en statistique de  Bose-Einstein). 
+Mais au niveau des observations macroscopiques, cela se traduit par le
+d\'eterminisme des lois de la thermodynamique ou de  la m\'ecanique
+classique. Il n'y a pas d'autre secret dans cette transformation du hasard 
+en d\'eterminisme, que la loi des grands nombres.
+\medskip
+{\bf Exemple c.}\hskip5pt On consid\`ere toujours les marches
+al\'eatoires, et on  appelle $T$ l'instant du premier retour \`a $0$. Nous
+avons vu au  chapitre $III$ que 
+$${\cal P}\, (T=k) = \cases{
+2^{-2\ell}{2\ell \choose \ell}{1 \over 2\ell - 1} & si $k = 2\ell$ et
+$\ell\neq 0$ \cr     \noalign{\medskip}
+0 & si $k$ est impair ou nul \cr }$$
+Ainsi $T$ est une variable al\'eatoire qui prend les valeurs enti\`eres 
+paires, avec les probabilit\'es indiqu\'ees ci-dessus. Mais si on 
+consid\`ere les marches al\'eatoires \`a $2n$ pas, il peut arriver aussi
+que le retour \`a  z\'ero ne se produise jamais; la variable $T$ peut donc
+prendre aussi  la valeur ``jamais'', qui n'est \'evidemment pas num\'erique
+si on prend la d\'efinition au pied de la lettre. On peut montrer que la
+probabilit\'e de  cette valeur ``jamais'' est 
+$$\sum_{j = n+1}^{\infty} 2^{-2j}{2j \choose j} {1 \over 2j-1} \simeq 
+{1 \over \sqrt {\pi n}}$$
+Ainsi la variable $T$ prend les valeurs $2,\, 4,\, 6, \ldots 2n-2,\, 2n, \,
+\hbox{et ``jamais''}$ avec les probabilit\'es respectives donn\'ees
+ci-dessus. 
+\smallskip
+{\eightpoint {\bf Remarque:} En Calcul des probabilit\'es on dit qu'une
+variable al\'eatoire qui peut ainsi n'avoir aucune valeur d\'efinie pour
+certaines \'epreuves est {\it incompl\`ete}. Toutefois on voit que si $n$ 
+tend vers l'infini, la probabilit\'e de la valeur ``jamais'' tend vers 0.  
+Ceci
+donne envie de consid\'erer parfois des espaces $\Omega$ infinis. Par
+exemple dans le cas pr\'esent, on aurait pour $\Omega$ l'ensemble de
+toutes les marches de dur\'ee infinie (donc sans limitation du nombre de
+pas). C'est la raison pour laquelle beaucoup (et m\^eme la plupart) des
+livres sur le Calcul des probabilit\'es pr\'esentent une th\'eorie pour des
+espaces $\Omega$ infinis. Le prix \`a payer pour cela est toutefois
+exorbitant: la plupart des propri\'et\'es que nous avons rencontr\'ees dans
+ce cours sont extr\^emement faciles \`a \'etablir tant que $\Omega$ est un
+ensemble fini. Elles exigent des math\'ematiques tr\`es sophistiqu\'ees
+d\`es lors que $\Omega$ est infini (int\'egrale de Lebesgue, analyse
+fonctionnelle, etc. En outre, elles ne permettent pas de calculer davantage
+de choses: comme cela a \'et\'e montr\'e dans un ouvrage
+r\'ecent\ftn3{Edward NELSON {\it Radically Elementary Probability
+Theory}, Princeton University Press, {\oldstyle 1989}.}, tout  ce qui peut
+\^etre effectivement calcul\'e dans le cadre de ces th\'eories
+sophistiqu\'ees peut aussi \^etre calcul\'e en traitant d'abord le probl\`eme
+avec un espace $\Omega$ fini, et en faisant tendre {\it ensuite}, dans les
+r\'esultats obtenus, le cardinal de $\Omega$ vers l'infini.}
+\medskip
+On peut faire la convention que ``jamais'' soit repr\'esent\'ee par la valeur
+num\'erique $0$. Cette valeur ne risque pas, en effet, d'\^etre d\'ej\`a prise 
+par la variable $T$, puisque l'instant z\'ero est celui du d\'epart et ne peut
+donc \^etre celui d'un {\it retour}. Cela \'elimine l'in\'el\'egance d'une 
+valeur non num\'erique sans recourir pour autant \`a l'infini. On peut
+pratiquement toujours se d\'ebrouiller avec de tels exp\'edients.
+
+\bigskip
+
+\'Etant donn\'ee une variable al\'eatoire $X$ qui prend les valeurs $x_1$, 
+$x_2$, $x_3$, $\ldots$ $x_{N-1}$, $x_N$ avec les probabilit\'es
+respectives  $p_1, \,  p_2, \, p_3, \ldots p_{N-1}, \, p_N$, on appelle {\it
+moyenne} ou {\it esp\'erance math\'ematique} de X la grandeur
+$${\bf E} (X) = \sum_{k=1}^{N} x_k p_k   \eqno (VI.1.)$$ 
+On appelle {\it variance} de $X$ la grandeur
+$${\bf Var} (X) = \sum_{k=1}^{N} (x_k - m)^2 p_k   \eqno (VI.2.)$$ 
+avec $m = {\bf E} (X)$.
+En d\'eveloppant le carr\'e $(x_k - m)^2 = x_k^2 - 2mx_k + m^2$ on peut
+\'ecrire aussi:
+$$\eqalign{
+{\bf Var}(X) &= \sum_{k=1}^N x_k^2 p_k - 2m\sum_{k=1}^N x_k p_k + 
+m^2\sum_{k=1}^N p_k \cr
+&= {\bf E}(X^2) - 2 m^2 + m^2 = {\bf E}(X^2) - m^2\cr } 
+\eqno (VI.2\, a.)$$
+
+La moyenne ne n\'ecessite aucune explication, elle rel\`eve de l'intuition
+premi\`ere. La variance m\'erite par contre un commentaire. Comme on le 
+voit dans la d\'efinition $VI.2$, c'est une somme de termes positifs (des
+carr\'es); la variance est donc d'autant plus grande que les nombres $x_k -
+m$ sont plus grands, mais la somme \'etant pond\'er\'ee par les
+probabilit\'es  $p_k$, une grande valeur pour $x_k - m$ va peser d'autant
+plus que la probabilit\'e correspondante, $p_k$, est plus grande. $x_k - m$
+est en fait l'\'ecart de $x_k$ par rapport \`a la moyenne $m$. La variance
+est la moyenne du carr\'e de l'\'ecart. Elle est d'autant plus grande que la
+variable $X$ s'\'ecarte davantage de sa moyenne, et d'autant plus grande
+aussi que ces \'ecarts se produisent avec une forte probabilit\'e.
+Autrement dit, la variance est une estimation de la tendance de la variable
+al\'eatoire \`a s'\'ecarter de la moyenne, \`a se disperser. On aurait pu
+aussi mesurer cette tendance \`a  la dispersion par la moyenne de la valeur
+absolue $\sum p_k\, | x_k - m |$ (il faut \'evidemment prendre la valeur
+absolue, car si on calcule la moyenne de $x_k - m$ en valeur alg\'ebrique,
+on trouve 0), ou par la moyenne de la puissance quatri\`eme $\sum p_k (x_k
+- m)^4$. Compar\'e \`a la valeur absolue, le carr\'e fait payer plus cher les
+grands \'ecarts. La puissance quatri\`eme les ferait payer encore plus cher.
+Il n'y a pas d'estimation absolue ou universelle de la dispersion des valeurs
+d'une variable al\'eatoire. Le choix du carr\'e est purement conventionnel et
+s'il sert de r\'ef\'erence c'est simplement parce qu'on n'a pas trop \`a s'en
+plaindre; entre la valeur absolue qui sous-estime les grands \'ecarts et la
+puissance quatri\`eme qui les surestime, c'est peut-\^etre un bon
+compromis; il se peut aussi que l'analogie avec le moment d'inertie ait
+contribu\'e \`a en faire un {\it standard mondial}. Pour voir les choses plus
+concr\`etement, on peut examiner un exemple tr\`es simple. 
+\medskip 
+Soient les variables al\'eatoires:
+\smallskip
+$X$, prenant les valeurs $-2, \, -1, \, 0, \, +1,  \, +2$ avec les 
+probabilit\'es respectives ${1 \over 20}, \, {1 \over 10}, \, {7 \over 10}, 
+\, {1 \over  10}, \, {1 \over 20}$
+\smallskip
+$Y$, prenant les valeurs $-2, \, -1, \, 0, \, +1,  \, +2$ avec les 
+probabilit\'es respectives ${1 \over 5}, \, {1 \over 5}, \, {1 \over 5}, \, {1
+\over  5}, \, {1 \over 5}$
+\smallskip
+$Z$, prenant les valeurs $-2, \, -1, \, 0, \, +1,  \, +2$ avec les 
+probabilit\'es respectives ${4 \over 10}, \, {1 \over 10}, \, {0}, \, {1 \over 
+10}, \, {4 \over 10}$.
+\medskip
+Pour les trois variables, la dispersion des valeurs est la m\^eme, mais la
+probabilit\'e d'une grande dispersion est \'elev\'ee pour $Z$ et faible pour 
+$X$. Leurs variances sont:
+$${\bf Var} (X) = 0.6 \quad {\bf Var} (Y) = 2.0 \quad 
+{\bf var} (Z) = 3.4$$
+ce qui refl\`ete bien les diff\'erents types de dispersion (la variable $Z$ 
+\`a forte dispersion a une variance nettement plus \'elev\'ee que la
+variable $X$ \`a faible dispersion). Si on avait pris la moyenne des valeurs
+absolues pour mesurer la dispersion on aurait obtenu les valeurs:
+$$\hbox{pour} \; X \; : 0.4 \quad \hbox{pour} \; Y \; : 1.2 \quad 
+\hbox{pour} \; Z \; : 1.8$$
+Comme pr\'evu on voit que les trois cas sont moins nettement 
+d\'epartag\'es (les grands \'ecarts ne sont pas renforc\'es). Enfin, si on
+prend la moyenne des quatri\`emes puissances:
+$$\hbox{pour} \; X \; : 0.9 \quad \hbox{pour} \; Y \; : 6.8 \quad 
+\hbox{pour} \; Z \; : 13.0$$
+On voit l'effet de la surestimation des grands \'ecarts.
+La variance est une convention tr\`es r\'epandue, mais peut aussi devenir 
+un pont-aux-\^anes; dans tel ou tel cas particulier on peut avoir de bonnes
+raisons de pr\'ef\'erer estimer la dispersion par la quatri\`eme puissance 
+que par la variance, et il faut donner la priorit\'e aux bonnes raisons sur 
+le conformisme.
+\medskip
+Un d\'efaut de la variance est de ne pas mesurer l'\'ecart dans les m\^emes
+unit\'es que la variable: si les $x_k$ sont des $cm.$ la variance sera en 
+$cm^2$. C'est pourquoi on introduit une autre estimation de l'\'ecart qui est 
+la racine carr\'ee de la variance ou {\it \'ecart-type}. Pour les variables
+$X,\,  Y,\, Z$ les \'ecarts-types sont
+$$\hbox{pour} \; X \; : 0.77 \quad \hbox{pour} \; Y \; : 1.41 \quad 
+\hbox{pour} \; Z \; : 1.8$$
+Pour l'estimation par les puissances quatri\`emes, on pourra \'egalement
+prendre la racine quatri\`eme du r\'esultat, et on obtient ainsi une autre
+estimation,  un {\og \'ecart-type d'ordre 4\fg}:
+$$\hbox{pour} \; X \; : 0.97 \quad \hbox{pour} \; Y \; : 1.61 \quad 
+\hbox{pour} \; Z \; : 1.90$$
+On voit que la surestimation des grands \'ecarts est r\'eduite. En r\`egle
+g\'en\'erale, on peut dire ceci: avec un \'ecart-type d'ordre $n$  (racine
+$n^{\rm e}$ de la moyenne des valeurs absolues des puissances  $n^{\rm
+e}$), plus $n$ est \'elev\'e, plus on p\'enalise les grands \'ecarts, m\^eme
+s'ils ont une probabilit\'e faible.
+
+\medskip
+
+{\eightpoint Nous avons ainsi vu qu'on pouvait analyser la loi d'une variable
+al\'eatoire \`a l'aide de param\`etres quantitatifs tels que la variance,
+l'\'ecart-type, etc. Nous avons introduit la moyenne des puissances
+quatri\`emes des \'ecarts, qui comme les carr\'es, ou comme toute autre
+puissance paire, sont toujours positives. Si on voulait prendre des
+puissances impaires, il faudrait bien s\^ur prendre la moyenne {\it de
+leurs valeurs absolues} pour avoir une estimation significative de la
+dispersion. Toutefois, la moyenne d'une puissance impaire, sans valeur
+absolue, contient aussi de l'information sur la loi de la variable al\'eatoire;
+quoique elle n'exprime pas la dispersion, une telle grandeur joue un r\^ole
+dans l'analyse de Fourier des lois de probabilit\'e. On appelle {\bf moments}
+ce type de grandeurs. De fa\c{c}on pr\'ecise:
+\medskip
+{\narrower On appelle {\bf moment d'ordre} $n$ d'une variable al\'eatoire 
+$X$ la moyenne $\sum p_k x_k^n$ des $n^{\rm e}$ puissances des valeurs de
+$X$. La moyenne de $X$ est ainsi le moment d'ordre 1 de $X$ et la variance
+de $X$ est le moment d'ordre 2 de $X - m$.}  }
+
+\bigskip
+
+Les param\`etres quantitatifs tels que les moments ou la moyenne des
+valeurs absolues, les \'ecarts-types, etc. contiennent une information 
+sur  la loi de la variable al\'eatoire, mais ne contiennent pas toute 
+l'information. On ne peut pas retrouver la loi d'une variable al\'eatoire 
+si on n'en conna{\^\i}t que la moyenne et l'\'ecart-type. Sous certaines
+conditions assez compliqu\'ees mais pas trop restrictives, la donn\'ee de
+tous les moments d\'etermine la loi de la variable, mais nous laissons
+cette question de c\^ot\'e. Par contre il y a deux mani\`eres tr\`es
+efficaces de condenser la totalit\'e de l'information sur la loi d'une
+variable al\'eatoire, c'est d'introduire la {\it fonction g\'en\'eratrice} et 
+la {\it fonction caract\'eristique}. 
+\medskip
+\'Etant donn\'ee une variable al\'eatoire de loi $\{ x_k, \, (p_k) \}$, on 
+appelle {\it fonction caract\'eristique} de $X$ la fonction
+$$\Phi_X(t) = \sum_{k} p_k \e^{itx_k}   \eqno (VI.3.)$$
+En fait c'est simplement la transform\'ee de Fourier de la loi. La fonction
+g\'en\'eratrice est
+$$G_X(z) = \sum_{k} p_k z^{x_k}   \eqno (VI.4.)$$
+La fonction g\'en\'eratrice est plut\^ot recommand\'ee lorsque les $x_k$ 
+sont  des nombres entiers; dans ce cas c'est un polyn\^ome, ou, si on fait
+tendre le nombre des $x_k$ vers l'infini, une fonction analytique de $z$. 
+On b\'en\'eficie alors de tous les outils math\'ematiques li\'es aux
+polyn\^omes ou aux fonctions d'une variable complexe. 
+Rien n'interdit dans le principe de la prendre en consid\'eration
+m\^eme lorsque les $x_k$ sont non entiers, mais dans un tel cas elle est
+beaucoup moins commode et on lui pr\'ef\'erera alors la fonction
+caract\'eristique.  
+\medskip
+De toute fa\c{c}on, fonction caract\'eristique et fonction g\'en\'eratrice 
+sont li\'ees par la relation 
+$$\Phi_X (t) = G_X (\e^{it})   \eqno (VI.5.)$$
+
+Pour une variable al\'eatoire $X$ \`a valeurs enti\`eres, on obtient les
+probabilit\'es de chaque valeur (c'est-\`a-dire la loi de la variable
+al\'eatoire $X$) en d\'eveloppant la fonction g\'en\'eratrice $G_X(z)$ en 
+s\'erie  enti\`ere, ou en s\'erie de Laurent s'il y a des valeurs n\'egatives.
+\medskip
+On peut aussi d\'eduire directement de la fonction g\'en\'eratrice d'autres
+grandeurs li\'ees \`a la variable al\'eatoire telles que la moyenne et la
+variance. Ainsi, la moyenne n'est autre que $G_X'(1)$ (la d\'eriv\'ee de
+$G_X(z)$  au point $z=1$). En effet
+$$G_X'(z) = \sum_n n \, p_n\, z^{n-1}$$
+donc pour $z=1$ cela donne 
+$$G_X'(1) = \sum_n n p_n = {\bf E}(X)  \eqno (VI.6.)$$ 
+La d\'eriv\'ee seconde fournira la variance: 
+$$G_X''(z) = \sum_n n(n-1) \, p_n\, z^{n-2}$$
+ce qui pour $z=1$ donne $G_X''(1) = \sum_n n(n-1) p_n = \sum_n n^2 p_n -
+\sum_n n p_n = {\bf E}(X^2) - {\bf E}(X)$. En utilisant $VI.2\, a$ on peut
+avoir la variance sous la forme:
+$${\bf Var}(X) = G_X''(1) + G_X'(1) -  G_X'(1)^2  \eqno (VI.7.)$$
+
+Des expressions analogues pour la moyenne ou la variance peuvent \^etre
+obtenues \`a partir des fonctions caract\'eristiques. Ces expressions
+seront utilis\'ees lorsque la variable al\'eatoire n'est pas \`a valeurs
+enti\`eres. On obtient en effet par d\'erivation:
+$$\eqalign{
+\Phi_X'(t) &=\sum_{k} i x_k p_k \e^{ix_kt} \cr
+\Phi_X''(t) &=\sum_{k} - x_k^2 p_k \e^{ix_kt} \cr }$$
+donc pour $t=0$
+$$\eqalign{
+\Phi_X'(0) &= i\sum_{k} x_k p_k = i {\bf E}(X) \cr
+\Phi_X''(0) &=-\sum_{k} x_k^2 p_k = - {\bf E}(X^2) \cr }$$
+
+Cela conduit (compte tenu aussi de $VI.2\, a$) aux expressions suivantes
+de la moyenne et de la variance:
+$$\eqalign{
+{\bf E}(X) &= -i \Phi_X'(0)  \cr
+{\bf Var}(X) &= \Phi_X'(0)^2 - \Phi_X''(0)  \cr } \eqno (VI.8.)$$
+\medskip
+Comme nous connaissons d\'ej\`a quelques variables al\'eatoires, nous
+pouvons \`a titre d'exemple illustratif calculer leurs fonctions
+g\'en\'eratrices ou leurs fonctions caract\'eristiques. Reprenons les 
+ exemples $b$ et $c$ ci-dessus: il s'agissait de $(a)$ l'abscisse atteinte 
+par une marche al\'eatoire au bout de $2n$ pas; $(b)$ l'instant du premier
+retour en z\'ero.  Les fonctions g\'en\'eratrices correspondantes sont 
+$$\eqalign{
+G_a (z) &= \sum_{j=-n}^{+n} 2^{-2n} {2n \choose n+j}\; z^{2j} = \biggl[ {1
+\over 2} \Bigl( z + {1 \over z}\Bigr)\biggr]^{2n} \cr
+G_b (z) &= \sum_{j=1}^{n} 2^{-2n} {2j \choose j} {1 \over 2j - 1}\; z^{2j} +
+\hbox{reste} \cr }$$
+Le reste n'est pas vraiment d\'efini puisqu'il correspond \`a la valeur 
+``{\it jamais}'' du premier retour mais il tend vers z\'ero lorsque $n$ tend
+vers l'infini, et on peut alors montrer que la limite est $G_b (z)  = 1 -
+\sqrt{1-z^2}$. Si on convient, comme nous en avons \'evoqu\'e la 
+possibilit\'e plus haut, de r\'eserver la valeur $0$ pour ``jamais'', le reste
+sera tout simplement le terme constant
+$$\sum_{j = n+1}^{\infty} 2^{-2j}{2j \choose j} {1 \over 2j-1}$$
+On voit que l'exp\'edient qui consiste \`a prendre la valeur z\'ero pour
+``jamais'' n'apporte aucune simplification dans les calculs: les
+fonctions g\'en\'eratrices sont en g\'en\'eral un puissant outil de calcul.
+Dans ce
+cas particulier, elles le restent quand $n$ est grand, car $G_b(z)$ est alors
+une fonction dont l'expression analytique est simple.
+\medskip
+Quant aux fonctions caract\'eristiques,  elles s'obtiennent en rempla\c{c}ant
+$z$ par $\e^{it}$ dans les expressions de la fonction g\'en\'eratrice,
+ soit:
+$$\eqalign{
+\Phi_a (t) &= \biggl[ {1\over 2}\Bigl( \e^{it} + \e^{-it}\Bigr)\biggr]^{2n} 
+= \; \bigl[ \cos (t) \bigr]^{2n}  \cr
+\Phi_b (t) &\simeq 1 - \sqrt{1 - \e^{2it}} \cr }$$
+(ici $\simeq$ signifie que l'\'egalit\'e est approch\'ee pour $n$ grand).
+
+\bigskip
+
+{\bf IV\ata .\aub 3. \vtop{\hsize=9cm  \hbox{
+L'ind\'ependance stochastique de deux (ou plusieurs)}
+\hbox{variables al\'eatoires.} }  }
+\medskip
+Au chapitre $IV$ nous avons \'etudi\'e l'ind\'ependance stochastique de 
+deux \'ev\'enements ou de deux familles d'\'ev\'enements. Nous avons vu
+que l'ind\'ependance stochastique \'etait toujours li\'ee \`a une
+factorisation de l'espace $\Omega$: deux \'ev\'enements $A$ et $B$
+\'etaient alors stochastiquement ind\'ependants si on pouvait factoriser
+l'ensemble $\Omega$ sous la forme d'un tableau (une matrice)
+rectangulaire, dans lequel l'\'ev\'enement $A$ \'etait un ensemble de 
+ lignes (plus exactement une r\'eunion de lignes compl\`etes) et
+l'\'ev\'enement $B$ un ensemble de colonnes. De m\^eme une famille
+d'\'ev\'enements $\{ A_i \}_{i=1,2, \ldots m}$ est stochastiquement
+ind\'ependante d'une famille d'\'ev\'enements $\{ B_j \}_{j=1,2, \ldots n}$,
+si on peut factoriser $\Omega$ de telle mani\`ere que les $A_i$ soient  
+des ensembles de lignes et les $B_j$ des ensembles de colonnes. On a  
+alors la propri\'et\'e ${\cal P}\, (A_i B_j) = {\cal P}\, (A_i) \times {\cal
+P}\, (B_j)$.  
+\medskip
+On dit que deux variables al\'eatoires $X$ et $Y$ de lois respectives 
+$\{ x_i \; (p_i) \}$ et $\{ y_j \; (q_j) \}$ sont stochastiquement
+ind\'ependantes si la famille d'\'ev\'enements $A_i \; : \; X = x_i$ est
+stochastiquement ind\'ependante de la famille $B_j \; : \; Y = y_j$. Il y a
+alors une factorisation de $\Omega$ dans laquelle les \'ev\'enements 
+$A_i$ sont form\'es de lignes compl\`etes et les $B_j$ de colonnes
+compl\`etes; cela signifie que la variable al\'eatoire $X$ est constante le
+long des lignes et  $Y$ est constante le long des colonnes. Une \'epreuve
+$\omega$ dans le tableau est d\'efinie par la donn\'ee de son num\'ero de
+ligne $\ell (\omega )$ et son num\'ero de colonne ${\it col} (\omega )$. On
+peut alors exprimer l'ind\'ependance stochastique de $X$ et $Y$ en disant
+que $X (\omega )$ ne d\'epend que de $\ell  (\omega )$, et $Y  (\omega )$ ne
+d\'epend que de ${\it col} (\omega )$. En tous cas, on a la propri\'et\'e de
+factorisation  ${\cal P}\, (X = x_i \; {\rm et } \;  Y = y_j) = {\cal P}\, (X =
+x_i) \times {\cal P}\, (Y = y_j) = p_i q_j$, qui \'evidemment n'aurait pas
+lieu si $X$ et $Y$ n'\'etaient pas stochastiquement ind\'ependantes.
+\medskip
+Lorsque deux variables al\'eatoires sont stochastiquement ind\'ependantes, 
+il y a des r\`egles simples pour calculer leur somme. En effet,
+l'\'ev\'enement $X + Y = z_k$ est la r\'eunion des \'ev\'enements disjoints
+$X = x_i$ et $Y = y_j$ pour lesquels $x_i + y_j = z_k$; or d'apr\`es
+l'ind\'ependance stochastique on peut dire que ${\cal P}\, (X = x_i \; {\rm
+et } \;  Y = y_j) = p_i q_j$, donc 
+$${\cal P}\, (X + Y = z_k) = \sum_{x_i + y_j = z_k} p_i q_j$$
+(la sommation sur $x_i + y_j = z_k$ signifie qu'on ne retient pour la
+somme que les indices $i$ et $j$ pour lesquels $x_i + y_j = z_k$).
+Si on applique cela \`a la fonction caract\'eristique de la variable 
+al\'eatoire $X + Y$, on obtient 
+$$\eqalignno{
+\Phi_{X+Y} (t) &= \sum_{k} {\cal P}\, (X + Y = z_k) \e^{itz_k} \cr
+&= \sum_k \Bigl[ \sum_{x_i + y_j = z_k} p_i q_j \Bigr]  \e^{itz_k} \cr
+&= \sum_k \Bigl[ \sum_{x_i + y_j = z_k} p_i q_j \Bigr]  \e^{it(x_i + y_j)}\cr
+&= \sum_k \Bigl[ \sum_{x_i + y_j = z_k} p_i\e^{itx_i}  q_j\e^{ity_j}  \Bigr] 
+\cr
+&= \sum_{i,j} p_i\e^{itx_i}  q_j\e^{ity_j}\cr }$$
+qui n'est autre que le produit $\Phi_X(t) \times \Phi_Y(t)$ des fonctions
+caract\'eristiques de $X$ et de $Y$. 
+\medskip
+On peut donc \'enoncer:
+\medskip
+{\bf Th\'eor\`eme:} Si $X$ et $Y$ sont des variables al\'eatoires
+stochastiquement ind\'ependantes, alors la fonction caract\'eristique de 
+leur somme est le produit des fonctions caract\'eristiques de chacune:
+$$\Phi_{X+Y} (t) = \Phi_X(t) \times \Phi_Y(t)   \eqno (VI.9.)$$
+\medskip
+Bien entendu, puisque $\Phi_X(t) = G_X(\e^{it})$, il est clair qu'on a la
+m\^eme propri\'et\'e pour les fonctions g\'en\'eratrices:
+$$G_{X+Y} (z) = G_X(z) \times G_Y(z)   \eqno (VI.10.)$$
+mais comme on le verra dans les exemples et exercices, cette relation
+pour les fonctions g\'en\'eratrices, quoique toujours vraie, n'est d'un 
+emploi commode que si les $x_i$ et $y_j$ sont entiers.
+\medskip
+On peut interpr\'eter l'abscisse atteinte au bout de $2n$ pas par une 
+marche al\'eatoire comme la somme de $2n$ variables al\'eatoires $X_j$: 
+$$X_j = \cases{+1 \; (\hbox{avec prob. $1/2$}) &si le $j^{\rm e}$ pas est 
+un pas en avant \cr
+               -1 \; (\hbox{avec prob. $1/2$}) &si le $j^{\rm e}$ pas 
+est un  pas en arri\`ere \cr }$$ 
+l'abscisse atteinte apr\`es $2n$ pas est alors \'egale \`a
+$S = X_1 + X_2 + X_3 + \cdots + X_{2n}$. Ces variables al\'eatoires sont
+stochastiquement ind\'ependantes, puisque chaque pas d'une marche
+al\'eatoire est stochastiquement ind\'e\-pen\-dant des autres. La fonction
+g\'en\'eratrice de chacune des $X_j$ est $G_j(z) = {1 \over 2}(z + 1/z)$ et
+d'apr\`es le th\'eor\`eme ci-dessus on doit avoir $G_S (z) = \bigl[ {1 \over
+2}(z  + 1/z)\bigr]^{2n}$, ce qui effectivement recoupe le calcul direct
+pr\'ec\'edent. On pouvait donc utiliser la multiplication des fonctions
+g\'en\'eratrices pour calculer la loi de $S$, au cas o\`u on ne l'aurait pas
+d\'ej\`a calcul\'ee par un autre proc\'ed\'e.
+
+\bigskip
+
+{\bf VI.\aub 4.  La loi conjointe de deux (ou plus) variables
+al\'eatoires.} 
+\medskip
+Lorsque deux variables al\'eatoires sont ind\'ependantes, on peut calculer 
+la probabilit\'e d'\'ev\'enements tels que $\{ X = x_j \; ;\; Y = y_k \}$ \`a
+partir de la seule connaissance des lois respectives de $X$ et $Y$. Il suffit
+pour cela d'appliquer la r\`egle du produit. En effet, l'\'ev\'enement $\{ X =
+x_j \; ;\;  Y = y_k \}$ (``$X = x_j$ et $Y = y_k$'') est l'intersection $\{ X =
+x_j \} \cap \{ Y = y_k \}$; donc sa probabilit\'e est, d'apr\`es la r\`egle du
+produit, \'egale \`a  ${\cal P}\, ( X = x_j ) \cdot {\cal P}\, ( Y = y_k )$.
+\medskip
+Par contre, si $X$ et $Y$ ne sont pas stochastiquement ind\'ependantes, on
+ne peut pas d\'eduire les probabilit\'es ${\cal P}\, (  X = x_j \; ;\; Y = y_k 
+)$
+des probabilit\'es ${\cal P}\, (  X = x_j )$ et ${\cal P}\, ( Y = y_k )$. Il 
+faut
+disposer d'une information suppl\'ementaire, qui caract\'erise la 
+d\'ependance  entre $X$ et $Y$. 
+\medskip
+Supposons que $Y$ soit une fonction de $X$, par exemple $Y = X^2$. Dans 
+ce cas on peut calculer les probabilit\'es ${\cal P}\, ( X = x_j \; ;\; Y = 
+y_k )$ \`a partir des probabilit\'es ${\cal P}\, (  X = x_j )$ et  ${\cal P}\,  
+( Y = y_k )$.  
+\medskip
+On peut m\^eme faire plus fort: les calculer \`a partir des seules ${\cal P}
+\, (  X = x_j )$. En effet, les $y_k$ sont alors n\'ecessairement les carr\'es
+des $x_j$; si deux $x_j$ distincts, disons $x_{j_1}$ et $x_{j_2}$, ont le
+m\^eme carr\'e $y_k$ (cela \'equivaut \`a dire que $x_{j_2} = -x_{j_1}$),
+alors ${\cal P}\, (Y = y_k) = {\cal P}\, (X = x_{j_1}) + {\cal P}\, (X =
+x_{j_2})$; si un seul des $x_j$, disons $x_{j_0}$, a pour carr\'e $y_k$,
+alors ${\cal P}\, (Y = y_k) = {\cal P}\, (X = x_{j_0})$. On voit que dans ce
+cas la loi de $Y$ se d\'eduit directement de celle de $X$. Quant aux
+probabilit\'es ${\cal P}\, (  X = x_j \; ; \; Y = y_k )$, elles sont
+\'evidemment nulles si $y_k$ n'est le carr\'e d'aucun $x_j$, et \'egales \`a
+${\cal P}\, ( X = x_j )$ sinon. On peut dire  que non seulement il n'y a pas 
+plus d'information dans la donn\'ee des probabilit\'es des \'ev\'enements
+faisant intervenir les deux variables al\'eatoires $X$ et $Y$ que dans la
+donn\'ee des probabilit\'es des \'ev\'enements  faisant intervenir
+s\'epar\'ement chacune des deux variables al\'eatoires $X$ et $Y$, mais
+m\^eme qu'il n'y en a pas plus que dans la donn\'ee des probabilit\'es des
+\'ev\'enements  faisant intervenir  la seule variable al\'eatoire $X$.  
+\medskip
+L'exemple que nous venons de voir est en fait un cas extr\^eme de
+d\'ependance. Il s'agit du cas o\`u $X$ et $Y$ sont fonction l'une de l'autre.
+$X$ est  bien al\'eatoire, c'est-\`a-dire que les valeurs prises par $X$
+d\'ependent d'un choix (fait sur $\Omega$) du hasard; mais la valeur prise
+par $X$ d\'etermine alors univoquement la valeur prise par $Y$, de sorte
+qu'il n'y a aucune intervention {\it suppl\'ementaire} du hasard pour 
+d\'eterminer $Y$. Entre les deux extr\^emes, il peut y avoir des formes de
+d\'ependance moins radicales qu'une telle relation fonctionnelle: que par
+exemple, la valeur de $X$ \'etant fix\'ee, plusieurs valeurs puissent \^etre
+prises par $Y$, chacune avec une certaine probabilit\'e, mais que ces
+probabilit\'es d\'ependent de la valeur de $X$. L'ind\'ependance
+stochastique signifie que les probabilit\'es pour que $Y$ prenne une valeur
+$y_k$ ne sont pas influenc\'ees par la valeur prise par $X$. Si ces
+probabilit\'es d\'ependent de la valeur de $X$, il y a une d\'ependance {\it
+stochastique} de $Y$ par rapport \`a $X$, mais $Y$  n'est pas pour autant
+une {\it fonction} de $X$. Pour rendre cela plus concret, prenons les trois
+exemples que voici.  
+\medskip
+
+\def\hfq{\hfill\quad}
+\def\cc#1{\hfill\quad #1\quad\hfill}
+\def\tv{\vrule height 12pt depth 5pt width0.4pt}
+
+\midinsert
+\vbox to \blocksize{\null\vfill
+\vbox{\offinterlineskip
+\def\trhor{\noalign{\hrule }}
+\halign{#&#\hfq&\tv#&#\hfq&\tv#&#\hfq&
+\tv#&\hfq#&\tv#&#\hfq&\tv#&#\hfq&\tv#\cr
+&\omit\cc {} &&\omit\cc {$X=-2$}&&\omit\cc {$X=-1$}&&\omit\cc 
+{$X=0$}& &\omit\cc {$X=+1$}&&\omit\cc {$X=+2$}&\cr 
+\trhor
+&\omit\cc {$Y=0$}&&\omit\cc {$1/25$}&&\omit\cc {$1/25$}
+&&\omit\cc {$1/25$}& &\omit\cc {$1/25$}&&\omit\cc {$1/25$} &\cr 
+\trhor 
+&\omit\cc {$Y=+1$}&&\omit\cc {$2/25$}&&\omit\cc {$2/25$}
+&&\omit\cc {$2/25$}& &\omit\cc {$2/25$}&&\omit\cc {$2/25$}&\cr 
+\trhor
+&\omit\cc {$Y=+4$}&&\omit\cc {$2/25$}&&\omit\cc {$2/25$}
+&&\omit\cc {$2/25$}& &\omit\cc {$2/25$}&&\omit\cc {$2/25$}&\cr
+\trhor
+}}
+\vskip9mm
+\centerline{\vbox{\hsize=116mm
+\centerline{\bf tableau 1}
+\vskip6pt
+{\eightpoint Ce tableau repr\'esente la loi de probabilit\'e conjointe de 
+deux variables al\'eatoires $X$ et $Y$ {\it ind\'ependantes}. On trouve la
+probabilit\'e pour que $X = j$ et $Y = k$ (avec $j = -2,\, -1,\, 0,\, +1,\, 
++2$ et $k = 0,\, 1,\, 4$) \`a l'intersection de la ligne $Y = k$ et de la
+colonne $X = j$. On peut constater que la probabilit\'e conditionnelle pour 
+que $Y$ prenne l'une de ses trois valeurs est la m\^eme quelle que soit la
+valeur de $X$ (les rapports des nombres figurant dans une m\^eme ligne
+\`a la somme des \'el\'ements de la ligne sont les m\^emes pour chaque
+ligne; de m\^eme pour les colonnes). } 
+}}
+
+\vfill
+
+\vbox{\offinterlineskip
+\def\trhor{\noalign{\hrule }}
+\halign{#&#\hfq&\tv#&#\hfq&\tv#&#\hfq&\tv#&\hfq#&\tv#&#\hfq&\tv#&#\hfq&\tv#\cr
+&\omit\cc {} &&\omit\cc {$X=-2$}&&\omit\cc {$X=-1$}&&\omit\cc {$X=0$}& 
+&\omit\cc {$X=+1$}&&\omit\cc {$X=+2$}&\cr 
+\trhor
+&\omit\cc {$Y=0$}&&\omit\cc {$0$}&&\omit\cc {$0$}&&\omit
+\cc {$1/5$}& &\omit\cc {$0$}&&\omit\cc {$0$}&\cr
+\trhor
+&\omit\cc {$Y=+1$}&&\omit\cc {$0$}&&\omit\cc
+{$1/5$} &&\omit\cc {$0$}& &\omit\cc {$1/5$}&&\omit\cc {$0$}&\cr
+\trhor
+&\omit\cc {$Y=+4$}&&\omit\cc {$1/5$}&&\omit\cc
+{$0$}&&\omit\cc {$0$}& &\omit\cc {$0$}&&\omit\cc {$1/5$}&\cr
+\trhor
+}}
+\vskip9mm
+\centerline{\vbox{\hsize=116mm
+\centerline{\bf tableau 2}
+\vskip6pt
+{\eightpoint Ce tableau repr\'esente la loi de probabilit\'e conjointe de 
+deux variables al\'eatoires $X$ et $Y$ {\it li\'ees} par la relation $Y = X^2$.
+On voit que les probabilit\'es sont nulles lorsque $Y \neq X^2$. Mais la loi
+de $X$ (somme des probabilit\'es figurant sur une m\^eme colonne) et la 
+loi de $Y$  (somme des probabilit\'es figurant sur une m\^eme ligne) sont
+les m\^emes que dans le tableau 1.}
+}}
+
+\vfill
+} 
+\endinsert
+
+\midinsert
+\null\vskip1pt
+\vbox{\offinterlineskip
+\def\trhor{\noalign{\hrule }}
+\halign{#&#\hfq&\tv#&#\hfq&\tv#&#\hfq&\tv#&\hfq#&\tv#&#\hfq&\tv#&#\hfq&\tv#\cr
+&\omit\cc {} &&\omit\cc {$X=-2$}&&\omit\cc {$X=-1$}&&\omit\cc {$X=0$}& 
+&\omit\cc {$X=+1$}&&\omit\cc {$X=+2$}&\cr 
+\trhor
+&\omit\cc {$Y=0$}&&\omit\cc {$1/60$}&&\omit\cc {$1/30$}
+&&\omit\cc {$1/10$}& &\omit\cc {$1/30$}&&\omit\cc {$1/60$}&\cr
+\trhor 
+&\omit\cc {$Y=+1$}&&\omit\cc {$1/15$}&&\omit\cc {$1/10$}
+&&\omit\cc {$1/15$}& &\omit\cc {$1/10$}&&\omit\cc {$1/15$}&\cr 
+\trhor
+&\omit\cc {$Y=+4$}&&\omit\cc {$7/60$}&&\omit\cc {$1/15$}
+&&\omit\cc {$1/30$}& &\omit\cc {$1/15$}&&\omit\cc {$7/60$}&\cr
+\trhor
+}}
+\vskip8mm
+\centerline{\vbox{\hsize=116mm
+\centerline{\bf tableau 3}
+\vskip6pt
+{\eightpoint Ce tableau repr\'esente la loi de probabilit\'e conjointe de 
+deux variables al\'eatoires $X$ et $Y$ qui ne sont ni ind\'ependantes, ni
+fonction l'une de l'autre. La probabilit\'e conditionnelle pour que $Y=k$
+sachant que $X=j$ d\'epend de $j$, mais par exemple pour $X=0$ il y a
+comme on voit  trois valeurs possibles pour $Y$, avec probabilit\'es non
+nulles $1/10$,  $1/15$, $1/30$. La probabilit\'e conditionnelle pour que 
+$Y=0$ sachant que $X=0$ est ${1 \over 2}$; mais la probabilit\'e 
+conditionnelle pour que  $Y=0$ sachant que $X=1$ est ${1 \over 6}$ et  la
+probabilit\'e conditionnelle pour que  $Y=0$ sachant que $X=2$ est ${1 
+\over 12}$: elle d\'epend fortement de la valeur de $X$, mais n'est pas
+\'egale \`a $0$ ou $1$ comme c'\'etait le cas pour le tableau 2.} 
+}}
+\vskip5mm plus2mm minus2mm \null
+\endinsert
+
+$X$ est une variable al\'eatoire qui prend les valeurs $-2,\, -1,\, 0,\, +1,\, 
++2$. $Y$ est une autre variable al\'eatoire qui prend les valeurs $0,\, +1,\, 
++4$. Chacun des trois tableaux ci-contre repr\'esente une r\'epartition
+diff\'erente des probabilit\'es ${\cal P}\, (  X = x_j \; ; \; Y = y_k )$.
+Dans les trois tableaux, les lois de probabilit\'es de $X$ et de $Y$ sont les
+m\^emes, c'est-\`a-dire que les probabilit\'es
+$$p_j = {\cal P}\, (X = j) = \sum_{k=0,1,4} {\cal P}\, (X = j\; ;\; Y = k)$$
+pour $j = -2,\,   -1,\,   0,\,   +1,\,   +2$, ainsi que  les probabilit\'es
+$$q_k = {\cal P}\, (Y = k) = \sum_{j=0,\pm 1,\pm 2} {\cal P}\, (X = j\; ; \; 
+Y = k)$$ 
+pour $k = 0,\,  1,\,  4$, sont les m\^emes dans les trois tableaux (on
+obtient les $p_j$ en faisant la somme des \'el\'ements de la colonne $j$ 
+et les $q_k$ en faisant la somme des \'el\'ements de la ligne $j$). Par
+contre ces trois exemples diff\`erent par la r\'epartition bidimensionnelle
+des probabilit\'es, qui refl\`ete la d\'ependance entre les deux variables.
+\medskip
+Dans le premier tableau la r\'epartition est faite de fa\c{c}on \`a assurer
+l'ind\'ependance stochastique entre $X$ et $Y$. En effet, si on calcule les
+probabilit\'es conditionnelles 
+$${\cal P}\, (X = j \mid Y = k) = {{\cal P}\, (X = j \; ; \; Y = k) \over  {\cal
+P}\, (Y = k)} = {{\cal P}\, (X = j \; ; \; Y = k) \over \sum_j {\cal
+P}\, (X = j \; ; \; Y = k)}$$
+qui sont donc pour chaque ligne le quotient des \'el\'ements de la ligne
+par la somme des \'el\'ements de la ligne, on constate que ces 
+probabilit\'es conditionnelles ne d\'ependent pas de $k$, ce qui est bien   
+la marque de l'ind\'ependance stochastique; au demeurant ${\cal P}\, (X =
+j  \mid Y = k) = {\cal P}\, (X = j)$. De m\^eme les probabilit\'es
+conditionnelles   
+$${\cal P}\, (Y = k \mid X = j) = {{\cal P}\, (X = j \; ; \; Y =
+k) \over  {\cal P}\, (X = j)} = {{\cal P}\, (X = j \; ; \; Y = k) \over \sum_k
+{\cal P}\, (X = j \; ; \; Y = k)}$$
+qui sont donc pour chaque colonne le quotient des \'el\'ements de la 
+colonne par la somme des \'el\'ements de la colonne, ne d\'ependent pas 
+de $j$. (V\'erifiez cela sur le tableau avec un crayon). 
+\medskip
+Le second tableau repr\'esente la r\'epartition des probabilit\'es lorsque 
+$Y = X^2$. Cette d\'ependance absolue fait que $Y$ ne peut pas prendre une
+valeur qui ne soit pas le carr\'e de $X$. Si $X=2$, $Y$ ne peut pas \^etre
+\'egal \`a $0$ ou \`a $1$, ce qui se traduit sur le tableau par le fait que la
+probabilit\'e pour que $X=2$ et $Y=0$, ou pour que $X=2$ et $Y=1$, est
+nulle.  
+\medskip
+Enfin, dans le troisi\`eme tableau, on a un exemple de d\'ependance
+{\it stochastique}, c'est-\`a-dire que la variable $Y$ n'est pas une
+fonction de $X$, mais n'est pas non plus stochastiquement ind\'ependante  
+de $X$: lorsque $X$ prend la valeur $+2$, $Y$ ne prend pas {\it forc\'ement}
+la valeur $+4$, et peut prendre n'importe laquelle des trois valeurs
+$0$, $1$, ou $4$. Mais cette fois, contrairement \`a ce qui se passe sur le
+tableau 1, les probabilit\'es conditionnelles ${\cal P}\, (Y = k \mid X = j)$
+d\'ependent de $j$, et aussi les probabilit\'es conditionnelles ${\cal P}\,  
+(X = j \mid Y = k)$ d\'ependent de $k$. Par exemple, la probabilit\'e
+(conditionnelle) pour que $Y=0$ sachant que $X=0$ est ${1 \over 2}$, mais
+la probabilit\'e conditionnelle pour que $Y=0$ sachant que $X=+1$ est ${1
+\over 6}$ et la probabilit\'e conditionnelle pour que $Y=0$ sachant que
+$X=+2$ est ${1 \over 12}$. Dans le tableau 2, si $X=0$ , il est {\it
+certain} que $Y=0$; dans le tableau 1,  la probabilit\'e conditionnelle pour 
+que $Y=0$ sachant que $X=j$ est {\it toujours} ${1 \over 5}$ quelle que
+soit la valeur $j$ de $X$.
+\bigskip
+Tout cela montre que, si deux variables al\'eatoires $X$ et $Y$ ne sont 
+ni stochastiquement ind\'ependantes, ni li\'ees par une relation 
+fonctionnelle, on ne peut d\'eduire {\it \`a partir de leurs deux lois} les
+probabilit\'es de toutes les combinaisons de valeurs qu'elles peuvent
+prendre conjointement: il faut disposer d'un tableau qui donne  
+directement l'information compl\`ete. On appelle {\it loi conjointe} 
+des deux variables al\'eatoires $X$ et $Y$ la donn\'ee de ce tableau,
+c'est-\`a-dire la donn\'ee de   
+\smallskip
+a) toutes les valeurs $x_j$ que peut prendre $X$ et toutes les valeurs
+$y_k$ que peut prendre $Y$;
+\smallskip
+b) toutes les probabilit\'es $r_{j,k} = {\cal P}\, (X=x_j \; ; \; Y=y_k)$
+\medskip
+Pour d\'esigner commod\'ement une loi conjointe on \'ecrira $\{ x_j, y_k
+\; ; \;  (r_{j,k})\}$. Cela signifiera que la probabilit\'e pour que $X=x_j$ 
+et $Y=y_k$ est $r_{j,k}$. Cette loi conjointe contient donc une information
+qui {\it n'est pas}  d\'ej\`a contenue dans les deux lois $\{ x_j \; ; \; (p_j)
+\}$ et $\{ y_k \; ;  \; (q_k) \}$, sauf, comme nous l'avons d\'ej\`a dit, si 
+$X$ et $Y$ sont stochastiquement ind\'ependantes (alors $r_{j,k} = p_j
+q_k$) ou si $Y = f(X)$, $f$ \'etant une fonction non al\'eatoire (alors
+$r_{j,k} = 0$ si $y_k \neq f(x_j)$ et $r_{j,k} = p_j$ si $y_k = f(x_j)$,
+comme sur le  tableau 2). 
+\medskip
+Les deux lois $\{ x_j \; ; \; (p_j)\}$ et $\{ y_k \; ;  \; (q_k) \}$,
+c'est-\`a-dire les lois de $X$ et de $Y$ sont appel\'ees {\it lois 
+marginales}, par opposition \`a la loi conjointe du couple $X,Y$. Lorsque 
+la loi conjointe de deux variables est repr\'esent\'ee sur un tableau \`a 
+double entr\'ee comme les tableaux 1, 2, et 3, on obtient les lois
+marginales en effectuant les sommes sur les lignes et sur les colonnes.
+\medskip
+Cela peut se g\'en\'eraliser \`a un nombre quelconque de
+variables al\'eatoires: au lieu d'un tableau \`a deux indices (ou matrice), 
+on aurait un tableau \`a $n$ indices ou dimensions.
+\medskip
+Tout cela n'est bien s\^ur qu'une question de langage; si d\`es le d\'epart 
+(et certains auteurs proc\`edent ainsi) on avait annonc\'e que les 
+variables al\'eatoires sont des grandeurs vectorielles, que ce sont bien 
+des fonctions d\'efinies sur l'espace $\Omega$, mais \`a valeurs dans
+\R${}^n$ et non dans \R, on n'aurait pas eu a distinguer le cas de plusieurs
+variables al\'eatoires du cas d'une seule; la loi d'une variable al\'eatoire
+vectorielle $X$ serait la donn\'ee des valeurs vectorielles $x_j$ et de 
+leurs probabilit\'es, qui serait \'evidemment la m\^eme chose que la loi
+conjointe des $n$ composantes de $X$. Dans ce langage vectoriel on ne
+parlerait pas de l'ind\'ependance stochastique entre $n$ variables
+al\'eatoires, mais entre les $n$  composantes d'une variable al\'eatoire.
+\medskip
+Ce qui en tous cas reste certain, c'est que (dit dans le langage non
+vectoriel) si deux variables al\'eatoires ne sont ni stochastiquement
+ind\'ependantes, ni li\'ees par une relation fonctionnelle, on ne peut 
+calculer les probabilit\'es qui leur sont relatives que si on conna{\^\i}t 
+leur loi conjointe.
+\medskip
+Pr\'ec\'edemment (\S {\bf VI.\aub 3}) nous avons associ\'e \`a la loi
+d'une  variable al\'eatoire des  grandeurs comme les moments (la variance)
+ou des fonctions comme les fonctions g\'en\'eratrices ou caract\'eristiques.
+On peut en faire autant avec les lois conjointes.  Ainsi on appelle {\it
+covariance} des deux variables al\'eatoires $X$ et $Y$ (de loi conjointe 
+$\{ x_j, y_k\; ;\; (r_{j,k})\}$) la grandeur 
+$${\bf Cov}\, (X,Y) = \sum_{j,k} r_{j,k}\, \bigl[ x_j-{\bf E}(X)\bigr] \bigl[ 
+y_k-{\bf E}(Y)\bigr]   \eqno (VI.11.)$$ 
+De m\^eme on appellera {\it fonction g\'en\'eratrice conjointe} de $X$ et 
+$Y$  la fonction de {\it deux} variables complexes 
+$$G_{X,Y}(z,w) = \sum_{j,k} r_{j,k}\; z^{x_j} w^{y_k}   \eqno (VI.12.)$$ 
+(peu pratique si les nombres $x_j$ et $y_k$ ne
+sont pas entiers) et {\it fonction caract\'eristique conjointe} de $X$ et 
+$Y$ la fonction de {\it deux} variables r\'eelles 
+$$\Phi_{X,Y}(s,t) = \sum_{j,k} r_{j,k}\; \e^{isx_j} \e^{ity_k}\eqno (VI.13.)$$
+Bien entendu si $X$ et $Y$ sont stochastiquement ind\'ependantes on aura
+$$G_{X,Y}(z,w) = G_X(z) \cdot G_Y(w)  \eqno (VI.14.)$$
+et 
+$$\Phi_{X,Y}(s,t) = \Phi_X(s) \cdot \Phi_Y(t)   \eqno (VI.15.)$$
+Si $X$ et $Y$ sont stochastiquement ind\'ependantes, leur covariance est
+n\'ecessairement nulle: en effet, dans ce cas on aura $r_{j,k}  = p_j q_k$,
+et par cons\'equent l'expression $(VI.11.)$ de la covariance se factorise
+$$\eqalign{
+{\bf Cov}\, (X,Y) &= \sum_{j,k} r_{j,k} \bigl[ x_j-{\bf E}(X)\bigr] \bigl[ 
+y_k-{\bf E}(Y)\bigr]   \cr
+&= \sum_{j} p_{j} \bigl[ x_j-{\bf E}(X)\bigr] \; \times \;  \sum_{k} q_{k}
+\bigl[ y_k-{\bf E}(Y)\bigr]  \cr
+&= 0 \cr }$$ 
+Une erreur tentante chez les d\'ebutants est de croire que la r\'eciproque 
+a lieu: que si la covariance de deux variables al\'eatoires est nulle, alors 
+elles sont ind\'ependantes. Cela est faux et on en a deux exemples avec 
+les tableaux 2 et 3: si on calcule la covariance de $X$ et  $Y$ avec la loi 
+conjointe du tableau 2 ou du du tableau 3, on trouve qu'elle est nulle, 
+alors que $X$ et $Y$ ne sont ind\'ependantes dans aucun de ces deux cas.
+\medskip
+Nous avions vu au \S {\bf VI.\aub 2.} que si deux variables al\'eatoires
+$X$ et  $Y$ sont ind\'ependantes, on peut facilement calculer la loi de leur
+somme  en faisant le produit des fonctions g\'en\'eratrices ou des 
+fonctions caract\'eristiques. Lorsque deux variables ne sont pas
+ind\'ependantes,  mais qu'on conna{\^\i}t leur loi conjointe, et par
+cons\'equent leur fonction  g\'en\'eratrice ou caract\'eristique conjointe,
+on obtient la fonction  g\'en\'eratrice ou  caract\'eristique de leur somme
+par les formules  suivantes:
+$$\eqalign{
+\Phi_{X+Y}(t) &= \Phi_{X,Y}(t,t) \cr
+G_{X+Y}(z) &= G_{X,Y}(z,z) \cr } \eqno (VI.16.)$$
+Si on combine cela avec $(VI.15.)$ ou $(VI.14.)$ on retrouve $(VI.9.)$ ou
+$(VI.10.)$ 
+\bigskip
+Cela s'\'etend comme on le devine au cas de $2,\, 3,\, 4 \ldots$
+variables al\'eatoires.
+
+
+
+
+
+\bye

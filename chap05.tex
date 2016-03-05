@@ -1,0 +1,976 @@
+\input/home/harthong/tex/formats/twelvea4.tex
+\input/home/harthong/tex/formats/epsf.tex
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl R\'eunions d'\'ev\'enements}
+
+\pageno=111
+
+\newdimen\blocksize  \blocksize=\vsize \advance\blocksize by -8pt
+\font\gtm=cmdunh10
+\def\struta{\vrule depth1.8pt width0pt}
+\def\strutb{\vrule height7.5pt width0pt}
+\def\ata{\hskip-2.5pt}
+\def\aub{\hskip1pt}
+\def\rom{\hbox{\gtm R}}
+\def\qom{\hbox{\gtm Q}}
+\def\som{\hbox{\gtm S}}
+\def\bgl{\raise1.3pt\hbox{$($}}
+\def\bgr{\raise1.3pt\hbox{$)$}}
+
+\null\vskip10mm plus4mm minus3mm
+
+\centerline{\tit V\ata .  R\'EUNIONS D'\'EV\'ENEMENTS.}
+
+\vskip10mm plus3mm minus2mm
+
+{\bf V\ata . 1. Qu'est-ce qu'un \'ev\'enement?}
+\medskip
+Les probl\`emes scolaires de probabilit\'es sont le plus souvent 
+exprim\'es en  langage courant. Par exemple: {\sl on jette trois d\'es;
+calculer la probabilit\'e d'avoir trois six}; ou bien: {\sl on jette trois 
+d\'es; calculer la probabilit\'e d'avoir un double (c'est-\`a-dire que deux
+des trois d\'es montrent la  m\^eme face)}; ou encore {\sl on  jette trois
+d\'es; calculer  la probabilit\'e pour que chacun des trois d\'es marque un
+nombre  impair}; etc. Dans ces probl\`emes l'\'enonc\'e d\'etermine
+toujours un \'ev\'enement dont il s'agira de calculer la probabilit\'e. 
+Ainsi, dans le premier des trois exemples pr\'ec\'edents, l'\'ev\'enement
+est ``les  trois d\'es marquent six''. Pour r\'esoudre le probl\`eme, il faut
+traduire ce langage imag\'e sous forme math\'ematique, c'est-\`a-dire
+trouver d'abord l'espace $\Omega$ qui convient le mieux, puis 
+d\'eterminer le sous-ensemble $A$ de $\Omega$ qui repr\'esente 
+l'\'ev\'enement. Ainsi, la premi\`ere proposition de l'\'enonc\'e {\sl on
+jette trois d\'es} se traduit math\'ematiquement en prenant pour espace
+$\Omega$   l'ensemble des groupes de trois chiffres de 1 \`a 6, autrement
+dit l'ensemble des mots de trois lettres qu'on peut \'ecrire avec l'alphabet
+$\{ 1, 2, 3,4, 5, 6 \}$, soit un ensemble de cardinal $216$ ($\Omega$ est
+toujours l'ensemble de tous les r\'esultats \'equiprobables possibles). 
+La seconde proposition de l'\'enonc\'e d\'etermine l'\'ev\'enement:
+chaque r\'esultat {\it possible} est la famille des trois chiffres donn\'es
+par chaque d\'e, mais l'\'ev\'enement $A$ cherch\'e est
+l'ensemble des familles distingu\'ees par l'\'enonc\'e: ici celles dont les
+trois chiffres sont six; il n'y en a qu'une sur les $216$, donc $A$ est un
+sous-ensemble \`a un seul \'el\'ement, de cardinal $1$, donc de
+probabilit\'e $1/216$. Dans le deuxi\`eme probl\`eme, l'\'ev\'enement
+d\'ecrit par l'\'enonc\'e est ``avoir un double''. Le sous-ensemble $B$ de
+$\Omega$ correspondant \`a cela est l'ensemble des familles ayant deux
+chiffres \'egaux, ou l'ensemble des mots ayant une lettre r\'ep\'et\'ee; le
+meilleur argument pour le d\'enombrer consiste \`a prendre son
+compl\'ementaire $B'$, qui est l'ensemble des mots dont les trois lettres
+sont toutes distinctes: c'est donc l'ensemble des mots ayant toutes leurs
+lettres distinctes (second cas de d\'enombrement du chapitre {\bf II}),
+dont le cardinal est  $6 \cdot 5 \cdot 4 = 120$. Donc on conclut que $\#  
+B = 216 - 120 = 96$. Dans le troisi\`eme probl\`eme, l'\'ev\'enement
+sugg\'er\'e par l'\'enonc\'e est ``chacun des trois d\'es donne un chiffre
+impair''. Le sous-ensemble $C$ de $\Omega$ correspondant est l'ensemble
+des familles dont les trois  chiffres sont tous impairs. On peut remarquer
+que $C = C_1 \cap C_2 \cap  C_3$, o\`u $C_1$ est l'ensemble des
+familles dont le {\it premier} chiffre est impair (et les autres
+indiff\'erents), $C_2$ l'ensemble des familles dont le {\it second}
+chiffre est impair, et $C_3$ l'ensemble des familles dont le {\it
+troisi\`eme} chiffre est impair. On peut dire que  $C_1$ est la
+traduction math\'ematique de ''le premier d\'e donne un chiffre impair'',
+et de m\^eme pour $C_2$ et $C_3$. L'intersection des trois ensembles
+correspond \`a la phrase ''le premier d\'e  donne un chiffre impair {\it et}
+le deuxi\`eme aussi {\it  et} le troisi\`eme aussi''. Il ne reste plus qu'\`a
+remarquer que les trois \'ev\'enements $C_1, C_2, C_3$ sont
+stochastiquement ind\'ependants (reflet de l'ind\'ependance causale des
+trois d\'es), de sorte que ${\cal P}\, (C) = {\cal P}\, (C_1) \times {\cal 
+P}\, (C_2) \times {\cal P}\, (C_3)$. Les probabilit\'es de $C_1, C_2, C_3$
+sont faciles \`a calculer (elles valent  ${1 \over 2}$ car chacun des trois
+d\'es s\'epar\'ement a une chance sur deux de donner un chiffre impair),
+donc ${\cal P}\, (C) = {1 \over 8}$. 
+\medskip 
+On constate dans chacun de ces trois probl\`emes, que ce qui permet de 
+{\it calculer} est la traduction math\'ematique pr\'ealable; c'est elle 
+qui permet le d\'enombrement syst\'ematique. Mais elle a aussi permis 
+le recours \`a des op\'erations ensemblistes (compl\'ementaire pour le
+second probl\`eme et intersection pour le troisi\`eme) qui, gr\^ace a
+leurs  propri\'et\'es alg\'ebriques, ont facilit\'e le calcul. 
+\medskip 
+Consid\'erons encore le quatri\`eme probl\`eme que voici: {\sl on jette
+trois d\'es; calculer la probabilit\'e pour que l'un au moins des trois
+d\'es donne un chiffre impair}. Cette fois l'\'ev\'enement $D$ d\'ecrit
+par l'\'enonc\'e est ``le premier d\'e donne un chiffre impair {\it ou} le
+second d\'e donne un  chiffre impair {\it ou} le troisi\`eme d\'e donne 
+un chiffre impair'' ({\it ou} non exclusif). Donc $D = C_1 \cup C_2 \cup
+C_3$. Pour pouvoir calculer comme dans le troisi\`eme probl\`eme, il
+faudrait disposer  d'une formule donnant la probabilit\'e d'une r\'eunion
+d'\'ev\'enements \ftn{1}{On peut aussi consid\'erer le compl\'ementaire
+de $D$, qui est l'intersection des compl\'e\-men\-taires des $C_j$, ce qui 
+nous ram\`ene au probl\`eme pr\'ec\'edent. Mais nous y reviendrons.}. Or
+une telle formule existe, c'est la formule de Poincar\'e.
+
+\vskip6mm plus3mm minus3mm
+
+
+{\bf V\ata .\aub 2. Formule de Poincar\'e.}
+\medskip
+Commen\c{c}ons par le cas extr\^emement simple de la r\'eunion de deux
+\'ev\'enements. Il est clair que si deux ensembles $A_1$ et $A_2$ sont
+disjoints, le cardinal de $A_1 \cup A_2$ est la somme des cardinaux:
+$\# (A_1 \cup A_2) = \# A_1 + \# A_2$. Mais si les deux ensembles ne
+sont pas disjoints et qu'on \'ecrit la liste num\'erot\'ee des 
+\'el\'ements de  $A_1$, suivie imm\'ediatement par la liste
+num\'erot\'ee des \'el\'ements de  $A_2$ (cette op\'eration est
+appel\'ee {\it concat\'enation}), on obtient une liste contenant $\# A_1
++ \# A_2$ \'el\'ements, mais dans laquelle tous  ceux qui sont \`a la
+fois dans $A_1$ et dans $A_2$, c'est-\`a-dire ceux  qui sont dans $A_1
+\cap A_2$, figurent deux fois. Pour compenser cette r\'ep\'etition, il
+faut donc retrancher le cardinal de $A_1 \cap A_2$; ainsi l'\'egalit\'e
+suivante est correcte: 
+$$\# (A_1 \cup A_2) = \# A_1 + \# A_2 - \# (A_1 \cap A_2) \eqno
+(V.1.)$$  
+Comment traiter le cas d'une r\'eunion de trois ensembles $A_1
+\cup  A_2 \cup A_3$? On pourrait proc\'eder de  m\^eme, concat\'ener 
+les trois listes d'\'el\'ements, puis regarder combien sont compt\'es
+plusieurs fois. On comprend ais\'ement que ceux qui sont dans $A_1 
+\cap A_2 \cap A_3$ sont compt\'es trois fois, ceux qui sont dans $A_1
+\cap A_2$, $A_2 \cap A_3$, ou $A_1 \cap A_3$ sans \^etre dans $A_1
+\cap A_2 \cap A_3$ sont compt\'es deux fois. Il faut donc retrancher 
+$\# (A_1\cap A_2)$, $\# (A_2\cap A_3)$, et $\# (A_1\cap A_3)$ \`a $\#
+A_1 + \# A_2  + \# A_3$, mais du coup on aura retranch\'e trois fois
+ceux qui sont dans  $A_1 \cap A_2 \cap A_3$ alors qu'il n'aurait fallu 
+les retrancher que deux fois; on compensera donc encore en les {\it
+rajoutant} une fois. Ainsi l'\'egalit\'e suivante sera correcte: 
+$$\eqalign{
+\# (&A_1 \cup A_2 \cup A_3)\quad = \quad\,\# A_1 + \# A_2 + 
+\# A_3 \cr 
+&- \# (A_1 \cap A_2) - \# (A_2 \cap A_3) - \# (A_1 \cap A_3) \cr
+&\hskip35mm + \# (A_1 \cap A_2 \cap A_3) \cr } \eqno (V.2.)$$
+En principe on pourrait traiter ainsi, par concat\'enations compens\'ees, 
+les r\'eunions d'un nombre arbitraire d'\'ev\'enements; mais l'examen de
+tous les cas possibles d'intersections partielles est un exercice un peu
+abstrait. Il vaut mieux se contenter d'abord de {\it deviner} une formule
+g\'en\'erale, qu'on d\'emontrera ensuite rigoureusement par r\'ecurrence.
+La formule qu'on devine par les concat\'enations compens\'ees est la
+suivante 
+$$\eqalign{
+\# (&A_1 \cup A_2 \cdots \cup A_n)\quad = 
+\quad\sum_{j=1}^{j=n} \# A_j \cr
+&\hskip24mm -\sum\sum_{\hbox{\hskip-18pt$\scriptstyle 1\leq j_1 
+< j_2\leq n$}} \# (A_{j_1} \cap A_{j_2}) \cr
+&\hskip18mm +\sum\;\sum\sum_{\hbox{\hskip-36pt$\scriptstyle 1\leq  
+j_1 < j_2 < j_3  \leq n$}} \# (A_{j_1} \cap A_{j_2} \cap A_{j_3}) \cr
+&\hskip12mm -\sum\;\sum\;\sum\;\sum_{\hbox{\hskip-55pt$
+\scriptstyle 1\leq j_1 <  j_2 < j_3 < j_4 \leq n$}} \# (A_{j_1} \cap
+A_{j_2} \cap A_{j_3}  \cap A_{j_4}) \cr
+\noalign{\medskip}
+&\hskip36mm \cdots \cr
+\noalign{\medskip}
+&\hskip19mm + (-1)^{n-1} \# (A_{1} \cap A_{2} \cap A_{3} 
+\cdots \cap  A_{n}) \cr } \eqno (V.3.)$$
+Une mani\`ere plus condens\'ee d'exprimer cette relation est la suivante:
+$$\# (A_1 \cup A_2 \cdots \cup A_n) = \som_1 - \som_2 + \som_3 -
+\cdots \pm\som_n \eqno (V.4.)$$
+o\`u
+\smallskip
+--- $\som_1$ est la somme des cardinaux de tous les $A_j$ [cette
+somme contient $n$ termes],  
+\smallskip
+--- $\som_2$ est la somme des cardinaux de toutes les intersections
+de deux des $A_j$, telles que $A_1 \cap A_2$ ou $A_3 \cap A_7$
+[contient ${n \choose 2} = n(n-1)/2$ termes],   
+\smallskip
+--- $\som_3$ est la somme des cardinaux de toutes les intersections
+de trois des $A_j$, telles que $A_1 \cap A_5 \cap A_6$ ou $A_3 \cap
+A_7 \cap A_{11}$ [contient ${n \choose 3} = n(n-1)(n-2)/6$
+termes],   
+\smallskip
+--- $\som_4$ est la somme des cardinaux de toutes les intersections
+de quatre des $A_j$ [contient ${n \choose 4}$ termes],   
+\medskip
+\hskip1cm $\ldots$
+\medskip
+--- $\som_{n-1}$ est la somme des cardinaux de toutes les 
+intersections de $n-1$ des $A_j$, [contient ${n\choose n-1} = n$ termes],
+\smallskip
+--- $\som_{n}$ ne contient qu'un seul terme, $\# (A_1 \cap A_2 \cap
+A_3 \cap A_4 \cdots \cap A_n$), car il n'y a qu'une seule intersection 
+de $n$ d'entre les $A_j$ [${n\choose n} = 1$].
+\medskip
+On peut maintenant se proposer de d\'emontrer cette formule par
+r\'ecur\-rence: pour amorcer la r\'ecurrence, nous disposons d\'ej\`a du 
+cas $n=2$ (de toute fa\c{c}on la formule n'a vraiment de sens que pour $n
+\geq 2$). Supposons qu'elle soit vraie pour $n-1$ \'ev\'enements et
+montrons qu'elle doit alors automatiquement \^etre vraie aussi pour $n$
+\'ev\'enements $A_1, A_2, A_3, \ldots A_n$.
+\medskip
+Or posons $B = A_2 \cup A_3 \cup A_4 \cdots \cup A_n$. 
+On voit que la r\'eunion des $A_j$ de $j=1$ \`a $j=n$, est identique \`a 
+$A_1 \cup B$. Or il est d\'ej\`a \'etabli que $\# (A_1 \cup B) = \# A_1 +  
+\# B - \# (A_1 \cap B)$. Mais d'autre part $B$ est la r\'eunion de $n-1$
+\'ev\'enements, on peut donc utiliser l'hypoth\`ese de r\'ecurrence pour 
+d\'ecomposer $\# B$; de m\^eme $A_1 \cap B$ est \'egal \`a $(A_1 \cap 
+A_2) \cup (A_1 \cap A_3) \cup (A_1 \cap A_4) \cdots\;\cup (A_1 \cap
+A_n)$, c'est-\`a-dire \`a une r\'eunion de $n-1$ \'ev\'enements, auxquels
+aussi on peut donc appliquer l'hypoth\`ese de r\'ecurrence. Ce qui donne 
+$$\# B = \qom_1 - \qom_2 + \qom_3 \cdots \pm \qom_{n-1}$$
+o\`u $\qom_j$ est la somme des cardinaux des intersections de $j$ 
+parmi les $n-1$ \'ev\'enements $A_2,\, A_3,\, A_4, \ldots A_n$. Il 
+s'agit donc des intersections de $j$ des $n$ \'ev\'enements $A_1,\,
+A_2,\,  A_3,\, A_4, \ldots A_n$, mais {\it excluant} l'\'ev\'enement 
+$A_1$.  De  m\^eme (on reprend \`a partir d'ici la notation multiplicative
+pour l'intersection):
+$$\# (A_1B) = \rom_1 - \rom_2 + \rom_3 \cdots \pm\rom_{n-1}$$ 
+o\`u $\rom_j$ est la somme des cardinaux des
+intersections de $j$  parmi les $n-1$ \'ev\'enements $A_1A_2,\,
+A_1A_3,\, A_1A_4,\, \ldots A_1A_n$: ce sont donc les intersections de
+$j+1$ parmi les $A_1,\, A_2,\, A_3,\, A_4, \ldots A_n$, {\it dont l'un est
+obligatoirement} $A_1$. On peut donc dire que $\vrule height 12pt width 
+0pt \rom_{j-1}  + \qom_j$  est la somme des cardinaux de {\it toutes} les
+intersections de $j$ parmi les $n$ \'ev\'enements $A_1,\, A_2,\, A_3,\, 
+A_4, \ldots A_n$: c'est la somme pour celles qui contiennent le facteur
+$A_1$ $\vrule height 13pt width 0pt \bgl\;\rom_{j-1}\;\bgr$ plus la
+somme pour celles qui ne contiennent pas le facteur $A_1$ $\vrule height
+12pt  width 0pt \bgl\,\qom_{j}\,\bgr$. On a donc pour les expressions
+$\som$  d\'efinies plus haut  
+$$\som_j = \rom_{j-1} + \qom_j$$
+En appliquant alors l'hypoth\`ese de r\'ecurrence comme indiqu\'e, on 
+obtient 
+$$\eqalignno{
+\# (A_1 \cup A_2 \cup A_3 \cdots \cup A_n)\quad  &= \quad\# (A_1
+\cup B) \cr
+\noalign{\medskip}
+&= \quad\# A_1 + \# B - \# (A_1 B) \cr
+\noalign{\medskip}
+&= \quad\# A_1 + \qom_1 - \qom_2 + \qom_3 \cdots \pm \qom_{n-1}\cr
+&\hskip12mm  - \rom_1 + \rom_2 -\rom_3 + \cdots \pm \rom_{n-1}\cr
+\noalign{\medskip}
+&= \quad \# A_1 + \# A_2 + \# A_3 + \cdots + \# A_n \cr
+&\hskip12mm  - (\qom_2 + \rom_1) + (\qom_3 + \rom_2)\cr 
+&\hskip12mm -(\qom_4 + \rom_3)\cdots\pm (\qom_n + \rom_{n-1}) \cr
+\noalign{\medskip}
+&=\quad\som_1 - \som_2 + \som_3 - \som_4 \cdots \pm \som_n\cr }$$
+Ceci est bien ce que nous voulions obtenir; nous avons donc ainsi
+rigoureusement d\'emontr\'e la formule de Poincar\'e par r\'ecurrence.
+\medskip
+On peut revenir au probl\`eme : {\sl on jette trois d\'es; quelle est la
+probabilit\'e pour que l'un au moins donne un r\'esultat impair?}
+L'\'ev\'enement $C_1$ est form\'e des familles de trois chiffres dont 
+le premier est impair; il y a donc trois possibilit\'es pour le premier
+($1$, $3$, et $5$), et six possibilit\'es pour chacun des deux autres,
+de sorte que $\#C_1 = 3 \times 6 \times 6 = 108$. De m\^eme 
+$\#C_2 = 6 \times 3 \times 6 = 108$ et $\#C_3 = 6 \times 6 \times 
+3 = 108$. Pour appliquer la formule de Poincar\'e (ici pour trois
+\'ev\'enements, soit $V.2$) il faut conna{\^\i}tre \'egalement les 
+cardinaux  des intersections par deux et par trois; mais cela est ais\'e:
+$\#(C_1C_2) =  3 \times 3 \times 6 = 54$, $\#(C_2C_3) =  6 \times 3
+\times 3 = 54$, $\#(C_1C_3) =  3 \times 6 \times 3 = 54$; enfin
+$\#(C_1C_2C_3) =  3 \times 3 \times 3 = 27$. Ainsi 
+$$\#(C_1 \cup C_2 \cup C_3) = 3 \times108 - 3 \times 54 + 27 = 189$$
+et la probabilit\'e pour que {\sl l'un au moins} des trois d\'es marque un 
+chiffre impair est $189/216 = 7/8$.
+
+\vskip6mm plus3mm minus3mm
+
+{\bf V\ata . 3. Le probl\`eme des co{\"\i}ncidences fortuites.}
+\medskip
+Le probl\`eme typique que l'on r\'esoud par la formule de Poincar\'e est 
+celui des {\it co{\"\i}ncidences fortuites} ou probl\`eme de Montmort
+(math\'ematicien fran\c{c}ais du $XVIII^e$ si\`ecle); dans la litt\'erature
+anglo-saxonne {\it random matches problem}. Ce probl\`eme s'\'enonce 
+ainsi: 
+\smallskip
+{\narrower
+{\sl \noindent $n$ lettres  sont adress\'ees chacune \`a un destinataire 
+d\'etermin\'e; mais on les distribue au hasard entre leurs $n$ 
+destinataires.  Quelle est la probabilit\'e pour qu'aucun des $n$
+destinataires ne re\c{c}oive  la lettre qui lui \'etait destin\'ee ?} \par }
+\smallskip
+Ce probl\`eme est l'un des plus anciens du Calcul des probabilit\'es. 
+Il est \'evoqu\'e pour la premi\`ere fois dans le livre de Montmort \`a 
+propos du {\it jeu des Treize}.  Dans ce jeu,  on m\'elangeait treize  
+cartes de valeurs 1 \`a 13 (les trois derni\`eres \'etant valet, dame,  
+roi,  consid\'er\'es comme num\'eros 11, 12, 13).  Puis il fallait retirer 
+les cartes une \`a une et voir si la $k^{\rm e}$ tir\'ee avait aussi la 
+valeur $k$.  Montmort a pos\'e le probl\`eme de trouver la probabilit\'e 
+pour que cela se produise au moins une fois. 
+\medskip 
+L'historien Todhunter rapporte que c'est probablement Nicolas 
+Bernoulli et non Montmort qui a trouv\'e la r\'eponse;  en effet,  la  
+premi\`ere \'edition du livre de Montmort rapporte le r\'esultat mais ne 
+comporte aucune d\'emonstration;  puis dans la seconde \'edition Montmort 
+donne deux d\'emons\-tra\-tions en disant qu'il les tient de Nicolas 
+Bernoulli (Montmort et N. Bernoulli entretenaient une correspondance
+r\'eguli\`ere). 
+\medskip 
+La c\'el\'ebrit\'e de ce probl\`eme provient de ce que la limite de cette
+probabilit\'e lorsque $n$ tend vers l'infini,  est \'egale \`a $1/\e$ (nous
+ferons ce calcul ci-dessous).  Qu'on puisse rencontrer des nombres tels 
+que $\e$ ou $\pi$ dans un probl\`eme concret de probabilit\'es,  \'etait 
+per\c{c}u comme une d\'ecouverte fantastique,  et s'apparentait au miracle
+de la g\'eom\'etrie qui avait d\'ej\`a fascin\'e les Anciens\ftn{2}{ 
+Platon, {\it La R\'epublique}, Livre VII.}. 
+\medskip
+L'explication de ce paradoxe se trouve dans le principe d'invariance
+qui conduit \`a postuler l'\'equiprobabilit\'e des destinataires.
+L'\'enonc\'e du probl\`eme dit:  {\sl on distribue les lettres au hasard
+entre les destinataires},  ce que tout le monde traduit par ``tous les
+destinataires sont \'equiprobables''.  Comme cela a d\'ej\`a \'et\'e
+discut\'e dans ce livre (section {\bf I. 3} {\it La signification de
+l'\'equiprobabilit\'e}),  l'\'equiprobabilit\'e est postul\'ee a priori, 
+\`a
+partir d'une invariance que le sens commun,  d'origine empirique, fait
+percevoir comme \'evidente:  chaque lettre est
+suppos\'ee avoir autant de chances d'arriver chez n'importe lequel des 
+$n$ destinataires.  D'un point de vue empirique,  cela signifie que si on
+refait un grand nombre de fois l'exp\'erience consistant \`a distribuer les
+$n$ lettres,  on constatera que statistiquement elles se r\'epartissent 
+\`a peu pr\`es uniform\'ement;  nous verrons au chapitre {\bf  XI} que 
+les variations correspondant \`a cet ``\`a peu pr\`es'' doivent \^etre de
+l'ordre de $1/\sqrt{N}$, $N$ \'etant le nombre de fois qu'on r\'ep\`ete 
+l'exp\'erience;  l'\'equivalence des destinataires sera donc 
+vraie \`a $1/\sqrt{N}$ pr\`es:  pour v\'erifier exp\'erimentalement
+l'\'equiprobabilit\'e au millioni\`eme pr\`es,  il faudrait refaire
+l'exp\'erience $10^{12}$ fois !  Et selon toute vraisemblance,  on
+constaterait alors que l'\'equiprobabilit\'e n'est pas parfaite:  pour la
+distribution au hasard les lettres devraient \^etre \`a chaque fois 
+rem\'elang\'ees et tir\'ees au sort dans un panier,  mais l'une pourrait 
+\^etre l\'eg\`erement plus lourde et se retrouver plus souvent au fond du 
+panier,  ou une autre l\'eg\`erement \'ecorn\'ee pourrait s'accrocher aux 
+autres et avoir plus de chances de remonter sur le dessus du panier.  En 
+un mot,  l'\'equiprobabilit\'e empirique est par nature approximative. 
+Cependant,  comme l'\'equiprobabilit\'e est un principe qualitatif et non
+quantitatif,  il ne se trouve pas diminu\'e par le caract\`ere approximatif
+de sa v\'erification empirique.  Il en va de m\^eme dans d'autres domaines;
+si par exemple on \'enonce ``la constante $c$ de l'\'electromagn\'etisme
+(vitesse de la lumi\`ere dans  le vide) vaut $2.997\, 925 \cdot 10^{8}\;
+m/s$'',  une mesure plus pr\'ecise augmentera l'information ainsi
+exprim\'ee,  car elle est uniquement quantitative et ne contient rien
+d'autre que la connaissance de d\'ecimales.  Mais si on \'enonce ``la 
+constante $c$ de l'\'electromagn\'etisme est la m\^eme dans tous les
+rep\`eres galil\'eens'',  une v\'erification plus pr\'ecise de ce principe 
+ne l'am\'eliore plus (tout au plus elle peut conduire \`a l'infirmer).  
+\medskip
+Les philosophes de la Gr\`ece antique ont \'et\'e fascin\'es devant la
+possibilit\'e de conna{\^\i}tre le nombre $\pi$ par les pures 
+math\'ematiques,  avec une pr\'ecision infinie,  alors que la mesure 
+physique d'une circonf\'erence ne pouvait jamais donner plus de trois
+d\'ecimales.  Platon en d\'eduisait dans le texte c\'el\`ebre de {\it La
+R\'epublique} (op. cit.) que l'on peut donc atteindre par la pens\'ee une
+v\'erit\'e situ\'ee au-del\`a de tout ce que l'exp\'erience sensible permet
+de conna{\^\i}tre.  La raison de ce paradoxe (ou de cette illusion) est que le
+calcul de $\pi$ par la g\'eom\'etrie r\'esulte du principe {\it qualitatif}
+d'une invariance de l'espace par rotation.  Ce principe qualitatif est
+d'origine exp\'erimentale,  mais le fait qu'il soit qualitatif permet le
+glissement conceptuel d'une validit\'e approch\'ee \`a une validit\'e
+parfaite.  Si on a mesur\'e $\pi$ exp\'erimentalement avec six 
+d\'ecimales,  on ne peut pas deviner les d\'ecimales suivantes;  mais si on 
+a \'etabli \`a six d\'ecimales pr\`es l'invariance de l'espace par rotation, 
+on peut deviner ou croire que cette invariance se maintiendra pour des
+mesures plus pr\'ecises (du moins jusqu'au jour o\`u ces mesures seront
+devenues pr\'ecises au point de montrer les limites de l'invariance) et en
+d\'eduire math\'ematiquement une valeur de $\pi$ ``exacte'',  avec une
+infinit\'e de d\'ecimales.  
+\medskip
+La fascination des contemporains de Montmort devant la probabilit\'e 
+\'egale \`a $1/\e$ est la m\^eme que celle de Platon devant la valeur
+math\'e\-ma\-ti\-que\-ment exacte de $\pi$.  L'\'equiprobabilit\'e rigoureuse 
+n'existe jamais en pratique;  mais si on la traduit sous forme de v\'erit\'e 
+math\'ematique (on appelle cela aujourd'hui ``construire un mod\`ele 
+math\'ematique''),  elle conduit \`a des nombres qui peuvent \^etre 
+calcul\'es avec une pr\'ecision infinie.  Il est cependant bien \'evident 
+que si on distribue {\it r\'eellement},  {\it mat\'eriellement},  les 
+lettres par tirage au sort dans un panier,  l'\'equi\-pro\-ba\-bi\-lit\'e
+ne  sera satisfaite qu'approximativement (tout comme pour les dates de
+naissances du probl\`eme de la section {\bf II.2.}),  de telle sorte que  
+les premi\`eres d\'ecimales du mod\`ele math\'ematique seront 
+correctes,  mais les suivantes fantaisistes.  Le calcul par les pures 
+math\'ematiques donnera $1/\e = 0.367\, 879 \ldots$,  mais la
+probabilit\'e pour qu'aucune lettre n'arrive \`a son destinataire 
+sera de
+$37\%$.
+\medskip
+Voyons maintenant comment on r\'esoud le probl\`eme de Montmort. 
+L'espace $\Omega$ est l'ensemble de toutes les distributions possibles.
+Chaque distribution correspond \`a une permutation des lettres
+par rapport \`a la distribution correcte; comme il y a $n$ lettres,  il y a
+$n!$ permutations,  soit $\#\Omega=n!$ L'\'ev\'enement d\'efini par 
+l'\'enonc\'e est ${\cal A}$ : ``aucun destinataire ne re\c{c}oit la lettre qui
+lui est destin\'ee''. Son compl\'ementaire est ${\cal B}$ : ``{\it au moins
+un} destinataire re\c{c}oit la lettre qui lui est destin\'ee''.  L'expression 
+{\it au moins un}  correspond \`a une r\'eunion, celle des \'ev\'enements:
+$$\eqalignno{
+{\cal B}_1 &: \hbox{``le destinataire $N^\circ 1$ re\c{c}oit la 
+lettre qui lui est destin\'ee''}\cr
+{\cal B}_2 &: \hbox{``le destinataire $N^\circ 2$ re\c{c}oit la 
+lettre qui lui est destin\'ee''}\cr
+\noalign{\vskip6pt plus8pt minus4pt}
+&\hskip25mm \cdots \hskip25mm \cdots \cr
+\noalign{\vskip6pt plus8pt minus4pt}
+{\cal B}_n &: \hbox{``le destinataire $N^\circ n$ re\c{c}oit la 
+lettre qui lui est destin\'ee''}\cr }$$
+Ainsi ${\cal B} = {\cal B}_1 \cup {\cal B}_2 \cup {\cal B}_3
+\cdots \cup {\cal B}_n$, et on peut obtenir la probabilit\'e de ${\cal B}$
+par la formule de Poincar\'e.
+\medskip
+{\eightpoint
+Ici, il convient peut-\^etre de faire deux remarques: 
+\smallskip
+{\bf 1.} Le lecteur peut trouver bizarre que le probl\`eme
+de Montmort, r\'esolu au d\'ebut du $XVIII^e$ si\`ecle, fasse appel \`a la 
+formule de Poincar\'e (math\'ematicien fran\c{c}ais {\oldstyle 1854} -- 
+{\oldstyle 1912}). Il est clair qu'on savait calculer la probabilit\'e
+d'une r\'eunion bien avant! Les d\'emonstrations de Nicolas Bernoulli,
+mentionn\'ees plus haut, ne faisaient \'evidemment pas appel \`a la 
+``formule de Poincar\'e'', mais \`a des proc\'ed\'es sp\'ecifiques. 
+\smallskip 
+L'appellation ``formule de Poincar\'e'', ou ``th\'eor\`eme de Poincar\'e'',  
+ou encore ``identit\'e de Poincar\'e'' pour $V.3$ ou $V.4$ provient du 
+fait qu'on la trouvait sous cette forme g\'en\'erale dans le {\it Calcul 
+des probabilit\'es} (op. cit. chap {\bf I}, note 6 et bibliographie) de  
+Henri Poincar\'e. Mais les cas particuliers $V.1$ et $V.2$ \'etaient 
+connus d\`es la fin du $XVII^{\rm e}$ si\`ecle (Jacques Bernoulli), et  
+leur g\'en\'eralisation par r\'ecurrence \'etait \'evidemment d\`es  
+cette \'epoque \`a la port\'ee de n'importe quel math\'ematicien. La 
+formule n'est donc pas  une d\'ecouverte de Poincar\'e: il l'a  
+simplement rendue populaire. 
+\smallskip
+{\bf 2.} Si ${\cal B} = {\cal B}_1 \cup {\cal B}_2 \cup {\cal B}_3
+\cdots \cup {\cal B}_n$, alors ${\cal A} = {\cal A}_1 \cap {\cal A}_2 
+\cap {\cal A}_3 \cdots \cap {\cal A}_n$, o\`u ${\cal A}_j$ est le
+compl\'ementaire de ${\cal B}_j$ et ${\cal A}$ celui de ${\cal B}$. 
+Pourquoi ne pas utiliser la formule beaucoup plus simple ${\cal P}\, ({\cal
+A}) = {\cal P}\, ({\cal A}_1)  \times {\cal P}\, ({\cal A}_2)  \times {\cal
+P}\, ({\cal A}_3) \cdots \times {\cal P}\, ({\cal A}_n)$ ?  {\bf R\'eponse:}
+ce serait faux,  car les \'ev\'enements ${\cal A}_j$ ne sont pas
+stochastiquement ind\'ependants.  ${\cal A}_j$ est l'\'ev\'enement ``le
+destinataire $N^\circ j$ ne re\c{c}oit pas la lettre qui lui \'etait
+destin\'ee'':  donc un autre la re\c{c}oit,  \`a qui elle n'\'etait pas
+destin\'ee
+non plus,  ce qui implique que le fait d'appartenir \`a l'undes ${\cal A}_j$
+augmente la probabilit\'e d'appartenir aussi \`a l'undes autres.  La
+propri\'et\'e du produit est simple et pratique, mais ne marche
+malheureusement que pour des \'ev\'enements ind\'ependants, tandis que la formule de Poincar\'e est valable pour n'importe quelle
+sorte
+d'\'ev\'enements. \par} 
+\medskip
+Pour calculer $\#{\cal B}$ par la formule de Poincar\'e, il faut 
+d'abord conna{\^\i}tre les cardinaux des ${\cal B}_j$, puis des 
+${\cal B}_{j_1} \cap {\cal B}_{j_2}$, puis des ${\cal B}_{j_1} \cap 
+{\cal B}_{j_2} \cap {\cal B}_{j_3}$, et ainsi de suite.
+De l'\'equivalence des diff\'erents destinataires, on peut d\'ej\`a 
+d\'eduire  que les ${\cal B}_j$ ont tous le m\^eme cardinal (sinon, cela
+indiquerait que certains destinataires seraient plus \'egaux que 
+d'autres). De m\^eme, le cardinal de ${\cal B}_{j_1} \cap {\cal B}_{j_2}$
+ne peut  pas d\'ependre de $j_1$ ou de $j_2$, ni celui de ${\cal B}_{j_1}
+\cap {\cal B}_{j_2}  \cap {\cal B}_{j_3}$ de $j_1$, $j_2$ ou $j_3$.
+\medskip
+Sachant que les intersections par deux sont au nombre de ${n \choose 
+2}$, que les intersections par trois sont au nombre de ${n \choose 3}$,
+etc. il suffit donc de calculer les cardinaux de ${\cal B}_1$, de ${\cal
+B}_1{\cal B}_2$, de ${\cal B}_1{\cal B}_2{\cal B}_3$, $\ldots$ ${\cal
+B}_1{\cal B}_2 \cdots {\cal B}_n$, et on aura 
+$$\#{\cal B} = n\, \#{\cal B}_1 - {n \choose 2}\, \#({\cal B}_1 {\cal
+B}_2) + {n \choose 3}\, \#({\cal B}_1{\cal B}_2{\cal B}_3) \cdots \pm 
+{n \choose n}\, \#({\cal B}_1{\cal B}_2\cdots {\cal B}_n) \eqno (V.5.)$$ 
+Or ${\cal B}_1$ \'etant l'\'ev\'enement ``le destinataire $N^\circ 1$ re\c
+coit la  lettre qui lui est destin\'ee'', son cardinal est \'evidemment le 
+nombre de permutations des $n-1$ lettres restantes,  soit $(n-1)!$
+L'\'ev\'enement ${\cal B}_1{\cal B}_2$ est ``les destinataires $N^\circ1$
+et $N^\circ2$ ont re\c{c}u les lettres qui leur sont destin\'ees'' donc son
+cardinal est le nombre de permutations des $n-2$ lettres restantes, soit
+$(n-2)!$ En g\'en\'eral, $\#({\cal B}_1{\cal B}_2\cdots {\cal B}_k) =
+(n-k)!$ Substituant dans $(V.5)$ on obtient
+$$\eqalign{
+\#{\cal B} &= n\, (n-1)! - {n \choose 2}\, (n-2)! + \cdots
+- (-1)^k\, {n \choose k}\, (n-k) \cdots - (-1)^n \cr
+&= -\; n!\; \sum_{k=1}^{k=n} (-1)^k\, {1 \over k!} \cr}$$
+On obtient les probabilit\'es en divisant par $\#\Omega = n!$ d'o\`u
+$${\cal P}\, ({\cal B}) = - \sum_{k=1}^{k=n} (-1)^k\, {1 \over k!}$$
+Passant au compl\'ementaire, cela donne
+$$\eqalign{
+{\cal P}\, ({\cal A}) &= 1 - {\cal P}\, ({\cal B}) =
+1 + \sum_{k=1}^{k=n} (-1)^k\, {1 \over k!} \cr
+&= 1 - 1 + {1\over 2!} - {1\over 3!} + {1\over 4!} \cdots + (-1)^n\, 
+{1\over n!} \cr } \eqno (V.6.)$$ 
+En faisant tendre $n$ vers l'infini, on reconna{\^\i}t le d\'eveloppement 
+en s\'erie de MacLaurin de $\e^{-1}$, ce qui montre que pour $n$ grand,
+la probabilit\'e ${\cal P}\, ({\cal A})$ est proche de $1/\e$. Une autre
+observation est aussi que cette probabilit\'e est la m\^eme quel que 
+soit  le nombre de destinataires, pourvu qu'il soit grand.
+\medskip
+L'expression $V.6$, en tant qu'expression alg\'ebrique, garde la trace    
+de la formule de Poincar\'e dont elle est issue; elle ne se simplifie pas
+davantage, montrant par l\`a que le probl\`eme de Montmort rel\`eve
+intrins\`equement d'une r\'eunion d'\'ev\'enements non disjoints et 
+qu'il ne peut pas faire l'objet d'une r\'eduction \`a un probl\`eme plus
+simple. Ce type de constat permet souvent en math\'ematique de 
+s'assurer qu'il n'existe pas de r\'eduction sous-jacente (ou au contraire
+de deviner qu'il en existe certainement une). Remarquons en passant que
+c'est sur ce  type  de raisonnement alg\'ebrique que reposent les 
+d\'emonstrations de  l'impossibilit\'e  de la quadrature du cercle ou de
+l'impossibilit\'e de r\'esoudre alg\'ebriquement les \'equations de 
+degr\'e sup\'erieur ou \'egal \`a cinq. En Calcul des probabilit\'es, on 
+peut \'egalement tirer des renseignements de l'\'etude de la fraction,
+dans la mesure o\`u celle-ci refl\`ete une structure alg\'ebrique: 
+tant qu'il s'agit de probabilit\'es a priori et exactes, elles s'expriment
+sous forme de fraction, dont le d\'enominateur est en principe le 
+cardinal de l'espace des \'epreuves. Mais il peut arriver (et il arrive
+souvent) que la fraction se simplifie et que le d\'enominateur devienne
+alors plus petit que le cardinal de l'espace sur lequel on a travaill\'e. Ce
+ph\'enom\`ene  signifie alors que la probabilit\'e obtenue aurait pu \^etre
+calcul\'ee  sur un espace des \'epreuves r\'eduit. Nous avons en effet
+observ\'e \`a propos des probabilit\'es conditionnelles (voir remarques 
+\`a la fin de {\bf IV.3}), que les probl\`emes de probabilit\'e peuvent 
+parfois \^etre r\'eduits \`a des espaces d'\'epreuves plus petits, par la
+consid\'eration de probabilit\'es conditionnelles.  
+\medskip
+Un exemple de ce ph\'enom\`ene est fourni par le quatri\`eme probl\`eme
+de la section {\bf V\ata .1.}:  {\sl on jette trois d\'es; calculer la
+probabilit\'e pour que l'un au moins des trois d\'es donne un chiffre
+impair}.  Nous avons introduit les \'ev\'enements $C_j$:  ``le d\'e 
+$N^\circ j$ donne un chiffre impair'',  et l'\'ev\'enement du probl\`eme 
+ ``au moins des trois d\'es donne un chiffre impair'' \'etait la r\'eunion 
+$D = C_1 \cup C_2 \cup C_3$.  En calculant avec la formule de Poincar\'e
+nous avons trouv\'e que  $\#D = 189$,  d'o\`u ${\cal P}\, (D) = {189 \over
+216} = {7 \over 8}$.  On voit que cette fraction,  contrairement \`a $V.6$, 
+ne garde aucune trace de la formule de Poincar\'e dont elle est issue;  en
+outre,  le d\'enominateur est $8$,  ce qui laisse soup\c{c}onner qu'on devait
+pouvoir traiter le probl\`eme sur un espace des \'epreuves de cardinal 
+$8$ seulement.  La probabilit\'e du compl\'ementaire $\overline{\! D}$ de
+$D$ est ${1 \over 8}$,  montrant par l\`a qu'il ne contient qu'une seule de
+ces \'epreuves r\'eduites;  cela devrait nous mettre sur la voie.  Et en
+effet,  $\overline{\! D}$ est l'intersection des compl\'ementaires des
+$C_j$:  $\overline{\! D} = \overline{\! C_1}\cap \overline{\! C_2} \cap 
+\overline{\! C_3}$.  Par ailleurs, $\overline{\! C_1}$, $\overline{\! C_2}$, 
+et $\overline{\! C_3}$ sont relatifs \`a trois d\'es ind\'ependants et sont 
+donc des \'ev\'enements stochastiquement ind\'ependants,  de sorte que
+${\cal P}\, \big(\,\overline{\! D}\,\big) = {\cal P}\, \big(\,\overline{\!
+C_1}\,\big) \times {\cal P}\, \big(\,\overline{\! C_2}\,\big) \times 
+{\cal P}\, \big(\,\overline{\! C_3}\,\big)$.  Or $\;\overline{\! C_j}$ n'est
+autre que ``le d\'e $N^\circ j$ donne un chiffre pair'',  \'ev\'enement dont
+la probabilit\'e est {\it \'evidemment} ${1\over 2}$.  Par ailleurs, le
+d\'enominateur $8$ signifie tout simplement qu'on pouvait se contenter
+de prendre pour \'epreuves les huit triplets de {\it pair} et {\it impair}
+possibles,  au lieu des $216$ triplets de chiffres.
+
+\vskip8mm plus3mm minus3mm
+
+{\bf V\ata . 4. Les textes al\'eatoires.}
+\medskip
+Un autre probl\`eme classique o\`u on est amen\'e \`a consid\'erer des
+r\'eunions d'\'ev\'enements est celui des suites al\'eatoires. Nous avons 
+d\'ej\`a rencontr\'e les suites al\'eatoires au chapitre {\bf I} \`a propos
+du chaos d\'eterministe (voir {\bf I.4}).  Un probl\`eme c\'el\`ebre 
+discut\'e par \'Emile Borel et popularis\'e par {\it La biblioth\`eque de
+Babel} de J. L. Borges\ftn{3}{Jorge Luis Borges,  {\it Fictions}; 
+traduction fran\c{c}aise chez Gallimard,  collection folio.} est celui de
+l'apparition  al\'eatoire d'un texte sens\'e dans une suite de lettres
+\'ecrites au  hasard.
+\medskip
+Ce probl\`eme se pr\'esente ainsi: une machine \'ecrit au hasard \`a la 
+suite les uns des autres des caract\`eres de base de la typographie: $26$
+lettres de l'alphabet majuscules et minuscules, signes de ponctuation,
+parenth\`eses, lettres accentu\'ees telles que \'e, \^e, \`e, \"e, \^\i , 
+\"\i , chiffres de 0 \`a 9, blanc s\'eparant les mots, retour-chariot avec 
+ou  sans alinea; disons cent caract\`eres en tout. Chaque \'el\'ement 
+successif de la suite est choisi au hasard parmi les cent caract\`eres de
+base. Une suite  de $n$ caract\`eres est donc un ``mot'' de $n$ lettres
+\'ecrit avec l'alphabet des cent caract\`eres de base. Le probl\`eme
+rel\`eve du cas de d\'enombrement \'etudi\'e en {\bf II.1}: on peut
+\'ecrire $100^n$ suites diff\'erentes. Ces suites \'etant suppos\'ees
+\'equiprobables, la probabilit\'e d'en obtenir une particuli\`ere parmi
+toutes celles possibles est alors $100^{-n}$.
+\medskip
+Le probl\`eme \'etudi\'e par \'Emile Borel est celui de l'apparition {\it 
+partielle} d'un texte sens\'e particulier: quelle est la probabilit\'e pour 
+que dans une suite de longueur $n$, apparaisse au moins une fois quelque
+part un texte donn\'e de longueur $k$? Si la machine a \'ecrit une suite 
+de $10^{1\, 000\, 000}$ de caract\`eres, quelle est la probabilit\'e d'y
+trouver  quelque part, noy\'e dans un oc\'ean de gallimatias insens\'e, le
+texte exact  des Voyages de Gulliver? 
+\medskip
+Ce probl\`eme revient \`a calculer la probabilit\'e d'une {\it r\'eunion}
+d'\'ev\'e\-ne\-ments.  En effet, appelons $A_j$ l'\'ev\'enement ``entre le
+rang $N^{\rm o}\, j$ inclu et le rang $N^{\rm o}\, j+k$ exclu de la suite
+se trouve
+exactement le texte cherch\'e''.  Il est clair que $j$ ne peut pas\^etre
+sup\'erieur \`a $n-k$,  puisqu'\`a partir du rang$N^{\rm o}\, j$ il doit rester assez de place pour placer le texte de $k$
+caract\`eres.  Donc $1 \leq j \leq n-k$.  L'\'ev\'enement ``le texte
+pr\'ed\'efini se rencontre au moins
+une fois dans la suite'' est alors lar\'eunion $E = A_1 \cup A_2 \cup
+\cdots \cup A_{n-k}$. 
+\medskip
+D'apr\`es la formule de Poincar\'e,  pour avoir la probabilit\'e de la 
+r\'eunion $E$,  nous devons d\'eterminer non seulement les probabilit\'es
+de chacun des $A_j$,  mais aussi celles des intersections $A_{j_1}
+A_{j_2}$,  puis $A_{j_1} A_{j_2} A_{j_3}$, etc.
+\medskip
+Dans le probl\`eme discut\'e avant (celui des lettres et des destinataires),
+les intersections \'etaient toutes \'equivalentes car les destinataires 
+\'etaient interchangeables.  Ici,  la situation est un peu plus complexe
+car la probabilit\'e d'une intersection ne sera pas la m\^eme selon que les
+textes peuvent ou non se superposer:  si le texte comporte \`a son d\'ebut
+une partie de longueur $\ell$ qu'on retrouve \`a la fin,  il y a une 
+probabilit\'e non nulle pour une intersection de la forme $A_{j} A_{j + k - 
+\ell }$ impliquant la superposition de ces parties.  Mais pour un texte
+qui n'est pas autosuperposable,  les intersections $A_{j_1} A_{j_2}$
+pour lesquelles $j_2 - j_1 < k$ auront une probabilit\'e nulle.  En
+revanche les autres intersections (pour lesquelles $j_2 - j_1 \geq k$)
+auront toutes la m\^eme probabilit\'e.  Il en va de m\^eme pour les
+intersections de trois, quatre, $\ldots$, des $A_j$.
+\medskip
+Ainsi la somme des cardinaux des intersections de $r$ parmi 
+les $A_j$,  que dans la formule de Poincar\'e $V.4$ nous avons d\'esign\'ee 
+par $\som_r$,  sera \'egale au nombre d'intersections possibles de 
+$r$ \'ev\'enements $A_j$ sans recouvrement de texte,  multipli\'e par le
+cardinal commun de ces intersections.  Appelons provisoirement 
+$G_{n,k}^r$ ce nombre d'intersections possibles.  Le calcul de ces
+nombres $G_{n,k}^r$ n'est pas imm\'ediat et nous y proc\'ederons d'ici
+peu.  Par contre le cardinal de l'une quelconque de ces intersections
+r\'esulte directement de la formule de d\'enombrement $II.1$:  en effet,
+soient $A_{j_1}$, $A_{j_2}$, $\ldots$, $A_{j_r}$ tels que les textes
+correspondants ne se recouvrent pas.  Cela \'equivaut \`a ce que les
+diff\'erences entre deux quelconques des indices $j_\ell$ soient toutes
+sup\'erieures \`a $k$.  Un \'el\'ement de cette intersection (une \'epreuve)
+est une suite dont les caract\`eres situ\'es dans les intervalles disjoints
+$\{ j_1 \ldots j_1 + k - 1 \}$, $\{ j_2 \ldots j_2 + k - 1 \}$, $\ldots$, 
+$\{ j_r
+\ldots j_r + k - 1 \}$ constituent les $r$ occurrences du textepr\'ed\'efini
+et sont donc d\'etermin\'es.  Le nombre de ces caract\`eres
+d\'etermin\'es est par cons\'equent $r \times k$.  La suite comporte $n$
+caract\`eres en tout,  de sorte qu'il reste $n - rk$ caract\`eres \`a choisir
+de toutes les fa\c{c}ons possibles,  ce qui d'apr\`es  $II.1$ fait $100^{n -
+rk}$ possibilit\'es.  Ainsi $\#\, (A_{j_1} \cup
+A_{j_2} \cdots  \cup A_{j_r}) = 100^{n - rk}$.  L'espace $\Omega$ de 
+toutes les suites possibles ayant le cardinal $100^{n}$,  cela donne la
+probabilit\'e $100^{-rk}$ pour l'intersection. 
+\vskip9pt plus9pt minus6pt
+En conclusion, nous aurons d'apr\`es la formule de Poincar\'e:
+$${\cal P}\, (E) = {G_{n,k}^1 \strup{5.5} \over 100^{k}} - 
+{G_{n,k}^2 \strup{5.5} \over 100^{2k}} + {G_{n,k}^3 \strup{5.5} \over 
+100^{3k}} - {G_{n,k}^4 \strup{5.5} \over 100^{4k}} + \cdots $$
+Bien entendu, si la machine utilise non pas $100$ caract\`eres mais
+un nombre quelconque $m$, la probabilit\'e cherch\'ee sera
+$${\cal P}\, (E)\quad = \;\sum_{1 \leq r \leq {n \over k}} (-1)^{r-1}\;
+{G_{n,k}^r \strup{5.5}\over  m^{rk}} \eqno (V.7.)$$
+Cette expression de ${\cal P}\, (E)$ n'est toutefois absolument exacte 
+que si les recouvrements de textes sont impossibles; si les textes
+peuvent se recouvrir en partie, il faut tenir compte d'une probabilit\'e
+non nulle pour des intersections d'\'ev\'enements $A_j$ dont les indices
+diff\`erent de moins de $k$. Le texte des voyages de Gulliver (comme la
+quasi totalit\'e des textes de la litt\'erature) ne permet aucune
+superposition partielle; pour avoir une telle superposition il faut
+fabriquer des textes ad hoc. Par ailleurs, m\^eme pour
+de tels textes sp\'eciaux, le changement quantitatif de la probabilit\'e 
+est  infime et ne change rien tant qu'on n'envisage que des valeurs 
+approch\'ees.
+\medskip
+Il reste \`a calculer les nombres $G_{n,k}^r$. Ce probl\`eme ne
+rel\`eve pas directement des cas de d\'enombrement pass\'es en revue 
+au chapitre {\bf II}, mais s'y ram\`ene par une simple r\'eduction. 
+Repr\'esentons la suite des caract\`eres \'ecrits par la machine par des
+points sur une  droite. On alignera ainsi en tout $n$ points. Puis
+rempla\c{c}ons chaque apparition du texte pr\'ed\'efini (occurrence) par 
+un seul segment  regroupant les $k$ points correspondants, comme le
+montre la figure  ci-dessous o\`u les apparitions du texte sont 
+marqu\'ees par des  crochets ($n=100$, $k=5$, $r=6$):  
+\def\seg{\hbox{\kern1.25pt\vrule height0.4pt width20.3pt\kern1.25pt}} 
+$$\eqalign{
+&....[.....]..[.....].......................[.....].......[.....]..............[
+.....].............[.....]..... \cr
+&....\seg .. \seg ....................... \seg ....... \seg .............. \seg 
+............. \seg .....    
+\cr } $$
+Si on a $r$ occurrences du texte (ne se recouvrant pas), la droite 
+portera $n-rk$ points rest\'es isol\'es et $r$ segments. \`A chaque 
+distribution particuli\`ere de $r$ occurrences correspond ainsi
+univoquement une succession d\'etermin\'ee de $n-rk$ points isol\'es et
+$r$ segments. Le d\'enombrement de toutes les intersections possibles
+des  \'ev\'enements  $A_j$ \'equivaut donc au d\'enombrement des
+configurations de $n-rk$ points et $r$ segments, soit $n-r[k-1]$
+\'el\'ements en tout, ce qui rel\`eve du cas {\bf II.3}. Par cons\'equent 
+$$G_{n,k}^r = {n-r[k-1] \choose r} \eqno (V.8.)$$
+\medskip
+Le probl\`eme est surtout int\'eressant pour de grandes valeurs de 
+$n$. Dans ce cas on peut avoir des valeurs approch\'ees pour $G_{n,k}^r$.
+Le coefficient bin\^omial qui appara{\^\i}t dans $V.8$ peut s'\'ecrire
+(ici $k$ remplace $k-1$):
+$$\eqalignno{ \hskip-8pt
+{n-rk\choose r} &= {(n-rk)(n-rk-1)(n-rk-2)\cdots (n-rk-r+1)\over r!}\cr  
+&= {(n-rk)^r \over r!}\hbox{\eightpoint $\displaystyle
+\Big( 1 - {1\over n-rk}\Big)\Big( 1 - {2\over  n-rk}\Big) \cdots 
+\Big( 1 - {r-1\over n-rk}\Big)$}\hskip35pt &(V.9)\cr
+&= {n^r\over r!}\hbox{\eightpoint $\displaystyle\Big[  1 - 
+{rk\over n}\Big]^r \cdot\;\Big( 1 - {1\over  n-rk} \Big)\Big( 1 - 
+{2\over n-rk}\Big)\cdots\Big( 1 - {r-1\over n-rk}\Big)$} \cr } $$
+\medskip
+Reportons le tout dans la formule de Poincar\'e  $V.7$. On obtient alors
+$${\cal P}\, (E)\quad = \;\sum_{1 \leq r \leq {n \over k}} 
+(-1)^{r-1}\; {x^r \over r!}\, a_r \eqno(V.10.)$$
+o\`u l'on a pos\'e 
+$$\openup 2\jot\eqalign{
+x\, &=\, {\up{n} \over m^k}\cr
+a_r &= \Big[  1 - {r [k-1]\over\ldown{n}}\Big]^r \cdot
+\hbox{\eightpoint $\displaystyle \Big( 1 - {1\over 
+n-r [k-1]} \Big) \;\cdots\; \Big( 1 - {r-
+1 \over n-r [k-1]}\Big)$} \cr}$$
+On peut remarquer que pour les petites valeurs de $r$, $a_r$ est
+pratiquement \'egal \`a $1$; par contre pour les  grandes valeurs de $r$,
+c'est le terme ${x^r \over r !}$ qui devient tr\`es petit (en toute rigueur,
+la condition pour que ces deux cas ne puissent pas  se pr\'esenter  en
+m\^eme temps est que $n$, quoique tr\`es grand, reste petit devant
+$m^{2k}/k$).  Sous cette condition on peut dire que la somme $V.10$ est
+pratiquement \'egale \`a la s\'erie $\sum (-1)^{r-1}{x^r\over r!} =
+1-e^{-x}$. Si $n$ est trop grand (du m\^eme ordre que $m^{2k}/k$, ou
+plus grand encore), le terme ${x^r \over r !}$ sera encore grand lorsque 
+les $a_r$ deviendront plus petits que $1$  et on ne pourra pas
+assimiler  simplement la somme  $V.10$ \`a la s\'erie exponentielle,
+mais il n'y en aura m\^eme pas besoin, car dans ce cas il est clair que la
+probabilit\'e ${\cal P}\, (E)$ sera pratiquement \'egale \`a 1. 
+\medskip
+On peut donc conclure que si une machine \'ecrit au hasard $n$ 
+caract\`eres (choisis dans un alphabet de $m$ caract\`eres) \`a la suite
+les uns des autres, la probabilit\'e pour qu'il apparaisse au moins une 
+fois un texte donn\'e de $k$ caract\`eres est \'egale \`a $1 - e^{-x}$ 
+avec $x=n/m^k$. Pour $m=100$ par exemple, la probabilit\'e restera
+n\'egligeable tant que $x$  sera petit, c'est-\`a-dire tant que $n$ sera
+petit devant $100^k$. Les ex\'eg\`etes de la biblioth\`eque de Babel
+avaient d\'ecouvert un volume qui contenait ---~comme unique passage
+sens\'e~--- la phrase ``O temps tes pyramides''; cette phrase comporte
+(blancs compris) 21 caract\`eres. Tant que $n$ reste petit devant
+$100^{21} = 10^{42}$ la probabilit\'e de  trouver la phrase ``O temps tes
+pyramides'' est nulle. \`A l'inverse, lorsque $n$ deviendra nettement plus
+grand que $10^{42}$, la probabilit\'e de  voir appara{\^\i}tre ``O temps tes
+pyramides'' deviendra \'egale \`a $1$. Ce sera seulement lorsque $n$ sera 
+de l'ordre de $10^{42}$ que l'on verra le passage {\it progressif} de la 
+probabilit\'e $0$ \`a la probabilit\'e $1$; ce passage se produira selon la
+loi $1-\e^{-x}$.
+\medskip
+Une approche heuristique du probl\`eme,  ne faisant pas appel \`a la 
+formule de Poincar\'e,  est envisageable.  On pourrait par exemple se dire
+que l'apparition d'un texte sens\'e dans un texte \'ecrit au hasard \'etant
+forc\'ement un \'ev\'enement rare,  on peut n\'egliger les cas o\`u un tel
+texte appara{\^\i}trait deux,  trois,  quatre fois,  et approcher la
+probabilit\'e ${\cal P}\, (E)$ par la somme $\sum_j {\cal P}\, (A_j)$.
+Autrement dit ne retenir que le d\'ebut de la formule de Poincar\'e.  Le
+r\'esultat qu'on obtiendrait alors serait $(n-k)/m^k \simeq x$.  Ceci
+constitue bien une approximation de $1-e^{-x}$ lorsque $x$ est petit et
+en ce sens le raisonnement heuristique est correct.  Mais lorsque $x$ n'est
+pas petit,  il devient grossi\`erement faux.  L'explication en est simple:
+n\'egliger l'apparition  de plusieurs occurrences est effectivement
+l\'egitime pour des \'ev\'enements rares;  mais nous avons vu que lorsque
+$n$ devient grand par rapport \`a $m^k$,  non seulement l'apparition d'une
+occurrence cesse d'\^etre rare,  mais devient m\^eme quasi-certaine.  C'est
+pourquoi on ne peut pas se passer de la formule de Poincar\'e compl\`ete.
+\medskip
+Jusqu'ici nous avons consid\'er\'e le cas asymptotique o\`u l'entier $n$
+est grand. Dans ce cas la somme $V.7$ comporte un tr\`es grand nombre 
+de termes et devient pratiquement une s\'erie, comme nous avons vu. 
+\medskip
+Bien s\^ur  $V.7$ est une expression ``exacte'', en ce sens qu'elle 
+se d\'eduit math\'e\-ma\-ti\-que\-ment sans approximation de
+l'hypoth\`ese  d'\'equiprobabilit\'e a priori des \'epreuves; elle est donc
+tout aussi  exacte pour des valeurs modestes de $n$. Dans la pratique des
+probabilit\'es ne peuvent pas \^etre exactes; cela n'a aucun sens r\'eel.
+L'expression  $V.7$ (de m\^eme que tout calcul de probabilit\'e a priori)
+n'est exacte que dans la mesure o\`u l'hypoth\`ese d'\'equiprobabilit\'e
+des \'epreuves est elle-m\^eme exacte. Comme nous l'avons  d\'ej\`a
+discut\'e au d\'ebut de la section {\bf V\ata . 3}, ce type d'exactitude est
+comparable \`a celui  de la g\'eom\'etrie: on peut montrer que le rapport
+de la circonf\'erence au diam\`etre est ``exactement'' $\pi$ ou que le
+rapport de la dia\-go\-nale au c\^ot\'e du carr\'e est  ``exactement''
+$\sqrt{2}$ ---~ces nombres ayant une  infinit\'e de d\'ecimales
+d\'etermin\'ees~--- uniquement parce qu'on admet que les invariances 
+de l'espace (par rotations et translations) sont elles-m\^emes 
+absolument exactes.  
+\medskip
+On peut dire que s'il existe une l\'eg\`ere inexactitude dans 
+l'\'equi\-pro\-ba\-bi\-lit\'e des carac\-t\`eres align\'es par la 
+machine, celle-ci  se r\'epercutera sur le r\'esultat du calcul exact; 
+mais comme l'hypoth\`ese de l'\'equiprobablilit\'e des \'epreuves est 
+ind\'ependante  de la valeur des param\`etres tels que $n$, $k$, $m$, 
+etc.,  il n'y a aucune raison pour  qu'une inexactitude \`a ce  niveau se
+manifeste plut\^ot pour les petites valeurs de $n$ que pour  les grandes.
+Par contre, l'approximation exponentielle reposait  explicitement sur 
+l'hypoth\`ese que $n$ est grand. Donc la formule $V.7$ s'applique en
+principe pour n'importe quelle valeur de $n$, tandis que l'approximation
+exponentielle ne s'applique en principe que pour $n$ grand. On peut se
+rendre compte de son domaine de validit\'e en comparant un calcul
+effectu\'e directement \`a partir de  $V.7$ au r\'esultat donn\'e par
+l'approximation exponentielle.  
+\medskip
+Cherchons par exemple les probabilit\'es pour que, dans une suite de 
+vingt, cent, trois cents, mille, trois-mille,  et dix-mille chiffres
+d\'ecimaux \'ecrits  au hasard, la suite $314$ apparaisse au moins une
+fois. D\'esignons res\-pec\-ti\-ve\-ment par  ${\cal P}\, (20),\; {\cal
+P}\,  (100),\; {\cal P}\, (300),\; {\cal P}\, (1\, 000),\; {\cal P}\, (3\,
+000),\; {\cal P}\, (10\,  000)$ ces probabilit\'es. Le tableau suivant 
+donne les valeurs obtenues d'apr\`es $V.7$, suivies entre parenth\`eses
+par le calcul selon l'approximation exponentielle: 
+\vskip 0pt plus4pt minus4pt 
+$$\openup 2\jot\eqalignno{
+{\cal P}\, (20) &= {18 \over 10^3} - {16 \cdot 15 \over  2 \cdot 10^6} +
+{14 \cdot 13 \cdot 12 \over 6 \cdot 10^9} - \cdots \simeq 0.017\, 88
+\quad (0.019\, 80)\cr
+{\cal P}\, (100) &= {98 \over 10^3} - {96 \cdot 95 \over 2 \cdot 10^6} +
+{94 \cdot 93 \cdot 92 \over 6 \cdot 10^9} - \cdots \simeq 0.093\, 57
+\quad (0.095\, 16) \cr
+{\cal P}\, (300) &= {298 \over 10^3} - {296 \cdot 295 \over 2 \cdot 
+10^6}  + {294 \cdot 293 \cdot 292 \over 6 \cdot 10^9} - \cdots \simeq 
+0.258\, 25 \quad (0.259\, 18) \cr
+{\cal P}\, (1\, 000) &= {998 \over 10^3} - {996 \cdot 995 \over 2 \cdot 
+10^6} + {994 \cdot 993 \cdot 992 \over 6 \cdot 10^9} - \cdots \simeq 
+0.632\, 31 \quad (0.632\, 12) \cr
+{\cal P}\, (3\, 000) &= {2998 \over 10^3} - {2996 \cdot 2995 \over 2
+\cdot  10^6} +  \cdots \simeq  0.950\, 49 \quad (0.950\, 21) \cr
+{\cal P}\, (10\, 000) &= {9998 \over 10^3} - {9996 \cdot 9995 \over 
+2 \cdot 10^6} + \cdots \simeq 0.999\, 84 \quad (0.999\, 95) \cr  }$$
+On constate ais\'ement que l'approximation exponentielle est d\'ej\`a
+tr\`es bonne pour $n=100$; sur le tableau, l'approximation ne diff\`ere 
+notablement du calcul ``exact'' que pour $n=20$ (erreur relative de
+$11\%$).
+\medskip
+Le probl\`eme de l'apparition d'un passage sens\'e dans un texte
+al\'eatoire a \'et\'e utilis\'e par \'Emile Borel\ftn{4}{\'Emile Borel 
+{\it Le hasard} \'ed. Alcan, Paris, {\oldstyle 1914}, page 162.} pour 
+discuter la
+nature  du hasard. Borel consid\'erait surtout des suites infinies (il \'etait
+math\'ematicien).  Il expliquait que si une suite de caract\`eres infinie 
+est {\it vraiment}\'ecrite au hasard, elle doit comporter obligatoirement
+n'importe quel texte donn\'e; donc tous les textes qui ont \'et\'e \'ecrits
+et qui seront \'ecrits  un jour y figurent, et y figurent m\^eme une 
+infinit\'e de fois, car d\`es que l'un appara{\^\i}t, la suite se poursuit 
+comme si elle repartait de z\'ero. Une suite infinie dans laquelle
+ne figurerait nulle part un certain passage ne peut pas avoir \'et\'e 
+\'ecrite  au hasard, car il a fallu prescrire \`a la machine qui l'a
+engendr\'ee d'\'eviter le passage manquant. Si toutes les suites de $n$
+caract\`eres d'un alphabet qui  en comporte $m$ sont \'equiprobables,
+alors la probabilit\'e  de voir  appara{\^\i}tre un certain passage de
+longueur $k$ au bout de  $n = x\, m^k$ caract\`eres est $1-e^{-x}$, qui
+tend vers $1$ quand $x$ (et donc $n$) tend vers l'infini. La contrapos\'ee 
+de cette assertion  vraie est donc: si un passage donn\'e n'appara{\^\i}t
+jamais, alors les  suites ne sont pas toutes \'equiprobables; en
+particulier celle qui contient le passage est moins probable que les
+autres. 
+\medskip
+Ces observations sur le hasard faites au d\'ebut du si\`ecle par \'Emile 
+Borel
+ont une post\'erit\'e consid\'erable, qui est la th\'eorie des suites al\'eatoires d\'ej\`a \'evoqu\'ee (section {\bf I.4}). Il s'agit de savoir 
+quels sont les crit\`eres qui garantissent qu'une suite est ``vraiment''
+al\'eatoire. Pour qu'il en soit ainsi, il faut donc, non seulement que 
+chaque lettre y revienne aussi souvent que n'importe quelle autre, 
+mais il faut aussi que n'importe quelle cha{\^\i}ne de caract\`eres fix\'ee
+\`a l'avance y revienne aussi souvent que n'importe quelle autre de m\^eme 
+longueur. \'Emile Borel\ftn{5}{{\it Les probabilit\'es d\'enombrables 
+et leurs applications arithm\'etiques}, d\'ej\`a cit\'e.} a appel\'e 
+{\it suites normales} les suites de chiffres ou de lettres qui satisfont 
+ce crit\`ere.  Mais il est apparu par la suite qu'on pouvait engendrer
+algorithmiquement des suites infinies satisfaisant \`a cette condition. 
+De nombreux crit\`eres plus restrictifs ont \'et\'e propos\'es, dont 
+il n'est pas toujours \'evident qu'ils soient \'equivalents les uns 
+aux autres. Le crit\`ere le plus reconnu aujourd'hui est le crit\`ere
+algorithmique de Solomonov et Kolmogorov (ann\'ees {\oldstyle 1960}): 
+une suite est al\'eatoire si pour tout $n$ il est impossible d'en 
+produire les $n$ premiers \'el\'ements avec un algorithme plus court 
+que la simple donn\'ee de ces $n$ premiers \'el\'ements. Ce crit\`ere
+pr\'esente toutefois des variantes et des subtilit\'es du fait qu'il 
+n'y a pas de mesure \`a la fois universelle et absolument exacte de 
+la longueur des algorithmes\ftn{6}{Voir le livre de Jean-Paul Delahaye 
+{\it Information, complexit\'e, et hasard}, d\'ej\`a cit\'e.}.
+\medskip
+Revenons \`a notre calcul bas\'e sur la formule de Poincar\'e. Il a montr\'e 
+que si on lit une telle suite infinie, pour avoir une chance non nulle 
+d'{\it atteindre} un texte donn\'e de longueur $k$, il faut lire la suite
+jusqu'au $m^k$-i\`eme caract\`ere environ.
+\medskip
+Cela implique que si nous lisons \`a la vitesse de $10^6$ caract\`eres 
+par heure (vitesse de lecture excessive pour comprendre la {\it Critique
+de la Raison pure} mais suffisante si on cherche seulement \`a rep\'erer
+des passages sens\'es dans un texte al\'eatoire),  nous devrons lire 
+pendant $10^{36}$ heures,  soit environ $10^{32}$ ann\'ees avant d'avoir
+une chance de tomber sur le passage ``O temps tes pyramides''.  Si on est
+moins exigeant,  on peut s'estimer heureux de tomber sur un passage
+sens\'e non choisi \`a l'avance.  Une phrase semblable \`a ``O temps tes
+pyramides'' peut s'obtenir en mettant \`a la suite quatre mots de la
+langue fran\c{c}aise;  on peut estimer \`a $10^{12}$ le nombre de
+combinaisons de quatre mots susceptibles de produire un sens
+(\'eventuellement en for\c{c}ant un peu l'herm\'eneutique).  Dans ce
+cas,  l'\'ev\'enement $A_j$ consid\'er\'e avant (trouver la phrase ``O 
+temps  tes pyramides'' entre les rangs $j$ et $j+20$ de la suite),  dont la
+probabilit\'e \'etait $100^{-21}$,  est remplac\'e par l'\'ev\'enement 
+$A_j'$ (trouver n'importe quelle phrase sens\'ee de $21$ caract\`eres
+entre les rangs $j$ et $j+20$ de la suite),  dont la
+probabilit\'e est $10^{12}$ fois plus grande,  soit $10^{-30}$.  Pour avoir 
+une chance non infime de rencontrer un tel texte au cours de la lecture 
+s\'equentielle,  il faut alors parcourir $10^{30}$ caract\`eres,  op\'eration 
+qui prendra $10^{20}$ ann\'ees.
+\medskip
+Le crit\`ere algorithmique de Solomonov et Kolmogorov est radicalement
+restrictif;  la notion de hasard qu'il sous-entend exclut absolument la
+possibilit\'e d'une simulation algorithmique du hasard.  Or nous avons 
+vu d\`es le chapitre {\bf I} que le hasard r\'eel et pratique est
+g\'en\'eralement un effet de chaos d\'eterministe;  les fonctions 
+{\bf random} simulent le hasard par d\'eroulement d'un algorithme; 
+et la question de savoir si dans le monde r\'eel il y a un hasard 
+primordial (par exemple celui de la M\'ecanique quantique) est une 
+question m\'etaphysique:  elle ne peut pas \^etre tranch\'ee par
+l'exp\'erience.  C'est dire que le crit\`ere de Solomonov 
+et Kolmogorov,  pris \`a la lettre,  est purement th\'eorique et ne 
+concerne pas le monde r\'eel.  Par exemple,  la suite des d\'ecimales de 
+$\pi$,  $\sqrt{2}$,  $e$, etc,  est engendr\'ee par un algorithme;  mais, 
+bien qu'on ne sache pas le d\'emontrer rigoureusement,  ces suites sont
+vraisemblablement normales au sens de Borel et utilisables pratiquement 
+comme simulation de l'al\'eatoire:  si on convertit les d\'ecimales de 
+$\pi$, $\sqrt{2}$, $e$, etc, en lettres,  il faudra certainement aller aussi 
+loin dans ces suites pour trouver le passage ``O temps tes pyramides'' 
+que dans n'importe quelle suite ``vraiment'' al\'eatoire. 
+\medskip
+C'est que l'algorithme qui calcule les d\'ecimales est bas\'e sur
+l'arithm\'etique et n'a aucune raison sp\'eciale de favoriser ou
+d\'efavoriser l'apparition de la phrase fatidique;  il y a une sorte
+d'ind\'ependance causale entre l'algorithme arithm\'etique et la
+phrase ``O temps tes pyramides''.
+\medskip
+Un des projets utopiques formul\'es par quelques math\'ematiciens (notamment 
+Peano,  Hilbert,  et Russel,  mais contre une grande majorit\'e de sceptiques)
+aux alentours de {\oldstyle 1900} fut la formalisation int\'egrale de la
+math\'ematique.  Dans cette conception,  les d\'emonstrations math\'ematiques 
+devenaient l'application automatique d'un algorithme;  un th\'eor\`eme 
+aurait alors \'et\'e par d\'efinition le r\'esultat cod\'e d'un tel algorithme. 
+Mais il est bien \'evident que ces algorithmes de d\'eduction logique 
+formelle seraient tout aussi ind\'ependants de notre perception de 
+l'espace que les algorithmes arithm\'etiques peuvent l'\^etre de la phrase 
+``O temps tes pyramides''.  En sorte que si on avait automatis\'e la 
+d\'eduction des th\'eor\`emes de la g\'eom\'etrie selon ce principe,  comme 
+l'avait r\^ev\'e Peano,  on aurait d\^u attendre aussi longtemps 
+l'arriv\'ee du premier th\'eor\`eme {\it sens\'e} que l'apparition de la phrase 
+``O temps tes pyramides'' dans le d\'eroulement des d\'ecimales de $\pi$ 
+ou $\sqrt{2}$. 
+\medskip
+Si on veut trouver des passages plus longs,  par exemple le texte 
+int\'egral de {\it Madame Bovary},  qui comporte environ $980\, 000$ 
+caract\`eres,  il faudra lire au moins $n = 100^{980\, 000}$ caract\`eres 
+de la suite,  ce qui prendra de l'ordre de $10^{1\, 960\, 000}$ ann\'ees.
+\medskip
+Ces nombres prodigieusement grands (ou les probabilit\'es
+prodigieusement petites qui leur correspondent) ne peuvent \^etre 
+calcul\'es que par des raisonnements a priori et n'ont aucun sens 
+empirique. C'est pourquoi \'Emile Borel (qui a beaucoup \'etudi\'e ces
+probabilit\'es extr\^emes) a pos\'e le principe ``les \'ev\'enements dont 
+la probabilit\'e est infinit\'esimale ne se produisent jamais''. 
+\medskip
+Les lois d\'eterministes de la Physique macroscopique, comme la loi de
+Planck \'etudi\'ee en {\bf II.6}, sont d\'eduites par des raisonnements a 
+priori \`a partir de certaines hypoth\`eses d'invariances. Pour la loi de
+Planck, l'hypoth\`ese \'etait l'\'equiprobabilit\'e des modes d'occupation 
+pour les photons du rayonnement. Ces raisonnements a priori conduisent
+toujours \`a des probabilit\'es infinit\'esimales, parce que  les formules 
+de d\'enombrement contiennent des puissances ou des factorielles. Ainsi
+on peut calculer la probabilit\'e  a priori pour que la distribution des
+photons selon les intervalles de  fr\'equences diff\`ere de la loi de 
+Planck. Nous avons vu en {\bf II.6} que cette probabilit\'e diminue en
+fonction de l'amplitude de l'\'ecart selon un facteur gaussien
+(exponentielle du carr\'e de l'amplitude), ce qui conduit tr\`es 
+rapidement \`a des probabilit\'es extr\^emes. C'est pourquoi de tels
+\'ecarts ``ne ne produisent jamais'' et que la loi est d\'eterministe.
+Nous y reviendrons encore au chapitre {\bf XIV}. 
+
+
+
+
+
+
+\bye

@@ -1,0 +1,1714 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+\vsize=219mm
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Le hasard}
+ 
+\newdimen\blocksize  \blocksize=\vsize \advance\blocksize by-8pt 
+\medskipamount=6pt plus3pt minus3pt 
+ 
+ 
+\null\vskip10mm plus4mm minus3mm 
+ 
+\centerline{\tit I. LE HASARD.} 
+\vskip10mm 
+{\bf I. 1. Le langage du Calcul des probabilit\'es.} 
+\medskip 
+{\cit ``La th\'eorie des hasards consiste \`a r\'eduire tous les 
+\'ev\'enements du m\^eme genre \`a un certain nombre de cas \'egalement
+possibles et \`a d\'eterminer le nombre de cas favorables \`a l'\'ev\'enement
+dont on cherche la probabilit\'e. Le rapport de ce nombre \`a celui de tous 
+les cas possibles est la mesure de cette probabilit\'e, qui n'est ainsi 
+qu'une fraction dont le num\'erateur est le nombre de cas favorables, et 
+dont le d\'enominateur est le nombre de tous les cas possibles.''\par}
+\smallskip
+\line{\hfill \vbox{\hsize=66mm \eightpoint 
+\centerline{Pierre-Simon Laplace}
+\centerline{\sl Th\'eorie analytique des probabilit\'es ({\oldstyle 1819}).}}}
+\medskip
+Il n'existe pas de meilleure d\'efinition de la probabilit\'e que celle-ci, vieille de plusieurs si\`ecles, et c'est d'elle que nous partirons.
+\medskip
+Par exemple si on tire ``au  
+hasard''  un nombre entre 1 et 36, la probabilit\'e d'obtenir 11 est $1 
+\over 36$; si  la probabilit\'e d'obtenir 11 \'etait $1 \over 32$, qui est 
+sup\'erieur \`a $1 \over 36$, cela signifierait que le nombre 11 est 
+privil\'egi\'e par la Fortune ou que la roulette est truqu\'ee. Il y aurait 
+une  cause agissant secr\`etement et le hasard pur ne pourrait 
+\'eventuellement \^etre retrouv\'e qu'au-del\`a de cette cause. On 
+ne pourrait pas consid\'erer que le tirage est soumis au seul hasard.  
+\medskip 
+On appelle {\it \'epreuve} un tel r\'esultat possible. Par principe, toutes  
+les \'epreuves sont suppos\'ees \'equiprobables. 
+\medskip 
+{\eightpoint N.B.  Lorsqu'on applique le Calcul des probabilit\'es \`a  
+la r\'ealit\'e il est bien rare que l'on ait le loisir de s'assurer  
+rigoureusement  et \`a l'avance que cette hypoth\`ese 
+d'\'equiprobabilit\'e est bien v\'erifi\'ee, car d'innombrables {\it 
+causes} peuvent intervenir \`a notre insu pour fausser les chances. Le 
+mod\`ele math\'ematique postulant l'\'equiprobabilit\'e peut \^etre 
+valable lorsque les diff\'erentes causes sont suffisamment nombreuses 
+et de forces \'egales pour qu'aucune ne domine (par exemple dans le cas 
+des accidents de la route), ou bien que des sym\'etries fondamentales  
+de l'espace-temps assurent a priori qu'il ne peut y avoir de domaine 
+privil\'egi\'e (par exemple dans le cas des ph\'enom\`enes physiques). 
+Dans le jeu de la roulette, c'est la conception m\^eme de la roulette qui 
+garantit l'\'equiprobabilit\'e avec une grande pr\'ecision. Toutefois, 
+nous verrons (\S 2) que l'hypoth\`ese  d'\'equiprobabilit\'e ne signifie 
+rien en soi: encore faut-il savoir quelles sont les \'epreuves 
+\'equiprobables.} 
+\medskip 
+Un r\'esultat attendu peut \^etre tout un ensemble d'\'epreuves. Pour  
+donner un exemple, revenons au tirage d'un nombre entre 1 et 36: 
+on peut se demander quelle est la probabilit\'e d'obtenir un nombre 
+premier. La r\'eponse est $11 \over 36$. Le seul moyen de trouver cette 
+probabilit\'e est de faire la liste exhaustive des nombres premiers 
+compris entre 1 et 36: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31. On constate 
+qu'ils sont au nombre de onze, soit un peu moins que le tiers de 36. Le
+r\'esultat attendu n'\'etait pas une \'epreuve isol\'ee, mais tout un 
+ensemble d'\'epreuves r\'eunies par une propri\'et\'e commune.  
+\medskip 
+On appelle {\it \'ev\'enement} un tel ensemble d'\'epreuves.  
+L'\'equiprobabilit\'e des \'epreuves a pour cons\'equence imm\'ediate  
+que  la probabilit\'e d'un \'ev\'enement est le rapport: 
+$$\hbox{nombre d'\'epreuves appartenant \`a l'\'ev\'enement} \over 
+\hbox{nombre de toutes les \'epreuves possibles}\eqno (I.1)$$ 
+\medskip 
+Dans l'exemple des nombres premiers, le seul moyen de 
+conna\^\i tre la pro\-ba\-bi\-lit\'e \'etait de compter exhaustivement. Mais  
+dans beaucoup de probl\`emes comportant des r\'egularit\'es, des 
+sym\'etries,  ou des invariances, une m\'ethode math\'ematique 
+appropri\'ee permet de calculer, sans avoir \`a compter. C'est 
+l'ensemble de ces m\'ethodes qui constitue le {\it Calcul de 
+Probabilit\'es}.   
+\medskip 
+L'ensemble de toutes les \'epreuves possibles est \'evidemment  
+sp\'ecifique du probl\`eme \'etudi\'e. On l'appelle {\it espace des 
+\'epreuves} (en anglais {\it sample space}) et on le note tr\`es souvent 
+$\Omega$. Dans le langage math\'ematique on \'ecrit  
+$$\eqalign{ 
+\Omega = \{\, &1\, , \, 2\, , \, 3\, , \, 4\, , \, 5\, , \, 6\, , \, 7\, , \,  
+8\, ,  
+ \, 9\, , \, 10\, , \, 11\, , \, 12\, , \,  \cr 
+&13\, , \, 14\, , \, 15\, , \, 16\, , \, 17\, ,  \, 18\, , \, 19\, , \, 20\, ,  
+\, 
+21\, , \, 22\, , \, 23\, , \, 24\, , \,  \cr 
+&25\, , \, 26\, ,  \, 27\, , \, 28\, , \, 29\, , \, 30\, , \, 31\, , \, 32\, ,  
+\,  
+33\, , \, 34\,  , \, 35\, , \, 36\,\} \cr }$$  
+Le sous-ensemble des nombres premiers est, dans le m\^eme
+langage math\'e\-ma\-tique  
+$$A = \{\, 2\, , \, 3\, , \, 5\, , \, 7\, , \, 11\, , \, 13\, , \,  
+17\, 
+,  \, 19\, , \, 23\, , \, 29\, , \, 31\,\}$$ 
+L'\'ev\'enement $A$ est ainsi un sous-ensemble de $\Omega$, qui est 
+g\'en\'eralement d\'efini par une propri\'et\'e commune \`a tous ses 
+\'el\'ements, \`a savoir ici, ``\^etre un nombre premier''. Dans le langage 
+du Calcul des probabilit\'es, on d\'esigne souvent un \'ev\'enement par 
+une phrase  imag\'ee qui exprime cette propri\'et\'e commune \`a tous 
+ses \'el\'ements. On dira que $A$ est  l'\'ev\'enement ``on a tir\'e un 
+nombre premier''.  Ainsi on retrouve le  sens du mot \'ev\'enement dans 
+le langage courant. Dans le langage du Calcul des probabilit\'es, on 
+d\'esigne indiff\'eremment un \'ev\'enement  par une phrase 
+imag\'ee exprimant une certaine propri\'et\'e, ou comme  un 
+sous-ensemble de $\Omega$. Le sous-ensemble en question est alors 
+l'ensemble des \'epreuves qui poss\`edent ladite propri\'et\'e. La phrase 
+imag\'ee permet de se faire comprendre facilement, elle exprime aussi  
+le  sens du probl\`eme; la traduction math\'ematique sous forme 
+d'ensemble sert par contre \`a calculer. Il faut s'exercer \`a passer de 
+l'un \`a l'autre. Nous verrons beaucoup d'exemples qui permettront de s'y 
+entra\^\i ner.  
+\medskip 
+Si $A$ est un \'ev\'enement ($A \subset \Omega$) on note $\#A$ le 
+nombre d'\'el\'ements (le cardinal) de l'ensemble $A$, c'est-\`a-dire le 
+nombre d'\'epreuves qui constituent l'\'ev\'enement $A$. La probabilit\'e  
+d'un \'ev\'enement $A$ est ainsi: 
+$${\cal P}(A) = {\#A \over \#\Omega}\eqno (I.2)$$ 
+qui est une traduction imm\'ediate de $(I.1.)$ 
+\medskip 
+La r\'esolution de n'importe quel probl\`eme concret  
+comporte traditionnellement deux  \'etapes:  
+\smallskip 
+$a$) la mod\'elisation (nom moderne de ce qu'on appelait autrefois 
+``mise  en \'equations") 
+\smallskip 
+$b$) la r\'esolution analytique ou le traitement num\'erique de ces  
+\'equations.  
+\medskip 
+\noindent En Calcul des probabilit\'es, la phase $a)$ de mod\'elisation  
+consiste \`a trouver l'espace des \'epreuves $\Omega$ correspondant  
+au probl\`eme; la phase b) consiste \`a calculer  les probabilit\'es \`a 
+l'aide de $I.2.$ 
+\medskip 
+La th\'eorie math\'ematique des probabilit\'es d\'eveloppe une  {\it 
+alg\`ebre}, c'est-\`a-dire des r\`egles de calcul, qui s'appliquent en 
+g\'en\'eral aux probabilit\'es des \'ev\'enements dans des espaces 
+d'\'epreuves non n\'ecessairement finis. Pour des espaces d'\'epreuves  
+{\it finis} (le  seul cas qui nous int\'eresse) cette th\'eorie est 
+\'el\'ementaire, mais suffit \`a traiter tous les probl\`emes. La suite de 
+l'ouvrage traitera de probl\`emes classiques  qu'il faut conna\^\i tre, 
+de m\'ethodes de calcul approch\'e, de lois asymptotiques, d'applications 
+diverses.  
+\medskip 
+Ainsi le langage du Calcul des probabilit\'es est extr\^emement simple. 
+Pour le moment nous en avons pr\'esent\'e les bases, qui se r\'eduisent 
+au vocabulaire suivant. 
+\smallskip 
+--- {\bf \'epreuve:} un des r\'esultats possibles, que le 
+hasard peut choisir, sans en favoriser aucun. 
+\smallskip 
+--- {\bf espace des \'epreuves:} l'ensemble de toutes les \'epreuves. 
+\smallskip 
+--- {\bf \'ev\'enement:} un ensemble d'\'epreuves, g\'en\'eralement  
+d\'efini par une propri\'et\'e commune \`a ses \'el\'ements. 
+\smallskip 
+--- {\bf cardinal:}  nombre d'\'el\'ements d'un ensemble fini. 
+\smallskip 
+--- {\bf probabilit\'e:} la probabilit\'e d'un \'ev\'enement $A$ est le  
+rapport du cardinal de $A$ au cardinal de $\Omega$. C'est donc un 
+nombre toujours compris entre 0 et 1. 
+\medskip 
+Peu \`a peu ce vocabulaire de base sera enrichi par de nouvelles 
+d\'efinitions. 
+\medskip 
+Le mot {\it hasard} ne fait pas partie du vocabulaire technique du  
+Calcul des probabilit\'es, car ce dernier ne se pr\'eoccupe que des  
+r\`egles et des m\'ethodes de calcul. Une discussion sur la nature du 
+hasard est cependant essentielle; sans cela, le Calcul des probabilit\'es 
+n'est qu'un formalisme vide, qu'on saura utiliser pour r\'esoudre des 
+probl\`emes scolaires \'enonc\'es dans le m\^eme formalisme, mais 
+qu'on ne saura  plus utiliser devant des probl\`emes concrets {\it 
+d\'epourvus} de formalisation pr\'ealable. Nous avons dit que la {\it 
+mod\'elisation} d'un probl\`eme de probabilit\'es consistait \`a trouver 
+l'espace des \'epreuves ad\'equat. Mais ``espace des \'epreuves'' 
+sous-entend \'equiprobabilit\'e, et il n'est pas \'evident de savoir ce qui 
+est \'equiprobable. C'est cela qui soul\`eve toute une discussion sur la 
+nature du hasard, \`a laquelle le reste de ce chapitre est consacr\'e.  
+ 
+\vskip7mm plus6mm minus5mm
+ 
+{\bf I. 2. \'Etude de deux exemples.} 
+\medskip 
+L'exemple extr\^emement simple du tirage au hasard d'un nombre entre 1 
+et 36 ne pose aucun probl\`eme de mod\'elisation: le choix de l'ensemble 
+$\Omega$ ad\'equat est imm\'ediat. Il ne laisse rien soup\c conner de la 
+profondeur du concept. C'est pourquoi nous \'etudions dans cette section 
+deux probl\`emes non triviaux (quoique simples), afin d'illustrer d\`es 
+maintenant le v\'eritable sens des concepts d\'ej\`a introduits. 
+
+\bigskip 
+
+{\bf Premier exemple: distribution au hasard de trois boules dans deux 
+bo\^\i tes.} 
+ 
+\midinsert 
+\def\trv{\vrule height8pt depth4pt width0.5pt} 
+\newdimen\lrg  
+\lrg=15mm \advance\lrg by -0.5pt 
+\def\trh{\hrule height0.5pt depth0pt width32.94mm} 
+\def\sp{\hskip\lrg} 
+\def\boule#1{\hbox to 12pt{$\bigcirc$\hskip-8pt 
+\raise0.5pt\hbox{$\scriptstyle #1$}\hfill }} 
+\def\ball{\hbox to 12pt{ \hfill $\bigcirc$ \hfill }} 
+\vskip12pt 
+\centerline{ 
+\vtop{\hsize=4cm 
+\hbox{\trv 
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill \boule3 \hfill } 
+\trv \hbox to \lrg { \hfill } \trv}\trh  
+\vskip0pt 
+\hbox{\hskip-1pt\vbox{$$\left. \vcenter{
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule1 \hfill \boule2 \hfill } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule3 \hfill } \trv } \trh  
+\vskip12pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule2 \hfill \boule3 \hfill } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule1 \hfill } \trv } \trh  
+\vskip12pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule1 \hfill \boule3 \hfill } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule2 \hfill } \trv } \trh }
+\hskip10pt \right\}$$ } }
+\vskip-12pt 
+\hbox{\hskip-1pt\vbox{$$\left. \vcenter{
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule1 \hfill  } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule2 \hfill \boule3 \hfill } \trv } \trh  
+\vskip12pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule2 \hfill  } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule1 \hfill \boule3 \hfill } \trv } \trh  
+\vskip12pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \hskip5pt \boule3 \hfill  } 
+\trv \hbox to \lrg { \hfill \hskip5pt \boule1 \hfill \boule2 \hfill } \trv }
+\trh } \hskip10pt \right\}$$ } } 
+\vskip-6pt 
+\hbox{\trv \hbox to \lrg { \hfill } \trv 
+\hbox to \lrg { \hfill \boule1 \hfill \boule2 \hfill \boule3 \hfill } 
+\trv} \trh  
+\vskip12pt } 
+\hskip2cm 
+\def\trh{\hrule height0.5pt depth0pt width32.9mm} 
+\vtop{\hsize=4cm 
+\hbox{\trv 
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hskip6pt \hfill } 
+\trv \hbox to \lrg { \hfill } \trv}\trh  
+\vskip36.8pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \ball \hfill \ball \hskip5pt \hfill } 
+\trv \hbox to \lrg { \hfill \ball\hskip5pt  \hfill } \trv } \trh  
+\vskip61.6pt 
+\hbox{\trv 
+\hbox to \lrg { \hfill \ball \hskip5pt \hfill  } 
+\trv \hbox to \lrg { \hfill \ball \hfill \ball \hskip5pt \hfill } \trv } \trh  
+\vskip36.6pt 
+\hbox{\trv \hbox to \lrg { \hfill } \trv 
+\hbox to \lrg { \hfill \ball \hfill \ball \hfill \ball \hskip5pt \hfill } 
+\trv} \trh  
+\vskip12pt } 
+}
+
+\centerline{\eightpoint figure 1} 
+\vskip5mm 
+\endinsert 
+ 
+On voit sur la figure 1: dans la colonne de gauche, toutes les 
+r\'epartitions possibles de trois boules num\'erot\'ees 1, 2, 3 dans les  
+deux bo\^\i tes; il y en a huit en tout. Si on supprime les marques sur les 
+boules, on ne peut plus distinguer les r\'epartitions $(1,2 \mid 3)$, 
+$(2,3 \mid 1)$, et $(1,3 \mid 2)$, ni $(1 \mid 2,3)$, $(2 \mid 1,3)$, et 
+$(3 \mid 1,2)$. C'est pourquoi, sur la colonne de droite, il n'y a plus que 
+quatre r\'epartitions.  
+\medskip 
+Question: pour des boules sans marques, l'espace des \'epreuves est-il 
+form\'e des huit r\'epartitions de la colonne de gauche, ou des quatre de 
+la colonne de droite ?   
+\medskip 
+Il se trouve que la r\'eponse d\'epend de la nature des boules: s'il s'agit 
+de boules macroscopiques ob\'eissant \`a la M\'ecanique classique, 
+c'est la premi\`ere r\'eponse qui convient (et peu importe  qu'elles 
+soient num\'erot\'ees ou non, car le probl\`eme n'est pas qu'elles soient 
+subjectivement num\'erot\'ees, mais qu'elles soient objectivement 
+num\'erotables); s'il s'agit de particules quantiques ob\'eissant \`a la 
+statistique de Bose-Einstein, c'est la deuxi\`eme r\'eponse qui convient.  
+L'\'equiprobabilit\'e est bien dans les deux cas l'expression du {\it pur 
+hasard}, mais il se trouve que le pur hasard ne se situe pas au m\^eme 
+niveau  de causalit\'e selon que les particules sont classiques ou  
+quantiques.   
+\medskip 
+ 
+{\eightpoint 
+Dans la plupart des ouvrages sur le Calcul des probabilit\'es, on ne 
+donne pas de la probabilit\'e ${\cal P}\, (A)$ une d\'efinition 
+directement d\'eriv\'ee de l'hypoth\`ese d'\'equiprobabilit\'e comme 
+nous le faisons ici, mais une d\'efinition  axiomatique du type 
+suivant: ``\'etant donn\'e un ensemble fini $\Omega$, appel\'e espace des 
+\'epreuves, on appelle {\it probabilit\'e} sur  $\Omega$ une application 
+${\cal P}$ de l'ensemble des parties de $\Omega$ sur l'intervalle $[0, \; 
+1 [$ qui v\'erifie la propri\'et\'e d'additivit\'e  ${\cal P}\, (A \cup 
+B) = {\cal P}\, (A) + {\cal P}\, (B)$ pour tout couple de parties $A$ et 
+$B$ disjointes, ainsi que la propri\'et\'e ${\cal P}\, (\Omega ) = 1$''. Il 
+est bien clair que la probabilit\'e telle que nous l'avons d\'efinie dans 
+$(I.2.)$ satisfait \`a cette d\'efinition axiomatique. Mais ce que la 
+d\'efinition axiomatique recouvre est plus g\'en\'eral et n'exige pas 
+n\'ecessairement que toutes les \'epreuves soient \'equiprobables; on 
+peut donner \`a chaque \'epreuve un {\it poids}, c'est-\`a-dire un atome 
+de probabilit\'e. Si les poids sont diff\'erents il n'y a pas 
+\'equiprobabilit\'e et $(I.2.)$ doit \^etre remplac\'e par   
+$${\cal P}\, (A) = {\hbox{somme des poids des \'epreuves appartenant 
+\`a}\; A \over \hbox{somme des poids de toutes les \'epreuves} }\eqno 
+(II.2\; bis.)$$  
+Ceci v\'erifie aussi la d\'efinition axiomatique et inversement, 
+toute application de l'ensemble des parties de $\Omega$ sur l'intervalle 
+$[0, \; +\infty [$ qui v\'erifie la propri\'et\'e d'additivit\'e sera de la  
+forme $(II.2\; bis.)$, avec le poids ${\cal P}\, (\{\omega\})$ pour chaque 
+\'epreuve $\omega$.  
+\medskip  
+Les auteurs qui proc\`edent ainsi ont pour cela une excellente raison: 
+exposer le Calcul des probabilit\'es pour des \'epreuves non 
+n\'ecessairement \'equiprobables ne co\^ute pas une seule phrase de plus 
+que pour des \'epreuves \'equiprobables, car tout se d\'eduit de 
+l'additivit\'e (ce qu'on d\'eduit de I.2. passe toujours par l'interm\'ediaire 
+logique de l'additivit\'e). Pourquoi donc se priver de quelque chose 
+d'absolument gratuit?   
+\medskip 
+En fait l'enjeu est le {\it sens} du Calcul des probabilit\'es, ou  
+autrement dit, la signification du mot hasard. 
+\medskip 
+La caract\'eristique du pur hasard {\it est} l'\'equiprobabilit\'e. Nous 
+reviendrons encore sur ce point au paragraphe suivant. Si des 
+\'epreuves ne sont pas \'equiprobables, c'est que certaines sont  
+favoris\'ees et donc qu'une cause, qui n'est pas le hasard, agit 
+secr\`etement. Il ne s'agit pas l\`a d'un choix philosophique: si une  
+\'etude statistique \'etablit que le cancer du pancr\'eas est plus 
+fr\'equent dans la haute vall\'ee de l'Is\`ere que partout ailleurs, on en 
+d\'eduit qu'une cause, agissant dans cette haute vall\'ee et non ailleurs 
+(ou agissant plus fortement dans cette haute vall\'ee qu'ailleurs) est 
+responsable de cette surfr\'equence. M\^eme si apr\`es de longues 
+recherches cette cause reste introuvable, il n'y aura pas de querelle 
+philosophique sur la question de savoir si la Fortune est ou n'est pas 
+aveugle; on ne parlera de hasard que si la fr\'equence est distribu\'ee 
+uniform\'ement, car c'est l\`a le sens m\^eme du mot hasard.  
+\medskip 
+Il peut \^etre commode de disposer de mod\`eles th\'eoriques o\`u 
+l'\'equiprobabilit\'e n'est pas postul\'ee a priori. Par exemple dans un  
+probl\`eme o\`u on jette $r$ boules dans $k$ cases identiques, mais o\`u  
+on ne s'int\'eresse qu'\`a l'alternative:  ``case 1'' ou ``autre case'', 
+il est pr\'ef\'erable de mod\'eliser la situation en ne parlant que de 
+deux possibilit\'es seulement, mais de sorte que la probabilit\'e de  
+la premi\`ere soit $1/k$ et la probabilit\'e de la 
+deuxi\`eme $1-1/k$.  Il s'agit alors d'un mod\`ele 
+ph\'enom\'enologique et on retrouve le vrai hasard en creusant 
+davantage. Il faut cependant admettre que dans ce cas le gain en 
+simplicit\'e qui r\'esulte du mod\`ele ph\'enom\'enologique (compar\'e 
+au mod\`ele avec \'equiprobabilit\'e) est m\'ediocre. Une exp\'erience 
+plus pouss\'ee du Calcul des probabilit\'es montrerait que le gain est 
+m\'ediocre dans tous les cas. Nous verrons au chapitre {\bf IV} 
+la {\it formule des probabilit\'es conditionnelles} qui \'etablit le lien  
+entre de tels mod\`eles ph\'enom\'enologiques et le mod\`ele 
+\'equiprobable sous-jacent. 
+\medskip 
+En revanche le fait de poser les probl\`emes de probabilit\'e en  
+remontant syst\'e\-ma\-ti\-que\-ment au {\it pur hasard}, sans 
+s'arr\^eter \`a des repr\'esentations ph\'enom\'enologiques, est 
+fonci\`erement instructif.   
+\medskip 
+C'est justement ce que montre l'exemple ci-dessus de trois boules \`a 
+disposer dans deux cases . On peut pour les deux situations discut\'ees 
+consid\'erer un espace des \'epreuves \`a quatre \'el\'ements,  les  
+quatre \'el\'ements \'etant:  
+$$\eqalign{ 
+&\omega_1 : \quad \left\{ \vcenter{ 
+\hbox{trois boules dans la case 1}  
+\vskip-5pt 
+\hbox{z\'ero boule dans la case 2 \vrule depth2pt width0pt }} \right. \cr 
+&\omega_2 : \quad \left\{ \vcenter{ 
+\hbox{deux boules dans la case 1}  
+\vskip-5pt 
+\hbox{une boule dans la case 2 \vrule depth2pt width0pt }} \right.  \cr 
+&\omega_3 : \quad \left\{ \vcenter{ 
+\hbox{une boule dans la case 1}  
+\vskip-5pt 
+\hbox{deux boules dans la case 2 \vrule depth2pt width0pt }} \right. \cr  
+&\omega_4 : \quad \left\{ \vcenter{ 
+\hbox{z\'ero boule dans la case 1}  
+\vskip-5pt 
+\hbox{trois boules dans la case 2\vrule depth2pt width0pt}}\right.\cr }$$ 
+Dans le cas de la statistique de Bose-Einstein, les boules sont par  
+exemple des photons et les cases des \'etats quantiques; les quatre 
+\'epreuves $\omega_1,\,\omega_2,\,\omega_3,\,\omega_4$ sont 
+\'equiprobables;  dans le cas des boules macroscopiques, par contre (et 
+peu importe qu'elles  soient num\'erot\'ees ou non, elles sont toujours 
+{\it objectivement} discernables, du fait qu'elles sont et restent 
+situ\'ees dans l'espace-temps), les quatre \'epreuves ne sont pas 
+\'equiprobables; leurs probabilit\'es respectives sont ${1 \over 8},\, {3 
+\over 8},\, {3 \over 8},\, {1 \over 8}$. On peut alors calculer tout ce 
+qu'on veut sur les probabilit\'es de tous les \'ev\'enements concernant 
+ces \'epreuves, et on aboutira aux m\^emes  r\'esultats dans le mod\`ele 
+\`a quatre \'el\'ements non \'equiprobables que dans le mod\`ele \`a huit 
+\'el\'ements \'equiprobables. Mais bien entendu, il aura fallu auparavant 
+trouver les valeurs ${1 \over 8},\, {3 \over 8},\, {3 \over 8},\,  {1 
+\over 8}$. Et pour cela il n'y avait aucun autre moyen que de sortir du  
+mod\`ele \`a quatre \'el\'ements, venir en secret dans le mod\`ele \`a 
+huit \'el\'ements \'equiprobables pour y d\'eterminer les valeurs des 
+poids, puis retourner au mod\`ele \`a quatre \'el\'ements en faisant 
+semblant de les avoir devin\'ees gr\^ace au g\'enie.  
+\medskip  
+Si on analyse bien cet exemple, on comprend que le {\it pur hasard} est   
+une expression des sym\'etries fondamentales: si les huit \'epreuves  
+ du  mod\`ele \`a huit \'el\'ements sont effectivement \'equiprobables 
+c'est parce que les trois boules peuvent \^etre isol\'ees dans l'espace. 
+Quoiqu'il arrive \`a l'une des trois boules, cela n'affecte pas l'\'etat des 
+deux autres. Lorsque la Fortune dispose la deuxi\`eme dans l'une des 
+deux cases, sa  c\'ecit\'e consiste \`a ne pas percevoir l'\'etat 
+d'occupation des deux cases par la premi\`ere boule, mais seulement les 
+positions spatio-temporelles relatives de la deuxi\`eme boule et des 
+deux cases. En revanche, lorsque la m\^eme Fortune dispose le second 
+photon dans l'un des deux \'etats, sa c\'ecit\'e consiste \`a ne pas 
+percevoir les positions spatio-temporelles relatives des photons
+(ces positions n'ont d'ailleurs aucun sens objectif) et des 
+deux \'etats quantiques, mais seulement les \'etats d'occupation. Ainsi 
+dans le premier cas aucune des boules ne favorise une case, tandis que 
+dans le second cas aucun des photons ne favorise un \'etat d'occupation. 
+Dans le premier cas le pur hasard est le reflet d'une invariance 
+spatio-temporelle (les deux cases sont \'equivalentes car ce sont des 
+lieux sym\'etriques de l'espace, et chacune des trois boules agit 
+ind\'ependamment des autres, c'est-\`a-dire que sa trajectoire ne 
+d\'epend pas du fait que les autres boules ont \'et\'e lanc\'ees avant ou 
+apr\`es). Dans le second cas le pur hasard est le reflet d'une 
+indiscernabilit\'e objective des trois photons; seuls peuvent \^etre 
+objectivement distingu\'es les quatre \'etats d'occupation.   
+\medskip  
+Or aucun probl\`eme de probabilit\'e ne peut \^etre r\'esolu sans 
+recourir directement au postulat que la Fortune est aveugle. Si une 
+possibilit\'e est favoris\'ee par rapport \`a une autre (dans le sens 
+qu'elle est plus probable) on ne peut calculer a priori sa probabilit\'e 
+qu'en recherchant le hasard pur \`a un niveau sup\'erieur. Mais on ne 
+peut \'evidemment appliquer le  postulat que si on sait quelle 
+sym\'etrie intervient dans le probl\`eme. Cela est tellement vrai qu'on 
+peut le v\'erifier par exemple dans le livre  de William F{\eightrm 
+ELLER} {\it An Introduction to Probability Theory  and its Applications} 
+(John Wiley ed.) Je choisis ce livre parce que c'est, sur le sujet, {\it le} 
+livre de r\'ef\'erence: il est pratiquement impossible d'enseigner mieux 
+que F{\eightrm ELLER} les questions trait\'ees dans son livre; c'est 
+pourquoi certaines parties de ce cours sont simplement reprises 
+d'apr\`es F{\eightrm ELLER} (voir par exemple le chapitre {\it marches 
+al\'eatoires}). Bien qu'ennemi jur\'e du formalisme  math\'ematique, 
+F{\eightrm ELLER} ne renonce pas \`a la commodit\'e de l'approche 
+axiomatique qui, comme nous l'avons dit plus haut, ne co\^ute aucun 
+effort suppl\'ementaire, et laisse la porte ouverte aux espaces 
+d'\'epreuves non \'equiprobables. De ce fait il est conduit \`a donner des 
+exemples ou des exercices o\`u interviennent des espaces d'\'epreuves 
+non \'equiprobables. Mais bien s\^ur dans chacun de ces exemples ou 
+exercices, les poids qui sont ``parachut\'es'' au lecteur ont \'et\'e 
+d\'etermin\'es par l'auteur \`a partir d'un mod\`ele \`a \'epreuves 
+\'equiprobables.   
+\medskip  
+
+Ainsi, exercice 4. page 24: 
+\smallskip 
+{\leftskip=28pt \rightskip=10pt  ``A coin is tossed until for the first time the same result 
+appears twice in succession. To every possible outcome requiring $n$ 
+tosses attribute probability $1 / 2^{n-1}$. Describe the sample space.  
+Find the probability of the following events: (a) the experiment ends 
+before the sixth toss, (b) an {\it even} number of tosses is required.''\par}
+\smallskip 
+Voir aussi les deux exercices qui suivent celui-ci.  
+\smallskip 
+Le choix du poids $1 / 2^{n-1}$ provient d'une \'equiprobabilit\'e \`a un  
+niveau sup\'erieur (nous reviendrons l\`a-dessus au chapitre {\it 
+probabilit\'es conditionnelles}). On trouvera encore un tel exemple  
+pages 47 -- 48 (chap $II$ \S 7: Examples for waiting times). 
+Fr\'equemment dans son ouvrage, F{\eightrm ELLER} exprime la 
+condition ``assuming perfect randomness, $\ldots$''. Cette condition 
+signifie toujours que le probl\`eme poss\`ede un mod\`ele avec 
+\'equiprobabilit\'e, et dans lequel cette \'equiprobabilit\'e r\'esulte 
+d'une sym\'etrie \'evidente (le tout \'etant de la trouver). On appellera  
+{\it probabilit\'es a priori} les probabilit\'es ainsi obtenues par 
+consid\'eration d'une sym\'etrie. En l'absence de sym\'etrie connue on  
+peut aussi mesurer a posteriori les probabilit\'es par la statistique; on 
+ignore alors o\`u est intervenu le pur hasard, et on parlera de {\it 
+probabilit\'es empiriques}. On peut toujours construire a posteriori un 
+mod\`ele ph\'enom\'enologique reprenant ces probabilit\'es empiriques. 
+Mais j'ai estim\'e pr\'ef\'erable de recourir \`a la formule des 
+probabilit\'es conditionnelles (chap. {\bf IV}). 
+ 
+} %%% end of \eightpoint 
+ 
+\vskip7mm plus6mm minus5mm
+\penalty-600 
+ 
+{\bf Deuxi\`eme exemple: tirage au hasard d'une corde 
+dans un cercle.} 
+
+\penalty600 
+\medskip 
+Cet exemple est c\'el\`ebre: il est tir\'e du {\it Calcul des 
+probabilit\'es} de Joseph Bertrand, un ouvrage paru en {\oldstyle 1888}. 
+Sa c\'el\'ebrit\'e provient de ce qu'il a \'et\'e repris et comment\'e 
+par Henri Poincar\'e, puis encore par \'Emile Borel. Il examine trois
+mani\`eres diff\'erentes de tirer au hasard une corde dans un cercle 
+de rayon $R$: 
+\smallskip 
+{\bf 1.} on tire au hasard deux points sur le cercle (ce qui \'equivaut 
+\`a deux nombres compris entre 0 et $2\pi$): ils d\'efinissent une corde,  
+celle qui joint les deux points; 
+\smallskip 
+{\bf 2.} on tire au hasard une direction (ce qui \'equivaut \`a un nombre 
+$\theta$ entre 0 et $2\pi$) et une distance $d$ au centre du cercle (ce  
+qui \'equivaut \`a un nombre entre 0 et $R$); ces deux donn\'ees 
+d\'efinissent univoquement une corde perpendiculaire \`a la direction 
+donn\'ee et \`a la distance $d$ du centre;  
+\smallskip   
+{\bf 3.} on tire au hasard un point \`a l'int\'erieur du cercle: ce point  
+d\'efinit univoquement une corde dont le centre est ce point.  
+\medskip 
+\`A premi\`ere vue le probl\`eme rel\`eve du Continu: il y a un continuum  
+de cordes, et les nombres qui les d\'eterminent sont des nombres 
+r\'eels. Cela ne pose aucune difficult\'e particuli\`ere, mais il est de 
+toute fa\c con ais\'e de discr\'etiser le probl\`eme: on d\'ecoupe les 
+intervalles dans  lesquels les nombres doivent \^etre choisis au hasard 
+en un grand nombre  de parties \'egales. Cela est montr\'e sur la figure 2 
+pour les trois cas. 
+ 
+\midinsert 
+\vskip3pt 
+\centerline{ \epsfbox{../imgEPS/ch01eps/fig2.eps }}  
+\vskip3mm 
+\centerline{\eightpoint figure 2} 
+\vskip6pt 
+\centerline{\vbox{\hsize=12cm \eightpoint On a repr\'esent\'e la 
+discr\'etisation du probl\`eme dans les trois cas. Afin de ne pas  
+surcharger la figure, on n'a repr\'esent\'e la discr\'etisation que 
+radialement pour les cas 1 et 2. Dans le cas 3, le quadrillage d\'etruit 
+bien s\^ur la sym\'etrie sph\'erique, mais celle-ci est conserv\'ee 
+statistiquement. }}  
+\vskip3mm 
+ 
+ \endinsert 
+ 
+{\bf Probl\`eme:} quelle est la probabilit\'e pour que la distance de la  
+corde au centre du cercle soit inf\'erieur \`a $R/2$ ou ce qui est 
+\'equivalent, quelle  est la probabilit\'e pour que la longueur de la 
+corde soit sup\'erieure \`a $R\sqrt{3}$? 
+ 
+\midinsert 
+\vbox to \blocksize { 
+\vfill 
+\centerline{\epsfbox{../imgEPS/ch01eps/fig3-1.eps}} 
+\vskip3mm 
+\centerline{\eightpoint figure 3.1.} 
+\vfill 
+\centerline{\epsfbox{../imgEPS/ch01eps/fig3-2.eps}} 
+\vskip3mm 
+\centerline{\eightpoint figure 3.2.} 
+\vfill } 
+\endinsert 
+
+Les r\'eponses d\'ependent du mod\`ele: dans le cas 1 elle vaut $1\over  
+3$,  dans  le cas 2 elle vaut $1\over 2$, dans le cas 3 elle vaut $1\over 
+4$. La diff\'erence provient du fait que l'espace $\Omega$ de toutes les 
+cordes possibles n'est pas le m\^eme dans les trois cas. Les figures 3.1, 
+3.2, et 3.3 montrent quel est l'espace $\Omega$ respectivement dans les 
+cas 1, 2 et 3 (on n'a repr\'esent\'e que la partie radiale). Dans son
+livre, Joseph Bertrand pr\'esentait cet exemple dans un but de critique, 
+comme un probl\`eme  mal pos\'e. Il avait raison, puisque l'\'enonc\'e 
+ci-dessus ne permet pas \`a lui seul  de d\'eterminer lequel des trois 
+mod\`eles est le bon.    
+\medskip 
+Une analyse d\'etaill\'ee du ph\'enom\`ene permet de  
+comprendre la diff\'erence entre les trois figures. Introduisons les 
+coordonn\'ees suivantes:  
+$$\eqalignno{ 
+&u \quad \hbox{l'angle polaire de la m\'ediatrice de la corde}\cr 
+&v \quad \hbox{le demi-angle d'ouverture de la corde}\cr 
+\noalign{\smallskip} 
+&d\quad\hbox{la distance de la corde au centre du cercle\hskip5mm et} 
+\quad t = {\up{d}\over R} \cr 
+\noalign{\smallskip} 
+&x,y \quad \hbox{les coordonn\'ees cart\'esiennes du milieu de la 
+corde.}\cr}$$  
+On peut dire que dans le mod\`ele 1 on choisit les nombres $u$ et $v$ au 
+hasard, c'est \`a dire que $u$ est pris au hasard dans l'intervalle 
+$[0,2\pi  ]$ et $v$ au hasard dans l'intervalle $[0,{\pi \over 2}]$ 
+(en pr\'esentant ce mod\`ele, nous avons dit qu'on choisissait au hasard 
+les deux extr\'emit\'es $u_1$ et $u_2$ de la corde, et non les 
+param\`etres $u$ et $v$ introduits ci-dessus, mais nous verrons que  
+cela est \'equivalent). L'expression {\it au hasard} signifie que dans ces 
+intervalles il n'y a pas de r\'egion privil\'egi\'ee.  Si on discr\'etise
+le probl\`eme comme dans la figure 2,  cela conduit  \`a diviser ces 
+intervalles en parties \'egales.   
+\smallskip 
+Par contre dans le mod\`ele 2 ce sont les nombres $u$ et $t$ qui sont 
+choisis au hasard dans les intervalles $[0,2\pi ]$ et $[0,1]$. 
+\smallskip 
+Enfin, dans le mod\`ele 3 ce sont les nombres $x,y$ qui sont choisis au 
+hasard dans le domaine $x^2 + y^2 < R^2$. 
+\midinsert 
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch01eps/fig3-3.eps}} 
+\vskip3mm 
+\centerline{\eightpoint figure 3.3} 
+\vskip3mm 
+\endinsert 
+\medskip 
+Ces choix {\it au hasard} se traduisent math\'ematiquement par le fait  
+que  les probabilit\'es sont les rapports des aires: 
+\medskip 
+\noindent {\bf cas 1.}  
+$$P_1 = {\int_0^{2\pi}\int_{\pi \over 3}^{\pi \over 2} 
+\strup{8} \; dv \, du \over 
+\int_0^{2\pi}\int_{0}^{\pi \over 2} 
+\sdown{15}  \; dv \, du  }$$ 
+{\bf cas 2.}  
+$$P_2 = {\int_0^{2\pi}\int_{0}^{1 \over 2} 
+\strup{6.5}  \; dt \, du \over 
+\int_0^{2\pi}\int_{0}^{1} 
+\sdown{13} \; dt \, du  }$$ 
+{\bf cas 3.}  
+$$P_3 = {\int\!\!\int_{x^2 + y^2 < R^2/4} 
+\strup{6}  \; dx \, dy \over 
+\int\!\!\int_{x^2 + y^2 < R^2}  
+\sdown{11} \; dx \, dy  }$$ 
+\medskip 
+Entre ces diff\'erents param\`etres on a les relations suivantes: 
+$$\eqalignno{&d = R\cos v \cr   &x = d\cos u \cr   &y = d\sin u \cr}$$ 
+de sorte que si on les exprime tous en fonction de $u,t$ cela donne 
+$$\eqalignno{ 
+&v = \arccos t \cr  &x = R\; t \cos u \cr  &y = R\; t \sin u \cr}$$  
+Si maintenant on rapporte les cas 1 et 3 aux coordonn\'ees $u,t$, 
+c'est-\`a-dire si on fait le changement de variable correspondant dans  
+les int\'egrales, les probabilit\'es deviennent respectivement:  
+$$P_1 =  {\int_{\pi \over 3}^{\pi \over 2} 
+\strup{8} \; dv \over 
+\int_{0}^{\pi \over 2} \sdown{15}  \; dv }  
+= {\int_{0}^{1 \over 2} \strup{8}
+{1 \over \sdown{9} \sqrt{1-t^2}}  
+\; dt \over \int_{0}^{1}\sdown{13}
+{1 \over \sdown{8.5} \sqrt{1-t^2} } \; dt }\hskip9mm 
+P_2 =  {\int_{0}^{1 \over 2} \strup{6.5} \; dt \over 
+\int_{0}^{1} \sdown{13} \; dt }\hskip9mm 
+P_3 =  {\int_{0}^{1 \over 2} t \strup{6} \; dt \over 
+\int_{0}^{1}t \sdown{13}\; dt }$$ 
+(Les int\'egrales en $du$ se factorisent puis se simplifient, ce qui  
+r\'esulte simplement de la sym\'etrie de rotation). 
+\medskip 
+On voit ainsi que le changement de coordonn\'ees a introduit des  
+densit\'es, $1/\sqrt{1-t^2}$ dans le cas 1 et $t$ dans le cas deux, qui 
+sont plus grandes pour $t$ proche de 1 que pour $t$ proche de 0. Cela 
+signifie que le choix au hasard du nombre $v$ dans l'intervalle 
+$[0,{\pi\over 2} ]$  ou le choix au hasard d'un point $x,y$ sur le cercle ne 
+correspondent plus \`a un choix au hasard du nombre $t$. Si on 
+choisit au hasard $v$ dans  l'intervalle $[0,{\pi\over 2} ]$, de sorte 
+qu'aucune r\'egion de cet intervalle ne soit favoris\'ee, alors, pour les 
+valeurs correspondantes de $t$, on favorise la r\'egion proche de 1 par 
+rapport \`a la r\'egion proche de 0.  
+\medskip 
+Cette diff\'erence de r\'epartition est due \`a la non lin\'earit\'e du  
+changement de variable. Elle appara\^\i t clairement sur les figures 3.1 
+et 3.3 : les cordes proches du bord (ce  qui correspond \`a $t$ proche de 1) 
+sont favoris\'ees par rapport \`a la figure 3.2.  Par contre le passage des 
+coordonn\'ees $u_1,u_2$ (abscisses angulaires des extr\'emit\'es) aux 
+coordonn\'ees $u,v$ est lin\'eaire: $u_1 = u - v/2$ et $u_2 = u + v/2$;  
+c'est pourquoi dans le cas {\bf 1} il est indiff\'erent  de choisir $u_1, 
+u_2$ au hasard ou $u,v$. 
+\medskip 
+C'est ce qui explique que les probabilit\'es pour que $t < {1/ 2}$ soient 
+plus petites dans les cas 1 et 3 (resp. ${1/ 3}$ et ${1/ 4}$) que 
+dans le cas 2 (${1/ 2}$). Joseph Bertrand attribue l'ambigu\"\i t\'e au 
+continu; il est vrai que lorsqu'on discr\'etise, comme sur les figures $3$, 
+on voit bien la diff\'erence, qui ne se verrait pas dans le continu.  
+Cependant \'Emile Borel\ftn{1}{\'Emile Borel {\it Le hasard} (Librairie 
+F\'elix Alcan, {\oldstyle 1914}), page 84} a critiqu\'e cette critique de 
+Bertrand en montrant que l'ambigu\"\i t\'e ne vient pas du continu, mais  
+du fait que le niveau o\`u intervient le hasard n'est pas pr\'ecis\'e. 
+\medskip 
+Ainsi {\it il n'est pas \'equivalent} de choisir au hasard les deux 
+extr\'emit\'es de la corde (cas 1), ou de choisir au hasard son milieu 
+$(x,y)$ (cas 3), ou  encore de choisir au hasard sa direction et sa distance 
+au centre (cas 2). Mais supposons qu'on fasse l'exp\'erience concr\`ete que 
+voici: on jette, \`a partir d'une ouverture pratiqu\'ee dans le plafond, des 
+millions de f\'etus de paille sur le  plancher. Afin d'assurer une bonne 
+dispersion des brins, on place un puissant ventilateur pr\`es de 
+l'ouverture dans le plafond. Sur le sol, on a trac\'e un grand cercle \`a la 
+craie. Pour chaque brin de paille, on consid\`ere la droite qui le prolonge; 
+dans beaucoup de cas, la droite ne coupera pas le cercle, mais on ne 
+compte pas ces brins. Pour chaque brin dont le prolongement coupe le 
+cercle, on consid\`ere la corde que ce prolongement d\'ecoupe sur le 
+cercle.   
+\medskip 
+Comment se distribuent ces cordes? 
+\medskip 
+On a ici affaire \`a une situation pratique: ce n'est plus {\it nous} qui 
+d\'ecidons d'une mani\`ere de choisir les cordes, les cordes se  
+distribuent toutes seules. O\`u intervient alors le hasard? L'\'etude 
+des trois cas a montr\'e qu'il y a diff\'erentes  
+distributions possibles pour les cordes, mais dans une exp\'erience 
+r\'eelle il y aura forc\'ement une certaine distribution particuli\`ere. 
+\medskip 
+Dans cette exp\'erience, c'est le mod\`ele $N^\circ 2$ qui est le bon.  
+On peut s'en convaincre sans faire l'exp\'erience, et sans calculer le 
+mouvement des brins. Pour cela, il suffit de remarquer que la 
+distribution des brins sur le plancher ne peut pas d\'ependre de la 
+pr\'esence du cercle: il serait absurde que les brins se distribuent 
+diff\'eremment selon qu'on a trac\'e un cercle ou qu'on n'en a pas trac\'e 
+(sauf si par exemple le cercle n'\'etait pas mat\'erialis\'e par de la  
+craie, mais par de petits aimants, qui attireraient les brins de paille 
+suppos\'es aimant\'es, ou tout autre artifice de ce type). De m\^eme,  
+les brins seront distribu\'es \`a peu pr\`es de la m\^eme fa\c con dans  
+toutes les r\'egions du plancher (sauf bien s\^ur si on s'\'ecarte trop du 
+trou dans le plafond). Par cons\'equent, la distribution des cordes que  
+le prolongement des brins d\'ecoupe sur un cercle sera la m\^eme quelle 
+que soit la r\'egion o\`u on trace le cercle. Il est donc impossible que se 
+produisent les situations 1 ou 3, dans lesquelles les cordes sont plus 
+denses pr\`es du bord du cercle: si tel \'etait le cas pour un cercle 
+particulier, ce ne pourrait plus l'\^etre pour un autre cercle trac\'e un 
+m\`etre plus loin. Il faudrait que les brins ``sentent'' la pr\'esence du 
+cercle et tombent d\'elib\'er\'ement d'une mani\`ere qui favorise le 
+bord du cercle. Seul le mod\`ele $N^\circ 2$ correspond \`a une 
+distribution des droites qui soit ind\'ependante de l'existence du cercle. 
+ 
+\vskip7mm plus6mm minus5mm
+ 
+{\bf I. 3. La signification de l'\'equiprobabilit\'e.} 
+\medskip  
+Jusqu'ici nous avons souvent \'evoqu\'e le ``pur hasard'', qui ferait des 
+``choix \'equiprobables''. Ces consid\'erations sur le {\it pur hasard} ne 
+sont pas n\'ecessaires pour un expos\'e axiomatique et d\'eductif, qui 
+suppose un mod\`ele math\'ematique (c'est-\`a-dire un espace des 
+\'epreuves $\Omega$) d\'ej\`a donn\'e, et r\'ecuse toute question sur 
+l'origine ou sur le sens de ce mod\`ele. Elles le deviennent cependant si 
+on veut ma\^\i triser l'art de la mod\'elisation et \^etre capable devant 
+une situation concr\`ete de construire soi-m\^eme le mod\`ele ad\'equat. 
+\medskip 
+L'affirmation que {\it le pur hasard} fait des choix \'equiprobables 
+n'est pas un postulat m\'etaphysique. C'est un {\it principe}, qui est 
+au Calcul des probabilit\'es ce que le principe de relativit\'e de  
+Galil\'ee est \`a la M\'ecanique. Toutefois il peut laisser le 
+sentiment qu'il s'agit de m\'etaphysique \`a cause de l'invocation du 
+``pur hasard''. Ce n'est pas le mot hasard qui insulte ainsi le 
+positivisme, mais plut\^ot l'\'epith\`ete qui l'accompagne et qui 
+\'evoque ``les pures id\'ees'', ``la Raison pure'', etc. C'est pourquoi 
+l'explication qui va suivre est n\'ecessaire. 
+\medskip  
+Afin que la discussion soit bien concr\`ete, voyons comment les 
+choses se passent dans l'exemple  simple des  cordes sur un cercle. 
+Nous avons vu \`a ce propos qu'il y avait diff\'erentes mani\`eres de 
+choisir une corde sur un cercle. Imaginez maintenant un physicien 
+qui observe pendant longtemps l'apparition al\'eatoire de cordes sur 
+un cercle, mais qui ignore ``comment le hasard a choisi les cordes''  
+(vous pouvez imaginer que c'est un programme \'ecrit par 
+vous-m\^eme qui fait appara\^\i tre, au rythme de une par seconde, 
+des cordes sur l'\'ecran de l'ordinateur; pour le choix de chaque corde 
+le programme fait appel deux fois --~puisqu'il faut deux 
+coordonn\'ees~-- \`a une fonction {\bf random}; le physicien qui 
+observe le r\'esultat ignore comment sont \'ecrits les programmes). 
+Il accumule les observations et, sachant qu'il y a la sym\'etrie de 
+rotation, il ne note la position des cordes que si, \`a $\varepsilon$ 
+pr\`es, elles sont parall\`eles  \`a une direction fix\'ee; il obtient 
+ainsi, disons, la figure 3.1. Ce physicien peut {\it en d\'eduire} que les 
+cordes ont \'et\'e distribu\'ees en laissant le hasard choisir les deux 
+extr\'emit\'es, ind\'ependamment l'une de l'autre, sur le cercle. Dans 
+le graphique qu'il obtient (semblable, donc, \`a la figure 3.1), les 
+cordes ne sont pas distribu\'ees uniform\'ement le long des 
+ordonn\'ees, c'est-\`a-dire le long du rayon. ``Le hasard pur'' n'est  
+donc pas intervenu \`a ce niveau (celui de la distribution le long du 
+rayon, qui est aussi le choix de la coordonn\'ee $t$) mais  
+au niveau du choix des extr\'emit\'es.  (si les cordes sont trac\'ees  
+par votre programme, le physicien peut ainsi savoir que la fonction 
+{\bf random} choisit les deux extr\'emit\'es, comme dans le cas 1, et 
+non les coordonn\'ees $x,y$ du centre ou les coordonn\'ees $t,u$). Le 
+physicien peut donc, par l'observation, d\'epartager les diff\'erentes 
+mani\`eres d'agir du hasard.  Cela montre qu'il s'agit d'une 
+information pratique et observable, et non d'une hypoth\`ese 
+m\'etaphysique. 
+\medskip 
+Lorsqu'on dit  ``le hasard pur est intervenu \`a ce niveau'' ou ``le  
+hasard pur choisit les deux extr\'emit\'es'', cette mani\`ere imag\'ee 
+de s'exprimer peut sugg\'erer qu'il  y aurait une divinit\'e 
+dou\'ee de volont\'e et veillant, par une vigilance de tous les 
+instants, \`a ne favoriser aucun de ses choix par rapport aux autres, 
+et que par cons\'equent le probl\`eme pos\'e ci-dessus (trouver le 
+niveau o\`u le hasard fait son choix), consisterait \`a  
+p\'en\'etrer les desseins de cette divinit\'e. Il ne s'agit que d'une  
+fa\c con de parler, comme par exemple lorsqu'on dit ``la Nature 
+ob\'eit \`a des lois''.   
+\medskip 
+On ne postule aucune divinit\'e, et on peut au contraire postuler que le 
+hasard provient de causes toutes rationnelles, qu'il  n'est que l'effet 
+d'un enchev\^etrement d'innombrables influences qui se contrarient 
+mutuellement, cr\'eant ainsi l'illusion appel\'ee hasard. Mais si ces 
+causes, rationnelles ou non, favorisent certains r\'esultats au  
+d\'etriment d'autres, on dira que ce favoritisme a une explication 
+causale  et non qu'il est un effet du hasard.    
+\medskip 
+Pour illustrer cela, revenons encore \`a l'exemple des cordes sur un 
+cercle. Dans ce probl\`eme il n'y avait pas de ph\'enom\`ene physique; 
+il s'agissait de g\'eom\'etrie abstraite et ``les choix du hasard'' 
+portaient sur des nombres. Ainsi ``le hasard'' devait choisir, soit deux 
+nombres $\alpha\, , \,\beta$ dans l'intervalle $[ 0\, , \, 2\pi [$, soit 
+deux nombres $u\, , \, t$ dans (respectivement) les intervalles $[ 0\, 
+, \, 2\pi [$ et $[ 0\, , \, 1]$, soit un point dans le disque. Pour tout 
+calculer, nous sommes partis du seul postulat que quand ``le pur 
+hasard'' choisit un nombre dans un intervalle, il ne favorise aucune 
+r\'egion de l'intervalle: par exemple les nombres de $[ 0\, , \, 1]$ 
+n'ont pas plus de chances d'\^etre choisis s'ils sont proches de 0,  
+que s'ils sont proches de 1. Ce qu'on exprime math\'ematiquement en 
+disant que la probabilit\'e pour que le nombre choisi dans  $[ 0\, , \, 
+1]$ se trouve ``par hasard'' entre $a$ et $b$ est \'egale \`a $b-a$. Il  
+n'y a rien de plus dans cette expression math\'ematique que l'intuition 
+premi\`ere, que tout le monde comprend a priori. De m\^eme pour un 
+point ``pris au hasard'' dans le disque: la probabilit\'e pour que ``par 
+hasard'' il se trouve dans la r\'egion $A$ du disque est le rapport  
+$${\hbox{aire de $A$} \over\hbox{aire du disque} }$$ 
+Or l'\'etude d\'etaill\'ee des diff\'erentes formes de choix a montr\'e  
+que si par exemple les deux extr\'emit\'es $\alpha\, , \,\beta$ de la 
+corde  sont choisies dans l'intervalle $[ 0\, , \, 2\pi [$, sans favoriser 
+aucune r\'egion de cet intervalle, alors {\it ipso facto} la coordonn\'ee 
+$t$ (distance au centre rapport\'ee au rayon) sera choisie --~dans 
+l'intervalle $[ 0\, , \, 1]$~-- de mani\`ere que les nombres proches 
+de $1$ soient favoris\'es par rapport \`a ceux qui sont proches de 0. 
+Math\'ematiquement, la probabilit\'e pour que $t$ se trouve ``par 
+hasard'' entre $a$ et $b$ n'est plus $b-a$, mais  
+$$\int_a^b {dt \over \sdown{14}\sqrt{1-t^2}}$$ 
+Le physicien que nous \'evoquions plus haut, qui observe ce 
+favoritisme, ne dira pas ({\it personne} ne le dira) ``le hasard 
+pr\'ef\`ere les cordes proches du bord que les cordes proches du  
+centre''. Il dira ``il y a un choix al\'eatoire, {\it biais\'e} par un 
+ph\'enom\`ene d\'eterministe''. 
+\medskip 
+Attention! Il ne s'agit pas d'une querelle de mots. Si on change les mots, 
+on ne supprime pas l'insatisfaction du physicien, qui veut savoir 
+pourquoi les valeurs de $t$ ont plus de chances d'\^etre proches de 1 que 
+de 0. On pourrait {\it convenir} --~dans le sens o\`u Henri Poincar\'e\ftn 
+{2}{Henri Poincar\'e {\it La valeur de la science}, chapitre II ``La mesure 
+du temps''.} disait que la mesure du temps est une convention et 
+qu'aucune n'est plus objective qu'une autre~-- que le hasard choisit $t$ 
+de fa\c con non \'equiprobable, avec la densit\'e $1 \bigl/ \sqrt{1-t^2}$. 
+Mais cela ne nous \'epargnerait pas les questions, cela ne ferait que nous 
+rendre l'ensemble des calculs effectu\'es pour  les trois cas plus 
+compliqu\'es, car nous devrions tra\^\i ner partout la r\'epercussion de 
+cette densit\'e, de m\^eme que si on voulait absolument mesurer le 
+temps selon une \'echelle diff\'erente, et  non lin\'eaire par rapport \`a 
+l'usuelle, on devrait tra\^\i ner la r\'epercussion de ce changement de 
+variable dans toutes les \'equations de la Physique. Poincar\'e a certes 
+\'ecrit que la mesure du temps est  une convention et qu'aucune n'est 
+plus objective qu'une autre, mais la phrase qui est \'ecrite 
+imm\'ediatement avant dans son texte est ``le temps doit \^etre d\'efini 
+de telle fa\c con  que les \'equations de la M\'ecanique soient aussi 
+simples que possible''.  
+\medskip 
+C'est de l\`a que d\'erive  la notion de rep\`ere galil\'een, et c'est  
+pourquoi ``le niveau o\`u les choix du hasard sont \'equiprobables'' joue en 
+Calcul des probabilit\'es un r\^ole analogue \`a celui du rep\`ere galil\'een 
+en M\'ecanique. Lorsque le physicien observe les cordes, distribu\'ees le 
+long du rayon selon la loi $1 \bigl/\sqrt{1-t^2}$, il peut {\it en d\'eduire} 
+que le niveau o\`u les choix \'etaient \'equiprobables \'etait celui du choix 
+des extr\'emit\'es de la corde, de m\^eme qu'un physicien enferm\'e dans 
+une capsule loin de toute source de gravitation, qui observe que les billes 
+qu'il l\^ache dans sa cabine suivent un mouvement uniform\'ement 
+acc\'el\'er\'e, peut en d\'eduire  que sa capsule subit de l'ext\'erieur un 
+mouvement uniform\'ement  acc\'el\'er\'e en sens oppos\'e \`a celui des 
+billes.  
+\medskip
+Afin de ne pas trop surcharger ce chapitre, la discussion sur le 
+``conventionnalisme'' de Poincar\'e, ses propres commentaires sur le 
+paradoxe de Bertrand, et la parent\'e avec le principe de relativit\'e de
+Galil\'ee ne sont ici que r\'esum\'es succintement. Le sujet est davantage 
+d\'evelopp\'e dans un article, ``{\it Le paradoxe de Bertrand}'', qui 
+peut \^etre trouv\'e \`a l'adresse U.R.L.:
+\smallskip
+\centerline{\tt http: //moire4.u-strasbg.fr/hist/bertrand.htm}
+\medskip  
+Tout cela est bien beau, direz-vous, mais ne nous dit pas comment on va 
+trouver le niveau o\`u agit le hasard pur, c'est-\`a-dire le niveau o\`u on 
+a affaire \`a des choix \'equiprobables. En outre, il pourrait y avoir des 
+niveaux diff\'erents, mais \'equivalents, et on ne pourrait pas savoir 
+dans lequel des deux le hasard agirait ``vraiment''.   
+\medskip 
+Il se trouve qu'il n'existe pas de m\'ethode pour cela. Quant \`a la 
+question de trancher entre deux niveaux \'equivalents, elle par contre 
+est m\'etaphysique; elle est exactement aussi m\'etaphysique que la 
+question de savoir quel rep\`ere galil\'een est  ``vraiment'' immobile. 
+Dans le cas des cordes sur un cercle, la recherche  du niveau o\`u agit 
+le pur hasard a \'et\'e facile, car nous connaissions d\'ej\`a trois 
+diff\'erentes mani\`eres  de distribuer les cordes et il a suffi d'en 
+reconna\^\i tre une parmi les trois. Dans les probl\`emes d'urnes, de 
+boules, de marches al\'eatoires, etc. (autrement dit dans les 
+probl\`emes scolaires de Calcul des probabilit\'es) cette recherche 
+du ``niveau o\`u agit le hasard pur'' rel\`eve de la {\it mod\'elisation}; 
+le  ``niveau o\`u agit le hasard pur'' est tr\`es souvent sugg\'er\'e, ou 
+m\^eme tout simplement donn\'e, par  l'\'enonc\'e du probl\`eme.  
+\medskip 
+La mod\'elisation a toujours fait peur aux \'etudiants car elle demande 
+de l'imagination, de l'astuce, et sa r\'eussite n'est pas pr\'evisible ou 
+chiffrable; tandis que si la mod\'elisation est d\'ej\`a faite, ou 
+sugg\'er\'ee de fa\c con \'evidente, il n'y a plus qu'\`a calculer en 
+appliquant quelques th\'eor\`emes ou formules vues dans le cours. 
+Tout cela est classique.  
+\medskip  
+Mais il y a plus grave. Apr\`es tout, lorsqu'un \'etudiant n'arrive pas 
+\`a trouver le  mod\`ele correct, c'est parce qu'il n'est pas encore 
+habitu\'e  aux poncifs  des probl\`emes scolaires, et dans ce cas  
+l'enseignant conna{\^\i}t la bonne r\'eponse, qu'il avait lui-m\^eme  
+apprise quand il \'etait \'etudiant, par mim\'etisme plus que par 
+imagination. Par contre il y a des probl\`emes pos\'es par la Physique  
+pour lesquels {\it personne} ne sait au d\'epart \`a quel niveau agit le 
+hasard pur, et le trouver est une affaire de g\'enie (ce qui justifie 
+tout-\`a-fait, d'ailleurs, le malaise que les \'etudiants \'eprouvent 
+face \`a la mod\'elisation). L'exemple historique le plus spectaculaire 
+est \'evidemment la d\'ecouverte de la M\'ecanique quantique: \`a 
+partir de faits exp\'erimentaux (rayonnement du corps noir, 
+diffraction des \'electrons par des cristaux, etc.) il a fallu trouver 
+par la recherche le niveau auquel le hasard pur agissait; on ne 
+l'a toujours pas vraiment trouv\'e. Il serait donc absolument na\"\i f 
+de vouloir disposer d'une m\'ethode g\'en\'erale et syst\'ematique 
+pour le trouver. 
+\medskip 
+Il semble ressortir de cette discussion que l'\'equiprobabilit\'e des 
+choix du hasard, tout comme pour la mesure du temps ou les rep\`eres  
+galil\'eens, est en quelque sorte {\it la d\'efinition m\^eme} du 
+hasard. On pourrait penser que le hasard peut se d\'efinir autrement, 
+ind\'ependamment de  la mani\`ere dont  s'op\`erent ses choix, \`a 
+partir de consid\'erations plus fondamentales, de telle sorte que 
+l'\'equiprobabilit\'e serait une propri\'et\'e qui se d\'eduirait de 
+la d\'efinition, et non un postulat a priori. Il se trouve que pour le 
+temps ou les rep\`eres galil\'eens, la Physique ne fournit pas de 
+connaissance plus profonde que ce conventionnalisme (c'est le nom 
+donn\'e \`a la position de Poincar\'e cit\'ee pr\'ec\'edemment), du 
+moins jusqu'\`a nos jours. En revanche, l'Histoire de la Physique 
+contient beaucoup d'exemples o\`u un progr\`es dans la connaissance 
+apporte une explication plus approfondie d'un ph\'enom\`ene dont la 
+description avait \'et\'e jusque l\`a purement conventionnaliste. 
+Ainsi nous comprenons aujourd'hui {\it pourquoi} le mouvement 
+apparent des plan\`etes dans le firmament (c'est-\`a-dire par rapport 
+\`a la {\it sph\`ere des fixes}) est comme il est; par exemple nous 
+comprenons pourquoi une plan\`ete avance (dans le m\^eme sens que 
+les \'etoiles), puis ralentit, puis revient en arri\`ere, selon une 
+trajectoire apparemment erratique: l'explication en est que nous la 
+voyons en perspective \`a partir de la Terre qui est elle-m\^eme en 
+mouvement.  
+\medskip 
+Cette explication est l'{\it id\'ee} du syst\`eme de Copernic. Mais dans le 
+syst\`eme de Ptol\'em\'ee, o\`u la Terre \'etait suppos\'ee immobile au 
+centre, il fallait supposer plusieurs sph\`eres imbriqu\'ees les unes dans 
+les autres et tournant autour d'axes diff\'erents, la plus \'eloign\'ee 
+\'etant la sph\`ere des fixes qui portait les \'etoiles, les sph\`eres 
+int\'erieures portant chacune une plan\`ete. Dans ce syst\`eme de 
+Ptol\'em\'ee le mouvement erratique des plan\`etes \'etait certes 
+expliqu\'e par les mouvements relatifs des diff\'erentes sph\`eres, mais 
+il n'y avait pas {\it une} combinaison unique de sph\`eres compatible avec 
+le mouvement observ\'e. De sorte que dans ce syst\`eme la question de 
+savoir  laquelle de ces combinaisons \'etait ``r\'eellement'' en fonction 
+dans le ciel \'etait une question m\'etaphysique; on ne pouvait r\'epondre 
+que par le conventionnalisme, en disant que parmi toutes les 
+combinaisons de sph\`eres produisant les mouvements plan\'etaires 
+apparents observ\'es, il fallait choisir celle pour laquelle les calculs 
+sont les plus simples possibles.  Dans l'astronomie mo\-derne, au 
+contraire, il n'y a pas de choix conventionnel: le syst\`eme solaire est 
+tel qu'il est, nous ne savons pas pourquoi il est pr\'ecis\'ement 
+comme cela plut\^ot qu'autrement, mais nous ne pouvons pas 
+d\'ecider de d\'ecrire autrement la trajectoire de Mars dans le seul 
+but de simplifier les calculs. Si  nous n'avons plus cette libert\'e, 
+c'est parce que nous en savons trop: les  astronomes du Moyen-Age 
+consid\'eraient que seul le mouvement apparent des plan\`etes dans 
+le ciel (donc sa projection radiale sur la vo\^ute c\'eleste) \'etait une 
+connaissance objective.  Aujourd'hui leur mouvement dans les {\it 
+trois} dimensions est soumis \`a la connaissance objective, ce qui 
+d\'etruit toute possibilit\'e de conventionnalisme \`a ce niveau.  
+L'Histoire de la Physique regorge d'autres exemples semblables.  
+\medskip 
+C'est pourquoi la question pos\'ee plus haut \`a propos du hasard 
+m\'erite d'\^etre approfondie. Le hasard peut-il \^etre con\c cu  
+comme objectif, de sorte que l'\'equiprobabilit\'e de ses choix soit 
+une n\'ecessit\'e, ou au contraire, \`a l'instar du temps et de l'espace, 
+est-il --~du moins jusqu'\`a nouvel ordre~-- impensable autrement 
+que comme convention? 
+\medskip 
+Il se trouve que, selon les pr\'esuppos\'es, l'une ou l'autre r\'eponse est 
+possible. C'est ce que nous allons examiner dans les deux sections 
+suivantes. 
+ 
+\vskip7mm plus6mm minus5mm
+ 
+{\bf I. 4. Hasard et d\'eterminisme math\'ematiques.} 
+\medskip
+{\cit Tous les \'ev\'enements, ceux m\^emes qui par leur petitesse semblent 
+ne pas tenir aux grandes lois de la nature, en sont une suite aussi
+n\'ecessaire que les r\'evolutions du soleil. Dans l'ignorance des liens 
+qui les unissent au syst\`eme entier de l'univers, on les a fait d\'ependre 
+des causes finales, ou du hasard, suivant qu'ils arrivaient et se 
+succ\'edaient avec r\'egularit\'e, ou sans ordre apparent; mais ces causes
+imaginaires ont \'et\'e successivement recul\'ees avec les bornes de nos
+connaissances, et disparaissent enti\`erement devant la saine philosophie, 
+qui ne voit en elles que l'expression de l'ignorance o\`u nous sommes des
+v\'eritables causes. \par}
+\smallskip
+\line{\hfill \vbox{\hsize=66mm \eightpoint 
+\centerline{Pierre-Simon Laplace}
+\centerline{\sl Th\'eorie analytique des probabilit\'es ({\oldstyle 1819}).}}}
+\medskip
+
+Ce passage c\'el\`ebre est le manifeste du d\'eterminisme: rien n'est  
+al\'eatoire,  tout est rigoureusement d\'etermin\'e, mais souvent le
+d\'eveloppement d\'eter\-mi\-niste d'un processus est tellement chaotique 
+que nous ne pouvons rien calculer du processus exact, que seules 
+des probabilit\'es peuvent \^etre calcul\'ees. La pr\'esente section et 
+la suivante sont consacr\'es \`a cette explication du hasard. L'affirmation 
+de Laplace n'a jamais \'et\'e d\'ementie depuis, puisque l\`a o\`u elle
+pourrait \'eventuellement l'\^etre nous sommes ignorants: c'est ce 
+qu'on appelle un postulat m\'etaphysique (il ne peut \^etre tranch\'e par
+l'exp\'erience). Avec la 
+M\'ecanique quantique nous {\it ne savons pas} d'o\`u provient le 
+hasard qu'elle postule. Mais par exemple le hasard dans le jeu de la 
+roulette ob\'eit enti\`erement \`a la conception de Laplace. La question 
+de savoir si le hasard postul\'e par la M\'ecanique quantique peut 
+s'expliquer \`a la mani\`ere de Laplace est ouverte, mais il faut dire que 
+tant que la valeur d'une telle explication ne peut pas \^etre tranch\'ee 
+par l'exp\'erience, elle reste sp\'eculative. Peut-\^etre une telle 
+explication, m\^eme sans \^etre tranch\'ee par l'exp\'erience, 
+pourrait-elle du moins r\'eduire le myst\`ere de ce hasard dont nul ne 
+comprend la cause; mais pourquoi un d\'eterminisme serait-il moins 
+myst\'erieux que le hasard?  
+\medskip 
+Aujourd'hui on appelle {\it chaos d\'eterministe} le m\'ecanisme par 
+lequel, comme l'entendait Laplace, le d\'eterminisme se transforme en 
+hasard. Mais il faut aussit\^ot ajouter que le d\'eterminisme aussi peut 
+\^etre l'effet du hasard, par l'interm\'ediaire de la loi des grands 
+nombres (nous reviendrons l\`a-dessus aux chapitres suivants, 
+notamment \`a la fin du chapitre {\bf II}, ainsi qu'aux chapitres {\bf VI}  
+et {\bf VII}). De sorte que, du d\'eterminisme ou du hasard, chacun peut 
+\^etre la cause premi\`ere de l'autre. 
+\medskip 
+Comme nous l'avons toujours fait jusqu'ici (et, rassurez-vous, 
+nous continuerons) nous allons rendre la discussion concr\`ete par 
+l'\'etude de quelques exemples simples.  
+\medskip 
+Voici un premier exemple extr\^emement simple de chaos 
+d\'eterministe: on prend un nombre irrationnel, disons $e \simeq 
+2.718\,  281\, 828 \ldots$ pour fixer les id\'ees. Puis on consid\`ere  
+la suite de nombres $u_n = $ la partie d\'ecimale de $n \cdot e$ 
+(c'est-\`a-dire qu'on  ne retient du nombre $n \cdot e$ que les  
+chiffres apr\`es la virgule). Ainsi les nombres $u_n$ sont tous 
+compris entre 0 et 1. Pour donner une id\'ee, voici les cinq premiers 
+termes de cette suite:  
+$$\eqalign{ 
+u_1 &= 0.718\, 281\, 828 \ldots \cr 
+u_2 &= 0.436\, 563\, 656 \ldots \cr 
+u_3 &= 0.154\, 845\, 485 \ldots \cr 
+u_4 &= 0.873\, 127\, 313 \ldots \cr 
+u_5 &= 0.591\, 409\, 142 \ldots \cr }$$ 
+Si on calcule un tr\`es grand nombre de termes de cette suite, disons 
+un milliard, on obtiendra donc un gros \'echantillon de nombres  
+compris entre 0 et 1.  
+\medskip 
+Il se trouve que cette suite de nombres a apparemment les m\^emes  
+propri\'et\'es qu'une suite tir\'ee au hasard; d'apr\`es le pr\'ejug\'e que 
+nous avons sur le hasard, \`a savoir qu'il ne favorise pas une r\'egion 
+particuli\`ere de l'intervalle, $10^9$ nombres ``pris au hasard'' se  
+r\'epartissent uniform\'ement dans l'intervalle: dans n'importe quel 
+sous-intervalle  $[a,b] \subset [0,1[$, il y en aura environ $(b-a)\cdot 
+10^9$. Mais il en va de m\^eme pour la suite d\'eterministe $u_n$: ces 
+nombres se r\'epartissent uniform\'ement dans l'intervalle. Si, en 
+\'evitant soigneusement de r\'ev\'eler comment la suite $u_n$ a 
+\'et\'e engendr\'ee, on en confiait le r\'esultat \`a un statisticien 
+pour qu'il le soumette aux tests usuels de la statistique, il 
+serait impossible \`a celui-ci de d\'etecter un \'ecart par rapport aux 
+lois du hasard; le seul \'ecart,  infime, qui pourrait \^etre observ\'e, 
+diminuerait en augmentant la taille de l'\'echantillon (nous verrons 
+au chapitre {\bf XI} comment on peut effectuer de tels tests). Dans 
+l'exemple des cordes sur un cercle, si au lieu de confier le choix des 
+coordonn\'ees au hasard, on avait tir\'e les nombres selon la suite 
+$u_n$ (ou $2\pi u_n$ pour les nombres devant \^etre pris entre $0$ et 
+$2\pi$), tout se serait pass\'e exactement de la m\^eme fa\c con. 
+Cette d\'efinition math\'ematique du hasard vient d'\'Emile 
+Borel\ftn{3}{\'Emile Borel {\it Les probabilit\'es d\'enombrables et leurs 
+applications arithm\'etiques} (Rendiconti del Circolo matematico di 
+Palermo, vol. {\bf 27} ({\oldstyle 1909}, pp. 247 -- 270.} 
+\medskip 
+Plusieurs fois nous avons \'evoqu\'e l'emploi d'une fonction {\bf 
+random} pour simuler le hasard, ce qui fait \'evidemment plus 
+s\'erieux que d'\'evoquer la Fortune.  Mais  les fonctions {\bf 
+random} du commerce fonctionnent exactement sur le m\^eme 
+principe que la suite $u_n$; tout au plus elles font appel \`a des 
+algorithmes plus sophistiqu\'es afin de mieux brouiller les 
+pistes\ftn 4{On peut cependant consid\'erer que plus l'algorithme est 
+tortueux et cryptique, plus le hasard qui en r\'esulte est de bonne 
+qualit\'e. Ce point de vue est \`a la base de la th\'eorie des suites 
+al\'eatoires. Voir par exemple le livre de Donald Knuth {\it The Art  
+of Computer Programming} Vol. 2: Seminumerical Algorithms 
+(Addison-Wesley, {\oldstyle 1969}) ou celui de Jean-Paul Delahaye 
+{\it Information, complexit\'e, et hasard} (\'Ed. Herm\`es, Paris, 
+{\oldstyle 1994}).}. On va voir en effet que la suite  
+$u_n$ ne brouille pas suffisamment bien les pistes.  
+\medskip 
+Supposons que, au lieu d'avoir pris le nombre $e \simeq 2.718281828$, 
+nous ayons pris le nombre $0.5$. La suite des  $v_n = $ partie d\'ecimale 
+de $n \cdot 0.5$  ne respecte pas la r\`egle de  ne favoriser aucune 
+r\'egion, puisqu'elle  ne donne que $0$ ou $0.5$, et d\'efavorise donc les 
+nombres situ\'es  dans $[0.1\, ,\, 0.4]$ ou dans  $[0.6\, , \, 0.9]$. Dans ce 
+cas on ne peut plus parler de hasard. La diff\'erence entre les deux 
+situations ne provient pas du d\'eterminisme, qui serait absent dans un 
+cas et pr\'esent dans l'autre (et si m\^eme il y avait ind\'eterminisme, on 
+ne serait pas plus avanc\'e, puisqu'on aurait juste remplac\'e le mot 
+hasard par le mot ind\'eterminisme). Il y a d\'eterminisme dans les deux 
+cas, mais dans le premier la r\`egle de l'uniformit\'e est 
+respect\'ee, tandis que dans le second elle ne l'est pas. Toutefois, si le 
+statisticien auquel on   a confi\'e la suite $u_n$ pour expertise, 
+consid\`ere la suite $w_n = u_{n+1} - u_n$, il constatera que les nombres 
+$w_n$ ont le m\^eme d\'efaut que les $v_n$, car ils sont tous \'egaux, 
+soit \`a $e-2 \simeq 0.718\, 281\, 828$, soit \`a $e-3 \simeq -0.281\, 
+718\, 171$.  
+\medskip 
+On ne peut donc pas vraiment admettre  que la suite $u_n$ 
+soit au hasard car ``il fallait avoir fait expr\`es'' de choisir les $u_n$ 
+pour que leurs diff\'erences soient toujours les m\^emes. On a donc en 
+t\^ete le pr\'ejug\'e que le hasard ne peut pas avoir choisi des nombres  
+que l'application d'un algorithme aurait \'egalement pu engendrer (nous 
+avions d\'ej\`a le pr\'ejug\'e que le hasard ne favorise pas certains 
+nombres au d\'etriment d'autres; voil\`a donc un autre pr\'ejug\'e). On 
+pourrait alors donner du hasard la d\'efinition suivante: un ensemble de 
+$N$ nombres r\'eels pris dans l'intervalle $[0 , 1]$ sont distribu\'es au 
+hasard si leur liste ne peut \^etre engendr\'ee par aucun algorithme. 
+L'ennui, c'est que (du moins pour un nombre fini $N$ de nombres) il y a 
+toujours un algorithme, ne serait-ce que la donn\'ee directe de ces $N$ 
+nombres. On peut corriger cette incoh\'erence en pr\'ecisant davantage:  
+on dira que $N$ nombres r\'eels de l'intervalle $[0 , 1]$ sont distribu\'es 
+au hasard si leur liste ne peut \^etre engendr\'ee par aucun algorithme  
+{\it plus court que la simple liste de ces $N$ nombres}. Pour bien  
+comprendre cela, imaginons qu'on veuille \'ecrire un programme qui   
+\'ecrit les $N$ nombres dans un fichier de donn\'ees. Pour $N = 10^9$ et 
+huit octets par nombre (il s'agit de flottants), ce fichier est tr\`es gros: 
+$8$ gigaoctets. Mais le programme qui engendre la suite $u_n$ est tr\`es 
+court, car l'algorithme est tr\`es simple:  
+\def\program{\font\gras=cmbx10 \def\&{\cleartabs &} 
+\cleartabs \def\<##1>{\hbox{\gras##1\/}} 
+\def\\##1\\{\hbox{\it##1\/}} \catcode`\;=\active \def;{\unskip\kern 
+2pt\string; \kern 3pt}}  
+$$\vbox{\program  
+\+\<var> \hskip3pt  &$i\;$ &:\hskip3pt\<integer> ;   \cr  
+\+                 &$N\;$ &:\hskip3pt\<longinteger> ;   \cr  
+\vskip6pt 
+\+\<begin> \cr 
+\+ $N := 1e{\scriptscriptstyle +} {\scriptstyle 9}$ ; \cr 
+\+\<for> \&$i:=1$ \<to> $N$ \<do>  \cr 
+\+ &\<begin> \cr 
+\+ &\<writeln>$(i*\<exp>(1) - \<trunc>(i*\<exp>(1)))$ ;  \cr 
+\+ &\<end> \cr 
+\+\<end.> \cr }$$ 
+Ce programme, m\^eme en code ex\'ecutable, va occuper au plus  
+$1000$ octets de m\'emoire. Ce qui permet cette \'enorme \'economie  
+par rapport \`a la {\it liste} des nombres, est la boucle qui n'est \'ecrite 
+qu'une fois, bien que dans l'{\it ex\'ecution} du programme elle soit 
+r\'ep\'et\'ee  $10^9$ fois. Si les $10^9$ nombres n'\'etaient li\'es entre  
+eux par aucune r\'ecurrence, on ne pourrait pas utiliser de boucle; le 
+programme devrait comporter autant d'entr\'ees ou d'initialisations que 
+de nombres, et serait donc aussi long que la liste des nombres. 
+\medskip 
+Autrement dit la suite $u_n$ peut \^etre \'ecrite par un programme  
+court car il suffit de conna\^\i tre $u_1 = e$ pour d\'eduire par 
+r\'ecurrence tous les autres. Si les $10^9$ nombres n'\'etaient li\'es 
+entre eux par aucune relation, il ne suffirait pas d'en conna\^\i tre un ou 
+m\^eme quelques uns pour en d\'eduire les autres, de sorte qu'on ne 
+pourrait pas trouver de programme {\it plus court} que la liste directe. 
+\medskip 
+Ce qui a permis \`a notre statisticien de d\'ecouvrir la tricherie, est la 
+possibilit\'e de faire appara\^\i tre le d\'eterminisme de la suite par  
+les soustractions. Mais si {\it le plus court} algorithme qui engendre la 
+suite est horriblement long, celui-ci \'echappera forc\'ement aux 
+investigations et aux tests. On peut donc mesurer le degr\'e de hasard 
+ou --~inversement~-- le degr\'e de d\'eterminisme d'une suite de  
+nombres \`a la longueur en $K\! o$ du plus court programme qui engendre 
+la suite. Ainsi un degr\'e \'elev\'e de hasard signifie uniquement que la 
+suite est engendr\'ee par un algorithme suffisamment tortueux pour 
+pouvoir \'echapper \`a la surveillance des inspecteurs. Cette id\'ee  
+d\'ecoule naturellement de celle de Borel mentionn\'ee plus haut, mais 
+elle n'a  \'et\'e \'erig\'ee en syst\`eme que plus tard, et est le r\'esultat 
+d'une lente maturation qui s'\'etale de 1900 \`a  1960 environ. Le lecteur 
+int\'eress\'e pourra lire  le livre de Knuth ou celui de Delahaye 
+(d\'ej\`a cit\'es en note 4) pour en savoir plus. 
+\medskip
+La conclusion ultime de toute cette lente maturation d'id\'ees 
+sur ce  que seraient ``vraiment'' des nombres pris au hasard dans 
+un intervalle, est qu'il n'y a pas de ``vrai'' hasard, il n'y a que des 
+algorithmes d\'eterministes, mais suffisamment crypt\'es et tortueux 
+pour que {\it en pratique} aucun expert ne puisse d\'ecouvrir le 
+d\'eterminisme sous-jacent. C'est ainsi, en tous cas, que fonctionnent les 
+fonctions {\bf random} des logiciels de calcul. 
+\medskip 
+Dans le domaine des choix de nombres, c'est-\`a-dire du hasard 
+{\it math\'e\-ma\-ti\-que}, il n'y a pas d'autre forme de hasard que le 
+cryptage du d\'eterminisme. La  boutade de Laplace est donc 
+parfaitement juste.  
+ 
+\vskip7mm plus6mm minus5mm
+ 
+{\bf I. 5. Hasard et d\'eterminisme dans la Nature.} 
+\medskip 
+Se pourrait-il alors que dans la Nature, au moins, on rencontre du 
+v\'eritable hasard, c'est-\`a-dire des processus pour lesquels, m\^eme si 
+on pouvait les reproduire avec un algorithme d\'eterministe, du moins la 
+Nature n'y aurait pas recouru. L\`a, le probl\`eme est plus d\'elicat, car 
+nous n'avons de la Nature qu'une connaissance approch\'ee, ce qui a pour 
+premi\`ere cons\'equence que si deux mod\`eles math\'ematiques 
+diff\'erents  donnent des pr\'evisions qui ne diff\`erent num\'eriquement 
+que d'une petite quantit\'e, il est impossible de dire que l'un est plus vrai 
+que l'autre, au cas o\`u ces pr\'evisions seraient toutes deux conformes 
+\`a l'observation. Il est donc absurde de conf\'erer une validit\'e absolue  
+\`a une description de la M\'ecanique en termes d'\'equations 
+diff\'erentielles. Par exemple, on peut dire que la bille de la roulette 
+ob\'eit \`a la M\'ecanique classique et que son mouvement est d\'ecrit 
+par des \'equations diff\'erentielles, mais cette description n'est qu'un 
+mod\`ele math\'ematique approch\'e. Le mouvement de la bille est un 
+exemple de chaos d\'eterministe, mais lorsqu'on dit cela il faut avoir  
+en vue que le d\'eterminisme n'existe que dans le mod\`ele 
+math\'ematique; dans le mouvement r\'eel de la bille, rien ne prouve  
+qu'il ne pourrait \^etre d\'ecrit tout aussi bien par un autre mod\`ele 
+math\'ematique, pr\'edisant le m\^eme mouvement pour la bille {\it dans 
+les limites de pr\'ecision exp\'erimentales}, mais ind\'eterministe; le 
+d\'eterminisme appro\-xi\-matif du mouvement observ\'e \'etant alors  
+expliqu\'e comme un effet de la loi des grands nombres et non d'un 
+d\'eterminisme absolu. Or si on parle de mod\`ele ind\'eterministe, on 
+entend par l\`a que le mod\`ele postule un hasard {\it ontologique}, 
+c'est-\`a-dire un hasard premier, suppos\'e exister sans explication plus 
+profonde, comme celui qui est invoqu\'e par la M\'ecanique quantique, par 
+exemple. Mais il suffirait d'ajouter \`a ce mod\`ele math\'ematique une 
+annexe ``expliquant'' le hasard invoqu\'e comme l'application d'un 
+algorithme du type indiqu\'e ci-dessus, pour  le transformer en mod\`ele 
+d\'eterministe. De sorte que la question du d\'eterminisme ou de 
+l'ind\'eterminisme {\it de la Nature} est tout simplement d\'epourvue de 
+sens logique. Pour que cette question puisse acqu\'erir un sens logique,  
+il faudrait avoir de la Nature une connaissance math\'ematique 
+rigoureusement exacte et non approch\'ee. L'existence d'innombrables 
+ex\'eg\`eses philosophiques sur le sujet ne suffit pas \`a transmuter  
+cette question absurde en question sens\'ee (et d'autant moins que 
+la plupart de ces ex\'eg\`eses philosophiques, surtout depuis 
+Emmanuel Kant, s'efforcent pr\'ecis\'ement de montrer l'absurdit\'e 
+de cette question). On pourra lire \`a ce sujet Richard P. Feynman 
+{\it Lectures on Physics}, Tome {\bf 3}, {\bf II. 6.}).\looseness=-1 
+\medskip
+Poincar\'e aurait dit qu'entre les deux mod\`eles il faut choisir le plus   
+simple. Cela ne signifie pas que le plus simple est le plus vrai, mais 
+ne signifie pas non plus que rien n'existe r\'eellement et que tout  
+serait convention. Et cela signifie encore moins que si par hasard le 
+plus simple des deux se trouve \^etre d\'eterministe, on soit fond\'e \`a  
+en d\'eduire que la science (en  faisant ce choix) aurait prouv\'e que la 
+Nature est d\'eterministe, ou inversement. Ind\'ependamment de 
+Poincar\'e, un certain bon sens nous ferait juger tr\`es artificiel, ou 
+m\^eme farfelu, d'ajouter \`a un mod\`ele ind\'eterministe une annexe qui 
+ne le rendrait pas plus juste dans ses pr\'edictions, et dont la seule 
+fonction serait de le rendre  d\'eterministe. Ce bon sens est simplement 
+le sentiment de la na\"\i vet\'e d'une telle entreprise, et ce sentiment de 
+na\"\i vet\'e  provient d'une exp\'erience mill\'enaire, qui  nous a 
+toujours montr\'e que lorsqu'on d\'ecouvre une explication plus profonde 
+\`a un ph\'enom\`ene, celle-ci est bien plus surprenante et plus retorse 
+que ce qu'on aurait pu imaginer. 
+\medskip 
+Pour comprendre de fa\c con plus pr\'ecise les cons\'equences du 
+caract\`ere {\it approch\'e}, et non math\'ematique, de la connaissance,  
+nous allons analyser  un mod\`ele simplifi\'e de roulette: nous supposons 
+que la bille se d\'eplace \`a l'int\'erieur d'un cercle, mais sur un plan (et 
+non une cuvette); qu'elle rebondit sur le bord du cercle comme une boule  
+de billard; et pour simuler le frottement nous supposons simplement que  
+la vitesse de la bille diminue exponentiellement avec le temps. La 
+description de la vraie roulette serait plus difficile et plus 
+compliqu\'ee, mais ne comporterait rien d'essentiellement diff\'erent. 
+\medskip 
+Cette roulette simplifi\'ee (ou plut\^ot, ce {\it mod\`ele} de roulette  
+simplifi\'ee) est un cas de chaos d\'eterministe interm\'ediaire entre 
+l'exemple extr\^emement simple de la suite $u_n = $ partie d\'ecimale  
+de $n \cdot e$ et la vraie roulette. En outre, une bille dans un billard 
+circulaire est un exemple qui, contrairement \`a la suite $u_n$, n'est 
+pas uniquement math\'ematique, car on peut \`a la fois imaginer une  
+bille mat\'erielle sur un tapis vert, rebondissant sur  une bordure 
+circulaire, et le mod\`ele math\'ematique correspondant. Ce mod\`ele est 
+donc exactement ce qu'il nous faut pour comprendre le hasard dans la 
+Nature. Fondamentalement ce mod\`ele  permet non seulement de deviner 
+par analogie ce qui se produit pour la roulette, mais \'egalement pour de 
+nombreux ph\'enom\`enes analogues dans leur principe, tels que par 
+exemple l'agitation thermique, le mouvement brownien, la 
+diss\'emination de poussi\`eres dans l'atmosph\`ere, etc.   
+\medskip 
+ 
+\midinsert 
+\centerline{\epsfbox{../imgEPS/ch01eps/fig4.eps}} 
+\vskip 3mm 
+\centerline{\eightpoint figure 4} 
+\vskip 6pt 
+\centerline{\eightpoint \'Evolution de la trajectoire d'une bille dans un 
+cercle.}  
+\vskip3mm
+\endinsert 
+ 
+La bille est lanc\'ee \`a l'instant 0, avec une vitesse initiale $v$. La 
+trajectoire qu'elle va d\'ecrire est form\'ee de cordes successives, 
+l'extr\'emit\'e de chacune \'etant l'origine de la suivante (voir la figure 
+4).  La r\'eflexion sur le bord ob\'eit bien s\^ur \`a la loi de la r\'eflexion,  
+\`a savoir que  la bissectrice de l'angle form\'e par deux cordes 
+cons\'ecutives passe par le centre du cercle. Cet angle reste le m\^eme 
+pour toutes les cordes; appelons le $\theta$. Si la bordure du billard  
+n'\'etait pas un cercle, cet angle changerait \`a chaque rebondissement; 
+le probl\`eme en serait rendu plus compliqu\'e, mais sans aucun 
+b\'en\'efice pour la discussion.  
+\medskip 
+Si l'angle $\theta$ est commensurable avec $\pi$, c'est-\`a-dire s'il 
+existe un nombre {\it rationnel} $\alpha = p/q$ (quotient de deux 
+entiers $p$ et $q$) tel que $\theta = \alpha\pi$, alors la trajectoire  
+de la bille, form\'ee d'une suite de cordes contigu\"es,  est un polygone 
+r\'egulier: les cordes se superposent p\'eriodiquement, et la bille  
+repasse p\'eriodiquement sur ses traces. Ce cas particulier est 
+l'analogue de la suite $v_n = $ partie d\'ecimale de $n \cdot 0.5$, ou  
+plus g\'en\'eralement $v_n = $ partie d\'ecimale de $n \cdot \alpha$  
+(avec $\alpha$ fractionnaire). Par contre si $\theta$ est 
+incommensurable avec $\pi$, par exemple si $\pi / \theta = e$, alors  
+la bille ne repasse  jamais deux fois sur la m\^eme corde. Si la bille 
+roule tr\`es longtemps (si donc le frottement est faible) elle parcourt  
+un tr\`es grand nombre de cordes, toutes distinctes, et ces cordes 
+remplissent compl\`etement une couronne (voir figure 4). Remplir 
+compl\`etement signifie que n'importe quelle petite r\'egion de la 
+couronne, aussi petite soit-elle, finira t\^ot ou tard par recevoir la 
+visite de la bille.   
+\medskip 
+Supposons maintenant que le disque soit subdivis\'e en beaucoup de 
+petites r\'egions. On lance la bille avec une vitesse initiale $v_0$, un 
+angle  $\theta = \pi / e$, et le coefficient de frottement est $k$, de 
+sorte que la vitesse de la bille d\'ecro{\^\i}t en fonction du temps $t$
+selon la loi $v(t) = e^{-kt}$.  Les petites r\'egions situ\'ees en dehors
+de la couronne ne seront de toute fa\c con jamais atteintes par la bille. 
+Par contre la bille finira par s'arr\^eter (plus exactement, elle se 
+rapprochera ind\'efiniment d'une position limite), forc\'ement dans une  
+r\'egion situ\'ee \`a une distance du centre sup\'erieure \`a  
+$R\sin (\pi / 2\, e)$. Le mod\`ele est enti\`erement d\'eterministe, 
+puisque si  on conna\^\i t $v_0$, $\theta$, $k$, et la position initiale 
+$M_0$ de la bille, alors le point o\`u la bille s'arr\^etera est parfaitement 
+d\'etermin\'e, et la petite r\'egion dans laquelle ce point se trouve peut 
+donc \^etre pr\'edite. Voyons comment.  
+\medskip 
+La trajectoire est de toute fa\c con d\'etermin\'ee par la seule donn\'ee  
+de  $M_0$ et $\theta$. Le param\`etre de frottement $k$ ne d\'etermine  
+que la distance parcourue sur cette trajectoire. On supposera $M_0$ 
+situ\'e sur le bord (c'est-\`a-dire qu'on lance la bille \`a partir du bord),  
+et en outre l'invariance par rotation permet de ne faire le calcul que pour 
+un point $M_0$ particulier: si on change $M_0$ en $M_0'$ par une rotation, 
+le point d'arriv\'ee sera chang\'e selon la m\^eme rotation. La  
+d\'ependance par rapport \`a $M_0$ ne montre donc rien d'int\'eressant. 
+Mais supposons qu'on change un tout petit peu $\theta$ en $\theta' = 
+\theta + \varepsilon$. La premi\`ere corde parcourue par la bille sera 
+l\'eg\`erement tourn\'ee, d'un angle \'egal  \`a  $\varepsilon$; la seconde 
+sera tourn\'ee du double, la troisi\`eme  du triple, etc. Si on appelle 
+$M_1$, $M_2$, $\cdots$ les points de la circonf\'erence touch\'es 
+successivement --~apr\`es $M_0$~-- par la  bille, la distance angulaire 
+de deux cons\'ecutifs de ces points est $\pi  - \theta$, qui se trouve donc 
+modifi\'e en $\pi - \theta'$. \'Etant donn\'e que $M_0$ est fix\'e, cela  
+se traduit par un d\'eplacement angulaire de  $-\varepsilon$ pour $M_1$, 
+de $-2\varepsilon$ pour $M_2$, de $-3\varepsilon$ pour $M_3$, etc. Au 
+bout d'un nombre $N$ de r\'eflexions, le point $M_N$ sera d\'eplac\'e, par 
+rapport \`a la  trajectoire de r\'ef\'erence, de $-N\varepsilon$; si $N$ est 
+assez grand pour compenser la petitesse de $\varepsilon$, la bille pourra 
+se trouver  dans une r\'egion \'eloign\'ee de celle qu'elle aurait atteinte 
+apr\`es le  m\^eme nombre de r\'eflexions sur la trajectoire de 
+r\'ef\'erence.  
+\medskip 
+Voyons maintenant comment le mouvement d\'epend de $k$ (param\`etre  
+de frottement). La trajectoire, qu'elle soit de r\'ef\'erence ou 
+modifi\'ee,  ne change pas lorsqu'on change la valeur de $k$; seule 
+change la {\it distance parcourue} sur cette trajectoire. Les 
+r\'eflexions successives ne changent rien \`a la vitesse, seule la 
+direction du mouvement est affect\'ee. On peut donc, bien que la 
+trajectoire soit une ligne bris\'ee, traiter le mouvement {\it sur 
+cette trajectoire} comme s'il s'agissait d'un mouvement sur un axe. Soit 
+donc $x(t)$ la distance parcourue {\it sur cette trajectoire} par la bille 
+\`a l'instant $t$,  depuis l'instant $0$ o\`u elle \'etait en $M_0$. La 
+d\'eriv\'ee de $x(t)$ est  sa vitesse \`a l'instant $t$ , dont nous avons 
+suppos\'e qu'elle \'etait  \'egale \`a $v_0 e^{-kt}$. Ainsi:    
+$$\eqalign{ 
+x'(t)  &= v_0 e^{-kt} \quad ; \cr 
+x(0) &= 0 \quad . \cr }$$ 
+Par un calcul de primitive imm\'ediat, on obtient: 
+$$x(t) = {v_0 \over k}\bigl( 1 - e^{-kt} \bigr)$$ 
+On voit que lorsque $t$ tend vers l'infini, $x(t)$ tend vers $v_0 / k$. En 
+pratique $x(t)$ sera pratiquement \'egal \`a $v_0 / k$ d\'ej\`a pour $t 
+\sim 10/k$, et n'en bougera pratiquement plus ensuite, ce qui signifie 
+que la bille s'arr\^etera au bout d'un temps de l'ordre de $10/k$, apr\`es 
+avoir parcouru une distance \'egale \`a $v_0 / k$. 
+\medskip 
+La question est maintenant de savoir en quel lieu du disque la bille 
+aboutira. Pour des valeurs donn\'ees des param\`etres $k$ et $\theta$,  
+la longueur d'une seule corde est $2 R \cos (\theta /2)$ et la distance 
+parcourue $v_0 / k$, donc le nombre de cordes parcourues (ou, ce qui 
+revient au m\^eme, le nombre de rebroussements) est $N = $ partie 
+enti\`ere de $v_0 / 2 k R \cos (\theta /2)$, et la position de la bille  
+sur la $N+1$ -i\`eme corde sera donn\'ee par la partie d\'ecimale de  
+$v_0 / 2 k   R \cos (\theta /2)$ : si cette partie d\'ecimale est par 
+exemple 0.75,  cela signifiera que la $N+1$ -i\`eme corde aura \'et\'e 
+parcourue aux trois quarts.  Or nous avons vu que si $\theta$ est 
+modifi\'e d'une tr\`es petite quantit\'e $\varepsilon$, et que $N$ est de 
+l'ordre de $1 / \varepsilon$, la  $N+1$ -i\`eme corde ne sera pas 
+modifi\'ee un tout petit peu, mais beaucoup. Si $k$ n'a pas \'et\'e 
+modifi\'e en m\^eme temps que $\theta$, la bille, bien qu'ayant parcouru 
+la {\it m\^eme} distance sur la trajectoire, s'arr\^etera n\'eanmoins en  
+un point compl\`etement diff\'erent du disque.  Il suffit pour cela que $N 
+\sim 1 / \varepsilon$, soit  $v_0 / 2 k R \cos (\theta /2) \sim 1 / 
+\varepsilon$ ou, ce qui revient au m\^eme: 
+$$k \sim {v_0 \, \varepsilon \over 2\, R\, \cos ({1 \over 2}\theta )} 
+\eqno (I.3.)$$ 
+D'autre part, si on modifie $k$ mais pas $\theta$, mettons qu'on 
+augmente ou diminue $k$ d'une proportion $\eta$, qu'on le remplace 
+donc par $k' = k(1+\eta )$, alors la trajectoire reste inchang\'ee, mais  
+la distance parcourue sur cette trajectoire passera de $v_0 /k$ \`a 
+$v_0  /k'$, c'est-\`a-dire qu'elle sera divis\'ee par $1+\eta$, ou 
+multipli\'ee  par $1 - \eta$ puisque pour $\eta$ petit  $1 /(1 + \eta ) 
+\simeq 1 - \eta$. La diff\'erence entre les deux est donc \`a peu pr\`es 
+\'egale \`a $\eta v_0 / k$, ce qui n'est pas petit si $k$ est du m\^eme 
+ordre de grandeur que  $\eta v_0$. Cela peut m\^eme d\'epasser la 
+longueur d'une corde si   
+$$k < {v_0 \, \eta \over 2\, R\, \cos ({1 \over 2}\theta )} \eqno (I.4.)$$ 
+On voit alors ce qui se passe: tant que le probl\`eme reste purement 
+math\'ematique, la position finale est toujours exactement pr\'edictible 
+\`a partir de la donn\'ee des param\`etres $\theta$ et $k$. Mais d'apr\`es 
+$(I.3)$ et $(I.4.)$ l'incertitude sur la position finale est beaucoup plus 
+grande que l'incertitude sur les valeurs de ces param\`etres, et cela 
+d'autant plus que $k$ est plus petit. Autrement dit: plus le frottement 
+est faible, plus cette disproportion entre les incertitudes est grande.   
+Pour en donner une id\'ee num\'erique: supposons que le temps soit  
+mesur\'e en secondes et les distances en d\'ecim\`etres, que le rayon  
+du disque soit $R = 1$ d\'ecim\`etre, et $v_0 = 1$ d\'ecim\`etre par 
+seconde. Prenons  $k = 10^{-3}$, $\theta$ tel que $\cos (\theta / 2) = 
+0.75$, ce qui fait $\theta \simeq 1.445\, 468\, 496$ et $\pi / \theta 
+\simeq 2.173\, 407\, 904$. La longueur d'une corde sera alors $1.5$, la 
+distance parcourue par la bille $10^3$, c'est-\`a-dire $100$ m\`etres, le 
+nombre de cordes parcourues sera $N = 666$, et la bille s'arr\^etera aux 
+deux tiers  de la $667^{\rm e}$ corde. On peut se donner un rep\`ere 
+orthonorm\'e pour les coordonn\'ees des points, tel que $M_0$ ait pour 
+coordonn\'ees $(1,0)$. Puisqu'on passe de chaque corde \`a la suivante par 
+une rotation d'angle $\pi - \theta$, on aura la  $667^{\rm e}$ corde par 
+une rotation d'angle $666 \cdot (\pi -\theta) \simeq 1\, 129.618\, 
+689\, 203$, ce qui est \'egal \`a $4.928\, 519\, 218$ modulo $2\pi$. Le 
+point situ\'e aux deux tiers de cette corde est alors le point de 
+coordonn\'ees $x=+0.699\, 662\, 113$ et $y=-0.102\, 337\, 320$. Si on 
+prend $\varepsilon = 10^{-3}$, et $\eta = 0$,  le nouvel angle $\theta' / 
+2$ a pour cosinus non plus $0.75$, mais $0.749\, 669\, 187$, la longueur 
+des cordes n'est plus $1.5$, mais $1.499\, 338\, 375$, le nombre de  
+cordes parcourues est toujours $666$, mais la proportion parcourue de la 
+$667^{\rm e}$ est $0.960\, 852\, 116$. Si on refait les m\^emes calculs 
+de rotations, on trouve que cette fois le point atteint par la bille est le  
+point de coordonn\'ees $x=+0.893\, 362\, 414$ et $y=-0.342\, 554\, 750$. 
+Les deux points sont \`a l'int\'erieur du disque, mais leur distance 
+mutuelle est $0.308\, 584\, 218$, \`a peu pr\`es le tiers du rayon. Le 
+calcul confirme donc ce qui \'etait qualitativement pr\'evu, \`a savoir 
+qu'un changement de un milli\`eme de l'angle $\theta$ entra\^\i ne un 
+changement macroscopique du point atteint par la bille. On observerait la 
+m\^eme chose si au lieu de faire varier $\theta$, on avait fait varier  $k$, 
+en prenant $\varepsilon = 0$ et $\eta = 10^{-3}$, ou en faisant varier les 
+deux \`a la fois. Cela veut dire que si on avait voulu pr\'edire le point o\`u 
+la bille viendra s'immobiliser au milli\`eme pr\`es, il aurait fallu 
+conna\^\i tre $\theta$ et $k$ avec une pr\'ecision non du milli\`eme, mais 
+du millioni\`eme. C'est ce que montrent les relations $(I.3.)$ et $(I.4.)$. 
+Le point o\`u la bille s'arr\^etera peut donc \^etre pr\'edit, mais la 
+pr\'ecision de cette pr\'ediction exige une pr\'ecision encore bien plus 
+grande sur les valeurs des param\`etres initiaux $\theta$ et $k$, 
+d'autant plus grande d'ailleurs que $k$ est plus petit, conform\'ement \`a 
+$(I.3.)$. Il s'agit l\`a d'une propri\'et\'e caract\'eristique du chaos 
+d\'eterministe, qui est l'{\it amplification} des perturbations, ou la 
+{\it tr\`es haute sensibilit\'e aux conditions initiales}. 
+\medskip  
+D'autre part, il se produit --~mais en deux dimensions cette fois~-- le 
+m\^eme ph\'enom\`ene que pour la suite $u_n$, \`a savoir que si le 
+frottement \'etait absolument nul, la bille ne s'arr\^eterait jamais,  mais 
+parcourrait la couronne \'eternellement, et si on d\'elimitait de petites 
+r\'egions dans la couronne, alors  
+\smallskip 
+a) chacune de ces petites r\'egions serait travers\'ee \'episodiquement  
+par la bille (d'autant plus souvent que la dur\'ee de l'observation serait 
+longue);  
+\smallskip 
+b) le temps total (form\'e donc de nombreuses travers\'ees br\`eves)  
+que la bille passerait \`a l'int\'erieur de chacune de ces petites 
+r\'egions, d\'ependrait de l'aire de cette petite r\'egion. 
+\medskip 
+Pour un \^etre microscopique vivant dans l'une de ces petites r\'egions, 
+et voyant de temps en temps passer la bille, les passages de cette bille 
+sembleraient survenir \`a des moments al\'eatoires (cela provient de ce 
+que $\pi / \theta$ est irrationnel). L'\^etre  microscopique, ne pouvant  
+pas imaginer la cause d\'eterministe des passages de la bille, penserait 
+avoir affaire \`a un hasard ontologique. En cas de frottement, il 
+s'apercevrait cependant que  la vitesse de la bille est plus lente \`a 
+chaque passage, et il pourrait m\^eme avoir le privil\`ege fantastique de 
+voir un jour la bille venir s'arr\^eter dans son jardin. 
+ \medskip 
+\`A une toute autre \'echelle, et avec une perspective compl\`etement 
+diff\'erente, le physicien humain qui lance cette bille serait un dieu  
+pour l'\^etre microscopique, mais, sa connaissance des choses \'etant 
+approch\'ee et non math\'ematiquement exacte, il ne pourrait  
+lui-m\^eme pr\'evoir le point o\`u la bille s'arr\^etera, faute de pouvoir 
+mesurer avec une pr\'ecision suffisante les conditions initiales du 
+mouvement. Ainsi, le postulat selon lequel le mouvement est 
+d\'eterministe a un sens dans le mod\`ele math\'ematique, mais n'en a 
+absolument aucun dans la r\'ealit\'e.  
+\medskip 
+Une question int\'eressante est maintenant de savoir comment sont 
+r\'epartis ces temps de s\'ejour dans chaque petite r\'egion. Avec la  
+suite $u_n$, nous avons dit que (pour $n$ grand) le nombre de termes  
+qui ``tombent'' dans un intervalle $[a,b]$ de $[0,1]$ est proportionnel  
+\`a la longueur $b-a$. Pour la bille, nous allons voir que la dur\'ee  
+totale de s\'ejour dans chacune des petites r\'egions n'est pas 
+proportionnelle \`a son aire: les r\'egions situ\'ees pr\`es du bord 
+int\'erieur de la couronne seraient --~\`a aire \'egale~-- fortement 
+favoris\'ees par rapport aux r\'egions situ\'ees pr\`es du bord 
+ext\'erieur. On peut comprendre cela facilement:  ce qui est r\'eparti 
+uniform\'ement n'est pas la densit\'e des passages de la bille, mais les 
+angles d'inclinaison des cordes: en effet, ces angles sont, comme nous 
+l'avons vu, en progression arithm\'etique, et la suite des angles, 
+compt\'es modulo $2\pi$, est donc du m\^eme type que la suite $u_n$.  
+Si on se fixe deux cordes  proches l'une de l'autre, leurs angles  
+d'inclinaison sont proches \'egalement, ils diff\`erent, disons, d'un  
+petit angle $\delta$ (figure 5). Cela veut dire que ces deux cordes ont 
+entre elles un angle  $\delta$; elles se coupent tout pr\`es du bord 
+int\'erieur de  la couronne, mais s'\'ecartent l'une de l'autre en 
+s'\'eloignant de l'intersection. Parmi toutes les  cordes de la trajectoire, 
+certaines se situeront entre les deux cordes que nous nous sommes 
+fix\'ees; leur nombre sera proportionnel \`a l'angle $\delta$,  tout comme 
+le nombre d'\'el\'ements de la suite $u_n$  situ\'es \`a l'int\'erieur d'un 
+petit intervalle de longueur $\delta$ est proportionnel \`a $\delta$. Le 
+nombre de ces cordes sera \`a peu pr\`es \'egal \`a $\delta /2\pi$ fois 
+le nombre de toutes les cordes parcourues. Or les cordes sont plus 
+denses, ou plus serr\'ees, pr\`es du bord  int\'erieur de la couronne: leur 
+distance est nulle tout pr\`es du bord int\'erieur et cro\^\i t ensuite 
+lin\'eairement, ce qui entra\^\i ne que leur densit\'e est tr\`es grande 
+pr\`es du bord int\'erieur (\`a la limite infinie), mais  diminue en se 
+rapprochant du bord ext\'erieur. Cela se voit imm\'ediatement  rien 
+qu'en regardant la  figure 4.   
+\medskip  
+Pour calculer, introduisons la coordonn\'ee radiale $t = \sqrt{x^2 + y^2}  
+/ R$ (la distance au centre du disque rapport\'ee au rayon). La couronne 
+correspond aux valeurs de $t$ comprises entre $r=\sin\bigl( {1\over 2} 
+\theta\bigr)$ et $1$ ($rR$ est ainsi le rayon int\'erieur de la couronne). 
+\medskip 
+ 
+\midinsert 
+\vbox{\vskip3pt 
+\centerline{\epsfbox{../imgEPS/ch01eps/fig5.eps}} 
+\vskip2mm 
+\centerline{\eightpoint figure 5} 
+\vskip6pt 
+\centerline{\eightpoint Petits losanges d\'elimit\'es par des faisceaux  
+de  cordes.} 
+\vskip2mm} 
+\endinsert 
+ 
+Les aires infinit\'esimales $\sigma$ d\'elimit\'ees par deux couples de 
+cordes tr\`es proches, formant entre elles de petits angles $\delta$ 
+(voir figure 5) sont \'egales \`a   
+$$\sigma = \hbox{${1 \over 2}$} \; t^2 \; \delta^2 \;  \sqrt{{t^2 \over 
+r^2} - 1}$$    
+Mais puisque, entre deux cordes fix\'ees, ayant entre elles un angle  
+$\delta$, le nombre de passages de la bille est proportionnel \`a  
+$\delta$ (plus pr\'ecis\'ement \'egal \`a $N\delta / 2\pi$, $N$ \'etant  
+le  nombre total de  cordes parcourues), et le petit intervalle que la  
+bille parcourt \`a  chaque passage \`a l'int\'erieur du losange \'etant de  
+longueur $t^2 \delta / 2r$, on en d\'eduit que la distance totale (somme 
+de  tous ces petits intervalles) parcourue par la bille dans le petit 
+losange  d'aire $\sigma$ est  
+$$\tau = {N \over 2\,\pi\, r } \; t^2 \; \delta^2$$ 
+Si on exprime $\tau$ en fonction de $\sigma$ on trouve 
+$$\tau = {N \over\sdown{12} \pi\,\sqrt{t^2 - r^2}}\; \sigma$$ 
+Conform\'ement \`a ce que nous avions pressenti auparavant par des 
+estimations qualitatives, $\tau$ n'est pas simplement proportionnel \`a 
+$\sigma$; on voit appara\^\i tre la densit\'e $1 /\,\sqrt{t^2 - r^2}$, qui  
+exprime quantitativement le favoritisme dont b\'en\'eficient, \`a aire 
+\'egale, les petits losanges situ\'es pr\`es du bord int\'erieur de la  
+couronne.  Cette loi valable pour les petits losanges s'\'etend ensuite \`a 
+des petites r\'egions de forme quelconque, puisqu'on peut toujours 
+quadriller une r\'egion selon de tels petits losanges, comme on quadrille 
+en petits carr\'es dans la th\'eorie usuelle de l'int\'egration. 
+\medskip 
+Si au lieu de compter le {\it chemin} parcouru \`a l'int\'erieur de chaque 
+petit losange on avait voulu compter simplement le {\it nombre de 
+passages}, sans consid\'eration du chemin parcouru, on aurait aussi 
+obtenu une loi statistique, dont on aurait d\'eduit une probabilit\'e 
+empirique; dans ce cas, ce seraient les dimensions lin\'eaires, et non  
+plus l'aire, qui interviendraient: par exemple, si la petite r\'egion est un 
+petit disque de diam\`etre $\rho$, le nombre de passages de la bille \`a 
+travers ce petit disque serait \`a peu pr\`es \'egal \`a   
+$$\nu = {N \,\over\sdown{12}\pi\,\sqrt{t^2 - r^2}}\; \rho$$  
+Bien entendu la densit\'e $1 /\sqrt{t^2 - r^2}$ est toujours l\`a.  
+\medskip 
+Ainsi les \^etres microscopiques qui habitent dans la couronne 
+observeraient des lois statistiques, v\'erifi\'ees par les passages de la 
+bille: pour toutes les r\'egions  situ\'ees {\it \`a une distance donn\'ee}  
+du centre du disque, le total du temps pass\'e par la boule \`a l'int\'erieur 
+d'une r\'egion du disque est --~sur un grand nombre de passages~-- 
+proportionnel \`a l'aire de cette r\'egion; ou encore: le nombre total de 
+passages \`a travers une petite r\'egion est proportionnel \`a son 
+diam\`etre. Mais lorsqu'on consid\`ere des r\'egions situ\'ees \`a des  
+distances diff\'erentes du centre, le coefficient de proportionnalit\'e 
+varie selon $1 /\sqrt{t^2 - r^2}$.  
+\medskip 
+En observant vraiment bien, les \^etres microscopiques apercevraient  
+des r\'egularit\'es dans les passages, car si la suite des  
+passages semble al\'eatoire \`a premi\`ere vue, elle a les m\^emes 
+d\'efauts que la suite $u_n$. Ceci provient de ce que le mod\`ele 
+est trop simple, on peut tout calculer explicitement \`a l'aide de 
+formules ou d'algorithmes simples, que des inspecteurs peuvent 
+d\'ecrypter. Mais on peut rendre le mod\`ele plus compliqu\'e: par 
+exemple, au lieu d'une bordure circulaire, on pourrait prendre une 
+bordure non circulaire, pas m\^eme elliptique (car l'ellipse poss\`ede 
+encore trop de r\'egularit\'es). Point n'est besoin de modifier beaucoup 
+la bordure: celle-ci peut ne jamais s'\'ecarter du  cercle de plus de un 
+centi\`eme de millim\`etre: nous avions vu qu'en ne changeant 
+l'angle $\theta$ que d'un milli\`eme, on perturbait macroscopiquement 
+la forme prise par la trajectoire apr\`es plusieurs centaines de 
+rebroussements; il en irait de m\^eme en modifiant la bordure de 
+quelques milli\`emes; en effet, modifier cette bordure revient \`a 
+modifier {\it tous} les angles de r\'eflexion, chacun d'une quantit\'e  
+petite, mais diff\'erente, et non pas seulement le premier. En agissant 
+ainsi, on produirait le m\^eme type de perturbation amplifi\'ee: le  
+d\'ebut de la trajectoire serait peu modifi\'e, mais  {\it apr\`es un 
+certain temps}, inversement proportionnel  \`a l'amplitude des 
+modifications, elle serait compl\`etement diff\'erente. Le simple fait 
+d'avoir une bordure qui, bien que presque circulaire, n'est plus 
+rigoureusement un cercle, rend d\'ej\`a le calcul exact de la trajectoire 
+si compliqu\'e que les inspecteurs n'y verraient que du feu. Pour d\'ejouer 
+encore davantage leur vigilance, on pourrait donner au fond du disque (le 
+tapis vert) une forme courbe de cuvette au lieu d'un plan. Le mouvement 
+serait toujours rigoureusement d\'eterministe. Les propri\'et\'es de 
+chaos que nous avons mises en \'evidence dans le mod\`ele simple 
+subsisteraient  (\`a savoir l'{\it  amplification}, le fait qu'une tr\`es 
+faible modification des conditions initiales entra\^\i nerait une 
+modification macroscopique du mouvement apr\`es un nombre de  tours 
+inversement proportionnel \`a cette modification). Mais l'algorithme pour 
+les calculer serait alors tellement complexe que ce mouvement {\it ne 
+pourrait pas \^etre calcul\'e}. Les \^etres microscopiques ne pourraient 
+plus observer des r\'egularit\'es dans les passages individuels de la bille: 
+si leurs observations \'etaient exactes (c'est-\`a-dire sans erreur de 
+mesure), ce serait la complexit\'e du processus qui les emp\^echerait de 
+voir les r\'egularit\'es. Et pour \^etre bien certain que les habitants de la 
+couronne, qu'il ne faudrait tout de m\^eme pas sous-estimer, ne pourront 
+jamais percer le myst\`ere des passages de la bille, nous supposerons que 
+la zone situ\'ee pr\`es du bord  leur est inaccessible (que les lois 
+physiques de leur monde sont telles qu'il leur faudrait une \' energie 
+infinie pour atteindre ce bord) et qu'ils ne peuvent donc pas conna\^\i tre 
+exactement sa forme. Si en outre  leurs observations sont approch\'ees et 
+entach\'ees d'erreurs de mesure, le d\'eterminisme du mouvement leur 
+sera encore plus cach\'e. Les seules propri\'et\'es suffisamment simples 
+qu'ils pourront observer seront les deux propri\'et\'es suivantes:   
+\smallskip 
+$a)$ la dur\'ee totale de s\'ejour dans une petite r\'egion d'aire  
+$\sigma$ situ\'ee \`a une distance $t$ du centre du disque est 
+proportionnelle \`a $\sigma$ et inversement proportionnelle \`a 
+$\sqrt{t^2 - r^2}$.  
+\smallskip 
+$b)$ la variation en $1 / \sqrt{t^2 - r^2}$ s'explique {\it simplement}  
+par une  propri\'et\'e g\'eom\'etrique. C'est-\`a-dire que les \^etres 
+microscopiques peuvent ais\'ement comprendre que les trajectoires sont 
+des segments de droites qui s'\'ecartent lin\'eairement et sont donc moins 
+denses vers le bord.    
+\medskip 
+Ainsi le ph\'enom\`ene se d\'ecompose en deux parties: 1. une distribution  
+myst\'erieuse des segments de trajectoire, et 2. un effet d\^u uniquement  
+aux propri\'et\'es g\'eom\'etriques communes \`a tous les segments  
+(th\'eor\`eme de Thal\`es, etc.). La partie 2 du ph\'enom\`ene est 
+compr\'ehensible et ``explique'' la densit\'e $1 / \sqrt{t^2 - r^2}$. Par 
+contre, la partie du ph\'enom\`ene que les \^etres microscopiques  {\it  
+ne peuvent pas comprendre} est la distribution des segments. Il leur est 
+ais\'e de voir que les segments se coupent pr\`es du bord int\'erieur 
+(comme on voit  sur la figure 5) et utiliser le th\'eor\`eme de Thal\`es 
+pour retrouver par  le calcul la densit\'e  $1 / \sqrt{t^2 - r^2}$, mais ils 
+ne peuvent pas pr\'evoir la position des segments successifs. Ils peuvent 
+alors d\'ecouvrir apr\`es quelques t\^atonnements math\'ematiques que, 
+si au lieu de mesurer le temps de s\'ejour dans chaque petite r\'egion, on 
+avait mesur\'e par exemple l'orientation des segments (l'angle 
+d'inclinaison par rapport \`a la direction radiale), alors il n'y aurait plus 
+de densit\'e variable: les diff\'erentes orientations se distribueraient de 
+fa\c con uniforme. \'Etant alors donn\'e que la distribution des segments 
+est incompr\'ehensible, il n'est plus possible de progresser au-del\`a de  
+cette loi uniforme: de m\^eme que dans un calcul alg\'ebrique (par  
+exemple factoriser un polyn\^ome ou r\'eduire une fraction du type 
+$(\sqrt{2} + \sqrt{3}) /  (\sqrt{5} -\sqrt{3})$ \`a sa forme la plus 
+simple),  il arrive forc\'ement un moment o\`u ``on ne peut plus r\'eduire 
+davantage'', de m\^eme lorsqu'un ph\'enom\`ene est  d\'ecompos\'e en une 
+partie incompr\'ehensible et une partie compr\'ehensible, il arrive  
+forc\'ement un moment o\`u ``on ne peut plus r\'eduire davantage'' la  
+partie incompr\'ehensible. On a alors atteint un stade de 
+{\it compr\'ehension maximum} du ph\'enom\`ene. \`A un tel stade, la 
+partie incompr\'ehensible est r\'eduite \`a une distribution al\'eatoire 
+uniforme, car tant qu'il subsiste une non-uniformit\'e, celle-ci peut faire 
+l'objet de recherches pour en comprendre l'origine, comme ce fut le cas 
+pour la densit\'e $1/\sqrt{t^2-r^2}$. En revanche, une fois la partie 
+incompr\'ehensible r\'eduite ``\`a sa plus simple expression'', le seul 
+progr\`es encore possible consisterait \`a lever l'obstacle du brouillage 
+par le chaos (par exemple disposer d'ordinateurs  tellement puissants et 
+d'instruments de mesure tellement pr\'ecis que  le chaos d\'eterministe 
+puisse \^etre lui aussi ma\^\i tris\'e).  
+\medskip 
+Une fois qu'on a regroup\'e tout ce qui est compr\'ehensible et r\'eduit   
+l'incompr\'ehensible \`a sa plus  simple expression, uniforme par 
+nature, ce dernier re\c coit alors un nom: le hasard. 
+ 
+\vfill\break 
+ 
+ 
+ 
+\bye 

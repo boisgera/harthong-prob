@@ -1,0 +1,1549 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+\vsize=219mm
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl Lois de probabilit\'e asymptotiques}
+
+\pageno=226 
+ 
+\font\narrowtit=cmb17
+
+\def\hfq{\hfill\quad} 
+\def\cc#1{\hfill#1\quad\hfill} 
+\def\tv{\vrule height 30pt depth 6pt width0.4pt} 
+\def\punkt{\vrule height0.4pt depth0pt width0.4pt} 
+
+\newdimen\blocksize  \blocksize=\vsize  \advance\blocksize by -9pt 
+
+\def\ara{\hskip-1.5pt} 
+\def\asa{\hskip-2pt} 
+\def\ata{\hskip-2.5pt} 
+\def\aua{\hskip-1pt} 
+\def\arb{\hskip1.5pt} 
+\def\asb{\hskip2pt} 
+\def\atb{\hskip2.5pt} 
+\def\aub{\hskip1pt} 
+ 
+\null\vskip10mm plus4mm minus3mm 
+ 
+\centerline{{\tit IX.}\hskip5pt {\narrowtit LOIS DE PROBABILIT\'E
+ASYMPTOTIQUES.}} 
+ 
+\vskip10mm 
+ 
+Nous avons rencontr\'e aux chapitres {\bf VII} et {\bf VIII} des  
+situations o\`u  apparaissent des lois de probabilit\'e complexes,  
+qu'il est non seulement tr\`es difficile, voire impossible d'exprimer 
+analytiquement, mais  qu'il est en outre {\it inutile} ou m\^eme nuisible 
+de conna{\^\i}tre exactement.  
+\medskip 
+Au chapitre {\bf VII} il s'agissait de la loi d'une somme d'un 
+grand nombre de variables al\'eatoires ind\'ependantes. Une telle loi  
+peut bien s\^ur s'exprimer de mani\`ere math\'ematiquement exacte  
+dans  certains cas exceptionnels o\`u les r\'egularit\'es sont tr\`es 
+fortes (par exemple la loi bin\^omiale),  mais en g\'en\'eral elle est  
+dans son d\'etail prodigieusement complexe, chaotique, et irr\'eductible 
+\`a une formule analytique simple (voir figure 17 par exemple). 
+Cependant en distinguant dans la loi exacte un signal (la densit\'e) et du 
+bruit (le ``bruit discret''), on peut mettre en \'evidence une r\'egularit\'e  
+\`a grande \'echelle (la forme gaussienne de la densit\'e).   
+\medskip 
+Au chapitre {\bf VIII} nous avons \'etudi\'e la loi d'un {\it processus en  
+cascade} (du type r\'eaction de fission nucl\'eaire en cha{\^\i}ne) apr\`es  
+un grand nombre de g\'en\'erations. L\`a aussi, on obtient une densit\'e 
+limite, caract\'eris\'ee explicitement par sa transform\'ee de Fourier  
+ou fonction caract\'eristique. Nous avons vu que, si la loi exacte et 
+d\'etaill\'ee est en g\'en\'eral prodigieusement complexe et 
+irr\'eductible \`a une formule analytique, on peut cependant calculer  
+\`a l'aide d'algorithmes simples toute l'information {\it utile},  qui 
+consiste en    
+\smallskip 
+a) la probabilit\'e de l'extinction ultime; 
+ 
+b) la densit\'e de probabilit\'e du nombre de particules-filles de 
+la $n^{\rm e}$ g\'en\'eration.  
+\medskip 
+Ces deux situations ont en commun que les lois exactes sont complexes, 
+que les valeurs possibles de la variable consid\'er\'ee sont tr\`es  
+nombreuses et qu'il importe peu de conna{\^\i}tre la probabilit\'e 
+individuelle de chaque valeur possible; ce qui est utile est de pouvoir 
+calculer, pour n'importe quel intervalle grand par rapport aux distances 
+s\'eparant les valeurs individuelles, la probabilit\'e pour que ces valeurs  
+se situent dans cet intervalle. Cette information est fournie par la 
+densit\'e limite.  
+\medskip 
+On appelle {\it lois de probabilit\'es asymptotiques} ces lois limites, qui 
+sont souvent, mais pas toujours, des densit\'es continues. Parfois elles 
+comportent \`a la fois une partie discr\`ete et une partie continue: par 
+exemple dans le cas du processus en cascade \'etudi\'e au chapitre {\bf  
+VIII}, la loi asymptotique \'etait compos\'ee d'une partie discr\`ete (la 
+probabilit\'e que $Z_n=0$) et d'une partie continue (pour les valeurs  
+autres que z\'ero).  
+\medskip 
+Dans ce chapitre nous nous proposons d'\'etudier quelques lois de 
+probabilit\'e asymptotiques, qu'on rencontre souvent et qu'il faut 
+conna{\^\i}tre. 
+\medskip 
+La loi normale est un cas 
+typique. Un autre type classique de loi limite, enti\`erement  
+discr\`ete, est la loi de Poisson. Les lois limite qu'on rencontre dans la 
+pratique se ram\`enent souvent \`a ces deux cas. Par  exemple  
+les lois asymptotiques du $\chi^2$ ou de Student (voir chapitre {\bf XI})  
+ne sont que des {\it d\'eguisements} (par changement de variable) de la  
+loi asymptotique normale. Dans la section {\bf 1} nous verrons un cas 
+particulier de la loi de Student, la {\it  loi de Cauchy}. Dans la section  
+{\bf 2} nous \'etudierons la {\it loi de Poisson}, qui est une loi limite  
+tr\`es fr\'equente, enti\`erement discr\`ete: elle r\'egit  g\'en\'eralement  
+les \'ev\'enements caract\'eris\'es par comptage, tels que le nombre de 
+v\'ehicules qui se pr\'esentent chaque minute \`a un p\'eage d'autoroute. 
+\medskip  
+Il y a une diff\'erence de nature importante entre d'une part les 
+lois asymptotiques telles que la loi normale et la loi de Poisson, et  
+d'autre  part les lois limite de processus en cascade. En effet, les 
+premi\`eres  ont un caract\`ere universel: ainsi la somme d'un grand 
+nombre de variables al\'eatoires ind\'ependantes aura toujours une 
+densit\'e  gaussienne, quelle que soit la loi particuli\`ere des variables 
+individuelles. De m\^eme  le nombre de v\'ehicules qui se pr\'esentent  
+par minute \`a un p\'eage sera toujours une loi de Poisson, quelle que 
+soit la loi de probabilit\'e particuli\`ere qui r\'egit l'heure ou le lieu de 
+d\'epart  de chaque v\'ehicule.  Par contre les secondes ---~comme le 
+montre la diversit\'e des  figures \`a la fin du chapitre {\bf VIII}~---  
+sont tr\`es vari\'ees et d\'ependent de la loi g\'en\'eratrice $Z_1$. Mais  
+les premi\`eres sont des sommes  de variables ind\'ependantes (ce  
+qui  a  pour effet de brouiller l'information contenue dans les lois 
+particuli\`eres), tandis  que les secondes ne sont  pas des sommes de 
+termes ind\'ependants, et amplifient au contraire certaines 
+caract\'eristiques de la loi originelle. 
+ 
+\bigskip 
+ 
+{\bf IX.\aub 1. Loi de Cauchy.} 
+\medskip 
+Soient $X$ et $Y$ deux variables al\'eatoires de lois approximativement 
+gaussiennes. Par exemple $X$ et $Y$ peuvent \^etre bin\^omiales ou  
+\^etre  la somme d'un grand nombre de termes ind\'ependants, mais on 
+supposera que la probabilit\'e pour que $Y = 0$ est nulle.  
+\medskip 
+Si $X$ et $Y$ sont  stochastiquement ind\'ependantes, quelle est la loi 
+appro\-ximative (la densit\'e) de $Z = X / |Y|$?  
+\medskip 
+Le probl\`eme est de trouver la densit\'e de la loi de $Z$ sans  
+passer  par les lois exactes, \`a partir de la seule connaissance des 
+densit\'es de $X$ et de $Y$.  Ces densit\'es sont caract\'eris\'ees par 
+$$\eqalign{ 
+{\cal P}\, (a < X < b)\;  &\simeq\; \int_a^b\;\sqrt{\up\alpha\sdown{4}  
+\over\down\pi}\; \e^{-\alpha x^2}\; dx  \cr 
+{\cal P}\, (a < Y < b)\;  &\simeq\; \int_a^b \;\sqrt{\beta\over\ldown\pi}\;  
+\e^{-\beta y^2}\; dy  \cr } \eqno (IX.1.)$$ 
+\medskip 
+Supposons un instant qu'on connaisse les lois discr\`etes exactes de $X$  
+et de $Y$: ${\cal P}\, (X=x_j) = p_j$ et ${\cal P}\, (Y=y_k) = q_k$. Alors 
+$${\cal P}\, (a < Z < b)\; = \,\sum_{j,k \in E} p_j q_k \eqno (IX.2.)$$ 
+o\`u $E$ est l'ensemble des couples d'indices $j,k$ tels que $a|y_k| < x_j  
+< b|y_k|$. Bien entendu, que les termes de la somme ci-dessus soient  
+les produits $p_j q_k$ est d\^u \`a l'ind\'ependance stochastique des 
+variables $X$ et $Y$: sinon on aurait une loi conjointe $r_{j,k}$ non 
+factorisable. 
+\medskip 
+Quoique \'etant \`a deux dimensions, cette loi conjointe peut \^etre  
+liss\'ee par convolution: apr\`es lissage, la loi discr\`ete $\{ x_j , p_j  
+\}$ donnera une densit\'e  ${\scriptstyle \sqrt{ \alpha / \pi }}\,  
+\e^{-\alpha x^2}$ et la loi $\{ y_k , q_k \}$ une densit\'e ${\scriptstyle 
+\sqrt{\beta / \pi }}\, \e^{-\beta  y^2}$, de sorte que la loi conjointe $\{ 
+x_j, y_k , p_j q_k \}$ donnera  une  densit\'e ${\scriptstyle 
+\big(\sqrt{\alpha\beta} \big/ \pi\big)}\, \e^{-\alpha x^2 - \beta y^2}$. 
+Par ailleurs, l'\'ev\'enement $a < X/|Y| <b$ correspond,  dans le plan des 
+coordonn\'ees $x,y$, au domaine $a|y| < x < b|y|$, donc l'approximation   
+des lois discr\`etes par des densit\'es  donnera  
+$${\cal P}\, (a < Z < b)\quad \simeq \quad\int\int_{\lower6pt 
+\hbox{\hskip-29pt $\scriptstyle a|y| < x < b|y|$}}\! {\sqrt{ 
+\sdown{8}\alpha\beta}\over \ldown{\pi }}\; \e^{-\alpha x^2  -   
+\beta y^2}\;  dx\, dy \eqno (IX.3.)$$   
+Il ne reste plus qu'\`a calculer cette int\'egrale double. 
+\medskip 
+ 
+\midinsert 
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch09eps/fig34.eps}} 
+\vskip2mm
+\centerline{\eightpoint figure 34} 
+\vskip4mm
+\endinsert 
+
+Pour cela il suffit d'effectuer de bons changements de variable; la  
+figure 34 montre quel est le domaine d'int\'egration $a|y| < x < b|y|$ 
+(secteur hachur\'e, d\'elimit\'e par les droites $x = a|y|$ et $x = b|y|$).  
+La figure montre le cas o\`u $a$ et $b$ sont positifs. Introduisons les 
+angles  $u$ et $v$ tels que $\tan u = a$ et $\tan v = b$. En coordonn\'ees 
+polaires $r, \theta$ telles que $x = r\sin\theta$ et $y = r\cos\theta$ le 
+secteur  hachur\'e correspond \`a $0 \leq r < \infty$, $u < \theta < v$.  
+Par cons\'equent, dans ces coordonn\'ees polaires l'int\'egrale 
+pr\'ec\'edente  devient:  
+$$2\; {\sqrt{\sdown{8}\alpha\beta } \over \ldown{\pi }}\int_0^\infty 
+\!\!\!\!\int_u^v \e^{-[\alpha\sin^2\theta  + \beta\cos^2\theta ]\, r^2}\;  
+r\, dr\, d\theta$$ 
+Le facteur 2 devant provient de ce que dans $IX.3$ on int\`egre aussi  
+sur le secteur $-ay < x < -by$ correspondant \`a $y < 0$ alors que 
+ci-dessus (voir figure 34) on n'a retenu que le cas $y>0$. L'int\'egration 
+par rapport \`a la variable $r$ est imm\'ediate, et on obtient 
+$${\sqrt{\sdown{8}\alpha\beta } \over \ldown{\pi }}\int_u^v 
+{1 \over \alpha\sin^2\theta  + \beta\cos^2\theta }\; d\theta$$ 
+On effectue alors un second changement de variable: $t = \tan\theta$; 
+l'int\'egrale devient maintenant 
+$${\sqrt{\sdown{8}\alpha\beta } \over \ldown{\pi }}\int_a^b 
+{1 \over \alpha\, t^2  + \beta }\; dt$$ 
+On peut donc \'ecrire en conclusion: 
+$${\cal P}\, (a < Z < b)\; \simeq\; {\sqrt{\sdown{8}\alpha\beta } \over  
+\ldown{\pi }} \int_a^b {1 \over \alpha\, t^2  + \beta }\; dt \eqno (IX.4.)$$ 
+ce qui signifie simplement que la variable $Z$ a pour densit\'e la  
+fonction  
+$${\sqrt{\sdown{8}\alpha\beta }\over\ldown{\pi }}\, 
+{1\over\alpha\, t^2  + \beta }$$   
+On pourra remarquer que  
+$${\sqrt{\sdown{8}\alpha\beta } \over \ldown{\pi }}\int_{-\infty}^{+ 
+\infty} {1 \over \alpha\, t^2  + \beta }\; dt\; = \; 1$$ 
+comme il se doit. 
+\medskip 
+Cette densit\'e (ou loi asymptotique) est appel\'ee {\it densit\'e de  
+Cauchy}. 
+\medskip 
+La densit\'e de Cauchy d\'ecro{\^\i}t lentement \`a l'infini (en $t^{-2}$).  
+Cela entra{\^\i}ne que la moyenne ou esp\'erance math\'ematique est 
+donn\'ee par une int\'egrale divergente, $\int \big[ t / (\alpha\, t^2 
++\beta^2)\big]\, dt$; \`a plus forte raison encore la variance. Mais bien 
+s\^ur la loi discr\`ete exacte de $Z$, n'ayant qu'un nombre fini de 
+valeurs possibles, a bien une moyenne, qui est d'ailleurs pratiquement 
+nulle, et une variance (tr\`es grande).  
+\medskip 
+Les variables $X$ et $Y$ avaient chacune une loi de probabilit\'e  
+gaussienne (de variances $1/ 2\alpha$ et $1/ 2\beta$ respectivement). 
+Pour donner une illustration concr\`ete \`a cela, imaginons que deux 
+personnes ${\cal A}$ et ${\cal B}$ jouent chacune \`a pile ou face avec 
+des partenaires respectifs ${\cal A}'$ et ${\cal B}'$,  en payant $1\,$  
+euro au partenaire chaque fois que pile sort,  et en recevant $1\,$  
+euro du partenaire chaque fois que face sort.  Sur un grand nombre 
+$N$ de lancers,  il est tr\`es peu probable que les gains ou les pertes 
+de ${\cal A}$ soient sup\'erieures \`a trois ou quatre fois $\sqrt{N}$  
+(voir chapitre {\bf VII}):  c'est la loi gaussienne.  Mais supposons 
+que le joueur ${\cal A}$,  au lieu de compter son gain en euros,  le rapporte 
+au gain en valeur absolue de ${\cal B}$,  qu'il dise par exemple:  ``j'ai 
+gagn\'e le double de ${\cal B}$'' ($Z = 2$),  ou bien ``j'ai gagn\'e $3.7$  
+fois ce que ${\cal B}$ a perdu'' ($Z = 3.7$),  ou encore ``j'ai perdu $1.75$ 
+fois plus que ${\cal B}$'' ($Z = -1.75$),  etc.  Afin qu'il n'y ait pas de 
+division par z\'ero,  on supposera $N$ impair,  car on sait (voir chapitre  
+{\bf III}) que dans ce cas les gains sont toujours un nombre impair
+d'euros et ne peuvent donc pas \^etre nuls.  Alors ce gain relatif est 
+distribu\'e selon la densit\'e de Cauchy.  Or la densit\'e de Cauchy, 
+au contraire de la densit\'e gaussienne,  ne d\'ecro{\^\i}t pas tr\`es 
+rapidement lorsque $t$ tend vers l'infini.  Les rapports $X / |Y|$ \'elev\'es 
+ont certes des probabilit\'es plus faibles que les rapports proches de  
+$1$,  mais pas infinit\'esimales.  Cela n'est pas paradoxal:  $X / |Y|$ est 
+\'elev\'e si $X$ est grand (ce qui est  tr\`es peu probable),  mais aussi si 
+$Y$ est petit (ce qui par contre est probable). 
+\medskip 
+La variable al\'eatoire $Z$,  c'est-\`a-dire le rapport des gains de  
+${\cal A}$ \`a ceux (en valeur absolue) de ${\cal B}$ est bien s\^ur une 
+variable al\'eatoire discr\`ete,  qui ne prend jamais qu'un nombre fini de 
+valeurs;  ces valeurs sont des fractions et sont d'autant plus nombreuses 
+et serr\'ees que $N$ (le nombre de lancers) est plus grand.  Pour $N$  
+grand ces valeurs sont alors bien trop nombreuses et proches les unes  
+des autres pour que la connaissance math\'ematiquement exacte de la 
+probabilit\'e de chacune soit utile;  en outre son expression exacte est 
+compliqu\'ee.  C'est pourquoi la densit\'e de $Z$ est \`a nouveau la seule 
+information int\'eressante.  
+ 
+\bigskip 
+ 
+{\bf IX.\aub 2. Pourquoi la densit\'e gaussienne est-elle si r\'epandue ?} 
+\medskip 
+Le calcul par lequel nous avons obtenu la densit\'e de Cauchy 
+n'\'etait qu'une affaire de changements de variables. Il laisse donc le 
+sentiment que n'importe quelle fonction positive et dont l'int\'egrale  
+vaut 1 peut \^etre la densit\'e d'une variable al\'eatoire gaussienne,  
+apr\`es avoir effectu\'e sur celle-ci une transformation non lin\'eaire 
+ad\'equate. Nous retrouvons ici encore le ph\'enom\`ene qui \'etait \`a  
+l'origine du paradoxe des cordes prises au hasard sur un cercle: si une 
+certaine  variable al\'eatoire a une densit\'e uniforme, son carr\'e ou sa 
+racine carr\'ee  n'auront pas une densit\'e uniforme. Ici, au lieu de 
+densit\'es uniformes, nous consid\'erons ce qu'il advient des densit\'es 
+gaussiennes apr\`es une transformation non lin\'eaire. N'importe quoi 
+(pourvu que ce soit positif et d'int\'egrale 1) pourrait apr\`es une 
+transformation non lin\'eaire ad\'equate se ramener \`a une densit\'e 
+gaussienne. D'un point de vue purement math\'ematique, cela est vrai; 
+donnons-nous en effet une densit\'e arbitraire $f(x)$. Tout ce que nous  
+lui imposons est que 
+$$f(x) \;\geq\; 0 \qquad\hbox{et}\qquad\int f(x)\, dx\; = \; 1$$
+Prenons alors une variable al\'eatoire $X$ de densit\'e gaussienne 
+$\sqrt{\sdown{8}\smash{\eightpoint \alpha / \pi }}\,\e^{-\alpha\, x^2}$ et
+posons $Y = h(X)$,  $h$ \'etant une transformation non lin\'eaire que nous 
+supposerons inversible (disons croissante pour fixer les id\'ees), avec  
+la fonction inverse $h^{-1} = g$: $X = g(Y)$.  On peut alors \'ecrire: 
+$${\cal P}\, (a < Y < b)\quad = \quad {\cal P}\, (a < h(X) < b) \quad\simeq 
+\quad\int_{\lower6pt \hbox{\hskip-20pt $\scriptstyle a < h(x) < b$}} 
+\sqrt{\sdown{10.5}\strup{5}\smash{\up{\eightpoint \alpha}\sdown{4}
+\over\down\pi}} \,\e^{-\alpha\, x^2}\; dx$$ 
+En effectuant le changement de variable $x = g(y)$ dans cette int\'egrale 
+on obtient 
+$${\cal P}\, (a < Y < b) \;\simeq\; \int_a^b \sqrt{\sdown{10.5}\strup{5}
+\smash{\up{\eightpoint \alpha}\sdown{4} \over\down\pi}} \,
+\e^{-\alpha\, g(y)^2}\; g'(y)\; dy \eqno (IX.5.)$$  
+Cette \'egalit\'e met bien en \'evidence que la densit\'e de $Y = h(X)$
+est la fonction $\sqrt{\sdown{8}\smash{\eightpoint \alpha / \pi }}
+\,\exp\{-\alpha\, g(y)^2\}\; g'(y)$,  donc pour que cette densit\'e soit la
+densit\'e prescrite $f(y)$ il suffit d'avoir  
+$$\sqrt{\sdown{10.5}\strup{5} \smash{\up{\eightpoint \alpha}\sdown{4} \over
+\down\pi}} \,\e^{-\alpha\, g(y)^2}\; g'(y) \; = \; f(y)  \eqno (IX.6.)$$  
+ce qu'on peut interpr\'eter comme une \'equation diff\'erentielle dont la 
+fonction inconnue est $g$. Elle est facile \`a r\'esoudre en  introduisant  
+la fonction  
+$${\cal N}\, (x) \; = \; \int_{-\infty }^x \sqrt{\sdown{10.5}\strup{5} \smash{
+\up{\eightpoint \alpha}\sdown{4} \over\down\pi}} \,\e^{-\alpha\, t^2}\; dt$$  
+car alors l'\'equation diff\'erentielle peut s'\'ecrire sous la forme  
+\'equivalente  
+$${d \over dy}\, {\cal N}\, \big( g(y) \big) \; = \; f(y)$$ 
+En introduisant la primitive $F(y)$ de $f(y)$ (celle qui s'annule pour 
+$y = -\infty$) l'\'equation se r\'esoud par quadrature: 
+$$g(y) \; = \; {\cal N}^{-1}\big( F(y)\big) \eqno (IX.7.)$$  
+La fonction ${\cal N}$ est en effet croissante, donc a un inverse 
+${\cal N}^{-1}$.  
+\medskip 
+En conclusion, si $Y$ est une variable al\'eatoire densit\'e arbitraire  
+$f(y)$, il suffit de choisir $g(y)$ selon $IX.7$ pour que la variable $X = 
+g(Y)$  soit de densit\'e gaussienne. Cela est un r\'esultat purement 
+math\'ematique, qui ne signifie  \'evidemment pas que n'importe quelle 
+densit\'e se rencontre dans des probl\`emes concrets. L'exp\'erience 
+montre que les densit\'es gaussiennes sont fr\'equentes dans la nature, 
+alors que la plupart des autres qu'on pourrait imaginer 
+math\'ematiquement ne se rencontrent  pas. Or, s'il suffit d'observer le 
+carr\'e, la racine carr\'ee, ou le  logarithme, pour que la densit\'e cesse 
+d'\^etre gaussienne, on peut se demander pourquoi on rencontre si souvent la
+densit\'e gaussienne. Cette question m\'erite une discussion quelque peu
+approfondie.  Lorsqu'on rencontre des distributions de probabilit\'es ``dans
+la nature'',  c'est sous la forme d'une distribution statistique;  en effet, 
+on peut faire beaucoup d'exp\'eriences d\'eterministes,  par exemple
+si on mesure dans un conducteur donn\'e le rapport de l'intensit\'e
+\`a la tension entre les bornes,  on trouvera toujours pratiquement
+la m\^eme valeur.  Dans un tel cas on ne dit pas que le r\'esultat
+est al\'eatoire.  Par contre si on ne retient pas la valeur mesur\'ee
+de l'intensit\'e,  mais seulement le  petit \'ecart,  de l'ordre des
+erreurs de mesure,  par rapport \`a cette  valeur,  on constate une 
+grande variabilit\'e et on dit que cet \'ecart est al\'eatoire.  De m\^eme, 
+si on enregistre le nombre de naissances qui ont lieu chaque jour dans 
+une maternit\'e,  on observera une certaine variabilit\'e:  certains jours 
+il y aura eu cinq naissances,  d'autres jours dix;  toutefois les jours sans 
+aucune naissance,  ou les jours avec vingt naissances,  seront rarissimes. 
+Dans ce cas, on dira que le nombre de naissances est al\'eatoire,  mais  
+bien s\^ur tous les nombres ne sont pas \'equiprobables et certains sont 
+plus fr\'equents que d'autres.  On peut donc repr\'esenter le nombre de 
+naissances par jour par une {\it variable al\'eatoire}.  Si au lieu de 
+prendre dix valeurs possibles,  la variable al\'eatoire en prend un 
+nombre tr\`es grand,  par exemple le nombre de naissances par semaine  
+et non par jour,  on en repr\'esentera la r\'epartition par une densit\'e.  
+On observera alors que le nombre de naissances par semaine,  qui varie 
+d'une semaine \`a l'autre,  suit une densit\'e gaussienne,  avec un 
+\'ecart-type qu'on pourra mesurer en faisant une \'etude statistique sur 
+dix ans (bien s\^ur il faudra la corriger par rapport aux \'evolutions 
+saisonni\`eres).  Il semblerait farfelu de vouloir plut\^ot \'etudier
+la r\'epartition statistique des carr\'es ou des logarithmes de 
+ces nombres,  qui auraient alors une densit\'e de r\'epartition autre,  
+mais on constate que c'est justement avec la variable qui semble la  
+plus naturelle qu'on observe la densit\'e gaussienne.   
+\medskip 
+D'autre part,  si le nombre qu'on mesure est petit (par exemple si dans la  
+maternit\'e on compte le nombre de naissances {\it par jour} et non par  
+an),  on ne peut obtenir une densit\'e gaussienne pour la simple raison
+que les valeurs possibles ne sont pas assez nombreuses:  une densit\'e  
+n'appara{\^\i}t que si les valeurs de la variable al\'eatoire sont  
+nombreuses.  Mais on observera presque toujours dans de tels cas une loi  
+de Poisson (voir section suivante).  Que ces deux lois,  la loi normale pour  
+les variables qui prennent beaucoup de valeurs,  et la loi de Poisson pour  
+les variables qui prennent des valeurs enti\`eres et petites,  soient aussi  
+r\'epandues dans la nature,  doit pouvoir se comprendre. 
+\medskip 
+Les conclusions du chapitre {\bf VII} conduisent \`a penser que la 
+distribution gaussienne autour d'une valeur moyenne est due \`a  
+l'addition d'un grand nombre d'effets ind\'ependants les uns des autres 
+(et nous verrons plus loin que c'est le cas aussi pour la loi de Poisson).  
+Par ailleurs,  le constat purement math\'ematique que nous avons fait 
+ci-dessus nous conduit \`a penser que de telles grandeurs \`a fluctuations 
+gaussiennes devraient \^etre la somme d'un grand nombre d'effets 
+ind\'ependants,  et non le carr\'e ou le logarithme d'une telle somme.   
+\vskip 6pt plus5pt minus4pt 
+Lorsqu'on d\'efinit une grandeur physique,  on ne la choisit pas 
+arbitrairement.  L'intensit\'e d'un courant \'electrique pourrait,  
+d'un point de vue purement m\'etrologique,  \^etre tout aussi bien  
+mesur\'ee par sa racine carr\'ee ou son carr\'e: au lieu de la d\'efinir 
+comme proportionnelle \`a la tension ($I = U/R$),  on la d\'efinirait  
+comme proportionnelle \`a la puissance ($I^2 = P/R$).  Mais en agissant  
+de la sorte \`a tort et \`a travers,  on changerait compl\`etement la  
+nature des lois physiques et on perdrait les invariances 
+spatio-temporelles (voir au chapitre {\bf I} les remarques 
+---~emprunt\'ees \`a H. Poincar\'e~---  \`a propos du principe de 
+relativit\'e de Galil\'ee et la mesure du temps).  Les grandeurs  
+physiques ne sont pas d\'efinies \`a la l\'eg\`ere et sont choisies de 
+mani\`ere \`a  refl\'eter les invariances fondamentales,  sans lesquelles  
+la physique perdrait son sens;  plus exactement:  elles sont choisies de 
+mani\`ere \`a avoir les lois les plus simples possibles,  et les 
+invariances fondamentales sont l'expression de ce choix.  Lorsque des 
+variations al\'eatoires {\it ind\'ependantes} s'ajoutent,  elles expriment 
+implicitement ces invariances:  soit il s'agit d'une accumulation au cours 
+du temps,  soit d'une addition de d\'eplacements dans l'espace.  En toute 
+derni\`ere instance,  une grandeur se ram\`ene toujours \`a cela puisque, 
+quel que soit l'instrument de mesure,  on lira toujours la valeur 
+mesur\'ee sur une graduation,  un \'ecran, etc.  L'ind\'ependance 
+stochastique de ces varia\-bles qui s'ajoutent spatialement les unes aux 
+autres est une expression de la causalit\'e et de la s\'eparabilit\'e  
+dans le temps et l'espace:  que dans n'importe quel  ph\'enom\`ene 
+complexe on observe  des fluctuations gaus\-siennes (erreurs  de 
+mesures, dispersion al\'eatoire, etc.) refl\`ete d'une part que de 
+nombreux effets s'ajoutent spatialement,  et d'autre part que ces  
+nombreux effets sont s\'eparables dans le temps ou dans l'espace, 
+de sorte qu'ils ne s'influencent pas mutuellement (comme les boules  
+qui tombent dans les bo{\^\i}tes sans s'influencer). 
+\medskip 
+Nous avons cependant \'etudi\'e des situations quantiques o\`u cette 
+s\'epa\-ra\-bi\-lit\'e n'existe pas (par exemple {\bf II. 6}  
+{\it la loi de Planck}) et pourtant on y rencontre aussi des fluctuations  
+gaussiennes;  l'analyse math\'ematique d\'etaill\'ee (voir {\bf II.6.})  
+faisait appara{\^\i}tre ces fluctuations gaussiennes comme une 
+propri\'et\'e des factorielles.  Or les factorielles interviennent par 
+l'inter\-m\'e\-diaire des formules de d\'enombrement (coefficients 
+bin\^omiaux, etc.),  qui s'appli\-quent d\`es lors qu'une {\it 
+\'equiprobabilit\'e} a \'et\'e postul\'ee.  Mais l'\'equiprobabilit\'e 
+pr\'esuppose toujours une invariance,  comme cela a \'et\'e largement 
+discut\'e au chapitre {\bf I}.  Dans les statistiques quantiques,  il n'y a  
+pas de s\'eparabilit\'e,  mais des invariances de nature diff\'erente (et 
+aujourd'hui encore myst\'erieuses).  Dans tous ces cas,  aussi bien lorsque 
+des causes tr\`es nombreuses et causalement s\'epar\'ees (au sens de la 
+M\'ecanique classique) s'ajoutent parce que leur effet est spatial,  que 
+lorsqu'on analyse les statistiques quantiques o\`u une invariance  
+d'origine autre que spatiale conduit \`a des factorielles,  on rencontrera 
+la forme gaussienne.  On pourrait dire que la forme gaussienne des 
+fluctuations statistiques est le sympt\^ome d'une invariance 
+sous-jacente. 
+\medskip 
+Il n'est donc pas surprenant que les fluctuations al\'eatoires qu'on  
+observe dans la nature soient si souvent gaussiennes.    
+\medskip 
+La discussion serait bien s\^ur plus concr\`ete sur un exemple;  en voici  
+un.  Pour mesurer la quantit\'e d'information qu'on peut stocker sur une 
+m\'emoire on utilise une unit\'e qui est l'octet (ou le bit);  dans un octet 
+on peut ranger 256 signes diff\'erents,  alors pourquoi ne dit-on pas que  
+la quantit\'e d'information est 256?  Sur $1\, Mo$ on peut ranger environ 
+$4.26 \cdot 10^{2525222}$ textes diff\'erents,  mais on pr\'ef\`ere 
+mesurer la quantit\'e d'information par le logarithme en base 2 de ce 
+nombre;  c'est certes plus commode,  mais est-ce seulement une question 
+de commodit\'e?    
+\medskip 
+En analysant les choses de plus pr\`es,  on peut remarquer que la  
+m\'emoire mesur\'ee en octets est proportionnelle au volume que la 
+m\'emoire physique occupe dans l'espace (\`a sa longueur si la m\'emoire 
+est stock\'ee sur une ligne,  \`a la superficie si elle est stock\'ee sur un 
+disque, \`a un volume si la m\'emoire est stock\'ee en trois dimensions). 
+Ainsi la quantit\'e d'information mesur\'ee en octets se ram\`ene \`a de 
+l'espace,  alors que la quantit\'e mesur\'ee par le nombre de textes 
+possibles ne s'y ram\`ene pas lin\'eairement.  Si on remplit une m\'emoire 
+progressivement en y vidant une centaine de fois un buffer,  l'espace 
+disponible ne sera pas rempli compl\`etement,  il restera toujours des  
+trous d\^us au fait que l'adressage des buffers successifs ne co{\"\i}ncide 
+pas avec un pavage g\'eom\'etriquement parfait de l'espace disponible. 
+Ces trous auront donc un volume assez petit,  mais qu'on peut  
+avec raison consid\'erer comme al\'eatoire;  il n'est peut-\^etre pas 
+absolument \'evident que les trous successifs soient stochastiquement 
+ind\'ependants,  mais si le remplissage de l'espace-disque est 
+suffisamment chaotique,  c'est une hypoth\`ese qui se tient,  parce qu'on 
+peut admettre ---~en vertu justement du principe d'invariance~--- qu'il 
+n'y a pas de r\'egion privil\'egi\'ee de l'espace (voir \`a ce sujet {\bf IV. 
+6} {\it l'effacement de la  causalit\'e}).  
+\medskip 
+Apr\`es avoir vid\'e quelques centaines de fois le buffer,  le volume  
+total de ces trous sera une variable al\'eatoire de densit\'e gaussienne 
+(somme des volumes des trous accumul\'es),  dont l'\'ecart-type 
+repr\'esente alors une incertitude sur la m\'emoire disponible.  Si on 
+avait compt\'e en nombre de textes possibles,  on n'observerait pas une 
+fluctuation gaussienne,  puisque la relation entre les deux grandeurs est 
+logarithmique et non lin\'eaire.  Mais le niveau o\`u se produit une 
+{\it addition} de variables ind\'ependantes est celui du remplissage  
+de l'espace,  et non celui du nombre de textes possibles,  qui serait 
+multiplicatif.  Ainsi, la grandeur qui a \'et\'e choisie pour mesurer 
+l'information est celle qui refl\`ete le remplissage spatial et par 
+cons\'equent aussi celle qui pr\'esentera des fluctuations gaussiennes.  
+\medskip 
+On pourra faire le m\^eme constat pour l'intensit\'e \'electrique (nombre 
+d'\'electrons passant {\it par seconde} \`a travers  une {\it section} de 
+conducteur), etc.  
+\medskip 
+C'est la v\'eritable raison de l'universalit\'e de la densit\'e gaussienne. 
+Il s'y ajoute encore une raison secondaire,  mais tr\`es importante: 
+m\^eme lorsqu'une grandeur ne se ram\`ene pas lin\'eairement \`a des 
+d\'eplacements dans l'espace,  ou plus g\'en\'eralement \`a des formules  
+de d\'enombrement contenant des factorielles,  les fluctuations peuvent 
+rester gaussiennes tout simplement parce qu'elles sont petites.  En 
+effet,  soit $x$ une grandeur subissant des fluctuations gaussiennes 
+$\varepsilon$:  on mesure donc $x$,  mais avec un bruit $\varepsilon$  
+qui s'ajoute \`a $x$.  Si on consid\`ere maintenant la grandeur $y = f(x)$  
+qui d\'epend non lin\'eairement de $x$,  celle-ci fluctuera selon 
+$f(x+\varepsilon )$.  Si $\varepsilon$ est grand,  la non lin\'earit\'e de  
+$f$ d\'eformera les fluctuations,  de telle sorte que celles-ci ne seront 
+plus gaussiennes,  comme l'\'etude pr\'ec\'edente l'a montr\'e.  Mais si 
+$\varepsilon$ est petit et $f$ diff\'erentiable,  on aura $f(x+\varepsilon ) 
+\simeq f(x) + f'(x)\, \varepsilon$,  donc la fluctuation sera n\'eanmoins 
+transform\'ee lin\'eairement.  En fin de compte,  il est m\^eme plut\^ot 
+difficile de trouver des grandeurs qui \'echappent \`a toutes ces bonnes 
+raisons. 
+\medskip 
+Malgr\'e tout,  nous avons pu constater que les processus en cascade 
+engendraient une bien plus grande vari\'et\'e de densit\'es 
+asymptotiques;  mais la  variable $Z_n$ du chapitre {\bf VIII} n'est pas 
+une somme de variables ind\'ependantes,  le principe de composition est 
+diff\'erent et n'efface pas enti\`erement l'information sur la loi  
+initiale de $Z_1$. 
+ 
+\bigskip 
+ 
+{\bf IX.\aub 3. Loi de Poisson.} 
+\medskip 
+La loi de Poisson est la plus simple de toutes les lois de probabilit\'e  
+asymptotiques; elle est enti\`erement discr\`ete. 
+\medskip 
+Consid\'erons le probl\`eme tr\`es simple (et purement math\'ematique)  
+sui\-vant:  on a $n$ variables al\'eatoires $X_1,\;  X_2, \;\ldots\; X_n$, 
+stochastiquement ind\'e\-pen\-dan\-tes, et ne prenant que les deux valeurs $0$ 
+et $1$ avec les probabilit\'es respectives $p$ et $q$ ($p + q = 1$). La loi  
+de leur somme  $S = X_1 + X_2  + \cdots + X_n$ est  
+$${\cal P}\, (S = k) = {n \choose k} p^{n-k} q^k$$ 
+(loi de Bernoulli). Mais supposons que $n$ soit tr\`es grand et $q$ tr\`es  
+petit, de l'ordre de $1/n$. On pourra poser $q = \lambda / n$ avec 
+$\lambda$ ni grand ni petit. Alors, pour $k \ll n$, $p^{n-k} = (1 - \lambda 
+/n)^{n-k} \simeq e^{-\lambda }$ et ${n \choose k} \simeq n^k/k!$ De sorte 
+que  
+$${\cal P}\, (S = k) \simeq {\lambda^k \over k!}\, \e^{-\lambda }  \eqno 
+(IX.8.)$$ 
+On constate d'abord que pour $k \gg \lambda$ ces probabilit\'es sont 
+pratiquement nulles (aussi bien sous leur forme approch\'ee que sous leur 
+forme exacte). Seules sont significatives les probabilit\'es correspondant 
+aux petites valeurs de $k$. 
+\medskip 
+Plus g\'en\'eralement, supposons que les $X_j$ n'aient pas toutes 
+exactement la m\^eme loi, mais que toutes, comme ci-dessus,  
+prennent la valeur 1 avec une probabilit\'e tr\`es petite $\varepsilon_j$, 
+et la valeur z\'ero avec une probabilit\'e $1 - \varepsilon_j$ presque  
+\'egale \`a 1. 
+\medskip 
+La fonction g\'en\'eratrice de chaque $X_j$ \'etant $G_j(x) = 1 +  
+\varepsilon_j\, (x-1)$, la somme $S = X_1 + X_2 + \cdots + X_n$ 
+aura pour fonction g\'en\'eratrice (si les $X_j$ sont ind\'ependantes): 
+$$G(x) = \prod_{j=1}^{j=n}  \bigl[ 1 + \varepsilon_j\, (x-1) \bigr]$$ 
+Pour approcher ce type d'expression on prend bien s\^ur le logarithme; 
+or  
+$$\ln\big( 1 + \varepsilon_j\, (x-1) \big) \simeq 
+\varepsilon_j\, (x-1) - {1\over 2} \varepsilon_j^2\, (x-1)^2$$ 
+o\`u on a conserv\'e le terme d'ordre deux pour une \'evaluation de  
+l'erreur. On obtient donc en revenant aux exponentielles: 
+$$G(x) \simeq \exp\Big\{\sum_{j=1}^{j=n} \varepsilon_j\, (x-1) 
+ - {1\over 2} \sum_{j=1}^{j=n}\varepsilon_j^2\, (x-1)^2\Big\}$$ 
+Introduisons les param\`etres 
+$$\lambda = \sum_{j=1}^{j=n} \varepsilon_j \qquad\hbox{et}\qquad 
+\mu = \sum_{j=1}^{j=n} \varepsilon_j^2 \eqno (IX.9.)$$ 
+Le premier, $\lambda$, est la somme des moyennes des $X_j$, donc 
+la moyenne de $S$. On a suppos\'e les $\varepsilon_j$ tr\`es petits, 
+supposons maintenant que l'ordre de grandeur de $n$ est tel que la  
+somme $\lambda$ ait une valeur appr\'eciable. Alors, les carr\'es 
+$\varepsilon_j^2$ \'etant bien plus petits que les $\varepsilon_j$, leur 
+somme sera tr\`es petite par rapport \`a $\lambda$. Ainsi la fonction 
+g\'en\'eratrice $G(x)$ sera  approximativement donn\'ee par 
+$$G(x) \simeq \exp\big\{\lambda\, (x-1)\big\} \eqno (IX.10.)$$ 
+avec une erreur relative de l'ordre de $- {1\over 2} \mu\, (x-1)^2$. 
+Les probabilit\'es pour que $S = 0,1,2,3, \ldots$ sont donc \`a nouveau 
+donn\'ees par la loi de Poisson, avec une erreur relative de l'ordre de 
+$\mu$. Toutes ces approximations ne sont justifi\'ees que pour les  
+petites valeurs de $S$ et non pour $S=1\, 000$ ou $S=10\, 000$, mais 
+pour les grandes valeurs, bien que l'erreur {\it relative} ne puisse plus 
+\^etre consid\'er\'ee comme petite, les probabilit\'es aussi bien exactes 
+qu'approch\'ees sont de toute fa\c{c}on si prodigieusement petites (ce que 
+montrent les factorielles au d\'enominateur de la loi de Poisson) que  
+cela n'a pas d'importance. 
+\medskip 
+Nous voyons donc appara{\^\i}tre le r\'esultat suivant: lorsqu'on  
+consid\`ere une somme d'un grand nombre $n$ de variables 
+ind\'ependantes qui ne prennent que les deux valeurs $0$ et $1$, avec  
+une tr\`es faible  probabilit\'e (de l'ordre de $1/n$) pour $1$, alors leur 
+somme ob\'eit \`a la loi de Poisson. 
+\medskip 
+A premi\`ere vue,  on pourrait penser que cela contredit les conclusions  
+du chapitre {\bf VII}:  on devrait en effet avoir une loi gaussienne. 
+Mais en \'etudiant le passage \`a la limite, nous avons remarqu\'e que, 
+surtout si la loi des $X_j$ est fortement dissym\'etrique ---~ce qui est
+le cas ici~--- il fallait que le nombre $N$ de variables \`a sommer soit 
+vraiment tr\`es grand pour arriver \`a la loi  gaussienne;  nous allons 
+voir qu'il doit \^etre beaucoup plus grand que le nombre $n$ qui 
+intervient ici.  Nous en avons donn\'e une estimation explicite ($VII.5$):  
+il fallait que $N$ soit grand par rapport \`a $400\, M_3^2 / M_2^3$,  
+$M_2$  et $M_3$ \'etant les moments d'ordre deux et trois de la  loi de 
+$X$.  Ces moments ne sont pas les m\^emes pour toutes les $X_j$; mais
+pour chaque $X_j$,  ils sont tous trois \'egaux \`a $\varepsilon_j$
+($M_1 = M_2 = M_3 = \varepsilon_j$),  et sous nos hypoth\`eses ils ont
+donc tous le m\^eme ordre de grandeur $1/n$.  De sorte que $M_3^2/M_2^3
+\sim  n^3/n^2 = n$.  D'apr\`es $VII.5$ il faudrait donc, pour arriver
+\`a la densit\'e gaussienne,  que $N \gg 400\, n$;  autrement dit, 
+$n$ n'est pas assez grand et c'est pour cela qu'on obtient la loi
+de Poisson au lieu de la densit\'e gaussienne.   
+\medskip 
+Un tel ph\'enom\`ene est tr\`es courant pour les lois asymptotiques:  il y  
+en a qui sont vraiment des limites lorsque $n$ tend vers l'infini:  c'est le 
+cas pour la loi normale du chapitre {\bf VII},  ainsi que pour la loi limite 
+de $Z_n/E(Z_n)$ du chapitre {\bf VIII}.  Mais il y en a aussi,  comme ici
+la loi de Poisson,  qui sont une \'etape interm\'ediaire sur la route vers 
+l'infini.  Tant que $n$ est de l'ordre de grandeur des $1/\varepsilon_j$ on 
+a la loi de Poisson,  puis,  lorsque $n$ poursuit son voyage vers l'infini et 
+atteint un ordre de grandeur nettement sup\'erieur aux nombres 
+$400/\varepsilon_j$,  on arrive \`a la loi gaussienne. 
+\medskip 
+On remarquera cependant que la loi de Poisson est aussi la loi d'une 
+somme de variables al\'eatoires ind\'ependantes,  mais de variables qui  
+ne prennent que les deux valeurs $0$ et $1$,  la seconde avec une faible 
+probabilit\'e:  la somme de ces variables sera donc un nombre entier 
+petit (comme le nombre de naissances par jour ou par heure dans une 
+maternit\'e).  Les remarques pr\'esent\'ees \`a la section {\bf 2} \`a
+propos de la loi normale expliquent donc aussi pourquoi la loi de Poisson
+s'observe si fr\'equemment dans la nature,  d\`es lors que les nombres
+qu'on mesure sont entiers et petits. 
+ 
+\bigskip 
+ 
+Jusqu'ici nous sommes rest\'es dans l'abstraction:  nous avons  
+consid\'er\'e des sommes de variables al\'eatoires sans nous  
+pr\'eoccuper de ce qu'elles peuvent repr\'esenter. 
+\medskip 
+Voici maintenant un probl\`eme concret:  les queues qui peuvent se 
+former \`a un p\'eage d'autoroute.  Mettons qu'il faut une minute pour 
+effectuer les paiements au guichet.  On supposera qu'il n'y a qu'un guichet; 
+s'il y en a plusieurs,  le probl\`eme n'est pas essentiellement diff\'erent;  
+la dur\'ee de paiement de une minute n'a ici aucune signification pratique,  
+n'importe quelle unit\'e de temps e\^ut convenu.  On voudrait conna{\^\i}tre  
+la loi de proba\-bilit\'e du nombre de voitures qui se pr\'esentent par 
+minute,  sachant qu'en moyenne il s'en pr\'esente $0.76$.  L'int\'er\^et
+de ce probl\`eme est le suivant:  cette moyenne est inf\'erieure \`a $1$, 
+donc ``en moyenne'' il ne se forme pas de queue:  au bout de cent minutes, 
+environ $76$ v\'ehicules sont pass\'es,  alors que le guichet aurait pu en
+absorber cent.  Il est bien clair que si la moyenne avait \'et\'e $1.22$, 
+il y aurait un r\'esidu d'environ $22$ v\'ehicules au bout de cent minutes, 
+et on serait donc s\^ur qu'une queue se formerait et s'allongerait en
+moyenne de $22$ v\'ehicules par cent minutes.  Toutefois,  lorsque la
+moyenne est inf\'erieure \`a $1$,  la probabilit\'e qu'il se forme des
+queues m\^eme longues n'est pas nulle;  si cette probabilit\'e est
+sup\'erieure \`a $5\%$ pour une dur\'ee de trois heures ($180$ minutes)
+par exemple,  la compagnie peut avoir int\'er\^et \`a am\'eliorer le p\'eage. 
+En effet une probabilit\'e de $5\%$ pour trois heures signifie que toutes
+les soixante heures environ se forme une queue longue,  soit tous les trois
+jours.  Cela peut dissuader bon nombre d'usagers d'emprunter l'autoroute
+et faire perdre de l'argent \`a la compagnie.  Celle-ci peut am\'eliorer
+le p\'eage de deux fa\c{c}ons:  soit construire un second guichet,  ce qui
+aura pour effet de faire tomber la moyenne de $0.76$ \`a $0.38$,  soit
+am\'eliorer son fonctionnement pour que la dur\'ee de paiement soit
+raccourcie:  si celle-ci est abaiss\'ee \`a une demi-minute,  la moyenne
+tombera aussi \`a $0.38$.  Il est assez \'evident a priori que la
+probabilit\'e de formation de queues de longueur fix\'ee doit \^etre
+une fonction d\'ecroissante du nombre moyen de v\'ehicules par minute. 
+Mais cette intuition a priori ne permet pas de conna{\^\i}tre la loi
+de cette d\'ecroissance.  C'est cette loi que nous nous proposons de
+d\'ecouvrir par le Calcul des probabilit\'es. 
+\medskip 
+Qu'il puisse se former des queues m\^eme lorsque le nombre moyen de 
+v\'ehicules par minute est plus petit que $1$ n'est pas paradoxal, il suffit 
+d'imaginer que si la moyenne  est $0.76$,  il peut parfois arriver deux, 
+trois,  ou m\^eme quatre voitures en une seule minute.  Cela va alors faire  
+durer les formalit\'es plus d'une minute,  puisqu'il y aura plus d'une  
+voiture au guichet;  or pendant ces deux ou trois minutes vont 
+arriver en moyenne encore deux ou trois fois $0.76$ voitures,  qui \`a
+leur tour bloqueront les guichets deux minutes au lieu d'une,  pendant
+lesquelles arriveront encore des voitures, etc.  
+\medskip 
+Pour aborder ce probl\`eme il faut commencer par trouver la loi de 
+probabilit\'e pour qu'il arrive z\'ero, un, deux, trois, $\ldots$ v\'ehicules. 
+C'est seulement avec la connaissance quantitative de cette loi qu'on 
+pourra ensuite \'etudier quantitativement la loi de formation des queues. 
+\medskip 
+ Or il est facile de montrer que cette loi doit \^etre une loi de Poisson, du 
+moins si on est assur\'e que le nombre de voitures par minute est petit 
+(qu'il n'est pas de l'ordre de mille ou un million, auquel cas il faut 
+proc\'eder autrement).  
+\medskip 
+Supposons d'abord que le flux est constant au cours de la journ\'ee; cela 
+est toujours faux en pratique, o\`u il y a des heures de pointe 
+(aux environs de huit heures ou de dix-huit heures) et des heures  
+creuses, mais cette hypoth\`ese permettra d\'ej\`a de 
+trouver la loi de probabilit\'e pour une moyenne constante; on agit de 
+m\^eme lorsqu'on veut d\'efinir la vitesse en cin\'ematique: on commence 
+par la d\'efinir  dans le cas o\`u le mouvement est uniforme, puis on 
+\'etend la d\'efinition en partant du principe que tout mouvement  peut 
+\^etre consid\'er\'e comme uniforme pendant un instant assez court. 
+\medskip  
+Sous cette hypoth\`ese, les automobilistes quittent leur 
+domicile et prennent l'autoroute \`a des instants al\'eatoires,  mais 
+uniform\'ement distribu\'es au long de la journ\'ee (car si ces instants 
+n'\'etaient pas uniform\'ement distribu\'es on ne pourrait avoir un flux 
+constant).  Chaque automobiliste agit ind\'ependamment des autres, donc 
+les d\'eparts du domicile (ou les arriv\'ees au p\'eages) de tous ces  
+usagers sont stochastiquement ind\'ependants.  
+\medskip 
+Lorsqu'on dit que le flux moyen au p\'eage est de $\lambda$ voitures par 
+minute, cela signifie que si dans la journ\'ee $N$ voitures en tout sont 
+pass\'ees, $\lambda = N / 1\, 440$, puisqu'il y a $1\, 440$ minutes dans 
+une journ\'ee. Si on prend {\it au hasard} une voiture parmi les $N$, 
+la probabilit\'e pour que cette voiture arrive au p\'eage au cours d'une  
+minute donn\'ee parmi les $1\, 440$ que compte la journ\'ee est  
+$\varepsilon = 1 / 1\, 440$. L'hypoth\`ese d'un flux constant se traduit  
+en effet par l'\'equiprobabilit\'e a priori de chacune des minutes de la 
+journ\'ee. Inversement, la probabilit\'e pour que cette voiture arrive en   
+dehors de la minute donn\'ee, est  $1 - \varepsilon = 1\, 439 / 1\, 440$. 
+On peut donc associer \`a chaque automobiliste $j$ ($j= 1,2,3, \ldots N$) 
+une variable al\'eatoire $X_j$ qui vaut $1$ si l'automobiliste $j$ arrive  
+au p\'eage au cours de la minute donn\'ee, et $0$ si l'automobiliste  
+arrive au p\'eage en dehors de cette minute donn\'ee. Le fait que chaque 
+automobiliste agit ind\'ependamment se traduit par l'ind\'ependance 
+stochastique des $X_j$, et les $X_j$ ont toutes la m\^eme loi: 
+$$X_j = \cases{1 &avec probabilit\'e $\varepsilon$; \cr 
+                        0 &avec probabilit\'e $1 - \varepsilon$; \cr } \eqno 
+(IX.11.)$$  
+La somme des $X_j$, $S = \sum_{j=1}^N X_j$, est donc le nombre 
+de voitures qui arrivent pendant la minute donn\'ee. Nous avons vu 
+pr\'ec\'edemment que, si $N$ est du m\^eme ordre de grandeur que $1 / 
+\varepsilon$, la loi de la somme $S$ est approximativement une loi de 
+Poisson: 
+$${\cal P}\, (S = k) \quad = \quad {\up{\lambda^k} \over k!}\,  
+\e^{-\lambda } \eqno (IX.12.)$$  
+Puisque $\lambda = N/1\, 440 = N\varepsilon$, la condition que $N$ 
+soit du m\^eme ordre de grandeur que $1 / \varepsilon$ signifie 
+simplement que $\lambda$ ne doit \^etre ni trop grand, ni trop petit. Ceci 
+est la loi de probabilit\'e pour une minute donn\'ee, mais bien entendu 
+toutes les minutes de la journ\'ee sont \'equivalentes et la loi sera la 
+m\^eme pour n'importe quelle minute de la journ\'ee.  
+\medskip 
+Revenons alors \`a l'exemple qui a introduit la discussion, o\`u   
+$\lambda$ valait $0.76$. Les valeurs num\'eriques de la loi de Poisson  
+sont donn\'ees par le tableau suivant:  
+$$\matrix{ 
+\qquad k \qquad  &\qquad {\cal P}\, (S=k) \qquad \cr 
+\noalign{\medskip} 
+0  &0.4677 \cr 
+1  &0.3554 \cr  
+2  &0.1351 \cr 
+3  &0.0342 \cr 
+4  &0.0065 \cr 
+5  &0.0010 \cr 
+6  &0.0001 \cr 
+7  &0.0000 \cr } \eqno (IX.13.)$$ 
+Au-del\`a de $6$ les probabilit\'es sont inf\'erieures au dix-milli\`eme.  
+En  faisant la somme des six derni\`eres, on voit que la probabilit\'e pour  
+qu'il se pr\'esente deux v\'ehicules ou plus au p\'eage est $0.177$; la 
+probabilit\'e pour qu'il se pr\'esente trois v\'ehicules ou plus est 
+$0.0418$. Avec les capacit\'es d'absorption que nous avons pos\'ees, il  
+suffit qu'une seule fois se pr\'esentent plus de deux v\'ehicules pour que 
+l'engorgement momentan\'e ne puisse \^etre r\'esorb\'e par la suite que si 
+on a la  chance d'avoir moins que deux v\'ehicules dans les minutes qui 
+suivent; or la probabilit\'e pour qu'il se pr\'esente plus de deux v\'ehicules  
+\'etant $0.177$, cela va se  produire en moyenne toutes les six 
+minutes. Par cette estimation purement qualitative, on comprend que  
+des bouchons  puissent se former bien que le flux moyen soit inf\'erieur  
+\`a un v\'ehicule par minute. 
+\medskip 
+Nous nous proposons maintenant d'analyser cela quantitativement.  
+ 
+\bigskip 
+ 
+{\bf IX.\aub 4. La loi des queues.} 
+ \medskip 
+\`A chaque instant $n$ de la journ\'ee (les instants \'etant les minutes  
+successives, $n = 1,2,3, \;\ldots\; 1\, 440$), la longueur de la queue  est 
+\'egale au nombre de v\'ehicules  d\'ej\`a arriv\'es moins le nombre  de 
+v\'ehicules d\'ej\`a autoris\'es. Mais le nombre de v\'ehicules d\'ej\`a 
+autoris\'es n'est en g\'en\'eral  pas $n$, car si par exemple aucun 
+v\'ehicule ne s'est pr\'esent\'e pendant les trois premi\`eres minutes, puis 
+qu'il s'en pr\'esente trois d'un coup pendant la quatri\`eme minute, la 
+longueur de la queue sera de deux v\'ehicules, et non de $0 + 0 + 0 + 3 - 4$; 
+\`a la fin de la quatri\`eme minute, le nombre de v\'ehicules autoris\'es 
+aura \'et\'e $1$ et non $n = 4$. En effet, si pendant une p\'eriode il se 
+pr\'esente moins de v\'ehicules que pr\'evu, il y aura des temps morts au 
+guichet, mais ces temps morts sont perdus et ne peuvent plus \^etre 
+recompt\'es plus tard pour absorber un trafic plus dense. Il faut donc  
+tenir compte de ces temps morts. 
+\medskip 
+Appelons $Q_n$ la variable al\'eatoire ``longueur de la queue \`a  
+l'instant $n$'', et $X_n$ le nombre de v\'ehicules arriv\'es {\it pendant} 
+la $n^{\rm e}$ minute (les $X_n$ ont toutes la loi de Poisson 
+mentionn\'ee ci-dessus et sont ind\'ependantes entre elles). Si par 
+exemple $Q_{n-1} = 1$ et qu'il  arrive z\'ero v\'ehicules pendant la 
+minute suivante, $Q_n$ sera \'egale \`a $0$; dans ce cas on obtient 
+$Q_n$ en ajoutant $X_n - 1$ \`a $Q_{n-1}$. De m\^eme si $Q_{n-1} = 0$  
+et $X_n = 1$, $Q_n$ sera nulle: l\`a aussi $Q_n = Q_{n-1} + X_n  
+- 1$. Par contre si $Q_{n-1} = 0$ et $X_n = 0$, on n'aura pas $Q_n = 
+Q_{n-1} + X_n - 1 = -1$, mais $Q_n = 0$ (la queue ne peut jamais avoir 
+une longueur n\'egative). Pour trouver la r\'ecurrence qui fait passer de  
+$Q_{n-1}$ \`a $Q_n$, le mieux est de d\'ecomposer les \'ev\'enements  
+en r\'eunions disjointes ad\'equates. Dans de tels probl\`emes {\it il ne 
+faut jamais essayer de deviner},  mais toujours suivre un proc\'ed\'e 
+syst\'ematique.   
+\medskip 
+L'\'ev\'enement $\{ Q_n = 0 \}$ est la r\'eunion de $\{ Q_{n-1} = 0 \}  
+\cap  \{ X_n = 0 \}$, de $\{ Q_{n-1} = 0 \} \cap \{ X_n = 1 \}$, et de $\{ 
+Q_{n-1} = 1 \} \cap \{ X_n = 0 \}$. Ces trois \'ev\'enements sont 
+disjoints: on ne peut \'evidemment pas avoir \`a la fois $Q_{n-1} = 0$ et 
+$Q_{n-1} = 1$, ni $X_n = 0$ et $X_n = 1$. D'autre part, les variables 
+al\'eatoires $Q_{n-1}$ et $X_n$ sont stochastiquement ind\'ependantes 
+(les v\'ehicules qui arrivent au cours de la $n^{\rm e}$ minute 
+``ignoraient''  ce qui s'\'etait produit jusque l\`a). Donc  
+$$\eqalign{ 
+{\cal P}\, (Q_n = 0)\quad  
+&= \quad {\cal P}\, (Q_{n-1} = 0\; \hbox{et}\; X_n = 0)\; +\cr  
+&\hskip2cm + {\cal P}\, (Q_{n-1} = 0\; \hbox{et}\; X_n = 1)\; + \cr 
+&\hskip2cm + {\cal P}\, (Q_{n-1} = 1\; \hbox{et}\; X_n = 0) \cr 
+\noalign{\medskip} 
+&= \quad {\cal P}\, (Q_{n-1} = 0) \times {\cal P}\, (X_n = 0)\; + \cr 
+&\hskip2cm + {\cal P}\, (Q_{n-1} = 0) \times {\cal P}\, (X_n = 1)\; + \cr 
+&\hskip2cm + {\cal P}\, (Q_{n-1} = 1)\times {\cal P}\, (X_n = 0)\cr } 
+\eqno (IX.14.)$$ 
+Cette expression de ${\cal P}\, (Q_n = 0)$ diff\`ere de ce qu'elle serait  
+si $Q_n$ \'etait simplement la somme $Q_{n-1} + X_n - 1$: le premier  
+des trois termes serait alors absent. 
+\medskip 
+En revanche, pour les probabilit\'es ${\cal P}\, (Q_n = k)$ avec $k \geq  
+1$, tout se passe comme si $Q_n$ \'etait bien la somme $Q_{n-1} + X_n  
+- 1$; $Q_n$ ne peut en effet \^etre \'egal \`a $k \geq 1$ que si $Q_{n-1}  
++ X_n =  k + 1$, car il n'y a pas dans ce cas de temps mort au guichet: il  
+y a $Q_{n-1}$ v\'ehicules qui attendent ($Q_{n-1}$ pouvant \^etre  
+z\'ero), il  en arrive $X_n$ de plus, et un passera. C'est seulement  
+lorsque $Q_{n-1}$  et $X_n$ sont tous deux nuls qu'il aura un temps  
+mort  et que $Q_n$ sera \'egal \`a $0$ au lieu de $-1$. Ainsi  
+l'\'ev\'enement $\{ Q_n = k \}$ pour $k \geq 1$ sera la r\'eunion pour $j$ 
+variant de $0$ \`a $k+1$ des \'ev\'enements disjoints $\{ Q_{n-1} = j \} 
+\cap \{ X_n = k+1-j \}$, de sorte que $${\cal P}\, (Q_n = k) = 
+\sum_{j=0}^{k+1} {\cal P}\, (Q_{n-1} = j) \times {\cal P}\, (X_n = k+1-j) 
+\eqno (IX.15.)$$ tout comme si $Q_n$ \'etait simplement la somme de 
+$Q_{n-1}$ et de $X_n - 1$. 
+En regroupant $(IX.14.)$ et $(IX.15.)$ on obtient la r\'ecurrence qui fait 
+passer de la loi de $Q_{n-1}$ \`a celle de $Q_n$. Cette r\'ecurrence  
+permet d'\'ecrire un programme qui calculera r\'ecursivement les lois  
+de $Q_n$ \`a partir de celle de $Q_1$, qui est \'evidemment la suivante: 
+$$\eqalign{ 
+{\cal P}\, (Q_1 = 0) &= {\cal P}\, (X_1 = 0) + {\cal P}\, (X_1 = 1)  
+\quad\hbox{pour $k = 0$}\cr 
+{\cal P}\, (Q_1 = k) &= {\cal P}\, (X_1 = k+1)\quad \hbox{pour $k\geq 1$} 
+\cr }$$  
+Si on ex\'ecute ce programme, on s'aper\c{c}oit que la loi de $Q_n$ se 
+stabilise au bout d'une centaine d'it\'erations (voir figures 36, 37, 38),  
+ce qui correspond au fait que la loi de $Q_n$ tend vers une limite  
+lorsque $n$ tend vers l'infini. Le nombre d'it\'erations avant  
+stabilisation d\'epend \'evidemment de la pr\'ecision:  plus on
+prend en compte de d\'ecimales,  plus grand est ce nombre.  La centaine  
+correspond \`a trois ou quatre d\'ecimales, et la limite n'est,  au sens 
+math\'ematique, jamais atteinte.  Ainsi,  il s'\'etablit au bout d'un  
+certain temps un r\'egime stable.  Mais ceci n'est vrai que si le flux 
+moyen est inf\'erieur \`a un v\'ehicule par minute,  sinon \'evidemment 
+les queues vont s'allonger ind\'efiniment (c'est-\`a-dire que la 
+probabilit\'e d'avoir une queue inf\'erieure \`a n'importe quelle longueur 
+fix\'ee tendra vers z\'ero). L'\'etablissement d'un r\'egime stable peut  
+se comprendre a priori: dans le ph\'enom\`ene de formation des queues,  
+il n'y a aucune raison de penser que la loi de probabilit\'e de $Q_n$ 
+puisse d\'ependre de l'instant $n$, puisque les conditions (le flux moyen, 
+la dur\'ee du paiement, etc.) sont suppos\'ees constantes; seul le d\'ebut 
+du processus pr\'esente des conditions sp\'eciales, car on a impos\'e 
+artificiellement que la queue soit de longueur nulle \`a l'instant z\'ero.  
+La longueur de la queue (c'est-\`a-dire la variable al\'eatoire $Q_n$)  
+redevient nulle ind\'efiniment \`a des instants al\'eatoires; mais les  
+distributions possibles de ces instants de retour \`a z\'ero sont toutes  
+\'equiprobables, il n'y a pas de distribution privil\'egi\'ee. En imposant  
+que l'instant $n=0$ soit obligatoirement l'un de ces instants on 
+d\'etruit l'\'equivalence des instants. C'est pourquoi pendant une 
+p\'eriode de l'ordre de la centaine de minutes la loi de $Q_n$ \'evolue 
+selon un r\'egime transitoire avant de retrouver la loi constante  
+comme limite.    
+\medskip 
+On peut exprimer commod\'ement la r\'ecurrence des lois des $Q_n$ et  
+leur limite en consid\'erant les fonctions g\'en\'eratrices. En effet, les  
+variables $Q_n$ prennent des valeurs enti\`eres non n\'egatives, donc 
+l'usage des fonctions g\'en\'eratrices est tout \`a fait recommand\'e. 
+\medskip 
+Appelons $G_n(z)$ la fonction g\'en\'eratrice inconnue de $Q_n$ et  
+$F(z)$ celle, connue, des  $X_n$. La loi commune des $X_n$ \'etant la loi 
+de Poisson, $F(z)$ est la fonction $\exp\big(\lambda [z-1]\big)$. Les 
+relations $(IX.14.)$ et $(IX.15.)$ se traduisent en termes de fonctions 
+g\'en\'eratrices comme  suit: 
+$$z\, G_n(z) - F(z)\, G_{n-1}(z) \; = \; (z-1)\, F(0)\, G_{n-1}(0) 
+\eqno (IX.16.)$$ 
+On peut montrer math\'ematiquement que,  pour $0 <\lambda < 1$, $G_n(z)$
+doit tendre vers une limite,  mais on se contentera de l'admettre. 
+La d\'emonstration est assez longue et peu instructive,  j'estime donc
+qu'elle ne vaut pas la peine de rallonger excessivement cette section. 
+De toutes fa\c{c}ons le programme qui calcule la r\'ecurrence $IX.14$ --
+$IX.15$ montre une stabilisation de la loi de $Q_n$ (voir figures
+$36$ \`a $39$). 
+\medskip
+Sachant que $G_n(z)$ tend bien vers une limite finie $G(z)$,  on peut
+faire tendre $n$ vers l'infini dans la relation ci-dessus,  ce qui donne 
+$$\big[\, z - F(z)\, \big]\, G(z) \; = \; (z-1)\, F(0)\, G(0)
+\eqno (IX.17\, a.)$$ 
+d'o\`u on d\'eduit ce que doit \^etre la fonction g\'en\'eratrice de  
+la  loi limite si cette limite existe: 
+$$G(z) \; = \; F(0)\, G(0)\, {z-1 \over z-F(z)} \eqno (IX.17\, b.)$$ 
+La fonction ${(z-1) / \big( z-F(z)\big)}$ se prolonge analytiquement en  
+$z=1$, o\`u elle vaut $1/\big( 1-F'(0) \big)$; en prenant $z=1$ dans  
+l'expression ci-dessus, on obtient $G(1) = F(0)\, G(0)/\big( 1-F'(0) \big)$, 
+et bien s\^ur $G(1) = 1$ puisque $G(1)$ est la limite des $G_n(1)$ qui  
+sont tous \'egaux \`a $1$. Donc $F(0)\, G(0) = 1 - F'(0)$. On remarquera en 
+passant que la relation $IX.16$ est valable quelle que soit la loi de la 
+variable  $X_n$, c'est-\`a-dire pour des fonctions g\'en\'eratrices $F(z)$  
+arbitraires; de sorte que la loi limite aura pour fonction g\'en\'eratrice  
+$$G(z) \; = \; \big[1 - F'(0) \big]\, {z-1 \over z-F(z)} \eqno (IX.17\, c.)$$ 
+r\'esultat obtenu presque sans calculs. Dans le cas qui nous concerne la 
+loi des $X_n$ est la loi de Poisson, pour laquelle $F(z) = \exp \big( 
+\lambda [z-1]\big)$; dans ce cas $1 - F'(0) = 1 - \lambda$. Mais 
+les expressions $IX.17\, b$ ou $IX.17\, c$ sont valables pour n'importe 
+quelle loi initiale.  
+\medskip 
+Nous voyons ici, avec la formation de queues, un nouveau ph\'enom\`ene 
+conduisant \`a une loi de probabilit\'e asymptotique discr\`ete: pour une  
+loi donn\'ee des arriv\'ees (qui est g\'en\'eralement, dans les cas ayant 
+un sens pratique, une loi de Poisson), la loi de la longueur des queues 
+apr\`es stabilisation est d\'etermin\'ee par $IX.17\, a,b,c$. Notez bien  
+que les $Q_n$ ne sont pas des sommes de variables ind\'ependantes.  
+\medskip 
+Si on veut calculer la loi limite, il suffit en principe de calculer les 
+coefficients de Taylor de cette fonction analytique $G(z)$, ce qui est  
+ais\'e pour les premiers, mais de plus en plus difficile pour les suivants  
+(il n'y a pas de formule simple). Toutefois la relation $(IX.17\, c.)$  
+contient toute l'information.  
+\medskip 
+Le probl\`eme des queues \`a un guichet a \'et\'e abord\'e par \'Emile 
+Borel\ftn{1}{\'Emile Borel {\it Sur l'emploi du th\'eor\`eme de Bernoulli, 
+pour le calcul d'une infinit\'e de coefficients. Application au probl\`eme 
+d'attente \`a un guichet.} Comptes-rendus de l'Acad\'emie des Sciences, 
+mars {\oldstyle 1942}.}. Son approche est diff\'erente: il ne   
+prend pas en consid\'eration la variable al\'eatoire ``longueur de la 
+queue'', dont  la loi est certes exprimable analytiquement (formule 
+$IX.17\, c.$ ci-dessus), mais ne permet pas une expression simple pour 
+chaque probabilit\'e. Il faut dire qu'\`a l'\'epoque on ne disposait pas de  
+{\it personal computers} sur lesquels on pouvait \'ecrire en vitesse un 
+petit programme qui calcule tout.  
+\medskip 
+\midinsert 
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch09eps/fig35.eps}} 
+\vskip-1mm
+\centerline{\eightpoint figure 35} 
+\vskip6pt 
+\centerline{\vbox{\hsize=12cm\eightpoint  
+Le graphique ci-dessus illustre la loi de Borel pour la longueur des 
+s\'eries d'usagers; ici pour la valeur $\lambda = 0.76$ (celle de notre 
+exemple). Le premier trait vertical correspond \`a la probabilit\'e 
+$e^{-\lambda } \simeq 0.46$ d'avoir une s\'erie de longueur 1, 
+c'est-\`a-dire un usager qui se pr\'esente au guichet et qui n'est pas 
+imm\'ediatement suivi d'un autre; le second trait correspond \`a la  
+probabilit\'e $\simeq 0.17$ d'avoir une s\'erie de longueur 2: un usager  
+se pr\'esente, puis un second arrive avant que le premier n'ait termin\'e, 
+apr\`es quoi le guichet reste inoccup\'e au  moins pendant la  minute 
+suivante. Si le flux $\lambda$ reste constant toute la journ\'ee, on peut 
+conclure d'apr\`es la loi des grands nombres qu'au cours de la journ\'ee 
+environ $46\%$ des s\'eries seront r\'eduites \`a un seul usager, $17\%$ 
+\`a deux usagers cons\'ecutifs, etc. Bien entendu les queues longues ne 
+peuvent se former que dans des s\'eries au moins aussi longues.}}   
+\endinsert 
+Borel a donc trouv\'e le biais suivant: 
+au lieu de consid\'erer les queues, il consid\`ere ce qu'il appelle une 
+s\'erie: c'est une suite d'usagers qui se succ\`edent au guichet 
+cons\'ecutivement sans que le guichet se lib\`ere; d\`es que le guichet 
+redevient libre (m\^eme une seule minute) la s\'erie se termine, mais  
+une nouvelle s\'erie se produira avec le premier usager qui se pr\'esente 
+apr\`es le temps mort. Une s\'erie peut se r\'eduire \`a un seul usager. 
+Les queues longues ne peuvent se former qu'\`a l'int\'erieur d'une 
+s\'erie longue, mais il n'y a aucune relation math\'ematique pr\'ecise  
+entre la longueur d'une s\'erie et le maximum de la longueur de la queue 
+pendant la s\'erie: une s\'erie peut \^etre tr\`es longue sans que jamais 
+plus de deux usagers ne fassent la queue (si les usagers se pr\'esentent 
+de fa\c{c}on assez r\'eguli\`erement espac\'ee),  et inversement une 
+queue longue peut se former dans une s\'erie relativement courte (si 
+beaucoup d'usagers arrivent presque en m\^eme temps). Il y a toutefois 
+une corr\'elation assez forte entre la longueur des queues et la longueur 
+des s\'eries dans lesquelles elles se forment. On peut donc utiliser la 
+probabilit\'e $\alpha_n$ d'avoir des s\'eries de longueur sup\'erieure \`a 
+un seuil donn\'e $n$ comme un crit\`ere quantitatif pour d\'ecider si le 
+nombre de guichets est suffisant, comme nous l'avons propos\'e pour la  
+probabilit\'e pour que se forme une queue de longueur sup\'erieure \`a $n$. 
+\medskip  
+Borel a  obtenu la formule explicite suivante pour la probabilit\'e $p_n$ 
+pour qu'une  s\'erie ``prise au hasard'' soit form\'ee de  $n$ usagers: 
+$$p_n = \e^{-n\lambda } \lambda^{n-1} {n^{n-2}\over (n-1)!}$$ 
+o\`u $\lambda$ est le nombre moyen d'usagers par minute 
+($\lambda = 0.76$ dans notre exemple). Cette formule n'est valable que 
+si $\lambda <1$. Elle permet de calculer les dur\'ees d'attente moyennes 
+pour un usager, mais ne permet pas de calculer la loi de la longueur des 
+queues $IX.17\, c.$ que nous avons obtenue par une autre m\'ethode. 
+\medskip 
+\midinsert 
+\null\vbox to \blocksize{\eightpoint  
+\centerline{\epsfbox{../imgEPS/ch09eps/fig36.eps}} 
+\vskip8mm plus2mm minus1mm
+\centerline{ figure 36} 
+\vskip5mm plus2mm minus1mm 
+\centerline{\vbox{\hsize=12.3cm Les neuf graphiques ci-dessus  
+repr\'esentent les lois de probabilit\'e de la longueur des queues pour 
+$\lambda = 0.76$ apr\`es 1, 2, 3, 5, 10, 20, 30, 50, et 100 minutes:  
+comme d'habitude, la hauteur des barres est proportionnelle \`a la 
+probabilit\'e de l'abcisse correspondante. L'\'echelle des abcisses est 
+visualis\'ee par une  graduation (chaque trait de graduation correspond 
+\`a une valeur -- enti\`ere -- de la variable al\'eatoire ``longueur de la 
+queue''). L'\'echelle des ordonn\'ees est visualis\'ee \'egalement: comme 
+il s'agit de probabilit\'es, celle-ci va de $0.0$ \`a $1.0$. On peut observer 
+l'\'evolution vers une loi limite: pour $n$ petit (donc peu apr\`es le 
+d\'ebut), la barre d'abscisse z\'ero est encore haute, puis elle diminue  
+de plus en plus en  plus au profit des autres; le graphique n'\'evolue 
+pratiquement plus au-del\`a de $n=100$. } } \vfill } \vfill 
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize{ 
+\vskip10mm plus2mm minus1mm
+\centerline{\epsfbox{../imgEPS/ch09eps/fig37.eps}} 
+\vskip10mm plus2mm minus1mm 
+\centerline{\eightpoint figure 37} 
+\vskip7mm plus2mm minus1mm 
+\centerline{\vbox{\hsize = 12cm \eightpoint  
+Afin de visualiser l'\'evolution de la loi de $Q_n$ vers la loi limite, on  
+peut aussi repr\'esenter la probabilit\'e que la queue ait une longueur 
+sup\'erieure ou \'egale \`a un seuil fix\'e, en fonction du temps  
+\'ecoul\'e. La courbe ci-dessus correspond \`a un seuil de 12 (avec 
+toujours $\lambda = 0.76$): l'abscisse repr\'esente le temps \'ecoul\'e 
+en minutes et l'ordonn\'ee la probabilit\'e que la queue comporte au 
+moins douze v\'ehicules. Bien s\^ur la courbe n'est qu'une interpolation 
+des valeurs successives de ces probabilit\'es, puisque le temps est un 
+nombre entier de minutes.  
+\smallskip 
+On voit qu'au d\'ebut cette probabilit\'e est pratiquement nulle: elle est 
+donn\'ee par la loi de Poisson: pour que la queue soit d'au moins douze 
+v\'ehicules d\`es le premier instant, il faut que douze v\'ehicules ou plus  
+se pr\'esentent pendant la premi\`ere minute, \'ev\'enement dont la 
+probabilit\'e est   
+$$\sum_{k \geq 12} {\lambda^k \over k!}\e^{-\lambda}$$ 
+Mais apr\`es cette probabilit\'e augmente et tend vers une limite,  
+\'egale  \`a $0.0015$ environ. Ce qui est minuscule et ne justifie pas 
+qu'on construise un second guichet. Toutefois pour $\lambda = 0.9$, la 
+probabilit\'e limite d'avoir une queue d'au moins douze v\'ehicules est  
+de $7\%$ environ. 
+\vskip6pt plus3pt minus1pt
+Nous n'avons pas {\it d\'emontr\'e} que les probabilit\'es ${\cal P}\,
+(Q_n = k)$ tendaient vers une limite,  mais le calcul num\'erique montre
+bien une stabilisation des valeurs.} } 
+\vfill }
+\endinsert 
+ 
+\midinsert 
+\null\vbox to \blocksize{\eightpoint  
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch09eps/fig38.eps}} 
+\vskip10mm plus2mm minus1mm 
+\centerline{ figure 38 } 
+\vskip7mm plus2mm minus1mm 
+\centerline{\vbox{\hsize=12cm  
+Ici on repr\'esente la m\^eme chose que sur la figure 36, mais  
+pour  $\lambda = 0.9$ au lieu de $0.76$. En comparant les deux figures, 
+on peut observer que la barre d'abscisse z\'ero -- qui repr\'esente la 
+probabilit\'e de n'avoir aucune queue -- diminue ici plus vite, et les  
+autres barres augmentent plus vite, ce qui est bien conforme \`a 
+l'\'evidence.  Mais on peut calculer quantitativement: par exemple la 
+probabilit\'e limite pour que la queue d\'epasse douze v\'ehicules 
+(obligeant ainsi les usagers \`a attendre leur tour plus de douze 
+minutes) est ici de $7\%$, alors qu'elle \'etait insignifiante pour 
+$\lambda = 0.76$ .} } \vfill } \vfill  
+\endinsert 
+ 
+\midinsert 
+\null\vbox to \blocksize{\eightpoint  
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch09eps/fig39.eps}} 
+\vskip10mm plus2mm minus1mm 
+\centerline{ figure 39 } 
+\vskip7mm plus2mm minus1mm 
+\centerline{\vbox{\hsize=12cm  
+M\^eme chose que dans les figures 36 et 38, mais avec cette fois 
+$\lambda = 0.99$.} } \vfill } 
+\vfill 
+\endinsert 
+ 
+Revenons \`a la loi des queues et \`a la fonction g\'en\'eratrice $G(z)$ 
+de la formule $(IX.17\, c)$. 
+\medskip 
+Pour calculer num\'eriquement les coefficients de Taylor de $G(z)$  
+(c'est-\`a-dire  les probabilit\'es limite de la loi de la longueur des 
+queues) d'ordre \'elev\'e l'expression $(IX.17\, c.)$ n'est gu\`ere  
+commode. Pour le calcul num\'erique effectif de la loi limite il est 
+pr\'ef\'erable d'ex\'ecuter le programme it\'eratif bas\'e sur la 
+r\'ecurrence $(IX. 14, 15)$. Par contre  l'expression analytique $(IX.17\, 
+c)$ de la fonction g\'en\'eratrice est tr\`es pratique pour calculer  
+la moyenne et la variance de la loi limite qui sont donn\'ees par  
+$G'(1)$ et $G''(1)$, ainsi que les premiers coefficients de Taylor qui  
+sont donn\'ees par  $G'(0)$ et $G''(0)$. Notons $Q$ sans indice pour  
+la variable al\'eatoire limite. Rappelons que ${\bf E}(Q) = G'(1)$ et  
+${\bf Var}(Q) = G''(1) + {\bf E}(Q) - {\bf E}(Q)^2$ (cf $VI. 6$ et $VI. 7$).  
+\medskip 
+D\'erivant formellement $(IX.17\, c.)$ on obtient 
+$$\eqalign{ 
+G'(z) &= \big[ 1 - F'(1) \big]\; {1 - F(z) + (z-1)F'(z) \over \sdown{11} 
+\big[ z - F(z) \big]^2 } \cr 
+\noalign{\medskip} 
+G''(z) &= \big[ 1 - F'(1) \big] \times \hskip62mm  
+\hbox{\raise6pt\hbox{$(IX.18.)$}}\cr 
+\times\; &\hbox to 
+101mm{\lower19.5pt\hbox{\vbox{\eightpoint\hsize=100mm 
+$$ {\big[ 1  - F'(1) \big] (z-1) F''(z) -2 \big[ 1 - F'(z) \big] \big[ 1 - F(z)  
++ 
+(z-1) F'(z) \big] \strup{6} 
+\over \sdown{11} \big[ z - F(z) \big]^3 }$$}}\hfill } \cr }$$ 
+Pour $z=0$ ces expressions prennent les valeurs particuli\`eres 
+suivantes: 
+$$\eqalignno{ 
+G(0) = {\cal P}\, (Q=0) &= {1 - F'(0) \over F'(0)} = (1 - \lambda )\, 
+\e^{\lambda } \cr 
+\noalign{\medskip} 
+G'(0)={\cal P}\, (Q=1) &=\big[1-F'(0)\big]{ 1-F(0)-F'(0)\over F'(0)^2}\cr  
+&= (1 - \lambda )\,\e^\lambda\, ( \e^\lambda - 1 - \lambda) \cr 
+\noalign{\bigskip} 
+G''(0) = {\cal P}\, (Q=2) &= (1-\lambda )\, \big[ 2\, (1-\lambda )\, 
+\e^{2\lambda}\, (\e^{\lambda}-1-\lambda )\big] \cr }$$ 
+On voit que $G''(0)$ est d\'ej\`a relativement compliqu\'ee et cela  
+permet d'imaginer \`a quoi pourrait ressembler par exemple ${\cal P}\, 
+(Q=12)$ si au lieu de le calculer num\'eriquement par it\'erations, on en 
+voulait  une expression analytique formelle en fonction de $\lambda$. 
+\medskip 
+Pour les valeurs en $z=1$ on obtient des rapports 
+ind\'etermin\'es en  $0/0$; on peut lever l'ind\'etermination en  
+recourant \`a la r\`egle de l'Hospital, mais il est plus commode de 
+revenir \`a $IX.16.$ qu'on d\'erive trois fois; ainsi: 
+$$\displaylines{ 
+\big[ z - F(z) \big] G(z) = (z-1) F(0) G(0) \cr 
+\big[ 1 - F'(z) \big] G(z) + \big[ z - F(z) \big] G'(z) = F(0) G(0) \cr 
+- F''(z) G(z) + 2 \big[ 1 - F'(z) \big] G'(z) + 
+\big[ z - F(z) \big] G''(z) = 0 \cr 
+- F'''(z) G(z) - 3 F''(z) G'(z) +  3 \big[ 1 - F'(z) \big] G''(z) + 
+\big[ z - F(z) \big] G'''(z) = 0 \cr }$$ 
+rempla\c{c}ant apr\`es coup $z$ par $1$, on obtient $0 = 0$ 
+pour la premi\`ere ligne et $1-\lambda = F(0) G(0)$ pour la seconde 
+(ce qui n'apporte rien de nouveau), mais $-F''(1) + 2\, (1-\lambda )\,  
+G'(1) = 0$ pour la troisi\`eme et $-F'''(1) - 3 F''(1) G'(1) + 3\, (1 - 
+\lambda )\,  G''(1) = 0$ pour la quatri\`eme, ce qui donne ais\'ement ce 
+qu'on cherche:  
+$$\eqalignno{ 
+G'(1) &= {\bf E} (Q) = {F''(1) \over 2\, (1 - \lambda )} =  {\lambda^2  
+\over   2\, (1 -  \lambda )}\cr 
+G''(1) &= {F'''(1) + 3 F''(1) G'(1) \over 3\, (1 - \lambda )} =  
+{\lambda^3 (\lambda + 2) \over 6\, (1 - \lambda )^2} \cr }$$ 
+d'o\`u la variance 
+$${\bf Var} (Q) = G''(1) + {\bf E} (Q) - {\bf E} (Q)^2 =  
+{6\lambda^2 - 2\lambda^3 - \lambda^4 \over 12\, (1 - \lambda )^2}$$ 
+\medskip 
+Le moment est maintenant venu de r\'esumer et de critiquer notre  
+approche de ce probl\`eme des queues aux guichets. Pour le r\'esoudre  
+nous avons  copieusement recouru \`a des approximations, qui nous 
+\'etaient  offertes sous la forme de lois asymptotiques, en l'occurrence 
+la loi de Poisson et un passage \`a la limite. 
+\medskip 
+La loi de Poisson est d'abord apparue comme celle (\'evidemment 
+appro\-ch\'ee) du nombre de v\'ehicules qui arrivent pendant une minute, 
+\`a condition de supposer,  ce qui est essentiel,  que la densit\'e
+du trafic,  d\'efinie par le flux moyen instantan\'e $\lambda = 0.76$
+v\'ehicules par minute, est stable. En admettant que le flux
+instantan\'e reste stable pendant une heure,  on peut le mesurer
+en comptant le nombre de v\'ehicules qui sont pass\'es pendant une
+heure,  puis en divisant ce nombre par soixante;  si le flux instantan\'e
+\'etait rest\'e stable pendant deux  heures, on aurait compt\'e le nombre
+de v\'ehicules pass\'es pendant ces  deux heures, et on aurait divis\'e
+ce nombre par cent-vingt.  S'il n'\'etait  rest\'e stable que pendant
+une demie-heure,  on aurait divis\'e le nombre de v\'ehicules pass\'es
+pendant la demie-heure par trente.  Plus haut, nous avons compar\'e
+cette id\'ee de flux instantan\'e \`a celui de vitesse instantan\'ee
+en cin\'ematique.  On rencontre cependant ici une diff\'erence
+essentielle avec la cin\'ematique.  
+\medskip
+Lorsqu'on veut d\'efinir la vitesse instantan\'ee d'un mobile, 
+on commence,  comme nous avons fait ici,  par d\'efinir la vitesse
+moyenne au cours d'un intervalle de temps;  disons pour fixer les
+id\'ees qu'on la mesure en m\`etres par seconde.  Sur une heure, 
+c'est la distance parcourue en m\`etres, divis\'ee par $3\, 600$. 
+Sur une minute,  c'est la distance parcourue divis\'ee par $60$. 
+On admet que lorsque l'intervalle de temps devient petit (par exemple
+une seconde),  cette vitesse moyenne tend vers une limite,  au point
+que si on mesurait la distance parcourue pendant un milliardi\`eme
+de seconde,  et qu'on la divisait par $10^{-9}$,  on trouverait la
+m\^eme limite (ou une valeur plus exacte de cette limite, d'autant
+plus exacte que l'intervalle serait plus court).  Avec le flux il n'en
+va plus de m\^eme, car le flux moyen calcul\'e sur un intervalle de
+temps long (deux heures, une heure, une demie-heure)  a des chances de
+rester \`a peu pr\`es le m\^eme ($\simeq 0.76$) \`a cause de la loi
+des grands nombres;  par contre,  si on compte le nombre de v\'ehicules
+qui passent pendant une minute,  on n'obtiendra pas $0.76$,  mais des
+valeurs enti\`eres al\'eatoires $0,\, 1,\, 2,\, 3,\, \ldots$ distribu\'ees
+justement  selon la loi de Poisson.  Loin de se rapprocher d'une limite, 
+on obtiendra des valeurs de plus en plus divergentes lorsque la dur\'ee
+de l'intervalle sera rendue plus courte:  par exemple,  le nombre de
+v\'ehicules arrivant pendant une seconde sera presque toujours $0$, 
+rarement $1$,  et pratiquement jamais $2$ (il sera donn\'e par la loi
+de Poisson de param\`etre $\lambda/60 = 0.76 / 60 \simeq 0.01267$, 
+qui donne $0.987$ pour la probabilit\'e d'avoir z\'ero v\'ehicule, 
+mais seulement $0.0125$ pour la probabilit\'e d'avoir un seul v\'ehicule, 
+et $0.000079$ pour la probabilit\'e d'avoir deux v\'ehicules).      
+\medskip 
+Le flux instantan\'e ne peut pas \^etre mesur\'e s'il varie sans  
+cesse, car la loi des grands nombres est indispensable pour sa 
+d\'etermination; il faut donc s'assurer de sa stabilit\'e par des mesures 
+pr\'ealables. Dans le cas du p\'eage d'autoroute, il se peut que le flux 
+instantan\'e varie beaucoup au cours de la journ\'ee, mais se r\'ep\`ete 
+d'une journ\'ee \`a l'autre (en excluant \'evidemment les dimanches et 
+jours f\'eri\'es, les d\'eparts en vacances, etc.). Par exemple le flux 
+peut \^etre constamment variable, \^etre diff\'erent \`a $8$ heures,  
+$8$  heures trente, $9$ heures, $9$  heures trente, $\ldots$, mais \^etre 
+identique tous les jours \`a $8$  heures, ou tous les jours \`a $8$  
+heures  trente. On pourra donc mesurer le flux moyen en additionnant 
+sur vingt jours le nombre de v\'ehicules qui arrivent entre $8\; h.$ et 
+$8\; h.\; 05$, puis entre $8\; h.\; 05$ et $8\; h.\; 10$, etc. Tous les 
+proc\'ed\'es statistiques utilisables auront en commun  de reposer sur 
+une  hypoth\`ese d'invariance: soit stabilit\'e sur une  dur\'ee 
+suffisamment longue, soit similitude des diff\'erentes  journ\'ees entre 
+elles. Comme cela avait \'et\'e longuement expliqu\'e au chapitre {\bf I}, 
+la  notion de probabilit\'e exige une hypoth\`ese d'invariance; nous 
+voyons  sur l'exemple pr\'esent qu'il en va de m\^eme lorsqu'on veut {\it 
+mesurer}.  
+\medskip 
+L'invariance permet de calculer des probabilit\'es a priori, que nous  
+avons oppos\'ees aux probabilit\'es empiriques; mais lorsqu'on veut 
+mesurer de telles probabilit\'es empiriques il faut aussi s'assurer qu'il  
+y a une  invariance quelque part. Ici, c'est l'invariance au 
+cours du temps ou {\it reproductibilit\'e}. 
+\medskip 
+Au chapitre {\bf I} nous avions signal\'e une analogie entre 
+l'\'equiprobabilit\'e qui r\'esulte d'une invariance, et le temps physique 
+qui r\'esulte des invariances galil\'eennes.  Poursuivant cette 
+comparaison,  nous pouvons dire que la mesure du temps (c'est-\`a-dire 
+la r\'ealisation d'appareils mesurant le temps) exige un principe 
+physique pr\'ealable d'invariance:  la mesure du temps pr\'esuppose une 
+conviction (que seule une perception th\'eorique peut donner) quant \`a 
+l'homog\'en\'eit\'e de l'\'ecoulement du temps.  De  m\^eme on ne peut 
+pr\'etendre mesurer de probabilit\'es empiriques sans postuler la loi 
+des grands nombres,  et pour que ce postulat soit valide,  il faut une 
+conviction que les conditions se reproduisent,  que par exemple le trafic 
+se reproduit \`a l'identique d'un jour \`a l'autre.  
+\medskip 
+Il va de soi que la pr\'ecision de mesures ainsi bas\'ees sur une  
+hypoth\`ese de reproductibilt\'e tr\`es approximative et sur la loi des  
+grands nombres ne peut en aucun cas atteindre la seconde d\'ecimale; 
+ainsi la valeur suppos\'ee de $0.76$ pour le flux instantan\'e suppos\'e 
+constant pourrait aussi bien avoir \'et\'e de $0.7$ ou $0.8$ v\'ehicules  
+par minute.  Il est tr\`es rare que des moyennes statistiques ou des 
+probabilit\'es empiriques soient connues avec une pr\'ecision plus 
+grande.  En effet,  la loi des grands nombres,  avec les fluctuations 
+gaussiennes \'etudi\'ees au chapitre {\bf VII},  nous a montr\'e que  
+l'\'ecart-type des fluctuations \'etait de l'ordre de la racine carr\'ee  
+du grand nombre.  Cela signifie que si on d\'etermine la moyenne 
+$\lambda$ en comptant le nombre de v\'ehicules pass\'es pendant une 
+heure (qui est donc $0.76 \times 60 \simeq105$),  l'incertitude relative 
+sera de l'ordre de $1 / \sqrt{105}$,  c'est-\`a-dire du dixi\`eme. 
+\medskip  
+Il faut donc partir du principe que dans des probl\`emes comme celui du 
+p\'eage d'autoroute,  ainsi que dans tous les probl\`emes de statistiques 
+humaines ou industrielles,  les probabilit\'es sont d\'etermin\'ees au 
+dixi\`eme,  ou \`a la rigueur dans des cas exceptionnels,  au centi\`eme 
+pr\`es.  Il n'y a gu\`ere que la physique statistique o\`u on peut aller au 
+del\`a,  le grand nombre \'etant celui d'Avogadro ($\sim 10^{24}$);  les 
+grandeurs sont alors en principe d\'efinies (mais rarement {\it 
+effectivement connues}) \`a $10^{-12}$ pr\`es.   
+\medskip 
+On peut conclure que dans le calcul des probabilit\'es une approximation 
+m\^eme grossi\`ere est {\it toujours} meilleure qu'une expression 
+math\'ematique compliqu\'ee.  Il ne faut donc pas h\'esiter \`a utiliser 
+l'approximation gaus\-sienne,  m\^eme pour la somme de dix ou vingt 
+variables ind\'ependantes,  ou la formule de Stirling pour des factorielles: 
+pour $4! = 24$ la formule de Stirling donne $23.506$,  pour $3! = 6$ elle
+donne $5.836$,  pour $2! = 2$ elle donne $1.919$,  et m\^eme pour $1! = 1$
+elle donne $0.922$:  \`a $10\%$ pr\`es,  la formule de Stirling est correcte
+pour {\it n'importe quelle factorielle},  $0!$ except\'e. 
+\medskip
+On peut \'egalement utiliser l'approximation plus pr\'ecise
+$$n! \simeq n^n\, \e^{-n}\, \sqrt{2\pi\, (n + 1/6)}$$
+qui donne $1.075\, 827$ pour $1!$,  $2.078\, 921$ pour $2!$, 
+et $6.160\, 443$ pour $3!$;  m\^eme $0!$ est alors approch\'e par
+$1.023\, 327$.  Une pr\'ecision relative de $2\%$ d\`es $n=0$, 
+et qui s'am\'eliore encore quand $n$ augmente: \hskip7pt $1\%$ pour
+$n=8$,\hskip10pt $0.5\%$ pour $n=16$,\hskip10pt $0.2\%$ pour $n=40$, \ \dots
+
+\vskip14pt plus12pt minus6pt
+ 
+{\bf IX.\aub 5. Autres lois asymptotiques.}
+\medskip 
+En discutant l'exemple de la densit\'e de Cauchy, nous avons remarqu\'e 
+que celle-ci apparaissait plut\^ot comme un d\'eguisement de la loi 
+normale, par l'effet d'une d\'eformation non lin\'eaire. Nous avons  
+m\^eme  pu d\'emontrer math\'ematiquement que n'importe quelle 
+densit\'e fix\'ee \`a l'avance pouvait \^etre obtenue comme une 
+d\'eformation non lin\'eaire de  la densit\'e gaussienne. Il en va de 
+m\^eme pour la loi de Poisson: on pourrait d\'emontrer que 
+n'importe quelle loi discr\`ete  peut \^etre obtenue artificiellement 
+comme une d\'eformation non  lin\'eaire de la loi de Poisson. Mais il ne 
+s'agirait que de constructions artificielles qui ne r\'epondraient pas \`a 
+la v\'eritable question:  ``quelles lois limites (asymptotiques) 
+rencontre-t-on dans des probl\`emes ayant une pertinence r\'eelle ?'' 
+(cette question a \'et\'e discut\'ee \`a la fin de la section {\bf 2}). 
+\medskip 
+Bien que ce chapitre soit sp\'ecialement consacr\'e aux lois  
+asymptotiques,  la plupart de ces lois ont \'et\'e ou seront rencontr\'ees 
+dans d'autres chapitres \`a propos de probl\`emes particuliers.  C'est 
+pourquoi nous conclurons par un petit catalogue des lois asymptotiques 
+restantes,  avec r\'ef\'erence au chapitre o\`u elles sont trait\'ees. 
+ 
+\vskip14pt plus30pt minus3pt
+ 
+{\bf La loi du dernier retour} 
+\medskip 
+Elle a \'et\'e rencontr\'ee au chapitre {\bf III}. Nous avions calcul\'e  
+alors que pour une marche al\'eatoire de $2n$ pas, la probabilit\'e $R_k$ 
+pour que  la marche soit pass\'ee {\it pour la derni\`ere fois} par z\'ero 
+\`a l'instant  $2k$  est  
+$$R_k = 2^{-2n} \cdot {2k \choose k} \cdot {2n -2k \choose n-k} 
+\eqno (IX.18.)$$ 
+On en d\'eduisait que la probabilit\'e pour que le dernier retour avant 
+l'instant $2n$ se soit produit {\it avant} l'instant $2\ell$ est 
+$$S_\ell = \sum_{k=1}^{k=\ell } R_k$$ 
+Lorsque $n$ est grand on peut approcher $R_k$ par $1/[\pi\sqrt{k(n-k)}]$ 
+en appro\-chant les factorielles des coefficients bin\^omiaux par 
+la formule de Stirling, puis remarquer que la somme des $R_k$ est la 
+somme de Riemann de l'int\'egrale 
+$$\int_0^{\ell / n} {1\over\sdown{14}\pi\sqrt{\, t\, (1-t)}}\; dt$$ 
+d'o\`u on d\'eduit que 
+$$S_\ell \simeq {\up{\eightpoint 2}\over\down{\pi}} \arcsin\Bigg( 
+\sqrt{{\ell\over n}}\;\Bigg)$$ 
+Ces r\'esultats font donc appara{\^\i}tre une densit\'e asymptotique: 
+lorsque $n$ est grand, la loi de ${1\over\textdown{n}}\,R_k$ a pour 
+densit\'e la fonction 
+$$f(t) = \cases{ {\hbox{$1$}\over\sdown{10.5} 
+\hbox{$\pi$}\sqrt{t\, (1-t)} } &si $0<t<1$;\cr 
+\noalign{\vskip9pt} 
+\hskip24pt   0    & si $t \leq 0$ ou $t \geq 1$.\cr } \eqno (IX.19.)$$  
+La variable $R_k$ ne pouvant prendre des valeurs en dehors de $0 
+< k < n$, il est logique que la densit\'e $f$ soit nulle (ou non d\'efinie)  
+en dehors de $0<t<1$. 
+\medskip 
+ 
+\midinsert 
+\vbox to \blocksize{ 
+\vskip-11mm plus3mm minus3mm
+\centerline{\epsfbox{../imgEPS/ch09eps/fig40a.eps}} 
+\vskip8pt 
+\centerline{\eightpoint figure 40a} 
+\vskip2mm 
+\centerline{\vbox{\hsize=12cm\eightpoint 
+Ce graphique compare les probabilit\'es de dernier retour $R_k$ pour 
+$k=0 \ldots 7$ ($n=7$), repr\'esent\'ees par les hauteurs des huit 
+rectangles, \`a la densit\'e $f(x) = 1/\pi\sqrt{x(1-x)}$.} } 
+\vskip6mm 
+\centerline{\epsfbox{../imgEPS/ch09eps/fig40b.eps}} 
+\vskip8pt 
+\centerline{\eightpoint figure 40b} 
+\vskip2mm 
+\centerline{\vbox{\hsize=12cm\eightpoint 
+Ici $n=15$, les probabilit\'es $R_k$ sont repr\'esent\'ees par les  
+hauteurs  des seize rectangles, la courbe de la densit\'e $f(x)$ est 
+inchang\'ee.} }  
+\vfill } 
+\endinsert 
+ 
+\midinsert 
+\vbox to \blocksize{ 
+\null 
+\vskip-2mm plus2mm minus1mm
+\centerline{\epsfbox{../imgEPS/ch09eps/fig40c.eps}} 
+\vskip7pt 
+\centerline{\eightpoint figure 40c} 
+\vskip2mm 
+\centerline{\eightpoint M\^eme chose pour $n=31$.} 
+\vskip6mm 
+\centerline{\epsfbox{../imgEPS/ch09eps/fig40d.eps}} 
+\vskip7pt 
+\centerline{\eightpoint figure 40d} 
+\vskip2mm 
+\centerline{\eightpoint $n=95$.} 
+\vfill  } 
+\endinsert 
+ 
+\midinsert 
+\vskip3pt
+\centerline{\epsfbox{../imgEPS/ch09eps/fig40e.eps}} 
+\vskip2mm 
+\centerline{\eightpoint figure 40e} 
+\vskip2mm 
+\centerline{\vbox{\hsize=11.6cm\eightpoint \noindent $n=191$. Il est devenu  
+impossible de distinguer les sommets des rectangles de la courbe. } } 
+\vskip3mm 
+\endinsert 
+
+L'approximation qui conduisait \`a la densit\'e $(IX.19)$ 
+reposait sur la for-mule de Stirling  $n! \simeq n^n\e^{-n}\sqrt{2\pi n}$.  
+Celle-ci n'est en principe correcte que pour $n$ grand; elle a \'et\'e 
+appliqu\'ee \`a l'expression $(IX.18)$ de la probabilit\'e $R_k$, qui  
+contient les factorielles $(2k)!\ ,\ k!\ ,\ (2n-2k)!\ ,$ et $(n-k)!$ donc il 
+faut que $k$ et $n-k$ soient tous deux assez grands. Voyons ce que cela 
+donne en pratique: pour $n=1000$ et $k=1$ on obtient $R_1=0.0089$ 
+(valeur exacte) et $R_1\simeq 0.0101$ (valeur approch\'ee),  soit une  
+diff\'erence relative de $12\%$;  pour $k=2$,  $R_2=0.0067$ (valeur 
+exacte) et $R_2\simeq 0.0071$ (valeur approch\'ee),  soit une  
+diff\'erence relative  de $6.3\%$.  Pour $k=10$,  $R_{10}=0.00316$ 
+(valeur exacte) et $R_{10}\simeq 0.00320$ (valeur approch\'ee),  soit  
+une diff\'erence relative de $1.2\%$.  La seule erreur vraiment grosse 
+concerne les extr\'emit\'es,  $k=0$ ou $k=n$,  car alors la valeur 
+approch\'ee est infinie et la valeur exacte $R_0=0.0178$.  On peut 
+constater sur les valeurs num\'eriques donn\'ees ci-dessus que la valeur 
+approch\'ee est toujours plus grande que la valeur exacte calcul\'ee par 
+les factorielles;  pour de petites valeurs de $k$,  la diff\'erence ne  
+diminue pas lorsque $n$ tend vers l'infini,  mais ces valeurs  
+repr\'esentent par contre une proportion de plus en plus petite de 
+l'ensemble de toutes les valeurs (qui vont de z\'ero \`a $n$). 
+\medskip  
+On peut voir sur les figures 40 (a, b, c, d, e) comment 
+la loi discr\`ete se rapproche de la densit\'e asymptotique.  Ces figures 
+se passent de commentaire. 
+ 
+\vskip12pt plus10pt minus5pt
+ 
+{\bf La loi de Bernoulli.} 
+\medskip 
+En statistique,  un proc\'ed\'e classique est le {\it sondage par  
+\'echantillon}.  On veut \'etudier un certain caract\`ere dans une 
+population (par exemple combien d'\'electeurs vont voter pour le Parti  
+du Progr\`es). Au lieu d'interroger tout le monde, on prend au hasard un 
+\'echantillon de deux mille personnes. Le principe est que la probabilit\'e 
+pour que la proportion  des partisans du Progr\`es dans l'\'echantillon 
+diff\`ere sensiblement de  la proportion r\'eelle dans la population  
+totale, est faible. Mais cela  n'est vrai que pour des \'echantillons  
+assez gros.   
+\medskip 
+On peut utiliser les m\'ethodes qui ont \'et\'e  pr\'esent\'ees dans ce 
+livre pour calculer cette probabilit\'e: on cherche une invariance, puis on 
+calcule par d\'enombrement, ce qui conduira \`a une formule pleine de 
+factorielles; ensuite, on cherche une approximation simple qui s'applique 
+aux  grands entiers, ce qui donnera une loi asymptotique.  
+\medskip 
+L'invariance r\'esulte du choix {\it au hasard} de l'\'echantillon: 
+``au hasard'' signifie que tous les \'echantillons sont \'equiprobables. 
+Dans une population de $N$ personnes, il y a $N \choose n$ \'echantillons
+de taille $n$. Le probl\`eme sera \'etudi\'e en d\'etail au chapitre {\bf X},  
+section {\bf 2} ({\sl la th\'eorie des \'echantillons de Bernoulli}), 
+de sorte que le lecteur y est renvoy\'e pour les calculs.  Si $p$ est
+le nombre de partisans du Progr\`es dans la population totale, 
+la probabilit\'e pour que l'\'echantillon de $n$ personnes tir\'e
+au hasard en contienne $k$ est  
+$$p_k = { \vrule height0pt depth6pt width0pt {n \choose k} \cdot  {N-n  
+\choose p-k}  \over \vrule height12pt depth0pt width0pt  {N \choose p} }  
+= {\vrule height0pt depth13pt width0pt {\displaystyle {n!  
+\over k! \,  (n-k)!} \cdot {(N-n)! \over (p-k)! \, (N-p-n+k)!}} \over  \vrule 
+height18pt depth0pt width0pt{\displaystyle {N! \over p! \, (N-p)!}} } $$  
+Ceci est la loi ``math\'ematiquement exacte'', qui est valable quels que 
+soient les nombres $N$, $p$, $n$, et $k$. On l'appelle {\it la loi 
+hyperg\'eom\'etrique}. 
+\medskip 
+Cette loi gouverne les probl\`emes de tirage du type: {\sl Une urne  
+contient $N$ boules, dont $p$ blanches et $N-p$ noires. On tire au   
+hasard  et sans remise $n$ boules dans l'urne; quelle est la probabilit\'e 
+pour que l'\'echantillon tir\'e contienne $k$ boules blanches et $n-k$  
+boules noires ?} 
+\medskip 
+Si $n$ est beaucoup plus petit que $N$, on peut faire les approximations 
+suivantes:   
+$$\eqalignno{ 
+(N-n)! \quad\quad &=\quad {N! \over N(N-1)(N-2)\cdots (N-n+1)}  
+\quad\simeq\quad  {N! \over N^n} \cr   
+\noalign{\medskip} 
+(p-k)! \quad\quad &=\quad {p! \over p(p-1)(p-2) \cdots (p-k+1)} 
+\quad\simeq\quad {p! \over p^k} \cr  
+\noalign{\medskip} 
+(N-p-n+k)! \quad &=\quad {(N-p)! \over (N-p)(N-p-1) \cdots (N-p-n+k+1)} 
+\cr &\simeq\quad {(N-p)! \over (N-p)^{n-k}} \cr }$$  
+(ces approximations supposent \'evidemment que $n \ll N$, $k \ll p$, et 
+$n-k \ll N-p$). Par cons\'equent, si on pose $\alpha = p/N$ et $\beta = 
+(N-p)/N = 1 - \alpha$, on aura: 
+$$p_k = {n \choose k} \cdot { \vrule height0pt depth6pt width0pt 
+{N-n \choose p-k} \over  
+\vrule height0pt height12pt width0pt {N \choose p} } 
+\simeq   {n \choose k} \, \alpha^{k} \, \beta^{n-k}$$ 
+Cette approximation, valable pour $N$ grand, est donc une loi 
+asymptotique, appel\'ee {\it loi de Bernoulli}. On peut aussi la rencontrer 
+sous une forme non asymptotique dans le probl\`eme de l'urne cit\'e plus 
+haut, mais pour des tirages {\it avec} remise: si on tire successivement 
+et avec remise $n$ boules dans l'urne, \`a chaque tirage la probabilit\'e 
+de tirer une boule blanche est $\alpha = p/N$; la fonction g\'en\'eratrice 
+pour chaque tirage est donc $G(z) = \alpha + \beta\, z$; les tirages  
+avec remise sont ind\'ependants, donc la fonction g\'en\'eratrice pour  
+$n$ tirages est $(\alpha + \beta\, z)^n$; en d\'eveloppant selon la  
+formule du bin\^ome, on retrouve bien la loi de Bernoulli.  
+\medskip 
+Il n'est \'evidemment pas surprenant que la loi sans remise donne 
+asymptotiquement pour $N$ grand la m\^eme loi qu'avec remise: en effet, 
+si $n \ll N$ , le tirage de $n$ boules sans remise modifie \`a peine les 
+proportions de boules noires ou blanches, de sorte qu'on doit obtenir \`a 
+peu pr\`es le m\^eme r\'esultat qu'avec remise.  
+\medskip 
+Nous ne mentionnons cette loi ici que pour insister sur le fait qu'elle  
+peut aussi se rencontrer sous forme asymptotique. De toute fa\c{c}on   
+elle sera \'etudi\'ee en d\'etail au chapitre {\bf X}. 
+\medskip 
+Cette loi d\'ecrit le sondage par \'echantillon lorsque $n \ll N$; mais 
+signalons ---~ce sera \'etudi\'e au chapitre {\bf X}~--- que si $n$  
+devient lui-m\^eme grand, ainsi que $k$ et $n-k$, la loi de Bernoulli 
+devient gaussienne: comme la loi de Poisson, la loi de Bernoulli  
+est une loi asymptotique de l'\'echelle interm\'ediaire; si $n$  est grand,  
+mais que $k$ reste petit et $\beta\exp\{\alpha / \beta\} \simeq 1$ (par  
+exemple $k \leq 10$, et $10 \ll n \ll N$) alors la loi de Bernoulli devient  
+une loi de Poisson. Cela montre que la m\^eme loi hyperg\'eom\'etrique  
+peut se transformer en  plusieurs sortes de lois asymptotiques selon 
+l'\'echelle, c'est-\`a-dire selon les ordres de grandeur relatifs des  
+nombres entiers $N$, $p$, $n$, et $k$. Mais on constate que l'on retrouve 
+toujours la m\^eme famille: loi gaussienne ou loi de Poisson. Cela 
+provient de ce que la loi de Bernoulli est la loi d'une somme de variables 
+ind\'ependantes.  
+  
+\vskip12pt plus10pt minus5pt
+ 
+{\bf Les lois du khi-deux et de Student.} 
+\medskip 
+Enfin, deux lois asymptotiques \`a densit\'e continue que nous signalons  
+sans insister: la loi du khi-deux ou $\chi^2$ est la densit\'e d'une somme 
+de {\it carr\'es} de variables gaussiennes ind\'ependantes. Si $X_1$,  
+$X_2$, $\ldots$ $X_n$ sont $n$ variables al\'eatoires ind\'ependantes, 
+ayant chacune une loi de densit\'e gaussienne de variance $1$ et de 
+moyenne  $0$, alors la somme des carr\'es $S = X_1^2 + X_2^2 + \cdots + 
+X_n^2$ aura la densit\'e $\chi^2$ \`a $n$ degr\'es de libert\'e. Cette 
+densit\'e sera \'etudi\'ee en d\'etail au chapitre {\bf XI}. Elle est \`a la 
+base d'un test statistique simple et bien connu.  
+\medskip 
+La loi de Student est la loi du quotient d'une variable gaussienne par la 
+racine carr\'ee d'une somme de carr\'es de gaussiennes: si $Y$, $X_1$,  
+$X_2$, $\ldots$ $X_n$ sont $n+1$ variables al\'eatoires gaussiennes 
+ind\'ependantes, de variance $1$ et de moyenne $0$, alors la variable 
+$$T = {Y \over \sdown{15}\sqrt{X_1^2 + X_2^2 + \cdots + X_n^2} }$$ 
+aura une loi de densit\'e de Student. Cette densit\'e aussi est, tout  
+comme celle du $\chi^2$, \`a la base d'un test statistique bien connu, et 
+sera \'etudi\'ee dans cet esprit au chapitre {\bf XI}. 
+\medskip 
+Comme le montrent leurs d\'efinitions m\^eme, ces lois ne sont, comme  
+la loi de Cauchy, qu'un d\'eguisement de la loi normale. Leur fonction  est 
+de simplifier le travail des statisticiens en fournissant des tests {\it 
+cl\'es en main}. Ces densit\'es ne se rencontrent pas directement ``dans 
+la nature''; elles apparaissent parce qu'on choisit d\'elib\'er\'ement, 
+pour la commodit\'e du test, de calculer les grandeurs de mani\`ere 
+non lin\'eaire (somme des carr\'es des \'ecarts). 
+\medskip 
+On peut noter que la loi de Cauchy est le cas particulier 
+de la loi de Student pour $n=1$. 
+ 
+ 
+ 
+ 
+ 
+\bye 
+ 

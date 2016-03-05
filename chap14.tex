@@ -1,0 +1,2424 @@
+\input /home/harthong/tex/formats/twelvea4.tex
+\input /home/harthong/tex/formats/epsf.tex
+
+\auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
+\titrecourant={\sl L'irr\'eversibilit\'e}
+
+\pageno=418
+
+\font\bigsl=cmti17
+
+\newdimen\blocksize   \blocksize=\vsize  \advance\blocksize by -11pt
+\newdimen\imgsize   \imgsize=60mm  
+
+\null\vskip10mm plus4mm minus3mm
+
+\centerline{\tit XIV\hskip-2.5pt . \hskip2.5pt L'IRR\'EVERSIBILIT\'E.}
+
+\vskip8mm plus4mm minus3mm
+
+{\sl \`A cause de l'abondance de la litt\'erature sur le sujet, 
+ce chapitre comporte une bibliographie s\'epar\'ee, plac\'ee \`a la fin 
+de l'annexe, page 458. Les chiffres entre crochets, par exemple {\rm [9]},
+r\'ef\`erent \`a cette bibliographie.}
+
+\vskip6mm plus3mm minus3mm
+
+{ \bf 1. Introduction.}
+\medskip
+Le probl\`eme de l'irr\'eversibilit\'e est celui de l'\'evolution des 
+syst\`emes {\it macroscopiques}, c'est-\`a-dire constitu\'es d'un nombre 
+immense de mol\'ecules en perp\'etuelle agitation. L'exemple typique est le 
+gaz; mais n'importe quel objet mat\'eriel dont la masse est de l'ordre du 
+gramme ou plus, est un tel corps, puisque les mol\'ecules qui le composent, 
+m\^eme si elles sont tr\`es grosses, ont des masses infinit\'esimales si 
+on les compare au gramme. Nous avons d\'ej\`a abord\'e l'\'etude probabiliste 
+de tels corps, notamment en {\bf II.6} (probl\`eme du corps noir). 
+L'irr\'eversibilit\'e est le fait que par exemple un gaz enferm\'e au 
+d\'epart dans un r\'ecipient va se r\'epandre dans l'espace si on ouvre 
+le r\'ecipient, alors qu'il n'arrivera jamais que du gaz r\'epandu dans 
+l'espace se r\'etracte jusqu'\`a revenir de lui-m\^eme s'enfermer dans un
+r\'ecipient. 
+L'irr\'eversibilit\'e est \`a la base de tous les ph\'enom\`enes naturels: 
+les cadavres se d\'ecomposent et ne redeviennent jamais vivants, les vieux 
+tuyaux rouill\'es ne redeviennent jamais neufs, des livres br\^ulent et 
+partent en fum\'ee mais les cendres et la fum\'ee ne redonneront plus jamais 
+les livres, etc. etc. 
+\medskip
+Le pr\'esent chapitre est consacr\'e aux fondements probabilistes de 
+l'irr\'e\-ver\-si\-bi\-lit\'e. Nous avons d\'ej\`a vu au chapitre 
+{\bf I} comment le chaos d\'eterministe cr\'ee du hasard;  au 
+chapitre {\bf IV} comment il efface la causalit\'e;  au chapitre 
+{\bf VII} comment le hasard se transforme en d\'eterminisme. 
+Ici il s'agit de comprendre comment le chaos d\'eterministe, dont
+l'\'evolution est en principe r\'eversible, efface la r\'eversibilit\'e. 
+Cela implique que nous ne discuterons pas les fondements quantiques de 
+l'irr\'eversibilit\'e, car cela sortirait du cadre du pr\'esent ouvrage 
+(consulter le {\it Cours de Physique de Berkeley}, tome 5, Physique 
+statistique). Pour comprendre il nous faut des mod\`eles simples et la 
+M\'ecanique classique y pourvoit; le principe de base de l'{\it effacement 
+de la r\'eversibilit\'e} est essentiellement le m\^eme en quantique qu'en
+classique; le premier est juste techniquement plus difficile.
+\medskip
+Les corps macroscopiques se modifient spontan\'ement du fait de l'agitation
+perp\'etuelle des mol\'ecules qui les composent. Toutefois les objets 
+{\it isol\'es}, c'est-\`a-dire \'ecart\'es de tout contact ou \'echange 
+avec le reste de l'univers, y compris l'\'emission ou l'absorption de
+rayonnement, \'evoluent vers un \'etat 
+asymptotique stable, appel\'e {\it \'etat d'\'equilibre}. Le simple sens 
+commun suffit \`a le comprendre: si un corps m\'etallique est maintenu \`a 
+l'\'ecart de tout \'echange, il ne pourra s'oxyder puisqu'il faut pour 
+cela une action de l'oxyg\`ene sur le corps. De m\^eme un liquide au
+repos dans un r\'eservoir ne se mettra \`a couler que si on bascule ou
+perce le r\'eservoir, l'air calme ne peut commencer \`a \^etre agit\'e par 
+le vent que s'il est expos\'e \`a des masses d'air plus chaudes ou plus 
+froides, etc. Si au lieu de mettre le corps m\'etallique fra{\^\i}chement 
+poli \`a l'abri de l'oxyg\`ene et du monde ext\'erieur,  on
+isole ce corps {\it avec une certaine quantit\'e d'oxyg\`ene} de tout 
+le reste, il va s'oxyder progressivement jusqu'\`a ce qu'il n'y ait 
+plus assez d'oxyg\`ene pour que la corrosion se poursuive, et on 
+atteint aussi un \'etat d'\'equilibre. Pour le sens commun, forg\'e 
+par l'exp\'erience quotidienne, il est bien \'evident qu'une fois la 
+surface m\'etallique corrod\'ee, il n'arrivera plus jamais que l'oxyg\`ene 
+se retire spontan\'ement du m\'etal pour retrouver sa forme gazeuse, en 
+rendant ainsi tout son brillant \`a la surface m\'etallique. C'est 
+pourquoi on dit que la corrosion est une \'evolution {\it irr\'eversible}. 
+Bien entendu, il est possible d'appliquer au m\'etal un traitement chimique 
+qui s\'epare \`a nouveau l'oxyg\`ene et le m\'etal, mais cela brise alors
+l'isolement du syst\`eme {\it corps m\'etallique plus oxyg\`ene}.
+\medskip
+Cette notion d'{\it \'etat asymptotique stable} est essentielle pour 
+comprendre l'irr\'e\-ver\-si\-bi\-lit\'e. Plus pr\'ecis\'ement, ce qui est 
+essentiel est que ces ``\'etats stables'' ne sont stables que dans leur
+apparence macroscopique; l'\'etat \hbox{exact} du mouvement des mol\'ecules,
+lui, n'est \'evidemment pas stable puisque l'agitation mol\'eculaire ne 
+s'arr\^ete pas.  Il s'agit d'une stabilit\'e de {\it l'apparence 
+macroscopique} qui est maintenue par le mouvement incessant des mol\'ecules. 
+Pour clarifier la question on introduira un langage pr\'ecis:  
+l'\'etat exact du mouvement des mol\'ecules sera appel\'e l'\'etat 
+{\it m\kern0.45pt{\bigsl i\kern0.6pt}croscopique} du syst\`eme, tandis que
+l'ensemble des param\`etres caract\'erisant l'apparence macroscopique du
+syst\`eme sera son \'etat {\it m{\bigsl a\kern0.3pt}croscopique}.
+L'\'etat asymptotique stable, ou \'etat d'\'equilibre, est donc un \'etat 
+{\it macroscopique} du syst\`eme. Les \'etats microscopiques du 
+syst\`eme \`a l'\'equilibre sont \'evidemment instables et en perp\'etuelle 
+transformation. Ceci sera examin\'e en d\'etail \`a la section {\bf 4}.
+\medskip
+\`A la suite des travaux de Sadi Carnot ({\it R\'eflexions sur la puissance 
+motrice du feu}, {\oldstyle 1824}) Rudolph Clausius a d\'egag\'e le concept
+de l'{\it entropie} d'un tel syst\`eme isol\'e. L'entropie est une grandeur 
+associ\'ee \`a l'\'etat macroscopique du syst\`eme; en langage math\'ematique 
+on dirait que c'est une fonction de l'\'etat macroscopique, \`a valeurs 
+r\'eelles.  L'entropie permet d'exprimer l'irr\'eversibilit\'e des 
+syst\`emes macroscopiques sous une forme quantitative: c'est le 
+{\it second principe de la Thermodynamique}, qui affirme que l'entropie 
+d'un syst\`eme isol\'e ne peut jamais diminuer. Carnot analysait le principe 
+des machines thermiques, qui produisent du mouvement \`a partir de la 
+chaleur, en injectant de la vapeur ou de l'air sous pression dans un 
+cylindre pour d\'eplacer un piston. Il a constat\'e que la vapeur devait 
+n\'ecessairement se refroidir, et qu'avec une quantit\'e de charbon 
+donn\'ee, l'\'energie m\'ecanique qu'on peut r\'ecup\'erer est d'autant 
+plus \'elev\'ee que la vapeur a plus refroidi. Plus pr\'ecis\'ement il 
+\'etablit la loi quantitative suivante: Si $T_1$ est la temp\'erature 
+(absolue, en degr\'es Kelvin) \`a laquelle on a chauff\'e la vapeur et 
+$T_0$ la temp\'erature \`a laquelle se refroidit cette vapeur apr\`es le 
+passage dans le cylindre ou la turbine, l'\'energie m\'ecanique obtenue 
+pour une quantit\'e de chaleur fournie $Q$ sera proportionnelle \`a 
+$(1 - T_0/T_1) \times Q$ et non \`a $Q$ seul. Cela veut dire que si 
+par exemple on chauffe de l'air \`a 273 degr\'es Celsius (546 Kelvin) 
+dans un cylindre pour qu'il pousse un piston et d\'eplace ainsi un objet 
+lourd, puis qu'on le refroidit \`a 0 degr\'es Celsius (273 Kelvin) pour que 
+le piston se r\'etracte, le rapport $1 - T_0/T_1$ sera $0.5$ et le travail 
+m\'ecanique de d\'eplacement de l'objet lourd aura \'et\'e la moiti\'e de 
+l'\'energie calorifique d\'epens\'ee pour chauffer l'air dans le cylindre. 
+L'autre moiti\'e se sera perdue dans le refroidissement de l'air. (N. B. 
+cette perte par refroidissement est n\'ecessaire, car sinon le piston ne se
+r\'etracte pas tout seul; il faudrait le pousser et donc perdre le
+travail m\'ecanique qu'on vient de gagner).
+\medskip
+Le processus {\it inverse} de celui de la machine thermique consisterait 
+\`a produire la chaleur \`a partir du mouvement m\'ecanique au lieu de 
+l'obtenir en br\^ulant du  charbon. On peut produire de la chaleur \`a 
+partir du mouvement par frottement; on peut m\^eme convertir enti\`erement 
+l'\'energie m\'ecanique en chaleur: dans ce cas le mouvement est 
+compl\`etement arr\^et\'e par l'effet des frottements. Or la loi de Carnot 
+montre que, sauf si $T_0 = 0$ ou $T_1 = \infty$, la chaleur ne peut jamais 
+\^etre enti\`erement convertie en mouvement. De toute fa\c con la condition 
+$T_0=0$ est irr\'ealisable, car pour que la vapeur puisse \^etre refroidie
+\`a $T_0=0$ il faut maintenir un syst\`eme de refroidissement bien plus
+co\^uteux que l'\'energie produite par la machine. Ce constat fait par 
+Carnot marque l'origine du probl\`eme th\'eorique de l'irr\'eversibilit\'e: 
+la transformation d'\'energie m\'ecanique en chaleur par les frottements 
+n'est pas r\'eversible, en ce sens qu'aucune machine thermique ne 
+pourra retransformer int\'egralement la chaleur en le mouvement. 
+La th\'eorie (la Thermodynamique) interpr\`ete cela en disant que la
+transformation d'\'energie m\'ecanique en chaleur par les frottements
+augmente l'entropie; pour retransformer toute la chaleur en \'energie
+m\'ecanique il faudrait alors diminuer l'entropie. Quanti\-ta\-ti\-ve\-ment, 
+si nous reprenons l'exemple ci-dessus avec la vapeur refroidie 
+de $273$ degr\'es Celsius \`a $0$ degr\'es Celsius, on peut dire
+que $4184$ joules de travail m\'ecanique permettent d'\'echauffer par 
+frottement $1$ kilogramme d'eau de $1$ degr\'e, mais inversement, avec 
+une machine thermique fonctionnant entre $273$ et $0$ degr\'es Celsius, 
+cette m\^eme quantit\'e de chaleur ne permettrait de r\'ecup\'erer que 
+$2092$ joules de travail m\'ecanique. Bien entendu dans une 
+machine r\'eelle une grande partie de la chaleur fournie se perd aussi
+par les d\'efauts d'isolation, en sorte qu'on r\'ecup\'ererait encore bien 
+moins que ces $2092$ joules; la loi de Carnot concerne le cas id\'eal o\`u 
+on aurait enti\`erement \'elimin\'e ces pertes. Elle dit que m\^eme si ces 
+pertes sont rendues infinit\'esimales, il restera toujours une
+irr\'eversibilit\'e de principe, car le fonctionnement m\^eme de la machine
+exige qu'une partie de la chaleur soit perdue par le refroidissement.
+\medskip
+L'explication fondamentale du comportement des corps macroscopiques 
+tels que la dilatation des gaz chauff\'es dans les machines thermiques, 
+mais aussi l'\'ecoulement des liquides, l'\'evaporation, la fusion ou la 
+solidification, les \'echanges de chaleur, etc, a \'et\'e trouv\'ee dans 
+le comportement {\it al\'eatoire} des mouvements mol\'eculaires. C'est en 
+appliquant la {\it loi des grands nombres} au mouvement chaotique d'un 
+nombre immense de mol\'ecules qu'on retrouve le comportement des corps 
+macroscopiques. La loi de Carnot mentionn\'ee plus haut peut \^etre 
+d\'eduite ainsi, de m\^eme que toutes les lois gouvernant les 
+\'echanges de chaleur, l'agitation des fluides, etc. Quoique cette 
+explication statistique ait d\'ej\`a \'et\'e propos\'ee comme hypoth\`ese 
+par Daniel Bernoulli (Hydrodynamica, 1731), elle n'a commenc\'e 
+\`a devenir pleinement op\'eratoire que dans la seconde moiti\'e du 
+$XIX^{\rm e}$ si\`ecle. Les travaux fondateurs de cette {\it M\'ecanique 
+statistique} ont \'et\'e effectu\'es pour l'essentiel par J. C. Maxwell 
+([2], {\oldstyle 1860}) et Ludwig Boltzmann ([1], {\oldstyle 1872}). 
+L'irr\'eversibilit\'e mentionn\'ee 
+pr\'ec\'edemment n'est qu'un aspect du comportement  des corps 
+macroscopiques, et au fond, elle ne joue qu'un r\^ole tr\`es marginal dans 
+les pr\'eoccupations des physiciens car elle ne vaut que comme principe 
+g\'en\'eral et abstrait. Pour celui qui doit {\it calculer} ou d\'ecrire 
+des ph\'enom\`enes pr\'ecis et particuliers, la {\it M\'ecanique 
+statistique} est une science tr\`es technique dont le quotidien est 
+bien \'eloign\'e des grands principes. Par contre, l'irr\'eversibilit\'e 
+est le genre de probl\`eme qui a toujours fascin\'e les philosophes, 
+ainsi que tous les amateurs passionn\'es de science, qui connaissent 
+cette derni\`ere bien plus par les ouvrages de vulgarisation que par 
+l'\'etude approfondie et patiente de probl\`emes concrets mais ardus. De 
+ce fait, le th\`eme de l'irr\'eversibilit\'e inspire depuis Boltzmann toute 
+une litt\'erature pseudo- ou para-scientifique, pleine de confusion, de 
+r\^eve, et de visions inexactes ou m\^eme carr\'ement fausses. 
+\medskip
+Le point crucial de cette litt\'erature est le {\it paradoxe de Loschmidt}. 
+Apr\`es la publication par Ludwig Boltzmann de l'{\it interpr\'etation 
+mol\'eculaire de l'entropie} ([1], {\oldstyle 1872}), quoique ce travail n'ait 
+pas eu imm\'ediatement un grand \'echo (probablement parce qu'il \'etait 
+math\'ematiquement tr\`es ardu), d'autres publi\`erent des critiques. Il 
+s'agissait l\`a d'une tradition de la Physique allemande, encourag\'ee par 
+les \'editeurs des revues savantes: loin d'\^etre pol\'emiques ou li\'ees 
+\`a des rivalit\'es, ces critiques favorisaient la discussion et
+l'approfondissement des id\'ees [des pol\'emiques, il y en eut aussi, 
+car l'hypoth\`ese mol\'eculaire avait des adversaires]. 
+Parmi celles faites \`a Boltzmann, deux sont devenues c\'el\`ebres. 
+\medskip 
+Le premier article [3]
+de ce type fut publi\'e en {\oldstyle 1876} par Joseph Loschmidt et 
+contenait une vingtaine de critiques ou d'objections exigeant de la 
+part de Boltzmann des explications plus d\'etaill\'ees; une seule de ces 
+critiques est entr\'ee dans l'Histoire sous le nom de {\it paradoxe de
+Loschmidt}; il s'agit du fait apparemment paradoxal que le syst\`eme 
+dynamique ait globalement un comportement irr\'eversible alors que 
+la M\'ecanique est enti\`erement r\'eversible: pour tout mouvement d'un
+syst\`eme de points mat\'eriels tels que les mol\'ecules,
+le mouvement inverse, c'est-\`a-dire celui qu'on verrait dans un film 
+projet\'e en marche arri\`ere, est \'egalement possible et tout aussi 
+pro\-bable. Boltzmann avait r\'epondu ([12] et [13]) \`a la question de
+Loschmidt, et sa r\'eponse est essentiellement 
+correcte. Elle peut certes \^etre affin\'ee par des connaissances plus 
+r\'ecentes, mais rien ne change {\it sur le fond}. Ainsi Boltzmann 
+postulait pour les mol\'ecules un mouvement newtonien, alors que la 
+M\'ecanique statistique moderne postule un mouvement quantique, ce qui 
+induit de grandes diff\'erences (satistiques de Fermi-Dirac et de 
+Bose-Einstein). Mais l'argument de Loschmidt et la r\'eponse de Boltzmann 
+\`a cet argument ne s'en trouvent pas affect\'es de mani\`ere vraiment
+essentielle: les mouvements microscopiques quantiques sont, tout comme 
+les classiques, parfaitement r\'eversibles, et la propri\'et\'e statistique
+universelle qui explique l'irr\'eversibilit\'e est la m\^eme. La 
+r\'eponse de Boltzmann repose sur l'observation suivante: les \'etats 
+initiaux du syst\`eme qui feraient diminuer l'entropie existent, certes, 
+mais sont si prodigieusement rares qu'il est pratiquement impossible de 
+les rencontrer ou de les produire. Toutefois sous cette forme succinte 
+l'argument laisse planer trop de malentendus [et c'est ce qui explique 
+la persistance des incompr\'ehensions]. C'est bien pourquoi il faut ce 
+chapitre entier pour discuter la question. 
+\medskip
+Un second article [11]
+de ce type fut publi\'e en {\oldstyle 1896} par Ernst Zermelo et reprenait 
+pour la communaut\'e de langue allemande des critiques de Henri Poincar\'e.
+L'argumentation de Poincar\'e est bas\'ee sur son {\it th\'eor\`eme du
+retour}: {\sl ``un syst\`eme dynamique de $N$ points mat\'eriels qui 
+\'evolue au cours du temps en restant born\'e repassera au bout d'un 
+temps fini aussi pr\`es qu'on voudra de son \'etat initial''}.
+Autrement dit, {\sl  ``pour tout $\varepsilon$, il existe un temps
+$T_{\varepsilon}$ au bout duquel le syst\`eme repassera \`a une distance
+inf\'erieure \`a $\varepsilon$ de son \'etat initial.'' }
+\medskip
+L'argument de Zermelo repose sur ce th\'eor\`eme: si on part d'un \'etat de 
+faible entropie et que cette entropie cro{\^\i}t comme le dit le second
+principe de la Thermodynamique, alors elle devra forc\'ement d\'ecro{\^\i}tre 
+\`a nouveau pour revenir au bout d'un temps $T_\varepsilon$ pr\`es de 
+sa valeur initiale. On trouvera dans les sections {\bf 5} et {\bf 6} 
+de l'annexe quelques textes de Poincar\'e et des extraits de la r\'eponse 
+de Boltzmann.
+\medskip
+L'explication de cet apparent paradoxe est plus simple que pour celui 
+de Loschmidt: le th\'eor\`eme de Poincar\'e est juste; mais le temps
+$T_{\varepsilon}$ au bout duquel le syst\`eme repassera pr\`es de son 
+\'etat initial et o\`u par cons\'equent l'entropie diminuera \`a nouveau 
+est de l'ordre de $10^N$ pour un syst\`eme de $N$ particules. Si $N$ est 
+le nombre de mol\'ecules d'un litre de gaz $\simeq$ nombre d'Avogadro
+$\simeq 10^{23}$, cela veut dire que $T_{\varepsilon}$ serait de l'ordre 
+de $10^{100\, 000\, 000\, 000\, 000\, 000\, 000\, 000}$ ann\'ees. La loi de 
+croissance de l'entropie n'est vraie que pour des dur\'ees {\it pratiques}
+et ne doit pas \^etre extrapol\'ee ainsi \`a des dur\'ees d\'epourvues de 
+sens physique. C'est ce que Boltzmann r\'epondit \`a Zermelo (voir annexe, 
+section {\bf 6}).
+
+\vskip6mm plus3mm minus3mm
+\penalty-600
+
+{ \bf 2. La nature microscopique des gaz.}
+
+\penalty600
+\medskip
+Imaginons un gaz maintenu dans un r\'ecipient herm\'etique comme un nuage
+de poussi\`eres dont les grains sont les mol\'ecules. On va consid\'erer 
+un mouvement parfaitement newtonien pour le syst\`eme de point mat\'eriels 
+auquel on assimile l'ensemble des mol\'ecules du gaz. Les substitutions 
+fr\'equentes des vitesses, chaque fois que la mol\'ecule frappe une 
+paroi du r\'ecipient ou entre en collision avec une autre, cr\'ee un 
+{\it brouillage} qui, au bout d'un certain temps (apr\`es plusieurs 
+collisions) rend la distribution des mol\'ecules en apparence compl\`etement 
+al\'eatoire; c'est ce qu'on appelle le {\it chaos d\'eterministe}. 
+L'analyse math\'ematique d\'etaill\'ee de ce mouvement de points qui 
+entrent mutuellement en collision, incluant le calcul de l'\'evolution 
+des positions et des vitesses a \'et\'e effectu\'e pour la premi\`ere 
+fois en {\oldstyle 1860},  par J. C. Maxwell [2]. Ce texte de Maxwell
+est aujourd'hui encore l'expos\'e le plus clair, le plus rigoureux 
+(malgr\'e un raisonnement faux devenu c\'el\`ebre, et corrig\'e six ans 
+plus tard), et le plus p\'en\'etrant jamais \'ecrit sur le sujet. 
+\medskip
+Nous avons d\'ej\`a rencontr\'e cette notion de brouillage en {\bf I.5}, 
+{\bf II.5}, {\bf IV.2}. Elle est essentielle pour la r\'esolution du 
+paradoxe de Loschmidt.  En effet, le mouvement exact des mol\'ecules,
+c'est-\`a-dire leur mouvement newtonien math\'ematique, est 
+r\'eversible: en retournant toutes les vitesses (mais en conservant les 
+positions), le syst\`eme revient en arri\`ere, en d\'ecrivant le mouvement 
+exactement inverse de celui suivi jusque l\`a; de sorte que, si le syst\`eme 
+\'etait dans une configuration $X$ \`a l'instant $0$, qu'on le laisse
+\'evoluer jusqu'\`a l'instant $T$ o\`u l'on inverse toutes les vitesses, 
+il reviendra en parcourant dans l'ordre inverse toutes les positions 
+pr\'ec\'edentes, et se retrouvera \`a l'instant $2T$ dans la 
+configuration $X$ invers\'ee. Pour exprimer cela de mani\`ere pr\'ecise il 
+faut un vocabulaire pr\'ecis. Ce qu'on entend par configuration est en fait 
+la {\it configuration en phase}: c'est la donn\'ee des positions 
+{\it et des vitesses} de toutes les mol\'ecules. Cette donn\'ee 
+caract\'erise l'\'etat {\it m\kern0.45pt{\bigsl i\kern0.6pt}croscopique} 
+du syst\`eme; en fait l'\'etat microscopique \`a un instant donn\'e 
+{\it est} la configuration en phase. Inverser la {\it configuration en phase}, 
+c'est simplement retourner les vitesses (sans modifier les positions). 
+Le syst\`eme revient alors en arri\`ere en retrouvant dans l'ordre 
+inverse les positions ant\'erieures, mais avec des vitesses oppos\'ees.
+\medskip
+Dans ces conditions, comment se fait-il que l'on observe
+l'irr\'eversibilit\'e?  C'est justement la question pos\'ee par 
+Joseph Loschmidt. Si on prend un gaz, initialement (c'est-\`a-dire 
+\`a l'instant $0$) comprim\'e dans un vase, il va se r\'epandre tout 
+autour et tendre \`a remplir tout l'espace disponible, mais on ne verra 
+{\it jamais} un gaz r\'epandu dans une grande pi\`ece se comprimer 
+progressivement et venir se concentrer dans un vase en faisant le vide 
+alentour. Or, c'est bien ce qui devrait se produire si, une fois le gaz 
+uniform\'ement r\'epandu dans la grande pi\`ece, on inversait exactement 
+la vitesse de chacune des $N \sim 10^{23}$ mol\'ecules qui le composent. 
+Mais il faut inverser {\it exactement} les $N$ vitesses. Si une seule de
+ces $N \sim 10^{23}$ vitesses est mal invers\'ee, le mouvement de retour 
+commencera effectivement comme l'inverse du mouvement pr\'ec\'edent 
+(c'est-\`a-dire que le gaz commencera \`a se recomprimer apr\`es 
+l'inversion des vitesses), mais cela ne durera pas: l'unique vitesse 
+mal invers\'ee modifiera peu \`a peu (et en fait assez rapidement)
+les vitesses des autres mol\'ecules 
+\`a cause des innombrables chocs, jusqu'\`a ce que la totalit\'e du 
+syst\`eme soit brouill\'ee (par le ph\'enom\`ene du chaos d\'eterministe) 
+et ne ressemble plus du tout au mouvement inverse. M\^eme si l'unique 
+vitesse mal invers\'ee diff\`ere tr\`es peu de l'inversion exacte, 
+cela suffira \`a cr\'eer le chaos au bout d'un temps tr\`es court; 
+si la diff\'erence entre la vitesse mal invers\'ee et l'inverse exact 
+est $\varepsilon$, et si le nombre de mol\'ecules est $N$, 
+ce temps sera de l'ordre de $(1 / \varepsilon )\, 10^{-N}$. 
+Il faudrait donc prendre $\varepsilon
+\sim 10^{-N}$ pour que ce temps soit de l'ordre de la seconde. Cela 
+signifie que l'erreur dans le retournement de la vitesse devrait porter 
+sur la $N$i\`eme d\'ecimale. Si $N$ est de l'ordre du nombre d'Avogadro, 
+soit $N \sim 10^{23}$, on voit ce que cela signifie!
+\medskip
+On voit apparara{\^\i}tre ici une des raisons pour lesquelles la parfaite 
+r\'eversibilit\'e du mouvement microscopique des mol\'ecules ne se refl\`ete 
+pas au niveau des apparences macroscopiques: c'est parce qu'il est 
+{\it essentiellement} impossible d'inverser les vitesses avec une telle 
+pr\'ecision. Cependant cette raison n'est pas la seule. Une autre est qu'il 
+est tout aussi essentiellement impossible d'inverser (m\^eme 
+approximativement) les vitesses de toutes les $N$ mol\'ecules; ce serait 
+possible s'il n'y avait que cinq ou dix mol\'ecules, mais la difficult\'e 
+qui intervient ici cro{\^\i}t exponentiellement avec leur nombre. 
+\medskip
+Ces deux raisons ont en commun qu'elles ne sont pas li\'ees \`a la nature
+physique du gaz, mais aux limites humaines. On pourrait en faire abstraction
+pour se concentrer sur l'objet (le gaz) en tant qu'existant ind\'ependamment
+de l'homme et de ses limites. Par exemple en tenant un raisonnement comme
+celui-ci (d\'ej\`a cit\'e au chapitre {\bf I}):
+\medskip
+{\cit ``Une intelligence qui, pour un instant donn\'e, conna{\^\i}trait
+toutes les forces dont la nature est anim\'ee, et la situation respective 
+des \^etres qui la composent, si d'ailleurs elle \'etait assez vaste pour 
+soumettre ces donn\'ees \`a l'analyse, embrasserait dans la m\^eme formule 
+les mouvements des plus grands corps de l'univers et ceux du plus l\'eger 
+atome: rien ne serait incertain pour elle, et l'avenir comme le pass\'e 
+serait pr\'esent \`a ses yeux. 
+\smallskip
+\line{\hfill \vbox{\hbox{Pierre-Simon Laplace}
+\hbox{{\sl Essai philosophique sur les probabilit\'es} ({\oldstyle 1819})}} }
+\par}
+
+\vskip6mm plus3mm minus3mm
+
+{ \bf 3. Un mod\`ele simple}
+\medskip
+Pour comprendre exactement le m\'ecanisme probabiliste qui transforme la
+r\'eversibilit\'e des mouvements microscopiques en irr\'eversibilit\'e, le 
+mieux est comme toujours de commencer par \'etudier un mod\`ele simple, 
+qui soit suffisamment analogue aux gaz pour avoir en commun avec ceux-ci 
+la propri\'et\'e qui fonde l'irr\'eversibilit\'e. Dans un \'echantillon
+macroscopique de gaz, il y a de l'ordre de $10^{23}$ mol\'ecules qui se
+d\'eplacent en tous sens selon trois dimensions et entrent sans cesse en
+collision mutuelle. C'\'etait du moins le mod\`ele envisag\'e par James 
+Maxwell en {\oldstyle 1860}. Contentons nous de deux dimensions et de 
+$200$ mol\'ecules qui, au lieu de se heurter entre elles, ne font que 
+rebondir sur la paroi du r\'ecipient. Ce r\'ecipient sera (puisque nous 
+sommes en deux dimensions) une courbe ferm\'ee ovale. 
+\medskip
+Un tel mod\`ele, consid\'erablement simplifi\'e, peut-il avoir assez de 
+ressemblance avec le gaz de Maxwell pour justifier son emploi? 
+\medskip
+--- La diff\'erence la plus flagrante semble \^etre la disparit\'e entre le 
+nombre d'Avogadro ($\sim 10^{23}$) et $200$. En fait ce sera la moins lourde 
+de cons\'equences, car ici les mol\'ecules n'interagissent pas entre elles, 
+mais seulement avec la cloison; en sorte que si on en augmente le nombre, 
+cela ne changera rien au mouvement des $200$ premi\`eres. On peut donc se
+faire une id\'ee juste de l'\'evolution de $N$ particules en extrapolant 
+ce qu'on voit advenir pour $200$. 
+\medskip
+--- Un d\'efaut plus significatif est la disparition des collisions 
+entre particules. Nous verrons cependant, en faisant fonctionner notre 
+mod\`ele (tout comme nous l'avons vu pour le mod\`ele de roulette au 
+chapitre {\bf I} section {\bf 5}), que ce qui produit la 
+{\it stochasticit\'e} de l'\'evolution est le ph\'enom\`ene 
+du chaos d\'eterministe: des mol\'ecules qui au d\'epart 
+sont parfaitement ordonn\'ees (en rang d'oignon) seront au bout d'un 
+certain temps {\it en apparence} compl\`etement d\'esordonn\'ees et leur 
+disposition semblera al\'eatoire. Or, supprimer les innombrables 
+collisions mutuelles ne fait que ralentir ce brouillage par le chaos, 
+mais ne le fait pas dispara{\^\i}tre. Au contraire, l'avoir 
+ralenti va le rendre plus visible, tout comme un film au ralenti 
+rend plus visibles les d\'etails fins d'un mouvement. 
+\medskip
+Ainsi ce second d\'efaut est en r\'ealit\'e, pour la pr\'esente \'etude, 
+une qualit\'e! Il faut cependant garder \`a l'esprit que la disparition 
+des collisions n'est
+sans cons\'equences {\it que pour la discussion de  l'ir\'eversibilit\'e}: 
+notre petit mod\`ele permettra de comprendre la notion d'entropie, mais 
+serait tr\`es mauvais, et m\^eme absolument insuffisant, pour illustrer 
+le r\^ole des autres grandeurs thermodynamiques telles que la pression, 
+la temp\'erature, l'\'energie, la densit\'e. Les relations math\'ematiques 
+entre ces grandeurs et l'entropie, qui sont l'essentiel de la 
+Thermodynamique puisqu'elles en expriment les lois, disparaissent
+compl\`etement dans notre mod\`ele simpliste.
+\medskip
+--- La seule diff\'erence majeure et essentielle (pour ce qui concerne 
+la pr\'esente discussion) entre les vraies mol\'ecules d'un gaz et 
+les points mat\'eriels de notre mod\`ele est que le vrai mouvement 
+mol\'eculaire est quantique et non classique. Mais ce d\'efaut existait
+d\'ej\`a dans les th\'eories de Maxwell et Boltzmann. 
+C'est pourquoi nous excluons ici la discussion sur la nature quantique de l'entropie ou 
+les fondements quantiques de l'irr\'eversibilit\'e; cela m\`enerait 
+beaucoup trop loin! Il s'agira essentiellement de comprendre l'origine 
+du paradoxe de Loschmidt, formul\'e en {\oldstyle 1876}, enti\`erement dans 
+le cadre de la M\'ecanique classique. Pour cela le petit mod\`ele convient 
+parfaitement. D'ailleurs le paradoxe de Loschmidt s'explique par un 
+m\'ecanisme stochastique qui intervient de la m\^eme fa\c{c}on dans 
+le cas quantique.
+\medskip
+
+--- Enfin, les diff\'erences li\'ees \`a la dimension sont sans 
+cons\'equences.
+
+\bigskip
+
+
+Voici alors des simulations num\'eriques. Les positions et vitesses des
+mol\'ecules sont repr\'esent\'ees par des symboles tels que:
+\medskip
+
+
+\centerline{\epsfbox{../imgEPS/ch14eps/particul.eps
+}}\centerline{\eightrm figure 64}
+\medskip
+
+
+\noindent de sorte que le pied du T pointe vers l'avant, le point
+d'intersection des deux segments du T repr\'esentant la position de la
+mol\'ecule et le pied du T le vecteur vitesse (ce vecteur reste constant
+en norme, les r\'eflexions successives sur le bord du domaine ne modifiant
+que la direction du mouvement).
+\medskip
+
+Au d\'epart (instant $t=0$) les mol\'ecules sont parfaitement align\'ees
+et \'equidistantes, comme ceci (les d\'efauts de r\'egularit\'e qui
+apparaissent
+sont d\^us aux arrondis):
+\medskip
+\epsfxsize=\hsize
+\centerline{\epsfbox{../imgEPS/ch14eps/ordonne.eps
+}}\centerline{\eightrm figure 65}
+\medskip
+
+\midinsert
+\vbox to \blocksize{\vskip-2mm \eightpoint 
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el000,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el000,25.eps}}
+\line{\hbox to \imgsize{\hfill figure $66\, a$: \  $t=0$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $66\, b$: \  $t=0.25$.\hfill}}
+\vfill\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el001,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el003,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $66\, c$: \  $t=1$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $66\, d$: \  $t=3$.\hfill}}
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el008,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el016,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $66\, e$: \  $t=8.00$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $66\, f$: \  $t=16$.\hfill}} 
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el050,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el200,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $66\, g$: \  $t=50$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $66\, h$: \  $t=200$.\hfill}}   }
+\endinsert
+\noindent mais peu \`a peu les rebondissements successifs sur la
+paroi vont avoir pour effet de {\it brouiller} cet ordonnancement
+jusqu'\`a aboutir \`a un aspect enti\`erement d\'esordonn\'e. La 
+rapidit\'e
+de cette \'evolution d\'epend de la forme du r\'ecipient.
+Dans les figures $66\, a$ \`a $66\, j$ ci-apr\`es on voit l'\'etat du
+mouvement \`a diff\'erents instants de $t=0$ ($66\, a$) \`a $t=2000$ 
+($66\, j$),
+lorsque le domaine est une ellipse. \medskip
+
+On constate qu'un certain ordre partiel subsiste jusqu'\`a
+l'instant $t=50$ ($66\, g$), et dans une moindre mesure \`a l'instant
+$t=200$ ($66\, h$). Cette appr\'eciation de ``l'ordre'' reste pour le
+moment mal d\'efinie et subjective, mais si cet ``ordre''
+subsiste pendant un temps aussi long, c'est parce que l'ellipse est une
+courbe tr\`es particuli\`ere: le mouvement d'une particule qui rebondit
+sur une ellipse est un {\it mouvement non chaotique} (le syst\`eme
+dynamique correspondant \`a ce mouvement est int\'egrable). En attendant
+plus longtemps encore ($t \sim 1000$) on a \`a premi\`ere vue une
+{\it apparence} de d\'esordonn\'e, mais en regardant de plus pr\`es
+on verrait que certaines r\'egions sont moins fr\'equent\'ees que d'autres.
+On voit d\'ej\`a \`a l'oeil nu sur la figure $66\, j$ qu'il y a moins de 
+points
+dans les r\'egions proches des extr\'emit\'es droite et gauche del'ellipse.
+C'est que la plupart des trajectoires ne passent pas par ces points; en
+effet, selon que le point initial est situ\'e entre les deux foyers
+ou \`a l'ext\'erieur des
+foyers, les trajectoires seront comme sur les deux figures que voici (fig 67):
+\medskip
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/ellpath2.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/ellpath1.eps}}
+\centerline{\eightrm figure 67: trajectoires dans une ellipse.}
+\medskip
+\midinsert
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el1000,0.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images3/el2000,0.eps}}
+\line{\eightpoint \hbox to \imgsize{\hfill figure $66\, i$: \  $t=1000$.
+\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $66\, j$: \  $t=2000$.\hfill}}
+\vskip4mm
+\endinsert
+\medskip
+Or la majorit\'e des points initiaux repr\'esent\'es
+sur la figure $66\, a$ sont entre les deux foyers, en sorte que les
+trajectoires correspondantes sont comme sur la figure 67 \`a gauche. 
+\medskip
+Par cons\'equent, si on avait plac\'e plus \`a gauche la rang\'ee de points
+initiaux, en sorte que la majorit\'e soit ext\'erieure aux foyers,
+on verrait un vide dans la r\'egion centrale de l'ellipse.
+\medskip
+Le ph\'enom\`ene illustr\'e sur la figure 67 est semblable
+\`a ce qui se produit \`a l'int\'erieur d'un cercle et qui a 
+\'et\'e \'etudi\'e en {\bf I.5} (voir la figure 4).
+\medskip
+Pour avoir une v\'eritable \'evolution vers le
+d\'esordre, et une similitude suffisante avec les gaz pour que le mod\`ele
+discut\'e soit pertinent, il est essentiel d'avoir un syst\`eme
+chaotique, qui garantit un brouillage suffisant. Pour cela, ni le cercle ni
+l'ellipse ne conviennent; par contre l'{\it ovale de Cassini}\  convient
+tr\`es bien. Si on fait la m\^eme chose avec cette courbe, on voit en effet
+que la disparition de l'ordre est bien plus rapide. La diff\'erence est
+d'ailleurs flagrante en comparant les trajectoires obtenues pour
+l'ellipse (fig 67) \`a la figure 68,
+dont le caract\`ere chaotique saute aux yeux. L'\'evolution
+vers un d\'esordre apparent est alors bien plus rapide dans l'ovale
+de Cassini que dans l'ellipse, comme on le voit en comparant les figures
+$69\, a$ \`a $69\, p$ (pages suivantes) avec les figures $66\, a$ \`a 
+$66\, j$ 
+relatives \`a l'ellipse.
+\midinsert
+\centerline{\epsfxsize=\hsize
+\epsfbox{../imgEPS/ch14eps/images3/casspath.eps}}
+\centerline{\eightrm figure 68 : trajectoires dans l'ov{\"\i}de de Cassini.}
+\vskip3mm
+\endinsert
+
+\midinsert
+\vbox to \blocksize{\eightpoint 
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,16.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, a$: \  $t=0$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, b$: \  $t=0.16$.\hfill}}
+\vfill\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,21.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,25.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, c$: \  $t=0.21$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, d$: \  $t=0.25$.\hfill}}
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,32.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg000,50.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, e$: \  $t=0.32$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, f$: \  $t=0.50$.\hfill}} 
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg001,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg002,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, g$: \  $t=1$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, h$: \  $t=2$.\hfill}}   }
+\endinsert
+
+\midinsert
+\vbox to \blocksize{\eightpoint 
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg003,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg008,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, i$: \  $t=3$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, j$: \  $t=8$.\hfill}}
+\vfill\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg016,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg050,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, k$: \  $t=16$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, l$: \  $t=50$.\hfill}}
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg200,00.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg900,00.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, m$: \  $t=200$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, n$: \  $t=900$.\hfill}} 
+\vfill
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg2000,0.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/cg2012,0.eps}}
+\line{\hbox to \imgsize{\hfill figure $69\, o$: \  $t=2000$.\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $69\, p$: \  $t=2012$.\hfill}}   }
+\endinsert
+
+Cette fois, gr\^ace \`a la chaoticit\'e du mouvement, on arrive d\`es
+$\, t=50$ \`a une distribution apparemment faite au hasard. On peut s'en
+rendre compte visuellement en comparant avec une troisi\`eme s\'erie de
+figures ($70\, a$, $70\, b$, $70\, c$, et $70\, d$),
+qui ont \'et\'e fabriqu\'ees \`a l'aide d'une fonction {\bf random}.
+
+\midinsert
+{\eightpoint 
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/random1.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/random2.eps}}
+\line{\hbox to \imgsize{\hfill figure $70\, a$\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $70\, b$\hfill}}
+\vfill\medskip
+\line{\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/random3.eps}
+\hfill 
+\epsfxsize=\imgsize \epsfbox{../imgEPS/ch14eps/images2/random4.eps}}
+\line{\hbox to \imgsize{\hfill figure $70\, c$\hfill} \hfill 
+\hbox to \imgsize{\hfill figure $70\, d$\hfill}}
+\vskip5mm
+\centerline{\vbox{\hsize=11cm 
+\centerline{figure 70: configuration ``au hasard''.}
+\medskip
+La position du point \'etant rep\'er\'ee par deux coordonn\'ees
+$x,y$, et la direction par un angle $\theta$, on a simplement pris
+$x = {\bf random}$, $y = {\bf random}$, $\theta = 2 \pi \cdot\, {\bf random}$
+(la fonction {\bf random} retournant un flottant compris entre $0$ et $1$)
+et on n'a retenu que les points situ\'es \`a l'int\'erieur de l'ovale.} } }
+\vskip4mm
+\endinsert
+\medskip
+Comme on sait, les fonctions {\bf random} ne produisent pas un hasard plus
+authentique que celui des figures $69$, puisqu'elles exploitent elles
+aussi la chaoticit\'e et sont en r\'ealit\'e absolument d\'eterministes.
+\medskip
+Toutefois le point crucial pour la discussion qui va suivre n'est pas 
+la similitude de nature entre les fonctions {\bf random} et les trajectoires 
+chaotiques; mais que  l'aspect d\'esordonn\'e de la distribution des 
+mol\'ecules est purement subjectif: la ressemblance entre la distribution 
+des figures $69\, m$, $69\, n$, $69\, o$, ou $69\, p$, et celles des 
+figures $70\, a$, $70\, b$, $70\, c$, $70\, d$ n'est qu'une apparence 
+due \`a la non perception du fait pourtant essentiel que voici: si dans la 
+figure $69\, m$ on retourne chacune des $200$ mol\'ecules, c'est-\`a-dire si 
+on inverse la vitesse sans toucher \`a la position, on obtient une 
+configuration qui aura l'extraordinaire propri\'et\'e qu'apr\`es un temps 
+$t=200$, elle aboutit \`a un parfait ordonnancement (le rang d'oignon 
+initial, avec vitesses pointant vers le bas), ce qui ne sera certainement 
+pas le cas pour les configurations $70\, a$, $70\, b$, $70\, c$, $70\, d$. 
+Autrement dit, la configuration $69\, m$ n'est absolument pas 
+une distribution ``au hasard'', c'est au contraire une distribution
+tout \`a fait exceptionnelle. On s'en doutait, puisqu'elle est 
+l'effet d'un mouvement rigoureusement d\'eterministe. C'est ce caract\`ere
+exceptionnel des configurations comme $69\, m$ (ou sa conjugu\'ee obtenue en
+inversant les vitesses) qui est la cl\'e du paradoxe de Loschmidt; mais 
+pour en comprendre toutes les implications, il est indispensable de fixer 
+un langage ad\'equat. Dans la section qui suit, on va donner un sens 
+pr\'ecis aux notions d'{\it \'etat microscopique}, d'{\it \'etat 
+macroscopique},  et d'{\it entropie}, qui jusqu'ici n'avaient \'et\'e
+qu'\'evoqu\'ees.
+
+\vskip4mm plus4mm minus3mm
+\penalty-600
+
+{ \bf 4. Discussion du mod\`ele.}
+
+\penalty600
+\medskip
+On appellera {\it \'etat m\kern0.45pt{\bigsl i\kern0.6pt}croscopique} 
+la donn\'ee compl\`ete des positions et des vitesses de chacune des $N$ 
+mol\'ecules; c'est la {\it configuration en phase} (les deux termes 
+sont \'equivalents).  Dans le petit 
+mod\`ele $N$ est \'egal \`a $200$, et il y a trois coordonn\'ees pour 
+chaque mol\'ecule ($x$, $y$, et $\theta$); par cons\'equent un \'etat 
+microscopique est la donn\'ee des $200 \times 3 = 600$ coordonn\'ees 
+correspondantes [En langage math\'ematique: c'est un \'el\'ement
+de $(U \times [0, 2\pi [)^{200}$, $U$ \'etant le domaine bidimensionnel 
+d\'elimit\'e par la courbe. Dans un vrai gaz $N \sim 10^{23}$,  et il
+y a six coordonn\'ees pour chacune (trois coordonn\'ees de position dans 
+l'espace, et les trois composantes du vecteur vitesse); un \'etat 
+microscopique est alors la donn\'ee des $10^{23} \times 6$ coordonn\'ees 
+correspondantes. Pour pouvoir d\'efinir l'entropie, il 
+est cependant n\'ecessaire de {\it discr\'etiser} ces donn\'ees, ce 
+que nous allons faire dans le cadre du petit mod\`ele. L'\'etendre au 
+cas d'un vrai gaz ne changera conceptuellement rien. 
+\medskip 
+Une remarque au passage:  la discr\'etisation est consubstantielle 
+\`a la notion d'entropie; cette derni\`ere ne peut prendre aucun sens 
+sur la base d'un continuum d'\'etats.  Dans la r\'ealit\'e c'est 
+la nature quantique des \'etats microscopiques 
+qui veut qu'ils soient naturellement discrets, sans qu'il soit 
+n\'ecessaire d'introduire une discr\'et{\it isation} artificielle. 
+Le pas d'une telle discr\'etisation artificielle est arbitraire 
+(changer sa valeur ne fait qu'ajouter une constante conventionnelle 
+\`a l'entropie); il faut seulement qu'il soit petit (mais pas trop).
+Dans le cas quantique par contre, il n'y a pas de
+telle convention: le nombre d'\'etats microscopiques est ce 
+qu'il est et l'entropie est alors une grandeur absolue et non
+une grandeur d\'efinie \`a une constante additive pr\`es.
+\medskip 
+Pour discr\'etiser le petit mod\`ele on supposera le domaine int\'erieur
+\`a la courbe (le r\'ecipient) d\'ecoup\'e en petites cellules carr\'ees,
+en sorte que les coordonn\'ees $x,y$ sont arrondies \`a la cellule la 
+plus proche. Les figures ayant \'et\'e r\'ealis\'ees num\'eriquement 
+il est naturel de consid\'erer les pixels comme \'etant les cellules.
+L'\'echelle de ces figures est de $880$ pixels par unit\'e de longueur,
+ce qui fait que l'aire d\'elimit\'ee par la courbe ovo{\"\i}de contient
+exactement $177\, 883$ pixels. Alors le nombre de valeurs possibles pour
+$(x,y)$ sera $177\, 883$. Il faut aussi discr\'etiser l'angle. On supposera 
+que celui-ci est simplement arrondi au {\it degr\'e}; cette discr\'etisation 
+qui d\'ecoupe l'espace en pixels et l'angle en degr\'es, revient \`a
+d\'ecouper l'espace des phases en pixels $\times$ degr\'es, ce qu'on appelle
+des {\it cellules de phase}. Il y a en tout $Z = 360 \times 177\, 883 = 
+64\, 037\, 880$ cellules de phase, en sorte que le nombre de possibilit\'es 
+de distribuer les $200$ mol\'ecules sera $Z^{200} \simeq  1.94 \cdot
+10^{1561}$. Autrement dit, il y a en tout environ $1.94 \cdot 10^{1561}$
+\'etats microscopiques possibles.
+\medskip
+Un \'etat  {\it \'etat m{\bigsl a\kern0.3pt}croscopique}, 
+comme son nom l'indique, n'est d\'efini que par des param\`etres 
+{\it m{\bigsl a\kern0.3pt}croscopiques}, donc ind\'ependants
+de la connaissance d\'etaill\'ee des positions et vitesses des 
+mol\'ecules. Par exemple l'information suivante:
+$$\vcenter{\hsize=90mm ``les mol\'ecules se r\'epartissent uniform\'ement 
+dans le r\'ecipient.''} \eqno (1)$$
+caract\'erise un \'etat macroscopique; de m\^eme
+$$\vcenter{\hsize=90mm ``les mol\'ecules sont concentr\'ees uniform\'ement
+sur le segment $AB$ de l'axe horizontal, avec la m\^eme vitesse.''} 
+\eqno (2)$$
+\vskip2mm plus4mm minus2mm
+\penalty-800
+
+Plus g\'en\'eralement, \'etant donn\'ee une r\'egion ${\cal R}$ du 
+r\'ecipient, 
+$$\vcenter{\hsize=90mm ``les mol\'ecules se r\'epartissent uniform\'ement 
+dans la r\'egion ${\cal R}$, aucune ne se trouvant en dehors de cette 
+r\'egion.''} \eqno (3)$$
+ou encore, \'etant donn\'e un segment de courbe ${\cal S}$ contenu dans 
+le r\'ecipient:
+$$\vcenter{\hsize=90mm ``les mol\'ecules se r\'epartissent uniform\'ement 
+le long de ${\cal S}$, avec leurs vitesses dirig\'ees selon la normale 
+au segment.''} \eqno (4)$$
+
+Ces sp\'ecifications ne prennent pas en compte les coordonn\'ees et 
+vitesses {\it individuelles} de chaque mol\'ecule: elles ne d\'ecrivent 
+que des situations collectives. C'est cela qu'on appelle un {\it \'etat 
+m{\bigsl a\kern0.3pt}croscopique}. Le point crucial de cette d\'efinition 
+est la notion de param\`etre collectif.  Par exemple la sp\'ecification (4) 
+ne fait appel qu'aux para\-m\`etres qui d\'ecrivent le segment de courbe. 
+Si c'est un segment de parabole, on donnera son \'equation 
+$y=ax^2 + bx + c$, et les deux abscisses extr\^emes du segment, $x_0$ 
+et $x_1$, en sorte que le segment sera l'ensemble des points $x,y$ 
+tels que $y=ax^2 + bx + c$ et $x_0 < x < x_1$. Les cinq param\`etres 
+$a,b,c,x_0, x_1$ sont alors les param\`etres {\it macroscopiques} qui
+d\'efinissent l'{\it \'etat macroscopique}. Ces param\`etres ne
+contiennent d'information sur les coordonn\'ees ou la vitesse d'aucune 
+mol\'ecule particuli\`ere. Le fait que la vitesse est le vecteur normal 
+\`a la courbe ne donne pas de renseignement sur les vitesses individuelles 
+des mol\'ecules car on ne sait pas laquelle des mol\'ecules est \`a la 
+base d'une normale particuli\`ere. Toutefois il peut arriver que la 
+sp\'ecification macroscopique fournisse ce renseignement: par exemple 
+la position initiale des mol\'ecules dans les 
+figures $66\, a$ ou $69\, a$ correspond \`a un \'etat macroscopique, 
+caract\'eris\'e par une sp\'ecification du type $(2)$ ci-dessus. Il s'agit 
+d'un \'etat macroscopique tr\`es particulier, car toutes les mol\'ecules ont 
+exactement le m\^eme vecteur vitesse. Celui-ci devient alors un param\`etre 
+macroscopique dont la connaissance fournit \'evidemment aussi la vitesse de 
+chaque mol\'ecule individuelle. Mais pas sa position. De la m\^eme fa\c{c}on, 
+si toutes les mol\'ecules \'etaient au m\^eme endroit, les coordonn\'ees de 
+cet endroit deviendraient des param\`etres macroscopiques, mais pas les 
+vitesses (\`a moins qu'elles ne soient toutes \'egales, elles aussi).
+\medskip
+Un m\^eme \'etat macroscopique peut en g\'en\'eral \^etre r\'ealis\'e par 
+un grand nombre de configurations en phase, c'est-\`a-dire d'\'etats
+microscopiques 
+diff\'erents. On le comprend rien qu'en remarquant qu'une permutation 
+entre les mol\'ecules ne change pas l'\'etat macroscopique: par exemple si on 
+prend la sp\'ecification $(3)$ ci-dessus, on voit qu'elle demeure respect\'ee 
+si on ne fait qu'\'echanger les mol\'ecules entre elles. Par contre l'\'etat 
+microscopique n'est \'evidemment plus le m\^eme apr\`es permutation. 
+\medskip
+L'{\it entropie} d'un \'etat macroscopique ${\cal E}$ du syst\`eme est alors 
+d\'efinie comme \'etant le logarithme du nombre d'\'etats microscopiques 
+qui r\'ealisent l'\'etat macroscopique ${\cal E}$. Voyons cela sur les 
+exemples $(1)$,  $(2)$,  $(3)$,  $(4)$. 
+\medskip
+$(1)$. Dans l'\'etat $(1)$, les mol\'ecules se r\'epartissent uniform\'ement 
+sur l'ensemble du domaine ovo{\"\i}de. Cela veut dire que la distance entre 
+deux mol\'ecules voisines ne peut pas \^etre trop petite, elle doit \^etre 
+du m\^eme ordre que la maille d'un quadrillage r\'egulier de 200 mailles 
+recouvrant l'ovo{\"\i}de. Si $Q$ est l'aire d'une telle maille, 
+compt\'ee en prenant pour unit\'e la taille d'un pixel, et $G$ le nombre
+de pixels contenus dans l'ovo{\"\i}de (ici $G = 177\, 883$), on doit avoir
+$Q = G / 200 \simeq 889.415$.
+N'importe quelle r\'epartition \`a peu pr\`es uniforme des mol\'ecules sur 
+la surface de l'ovo{\"\i}de doit avoir la propri\'et\'e que chacune de 
+ces mol\'ecules est seule dans une maille dont l'aire est \`a peu pr\`es 
+$889$ pixels. Tout se passe donc en gros comme si on devait placer les 
+$200$ mol\'ecules dans deux cents mailles 
+ayant chacune une aire \'egale \`a $889$ ou $890$ pixels, de 
+mani\`ere \`a n'avoir qu'une seule mol\'ecule par maille. Le nombre de 
+possibilit\'es est $Q^{200} \times 200! = G^{200} \times 200! / 
+200^{200} \simeq 5.22 \cdot 10^{964}\,$.  Comme
+les vitesses sont indiff\'erentes puisque seule la place des mol\'ecules
+est prise en compte, et qu'il y a $360$ vitesses en tout pour {\it chaque}
+mol\'ecule, on voit que le nombre d'\'etats microscopiques est
+$$\nu_1 = \Big[360 \times Q \Big]^{200} \times 200! \simeq 
+0.95 \times 10^{1476}$$
+dont le logarithme (n\'ep\'erien) est environ $3398.56$.
+\medskip
+$(2)$. Pour simplifier supposons que la longueur du segment soit 200 
+pixels. Le nombre de possibilit\'es de ranger les 200
+mol\'ecules est alors $200!\,$. La vitesse est impos\'ee pour chaque 
+mol\'ecule, il n'y a donc pas d'autre possibilit\'e, en sorte que 
+$$\nu_2 = 200!$$
+dont l'entropie est  environ $863.23$. Le calcul de l'entropie pour le 
+cas o\`u la longueur du segment n'est pas 200 est laiss\'e en exercice
+(indication: c'est un probl\`eme de d\'enombrement du type trait\'e 
+au chapitre {\bf II}, section {\bf 4}). 
+\medskip
+$(3)$. On peut appliquer le raisonnement de $(1)$ en rempla\c{c}ant 
+l'ovo{\"\i}de par la r\'egion ${\cal R}$; si $G_{\cal R}$ est le   
+nombre de pixels couverts par cette r\'egion on aura
+$$\nu_3 = \Big[360 \times G_{\cal R} / 200 \Big]^{200} \times 200!$$
+En d\'esignant par $\sigma$ le rapport $G_{\cal R} / G$ (qui est aussi 
+l'aire de ${\cal R}$ en proportion de l'aire totale de l'ovo{\"\i}de)
+on voit que $\nu_3 = \sigma^{200} \times \nu_1$ et l'entropie 
+sera $3398.56 + 200\,\ln\sigma$ ($\sigma < 1$ donc $\ln\sigma < 0$).
+\medskip
+$(4)$. La r\'eponse est la m\^eme que pour $(2)$: le fait d'avoir une 
+courbe au lieu d'une droite ne change combinatoirement rien.
+\medskip
+On voit que l'entropie est bien la ``mesure du d\'esordre'' comme on le 
+dit dans la science populaire: les structures tr\`es ordonn\'ees telles 
+que $(2)$ ou $(4)$ ont une entropie bien plus petite que $(1)$, tandis que 
+$(3)$ qui est un peu ordonn\'e a une entropie un peu plus petite que 
+$(1)$. La structure la plus ordonn\'ee possible est celle o\`u toutes les 
+mol\'ecules sont au m\^eme endroit avec la m\^eme vitesse; comme on l'a 
+signal\'e plus haut, cet endroit et cette vitesse uniques constituent les 
+param\`etres macroscopiques d'un tel \'etat, et d\'eterminent aussi les 
+positions et vitesses individuelles de chaque mol\'ecule. Il n'y a que 
+dans ce cas extr\^eme que les param\`etres macroscopiques d\'eterminent 
+les positions et vitesses individuelles de {\it chaque} mol\'ecule. Cela
+entra{\^\i}ne qu'il n'y a qu'un seul \'etat microscopique sous-jacent 
+possible, et par cons\'equent l'entropie de cet \'etat macroscopique 
+extr\^eme est $0$. Cela correspond \`a l'ordre maximal: on ne peut pas 
+imaginer un \'etat macroscopique plus ordonn\'e que celui o\`u la position 
+et la vitesse de chaque mol\'ecule individuelle sont fix\'ees. 
+\medskip 
+C'est la notion d'\'etat macroscopique, caract\'eris\'e par des param\`etres 
+macroscopiques, qui est la cl\'e du paradoxe de Loschmidt. Ce paradoxe 
+cesse de para{\^\i}tre paradoxal d\`es lors qu'on a compris ce qu'est 
+un \'etat macroscopique. Et pour bien comprendre ce qu'est un \'etat 
+macroscopique, le mieux est peut-\^etre de voir ce qui {\it n'est pas}
+un \'etat macroscopique. Je propose donc d'examiner la r\'eversibilit\'e 
+microscopique en montrant qu'elle fait intervenir des \'etats qui {\it ne 
+sont pas} des \'etats macroscopiques. 
+\medskip
+Consid\'erons un syst\`eme de mol\'ecules qui \'evolue d'un \'etat 
+${\cal B}$ (relativement ordonn\'e) vers un \'etat ${\cal A}$ d'entropie 
+maximale. L'argument de Loschmidt consistait \`a dire que, si on inverse 
+le sens du temps, le sys\-t\`eme va revenir \`a l'\'etat ${\cal B}$, donc 
+pour chaque \'evolution qui fait cro{\^\i}tre l'entropie, il y en a une 
+autre, sym\'etrique, qui la fait d\'ecro{\^\i}tre. Il y a donc ``autant'' 
+d'\'evolutions microscopiques qui font cro{\^\i}tre l'entropie que 
+d'\'evolutions microscopiques qui la font d\'ecro{\^\i}tre et par 
+cons\'equent on ne comprend plus pourquoi le premier cas est plus 
+probable que le second (et encore moins pourquoi c'est {\it toujours} 
+le premier cas qui se produit dans la nature).
+\medskip
+Reprenons cet argument de Loschmidt dans le cadre de notre petit mod\`ele. 
+Supposons qu'\`a l'instant $0$ on dispose les mol\'ecules dans  l'\'etat 
+macroscopique de la figure $69\, a$, en rang d'oignon sur l'axe horizontal,
+les vitesses, toutes identiques, point\'ees vers le haut. Il s'agit d'un 
+\'etat macroscopique du type $(2)$, que nous pouvons appeler l'\'etat 
+${\cal B}$. Lorsque le sys\-t\`eme \'evolue, il se trouvera \`a l'instant 
+$t=200$ dans la configuration de la fi\-gu\-re $69\, m$. Il s'agit d'une
+configuration en phase puisque les vitesses sont marqu\'ees, donc 
+cette figure repr\'esente 
+un \'etat microscopique: chaque mol\'ecule est repr\'esent\'ee par 
+un $T$ qui indique sa position et son vecteur vitesse (il manque 
+la num\'erotation des mol\'ecules, mais leur trajectoire per\-met\-trait 
+de les identifier). L'\'etat macroscopique qui correspond \`a la 
+con\-fi\-gu\-ra\-tion de la figure $69\, m$ est un \'etat du type $(1)$ (les 
+mol\'ecules sont r\'e\-par\-ties au hasard, \`a peu pr\`es uniform\'ement), 
+qui a l'entropie maximale, et qu'on ap\-pel\-lera donc l'\'etat ${\cal A}$.
+Aux instants ult\'erieurs ($t > 200$) l'\'etat macroscopique reste le 
+m\^eme (figures $69\, n$, $69\, o$, et $69\, p$), mais \'evidemment 
+l'\'etat microscopique change \`a chaque instant. On 
+a vu qu'il y avait $\nu_1 \simeq 10^{1476}$ \'etats
+microscopiques diff\'erents qui donnent tous la m\^eme apparence 
+macroscopique, celle de l'\'etat ${\cal A}$. Lorsque le syst\`eme continue 
+d'\'evoluer apr\`es l'instant $t=200$, il passe successivement par d'autres 
+\'etats microscopiques qui font tous partie de cet ensemble de $\nu_1$ 
+\'etats microscopiques. Ce nombre $\nu_1$ est \'enorme: au bout d'un 
+temps $t$ de l'ordre de un milliard, le syst\`eme n'aura parcouru que 
+quelques centaines de milliards d'\'etats microscopiques, sur $\nu_1$ en 
+tout. Pour avoir une chance qu'il ait parcouru une proportion notable 
+de ces $\nu_1$ \'etats microscopiques, il faudrait 
+attendre que $t \sim 10^{1476}$. Et ici on consid\`ere un syst\`eme
+de $200$ mol\'ecules seulement; avec $10^{23}$ ($\sim$ nombre d'Avogadro) 
+mol\'ecules, le nombre $\nu_1$ serait de l'ordre de 
+$10^{756\, 916\, 605\, 020\, 625\, 000\, 000\, 000}$, et il faudrait 
+donc attendre un temps du m\^eme ordre que ce nombre.
+\medskip
+N'importe quel \'etat macroscopique plus ordonn\'e que ${\cal A}$ a une 
+entropie plus faible, mais l'entropie n'\'etant que le logarithme du 
+nombre d'\'etats microscopiques sous-jacents, le nombre de ces \'etats 
+sera \'enorm\'ement plus faible. On a vu que l'entropie de ${\cal A}$ est 
+environ $3398$; un \'etat ${\cal A}'$ d'entropie $3300$ aura $e^{98}
+\simeq 10^{43}$ fois moins d'\'etats microscopiques sous-jacents.
+On comprend donc pourquoi il est extr\^emement peu probable que le syst\`eme
+tombe pr\'ecis\'ement sur un de ces tr\`es rares \'etats macroscopiques 
+de plus faible entropie. C'est bien ce qu'on observe: si on laisse le 
+programme qui simule l'\'evolution repr\'esent\'ee sur les figures $69\, a$ 
+\`a $69\, p$ tourner, on devra attendre vraiment tr\`es longtemps avant de 
+voir appara{\^\i}tre ``spontan\'ement'' un \'etat macroscopique de plus 
+faible entropie.  Le temps qu'il faudra attendre sera \'evidemment 
+inconcevablement plus long pour $10^{23}$ mol\'ecules que pour $200$. 
+Si on d\'esigne par $\delta$ la dur\'ee moyenne d'un \'etat microscopique, 
+c'est-\`a-dire le temps pendant lequel le syst\`eme reste dans une cellule 
+de phase ($\delta$ est de l'ordre de $10^{-12}$ secondes pour un gaz, de
+$10^{-2}$ pour le petit mod\`ele), alors on peut dire que le temps
+moyen au bout duquel se produira spontan\'ement une baisse d'entropie de
+$\Delta S$ est en gros $T = \delta \times \exp\{ \Delta S \}$. Apr\`es un
+temps petit devant $T$ une diminution de $\Delta S$ est pratiquement
+impossible, mais au bout d'un temps qui serait grand devant $T$ (ne serait-ce
+que $100 \times T$), une diminution d'entropie de $\Delta S$ devient par 
+contre presque certaine. Il s'agit \'evidemment du m\^eme ph\'enom\`ene que
+celui qui a \'et\'e \'etudi\'e \`a la section {\bf V\kern-2pt .\kern2pt 4}. 
+Le paradoxe de Loschmidt n'existerait pas si l'esp\'erance de vie des humains 
+\'etait de l'ordre de $10^{756\, 916\, 605\, 020\, 625\, 000\, 000\, 000}$
+ann\'ees. Mais la loi de croissance de l'entropie serait alors fausse.
+\medskip 
+En revenant \`a l'inversion du temps, on arrive \`a la 
+conclusion suivante: si on retourne en arri\`ere, c'est-\`a-dire si 
+\`a l'instant $t=200$ on inverse brusquement toutes les vitesses dans 
+la configuration de la figure $69\, m$, le syst\`eme reviendra effectivement 
+\`a la configuration de la figure $69\, a$ (avec vitesses invers\'ees) \`a 
+$t = 400$. Mais ce que dit le second principe de la Thermodynamique, c'est 
+justement qu'on ne peut pas effectuer une telle inversion {\it dans les 
+syst\`emes physiques}. Aucun 
+physicien ne peut en laboratoire produire une telle inversion. 
+Pour r\'eussir une telle exp\'erience, il faudrait, apr\`es avoir laiss\'e 
+le syst\`eme \'evoluer pendant un certain temps, retourner les vitesses 
+de chaque mol\'ecule individuelle {\it sans rien perturber d'autre}. Il 
+faudrait aussi que ce retournement soit extr\^emement pr\'ecis: la moindre 
+erreur ferait qu'au retour on retrouverait une configuration enti\`erement 
+diff\'erente de celle qui est attendue, c'est-\`a-dire la configuration 
+initiale invers\'ee. Il n'existe aucun moyen 
+physique d'effectuer une telle inversion. En r\'ealit\'e, ce que dit
+le second principe de la Thermodynamique n'est pas tant que l'entropie 
+est toujours croissante (ceci en est une formulation math\'ematique et 
+abstraite); le sens concret de ce principe est:
+\smallskip
+{\sl Il est impossible d'effectuer, sur un syst\`eme mat\'eriel, une
+inversion exacte des vitesses individuelles des mol\'ecules. \par}
+\medskip
+Essayons d'imaginer concr\`etement ce que serait une exp\'erience
+de ce type, c'est-\`a-dire une exp\'erience mettant en d\'efaut le second 
+principe. On voudrait pr\'eparer un syst\`eme (par exemple un gaz) de 
+mani\`ere que:
+\smallskip
+a) L'\'etat macroscopique imm\'ediatement apr\`es la pr\'eparation est 
+d'en\-tro\-pie maximale;
+\smallskip
+b) Si apr\`es la pr\'eparation on laisse \'evoluer le syst\`eme \`a l'abri 
+de toute influence ext\'erieure, il \'evoluera vers un \'etat macroscopique 
+de moindre entropie. 
+\medskip
+Pour mieux comprendre revenons \`a notre petit mod\`ele; on voudrait 
+qu'au d\'epart la configuration soit analogue \`a celle  de la figure 
+$69\, m$, et qu'apr\`es \'evolution elle devienne analogue \`a celle  de la 
+figure $69\, a$. Pour que cela ait une chance de marcher il faut 
+\'evidemment prendre les configurations avec les vitesses invers\'ees.
+On voit ais\'ement sur le petit mod\`ele que la pr\'eparation doit 
+obligatoirement consister \`a r\'ealiser la configuration de la figure 
+$69\, m$ (avec vitesses invers\'ees). Si on se trompe dans cette 
+pr\'eparation, on ne retrouvera pas la configuration de la figure $69\, a$ 
+mais une autre, qui avec une quasi certitude sera d'entropie maximale. 
+Pour retrouver la configuration de $69\, a$ (avec vitesses invers\'ees) 
+il faudra viser extr\^emement juste.  
+\smallskip
+Une petite remarque en passant: dans ce petit mod\`ele, 
+si on se trompe sur une seule des $200$ vitesses, les $199$ autres \'etant 
+correctes, il n'y aura qu'une seule mol\'ecule qui ne reviendra pas sur 
+sa position de la figure $69\, a$. Mais cela est uniquement d\^u au fait 
+que ce mod\`ele trop simpliste ne comporte pas de collision entre mol\'ecules:
+l'\'evolution de chaque mol\'ecule \'etant ind\'ependante des autres, une 
+erreur sur une seule mol\'ecule n'aura aucune cons\'equence sur les $199$ 
+autres. Dans un vrai gaz, les mol\'ecules entrent en collision des 
+milliards de milliards de fois par seconde. Alors la moindre erreur sur une 
+mol\'ecule se r\'epercute rapidement sur l'\'evolution de toutes les autres.
+D'autre part le petit mod\`ele est num\'erique et non physique: il est
+possible de cr\'eer {\it num\'eriquement} un \'etat initial qui 
+\'evoluera en faisant diminuer l'entropie, il suffit pour cela de calculer 
+d'abord l'\'evolution de $69\, a$ vers $69\, m$, avec les valeurs des 
+positions et des vitesses dans un tableau, puis d'effectuer num\'eriquement 
+l'inversion. Le second principe dit qu'il n'existe pas de proc\'edure 
+analogue pour un syst\`eme physique.
+\medskip
+Et voil\`a la solution du paradoxe de Loschmidt. Le nombre d'\'etats 
+microscopiques susceptibles de donner l'apparence macroscopique de la figure 
+$69\, m$ est $\nu_1 \sim 10^{1476}$.
+Mais parmi ces $\nu_1$ \'etats microscopiques, il n'y en a que 
+$\nu_2 = 200! \sim 10^{375}$ qui correspondent \`a la configuration 
+pr\'ecise de la figure $69\, m$, celle qui, apr\`es retournement, est en 
+mesure de revenir \`a la configuration en rang d'oignons. Cela 
+r\'esulte de la sym\'etrie par retournement du temps.
+\medskip
+En effet, la sym\'etrie par retournement du temps des \'equations de la 
+M\'ecanique, qui est invoqu\'ee dans l'argument de Loschmidt, se traduit 
+ainsi: \`a chaque \'etat microscopique $C_0$, correspond un {\it unique} 
+\'etat microscopique $C_t$ qui est le r\'esultat de l'\'evolution de $C_0$ 
+apr\`es un temps $t$, et vice-versa. En termes math\'ematiques:  
+\medskip
+{\bf Th\'eor\`eme:} {\sl la transformation 
+$$f\; : \quad C_0 \mapsto C_t$$
+est une bijection.} 
+\medskip
+{\bf D\'emonstration:} Il suffit de montrer que $f$ poss\`ede un inverse 
+$f^{-1}$. Or, si on appelle $\overline{C}$ 
+l'\'etat obtenu en inversant toutes les vitesses de l'\'etat $C$, la 
+sym\'etrie par retournement du temps peut s'\'enoncer sous la forme suivante: 
+\smallskip
+{\sl
+``Si $C_t$ est le r\'esultat de l'\'evolution m\'ecanique de $C_0$ apr\`es 
+le temps $t$, alors $\overline{C_0}$ est le r\'esultat de l'\'evolution 
+m\'ecanique de $\overline{C_t}$ apr\`es le temps $t$.''}
+\medskip
+Traduit en langage math\'ematique cela se dit, en d\'esignant par $Q$ la
+transformation $C \mapsto \overline{C}$:
+$$f^{-1} = Q \circ f \circ Q$$
+c'est-\`a-dire que $f$ a un inverse, qui est la composition 
+$$f^{-1} : C_t \mapsto \overline{C_t} \mapsto \overline{C_0} \mapsto C_0$$
+
+\line{\hfill C.Q.F.D. \hskip7mm}
+
+\bigskip
+
+C'est l\`a la seule traduction logique de la sym\'etrie par retournement 
+du temps. Le fait que la transformation $f$ soit inversible, donc 
+bijective, entra{\^\i}ne \'evidemment que 
+\smallskip
+{\sl
+\noindent le nombre d'\'etats microscopiques distincts r\'esultant de 
+l'\'evolution pendant un temps donn\'e d'un ensemble 
+de $n$ \'etats microscopiques initiaux, est exactement \'egal \`a $n$.\par }
+\medskip 
+\noindent ou, de mani\`ere \'equivalente en passant aux conjugu\'es:
+\smallskip
+{\sl
+\noindent le nombre d'\'etats microscopiques distincts qui, apr\`es 
+\'evolution r\'etrograde pendant un temps donn\'e, redonneront un ensemble 
+de $n$ \'etats microscopiques initiaux, est exactement \'egal \`a $n$. \par }
+\medskip
+C'est donc la sym\'etrie par retournement du temps qui permet de dire que
+\smallskip
+{\sl \noindent
+parmi les $\nu_1 \sim 10^{1476}$ \'etats microscopiques susceptibles de
+donner l'apparence macroscopique de la figure $69\, m$, il y en a exactement 
+$\nu_2 = 200! \sim 10^{375}$ qui redonneront par retour la configuration 
+en rang d'oignons initiale.''\par }
+\medskip  
+R\'esumons tout cela sous la forme d'un argument g\'en\'eral, non li\'e 
+au petit mod\`ele: 
+si on veut pr\'eparer un syst\`eme qui au d\'epart se trouve dans un 
+\'etat macroscopique ${\cal A}$ d'entropie maximale $S_{\cal A}$ afin 
+qu'il \'evolue vers un \'etat macroscopique ${\cal B}$ d'entropie 
+$S_{\cal B} < S_{\cal A}$, il faut le pr\'eparer dans un \'etat 
+microscopique extr\^emement particulier: parmi les $\nu_{\cal A} = 
+\exp\{ S_{\cal A} \}$ \'etats microscopiques susceptibles de donner 
+l'apparence macroscopique ${\cal A}$, il faut en r\'ealiser un parmi 
+ceux qui \'evolueront vers ${\cal B}$; d'apr\`es ce qu'on vient de voir, 
+le nombre de ces \'etats microscopiques est $\nu_{\cal B} = 
+\exp\{ S_{\cal B} \}$, puisqu'ils sont en bijection avec les \'etats 
+microscopiques qui produisent l'apparence ${\cal B}$.\looseness=-1
+\medskip
+Il en r\'esulte que la proportion de ces \'etats microscopiques 
+exceptionnels parmi tous ceux qui produisent l'apparence macroscopique 
+${\cal A}$ est \'egale \`a $\nu_2 / \nu_1 = \exp\{ S_{\cal B} - 
+S_{\cal A}\}$. Dans le cas du petit mod\`ele et de l'\'evolution entre 
+les figures $69\, a$ et $69\, m$, cette proportion 
+est  $\nu_2 / \nu_1 \simeq 10^{-590}$
+\medskip
+C'est le probl\`eme de cette pr\'eparation qui est omis dans 
+le raisonnement de Loschmidt. Le second principe de la Thermodynamique 
+ne dit pas qu'{\it aucun} des \'etats microscopiques sous-jacents \`a un 
+\'etat macroscopique ${\cal A}$ ne peut conduire \`a un \'etat macroscopique 
+${\cal B}$ de moindre entropie; il dit que:
+\smallskip
+a) de tels \'etats microscopiques sont extr\^emement peu nombreux (au 
+regard de tous ceux qui fournissent l'apparence macroscopique de ${\cal A}$);
+\smallskip
+b) il est impossible d'en am\'enager un (par des manipulations sur le corps).
+\medskip
+On peut pr\'eciser davantage en \'enon\c{c}ant au lieu de b) :
+\smallskip
+c) il n'est possible de pr\'eparer que des \'etats macroscopiques, sans 
+contr\^ole aucun de l'\'etat microscopique pr\'ecis qui le r\'ealisera.
+\medskip
+La partie a) du principe est la cons\'equence rigoureuse de la sym\'etrie 
+par retournement du temps, comme on l'a vu ci-dessus. La partie 
+b) ou c) est un fait empirique du m\^eme type que 
+\smallskip
+{\sl
+``Il est impossible de r\'ealiser un mouvement perp\'etuel''}
+\medskip
+\noindent dont on sait que c'est une formulation alternative de la 
+conservation de l'\'energie, ou que
+\smallskip
+{\sl ``Tous les hommes sont mortels'}
+\medskip
+Bien s\^ur, dans le programme num\'erique qui calcule l'\'evolution des 
+$200$ mol\'ecules du petit mod\`ele, il est possible de ``pr\'eparer''
+n'importe quel \'etat microscopique; si on donne aux variables les 
+valeurs initiales correspondant \`a la configuration de la figure $69\, m$, 
+avec les vitesses en sens oppos\'e, et qu'on laisse le programme calculer, 
+les $200$ mol\'ecules viendront bien sagement se ranger en rang d'oignon 
+apr\`es un temps $t=200$. Mais il est impossible de r\'ealiser une 
+telle initialisation de mani\`ere {\it physique}, avec un gaz ou 
+avec tout autre corps mat\'eriel. C'est cela 
+que dit le second principe. Le second principe ne s'applique pas 
+aux simulations num\'eriques, car ces derni\`eres permettent de 
+contr\^oler les \'etats microscopiques. 
+\medskip 
+Prenons un exemple fr\'equemment invoqu\'e dans les manuels de Physique, 
+celui d'un gaz qui au d\'epart est concentr\'e dans la moiti\'e gauche d'un 
+r\'eservoir (imm\'ediatement apr\`es que l'exp\'erimentateur ait retir\'e 
+une cloison de s\'eparation), et qui ensuite se r\'epand dans la 
+partie laiss\'ee vide. L'\'etat macroscopique 
+initial est extr\^emement peu probable, en ce sens que, si on voulait 
+attendre qu'il se produise spontan\'ement par le seul fait du hasard, 
+il faudrait attendre pendant un temps fantastique: la probabilit\'e \'etant 
+$2^{-N}$ (pour $N$ mol\'ecules), ce temps serait de l'ordre de $2^{N}$ (si 
+$N = 10^{23}$, $2^N \sim 10^{301\, 030\, 000\, 000\, 000\, 000\, 000\, 000}$)
+Si l'exp\'erimentateur pouvait pr\'eparer un gaz dans l'un des \'etats 
+microscopiques exceptionnels o\`u les mol\'ecules, quoique distribu\'ees 
+uniform\'ement entre les deux moiti\'es du r\'ecipient, le seraient 
+de mani\`ere \`a \'evoluer vers l'\'etat o\`u toutes les mol\'ecules 
+seront dans la moiti\'e gauche du r\'ecipient, il obtiendrait \'evidemment 
+une vio\-la\-tion de la loi de croissance de l'entropie.  Mais parmi tous
+les \'etats pour lesquels la distribution est uniforme, il n'y en a qu'une  
+proportion $2^{-N}$ qui soit un tel \'etat exceptionnel.  Ces \'etats 
+exceptionnels ne forment pas un \'etat macroscopique, ou plus exactement 
+celui qu'ils forment (la distribution uniforme) est r\'ealis\'e {\it aussi} 
+par d'autres \'etats microscopique non exceptionnels, qui sont $2^N$ fois 
+plus nombreux. 
+L'exp\'erimentateur ne peut pas, en agissant sur des param\`etres 
+macroscopiques (les seuls qui soient sous son contr\^ole), pr\'eparer le 
+gaz dans un de ces \'etats exceptionnels. C'est ce que dit la partie 
+b) du second principe. 
+\medskip
+Ainsi, ce qui n'a pas \'et\'e pris en compte dans le paradoxe de Loschmidt,
+et c'est justement cela qui cr\'ee le paradoxe, c'est que les \'etats 
+microscopiques susceptibles de conduire \`a une diminution d'entropie 
+sont des \'etats qu'il est impossible de pr\'eparer. La sym\'etrie de la 
+M\'ecanique par rapport \`a l'inversion du temps, qui \'etait \`a la 
+base du raisonnement,  exis\-te bien.  Mais elle s'applique de la mani\`ere 
+suivante:  puisque les \'etats microscopiques susceptibles de conduire \`a 
+une diminution d'entropie sont des \'etats absolument exceptionnels, 
+alors par inversion du temps on peut dire de mani\`ere \'equivalente que 
+{\sl les \'etats microscopiques r\'ealis\'es au cours de l'\'evolution 
+m\'ecanique \`a partir d'un \'etat initial d'entropie non maximale sont 
+aussi des \'etats absolument exceptionnels}.  Ces \'etats restent, 
+tout au long de l'\'evolution,  inclus dans un ensemble de 
+$\exp\{ S_{\cal B}\}$ \'etats microscopiques exceptionnels
+(${\cal B}$ \'etant l'\'etat macroscopique initial), mais leur apparence 
+macroscopique change, et devient celle d'un \'etat macroscopique qu'une 
+infinit\'e d'autres \'etats microscopiques {\it non exceptionnels} 
+r\'ealiseraient tout aussi bien.  Or, pour cette infinit\'e d'autres 
+\'etats microscopiques, l'inversion du temps ne conduit pas du tout \`a 
+une diminution de l'entropie. 
+\medskip
+Une fois admis l'\'enonc\'e b) ou c), qui interdit l'acc\`es au contr\^ole 
+microscopique des param\`etres, il ne reste plus qu'une possibilit\'e de 
+r\'ealiser un de ces \'etats microscopiques exceptionnels qui \'evoluerait 
+vers une entropie moindre: compter sur la chance.  Puisqu'il n'y a aucun 
+contr\^ole possible, on peut essayer de r\'ealiser un grand nombre de 
+fois un \'etat macroscopique d'entropie maximale,  en esp\'erant qu'une fois, 
+par hasard, ce soit un ``bon'' \'etat microscopique qui le sous-tende. 
+Mais l'\'enormit\'e des nombres tels que $\nu_1$ rend cette entreprise 
+absolument utopique.  On a vu plus haut,  dans le cadre du petit mod\`ele, 
+qu'il faudrait r\'ealiser $10^{1476} / 10^{375} = 10^{1101}$ fois un \'etat
+macroscopique d'entropie maximale pour avoir une chance de le voir 
+sous-tendu par un ``bon'' \'etat microscopique. Pour un corps form\'e 
+de $10^{23}$ mol\'ecules il faudrait r\'ep\'eter l'essai environ 
+$10^{756\, 916\, 605\, 020\, 625\, 000\, 000\, 000}$ fois.
+
+\vskip6mm plus3mm minus2mm
+
+{ \bf 5. Conclusion.}
+
+\medskip
+L'exp\'erience de pens\'ee qui consisterait \`a pr\'eparer un \'etat 
+microscopique exceptionnel a \'et\'e imagin\'ee par Maxwell en 
+{\oldstyle 1867} (voir [7]) sous la 
+forme d'un tr\`es petit syst\`eme capable d'observer instantan\'ement 
+la vitesse de chaque mol\'ecule et d'effectuer une s\'election ou 
+correction de trajectoire.  Un tel syst\`eme ---~appel\'e depuis 
+{\it d\'emon de Maxwell}~--- permettrait, en s\'electionnant les positions 
+et vitesses individuelles de chaque mol\'ecule, de pr\'eparer n'importe 
+quel \'etat microscopique voulu \`a l'avance, en particulier ces \'etats 
+exceptionnels qui \'evoluent en faisant d\'ecro{\^\i}tre l'entropie.
+\medskip
+Dans beaucoup d'ouvrages de Physique statistique, on \'evoque l'id\'ee 
+du d\'emon de Maxwell,  puis on montre par des arguments plus ou moins 
+quantitatifs selon les auteurs, que le second principe {\it interdit} 
+l'existence d'un tel d\'emon. L'argumentation consiste \`a montrer que 
+la mise en oeuvre du d\'emon de Maxwell co\^ute plus cher en entropie 
+que ce qu'elle est cens\'ee en \'economiser. Cela revient \`a poser la 
+croissance de l'entropie comme axiome, et \`a en d\'eduire l'impossibilit\'e 
+d'un d\'emon de Maxwell. Mais entre deux assertions logiquement 
+\'equivalentes, poser l'une comme axiome et l'autre comme cons\'equence 
+est affaire de pure convention. Il serait tout aussi logique de 
+postuler l'impossibilit\'e d'un d\'emon de Maxwell pour en d\'eduire 
+la croissance de l'entropie. Comme on sait, on peut de mani\`ere tout 
+\`a fait analogue d\'emontrer l'impossibilit\'e du mouvement perp\'etuel 
+\`a partir de l'axiome de la conservation de l'\'energie, mais beaucoup 
+d'auteurs du $XIX^{\rm e}$ si\`ecle ont pr\'ef\'er\'e poser 
+l'impossibilit\'e du {\it perpetuum mobile} comme axiome premier,  
+d'o\`u se d\'eduit la conservation de l'\'energie. 
+\medskip 
+Du point de vue de la seule logique, il est donc parfaitement 
+indiff\'erent de poser la croissance de l'entropie comme principe premier, 
+ou de formuler le second principe par les \'enonc\'es a) et b) ci-dessus.
+Je soutiens cependant que la premi\`ere formulation est au moins en 
+partie responsable de la confusion qui entoure depuis toujours le 
+probl\`eme de l'irr\'eversibilit\'e, et que je mentionnais \`a la fin de 
+l'introduction. La formulation du second principe par les \'enonc\'es 
+a) et b) a en effet deux avantages. Le premier avantage est de montrer 
+tr\`es clairement la signification concr\`ete, pratique, exp\'erimentale, 
+du second principe de la Thermodynamique, alors que la formulation par la 
+croissance de l'entropie, plus \'eloign\'ee des conditions pratiques, 
+entretient une confusion, notamment par le fait que l'entropie n'est 
+croissante que pendant des temps physiques, et non au sens math\'ematique. 
+Cela permet aussi de s\'eparer deux aspects compl\'ementaires du second 
+principe: l'\'enonc\'e a) exprime l'aspect purement probabiliste (celui 
+qui est mis en avant dans l'interpr\'etation statistique de l'entropie);
+l'\'enonc\'e b) exprime l'aspect empirique et ph\'enom\'enologique (celui 
+qui provient des limites humaines).
+Le second avantage est de rendre moins myst\'erieuse la mani\`ere dont
+la r\'eversibilit\'e des mouvements microscopiques 
+se traduit par l'irr\'eversibilit\'e des \'evolutions macroscopiques et 
+donc d'\'eclaircir ais\'ement le paradoxe de Loschmidt. 
+\medskip
+Les lois de la Physique sont des lois objectives du monde, mais elles 
+concernent le monde ph\'enom\'enal, tel qu'il est per\c{c}u par des \^etres 
+tels que nous. Les lois de la Thermodynamique d\'ecrivent le comportement 
+des corps macroscopiques \`a l'aide de param\`etres que nous pouvons 
+manipuler et mesurer. Pour des \^etres ayant la taille des mol\'ecules 
+la physique serait tr\`es diff\'erente, elle montrerait un autre aspect 
+du monde, objectif lui aussi, mais compl\'ementaire. Le second principe 
+contient cette dualit\'e: les lois physiques expriment des propri\'et\'es 
+de l'objet (le monde), mais aussi des propri\'et\'es du sujet qui observe 
+le monde et \'etablit ces lois. Le but de la 
+Physique est certes de transcender la perception humaine pour atteindre 
+une v\'erit\'e plus profonde et inhumaine, et c'est bien ce que fait 
+l'interpr\'etation mol\'eculaire de la Thermodynamique. Mais les limites 
+humaines qui conditionnent la nature des lois physiques ne sont pas tant 
+celles de la perception que celles de la complexit\'e: la 
+description exacte et compl\`ete du mouvement microscopique (peu 
+importe ici que ce soit la classique ou la quantique), c'est-\`a-dire 
+du mouvement individuel de toutes les mol\'ecules, ne nous est pas 
+seulement interdite par nos facult\'es de perception, mais aussi par nos 
+facult\'es de traitement de donn\'ees. Or la complexit\'e est bien plus 
+difficile \`a transcender que la perception. C'est bien pourquoi il ne 
+peut pas y avoir une Physique des mouvements mol\'eculaires d\'etaill\'es 
+et c'est aussi pourquoi les lois de la Physique sont des lois que nous 
+pouvons \'ecrire et utiliser, et qui concernent des objets que nous 
+pouvons observer et manipuler. Une loi dont la formulation exigerait 
+$10^{639201738}$ symboles math\'ematiques ne peut pas \^etre une loi de 
+la Physique (ne serait-ce que parce jamais personne ne la d\'ecouvrira).
+Pour \'echapper \`a ce second principe, Laplace devait invoquer ``une
+intelligence qui, pour un instant donn\'e, conna{\^\i}trait toutes les 
+forces dont la nature est anim\'ee''. 
+\medskip 
+L'\'enonc\'e b) exprime un fait empirique 
+incontestable: il est impossible de pr\'eparer un \'etat microscopique, 
+on ne peut pr\'eparer que des \'etats macroscopiques. Cet \'enonc\'e est 
+consubstantiel au second principe. 
+\medskip 
+Beaucoup d'ouvrages (en g\'en\'eral des ouvrages non techniques, mais 
+plut\^ot orient\'es vers les implications philosophiques) font \'etat 
+du fait qu'on n'a jamais pu prouver l'irr\'eversibilit\'e {\it 
+math\'ematiquement}. On veut signifier par l\`a qu'il n'y a aucun 
+{\it th\'eor\`eme} qui fonde l'irr\'eversibilit\'e des \'evolutions 
+macroscopiques sur la r\'eversibilit\'e des mouvements microscopiques. 
+La tradition pseudo-scientifique que je mentionnais dans l'introduction 
+se r\'eclame de ce constat, qui est juste, et qui est d'ailleurs souvent
+rapport\'e par des auteurs \`a la comp\'etence d'ailleurs incontestable, 
+pour se justifier: ``on n'a jamais pu le 
+d\'emontrer, donc vous voyez bien que le probl\`eme est encore ouvert, 
+et par cons\'equent susceptible de nouvelles recherches que justement 
+nous nous proposons de mener''. Or il est \'evident qu'un tel th\'eor\`eme 
+ne peut pas exister, puisque les d\'emonstrations math\'ematiques ne 
+peuvent pas prendre en compte des faits empiriques tels que b). Et 
+quand on d\'emontre math\'ematiquement la seule partie a) du second 
+principe, il est parfaitement logique qu'on ne puisse pas r\'esoudre 
+le paradoxe de Loschmidt! Mais cela ne signifie pas que le paradoxe de 
+Loschmidt demeure un probl\`eme ouvert. 
+Il est parfaitement r\'esolu par la prise en compte de b) et le 
+raisonnement pr\'esent\'e \`a la section pr\'ec\'edente.
+\medskip 
+En conclusion, je propose d'\'enoncer les principes de la Thermodynamique 
+sous la forme que voici, qui me para{\^\i}t beaucoup plus claire. Elle 
+se pr\^ete en tous cas beaucoup moins aux malentendus que j'ai d\'ecrits 
+dans cet article. Il ne s'agit pas de {\it remplacer} les \'enonc\'es usuels 
+par ceux ci-dessous, mais de les compl\'eter ou de les commenter par 
+ceux ci-dessous.
+
+\vfill
+\centerline{\vbox{\hsize=11cm 
+{\bf Premier principe de la Thermodynamique:}
+\smallskip
+{\sl
+``Il est impossible de r\'ealiser un mouvement perp\'etuel''.} } }
+\vfill
+\centerline{\vbox{\hsize=11cm 
+{\bf Deuxi\`eme principe de la Thermodynamique:}
+\smallskip
+{\sl
+``Il est impossible de r\'ealiser un d\'emon de Maxwell''.}
+\medskip
+(i.e. il n'est possible de pr\'eparer que des \'etats macroscopiques, sans 
+contr\^ole aucun de l'\'etat microscopique pr\'ecis qui le r\'ealisera.) } }
+\vfill \vfill \break
+
+\null\vskip10mm plus4mm minus3mm
+
+\centerline{\tit L'IRR\'EVERSIBILIT\'E : Annexes}
+
+\vskip10mm plus4mm minus3mm
+
+On regroup\'e ici un choix de textes historiques. Le lecteur qui aura fait 
+l'effort de les lire attentivement se rendra compte que ce qu'on appelle 
+``{\sl le probl\`eme de l'irr\'eversibilit\'e}'' n'a pratiquement pas 
+\'evolu\'e au cours des \^ages. Chacun des auteurs cit\'es est oblig\'e 
+\`a son \'epoque de r\'ep\'eter ce que les pr\'ec\'edents ont dit, 
+parce qu'apparemment cela n'a pas \'et\'e compris. 
+Ce ne le sera probablement jamais.  Ce constat a d\'ej\`a 
+\'et\'e fait par d'autres auteurs. Par exemple un chapitre du livre de Rudolph
+Peierls, {\it Surprises in Theoretical Physics} [7], commence ainsi:
+\medskip
+{\cit  We turn next to one of the most fundamental questions of
+statistical Mechanics, to which the answer has been known to some for 
+a long time, but does not appear to be known very widely even today. 
+The question is about the precise origin of the irreversibility in 
+statistical mechanics. 
+\smallskip
+\line{\hfill [7], page 73.}\par  }
+\medskip
+Je suis bien conscient que la r\'esolution du {\og paradoxe de Loschmidt\fg}
+demande une argumentation beaucoup trop longue pour retenir l'attention de
+lecteurs press\'es;  il m'a fallu un chapitre entier pour y parvenir. 
+Il faut donc s'attendre \`a la persistance d'id\'ees fausses,  mais plus aptes
+\`a franchir la barri\`ere de la communication.  Je n'ai aucune illusion
+quant \`a l'impact de ce chapitre,  qui ne sera lu en profondeur que par
+quelques esprits vraiment curieux et passionn\'es.  Pour eux,  j'ajoute
+cette annexe,  qui rassemble quelques textes \'ecrits par les plus grands, 
+et \`a laquelle j'assigne un double objectif:
+\smallskip
+a) ces textes historiques sont un bon compl\'ement au chapitre, 
+car chaque auteur apporte un \'eclairage diff\'erent; 
+\smallskip
+b) ces textes montrent que leurs auteurs,  en leur temps,  avaient d\'ej\`a
+tout expliqu\'e et tout dit. 
+
+\bigskip
+
+{\bf 1.}\hskip3mm Extrait de [4], (pages 18 -- 20 ):
+\medskip
+\def\ttv{\vrule height 56pt}
+
+\line{\hskip29pt \raise-2pt
+\vbox{\hrule
+\hbox{\ttv\kern6pt
+\vbox{\hsize=116mm \eightpoint
+Si un syst\`eme isol\'e est dans une situation sensiblement non uniforme, 
+il \'evoluera en fonction du temps pour se rapprocher de la situation 
+ultime la plus uniforme o\`u il est en \'equilibre (\`a l'exception de
+fluctuations qui ont peu de chances d'\^etre importantes). \par
+\vskip4pt}\kern6pt \ttv\hfill}
+\hrule}\hskip10pt\hfill}
+\medskip
+ \centerline{\bf Irr\'eversibilit\'e}
+\smallskip
+{\cit La conclusion [encadr\'ee ci-dessus] affirme que quand un syst\`eme
+macroscopique isol\'e \'evolue en fonction du temps, il tend \`a le faire 
+dans une direction bien d\'efinie: depuis un \'etat de moindre d\'esordre 
+vers une situation de plus grand d\'esordre. Nous pourrions observer le 
+processus du changement en filmant le syst\`eme. Supposons maintenant que 
+nous projetions le film \`a l'envers (c'est-\`a-dire que nous passions le 
+film dans le projecteur en marche arri\`ere) nous observerions alors sur 
+l'\'ecran le m\^eme {\it processus remontant le temps} c'est-\`a-dire le 
+processus qui appara{\^\i}trait si l'on imaginait que la direction du temps 
+a \'et\'e renvers\'ee. Le film sur l'\'ecran serait vraiment tr\`es curieux 
+en ce sens qu'il pr\'esenterait un processus par lequel un syst\`eme \'evolue 
+depuis un \'etat de grand d\'esordre vers une situation moins d\'esordonn\'ee, 
+chose que l'on n'observe jamais en r\'ealit\'e. En regardant simplement le 
+film sur l'\'ecran, nous pourrions conclure, avec une compl\`ete certitude, 
+que le film est projet\'e \`a l'envers. 
+\smallskip
+Un processus est dit irr\'eversible si le processus obtenu en changeant le 
+signe du temps (celui qu'on observerait en projetant le film \`a l'envers) 
+est tel qu'il n'appara{\^\i}t pratiquement jamais en r\'ealit\'e. Mais tous 
+les syst\`emes macroscopiques hors \'equilibre \'evoluent vers l'\'equilibre, 
+c'est-\`a-dire vers une situation de plus grand d\'esordre. ( . . . )
+\smallskip
+Notons bien qu'il n'y a rien dans les lois de la m\'ecanique r\'egissant le 
+mouvement des particules du syst\`eme qui indique un sens privil\'egi\'e pour 
+l'\'ecoulement du temps. En effet, imaginons que l'on prenne un film du gaz 
+isol\'e en \'equilibre ( . . . )\par  }
+\medskip
+{\bf Commentaire:} Ici il est fait r\'ef\'erence \`a un ``film'', en fait 
+une simulation num\'erique du mouvement de 40 mol\'ecules dans une bo{\^\i}te 
+rectangulaire. Cette simulation est une des grandes innovations didactiques 
+du {\it Berkeley Physics Course} (pages 9 et 24 -- 25), dont la force 
+visuelle ne peut \^etre reproduite en citation; c'est pourquoi 
+j'introduis ce commentaire. On peut mesurer le degr\'e de d\'esordre en 
+donnant simplement en fonction du temps le {\it nombre de mol\'ecules 
+situ\'ees dans la moiti\'e gauche de la bo{\^\i}te}. La relation entre 
+ce nombre et l'entropie n'est pas clairement d\'efinie, 
+mais pour l'argumentation il suffit que les deux quantit\'es aient le 
+m\^eme type de comportement, qu'elles soient croissantes ou 
+d\'ecroissantes en m\^eme temps et maximales ou minimales en 
+m\^eme temps. Il s'agit donc de comprendre pourquoi on aboutit \`a 
+l'irr\'eversibilit\'e alors que ce film est parfaitement r\'eversible: 
+\medskip
+{\cit  En regardant le film projet\'e sur l'\'ecran, nous n'aurions aucun
+moyen de dire si le projecteur fonctionne dans le sens normal ou \`a 
+l'envers. La notion de sens privil\'egi\'e pour l'\'ecoulement du temps 
+n'appara{\^\i}t que lorsque l'on consid\`ere un syst\`eme macroscopique 
+isol\'e dont nous avons de bonnes raisons de {\it penser} qu'il est dans 
+une situation tr\`es sp\'eciale non d\'esordonn\'ee \`a un certain temps 
+$t_1$. Si le syst\`eme n'a pas \'et\'e perturb\'e pendant longtemps et s'il 
+atteint cette situation par le jeu des rares fluctuations \`a l'\'equilibre, 
+il n'y a, en fait, rien qui indique le sens du temps. ( . . . ) \par }
+\medskip
+{\bf Suite du commentaire:} Cette derni\`ere phrase est capitale: 
+supposons que le syst\`eme ne subit aucune rupture de son mouvement 
+normal (mouvement newtonien avec collisions mutuelles ou avec la paroi 
+de la bo{\^\i}te, mais surtout pas avec autre chose, comme par exemple 
+une nouvelle paroi s\'eparant la bo{\^\i}te en deux). Cela exprime le 
+fait que le syst\`eme est isol\'e. Il peut alors arriver que ``par hasard'' 
+\`a un instant $t_1$ toutes les mol\'ecules se trouvent dans la moiti\'e 
+droite de la bo{\^\i}te. Cela n'arrive pas souvent: avec quarante 
+mol\'ecules, en admettant qu'entre deux vues successives du ``film'' les 
+mol\'ecules se soient d\'eplac\'ees en moyenne sur une distance de l'ordre 
+du dixi\`eme de la largeur de la bo{\^\i}te, il faut laisser passer au 
+moins $10^{13}$ vues instantan\'ees pour avoir une chance d'observer cela. 
+Avec $8$ mol\'ecules, il suffirait de 2500 images, et avec $10^{24}$ 
+mol\'ecules il faudrait quelque 
+$10^{300\, 000\, 000\, 000\, 000\, 000\, 000\, 000}$ images. Pour un 
+film au format $16\, mm$, cela correspond \`a une dur\'ee de projection 
+de l'ordre de $100$ secondes pour $8$ mol\'ecules, de $10\, 000$ ans 
+pour $40$ mol\'ecules, $10^{300\, 000\, 000\, 000\, 000\, 000\, 000\, 000}$ 
+ann\'ees pour $10^{24}$ mol\'ecules. Si vous regardez le film de $40$ 
+mol\'ecules pendant $10\, 000$ ans, ne ratez pas l'instant o\`u toutes 
+les mol\'ecules seront dans la moi\-ti\'e gauche de la bo{\^\i}te 
+(attention, l'\'ev\'enement ne dure qu'une fraction de se\-con\-de), car il 
+serait dommage d'avoir attendu cet instant pendant $6000$ ans et de le 
+rater. Il n'aurait en effet gu\`ere de chances de se reproduire avant 
+$10\, 000$ nouvelles ann\'ees. Lorsque cet \'ev\'enement se sera produit, 
+d\'ecoupez le morceau de film qui commence une minute avant et se termine 
+une minute apr\`es et projetez le \`a l'endroit ou \`a l'envers. Il vous 
+sera effectivement impossible de savoir lequel des deux sens de projection 
+est plus r\'ealiste que l'autre. 
+\medskip
+Mais dans aucune situation concr\`ete de la vie r\'eelle vous ne pourrez 
+attendre $10^{300\, 000\, 000\, 000\, 000\, 000\, 000\, 000}$ 
+ann\'ees pour voir un gaz se concentrer spontan\'ement dans une moiti\'e de 
+r\'ecipient. Si vous voulez mettre un gaz dans une bouteille vous le ferez 
+passer par un tuyau, pouss\'e par une pompe. D'o\`u la conclusion: 
+\medskip
+{\cit  Le syst\`eme \'evolue toujours vers une situation de plus grand
+d\'esordre, que le temps se d\'eroule en avant ou en arri\`ere. 
+La seule autre possibilit\'e pour amener le syst\`eme dans une situation
+particuli\`ere non d\'esordonn\'ee \`a un instant $t_1$, c'est une 
+interaction avec un autre syst\`eme \`a un instant ant\'erieur \`a $t_1$
+[c'est-\`a-dire une {\it pr\'eparation}]. Mais dans ce cas, le sens du 
+temps est indiqu\'e par la connaissance de cette interaction avec un autre
+syst\`eme \`a un autre instant pr\'ec\'edant $t_1$. \par }
+
+\bigskip
+
+Les textes suivants parlent de la m\^eme chose, avec seulement des 
+diff\'erences de style.
+
+\bigskip
+
+{\bf 2.}\hskip3mm Extrait de [5], (vers la fin):
+\medskip
+{\cit  Ce n'est en aucune fa\c con le signe avec lequel on compte les temps
+qui constitue la diff\'erence caract\'eristique entre un \'etat organis\'e 
+et un \'etat d\'enu\'e d'organisation. Si, dans l'\'etat que l'on a adopt\'e 
+comme \'etat initial de la repr\'esentation m\'ecanique de l'univers, on 
+venait \`a inverser exactement les directions de toutes les vitesses sans 
+changer ni leurs grandeurs ni les positions des parties du syst\`eme; si 
+l'on parcourait, pour ainsi dire, \`a reculons, les diff\'erents \'etats du 
+syst\`eme, ce serait encore un \'etat non probable par lequel on d\'ebuterait 
+et un \'etat plus probable qu'on atteindrait par la suite. C'est seulement 
+pendant le laps de temps qui conduit d'un \'etat initial tr\`es peu probable 
+\`a un \'etat ult\'erieur beaucoup plus probable, que les \'etats se 
+transformemt d'une fa\c con diff\'erente dans la direction positive des 
+temps et dans la direction n\'egative. \par }
+\medskip
+Et un peu plus loin 
+\medskip
+{\cit
+Pour l'univers tout entier, les deux directions du temps sont donc 
+impossibles \`a distinguer, de m\^eme que dans l'espace, il n'y a ni dessus 
+ni dessous. Mais, de m\^eme qu'en une r\'egion d\'etermin\'ee de la surface 
+de notre plan\`ete, nous consid\'erons comme le dessous la direction qui 
+va vers le centre de la Terre, de m\^eme un \^etre vivant dans une phase 
+d\'etermin\'ee du temps et habitant un tel monde individuel, d\'esignera la 
+direction de la dur\'ee qui va vers les \'etats les moins probables autrement 
+que la direction contraire: la premi\`ere sera pour lui le pass\'e ou le 
+commencement, et la seconde l'avenir ou la fin. \par  }
+
+\bigskip
+
+{\bf 3.}\hskip3mm Extraits de [6] pages 75 -- 81.
+\medskip
+Peierls reprend d'abord le probl\`eme des mol\'ecules enferm\'ees dans une 
+bo{\^\i}te divis\'ee par la pens\'ee en deux moiti\'es (``the two chambers 
+problem''):
+\medskip
+{\cit  Some textbooks explain this paradox [Loschmidt's paradox] by saying
+that, whereas particle mechanics makes predictions about the motion of 
+individual particles, statistical mechanics makes probability statements 
+about large ensembles of particles. This is true, but it does not explain 
+why the use of probabilities and statistics should create a difference 
+between past and future where none existed before. 
+\smallskip
+The real answer is quite different. Suppose from $t=0$ when we assumed the 
+particles distributed at random within each container and to move in random 
+directions, we follow the particle trajectories, not for positive times, but 
+negative $t$, i.e., into the past. This will give a curve for the entropy 
+looking like the broken curve in figure [hereafter], and it will be the 
+mirror image of the solid curve. \par }
+\vskip2mm plus7mm minus1mm
+\epsfxsize=100mm
+\centerline{\epsfbox{../imgEPS/ch14eps/peierls1.eps}}
+\vskip2mm plus7mm minus1mm
+{\cit  We see therefore that the symmetry in time is preserved fully in these
+two calculations. However, the solid curve to the right describes a situation 
+which occurs in practice, and therefore provides the answer to a realistic 
+question, whereas the broken curve to the left does not. 
+\smallskip
+The situation to which the broken, left-hand curve would be applicable 
+would be the following: Arrange for particles at $t=0$ to be distributed 
+in given numbers over the two chambers [the two parts of the box], their 
+positions being random in each chamber, and their velocites having a 
+Maxwell-Boltzmann distribution. Ensure that prior to $t=0$, at least after 
+some finite $-T$, there was no external interference, and observe the state 
+of affairs at $t = -T$. This is evidently impossible; the only way in which 
+we can influence the distribution of molecules at $t=0$ is by taking action 
+prior to that time. \par }
+\medskip
+On reconna{\^\i}t dans ce passage essentiellement le m\^eme argument que 
+dans [4], [5], [6] cit\'es ci-dessus. Mais Peierls aborde encore le 
+probl\`eme par un autre c\^ot\'e (le ``Sto{\ss}zahl Ansatz'' de Boltzmann, 
+``l'argument du nombre de collision''). Consid\'erons un flux de mol\'ecules 
+en mouvement uniforme de vitesse $\vec{v_a}$; cela correspond \`a un \'etat 
+macroscopique d'entropie non maximale. Dans ce flux, d\'ecoupons par la 
+pens\'ee un cylindre \'etroit parall\`ele \`a la direction de ce flux, le 
+cylindre $a$ comme sur la figure ci-apr\`es:
+\vskip1mm plus7mm minus1mm
+\epsfxsize=100mm
+\centerline{\epsfbox{../imgEPS/ch14eps/peierls2.eps}}
+\vskip1mm plus7mm minus1mm
+Les mol\'ecules du cylindre $a$, qui ont toutes la m\^eme vitesse 
+$\vec{v_a}$, rebondissent sur l'obstacle diffuseur (``the scatterer'', 
+hachur\'e sur la figure), en sorte que leurs vitesses apr\`es cette 
+collision sont diverses puisque le diffuseur est suppos\'e courbe. 
+Par cons\'equent dans le cylindre $b$ de la 
+figure, il ne reste plus qu'une partie des mol\'ecules qui avant la 
+collision \'etaient dans le cylindre $a$, mais elles s'ajoutent \`a 
+celles qui \'etaient en dehors du cylindre $a$ et qui ont poursuivi leur 
+trajectoire \`a la vitesse $\vec{v_a}$ sans rencontrer de diffuseur. 
+\medskip
+{\cit  The Stosszahl Ansatz of Boltzmann now consists in the seemingly
+innocuous assumption that $\rho_a$ [the density in cylinder $a$] equals 
+the average densisty of molecules of this type anywhere in the gas, 
+i.e., that there is nothing exceptional about the particular cylinder 
+we have defined. 
+\smallskip
+This assumption is the origin of irreversibility, because if it is true, 
+the corresponding statement about the cylinder labeled $b$ in the figure 
+is {\it not} true. The only special thing about cylinder $a$ is that it 
+contains the molecules which are going to collide with the scatterer; 
+cylinder $b$ contains those which have just collided. In non-equilibrium 
+conditions, for example in the presence of a drift motion in the $a$ 
+direction, there will be more molecules in the gas as a whole moving 
+in the $a$ direction than in the $b$ direction. Scattering by the center 
+will therefore tend to increase the number in the $b$ direction. 
+If $\rho_a$ is the same as elsewhere in the gas, $\rho_b$ must then be 
+greater than the average. 
+\smallskip
+If the scattering is compared to the time-reversed situation, we see a 
+difference. To reverse the direction of time, we have to replace each  
+molecule in $b$ by one of the opposite velocity, and have them scattered 
+by the target to travel in the direction opposite to that of $a$. The 
+number would not be changed, and if $\rho_b$ in the cylinder $b$ differs 
+from the average over the whole gas, it will also differ from what, with 
+Boltzmann, we should assume about the inverse process. 
+\smallskip
+It seems intuitively obvious that the molecules should not be influenced 
+by the fact that they are going to collide, and very natural that they should 
+be affected by the fact that they have just collided. But these assumptions, 
+which cause the irreversibility, are not self-evident. If we assume, however, 
+that the state of the gas was prepared in some manner in the past, and that 
+we are watching its subsequent time development, then it follows that 
+correlations between molecules and scattering centers will arise only from 
+past, but not from future, collisions. This shows that the situation is, 
+in principle, still the same as in our two-chamber problem. \par  }
+\medskip
+L'argument n'est peut-\^etre pas d\'evelopp\'e avec la clart\'e maximale, 
+donc j'ajoute une petite explication suppl\'ementaire. L'id\'ee est ici 
+la suivante: si au d\'epart les mol\'ecules ont toutes la m\^eme vitesse 
+$\vec{v_a}$, tout le monde comprend que, {\it \`a cause} du diffuseur, 
+les vitesses apr\`es collision seront d\'esordonn\'ees. En retournant le 
+temps, l'intuition sera choqu\'ee que des vitesses d\'esordonn\'ees 
+aboutissent \`a un flux ordonn\'e, parce que ce processus inverse donnera 
+l'impression que les mol\'ecules du cylindre $b$ devaient {\it savoir} 
+comment elles allaient rebondir sur le diffuseur, et devaient ajuster leur 
+vitesse de telle mani\`ere qu'apr\`es collision elle devienne \'egale 
+\`a $-\vec{v_a}$. Elles devaient donc se d\'eterminer d'apr\`es leur futur.
+Peierls veut ainsi montrer que l'inversion est contraire \`a la causalit\'e. 
+\medskip
+{\cit We have recognized the origin of the irreversibility in the question
+we ask of statistical mechanics, and we have seen that their lack of symmetry 
+originates in the limitations of the experiments we can perform. ( . . . )  As
+long as we have no clear explanation for this limitation, we might speculate 
+whether the time direction is necessarily universal, or whether we could 
+imagine intelligent beings whose time runs opposite to ours ( . . . ) \par }
+\medskip
+En attendant que l'on d\'ecouvre l'explication de cette limitation, je 
+propose de l'int\'egrer sans explication parmi les principes fondamentaux:
+{\sl il est impossible de r\'ealiser un d\'emon de Maxwell}, tout comme on 
+a fait pour l'inertie en attendant d'en trouver l'explication.  
+
+\bigskip
+
+{\bf 4.}\hskip3mm Extraits de [7] (chapitre 12). Ce passage de 
+{\it Theory of Heat} se trouve quelques pages avant la fin. La partie qui
+d\'ecrit ce qui sera plus tard appel\'e {\it d\'emon de Maxwell} ---~par
+Lord Kelvin,  et avec la post\'erit\'e que l'on sait~--- est extr\^emement
+c\'el\`ebre (``Imaginons cependant un \^etre dont les facult\'es seraient
+si p\'en\'etrantes  . . . '').  Cependant la citation ci-dessous commence
+un peu avant ce passage c\'el\`ebre et finit un peu au-del\`a afin de
+montrer qu'en 1871 Maxwell avait parfaitement compris que le point
+crucial du second principe n'est pas tant la croissance math\'ematique 
+de l'entropie, que l'impossibilit\'e de r\'ealiser un \'etat microscopique 
+pr\'ed\'efini. Cette lucidit\'e pourra \^etre confront\'ee \`a la confusion 
+du d\'ebat qui perdure depuis $130$ ans. 
+\medskip
+{\cit  Un des faits les plus solidement \'etablis de la Thermodynamique
+est que, dans un syst\`eme qui est enferm\'e \`a l'int\'erieur d'une 
+cloison ne permettant ni variation de volume ni \'echange de chaleur, 
+et dont la temp\'erature et la pression ont partout la m\^eme valeur,
+il est impossible de produire un \'ecart de temp\'erature sans fournir 
+du travail. C'est l\`a tout le sens du second principe de la 
+thermodynamique; ce dernier est sans aucun doute v\'erifi\'e tant que 
+nous ne manipulons les corps que par grandes masses et que nous ne 
+disposons pas du pouvoir d'identifier et de manipuler les mol\'ecules 
+individuelles qui composent ces masses. Imaginons cependant un \^etre 
+dont les facult\'es seraient si aig\"ues qu'il serait en mesure de 
+suivre chaque mol\'ecule dans son mouvement, tout en \'etant comme nous 
+m\^emes de  conformation essentiellement finie; alors il lui serait 
+possible de r\'ealiser ce qui nous est impossible. Car nous avons vu 
+que les mol\'ecules d'un gaz de temp\'erature uniforme contenu dans  
+un r\'ecipient ne sont nullement anim\'ees de vitesses uniform\'ement 
+distribu\'ees, bien que la vitesse moyenne soit pratiquement 
+la m\^eme sur n'importe quel sous-ensemble suffisamment gros d'entre elles. 
+Imaginons donc qu'un tel r\'ecipient soit divis\'e en deux parties $A$ et 
+$B$ par une cloison s\'eparatrice, dans laquelle serait pratiqu\'ee une 
+petite ouverture et qu'un tel \^etre capable de voir les mol\'ecules 
+individuelles ouvre ou ferme cette ouverture de mani\`ere \`a ne 
+laisser passer de $A$ vers $B$ que les seules mol\'ecules rapides, et 
+de $B$ vers $A$ les seules mol\'ecules lentes. Cet \^etre est ainsi 
+en mesure de relever la temp\'erature de la partie $B$ au d\'etriment 
+de la partie $A$ sans d\'epense de travail, ce qui est en contradiction 
+avec le second principe. 
+\smallskip
+Ce n'est l\`a qu'un exemple parmi d'autres, dans lequel les conclusions 
+que nous avons tir\'ees de notre exp\'erience avec les corps compos\'ees 
+d'un grand nombre de mol\'ecules pourraient cesser d'\^etre applicables 
+\`a des m\'ethodes d'observation et d'investigation plus fines telles 
+que pourraient les mettre en oeuvre des \^etres capables de percevoir et
+manipuler individuellement ces mol\'ecules que nous ne pouvons manipuler 
+que par grandes masses. 
+\smallskip
+Et puisqu'en les manipulant par masses nous n'avons aucun acc\`es aux 
+mol\'ecules individuelles, nous sommes bien oblig\'es de recourir au 
+calcul statistique; ce pas accompli, nous abandonnons la m\'ethode 
+dynamique rigoureuse, par laquelle nous calculons le d\'etail de chaque 
+mouvement individuel. \par }
+\medskip
+{\bf N. B.} Le passage ci-dessus est l'origine historique du {\it d\'emon 
+de Maxwell}; c'est en effet dans {\it Theory of Heat} de {  1871}
+que cette id\'ee est publi\'ee pour la premi\`ere fois. 
+Elle \'etait cependant reprise d'une lettre de Maxwell \`a Peter Guthrie 
+Tait en {  1867}.
+
+\bigskip
+
+{\bf 5.}\hskip3mm Voici maintenant deux extraits de H. Poincar\'e. 
+Le principal argument avanc\'e par Poincar\'e est celui du 
+n\'ecessaire retour de n'importe quel 
+syst\`eme dynamique \`a des \'etats d\'ej\`a occup\'es dans le pass\'e. 
+Il s'agit de la propri\'et\'e des syst\`emes dynamiques que, ou bien les 
+trajectoires sont p\'eriodiques, ou bien elles remplissent de mani\`ere 
+dense l'hypersurface d'\'energie. Si le syst\`eme a occup\'e \`a l'instant 
+$t=0$ un \'etat microscopique d\'efini 
+par les valeurs de toutes les coordonn\'ees et impulsions, alors au bout 
+d'un temps fini $T$ il repassera {\it aussi pr\`es qu'on voudra} de cet 
+\'etat initial apr\`es s'en \^etre \'ecart\'e. Ainsi, si l'entropie 
+avait une valeur non maximale $S_0$ \`a $t=0$, elle redescendra 
+in\'evitablement \`a cette valeur \`a l'instant $T$, apr\`es avoir 
+\'et\'e maximale entretemps. Cet argument a \'et\'e repris notamment par 
+E. Zermelo dans [11] (voir extraits de [12] et [13] ci-dessous). On ne
+reproduira 
+pas ici les travaux de Poincar\'e sur ce point, ils sont bien trop 
+techniques et de toute fa\c{c}on sont fort connus. On les trouvera 
+dans [9], mais aussi dans n'importe quel ouvrage actuel sur le chaos.
+\medskip
+L'extrait qui suit concerne un autre th\'eor\`eme qui affirme qu'une 
+fonction des coordonn\'ees et des vitesses d'un syst\`eme dynamique 
+ne peut en aucun cas \^etre monotone. 
+
+\bigskip
+
+Extraits de [9]: 
+\medskip
+{\cit  Parmi les tentatives qui ont \'et\'e faites pour rattacher aux
+th\'eor\`emes g\'en\'eraux de la M\'ecanique les principes fondamentaux de 
+la Thermodynamique, la plus int\'eressante est, sans contredit, celle que 
+M. Helmholtz a d\'evelopp\'ee dans son M\'emoire sur la statique des 
+syst\`emes monocycliques (Journal de Crelle, t. {\bf 97}) et dans son 
+M\'emoire sur le principe de la moindre action (Journal de Crelle, t. {\bf 
+100}). L'explication propos\'ee dans ces deux M\'emoires me para{\^\i}t 
+satisfaisante en ce qui concerne les ph\'enom\`enes r\'eversibles. 
+\smallskip
+Les ph\'enom\`enes irr\'eversibles se pr\^etent-ils de la m\^eme mani\`ere 
+\`a une explication m\'ecanique; peut-on, par exemple, en se repr\'esentant 
+le monde comme form\'e d'atomes, et ces atomes comme soumis \`a des 
+attractions d\'ependant des seules distances, expliquer pourquoi la chaleur 
+ne peut jamais passer d'un corps froid sur un corps chaud? Je ne le crois 
+pas, et je vais expliquer pourquoi la th\'eorie de l'illustre physicien ne 
+me semble pas s'appliquer \`a ce genre de ph\'enom\`enes. \par }
+\medskip
+Poincar\'e expose alors sa d\'emonstration d'un th\'eor\`eme qui sera 
+fr\'e\-quem\-ment invoqu\'e dans la suite (voir plus bas les extraits de 
+[14]). En voici le principe.
+Le syst\`eme \'etant un syst\`eme dynamique, on peut avoir les \'equations 
+du mouvement exact de toutes les mol\'ecules sous la forme hamiltonienne; 
+si les $x_j$ sont les coordonn\'ees et les $p_j$ les impulsions des 
+mol\'ecules, on aura [$H(x,p)$ \'etant l'hamiltonien du syst\`eme]:
+$$\dot{x_j} = {\partial H \over \partial p_j}\quad ; \hskip8mm 
+\dot{p_j} = -{\partial H \over \partial x_j}\quad .$$ 
+Si $S(t)$ est l'entropie comme fonction du temps on peut \'ecrire
+$$\eqalignno{
+{dS \over dt} &= \sum_j \Big( {\partial S \over \partial x_j}\,\dot{x_j} + 
+{\partial S \over \partial p_j}\,\dot{p_j}\Big)\; =  \cr 
+&= \sum_j \Big( {\partial S \over \partial x_j}\, {\partial H \over 
+\partial p_j} - {\partial S \over \partial p_j}\, {\partial H \over 
+\partial x_j}\Big)\cr }$$ 
+et ceci doit \^etre positif. 
+Si un \'etat quelconque du syst\`eme correspond \`a l'\'equilibre, 
+appelons $p_j^{(0)}$ et $x_j^{(0)}$ les coordonn\'ees correspondantes 
+et consid\'erons le d\'eveloppement de Taylor des fonctions $S$ et $H$ 
+en puissances de $p_j - p_j^{(0)}$ et $x_j - x_j^{(0)}$. Le terme 
+lin\'eaire est nul \`a cause du choix de l'origine. Poincar\'e \'ecrit
+[j'ai modifi\'e ses notations pour respecter les usages actuels]: 
+\medskip
+{\cit  Pour ces valeurs ($p_j^{(0)}$ et $x_j^{(0)}$), les d\'eriv\'ees du
+premier ordre de $S$ s'annulent, puisque $S$ doit atteindre son maximum. 
+Les d\'eriv\'ees de $H$ s'annulent \'egalement, puique ce maximum est une 
+position d'\'equilibre et que $dx_j / dt$ et $dp_j / dt$ doivent s'annuler. 
+\smallskip
+Si donc nous d\'eveloppons $S$ et $H$ suivant les puissances croissantes 
+des $p_j - p_j^{(0)}$ et $x_j - x_j^{(0)}$, les premiers termes qui ne 
+s'annuleront pas seront ceux du deuxi\`eme degr\'e. Si, de plus, on 
+consid\`ere les valeurs de $p_j$ et de $x_j$ assez voisines de $p_j^{(0)}$ 
+et $x_j^{(0)}$ pour que les termes du troisi\`eme degr\'e soient 
+n\'egligeables, $S$ et $H$ se r\'eduiront \`a deux formes quadratiques en 
+$p_j - p_j^{(0)}$ et $x_j - x_j^{(0)}$.
+\smallskip
+La forme $H$ pourra \^etre d\'efinie ou ind\'efinie. L'expression 
+$$\sum_j \Big( {\partial S \over \partial x_j}\, {\partial H \over 
+\partial p_j} - {\partial S \over \partial p_j}\, {\partial H \over 
+\partial x_j}\Big)$$
+sera encore une forme quadratique par rapport aux $p_j - p_j^{(0)}$ 
+et aux $x_j - x_j^{(0)}$. 
+\smallskip
+Pour que l'in\'egalit\'e $dS / dt > 0$ soit satisfaite, il faudrait que 
+cette forme f\^ut d\'efinie et positive; or il est ais\'e de s'assurer 
+que cela est impossible si l'une des deux formes $S$ et $H$ est d\'efinie, 
+ce qui a lieu ici. 
+\smallskip
+Nous devons donc conclure que les deux principes de l'augmentation de 
+l'entropie et de la moindre action (entendu au sens hamiltonien) sont 
+inconciliables. Si donc M. von Helmholtz a montr\'e, avec une admirable 
+clart\'e, que les lois des ph\'enom\`enes r\'eversibles d\'ecoulent des 
+\'equations ordinaires de la Dynamique, il semble probable qu'il faudra 
+chercher ailleurs l'explication des ph\'enom\`enes irr\'eversibles et 
+renoncer pour cela aux hypoth\`eses famili\`eres de la M\'ecanique 
+rationnelle d'o\`u l'on a tir\'e les \'equations de Lagrange et de 
+Hamilton. \par  }
+
+\bigskip
+
+Extraits de [10]:  
+\medskip
+{\cit  Maxwell admet que, quelle que soit la situation initiale du syst\`eme,
+il passera toujours une infinit\'e de fois, je ne dis pas par toutes les 
+situations {\it compatibles avec l'existence des int\'egrales, mais aussi 
+pr\`es qu'on voudra} d'une quelconque de ces situations. 
+\smallskip
+C'est ce qu'on appelle le {\it postulat de Maxwell}. Nous le discuterons 
+plus loin. ( . . .  ) \par  }
+\medskip
+Et plus loin: 
+\medskip
+{\cit  Tous les probl\`emes de M\'ecanique admettent certaines solutions
+remarquables que j'ai appel\'ees p\'eriodiques et asymptotiques et dont 
+j'ai parl\'e ici m\^eme dans un pr\'ec\'edent article [9]. 
+\smallskip
+Pour ces solutions, le postulat de Maxwell est {\it certainement faux}. 
+\smallskip
+Ces solutions, il est vrai, sont tr\`es particuli\`eres, elles ne peuvent se 
+rencontrer que si la situation initiale est tout \`a fait exceptionnelle.
+\smallskip
+Il faudrait donc au moins ajouter \`a l'\'enonc\'e du postulat cette 
+restriction, d\'ej\`a bien propre \`a provoquer nos doutes: {\it sauf pour 
+certaines situations initiales exceptionnelles}. 
+\smallskip
+Ce n'est pas tout: si le postulat \'etait vrai, le syst\`eme solaire 
+serait instable; s'il est stable, en effet, il ne peut passer que par 
+des situations peu diff\'erentes de sa situation initiale. C'est l\`a 
+la d\'efinition m\^eme de la stabilit\'e. 
+\smallskip
+Or, si la stabilit\'e du syst\`eme solaire n'est pas d\'emontr\'ee, 
+l'instabilit\'e l'est moins encore et est m\^eme peu probable. 
+\smallskip
+Il est possible et m\^eme vraisemblable que le postulat de Maxwell est 
+vrai pour certains syst\`emes et faux pour d'autres, sans qu'on ait aucun 
+moyen certain de discerner les uns des autres. 
+\smallskip
+Il est permis de supposer {\it provisoirement} qu'il s'applique aux gaz 
+tels que la th\'eorie cin\'etique les con\c{c}oit; mais cette th\'eorie 
+ne sera solidement assise que quand on aura justifi\'e cette supposition 
+mieux qu'on ne l'a fait jusqu'ici. \par }
+\smallskip
+On comprendra mieux l'ampleur du malentendu entre Poincar\'e (\'eminent 
+repr\'esentant de la {\it Physique math\'ematique}) et la Physique 
+r\'eelle en \'evaluant {\it quantitativement} les grandeurs dont seules 
+l'``{existence}'', ou la ``{finitude}'', sont ici \'evoqu\'ees.
+En effet, le th\'eor\`eme de Poincar\'e sur l'\'eternel retour d'un 
+syst\`eme dynamique au voisinage de son \'etat initial est un th\'eor\`eme 
+qui s'\'enonce sous la forme:
+\smallskip
+{\sl  ``pour tout $\varepsilon$, il existe un temps $T_{\varepsilon}$ au
+bout duquel le syst\`eme repassera \`a une distance inf\'erieure \`a 
+$\varepsilon$ de son \'etat initial.'' \par }
+\medskip
+Poincar\'e interpr\`ete le second principe d'une mani\`ere analogue: pour 
+lui, affirmer la croissance de l'entropie, c'est affirmer que pour tout 
+$t' > t$ on doit avoir $S(t') \geq S(t)$. 
+Or le principe {\it physique} est tr\`es diff\'erent; il dit que pour 
+toute dur\'ee {\it physique} l'entropie ne peut diminuer que d'une valeur 
+infime, et pendant un temps tr\`es bref. Le th\'eor\`eme de Poincar\'e 
+affirme qu'il existe un temps $T_{\varepsilon}$ au bout duquel l'entropie 
+reprendra sa valeur initiale, mais il ne dit pas que ce temps est 
+de l'ordre de $10^{300\, 000\, 000\, 000\, 000\, 000\, 000\, 000}$ 
+ann\'ees, ni que la dur\'ee du retour \`a la valeur initiale est de l'ordre 
+d'une fraction de seconde. Le vrai second principe ne dit pas sans autre 
+pr\'ecision que l'entropie est une fonction croissante du temps. Si on veut 
+l'\'enoncer sous une forme vraiment compl\`ete, cela donne ceci: 
+\medskip
+{\sl a) Pour tout \'etat initial du syst\`eme sauf un nombre infime, et
+pendant des dur\'ees ayant un sens physique [donc incomparablement plus 
+courtes que $10^N$, $N$ \'etant le nombre de mol\'ecules], l'entropie du 
+syst\`eme ne s'\'ecarte pas notablement d'une fonction croissante. 
+\medskip
+b) Pendant chaque seconde de la dur\'ee d'existence physique du 
+syst\`eme isol\'e, l'entropie ne cesse de cro{\^\i}tre et d\'ecro{\^\i}tre 
+des millions de fois, en effectuant des oscillations qui sont toujours 
+imperceptibles, car il est absolument impossible qu'un \'ecart notable se 
+produise spontan\'ement et ``{par hasard}'' avant des temps bien
+sup\'erieurs \`a $10^{\sqrt{N}}$.  }
+
+\bigskip
+
+{\bf 6.}\hskip3mm Et voici la r\'eponse de Boltzmann aux 
+arguments de Poincar\'e. 
+Ces derniers ont \'et\'e rapport\'es aux physiciens de langue allemande 
+par E. Zermelo (Wiedemanns Annalen, {  1896}, vol. {\bf 57},
+p. 485 et vol. {\bf 59}, p. 793).
+\medskip
+Extraits de [12]:   
+\medskip
+{\cit  Le m\'emoire de M. Zermelo ``{\it\"Uber einen Satz der Dynamik und
+die mechanische W\"armetheorie}'' montre que mes travaux sur le sujet n'ont 
+malgr\'e tout pas \'et\'e compris; en d\'epit de cela, je dois cependant 
+me r\'ejouir de cette publication comme \'etant la premi\`ere manifestation 
+de l'int\'er\^et suscit\'e par ces travaux en Allemagne.
+\smallskip
+Le th\'eor\`eme de Poincar\'e discut\'e au d\'epart par M. Zermelo est bien 
+entendu juste, mais son application \`a la th\'eorie de la chaleur ne 
+l'est pas. J'ai d\'eduit la loi de r\'epartition des vitesses de Maxwell 
+du th\'eor\`eme probabiliste qu'une certaine grandeur ${\cal H}$ (en 
+quelque sorte la mesure de l'\'ecart de l'\'etat du syst\`eme par rapport 
+\`a l'\'etat d'\'equilibre) ne peut, pour un gaz en repos dans un 
+r\'ecipient, que diminuer. La meilleure fa\c{c}on d'illustrer le mode de 
+d\'ecroissance de cette grandeur sera d'en repr\'esenter la courbe de 
+variation, en portant le temps $t$ en abscisse et la quantit\'e 
+${\cal H}(t) - {\cal H}_{\rm min}$ en ordonn\'ee; on obtiendra ainsi ce 
+que j'appelle la courbe ${\cal H}$. \hskip6mm ( . . .  )
+\smallskip
+La courbe reste alors la plupart du temps tout pr\`es de l'axe des 
+abscisses. Ce n'est qu'\`a des instants extr\^emement rares qu'elle s'en 
+\'ecarte, en formant ainsi une bosse, et il est clair que la probabilit\'e  
+d'une telle bosse d\'ecro{\^\i}t rapidement avec sa hauteur. \`A 
+chacun des instants pour lesquels l'ordonn\'ee de la courbe est tr\`es 
+petite, r\`egne la distribution des vitesses de Maxwell; on s'en \'ecarte 
+notablement l\`a o\`u il y a une grosse bosse. M. Zermelo croit alors 
+pouvoir d\'eduire du th\'er\`eme de Poincar\'e que le gaz ne peut se 
+rapprocher constamment de la distribution de Maxwell que pour certaines 
+conditions initiales tr\`es particuli\`eres, en nombre infime compar\'e 
+\`a celui de toutes les configurations possibles, tandis que pour la 
+plupart des conditions initiales il ne s'en rapprocherait pas. 
+Ce raisonnement ne me semble pas correct.  \hskip3mm ( . . .  )
+\smallskip
+Si l'\'etat [microscopique] initial du gaz correspond \`a une tr\`es 
+grosse bosse, c'est-\`a-dire s'il s'\'ecarte compl\`etement de la 
+distribution des vitesses de Maxwell, alors il s'en rapprochera avec 
+une \'enorme probabilit\'e, apr\`es quoi il ne s'en \'ecartera plus 
+qu'infinit\'esimalement pendant un temps gigantesque. Toutefois, si 
+on attend encore plus longtemps, une nouvelle bosse notable de la 
+courbe ${\cal H}$ finira par se produire \`a nouveau et si ce temps est 
+suffisamment prolong\'e on verra m\^eme se reproduire l'\'etat initial. 
+On peut dire que, si le temps d'attente est infiniment long au sens 
+math\'ematique, le syst\`eme reviendra infiniment souvent \`a l'\'etat 
+initial. 
+\smallskip
+Ainsi M. Zermelo a enti\`erement raison quand il affirme que le mouvement 
+est, au sens math\'ematique, p\'eriodique [ou quasi-p\'eriodique]; 
+mais loin de contredire mes th\'eor\`emes, cette p\'eriodicit\'e est au 
+contraire en parfaite harmonie avec eux.
+\smallskip
+\line{\hfill (Vienne, le 20 mars 1896)} \par }
+\medskip
+Cette argumentation magistrale se poursuit, mais je l'interromps ici 
+avec regret pour \'eviter de rendre cette anthologie trop longue. 
+
+\bigskip
+
+Extraits de [13],  suite de la r\'eponse de Boltzmann aux objections 
+de Zermelo. 
+\medskip
+{\cit  Imaginons que nous retirions brusquement une cloison qui s\'eparait
+deux gaz de nature diff\'erente enferm\'es dans un r\'ecipient [par 
+exemple azote d'un c\^ot\'e et oxyg\`ene de l'autre]. On aurait du mal \`a 
+trouver une autre situation o\`u il y aurait davantage de variables aussi 
+ind\'ependantes les unes des autres, et o\`u par cons\'equent  
+l'intervention du Calcul des probabilit\'es serait plus justifi\'ee. 
+Admettre que dans un tel cas le Calcul des probabilit\'es ne s'applique 
+pas, que la plupart des mol\'ecules ne s'entrem\^elent pas, qu'au contraire 
+des parties notables du r\'ecipient contiendraient nettement plus 
+d'oxyg\`ene, d'autres plus d'azote, et ce pendant longtemps, est une 
+th\`ese que je suis bien incapable de r\'efuter en calculant dans le 
+d\'etail le mouvement exact de trillions [$10^{12}$] de mol\'ecules, dans 
+des millions de cas particuliers diff\'erents, et d'ailleurs je ne veux 
+pas le faire; une telle vision ne serait pas assez fond\'ee pour remettre 
+en question l'usage du Calcul des probabilit\'es, et les cons\'equences 
+logiques qui s'ensuivent. 
+\smallskip
+D'ailleurs le th\'eor\`eme de Poincar\'e ne contredit pas l'usage du Calcul 
+des probabilit\'es, au contraire il parle en sa faveur, puisque ce 
+dernier enseigne lui aussi que sur des dur\'ees fantastiques surviendront 
+toujours de brefs instants pendant lesquels on sera dans un \'etat de 
+faible probabilit\'e et de faible entropie, o\`u par 
+cons\'equent se produiront \`a nouveau des \'etats plus ordonn\'es et m\^eme 
+des \'etats tr\`es proches de l'\'etat initial. En ces temps prodigieusement 
+\'eloign\'es dans le futur, n'importe quel \'ecart notable de l'entropie par 
+rapport \`a sa valeur maximale demeurera \'evidemment toujours hautement 
+improbable, mais l'existence d'un tr\`es bref \'ecart sera lui aussi 
+[sur une telle dur\'ee prodigieusement longue] toujours hautement 
+probable. \par}
+\medskip
+En effet, le Calcul des probabilit\'es enseigne bien que si par exemple 
+on jette une pi\`ece mille fois il est tr\`es peu probable d'avoir mille 
+fois face (la probabilit\'e en est $2^{-1000} \simeq 10^{-301}$); mais si 
+on la jette $10^{302}$ fois, alors on n'a qu'une chance sur $45\, 000$ de 
+ne {\it jamais} avoir une s\'erie de mille faces cons\'ecutives. 
+\medskip
+{\cit \noindent (reprise de la citation)\hskip12pt Il est clair aussi,
+d'apr\`es cet exemple 
+[celui de l'oxyg\`ene et de l'azote], que si le processus se d\'eroule 
+de fa\c{c}on irr\'eversible pendant un temps observable, c'est parce 
+qu'on est parti d\'elib\'er\'ement d'un \'etat improbable. ( . . . )
+\smallskip
+\line{\hfill (Vienne, le 16 d\'ecembre 1896)} \par }
+
+\bigskip
+
+{\bf 7.}\hskip3mm Extraits de [14] pages 205 -- 207. 
+Cet extrait de {\it la nouvelle alliance} est particuli\`erement 
+lumineux. Cependant on le comparera aux textes de Maxwell et 
+Boltzmann ci-dessus pour constater que ce qui est expliqu\'e l\`a 
+en 1979 \'etait d\'ej\`a bien compris par les p\`eres fondateurs. Il est 
+cependant pr\'evisible que l'effort d'explication tent\'e par Prigogine et 
+Stengers restera aussi vain que les efforts de Boltzmann, et que d'autres 
+auteurs devront le r\'ep\'eter \`a nouveau en 2079. 
+\medskip
+{\cit D\`es la publication du travail de Boltzmann en {  1872},
+des objections furent oppos\'ees \`a l'id\'ee que le mod\`ele propos\'e 
+ramenait l'irr\'eversibilit\'e \`a la dynamique. Retenons ici deux d'entre 
+elles, l'une de Poincar\'e, l'autre de Loschmidt. 
+\smallskip
+L'objection de Poincar\'e porte sur la question de la sym\'etrie de 
+l'\'equation de Boltzmann. \par  }
+\medskip
+Pour \'eviter de rendre la citation trop longue ou d'avoir \`a donner trop 
+d'explications, je signale simplement qu'il s'agit ici de l'\'equation 
+\'etablie par Boltzmann pour la fonction de distribution $f(r,v,t)$ qui 
+repr\'esente le nombre de mol\'ecules du syst\`eme ayant, \`a l'instant $t$, 
+la vitesse $v$ et la position $r$. Boltzmann a montr\'e que la fonction 
+${\cal H} = \int f\, \log f \, dv$ ne peut que diminuer, et a postul\'e 
+que l'entropie du syst\`eme est la m\^eme chose que $-k{\cal H}$ ($k$ 
+constante de Boltzmann). 
+\medskip
+{\cit  Un raisonnement correct [\'ecrit Poincar\'e] ne peut mener \`a des
+conclusions en contradiction avec les pr\'emisses. Or, comme nous l'avons 
+vu, les propri\'et\'es de sym\'etrie de l'\'equation d'\'evolution obtenue 
+par Boltzmann pour la fonction de distribution contredisent celles de la 
+dynamique. Boltzmann ne peut donc pas avoir d\'eduit l'entropie de la 
+dynamique, il a introduit quelque chose, un \'el\'ement \'etranger \`a 
+la dynamique. Son r\'esultat ne peut donc \^etre qu'un mod\`ele 
+ph\'enom\'enologique, sans rapport direct avec le dynamique. 
+\smallskip
+Poincar\'e \'etait d'autant plus ferme dans sa position qu'il avait 
+\'etudi\'e dans une br\`eve note s'il \'etait possible de construire une 
+fonction $M$ des positions et des moments, $M(p,q)$, qui aurait les 
+propri\'et\'es de l'entropie (ou plut\^ot de la fonction ${\cal H}$): 
+alors qu'elle m\^eme serait positive ou nulle, sa variation au cours du 
+temps ne pourrait que la faire d\'ecro{\^\i}tre ou la maintenir \`a une 
+valeur constante. Sa conclusion fut n\'egative ---~dans le cadre de la 
+dynamique {\it hamiltonienne} une telle fonction n'existe pas. Comment, 
+d'ailleurs s'en \'etonner? Comment les lois r\'eversibles de la 
+dynamique pourraient-elles engendrer, de quelque mani\`ere que ce 
+soit, une \'evolution irr\'eversible? C'est sur une note d\'ecourag\'ee 
+que Poincar\'e termine ses c\'el\`ebres {\it Le\c{c}ons de Thermodynamique}: 
+il faudra sans doute faire appel \`a d'autres consid\'erations, au calcul 
+des probabilit\'es. Mais comment justifier cet appel \`a des notions 
+\'etrang\`eres \`a la dynamique? \par }
+\medskip
+{\bf Remarque 1:} Ce passage [voir aussi les citations directes de 
+Poincar\'e ci-dessus] met l'accent sur une des 
+sources possibles de confusion. Le r\'esultat de Poincar\'e est un 
+th\'eor\`eme {\it math\'ematique}: ``il ne peut pas exister de fonction 
+$M(p,q)$ qui soit \`a la fois d\'ecroissante et toujours positive''. 
+Or l'entropie, ou toute fonction qui en tient lieu (comme ${\cal H}$), 
+ou toute autre fonction caract\'erisant un \'etat {\it macroscopique} 
+(comme ``le nombre de mol\'ecules situ\'ees dans la partie gauche du 
+r\'ecipient'', etc.) n'est pas une fonction monotone, \`a cause des 
+fluctuations. Lorsqu'on dit que le syst\`eme est parvenu \`a 
+l'\'equilibre et y reste, c'est-\`a-dire que l'entropie est devenue 
+maximale, cela signifie qu'elle continue presque \'eternellement 
+\`a osciller autour de son maximum th\'eorique et non qu'elle 
+reste math\'ematiquement \'egale \`a ce maximum ou continue de s'en 
+approcher sans cesse davantage et {\it en croissant}. Ces oscillations 
+sont tr\`es petites si le nombre $N$ de mol\'ecules est grand (leur 
+\'ecart-type est de l'ordre de $1 / \sqrt{N}$), mais il peut s'en 
+produire d'importantes si on attend pendant un temps de l'ordre de 
+$10^N$. Il est donc essentiel de bien comprendre ceci: l'entropie n'est 
+pas une fonction croissante dans le sens math\'ematique du terme; c'est 
+seulement une fonction croissante dans un sens pratique. On peut 
+l'exprimer en disant que {\it sur des dur\'ees raisonnables}, et 
+{\it \`a de petites fluctuations pr\`es} elle ne peut d\'ecro{\^\i}tre. 
+La v\'eritable entropie d'un syst\`eme physique r\'eel n'est donc pas 
+concern\'ee par le th\'eor\`eme de Poincar\'e. C'est ce que Boltzmann 
+s'est efforc\'e d'expliquer dans [12] et [13].
+\medskip
+Suite de la citation (page 206):
+\medskip
+{\cit L'objection de Loschmidt permet, quant \`a elle, de mesurer
+les {\it limites de validit\'e} du mod\`ele cin\'etique de Boltzmann. 
+Il note en effet que ce mod\`ele ne peut rester valable apr\`es un 
+renversement du sens des vitesses $v \mapsto -v$. {\it Du point de 
+vue de la dynamique}, il n'y a pas d'\'echappatoire: les collisions, 
+se produisant en sens inverse, ``{d\'eferont}'' ce qu'elles ont fait,
+le syst\`eme retournera vers son \'etat initial. Et la fonction 
+${\cal H}$, qui d\'epend de la distribution des vitesses, devra bien 
+cro{\^\i}tre elle aussi jusqu'\`a sa valeur initiale. Le renversement 
+des vitesses impose donc une \'evolution {\it antithermodynamique}. 
+Et en effet, la simulation sur ordinateur confirme bien une 
+{\it croissance de} ${\cal H}$ apr\`es l'inversion des vitesses sur 
+un syst\`eme dont les trajectoires sont calcul\'ees de mani\`ere exacte.
+\smallskip
+Il faut donc admettre que la tentative de Boltzmann n'a rencontr\'e 
+qu'un succ\`es partiel: certaines conditions initiales, notamment 
+celles qui r\'esultent de l'op\'eration d'inversion des vitesses, 
+peuvent engendrer, en contradiction avec le mod\`ele cin\'etique, 
+une \'evolution {\it dynamique} \`a ${\cal H}$ croissant. Mais 
+comment distinguer les syst\`emes auxquels le raisonnement de 
+Boltzmann s'applique de ceux auxquels il ne s'applique pas? 
+\smallskip
+Ce probl\`eme une fois pos\'e, il est facile de reconna{\^\i}tre 
+la nature de la limitation impos\'ee au mod\`ele de Boltzmann. Ce 
+mod\`ele repose en fait sur une hypoth\`ese statistique qui permet 
+l'\'evaluation du nombre moyen de collisions ---~``{le chaos
+mol\'eculaire}'' . \par }
+\medskip
+{\bf Remarque 2:} le terme ``chaos'' n'est pas employ\'e ici 
+dans le sens pr\'ecis qu'il a acquis depuis, et devrait \^etre remplac\'e 
+---~ici et dans la suite~--- par ``stochasticit\'e''. En effet c'est 
+le mouvement dynamique exact des mol\'ecules qui est chaotique (``chaos 
+d\'eterministe'') et l'hypoth\`ese statistique qu'il est question 
+d'introduire consiste \`a \'eliminer l'exactitude d\'eterministe des 
+conditions initiales et de les supposer simplement al\'eatoires. 
+\medskip
+{\cit  \noindent (reprise de la citation) Cette hypoth\`ese suppose
+qu'{\it avant} la collision, les mol\'ecules ont des comportements 
+ind\'ependants les uns des autres, ce qui revient \`a dire qu'il n'y a 
+aucune corr\'elation entre leurs vitesses. Or, si on impose au syst\`eme 
+de ``{remonter le temps}'' , on cr\'ee une situation tout \`a fait
+anormale: certaines mol\'ecules sont d\'esormais ``{destin\'ees}''\
+\`a se rencontrer en un instant d\'eterminable \`a l'avance et \`a subir 
+\`a cette occasion un changement de vitesse pr\'ed\'etermin\'e. Aussi 
+\'eloign\'ees qu'elles soient les unes des autres au moment de l'inversion 
+des vitesses, cette op\'eration cr\'ee donc entre elles des corr\'elations, 
+elles ne sont plus ind\'ependantes. L'hypoth\`ese du chaos 
+[stochasticit\'e] mol\'eculaire ne peut \^etre faite \`a propos 
+d'un syst\`eme qui a subi l'op\'eration d'inversion des vitesses.
+\smallskip
+L'inversion des vitesses est donc une op\'eration qui cr\'ee un syst\`eme 
+{\it hautement organis\'e}, au comportement apparemment finalis\'e: 
+l'effet des diverses collisions produit, comme par harmonie pr\'e\'etablie, 
+une \'evolution globale ``{antithermodynamique}'' (par exemple la
+s\'egr\'egation spontan\'ee entre mol\'ecules lentes et rapides si, 
+\`a l'instant initial, le syst\`eme avait \'et\'e pr\'epar\'e par la mise
+en contact de deux gaz de temp\'eratures diff\'erentes). Mais accepter la 
+possibilit\'e de telles \'evolutions antithermodynamiques, m\^eme rares, 
+m\^eme exceptionnelles (aussi exceptionnelles que la condition initiale 
+issue de l'inversion des vitesses), c'est mettre en cause la formulation 
+du second principe: il existe des cas o\`u par exem\-ple une diff\'erence 
+de temp\'erature pourrait se produire ``{spontan\'ement}'' . Nous
+devons alors pr\'eciser les circonstances dans lesquelles un processus 
+irr\'eversible pourrait devenir r\'eversible, voire m\^eme annuler un 
+processus irr\'eversible qui s'est produit dans le pass\'e. Le principe 
+cesse d'\^etre un principe pour devenir une g\'en\'eralisation de port\'ee 
+limit\'ee. \par  }
+\medskip
+{\bf Remarque 3:} Prigogine et Stengers parlent donc ici d'une {\it mise 
+en cause} du second principe, et d'une limitation de sa port\'ee. 
+La limitation \'etant que, pour un syst\`eme dynamique {\it chaotique} 
+(au sens actuel de ce terme: chaotique = rigoureusement d\'eterministe, 
+mais avec extr\^eme sensibilit\'e aux conditions initiales), l'entropie 
+n'est pas une fonction croissante dans {\it absolument} tous les cas. En 
+r\'ealit\'e c'est plut\^ot un probl\`eme d'interpr\'etation de l'\'enonc\'e 
+du second principe. Il y a un ``second principe pour math\'ematiciens'' qui 
+stipule que l'entropie est une fonction du temps $t$ qui tend en croissant 
+vers une limite lorsque $t$ tend vers l'infini. Ce principe est faux car 
+il existe des \'etats microscopiques du syst\`eme qui le mettent en d\'efaut 
+(les \'etats ``{\it hautement organis\'es}, au comportement apparemment 
+finalis\'e''). M\^eme si on \'ecarte ces \'etats exceptionnels, la 
+d\'emonstration de Poincar\'e prouve en outre que l'entropie n'est 
+jamais rigoureusement croissante au sens math\'ematique, mais on pourrait 
+ais\'ement corriger ce dernier d\'efaut en \'enon\c{c}ant par exemple: 
+``l'entropie ne s'\'ecarte jamais notablement d'une fonction croissante''. 
+La difficult\'e qui demeurera cependant toujours est que, m\^eme 
+ainsi \'enonc\'e, on ne pourra pas garantir avec l'absolue certitude 
+math\'ematique que la fonction reste croissante pendant des dur\'ees 
+aussi grandes qu'on veut. Pourtant, pour la quasi totalit\'e des \'etats, 
+la fonction restera croissante pendant des dur\'ees si longues qu'elles 
+en perdent tout sens physique. Ainsi. en tant que ``g\'en\'eralisation de 
+port\'ee limit\'ee'' (et non principe digne de ce nom) le second principe 
+pourrait s'\'enoncer: 
+\medskip
+{\sl Pour tout \'etat microscopique initial du syst\`eme sauf un nombre infime,
+et pendant des dur\'ees courtes devant $10^N$ ($N$ \'etant le nombre de 
+mol\'ecules), l'entropie du syst\`eme ne s'\'ecarte pas notablement d'une 
+fonction croissante. }
+\medskip
+Voir plus haut les commentaires \`a propos de [11]. 
+\medskip
+Cela dit, le fait de juger cet \'enonc\'e comme trop r\'eduit ou trop 
+limit\'e pour m\'eriter le nom de principe est une affaire de convention. 
+Car les dur\'ees (non courtes devant $10^N$) pour lesquelles il ne 
+s'applique pas n'ont aucune existence pratique, et les fluctuations 
+qui produisent les oscillations non monotones de l'entropie sont bien plus 
+petites que ce qu'on a l'habitude, dans les th\'eories physiques, de 
+consid\'erer comme nul. 
+\medskip
+Les \'etats ``{\it hautement organis\'es}, au comportement apparemment 
+finalis\'e'' ont une probabilit\'e si inconcevablement petite de se produire 
+spontan\'ement qu'ils ne se produisent jamais (\'Emile Borel), et la seule 
+possibilit\'e de les rencontrer en Physique serait de les pr\'eparer. Pour 
+avoir un principe {\it physique} et non un principe pour purs 
+math\'ematiciens, cens\'e s'appliquer dans le ciel des 
+id\'ees, il suffit de dire qu'on ne peut pas pr\'eparer de tels \'etats 
+et d'inclure cette impossibilit\'e dans l'\'enonc\'e du principe. Cela 
+ne le fait pas tomber d'un pi\'edestal, mais a au contraire l'avantage 
+d'en d\'egager le v\'eritable sens, celui d'une propri\'et\'e de la nature 
+et non d'une vision de l'esprit. 
+\medskip
+Pages 211 -- 213, est pr\'esent\'ee l'``{interpr\'etation subjectiviste}''\
+de l'irr\'e\-ver\-si\-bi\-lit\'e [que les auteurs vont ensuite critiquer]: 
+\medskip
+{\cit  M\'elangeons [proposait Gibbs], une goutte d'encre noire \`a de
+l'eau pure. Bient\^ot l'eau devient grise en une \'evolution qui, pour nous, 
+est l'irr\'eversibilit\'e m\^eme; cependant, pour l'observateur aux sens 
+assez aigus pour observer non pas le liquide macroscopique mais chacune 
+des mol\'ecules qui constituent la population, le liquide ne deviendra 
+jamais gris; l'observateur pourra suivre les trajectoires de plus en plus 
+d\'elocalis\'ees des ``{mol\'ecules d'encre}'' d'abord rassembl\'ees
+dans une petite r\'egion du syst\`eme, mais l'id\'ee que le milieu 
+d'h\'et\'erog\`ene est irr\'eversiblement devenu homog\`ene, que l'eau 
+est ``{devenue grise}'' sera, de son point de vue, une illusion
+d\'etermin\'ee par la grossi\`eret\'e de nos moyens d'observation, une 
+illusion subjective. Lui-m\^eme n'a vu que des mouvements, r\'eversibles, 
+et ne voit rien de gris, mais du ``{noir}'' {\it et} du ``{blanc}'' .
+( . . .  ) Selon cette interpr\'etation, la croissance de l'entropie ne
+d\'ecrit pas le syst\`eme lui-m\^eme, mais seulement notre connaissance 
+du syst\`eme. Ce qui ne cesse de cro{\^\i}tre c'est l'ignorance o\`u nous 
+sommes de l'\'etat o\`u se trouve le syst\`eme, de la r\'egion de l'espace 
+des phases o\`u le point qui le repr\'esente a des chances de se trouver. 
+\`A l'instant initial, nous pouvons avoir beaucoup d'informations sur un 
+syst\`eme, et le localiser assez pr\'ecis\'ement dans une r\'egion 
+restreinte de l'espace des phases, mais, \`a mesure que le temps passe, 
+les points compatibles avec les conditions initiales pourront donner 
+naissance \`a des trajectoires qui s'\'eloignent de plus en plus de la 
+r\'egion de d\'epart. L'information li\'ee \`a la pr\'eparation initiale 
+perd ainsi irr\'eversiblement sa pertinence jusqu'au stade ultime o\`u 
+on ne conna{\^\i}t plus du syst\`eme que les grandeurs que l'\'evolution 
+dynamique laisse invariantes. Le syst\`eme est alors \`a l'\'equilibre 
+( . . .  ) La croissance de l'entropie repr\'esente donc la d\'egradation
+de l'information disponible; le syst\`eme est initialement d'autant 
+plus loin de l'\'equilibre que nous le connaissons mieux, que nous pouvons 
+le d\'efinir plus pr\'ecis\'ement, le situer dans une r\'egion plus petite 
+de l'espace des phases. 
+\smallskip
+Cette interpr\'etation subjectiviste de l'irr\'e\-ver\-si\-bi\-lit\'e comme 
+croissance de l'ignorance (encore renforc\'ee par l'analogie ambig\"ue 
+avec la th\'eorie de l'infor\-ma\-tion) fait de l'observateur le vrai 
+responsable de l'asym\'etrie temporelle qui caract\'erise le devenir 
+du syst\`eme. Puisque l'observateur ne peut embrasser d'un seul coup 
+d'oeil les positions et les vitesses des particules qui constituent
+un syst\`eme complexe, il n'a pas acc\`es \`a la v\'erit\'e fondamentale 
+de ce syst\`eme: il ne peut conna{\^\i}tre l'\'etat instantan\'e qui en 
+contient \`a la fois le pass\'e et le futur, il ne peut saisir la loi 
+r\'eversible qui, d'instant en instant, lui permettrait d'en d\'eployer 
+l'\'evolution. Et il ne peut pas non plus manipuler le syst\`eme comme le 
+fait le d\'emon de Maxwell, capable de s\'eparer les particules rapides 
+et les particules lentes, et d'imposer ainsi \`a un syst\`eme une 
+\'evolution antithermodynamique vers une distribution de temp\'erature 
+de moins en moins uniforme. 
+\smallskip
+La thermodynamique est certes la science des syst\`emes complexes, 
+mais, selon cette interpr\'etation, la seule sp\'ecificit\'e des 
+syst\`emes complexes, c'est que la connaissance qu'on a d'eux est 
+toujours approximative et que l'incertitude d\'etermin\'ee par cette 
+approximation va croissant au cours du temps. ( . . .  )
+\smallskip
+Cependant, l'objection est imm\'ediate: dans ce cas, la thermodynamique 
+devrait \^etre aussi universelle que notre ignorance. C'est l\`a la pierre 
+d'achoppement de l'ensemble des interpr\'etations ``{simples}'' de
+l'entropie, en termes d'incertitude sur les conditions initiales ou sur 
+les conditions aux limites. Car, l'irr\'eversibilit\'e {\it n'est pas 
+une propri\'et\'e universelle}; articuler dynamique et thermodynamique 
+n\'ecessite donc la d\'efinition d'un crit\`ere {\it physique} de 
+diff\'erentiation entre les syst\`emes, selon qu'ils peuvent ou non 
+\^etre d\'ecrits thermodynamiquement, n\'ecessite une d\'efinition de 
+la complexit\'e en termes physiques et non en termes de manque de 
+connaissance. \par }
+\medskip
+\`A partir de l\`a les auteurs insistent sur le caract\`ere objectif 
+de l'irr\'e\-ver\-si\-bi\-lit\'e ou plut\^ot de la complexit\'e (page 213 
+et apr\`es): le comportement des corps macroscopiques est bien r\'eel et 
+physique, la  complexit\'e est une qualit\'e r\'eelle et physique qui 
+d\'ecidera si le corps aura un comportement thermodynamique ou un 
+mouvement m\'ecanique, etc. Ils ont bien raison, mais cela nous 
+\'eloignerait de notre sujet.  
+
+\vskip8mm plus3mm minus3mm
+
+\centerline{\hbox to 40mm{\hrulefill}}
+
+\vskip12mm plus3mm minus3mm
+
+\centerline{\bf R\'EF\'ERENCES.} 
+
+\vskip8mm plus3mm minus3mm
+
+[1] {\bf Ludwig Boltzmann} \hskip4mm {\it Weitere Studien \"uber 
+W\"armegleichgewicht unter Gasmolek\"ulen}.  Wiener Berichte {\bf 66} 
+({\oldstyle 1872}), p. 275.
+\medskip
+\filbreak
+
+[2]   {\bf James Clerk Maxwell} \hskip4mm {\it Illustrations of the 
+Dynamical Theory of Gases.} {Phil. Mag.} {\bf 19} ({\oldstyle 1860}), pp. 19.
+\medskip
+\filbreak
+
+[3] {\bf Joseph Loschmidt} \hskip4mm {\it \"Uber das 
+W\"arme\-gleich\-gewicht eines Systems von K\"orpern mit R\"ucksicht 
+auf die Schwere.}  Wiener Berichte  {\bf 73}, 
+({\oldstyle 1876}), pp. 139.
+\medskip
+\filbreak
+
+[4] {\bf Frederik Reif} \hskip4mm {\it Cours de Physique de Berkeley: 
+tome 5, Physique statistique.} Armand Colin, Paris ({\oldstyle 1972}),
+pour l'\'edition fran\c{c}aise. 
+\medskip
+\filbreak
+
+[5] {\bf Ludwig Boltzmann} \hskip4mm {\it Le\c{c}ons sur la th\'eorie 
+des gaz.} R\'e\'edition Jacques Gabay, Paris, ({\oldstyle 1987}).
+\medskip
+\filbreak
+
+[6] {\bf Rudolf Peierls} \hskip4mm {\it Surprises in Theoretical Physics.} 
+Princeton University Press (coll. Princeton series in Physics), 
+Princeton, New Jersey ({\oldstyle 1979}).
+\medskip
+\filbreak
+
+[7] {\bf James Clerk Maxwell} \hskip4mm {\it Theory of Heat.} 
+Longmans {\&} Green, London ({\oldstyle 1871}).
+\medskip
+\filbreak
+
+[8] {\bf Henri Poincar\'e} \hskip4mm {\it Sur le probl\`eme des trois 
+corps.} Revue g\'en\'erale des Sciences pures et appliqu\'ees II, 
+vol {\bf 8} (15 janvier {\oldstyle 1891}), page 529.
+\medskip
+\filbreak
+
+[9] {\bf Henri Poincar\'e} \hskip4mm {\it Sur les tentatives d'explication 
+m\'ecanique des principes de la Thermodynamique.}  Comptes-rendus de 
+l'Acad\'emie des Sciences, vol {\bf 108} (18 mars {\oldstyle 1889}),
+pages 550 -- 553. 
+\medskip
+\filbreak
+
+[10] {\bf Henri Poincar\'e} \hskip4mm {\it Sur la th\'eorie cin\'etique 
+des gaz.} Revue g\'en\'erale des Sciences pures et appliqu\'ees, 
+vol {\bf 5} ({\oldstyle 1894}), pages 513 -- 521.
+\medskip
+\filbreak
+
+[11] {\bf Ernst Zermelo} \hskip4mm {\it\"Uber einen Satz der Dynamik und
+die mechanische W\"armetheorie}  Wiedemanns Annalen, vol {\bf 57} p.485 
+et vol {\bf 59} p.793 ({\oldstyle 1896}).
+\medskip
+\filbreak 
+
+[12] {\bf Ludwig Boltzmann} \hskip4mm {\it  Entgegnung auf die 
+W\"armetheoretischen Betrachtungen des Hrn. E. Zermelo.}  Wiedemanns 
+Annalen, vol {\bf 57} ({\oldstyle 1896}), pages 773 -- 784.
+\medskip
+\filbreak
+
+[13] {\bf Ludwig Boltzmann} \hskip4mm {\it  Zu  Hrn. Zermelos Abhandlung 
+``\"Uber die mechanische Erkl\"arung irreversibler Vorg\"ange''.}  Wiedemanns 
+Annalen, vol {\bf 60} ({\oldstyle 1897}), pages 392 -- 398.
+\medskip
+\filbreak
+
+[14] {\bf Ilya Prigogine, Isabelle Stengers} \hskip4mm {\it La nouvelle 
+alliance.} NRF Gallimard, Paris ({\oldstyle 1979}).
+
+
+
+\end
