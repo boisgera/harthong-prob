@@ -4,8 +4,8 @@ Probabilités et Statistiques de Jacques Harthong
 Ce dépôt a vocation à favoriser la préservation et la diffusion du 
 cours de Probabilités et Statistiques de Jacques Harthong.
 
-L'auteur aujourd'hui décédé avait mis à disposition le document ainsi que ses 
-sources sur le site de l'université de Strasbourg:
+L'auteur aujourd'hui décédé l'avait diffusé en *open-source*
+sur le site de l'université de Strasbourg:
 
     http://moire4.u-strasbg.fr/apache2-default/bouquins/proba/tabmat1.htm
 
