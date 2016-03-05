@@ -44,7 +44,7 @@ il s'exprime ainsi:
 > Dans l'édition, ce secteur reste à créer (ou plus exactement à sortir de la 
 > marginalité).
 
-    ([texte intégral ici](https://github.com/boisgera/harthong-prob/blob/master/Le%20Photocopillage.md))
+([texte intégral ici](https://github.com/boisgera/harthong-prob/blob/master/Le%20Photocopillage.md))
 
 
 A ma connaissance, cet ouvrage, fut édité en 1996 par 
