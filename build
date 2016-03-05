@@ -1,10 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-pushd . > /dev/null
-cd tex
-tex chap01.tex
-dvipdf chap01.dvi
+SRC="chap01 chap02"
 
-popd > /dev/null
+pushd .
+
+cd tex
+for src in $SRC; do
+  tex $src.tex && dvipdf $src.dvi
+done
+
+popd
 
