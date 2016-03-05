@@ -25,7 +25,10 @@ diffusion de ce document:
     > Bien entendu, je sais que fort peu de jeunes se laissent impressionner 
     > par les tentatives d'intimidation contre le "photocopillage". 
     > Je vois dans les labos des thésards photocopier des ouvrages entiers. 
-    > Félicitations! (c'est devenu illégal). 
+    > Félicitations ! (c'est devenu illégal). 
+
+    ([texte intégral ici](https://github.com/boisgera/harthong-prob/blob/master/Le%20Photocopillage.md))
+
 
 A ma connaissance, cet ouvrage, 
 qui fut édité par "Diderot Editeur Arts Sciences" (ISBN: 2841340708),
