@@ -10,16 +10,19 @@ L'auteur aujourd'hui décédé l'avait diffusé en *open-source* à l'adresse:
 
 **Ce lien ne fonctionne plus aujourd'hui.** 
 Il peut toutefois être utilisé sur la [Wayback Machine](http://archive.org/web/)
-qui archive une partie des contenus d'Internet pour accéder aux documents:
+qui archive une partie des contenus d'Internet:
 
   - [accès au documents (Wayback Machine)](https://web.archive.org/web/20150202043708/http://moire4.u-strasbg.fr/apache2-default/bouquins/proba/tabmat1.htm)
+
+Le [Cours d'Analyse](https://cel.archives-ouvertes.fr/cel-00519301v2/document) 
+est disponible sur les archives ouvertes HAL sous une licence Creative Commons 
+4.0 (Attribution / NonCommercial / ShareALike) grâce aux soins de 
+Mathias Legrand <mathias.legrand@mcgill.ca>.
+
 
 Il y a peu de doute sur l'attitude qu'aurait Jacques Harthong quant à la 
 diffusion de ce document:
 
-  - son [Cours d'Analyse](https://cel.archives-ouvertes.fr/cel-00519301v2/document) 
-    est disponible sur les archives ouvertes HAL sous une 
-    licence Creative Commons 4.0 (Attribution / NonCommercial / ShareALike).
 
   - dans son pamphlet "Le Photocopillage", il s'exprime ainsi:
 
