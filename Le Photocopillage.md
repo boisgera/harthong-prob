@@ -160,7 +160,7 @@ tout) et au financement public par les bibliothèques. Le comportement des agent
 économiques est ici analogue à celui des ours du Yellowstone National Park qui 
 ont trouvé plus rentable de chercher leur nourriture dans les poubelles des 
 touristes plutôt que - comme leurs ancêtres sauvages - dans la forêt naturelle. 
-Si ce marché était ``naturel'' comme le veut la théorie économique, il faudrait 
+Si ce marché était "naturel" comme le veut la théorie économique, il faudrait 
 que les éditeurs engagent de nombreux frais pour rendre l'ouvrage plus 
 compétitif (une typographie soignée et sans erreur, cela coûte des salaires), 
 pour attirer des auteurs en les payant bien, ou en l'absence d'auteurs rééditer 
