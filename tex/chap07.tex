@@ -1,5 +1,5 @@
-\input /home/harthong/tex/formats/twelvea4.tex
-\input /home/harthong/tex/formats/epsf.tex
+\input twelvea4.tex
+\input epsf.tex
 
 \auteurcourant={\sl J. Harthong: probabilit\'es et statistique}
 \titrecourant={\sl La loi normale}
@@ -205,9 +205,11 @@ ouvrages entiers rien que sur ce sujet: voir par exemple Eug\`ene Lukacs
 \medskip
 En dehors du d\'eveloppement limit\'e au voisinage de z\'ero,  les fonctions
 caract\'eristiques ont encore d'autres propri\'et\'es caract\'eristiques;
-parexemple elles sont toujours born\'ees par 1:  si $X$ est une variable
+par
+exemple elles sont toujours born\'ees par 1:  si $X$ est une variable
 al\'eatoire absolument quelconque,  on aura toujours $|\Phi_X(t)| \leq 1$. 
-Ilest tr\`es facile de s'en assurer,  il suffit  de remarquer que 
+Il
+est tr\`es facile de s'en assurer,  il suffit  de remarquer que 
 $$|\Phi_X(t)| = | \sum_k p_k \e^{itx_k} | \leq \sum_k |p_k \e^{itx_k}| = 
 \sum_k p_k = 1$$ 
 Cette propri\'et\'e est donc simplement due au fait que les probabilit\'es
@@ -253,7 +255,8 @@ mais \`a l'\'echelle interm\'ediaire $\sqrt{n}$.
 Voici donc ce que nous nous proposons d'\'etablir:
 \medskip
 {\it Th\'eor\`eme}: soient des variables al\'eatoires 
-$X_1,\,  X_2,\, X_3,\ldots X_n$ ind\'e\-pen\-dantes et de
+$X_1,\,  X_2,\, X_3,
+\ldots X_n$ ind\'e\-pen\-dantes et de
 moyenne nulle. 
 On consid\`ere les fluctuations de la somme
 (rapport\'ee comme annonc\'e \`a l'unit\'e $\sqrt{n}$): 
@@ -276,14 +279,20 @@ de sorte que tout se ram\`ene \`a des variables al\'eatoires de moyenne
 nulle, \`a savoir les $X_j - m_j$.
 \smallskip
 b) Le sens de l'expression ``une loi approximativement gaussienne''
-doit\^etre pr\'ecis\'e.  Dans le cas de la marche al\'eatoire
+doit
+\^etre pr\'ecis\'e.  Dans le cas de la marche al\'eatoire
 (voir section {\bf VII.1}) ce sens \'etait clair;  la loi exacte
-\'etait donn\'ee par les coefficients dubin\^ome et ceux-ci pouvaient
+\'etait donn\'ee par les coefficients du
+bin\^ome et ceux-ci pouvaient
 \^etre approch\'es par une expression de la forme $e^{-x^2}$. 
-Mais on savait alors que les valeurs prises par lavariable al\'eatoire
-\'etaient enti\`eres.  Dans le cas g\'en\'eral il n'y aplus aucune
-raison pour que les valeurs soient enti\`eres,  ni m\^eme\'equidistantes, 
-mais celles-ci sont cependant toujours discr\`etes;  uneapproximation
+Mais on savait alors que les valeurs prises par la
+variable al\'eatoire
+\'etaient enti\`eres.  Dans le cas g\'en\'eral il n'y a
+plus aucune
+raison pour que les valeurs soient enti\`eres,  ni m\^eme
+\'equidistantes, 
+mais celles-ci sont cependant toujours discr\`etes;  une
+approximation
 de cette loi discr\`ete ne peut pas se r\'eduire \`a une
 approximation des probabilit\'es de chaque valeur:  il faut en outre avoir
 une approximation des valeurs elles-m\^emes.  Par ailleurs la fontion
@@ -336,7 +345,8 @@ Or il n'en est rien.  Le fait que la longueur des intervalles
 d'\'echan\-til\-lon\-nage doive \^etre sensiblement moins petite que
 $1/\sqrt{n}$ est une n\'ecessit\'e objective qu'on ne peut pas faire
 dispara{\^\i}tre en introduisant plus de rigueur.  Certes,  on trouvera
-desouvrages plus {\og math\'ematiques\fg} que celui-ci sur le Calcul des
+des
+ouvrages plus {\og math\'ematiques\fg} que celui-ci sur le Calcul des
 probabilit\'es,  dans lesquels tout cela sera trait\'e soigneusement en
 termes de limites quand $n$ tend vers l'infini.  Mais si on regarde les
 d\'emonstrations de plus pr\`es,  on s'apercevra que cette histoire
@@ -367,8 +377,9 @@ graphiquement les deux lois de $X$ et de $Y$ sur la figure 11,  dans le cas
 o\`u $f(x) = e^{-x^2}/\sqrt{\pi}$.
 
 \midinsert
-\centerline{\epsfbox{../imgEPS/ch07eps/fig11.eps}}
-\vskip3mmplus3mm minus2mm
+\centerline{\epsfbox{../images/fig11.eps}}
+\vskip3mm
+plus3mm minus2mm
 \centerline{\eightpoint figure 11}
 \vskip6pt
 \centerline{\vbox{\hsize=12cm \eightpoint  On a repr\'esent\'e sur cette
@@ -388,28 +399,39 @@ somme des longueurs (constantes) des traits du graphique du bas.
 \smallskip
 Ces deux lois sont repr\'esent\'ees approximativement par la {\it m\^eme}
 densit\'e continue $e^{-x^2}$.}}  
-\vskip3mmplus3mm minus2mm
+\vskip3mm
+plus3mm minus2mm
 \endinsert
 \medskip
 Si on veut approcher la loi de probabilit\'e de $X$ par une densit\'e 
 continue,  il suffira --- comme on l'a fait \`a la section {\bf 1} pour la
-marcheal\'eatoire --- d'approcher la valeur des $p_j$. Mais si on veut
+marche
+al\'eatoire --- d'approcher la valeur des $p_j$. Mais si on veut
 approcher la loi de $Y$,  il faudra tenir compte du fait que,  les valeurs
-de $Y$ \'etantplus nombreuses (plus denses) au voisinage de z\'ero, 
-il y aura une plusforte probabilit\'e pour $Y$ de prendre une valeur
+de $Y$ \'etant
+plus nombreuses (plus denses) au voisinage de z\'ero, 
+il y aura une plus
+forte probabilit\'e pour $Y$ de prendre une valeur
 proche de z\'ero,  bien que chaque valeur discr\`ete prise isol\'ement
-soit \'equiprobable. L'op\'eration d'\'echantillonnage \'evoqu\'ee
-ci-dessus consiste \`aregrouper les valeurs prises par les variables
-al\'eatoires dans desintervalles de longueur \'egale $\varepsilon$; 
+soit \'equiprobable.
+ L'op\'eration d'\'echantillonnage \'evoqu\'ee
+ci-dessus consiste \`a
+regrouper les valeurs prises par les variables
+al\'eatoires dans des
+intervalles de longueur \'egale $\varepsilon$; 
 en choisissant $\varepsilon$ \'egal au dixi\`eme de la largeur totale
-des graphiques de lafigure 11,  on obtient dix intervalles
-d'\'echantillonnage,  et la probabilit\'epour que $X$ ou $Y$ prenne
-ses valeurs dans l'un de ces dix intervalles estrepr\'esent\'ee sur
-la figure 12.  On voit que les deux graphiques sontd\'ej\`a bien plus
+des graphiques de la
+figure 11,  on obtient dix intervalles
+d'\'echantillonnage,  et la probabilit\'e
+pour que $X$ ou $Y$ prenne
+ses valeurs dans l'un de ces dix intervalles est
+repr\'esent\'ee sur
+la figure 12.  On voit que les deux graphiques sont
+d\'ej\`a bien plus
 ressemblants.
 
 \midinsert
-\centerline{\epsfbox{../imgEPS/ch07eps/fig12.eps}}
+\centerline{\epsfbox{../images/fig12.eps}}
 \vskip3mm
 \centerline{\eightpoint figure 12}
 \vskip6pt
@@ -443,7 +465,8 @@ alors la convolution est simplement la moyennisation
 sur des intervalles de largeur $\varepsilon$. On peut \'egalement
 prendre des filtres gaussiens d'\'ecart-type $\varepsilon$; 
 dans ce cas on aura  
-$$\rho(x) = {1 \over\sdown{12} \sqrt{2\pi}\;\varepsilon}\; 
+$$\rho(x) = {1 \over
+\sdown{12} \sqrt{2\pi}\;\varepsilon}\; 
 \e^{-{x^2 \over \sdown{6.5} 2\varepsilon^2}} \eqno (VII.2b)$$
 Un autre filtre fr\'equemment consid\'er\'e est le filtre
 $$\rho (x) = {\sin ({1\over\textdown{\varepsilon }}\,\pi
@@ -458,7 +481,7 @@ On peut voir le r\'esultat de ces convolutions sur les figures 13 \`a 16.
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig13a.eps}}
+\centerline{\epsfbox{../images/fig13a.eps}}
 \vskip15mm
 \centerline{\eightpoint figure 13 (d\'ebut)}
 \vfill }
@@ -467,7 +490,7 @@ On peut voir le r\'esultat de ces convolutions sur les figures 13 \`a 16.
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig13b.eps}}
+\centerline{\epsfbox{../images/fig13b.eps}}
 \vskip10mm
 \centerline{\eightpoint figure 13 (suite)}
 \vskip6pt
@@ -486,7 +509,7 @@ normale).}}
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig14a.eps}}
+\centerline{\epsfbox{../images/fig14a.eps}}
 \vskip10mm
 \centerline{\eightpoint figure 14 (d\'ebut)}
 \vfill }
@@ -494,7 +517,7 @@ normale).}}
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig14b.eps}}
+\centerline{\epsfbox{../images/fig14b.eps}}
 \vskip10mm 
 \centerline{\eightpoint figure 14 (suite)}
 \vskip6pt
@@ -508,7 +531,7 @@ discr\`ete en loi gaussienne sont de l'ordre de $0.3$ -- $0.6$. }}
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig15.eps}}
+\centerline{\epsfbox{../images/fig15.eps}}
 \vskip15mm
 \centerline{\eightpoint figure 15}
 \vskip6pt
@@ -534,7 +557,7 @@ l'exemple).} }
 
 \midinsert
 \vbox to \blocksize{\null\vfill\null
-\centerline{\epsfbox{../imgEPS/ch07eps/fig16.eps}}
+\centerline{\epsfbox{../images/fig16.eps}}
 \vskip10mm
 \centerline{\eightpoint figure 16}
 \vskip6pt
@@ -551,22 +574,28 @@ discr\`ete par convolution donne bien une courbe approximativement
 gaus\-sienne,  mais seulement lorsque la longueur de corr\'elation
 $\varepsilon$ du filtre se situe dans une certaine plage de valeurs. 
 Si $\varepsilon$ est trop petit,  le {\it bruit discret} subsiste et
-la courbeliss\'ee n'est pas proche de la gaussienne.  Si $\varepsilon$
-est trop grand, la moyennisation ne porte pas seulement sur les hautes
-fr\'equencescaract\'eristiques de la loi discr\`ete,  mais aussi sur
-l'\'ecart-type de laloi elle-m\^eme,  ce qui aboutit \`a trop \'etaler la loi.
+la courbe
+liss\'ee n'est pas proche de la gaussienne.  Si $\varepsilon$
+est trop grand,
+ la moyennisation ne porte pas seulement sur les hautes
+fr\'equences
+caract\'eristiques de la loi discr\`ete,  mais aussi sur
+l'\'ecart-type de la
+loi elle-m\^eme,  ce qui aboutit \`a trop \'etaler la loi.
 \medskip
 Ainsi,  lorsqu'on \'enonce un phrase telle que ``la loi discr\`ete $X$ est
 appro\-xi\-ma\-tivement gaussienne'',  il faut comprendre que pour un choix
 optimal du param\`etre $\varepsilon$ (celui-ci n'\'etant ni trop grand, ni 
 trop petit),  la loi $X$ {\it filtr\'ee} (qui,  elle, est une densit\'e
-continue)est proche de la densit\'e continue gaus\-sienne. 
+continue)
+est proche de la densit\'e continue gaus\-sienne. 
 \medskip
 Lorsqu'on dit qu'une loi discr\`ete $X$ est approximativement gaussienne,
 son graphique (par exemple l'un des deux graphiques de la figure 11) est
 tr\`es diff\'erent du graphique de la fonction 
 $${1\over\,\sdown{16}\sqrt{2\pi\, {\bf Var}(X)}}\; 
-\exp \Bigl\{ - {x^2 \over 2\, {\bfVar}(X)} \Bigr\}$$   
+\exp \Bigl\{ - {x^2 \over 2\, {\bf
+Var}(X)} \Bigr\}$$   
 mais il lui devient ressemblant si on effectue un \'echantillonnage (comme
 le montre la figure 12) ou un filtrage par convolution (comme le montrent
 les figures 13 \`a 16). 
@@ -584,25 +613,31 @@ elles,  avec des probabilit\'es respectives \'egalement chaotiques: voir la
 figure 17).  Le th\'eor\`eme dit alors que m\^eme si la loi discr\`ete {\it
 exacte} de la somme est extr\^emement compliqu\'ee et chaotique,  sa {\it
 densit\'e},  qu'on peut r\'ev\'eler par \'chantillonnage,  moyennisation, 
-ou convolution,  sera n\'eanmoinsproche d'une densit\'e gaussienne; 
-la partie compliqu\'ee de la loi se situeuniquement dans le bruit discret, 
-et apr\`es \'elimination de ce bruit par\'echantillonnage ou filtrage, 
-les probabilit\'es se r\'epartiront selon uneloi gaussienne simple: 
+ou convolution,  sera n\'eanmoins
+proche d'une densit\'e gaussienne; 
+la partie compliqu\'ee de la loi se situe
+uniquement dans le bruit discret, 
+et apr\`es \'elimination de ce bruit par
+\'echantillonnage ou filtrage, 
+les probabilit\'es se r\'epartiront selon une
+loi gaussienne simple: 
 il se produira pour la loi compliqu\'ee et chaotique la m\^eme chose
 que ce qui s'est produit dans les figures 13 et 16. 
 
 \advance\blocksize by -2pt
 
 \midinsert \vbox to \blocksize {\null\vfill
-\centerline{\epsfbox{../imgEPS/ch07eps/fig17.eps}}
+\centerline{\epsfbox{../images/fig17.eps}}
 \vskip3mm
 \centerline{\eightpoint figure 17}
 \vskip6pt
 \centerline{\vbox{\hsize=12cm \eightpoint 
 Les six graphiques que voici repr\'esentent la loi de la somme d'un nombre
 de plus en plus grand de variables al\'eatoires. Afin d'\'economiser la
-place,on n'a reproduit que la moiti\'e positive du graphique, la moiti\'e
-n\'egative\'etant sym\'etrique; ainsi la valeur 0 est \`a l'extr\^eme
+place,
+on n'a reproduit que la moiti\'e positive du graphique, la moiti\'e
+n\'egative
+\'etant sym\'etrique; ainsi la valeur 0 est \`a l'extr\^eme
 gauche du graphique. Les variables al\'eatoires sont, pour $j=1$ \`a $j=6$, 
 $$X_j = \cases{
 \sqrt{j/3} + \sqrt{2-j/5} + \sqrt{j/7} &avec probabilit\'e $1\over 2$ \cr  
@@ -634,14 +669,18 @@ le produit  des  fonctions caract\'eristiques, c'est-\`a-dire
 $$\Phi_{S} (t) \;\; = \;\; \Phi_X (t)^n$$ 
 Si on pose $Z = S /  \sqrt{n}$, alors 
 $$\Phi_Z (t) \;\; = \;\; \Phi_{S} \Bigl({t\over\sqrt{n}}\Bigr) \;\; = \;\; 
-\Phi_X\Bigl({t\over\sqrt{n}}\Bigr)^n$$
+\Phi_X
+\Bigl({t\over\sqrt{n}}\Bigr)^n$$
 En effet, 
 $$\Phi_Z (t) \;\; = \;\; \sum_{k} p_k \exp \Bigl( i\, {x_k \over \sqrt{n} }
-\, t\Bigr)\;\; = \;\; \sum_{k} p_k\, \exp \Bigl( i\, x_k\, {t \over 
-\sqrt{n} } \Bigr) \;\; =\;\; \Phi_{S} \Bigl({t\over\sqrt{n}}\Bigr)$$
+\, t
+\Bigr)\;\; = \;\; \sum_{k} p_k\, \exp \Bigl( i\, x_k\, {t \over 
+\sqrt{n} } \Bigr) \;\; =
+\;\; \Phi_{S} \Bigl({t\over\sqrt{n}}\Bigr)$$
 Il r\'esulte de la section {\bf VII.2.} que $\Phi_X (t)$, comme toute
 fonction carac\-t\'e\-ristique de variable al\'eatoire, poss\`ede
-{\it auvoisinage de} $t=0$ le d\'eveloppement limit\'e
+{\it au
+voisinage de} $t=0$ le d\'eveloppement limit\'e
 $$1 - {\bf Var} (X)\, {t^2\over 2}$$ 
 et par cons\'equent  
 $$\Phi_Z (t) \;\; \simeq \;\; \Bigl[ 1 - {\bf Var} (X)\, 
@@ -660,7 +699,8 @@ commun le d\'eveloppement limit\'e au voisinage de $t=0$, ce qui permet
 d'affirmer, en ignorant tout de ce qui se passe pour les grandes valeurs de
 $t$, que pour $t$ petit, 
 $$\Phi_Z (t) \;\; \simeq \;\; \Bigl[ 1 - {\bf Var} (X)\, {t^2\over 2n}
-\Bigr]^n\;\; \simeq \;\; \e^{-{\bf Var} (X)\, {t^2\over 2}}$$
+\Bigr]^n
+\;\; \simeq \;\; \e^{-{\bf Var} (X)\, {t^2\over 2}}$$
 Le m\'ecanisme de la formation d'une loi de densit\'e gaussienne par
 simple accumulation de contributions stochastiquement ind\'ependantes
 (comme on peut le voir sur la figure 17)  se comprend donc 
@@ -680,10 +720,12 @@ al\'eatoire $Z$. Sa fonction caract\'eristique est alors
 $$\Phi_Z(t) \;\; = \;\; \sum_k p_k \e^{-iz_kt}$$
 Par ailleurs, la transform\'ee de Fourier de la fonction densit\'e
 $$f(x) \;\; = \;\; {1\over\,\sdown{16} \sqrt{2\pi\, {\bf Var}(X)}}\; 
-\exp \Bigl\{ - {x^2 \over2\, {\bf Var}(X)} \Bigr\}$$  
+\exp \Bigl\{ - {x^2 \over
+2\, {\bf Var}(X)} \Bigr\}$$  
 est
 $$\phi (t) \;\; = \;\; \int_{-\infty}^{+\infty} f(x)\, \e^{ixt}\, dx \;\; 
-=\;\; \exp\, \Bigl\{ - {\bf Var}(X)\, {t^2\over 2}\Bigr\}$$ 
+=
+\;\; \exp\, \Bigl\{ - {\bf Var}(X)\, {t^2\over 2}\Bigr\}$$ 
 On constate en comparant $\phi (t)$ avec le d\'eveloppement limit\'e de
 $\Phi_Z(t)$ que les deux expressions sont semblables; autrement dit, 
 pour $t$ petit, $\Phi_Z(t) \simeq \phi (t)$.
@@ -705,7 +747,8 @@ nous int\'eresse, c'est le d\'eveloppement \`a l'ordre 2 qui sera
 finalement retenu, donc nous effectuerons tous les calculs en incluant
 l'ordre 3.  On a alors 
 $$\Phi_X \Bigl( {t\over\sqrt{n}}\Bigr) \;\; \simeq \;\; 1 - {\up{t^2}
-\over 2n}\,M_2 - i\, {\up{t^3} \over 6n\sqrt{n}}\, M_3$$
+\over 2n}\,
+M_2 - i\, {\up{t^3} \over 6n\sqrt{n}}\, M_3$$
 On obtient $\Phi_Z (t)$ en \'elevant cela \`a la puissance $n$. Pour avoir
 un d\'evelop\-pe\-ment limit\'e, prenons les logarithmes. Ici
 $\Phi_X ( t\, /\sqrt{n}) = 1 - z$ avec 
@@ -719,7 +762,8 @@ $$\eqalign{
 \;\; -z - {1\over 2}z^2 \cr
 &\simeq \;\; - {\up{t^2}\over 2n}\, M_2 - i \,{\up{t^3} \over 6n\sqrt{n}} 
 \, M_3 -{1\over 2}\Bigl[ {\up{t^2}\over 2n}\, M_2 + i\, 
-{\up{t^3} \over 6n\sqrt{n}}\,M_3\Bigr]^2 \cr }$$
+{\up{t^3} \over 6n\sqrt{n}}\,
+M_3\Bigr]^2 \cr }$$
 On voit que les termes correspondant \`a $z^2$ sont d'ordre sup\'erieur
 \`a $t^3/n\sqrt{n}$; on va donc les n\'egliger. En multipliant par $n$ 
 cela devient
@@ -727,7 +771,8 @@ $$\ln\Bigl\{ \Phi_X \Bigl( {t\over\sqrt{n}}\Bigr)^n\Bigr\}\;\; \simeq \;\;
 - {\up{t^2}\over 2}\, M_2 - i \, {\up{t^3} \over 6\sqrt{n}}\, M_3$$
 et en revenant aux exponentielles
 $$\Phi_Z(t) \;\; = \;\; \Phi_X \Bigl( {t\over\sqrt{n}}\Bigr)^n \;\; \simeq 
-\;\; \e^{-{t^2\over 2} M_2} \cdot \e^{- i {t^3 \over 6\sqrt{n}} M_3}$$
+\;\; \e^{-
+{t^2\over 2} M_2} \cdot \e^{- i {t^3 \over 6\sqrt{n}} M_3}$$
 On voit alors que la condition pour que $\Phi_Z(t) \simeq \exp\, \bigl(
 - (t^2/ 2) M_2 \bigr)$ est que $(t^3 / 6\sqrt{n}) M_3$ soit petit,
 c'est-\`a-dire que 
@@ -776,7 +821,8 @@ $$\int_{-\infty}^{+\infty} g(x) \,\e^{itx}\, dx \;\; = \;\; \sum_k p_k
 Avec le changement de variable $y = x-x_k$ cela devient
 $$\eqalign{
 \int_{-\infty}^{+\infty} g(x)\, \e^{itx}\, dx\;\; &= \;\; \sum_k p_k\, 
-\e^{itx_k}\int_{-\infty}^{+\infty} \rho (y)\, \e^{ity}\, dy \cr
+\e^{itx_k}
+\int_{-\infty}^{+\infty} \rho (y)\, \e^{ity}\, dy \cr
 &= \;\; \sum_k p_k\, \e^{itx_k}\, \widehat\rho\, (t)  \cr
 &= \;\; \Phi_Z(t)\,\widehat\rho\, (t) \cr }$$ 
 o\`u $\widehat\rho\, (t)$ est la transform\'ee de Fourier de $\rho\, (x)$. 
@@ -804,18 +850,21 @@ Var}\, (X)\bigr)$, donc  pratiquement nulle si $\eta$ est assez grand.
 Il est facile de comparer les fonctions $f(x)$ et $g(x)$; en effet, on
 peut inverser l'int\'egrale de Fourier, de sorte que 
 $$f(x) - g(x) \;\; = \;\; {1 \over 2\pi} \int_{-\infty }^{+\infty }
-\Bigl[\phi (t) - \Phi_Z (t) \,\widehat\rho\, (t)\Bigr]\, \e^{-itx}\, dt$$
+\Bigl[
+\phi (t) - \Phi_Z (t) \,\widehat\rho\, (t)\Bigr]\, \e^{-itx}\, dt$$
 On en d\'eduit en prenant les modules
 $$\eqalign{
 \bigm| f(x) - g(x) \bigm|\;\; &\leq \;\; {1 \over 2\pi} \int_{-\infty}^{
-+\infty }\Bigm| \phi (t) - \Phi_Z (t) \,\widehat\rho\, (t)\Bigm| dt \cr
++\infty }
+\Bigm| \phi (t) - \Phi_Z (t) \,\widehat\rho\, (t)\Bigm| dt \cr
 &\leq \;\; {1 \over 2\pi} \int_{-\infty }^{+\infty } \Bigm|  1 - \e^{-i{t^3
 \over 6\sqrt{n}} M_3} \Bigm| \phi (t)\, dt + {1 \over \pi}
 \int_{\hbox{$\eta$}}^{+\infty }\!\!\!\!\!\!\phi (t)\, dt \cr }$$ 
 Le second terme est d'autant plus petit que $\eta$ est plus grand.
 Quant au premier, on remarque qu'il est \'egal au seuil d'erreur $\alpha$
 (cf. VII.4.) qu'on s'est fix\'e, multipli\'e par ${1\over 2\pi}\int
-\phi (t)\,dt$, ce qui vaut $\alpha\, / \sqrt{2\pi M_2}$
+\phi (t)\,
+dt$, ce qui vaut $\alpha\, / \sqrt{2\pi M_2}$
 \medskip
 Bien entendu l'erreur {\it ne peut pas} \^etre rendue arbitrairement
 petite pour une valeur fix\'ee de $n$: on voit que si on prend $\alpha$
@@ -823,11 +872,13 @@ trop petit, $\eta$ sera trop petit \'egalement de sorte que le second
 terme ci-dessus ne sera pas petit. Le meilleur choix (pour une valeur
 fix\'ee de $n$) est donc celui qui rend minimum l'expression
 $$u(\alpha ) \;\; = \;\; {\alpha \over \sdown{12} \sqrt{2\pi M_2}}
-+ {1\over \sdown{12} \pi\sqrt{M_2}}\;\,\gamma\, \Bigl(\eta(\alpha)\,
++ {1\over \sdown{12} \pi\sqrt{M_2}}\;\,
+\gamma\, \Bigl(\eta(\alpha)\,
 \sqrt{M_2}\,\Bigr)$$
 avec 
 $$\gamma\, (r) \;\; = \;\; \int_{\hbox{$r$}}^{+\infty }
-\e^{-{\hbox{\sevenmis}^2\over 2}} ds$$ 
+\e^{-{\hbox{\sevenmi
+s}^2\over 2}} ds$$ 
 et $\eta$ \'etant fonction de $\alpha$ selon $(VII.4.)$ En effet,
 l'expression $u\, (\alpha )$ est la somme de deux termes:  le premier
 cro{\^\i}t avec $\alpha$ et le second d\'ecro{\^\i}t avec $\alpha$, de 
@@ -850,7 +901,8 @@ d\'ej\`a plus que de l'ordre de $10^{-6}$). Donc pour que l'erreur
 $\alpha$ soit petite tout en respectant la condition $\eta \geq 5 / 
 \sqrt{M_2}$, il faut avoir 
 $$1 \;\; \gg \;\; \alpha \;\; = \;\; {|M_3|\over \sdown{12} 6\sqrt{n}}
-\;\eta^3\;\; \geq \;\; {125\, |M_3| \over\sdown{12} 6\, M_2\,\sqrt{M_2}
+\;\eta^3\;\; \geq \;\; {125\, |M_3| \over
+\sdown{12} 6\, M_2\,\sqrt{M_2}
 \, \sqrt{n}}\;\; \geq \;\; {20\, |M_3| \over \sdown{12} M_2\,\sqrt{M_2}
 \,\sqrt{n}}$$ 
 ce qui veut dire que  
@@ -908,7 +960,8 @@ $${1\over \sdown{16}\sqrt{2\pi\,{\bf Var}(X)}}
 \; \exp \biggl\{ -{z^2 \over 2\, {\bf Var} (X)}\biggr\}$$
 Cela revient \`a dire que si $\varepsilon$ est la bonne longueur de
 corr\'elation, d\'etermin\'ee par $(VII.4.)$ ou $(VII.4a.)$, alors \`a
-$\alpha$pr\`es on a 
+$\alpha$
+pr\`es on a 
 $${\cal P}\, \Bigl\{ a - {\varepsilon\over 2} < {Z \over \sqrt{n}} < a +
 {\varepsilon\over 2}\Bigr\} \; \simeq \;   \int_{a - {\varepsilon\over
 2}}^{a + {\varepsilon\over 2}} {1\over \sdown{12}\sqrt{\hbox{\eightpoint
@@ -918,7 +971,8 @@ ou plus g\'en\'eralement, pour tous $a,b$ tels que $b-a \geq \varepsilon$:
 $${\cal P}\, \Bigl\{ a < {Z \over \sqrt{n}} < b \Bigr\} \; \simeq \;   
 \int_{a}^{b} {1\over \sdown{12}
 \sqrt{\hbox{\eightpoint $2\pi\,{\bf Var}\, (X)$}}}\; \exp \Bigl\{ -{z^2 \over
-\hbox{\eightpoint$2\, {\bf Var}\, (X)$}}\;\Bigr\}\; dz \eqno (VII.6.)$$
+\hbox{\eightpoint
+$2\, {\bf Var}\, (X)$}}\;\Bigr\}\; dz \eqno (VII.6.)$$
 
 \bigskip
 
@@ -927,14 +981,21 @@ formellement,  nous avons \'etabli la propri\'et\'e que la somme d'un grand
 nombre de variables al\'eatoires ind\'ependantes {\it et de m\^eme loi} 
 \'etait approximativement gaussienne.  En fait,  il n'est pas n\'ecessaire
 qu'elles aient la m\^eme loi (par exemple ce n'est pas le cas dans la
-figure17).  En effet,  si les $X_j$ ont la m\^eme loi,  leur fonction
-caract\'eristiquecommune est $\Phi_X(t)$ et par cons\'equent celle de $Z$
-sera$\Phi_X(t/\,\sqrt{n})^n$.  Si les $X_j$ ont des lois diff\'erentes, 
+figure
+17).  En effet,  si les $X_j$ ont la m\^eme loi,  leur fonction
+caract\'eristique
+commune est $\Phi_X(t)$ et par cons\'equent celle de $Z$
+sera
+$\Phi_X(t/\,\sqrt{n})^n$.  Si les $X_j$ ont des lois diff\'erentes, 
 leurs fonctions caract\'eristiques seront diff\'erentes, mais pour $t$
-petit (l\`ao\`u le d\'eveloppement limit\'e est valable),  elles ne
-diff\`erent que parla valeur de ${\bf Var}(X_j)$.  Si les $X_j$ sont
-ind\'ependantes (car cettehypoth\`ese l\`a reste essentielle), 
-la fonction caract\'eristique de $Z$sera le produit 
+petit (l\`a
+o\`u le d\'eveloppement limit\'e est valable),  elles ne
+diff\`erent que par
+la valeur de ${\bf Var}(X_j)$.  Si les $X_j$ sont
+ind\'ependantes (car cette
+hypoth\`ese l\`a reste essentielle), 
+la fonction caract\'eristique de $Z$
+sera le produit 
 $$\prod_{j=1}^{j=n} \Phi_{X_j}\Bigl( {t \over \sqrt{n}}\Bigr)$$ 
 avec des facteurs non \'egaux,  mais pour $t$ petit on aura toujours
 $$\prod_{j=1}^{j=n} \Bigl( 1 - {\bf Var}(X_j)\; {t^2 \over 2\, n}\Bigr)
@@ -951,14 +1012,18 @@ les variances des $X_j$ restent born\'ees pendant que $n$ tend vers l'infini.
 \bigskip
 
 La conclusion g\'en\'erale \`a tirer de ce chapitre est la suivante: 
-lorsqu'unph\'enom\`ene quelconque subit des fluctuations dues \`a un
-grandnombre de perturbations al\'eatoires,  pourvu que ces perturbations 
+lorsqu'un
+ph\'enom\`ene quelconque subit des fluctuations dues \`a un
+grand
+nombre de perturbations al\'eatoires,  pourvu que ces perturbations 
 agissent ind\'ependamment les unes des autres,  les fluctuations suivront
 une loi approximativement gaussienne.  Le fait que,  comme nous venons de
 le voir,  le caract\`ere gaussien des fluctuations est universel,  permet de
 postuler a \hbox{priori} que des ph\'enom\`enes produits par des causes dont
-onignore tout,  telles que les erreurs de mesure,  l'agitation termique, 
-l'effetd'un m\'edicament,  les notes obtenues aux examens, etc. pr\'esentent
+on
+ignore tout,  telles que les erreurs de mesure,  l'agitation termique, 
+l'effet
+d'un m\'edicament,  les notes obtenues aux examens, etc. pr\'esentent
 autour de leur position moyenne des fluctuations gaussiennes;  pour pouvoir
 affirmer cela avec certitude il n'est pas n\'ecessaire de savoir quoi que ce
 soit sur les causes de ces fluctuations,  except\'e qu'elles sont nombreuses, 

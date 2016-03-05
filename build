@@ -1,7 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-SRC="chap01 chap02"
+DOC="Harthong - Probabilités et Statistiques"
+CHAPTERS=(chap{01..14})
+# 'index' should be added just before 'bibliog', 
+#  but so far I can't build it (missing file). 
+SRC="avert ${CHAPTERS[*]} bibliog"
+SRC_ARRAY=($SRC) 
+PDF="${SRC_ARRAY[@]/%/.pdf}"
 
 pushd .
 
@@ -9,6 +15,8 @@ cd tex
 for src in $SRC; do
   tex $src.tex && dvipdf $src.dvi
 done
+pdftk $PDF cat output "$DOC.pdf"
+cp "$DOC.pdf" ..
 
 popd
 
