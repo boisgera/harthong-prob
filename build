@@ -11,6 +11,9 @@ PDF="${SRC_ARRAY[@]/%/.pdf}"
 
 pushd .
 
+if [ ! -d tex ]; then
+  mkdir tex
+fi
 cd tex
 for src in $SRC; do
   tex $src.tex && dvipdf $src.dvi
