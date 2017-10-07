@@ -5,6 +5,4 @@ sudo: required
 
 install: ./setup
 
-build: 
-  - echo "start build"
-  - ./build 
+script: ./build 
