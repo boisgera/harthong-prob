@@ -1,4 +1,6 @@
 
+sudo: required
+
 install: ./setup
 
 build: ./build 
