@@ -3,6 +3,9 @@
 #sudo apt-get install --yes --no-install-recommends \
 #texlive-base texlive-fonts-recommended
 
-#sudo apt-get install --yes --no-install-recommends install texlive-{base,bibtex-extra,extra-utils,generic-recommended,fonts-recommended,font-utils,latex-base,latex-recommended,latex-extra,math-extra,pictures,pstricks,science} perl-tk purifyeps chktex latexmk dvipng xindy dvidvi fragmaster lacheck latexdiff libfile-which-perl dot2tex tipa latex-xcolor latex-beamer prosper pgf
+#sudo apt-get install --yes --no-install-recommends \
+#texlive-{base,bibtex-extra,extra-utils,generic-recommended,fonts-recommended,font-utils,latex-base,latex-recommended,latex-extra,math-extra,pictures,pstricks,science} perl-tk purifyeps chktex latexmk dvipng xindy dvidvi fragmaster lacheck latexdiff libfile-which-perl dot2tex tipa latex-xcolor latex-beamer prosper pgf
 
 sudo apt-get install --yes --no-install-recommends texlive-full
+sudo apt-get install --yes pdftk
+sudo apt-get install --yes curl
