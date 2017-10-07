@@ -2,7 +2,9 @@ Probabilités et Statistiques de Jacques Harthong
 ================================================================================
 
 Ce dépôt a vocation à favoriser la préservation et la diffusion du 
-cours de Probabilités et Statistiques de Jacques Harthong.
+cours de Probabilités et Statistiques de Jacques Harthong:
+
+[**Télécharger le PDF**](https://eul.ink/probability/documents/Harthong%20-%20Probabilit%C3%A9s%20et%20Statistiques.pdf)
 
 L'auteur aujourd'hui décédé l'avait diffusé en *open-source* à l'adresse:
 
